@@ -15,21 +15,18 @@ Repositório do projeto **Banco de Dados Ambiental** (13\_Projeto\_BD\_Ambiental
 
 ## 📂 Estrutura do repositório
 
+Pastas incrementais podem ser adicionadas ao longo do trabalho.
+
 ```
 13_Projeto_BD_Ambiental/
-├── data/                 # (vazia no Git) dados locais sincronizados do Google Drive
-│   ├── raw/              # dados brutos (somente leitura)
-│   ├── interim/          # dados intermediários (tratamentos parciais)
-│   └── processed/        # dados prontos p/ análise/modelagem
-├── notebooks/            # Jupyter (Python) e Quarto/RMarkdown (R)
-├── scripts/              # ETL, validações, modelagem (R e Python)
-├── config/               # arquivos .yml/.json de parâmetros e caminhos
-├── docs/                 # documentação e referências
-├── results/              # tabelas, gráficos e saídas de modelos
-├── .env.example          # variáveis de ambiente (sem segredos)
-├── requirements.txt      # (Python)
-├── renv.lock             # (R) gerado pelo {renv}
-└── README.md             # este arquivo
+├── dados/             # (vazia no Git) dados locais sincronizados do Google Drive
+├── R/                 # (vazia no Git) dados locais sincronizados do Google Drive
+│   ├──scripts_R       # Scripts R
+├── Python/            # (vazia no Git) dados locais sincronizados do Google Drive
+│   ├──scripts_Python  # Scripts Python
+├── config/            # arquivos .yml/.json de parâmetros e caminhos
+├── docs/              # documentação e referências
+└── README.md          # este arquivo
 ```
 
 > **Importante**: a pasta `data/` fica **.gitignore** por padrão. Os dados são mantidos numa **pasta compartilhada do Google Drive** e **sincronizados localmente**.
@@ -38,8 +35,7 @@ Repositório do projeto **Banco de Dados Ambiental** (13\_Projeto\_BD\_Ambiental
 
 ## ☁️ Dados no Google Drive (layout e acesso)
 
-* **Pasta compartilhada (Drive):** `DRIVE_SHARED_URL_AQUI`
-  (substitua pelo link público/compartilhado quando disponível)
+* **Pasta compartilhada (Drive):** `https://drive.google.com/drive/folders/1h1XFFCW6NogP1TiJLIf2AT9km-zwt6Rl?usp=sharing`
 
 **Layout recomendado no Drive** (espelhar localmente em `data/`):
 
@@ -55,7 +51,7 @@ Drive:
 
 1. **Sincronização local (recomendado)**
 
-   * Instale *Google Drive for desktop* e sincronize a pasta `BD_Ambiental` para um caminho local.
+   * Instale *Google Drive for desktop* e sincronize a pasta `Ambiental (BD USP)` para um caminho local.
    * Aponte `DATA_DIR` no `.env` (ver abaixo) para esse caminho.
 
 2. **Acesso programático**
@@ -199,34 +195,6 @@ PROCESSED <- file.path(DATA_DIR, "processed")
 cat("RAW:", normalizePath(RAW), "\n")
 ```
 
-**Carregar CSV e salvar tratado**
-
-```r
-install.packages(c("readr", "janitor", "arrow"))
-library(readr); library(janitor); library(arrow)
-
-ibama <- readr::read_csv(file.path(RAW, "ibama_autuacoes.csv")) |>
-  janitor::clean_names()
-
-# salvar intermediário (parquet)
-dir.create(INTERIM, showWarnings = FALSE, recursive = TRUE)
-arrow::write_parquet(ibama, file.path(INTERIM, "ibama_autuacoes_clean.parquet"))
-```
-
-**Leitura geoespacial (sf/terra)**
-
-```r
-install.packages(c("sf", "terra", "lwgeom"))
-library(sf); library(terra)
-
-biomas <- sf::st_read(file.path(RAW, "biomas/biomas_2023.shp")) |>
-  sf::st_transform(4326)
-
-# salvar processado (GeoPackage)
-dir.create(PROCESSED, showWarnings = FALSE, recursive = TRUE)
-sf::st_write(biomas, file.path(PROCESSED, "biomas_4326.gpkg"), delete_dsn = TRUE)
-```
-
 **Baixar arquivos do Drive (API)**
 
 ```r
@@ -246,29 +214,6 @@ if (nzchar(folder_url)) {
 
 ---
 
-## 📦 Dependências
-
-### Python (`requirements.txt` sugerido)
-
-```
-pandas
-numpy
-pyarrow
-polars
-geopandas
-shapely
-fiona
-pyproj
-rasterio
-matplotlib
-seaborn
-scikit-learn
-statsmodels
-python-dotenv
-gdown
-jupyter
-```
-
 ### R (principais pacotes)
 
 * **Base/tabular**: `tidyverse`, `data.table`, `janitor`, `readr`, `readxl`
@@ -280,17 +225,3 @@ jupyter
 
 ---
 
-## 🔁 Reprodutibilidade
-
-* Padronize **CRS** (EPSG:4326 salvo em `processed/`) e **codificação** (`UTF-8`).
-* Use **.env** para caminhos **relativos** ao Drive sincronizado.
-* Salve intermediários em **Parquet/GeoPackage** para eficiência.
-* Prefira pipelines declarativos (scripts em `scripts/` e notebooks versionados em `notebooks/`).
-
----
-
-## 🧪 Qualidade e validações
-
-* Checagens automáticas (duplicatas, NAs críticos, ranges inválidos).
-* *Data Dictionary* em `docs/` (campos, tipos, unidades, fonte, licença).
-* *Changelogs* de ETL (quem, quando, o quê) e seeds controlados.
