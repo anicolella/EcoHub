@@ -16,6 +16,8 @@ Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisa
 
 ## 📂 Estrutura do repositório
 
+Os scripts de produção (em andamento ou mais utilizados), por facilidade, podem ser mantidos na raiz, com cópias/backups sendo mantidos na pasta 'scripts/'.
+
 Pastas incrementais podem ser adicionadas ao longo do trabalho.
 
 ```
