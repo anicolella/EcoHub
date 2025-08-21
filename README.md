@@ -14,7 +14,25 @@ Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisa
 
 ---
 
-## 📂 Estrutura do repositório
+## ⚒️ Ferramentas (softwares/Apps e linguagens)
+
+As principais ferramentas utilizadas e a função de cada uma delas são as seguintes:
+
+---------------------------------------------------------------------
+| Ferramenta         | Função                                       |
+|--------------------|----------------------------------------------|
+| R                  | Análise estatística, visualização e modelagem|
+| Python             | Tratamento de dados, automação e web scraping|
+| RStudio            | IDE para desenvolvimento em R                |
+| Google Drive       | Armazenamento de bancos de dados e arquivos  |
+| Git/GitHub         | Controle de versão e colaboração             |
+---------------------------------------------------------------------
+
+Rstudio e Google Drive são os softwares/apps essenciais para o desenvolvimento do projeto.
+
+---
+
+## 📂 Estrutura do repositório Github
 
 Os scripts de produção (em andamento ou mais utilizados), por facilidade, podem ser mantidos na raiz, com cópias/backups sendo mantidos na pasta 'scripts/'.
 
