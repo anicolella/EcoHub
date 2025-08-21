@@ -18,7 +18,6 @@ Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisa
 
 As principais ferramentas utilizadas e a função de cada uma delas são as seguintes:
 
----------------------------------------------------------------------
 | Ferramenta         | Função                                       |
 |--------------------|----------------------------------------------|
 | R                  | Análise estatística, visualização e modelagem|
@@ -26,7 +25,6 @@ As principais ferramentas utilizadas e a função de cada uma delas são as segu
 | RStudio            | IDE para desenvolvimento em R                |
 | Google Drive       | Armazenamento de bancos de dados e arquivos  |
 | Git/GitHub         | Controle de versão e colaboração             |
----------------------------------------------------------------------
 
 Rstudio e Google Drive são os softwares/apps essenciais para o desenvolvimento do projeto.
 
