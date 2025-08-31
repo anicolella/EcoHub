@@ -733,8 +733,22 @@ MTTEMPO <- MTTEMPO |> mutate(
     
     mrt ==1302 ~ "Vila Bela da Santíssima Trindade, Pontes e Lacerda, Conquista D’Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis D’Oeste, Porto Esperidião."
   ))
+## 2.0 DADOS RAMT MS ####
 
-## 2.0 DADOS RAMT AC ####
+MSMRT1_2017 <- data.frame(
+  mrt = "Dourados, Douradina e Itaporã",
+  tipologia_de_uso = c("Lavoura", "Lavoura de Alta Produtividade", "Lavoura de Alta Produtividade Douradina e Itaporã"),
+  nivel = c(1, 2, 3),
+  vti_media = c(26421.00, 26754.00, 29461.00),
+  vti_minimo = c(22459.00, 22741.00, 25041.00),
+  vti_maximo = c(30385.00, 30768.00, 33880.00),
+  vtn_media = c(25642.00, 25929.00, 28547.00),
+  vtn_minimo = c(21796.00, 22040.00, 24265.00),
+  vtn_maximo = c(29489.00, 29818.00, 32829.00)
+)
+
+
+## 3.0 DADOS RAMT AC ####
 ## MRT ZONA 1 ACRE ####
 ##2016####
 ACMRT_Zona1_2016 <- data.frame(
