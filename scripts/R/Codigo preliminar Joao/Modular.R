@@ -4991,7 +4991,7 @@ MSTEMPORAL<- MSTEMPORAL |> mutate( cidade = case_when(
 ## 12.0 DADOS RAMT PB ####
 ##MRT 01 - Zona da Mata Paraíbana####
 ##2018####
-MRT1_2018 <- data.frame(
+PBMRT1_2018 <- data.frame(
   mrt = "ZONA DA MATA PARAIBANA (Alhandra, Baía da Traição, Bayeux, Caaporã, Cabedelo, Capim, Conde, Cruz do Espírito Santo, João Pessoa, Juripiranga, Lucena, Mamanguape, Marcação, Mataraca, Pedras de Fogo, Pitimbu, Rio Tinto, Santa Rita, São Miguel de Taipu, Sapé e Sobrado.)",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Agricultura", "Agricultura Lavoura Temporária “B”", "Agricultura Lavoura Permanente Cana de açúcar", "Agricultura Lavoura Temporária “B” (Rio Tinto)", "Agricultura Lavoura Temporária “B” (Alhandra)", "Agricultura Lavoura Permanente Cana de açúcar (Mamanguape)"),
   nivel = c(0, 1, 2, 2, 2, 2, 2),
@@ -5003,7 +5003,7 @@ MRT1_2018 <- data.frame(
   vtn_maximo = c(16706.13, 17506.58, 11689.29, 18851.63, 10109.79, 23910.53, 18851.63)
 )
 ##2020####
-MRT_ZONA_DA_MATA_PARAIBANA_2020 <- data.frame(
+PBMRT_ZONA_DA_MATA_PARAIBANA_2020 <- data.frame(
   mrt = "ZONA DA MATA PARAIΒΑΝΑ",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Agricultura", "Agricultura Lavoura Temporária \"LB\"", "Agricultura Lavoura Permanente Cana de Açúcar", "Agricultura Lavoura Temporária \"LB\" (Rio Tinto)", "Agricultura Lavoura Temporária \"LB\" (Pedras de Fogo)", "Agricultura Lavoura Permanente Cana de Açúcar (Rio Tinto)", "Agricultura Lavoura Permanente Cana de Açúcar (Sapé)"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3),
@@ -5015,7 +5015,7 @@ MRT_ZONA_DA_MATA_PARAIBANA_2020 <- data.frame(
   vtn_maximo = c(13409.72, 13409.72, 11347.26, 15327.60, 9126.77, 14010.81, 17469.91, 7846.38)
 )
 ##2021####
-MRT01_2021 <- data.frame(
+PBMRT01_2021 <- data.frame(
   mrt = "ZONA DA MATA PARAIBANA",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Agricultura", "Agricultura Lavoura Temporária \"LB\"", "Agricultura Lavoura Permanente Cana de Açúcar", "Agricultura Lavoura Temporária \"LB\" (Alhandra)"),
   nivel = c(0, 1, 2, 2, 3),
@@ -5028,7 +5028,7 @@ MRT01_2021 <- data.frame(
 )
 
 ##2024####
-MRT_ZONA_DA_MATA_PARAIBANA_2024 <- data.frame(
+PBMRT_ZONA_DA_MATA_PARAIBANA_2024 <- data.frame(
   mrt = "ZONA DA MATA PARAIBANA",
   tipologia_de_uso = c(
     "Média Geral",
@@ -5052,7 +5052,7 @@ MRT_ZONA_DA_MATA_PARAIBANA_2024 <- data.frame(
 
 ##MRT 02 - AGRESTE####
 ## 2018 ####
-MRT2_2018 <- data.frame(
+PBMRT2_2018 <- data.frame(
   mrt = "AGRESTE E BREJO PARAIBANO (Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Campo de Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro.)",
   tipologia_de_uso = c( "Uso indefinido média geral","Agricultura", "Pecuária", "Exploração Mista", "Agricultura Lavoura Temporária “A”", "Agricultura Lavoura Temporária “B”", "Agricultura Lavoura Permanente Cana de açúcar", "Pecuária - “P1”", "Exploração Mista - (“LA + P1”)", "Agricultura Lavoura Temporária ‘A” (Duas Estradas)", "Agricultura Lavoura Temporária ‘B” (Itapororoca)", "Agricultura Lavoura Temporária ‘B” (Alagoa Nova)", "Agricultura Lavoura Temporária ‘B” (Mari)", "Agricultura Lavoura Permanente Cana-de-açúcar (Alagoa Grande)", "Agricultura Lavoura Permanente Cana-de-açúcar (Pirpirituba)", "Pecuária “P1” (Solânea)", "Exploração mista (“LA” + “P1”) (Esperança)"),
   nivel = c(1, 1, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2),
@@ -5065,7 +5065,7 @@ MRT2_2018 <- data.frame(
 )
 
 ## 2020 ####
-MRT_AGRESTE_E_BREJO_PARAIBANO_2020 <- data.frame(
+PBMRT_AGRESTE_E_BREJO_PARAIBANO_2020 <- data.frame(
   mrt = "AGRESTE E BREJO PARAIBANO",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Agricultura", "Pecuária", "Exploração Mista", "Agricultura Lavoura Temporária \"LB\"", "Pecuária - P1", "Pecuária P2", "Exploração Mista - \"LA + P1\"", "Exploração Mista - \"LB + P2\"", "Pecuária P1 (Solânea)", "Exploração Mista $-\"LB+P2\"$ (Solânea)", "Pecuária P1 (Casserengue)", "Pecuária P2 (Itabaiana)", "Agricultura Lavoura Temporária \"LB\" (Riachão do Poço)", "Exploração Mista LB + P2 (Pilar)", "Exploração Mista LB + P2 (Pirpirituba)", "Pecuária P1 (Ingá)", "Agricultura Cana de Açúcar (Itapororoca)", "Pecuária P2 (Fagundes)", "Exploração Mista $-LB+P2$ (Guarabira)", "Exploração Mista $-LB+P2$ (Queimadas)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -5078,7 +5078,7 @@ MRT_AGRESTE_E_BREJO_PARAIBANO_2020 <- data.frame(
 )
 
 ## 2021 ####
-MRT02_2021 <- data.frame(
+PBMRT02_2021 <- data.frame(
   mrt = "AGRESTE E BREJO PARAIΒΑΝΟ",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Agricultura", "Pecuária", "Exploração Mista", "Agricultura Lavoura Temporária \"LB\"", "Pecuária P1", "Pecuária - P2", "Exploração Mista $-\"\"LA+P1\"\"$", "Exploração Mista $\"\"LB+P2\"\"$", "Exploração Mista - $\"\"LA+P2\"\"$", "Agricultura Lavoura Temporária \"LB\" (Lagoa Seca)", "Exploração Mista $-'\"LB+P2\"'$ (Itapororoca)", "Exploração Mista $\"\"LB+P2\"\"$ (Ingá)", "Exploração Mista $-\"\"LB+P2\"\"$ (Pilar)", "Exploração Mista $-\"\"LB+P2\"\"$ (Mari)", "Exploração Mista $\"\"LB+P2\"\"$ (Guarabira)", "Exploração Mista $\"\"LB+P2\"\"$ (Pirpirituba)", "Exploração Mista $\"\"LB+P2\"\"$ (Remígio)", "Exploração Mista $-'\"LA+P1\"'$ (Aroeiras)", "Pecuária P1 (Arara)", "Pecuária P1 (Casserengue)", "Pecuária P1 (Araruna)", "Pecuária P2 (Lagoa de Dentro)", "Pecuária P2 (Mogeiro)", "Pecuária P2 (Alagoinha)", "Pecuária P2 (Areia)", "Pecuária P2 (Araçagi)", "Pecuária P2 (Sertãozinho)", "Pecuária P2 (Serraria)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -5091,7 +5091,7 @@ MRT02_2021 <- data.frame(
 )
 
 ## 2022 ####
-MRT_AGRESTE_E_BREJO_PARAIBANO_2022 <- data.frame(
+PBMRT_AGRESTE_E_BREJO_PARAIBANO_2022 <- data.frame(
   mrt = "AGRESTE E BREJO PARAIBANO",
   tipologia_de_uso = c(
     "TODAS AS TIPOLOGIAS (média geral)",
@@ -5152,7 +5152,7 @@ MRT_AGRESTE_E_BREJO_PARAIBANO_2022 <- data.frame(
 )
 
 ## 2024 ####
-MRT_AGRESTE_E_BREJO_PARAIBANO_2024 <- data.frame(
+PBMRT_AGRESTE_E_BREJO_PARAIBANO_2024 <- data.frame(
   mrt = "AGRESTE E BREJO PARAIBANO",
   tipologia_de_uso = c(
     "Média Geral",
@@ -5180,7 +5180,7 @@ MRT_AGRESTE_E_BREJO_PARAIBANO_2024 <- data.frame(
 
 ##MRT 03 - CARIRI E CURIMATAÚ PARAIBANO####
 ## 2018 ####
-MRT3_2018 <- data.frame(
+PBMRT3_2018 <- data.frame(
   mrt = "CARIRI E CURIMATAÚ PARAIBANO (Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê.)",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária - Pastagem de Baixo Suporte"),
   nivel = c(0, 1, 1),
@@ -5193,7 +5193,7 @@ MRT3_2018 <- data.frame(
 )
 
 ## 2020 ####
-MRT_CARIRI_E_CURIMATAU_PARAIBANO_2020 <- data.frame(
+PBMRT_CARIRI_E_CURIMATAU_PARAIBANO_2020 <- data.frame(
   mrt = "CARIRI E CURIMATAÚ PARAIBANO",
   tipologia_de_uso = c(
     "TODAS AS TIPOLOGIAS (média geral)",
@@ -5216,7 +5216,7 @@ MRT_CARIRI_E_CURIMATAU_PARAIBANO_2020 <- data.frame(
 )
 
 ## 2021 ####
-MRT03_2021 <- data.frame(
+PBMRT03_2021 <- data.frame(
   mrt = "CARIRI E CURIMATAÚ PARAIBANO",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Pecuária", "Exploração Mista", "Pecuária \"\"P1\"\"", "Pecuária \"\"P2\"\"", "Pecuária \"\"P1\"\" - Monteiro", "Pecuária \"\"P1\"\" - Picuí", "Pecuária \"\"P1\"\" - Prata", "Pecuária \"\"P1\"\" - Sumé", "Pecuária \"\"P1\"\" - Pedra Lavrada", "Pecuária \"\"P1\"\" - Soledade", "Pecuária \"\"P1\"\" - Pocinhos", "Pecuária \"\"P2\"\" - Alcantil", "Pecuária \"\"P2\"\" - Barra de Santana"),
   nivel = c(0, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -5229,7 +5229,7 @@ MRT03_2021 <- data.frame(
 )
 
 ## 2022 ####
-MRT_SERTAO_PARAIBANO_1_2022 <- data.frame(
+PBMRT_SERTAO_PARAIBANO_1_2022 <- data.frame(
   mrt = "SERTÃO PARAIBANO 1",
   tipologia_de_uso = c(
     "TODAS AS TIPOLOGIAS (média geral)",
@@ -5262,7 +5262,7 @@ MRT_SERTAO_PARAIBANO_1_2022 <- data.frame(
 )
 
 ## 2024 ####
-MRT_CARIRI_E_CURIMATAU_PARAIBANO_2024 <- data.frame(
+PBMRT_CARIRI_E_CURIMATAU_PARAIBANO_2024 <- data.frame(
   mrt = "CARIRI E CURIMATAÚ PARAIBANO",
   tipologia_de_uso = c(
     "Média Geral",
@@ -5286,7 +5286,7 @@ MRT_CARIRI_E_CURIMATAU_PARAIBANO_2024 <- data.frame(
 
 ##MRT 03 - SERTÃO PARAIBANO 1 ####
 ## 2018 ####
-MRT4_2018 <- data.frame(
+PBMRT4_2018 <- data.frame(
   mrt = "SERTÃO PARAIBANO 1 (Água Branca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios, Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy, Imaculada, Itaporanga, Juru, Mãe D’água, Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, Princesa Isabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, São José de Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares. Todos os municípios estão localizados nos limites da mesorregião do Sertão e nas microrregiões de Catolé do Rocha, Sousa, Patos, Seridó Oriental, Cajazeiras e Piancó.)",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária - “P1”", "Pecuária - “P1” (Coremas)", "Pecuária - “P1” (Patos)"),
   nivel = c(0, 1, 1, 1, 1),
@@ -5299,7 +5299,7 @@ MRT4_2018 <- data.frame(
 )
 
 ## 2020 ####
-MRT_SERTAO_PARAIBANO_1_2020 <- data.frame(
+PBMRT_SERTAO_PARAIBANO_1_2020 <- data.frame(
   mrt = "SERTÃO PARAIBANO 1",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Pecuária", "Pecuária \"P1\"", "Pecuária \"P2\"", "Pecuária \"P1\" - Piancó", "Pecuária \"P1\" - Coremas", "Pecuária \"P1\" - Princesa Isabel", "Pecuária \"P1\" - Água Branca", "Pecuária \"P1\" Bonito de Santa Fé", "Pecuária \"P2\" - Bonito de Santa Fé", "Pecuária \"P2\" - Cajazeiras", "Pecuária \"P2\" - Aguiar"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -5312,7 +5312,7 @@ MRT_SERTAO_PARAIBANO_1_2020 <- data.frame(
 )
 
 ## 2021 ####
-MRT04_2021 <- data.frame(
+PBMRT04_2021 <- data.frame(
   mrt = "SERTÃO PARAIBANO 1",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Pecuária", "Pecuária \"\"P1\"\"", "Pecuária \"\"P1\"\" - Itaporanga", "Pecuária \"\"P1\"\" Santana de Mangueira", "Pecuária \"\"P1\"\" - Piancó", "Pecuária \"\"P2\"\" - São José de Piranhas\"\""),
   nivel = c(0, 1, 2, 3, 3, 3, 3),
@@ -5325,7 +5325,7 @@ MRT04_2021 <- data.frame(
 )
 
 ## 2024 ####
-MRT_SERTAO_PARAIBANO_1_2024 <- data.frame(
+PBMRT_SERTAO_PARAIBANO_1_2024 <- data.frame(
   mrt = "SERTÃO PARAIBANO 1",
   tipologia_de_uso = c(
     "Média Geral",
@@ -5352,7 +5352,7 @@ MRT_SERTAO_PARAIBANO_1_2024 <- data.frame(
 
 ##MRT 04 - SERTÃO PARAIBANO 2 ####
 ## 2018 ####
-MRT5_2018 <- data.frame(
+PBMRT5_2018 <- data.frame(
   mrt = "SERTÃO PARAIBANO 2 (Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana.)",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Exploração Mista", "Pecuária - “P1”", "Exploração Mista - (“LA + P1”)", "Exploração Mista - (“LA + P2”)"),
   nivel = c(0, 1, 1, 1, 1, 1),
@@ -5365,7 +5365,7 @@ MRT5_2018 <- data.frame(
 )
 
 ## 2020 ####
-MRT_SERTAO_PARAIBANO_2_2020 <- data.frame(
+PBMRT_SERTAO_PARAIBANO_2_2020 <- data.frame(
   mrt = "SERTÃO PARAIBANO 2",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Pecuária", "Exploração mista", "Pecuária \"P1\"", "Pecuária \"P2\"", "Exploração Mista $\"LA+p1\"$", "Pecuária \"P1\" - São João do Rio do Peixe", "Pecuária \"P2\" - Sousa", "Pecuária \"P2\" Riacho dos Cavalos", "Pecuária \"P2\" - Uiraúna"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3),
@@ -5378,7 +5378,7 @@ MRT_SERTAO_PARAIBANO_2_2020 <- data.frame(
 )
 
 ## 2021 ####
-MRT05_2021 <- data.frame(
+PBMRT05_2021 <- data.frame(
   mrt = "SERTÃO PARAIBANO 2",
   tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Pecuária", "Pecuária \"\"P1\"\"", "Pecuária \"\"P2\"\"", "Pecuária \"\"P1\"\" -Santa Terezinha", "Pecuária \"\"P1\"\" - Sousa\"\"", "Pecuária \"\"P1\"\" - \"\"Aparecida\"\"", "Pecuária \"\"P1\"\" - \"\"Uiraúna\"\"", "Pecuária \"\"P1\"\" - \"\"São Bentinho\"\"", "Pecuária \"\"P1\"\" - \"\"Bonito de Santa Fé\"\"", "Pecuária \"\"P1\"\" - \"\"São João do Rio do Peixe\"\"", "Pecuária \"\"P2\"\" - \"\"Riacho dos Cavalos\"\"", "Pecuária \"\"P2\"\" - \"\"Pombal\"\"", "Pecuária \"\"P2\"\" - \"\"São Mamede\"\""),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -5391,7 +5391,7 @@ MRT05_2021 <- data.frame(
 )
 
 ## 2022 ####
-MRT_SERTAO_PARAIBANO_2_2022 <- data.frame(
+PBMRT_SERTAO_PARAIBANO_2_2022 <- data.frame(
   mrt = "SERTÃO PARAIBANO 2",
   tipologia_de_uso = c(
     "TODAS AS TIPOLOGIAS (média geral)",
@@ -5420,7 +5420,7 @@ MRT_SERTAO_PARAIBANO_2_2022 <- data.frame(
   vtn_maximo = c(1886.89, 1813.19, 2376.61, 1575.62, 4338.97, 1651.23, 810.45, 1587.05, 1151.28, 4177.49, 4630.61, 5404.12, 979.70, 579.19, 1622.00, 2632.02)
 )
 ## 2024 ####
-MRT_SERTAO_PARAIBANO_2_2024 <- data.frame(
+PBMRT_SERTAO_PARAIBANO_2_2024 <- data.frame(
   mrt = "SERTÃO PARAIBANO 2",
   tipologia_de_uso = c(
     "Média Geral",
@@ -5452,43 +5452,43 @@ MRT_SERTAO_PARAIBANO_2_2024 <- data.frame(
 
 ## Consolidação dos dados####
 PB2018 <- rbind(
-  MRT1_2018, 
-  MRT2_2018, 
-  MRT3_2018,
-  MRT4_2018, 
-  MRT5_2018
+  PBMRT1_2018, 
+  PBMRT2_2018, 
+  PBMRT3_2018,
+  PBMRT4_2018, 
+  PBMRT5_2018
 )
 
 PB2020 <- rbind(
-  MRT_ZONA_DA_MATA_PARAIBANA_2020,
-  MRT_AGRESTE_E_BREJO_PARAIBANO_2020,
-  MRT_CARIRI_E_CURIMATAU_PARAIBANO_2020,
-  MRT_SERTAO_PARAIBANO_1_2020,
-  MRT_SERTAO_PARAIBANO_2_2020
+  PBMRT_ZONA_DA_MATA_PARAIBANA_2020,
+  PBMRT_AGRESTE_E_BREJO_PARAIBANO_2020,
+  PBMRT_CARIRI_E_CURIMATAU_PARAIBANO_2020,
+  PBMRT_SERTAO_PARAIBANO_1_2020,
+  PBMRT_SERTAO_PARAIBANO_2_2020
 )
 
 PB2021 <- rbind(
-  MRT01_2021, 
-  MRT02_2021, 
-  MRT03_2021, 
-  MRT04_2021,
-  MRT05_2021
+  PBMRT01_2021, 
+  PBMRT02_2021, 
+  PBMRT03_2021, 
+  PBMRT04_2021,
+  PBMRT05_2021
   )
 
 PB2022 <- rbind(
-  MRT_ZONA_DA_MATA_PARAIBANA_2022,
-  MRT_AGRESTE_E_BREJO_PARAIBANO_2022,
-  MRT_CARIRI_E_CURIMATAU_PARAIBANO_2022,
-  MRT_SERTAO_PARAIBANO_1_2022,
-  MRT_SERTAO_PARAIBANO_2_2022
+  PBMRT_ZONA_DA_MATA_PARAIBANA_2022,
+  PBMRT_AGRESTE_E_BREJO_PARAIBANO_2022,
+  PBMRT_CARIRI_E_CURIMATAU_PARAIBANO_2022,
+  PBMRT_SERTAO_PARAIBANO_1_2022,
+  PBMRT_SERTAO_PARAIBANO_2_2022
 )
 
 PB2024 <- rbind(
-  MRT_ZONA_DA_MATA_PARAIBANA_2024,
-  MRT_AGRESTE_E_BREJO_PARAIBANO_2024,
-  MRT_CARIRI_E_CURIMATAU_PARAIBANO_2024,
-  MRT_SERTAO_PARAIBANO_1_2024,
-  MRT_SERTAO_PARAIBANO_2_2024
+  PBMRT_ZONA_DA_MATA_PARAIBANA_2024,
+  PBMRT_AGRESTE_E_BREJO_PARAIBANO_2024,
+  PBMRT_CARIRI_E_CURIMATAU_PARAIBANO_2024,
+  PBMRT_SERTAO_PARAIBANO_1_2024,
+  PBMRT_SERTAO_PARAIBANO_2_2024
 )
 
 
@@ -5525,9 +5525,11 @@ PBTEMPORAL <- PBTEMPORAL |>
   )
 
 ### 13. Dados RAMT PERNAMBUCO ####
+# Aqui eles dividem o estado em duas RAMTS diferentes, então alguns estados tem mais observações que outros.
+
 ### MRT Sertão Pernambucano ####
 ### 2017  ####
-MRT_SERTAO_PERNAMBUCANO_2017 <- data.frame(
+PEMRT_SERTAO_PERNAMBUCANO_2017 <- data.frame(
   mrt = "Sertão Pernambucano",
   tipologia_de_uso = c(
     "MÉDIA GERAL (USO INDEFINIDO)",
@@ -5547,7 +5549,7 @@ MRT_SERTAO_PERNAMBUCANO_2017 <- data.frame(
   vtn_maximo = c(550.19, 550.19, 575.00, 475.00, 730.43, 804.49, 412.36)
 )
 ### 2019  ####
-MRT_Sertao_Pernambucano_29001_20 <- data.frame(
+PEMRT_Sertao_Pernambucano_29001_20 <- data.frame(
   mrt = "Sertão Pernambucano - 29001",
   tipologia_de_uso = c("Geral", "Terra de pecuária", "Terra de agricultura", "Terra de pecuária de sequeiro", "Terra de agricultura em serra", "Terra de pecuária de sequeiro - Região de Ouricuri", "Terra de pecuária de sequeiro - Região de Salgueiro"),
   nivel = c(0, 1, 1, 2, 2, 3, 3),
@@ -5559,7 +5561,7 @@ MRT_Sertao_Pernambucano_29001_20 <- data.frame(
   vtn_maximo = c(1431.84, 1625.57, 1382.98, 1625.57, 1424.83, 1856.30, 1524.42)
 )
 ### 2022  ####
-MRT1_Sertao_Pernambucano_2022 <- data.frame(
+PEMRT1_Sertao_Pernambucano_2022 <- data.frame(
   mrt = "MRT 1 - Sertão Pernambucano",
   tipologia_de_uso = c("Geral", "Pecuária", "Agrícola", "Exploração Mista", "Pecuária - Diversos - Baixa capacidade", "Agrícola - Olericultura - Mandioca - Média capacidade", "Exploração Mista - Agrícola + Pastagem - Média capacidade - Irrigado", "Pecuária - Diversos - Baixa capacidade - Ouricuri", "Pecuária - Diversos - Baixa capacidade-Salgueiro**", "Agrícola - Olericultura - Mandioca - Média capacidade - Ouricuri\"\"", "Exploração Mista - Agrícola + Pastagem - Média capacidade - Irrigado-Salgueiro**"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3),
@@ -5574,7 +5576,7 @@ MRT1_Sertao_Pernambucano_2022 <- data.frame(
 
 ### MRT Sertão do São Francisco ####
 ## 2017 ####
-MRT_SERTAO_SAO_FRANCISCO_PE_2017 <- data.frame(
+PEMRT_SERTAO_SAO_FRANCISCO_PE_2017 <- data.frame(
   mrt = "Sertão do São Franscisco - PE",
   tipologia_de_uso = c(
     "MÉDIA GERAL (USO INDEFINIDO)",
@@ -5599,7 +5601,7 @@ MRT_SERTAO_SAO_FRANCISCO_PE_2017 <- data.frame(
   vtn_maximo = c(403.43, 357.02, 1509.35, 356.78, 2422.53, 629.67, 307.46, 213.76, 473.08, 618.61, 2789.46, 1567.82)
 )
 ## 2019 ####
-MRT_Sertao_do_Sao_Francisco_PE_29002_2019 <- data.frame(
+PEMRT_Sertao_do_Sao_Francisco_PE_29002_2019 <- data.frame(
   mrt = "Sertão do São Francisco-PE-29002",
   tipologia_de_uso = c("Geral", "Terra de pecuária", "Terra de agricultura", "Terra de pecuária de sequeiro", "Terra de agricultura irrigada na margem do rio São Francisco", "Terra de agricultura irrigada em áreas de influência de rios temporários e açudes", "Terra de pecuária de sequeiro - Região de Santa Maria da Boa Vista", "Terra de pecuária de sequeiro - Região de Floresta", "Terra de pecuária de sequeiro - Região de Serra Talhada", "Terra de pecuária de sequeiro - Região de Inajá", "Terra de agricultura irrigada na margem do rio São Francisco - Região de Santa Maria da Boa Vista", "Terra de agricultura irrigada na margem do rio São Francisco - Região de Floresta"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3),
@@ -5613,7 +5615,7 @@ MRT_Sertao_do_Sao_Francisco_PE_29002_2019 <- data.frame(
 
 
 ## 2022 ####
-MRT2_Sertao_SF_Pernambucano_2022 <- data.frame(
+PEMRT2_Sertao_SF_Pernambucano_2022 <- data.frame(
   mrt = "MRT 2 - Sertão do São Francisco Pernambucano",
   tipologia_de_uso = c("Geral", "Pecuária", "Agrícola", "Exploração Mista", "Pecuária - Diversos - Baixa capacidade", "Agrícola - Fruticultura - Irrigado- Alta capacidade", "Exploração Mista - Agrícola + Pastagem - Média capacidade - Irrigado", "Pecuária - Diversos - Baixa capacidade - Santa Maria da Boa Vista", "Pecuária - Diversos - Baixa capacidade - Floresta**", "Pecuária - Diversos - Baixa capacidade - Serra Talhada**", "Agrícola - Fruticultura - Alta capacidade-Irrigado - Santa Maria da Boa Vista*", "Agrícola - Fruticultura - Alta capacidade - Irrigado Floresta**", "Exploração Mista - Agrícola + Pastagem - Média capacidade - Irrigado Santa Maria da Boa Vista", "Exploração Mista - Agrícola + Pastagem - Média capacidade - Irrigado-Inajá***"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3),
@@ -5626,7 +5628,7 @@ MRT2_Sertao_SF_Pernambucano_2022 <- data.frame(
 )
 
 ## 2024 ####
-MRT2_Sertao_SF_Pernambucano_2024 <- data.frame(
+PEMRT2_Sertao_SF_Pernambucano_2024 <- data.frame(
   mrt = "MRT 2 - Sertão do São Francisco Pernambucano",
   tipologia_de_uso = c("Geral", "Pecuária", "Agrícola", "Exploração Mista", "Pecuária - Diversos - Baixa capacidade", "Agrícola - Fruticultura - Irrigado - Alta capacidade", "Exploração Mista - Agrícola + Pastagem Média capacidade- Irrigado", "Pecuária - Diversos - Baixa capacidade - Santa Maria da Boa Vista™", "Pecuária - Diversos - Baixa capacidade - Floresta**", "Pecuária - Diversos - Baixa capacidade - Serra Talhada**", "Pecuária Diversos - Baixa capacidade Inajá*****", "Agrícola - Fruticultura - Alta capacidade - Irrigado Santa Maria da Boa Vista", "Agrícola - Fruticultura - Alta capacidade - Irrigado Floresta**", "Agrícola Fruticultura - Alta capacidade - Irrigado Inajá", "Exploração Mista - Agrícola + Pastagem Média capacidade - Irrigado - Floresta**", "Exploração Mista - Agrícola + Pastagem - Média capacidade - Irrigado Inajá***"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -5640,7 +5642,7 @@ MRT2_Sertao_SF_Pernambucano_2024 <- data.frame(
 
 ## Petrolina ####
 ## 2017 ####
-MRT_PETROLINA_2017 <- data.frame(
+PEMRT_PETROLINA_2017 <- data.frame(
   mrt = "Petrolina",
   tipologia_de_uso = c(
     "MÉDIA GERAL (USO INDEFINIDO)",
@@ -5662,7 +5664,7 @@ MRT_PETROLINA_2017 <- data.frame(
 )
 
 ## 2019 ####
-MRT_Petrolina_29003_2019 <- data.frame(
+PEMRT_Petrolina_29003_2019 <- data.frame(
   mrt = "Petrolina - 29003",
   tipologia_de_uso = c("Geral", "Terra de pecuária", "Terra de agricultura", "Terra de pecuária de sequeiro", "Terra de agricultura irrigada na margem do rio São Francisco", "Terra de agricultura irrigada em Perímetro Irrigado", "Terra de agricultura irrigada em Perímetro Irrigado - PISNC", "Terra de agricultura irrigada em Perímetro Irrigado - Maria Tereza"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3),
@@ -5675,7 +5677,7 @@ MRT_Petrolina_29003_2019 <- data.frame(
 )
 
 ## 2022 ####
-MRT3_Petrolina_2022 <- data.frame(
+PEMRT3_Petrolina_2022 <- data.frame(
   mrt = "MRT 3 - Petrolina",
   tipologia_de_uso = c("Geral", "Pecuária", "Agrícola", "Pecuária - Diversos - Baixa capacidade", "Agrícola - Fruticultura - Alta capacidade-Irrigado", "Agrícola - Fruticultura - Alta capacidade - Irrigado - Margem do rio São Francisco", "Agrícola - Fruticultura - Alta capacidade - Irrigado - PISNC*", "Agrícola - Fruticultura - Alta capacidade - Irrigado - Maria Tereza**"),
   nivel = c(0, 1, 1, 2, 2, 3, 3, 3),
@@ -5688,7 +5690,7 @@ MRT3_Petrolina_2022 <- data.frame(
 )
 
 ## 2024 ####
-MRT3_Petrolina_2024 <- data.frame(
+PEMRT3_Petrolina_2024 <- data.frame(
   mrt = "MRT 3 - Petrolina",
   tipologia_de_uso = c("Geral", "Pecuária", "Agricola", "Pecuária Diversos - Baixa capacidade", "Agrícola - Fruticultura - Alta capacidade - Irrigado", "Agricola-Fruticultura - Alta capacidade - Irrigado - PI Bebedouro", "Agrícola - Fruticultura - Alta capacidade-Irrigado - PISNC**", "Agrícola - Fruticultura - Alta capacidade - Irrigado - Maria Tereza***"),
   nivel = c(0, 1, 1, 2, 2, 3, 3, 3),
@@ -5702,7 +5704,7 @@ MRT3_Petrolina_2024 <- data.frame(
 
 ## MRT Sertão do São Franscisco - BA ####
 ## 2017 ####
-MRT_SERTAO_SAO_FRANCISCO_BA_2017 <- data.frame(
+PEMRT_SERTAO_SAO_FRANCISCO_BA_2017 <- data.frame(
   mrt = "Sertão do São Franscisco - BA",
   tipologia_de_uso = c(
     "MÉDIA GERAL (USO INDEFINIDO)",
@@ -5725,7 +5727,9 @@ MRT_SERTAO_SAO_FRANCISCO_BA_2017 <- data.frame(
 )
 
 ## 2019 ####
-MRT_Sertao_do_Sao_Francisco_BA_29004_2019 <- data.frame(
+# Isso aqui é o sertão do são francisco da bahia, por algum motivo estava na ppr de 2019 de Pernambuco.
+#
+PEMRT_Sertao_do_Sao_Francisco_BA_29004_2019 <- data.frame(
   mrt = "Sertão do São Francisco -BA - 29004",
   tipologia_de_uso = c("Geral", "Terra de pecuária", "Terra de agricultura", "Terra de pecuária de sequeiro", "Terra de agricultura irrigada na margem do rio São Francisco", "Terra de agricultura irrigada em perímetro irrigado", "Terra de pecuária de sequeiro - Região de Curaçá", "Terra de pecuária de sequeiro Região de Glória", "Terra de agricultura irrigada na margem do rio São Francisco - Região de Curaça", "Terra de agricultura irrigada na margem do rio São Francisco - Região de Glória"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3),
@@ -5738,11 +5742,12 @@ MRT_Sertao_do_Sao_Francisco_BA_29004_2019 <- data.frame(
 )
 #Esse mercado é retirado posteriormente, por algum motivo deixaram essas cidades da Bahia na PPR 2017
 # O link tá aqui, não sei bem o que fazer com isso:
-# https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_UA_sertao_petrolina_2017.pdf
+# https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_ramt_UA_sertao_petrolina_2020.pdf
+# Alguns anos divergem dos documentos, pois, os anos das planilhas nos documentos são distintos do ano do próprio documento.
 
 ## MRT - Metropolitana ####
 ## 2019 ####
-MRT_I_Metropolitana_2019 <- data.frame(
+PEMRT_I_Metropolitana_2019 <- data.frame(
   mrt = "I - Metropolitana",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Terra de exploração mista"),
   nivel = c(0, 1),
@@ -5756,7 +5761,7 @@ MRT_I_Metropolitana_2019 <- data.frame(
 
 ## MRT - Mata norte ####
 ## 2019 ####
-MRT_II_Mata_Norte_2019 <- data.frame(
+PEMRT_II_Mata_Norte_2019 <- data.frame(
   mrt = "II -Mata Norte",
   tipologia_de_uso = c("Uso indefinido (mÃ©dia geral do MRT)", "Terra de agricultura", "Terra de pecuÃ¡ria", "Terra de Agricultura com cana-de-aÃ§Ãºcar em relevo movimentado", "Terra de pecuÃ¡ria/pastagem plantada de baixo suporte", "Terra de pecuÃ¡ria com pastagem plantada de baixo suporte (GlÃ³ria de GoitÃ¡)"),
   nivel = c(0, 1, 1, 1, 2, 3),
@@ -5769,7 +5774,7 @@ MRT_II_Mata_Norte_2019 <- data.frame(
 )
 
 ## 2022 ####
-MRT_II_Mata_Norte_2022 <- data.frame(
+PEMRT_II_Mata_Norte_2022 <- data.frame(
   mrt = "II -Mata Norte",
   tipologia_de_uso = c( "Geral", "Pecuária", "Agrícola","Exploração Mista", "Não Agrícola", "Agrícola – Cana", "Pecuária – Bovino – Pastagem Formada", "Pecuária – Diversos", "Exploração Mista – Diversificada", "Agrícola – Cana – Vicência", "Pecuária – Bovino – Pastagem Formada – Pombos", "Exploração Mista – Diversificada – Pombos"),
   nivel = c(0,1,1,1,1,2,2,2,2,3,3,3),
@@ -5783,7 +5788,7 @@ MRT_II_Mata_Norte_2022 <- data.frame(
 
 ## MRT - Mata sul ####
 ## 2019 ####
-MRT_III_Mata_Sul_2019 <- data.frame(
+PEMRT_III_Mata_Sul_2019 <- data.frame(
   mrt = "III - Mata Sul",
   tipologia_de_uso = c("Uso indefinido (mÃ©dia geral do MRT)", "Terra de Agricultura", "Terra de pecuÃ¡ria", "Terra de Agricultura/Cana-de-aÃ§Ãºcar em relevo movimentado", "Terra de pecuÃ¡ria/Com pastagem plantada de alto suporte"),
   nivel = c(0, 1, 1, 2, 2),
@@ -5796,7 +5801,7 @@ MRT_III_Mata_Sul_2019 <- data.frame(
 )
 
 ## 2022 ####
-MRT_III_Mata_Sul_2022 <- data.frame(
+PEMRT_III_Mata_Sul_2022 <- data.frame(
   mrt = "III - Mata Sul",
   tipologia_de_uso = c("Geral", "Pecuária", "Agrícola", "Exploração Mista", "Agrícola - Cana", "Pecuária - Bovino - Pastagem Formada", "Exploração Mista - Diversificada - Baixa Capacidade", "Agrícola - Cana - Escada", "Pecuária - Bovino - Pastagem Formada - Água Preta", "Pecuária - Bovino - Pastagem Formada - Amaraji", "Pecuária - Bovino - Pastagem Formada - Cortês", "Pecuária - Bovino - Pastagem Formada - Quipapá", "Pecuária - Bovino - Pastagem Formada - São Benedito do Sul", "Exploração Mista - Diversificada - Palmares"),
   nivel = c(0,1,1,1,2,2,2,3,3,3,3,3,3,3),
@@ -5810,7 +5815,7 @@ MRT_III_Mata_Sul_2022 <- data.frame(
 
 ## MRT - Agreste Leste ####
 ## 2019 ####
-MRT_IV_Agreste_Leste_2019 <- data.frame(
+PEMRT_IV_Agreste_Leste_2019 <- data.frame(
   mrt = "IV - Agreste Leste",
   tipologia_de_uso = c("Uso indefinido (mÃ©dia geral do MRT)", "Terra de exploraÃ§Ã£o mista", "Terra de pecuÃ¡ria", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos", "Terra de exploraÃ§Ã£o mista/Sem recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem nativa com recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem nativa sem recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem plantada com recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem plantada sem recursos hÃ­dricos", "Terra de pecuÃ¡ria/Com pastagem nativa sem recursos hÃ­dricos (Bezerros)", "Terra de pecuÃ¡ria/Com pastagem plantada com recursos hÃ­dricos (Limoeiro)", "Terra de pecuÃ¡ria/Com pastagem plantada sem recursos hÃ­dricos (Passira)", "Terra de pecuÃ¡ria/Com pastagem plantada sem recursos hÃ­dricos (Limoeiro)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3),
@@ -5823,7 +5828,7 @@ MRT_IV_Agreste_Leste_2019 <- data.frame(
 )
 
 ## 2022 ####
-MRT_IV_Agreste_Leste_2022 <- data.frame(
+PEMRT_IV_Agreste_Leste_2022 <- data.frame(
   mrt = "IV - Agreste Leste",
   tipologia_de_uso =  c("Geral", "Pecuária", "Exploração Mista", "Não Agrícola", "Pecuária - Bovino - Pastagem Formada", "Pecuária - Bovino - Pastagem Nativa", "Pecuária - Diversos", "Exploração Mista - Diversificada", "Pecuária - Bovino - Baixa capacidade - Pastagem Formada - Agrestina", "Pecuária - Bovino - Pastagem Formada - Altinho", "Pecuária - Bovino - Pastagem Formada - Gravatá", "Pecuária - Bovino - Pastagem Formada - Surubim", "Pecuária - Bovino - Pastagem Formada - Chã Grande", "Pecuária - Bovino - Baixa capacidade - Pastagem Nativa - Bezerros", "Pecuária - Diversos - Gravatá", "Exploração Mista - Diversificada - Chã Grande", "Exploração Mista - Diversificada - Cumaru", "Exploração Mista - Diversificada - Frei Miguelinho", "Exploração Mista - Diversificada - Gravatá"),
   nivel = c(0,1,1,1,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3) ,
@@ -5838,7 +5843,7 @@ MRT_IV_Agreste_Leste_2022 <- data.frame(
 
 ## MRT - Agreste Oeste ####
 ## 2019 ####
-MRT_V_Agreste_Oeste_2019 <- data.frame(
+PEMRT_V_Agreste_Oeste_2019 <- data.frame(
   mrt = "V - Agreste Oeste",
   tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Não Agrícola", "Pecuária - Bovino - Pastagem Formada", "Pecuária - Bovino - Pastagem Nativa", "Pecuária - Diversos", "Exploração Mista - Diversificada", "Pecuária - Bovino - Pastagem Formada - Águas Belas", "Pecuária - Bovino - Pastagem Formada - Angelim", "Pecuária - Bovino - Pastagem Formada - Cachoeirinha", "Pecuária - Bovino - Pastagem Formada - Caetés", "Pecuária - Bovino - Pastagem Formada - Capoeiras", "Pecuária - Bovino - Pastagem Formada - Iati", "Pecuária - Bovino - Pastagem Formada - Itaíba", "Pecuária - Bovino - Pastagem Formada - Jurema", "Pecuária - Bovino - Pastagem Formada - Pedra", "Pecuária - Bovino - Pastagem Nativa - Águas Belas", "Pecuária - Bovino - Pastagem Nativa - Buíque", "Pecuária - Bovino - Pastagem Nativa - Cachoeirinha", "Pecuária - Bovino - Pastagem Nativa - Itaíba", "Pecuária - Bovino - Pastagem Nativa - Pedra", "Exploração Mista - Diversificada - Águas Belas", "Exploração Mista - Diversificada - Belo Jardim", "Exploração Mista - Diversificada - Bom Conselho", "Exploração Mista - Diversificada - Iati", "Exploração Mista - Diversificada - Itaíba", "Exploração Mista - Diversificada - Saloá", "Exploração Mista - Diversificada - São Caetano", "Exploração Mista - Diversificada - Taquaritinga do Norte"), 
   nivel =  c(0,1,1,1,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3),
@@ -5852,7 +5857,7 @@ MRT_V_Agreste_Oeste_2019 <- data.frame(
 
 ## MRT - Bonito ####
 ##2019####
-MRT_VI_Bonito_2019 <- data.frame(
+PEMRT_VI_Bonito_2019 <- data.frame(
   mrt = "VI - Bonito",
   tipologia_de_uso = c("Uso indefinido (mÃ©dia geral do MRT)", "Terra de exploraÃ§Ã£o mista", "Terra de pecuÃ¡ria", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem plantada com recursos hÃ­dricos", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos (SÃ£o Joaquim do Monte)", "Terra de pecuÃ¡ria/Com pastagem plantada com recursos hÃ­dricos (SÃ£o Joaquim do Monte)", "Terra de pecuÃ¡ria/Com pastagem plantada com recursos hÃ­dricos (Bonito)", "Terra de pecuÃ¡ria/Com pastagem plantada com recursos hÃ­dricos (Barra de Guabiraba)"),
   nivel = c(0, 1, 1, 2, 2, 3, 3, 3, 3),
@@ -5864,7 +5869,7 @@ MRT_VI_Bonito_2019 <- data.frame(
   vtn_maximo = c(18093.2, 24896.92, 19446.72, 24896.92, 18500.74, 14002.0, 9236.85, 23175.07, 16506.41)
 )
 ##2022####
-MRT_VI_Bonito_2022 <- data.frame(
+PEMRT_VI_Bonito_2022 <- data.frame(
   mrt ="VI - Bonito",
   tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Pecuária - Bovino - Pastagem Formada", "Pecuária - Diversos", "Exploração Mista - Diversificada", "Pecuária - Bovino - Pastagem Formada - Barra de Guabiraba", "Pecuária - Bovino - Pastagem Formada - Bonito", "Pecuária - Bovino - Pastagem Formada - Camocim de São Félix", "Pecuária - Bovino - Pastagem Formada - Sairé", "Pecuária - Bovino - Pastagem Formada - São Joaquim do Monte", "Exploração Mista - Diversificada - Barra de Guabiraba", "Exploração Mista - Diversificada - Bonito", "Exploração Mista - Diversificada - Sairé"),
   nivel = c(0,1,1,2,2,2,3,3,3,3,3,3,3,3),
@@ -5878,7 +5883,7 @@ MRT_VI_Bonito_2022 <- data.frame(
 
 ## MRT - Garanhuns ####
 ##2019####
-MRT_VII_Garanhuns__2019 <- data.frame(
+PEMRT_VII_Garanhuns__2019 <- data.frame(
   mrt = "VII - Garanhuns",
   tipologia_de_uso = c("Uso indefinido (mÃ©dia geral do MRT)", "Terra de exploraÃ§Ã£o mista", "Terra de pecuÃ¡ria", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem nativa sem recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem plantada com recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem plantada sem recursos hÃ­dricos", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos (Garanhuns)", "Terra de pecuÃ¡ria/Com pastagem plantada com recursos hÃ­dricos (Bom Conselho)", "Terra de pecuÃ¡ria/Com pastagem plantada sem recursos hÃ­dricos (Bom Conselho)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3),
@@ -5890,7 +5895,7 @@ MRT_VII_Garanhuns__2019 <- data.frame(
   vtn_maximo = c(9692.08, 12490.14, 8814.17, 13602.45, 4536.9, 10930.16, 4180.14, 13602.45, 10149.87, 4180.14)
 )
 ##2022####
-MRT_VII_Garanhuns_2022 <- data.frame(
+PEMRT_VII_Garanhuns_2022 <- data.frame(
   mrt = "VII - Garanhuns",
   tipologia_de_uso =c("Geral", "Pecuária", "Exploração Mista", "Pecuária - Bovino - Pastagem Formada", "Pecuária - Bovino - Pastagem Nativa", "Exploração Mista - Diversificada", "Pecuária - Bovino - Pastagem Formada - Brejão", "Pecuária - Bovino - Pastagem Formada - São João", "Pecuária - Bovino - Pastagem Formada - Terezinha", "Exploração Mista - Diversificada - Bom Conselho", "Exploração Mista - Diversificada - Brejão", "Exploração Mista - Diversificada - Garanhuns", "Exploração Mista - Diversificada - São João"),
   nivel= c(0,1,1,2,2,2,3,3,3,3,3,3,3),
@@ -5904,7 +5909,7 @@ MRT_VII_Garanhuns_2022 <- data.frame(
 
 ## MRT - Garanhuns ####
 ##2019####
-MRT_VIII_Serto_2019 <- data.frame(
+PEMRT_VIII_Serto_2019 <- data.frame(
   mrt = "VIII - Sertãoo",
   tipologia_de_uso = c("Uso indefinido (mÃ©dia geral do MRT)", "Terra de exploraÃ§Ã£o mista", "Terra de pecuÃ¡ria", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos", "Terra de exploraÃ§Ã£o mista/Sem recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem nativa com recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem nativa sem recursos hÃ­dricos", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos (SertÃ¢nia)", "Terra de pecuÃ¡ria/Com pastagem nativa com recursos hÃ­dricos (SertÃ¢nia)", "Terra de pecuÃ¡ria/Com pastagem nativa sem recursos hÃ­dricos (SertÃ¢nia)", "Terra de exploraÃ§Ã£o mista/Sem recursos hÃ­dricos (Inguaracy)", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos (Afogados da Ingazeira)", "Terra de pecuÃ¡ria/Com pastagem nativa sem recursos hÃ­dricos (Tabira)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
@@ -5917,7 +5922,7 @@ MRT_VIII_Serto_2019 <- data.frame(
 )
 
 ##2022####
-MRT_VIII_Serto_2022 <- data.frame(
+PEMRT_VIII_Serto_2022 <- data.frame(
   mrt = "VIII - Sertão",
   tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Não Agrícola", "Pecuária - Diversos - Baixa capacidade", "Exploração Mista - Diversificada - Baixa capacidade", "Pecuária - Diversos - Afogados da Ingazeira", "Pecuária - Diversos - Custódia", "Pecuária - Diversos - Flores", "Pecuária - Diversos - Iguaraci", "Pecuária - Diversos - Santa Terezinha", "Pecuária - Diversos - São José do Egito", "Pecuária - Diversos - Sertânia", "Exploração Mista - Diversificada - Afogados da Ingazeira", "Exploração Mista - Diversificada - Custódia", "Exploração Mista - Diversificada - Flores", "Exploração Mista - Diversificada - Iguaraci", "Exploração Mista - Diversificada - Itapetim", "Exploração Mista - Diversificada - São José do Egito", "Exploração Mista - Diversificada - Sertânia"),
   nivel = c(0,1,1,1,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3),
@@ -5931,37 +5936,37 @@ MRT_VIII_Serto_2022 <- data.frame(
 
 ## Consolidação dos dados ####
 PE2017 <- rbind(
-  MRT_SERTAO_PERNAMBUCANO_2017,
-  MRT_SERTAO_SAO_FRANCISCO_PE_2017,
-  MRT_PETROLINA_2017,
-  MRT_SERTAO_SAO_FRANCISCO_BA_2017
+  PEMRT_SERTAO_PERNAMBUCANO_2017,
+  PEMRT_SERTAO_SAO_FRANCISCO_PE_2017,
+  PEMRT_PETROLINA_2017,
+  PEMRT_SERTAO_SAO_FRANCISCO_BA_2017
 )
 
 PE19 <- rbind(
-  MRT_Sertao_Pernambucano_29001_2019,
-  MRT_Sertao_do_Sao_Francisco_PE_29002_2019,
-  MRT_Petrolina_29003_2019,
-  MRT_Sertao_do_Sao_Francisco_BA_29004_2019,
-  MRT_I_Metropolitana_2019,
-  MRT_II_Mata_Norte_2019,
-  MRT_III_Mata_Sul_2019,
-  MRT_IV_Agreste_Leste_2019,
-  MRT_IX_Triunfo_2019,
-  MRT_V_Agreste_Oeste_2019,
-  MRT_VI_Bonito_2019,
-  MRT_VII_Garanhuns__2019,
-  MRT_VIII_Serto_2019
+  PEMRT_Sertao_Pernambucano_29001_2019,
+  PEMRT_Sertao_do_Sao_Francisco_PE_29002_2019,
+  PEMRT_Petrolina_29003_2019,
+  PEMRT_Sertao_do_Sao_Francisco_BA_29004_2019,
+  PEMRT_I_Metropolitana_2019,
+  PEMRT_II_Mata_Norte_2019,
+  PEMRT_III_Mata_Sul_2019,
+  PEMRT_IV_Agreste_Leste_2019,
+  PEMRT_IX_Triunfo_2019,
+  PEMRT_V_Agreste_Oeste_2019,
+  PEMRT_VI_Bonito_2019,
+  PEMRT_VII_Garanhuns__2019,
+  PEMRT_VIII_Serto_2019
 )
 
 
 PE22<- rbind(
-  MRT_II_Mata_Norte_2022,
-  MRT_III_Mata_Sul_2022,
-  MRT_IV_Agreste_Leste_2022,
-  MRT_V_Agreste_Oeste_2019,
-  MRT_VI_Bonito_2022,
-  MRT_VII_Garanhuns_2022,
-  MRT_VIII_Serto_2022
+  PEMRT_II_Mata_Norte_2022,
+  PEMRT_III_Mata_Sul_2022,
+  PEMRT_IV_Agreste_Leste_2022,
+  PEMRT_V_Agreste_Oeste_2019,
+  PEMRT_VI_Bonito_2022,
+  PEMRT_VII_Garanhuns_2022,
+  PEMRT_VIII_Serto_2022
 )
 
 PE2022 <- rbind(
@@ -5971,9 +5976,12 @@ PE2022 <- rbind(
   MRT3_Petrolina_2022
 )
 
+# No ano de 24 não fizeram a área do sertão pernambucano
+#https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_29MSF_2024.pdf
+
 PE2024 <- rbind(
-  MRT2_Sertao_SF_Pernambucano_2024,
-  MRT3_Petrolina_2024
+  PEMRT2_Sertao_SF_Pernambucano_2024,
+  PEMRT3_Petrolina_2024
 )
 
 PE2017$ano <- 2017
@@ -6027,5 +6035,1741 @@ PETEMPORAL <- PETEMPORAL |>
     )
   )
 
-#AJEITAR A PARTIR DE PB..
-#Isso aqui tá péssimo. É uma zorra.
+
+### 14. Paraná ####
+### MRT: Noroeste ####
+### 2017 ####
+PRmrt_noroeste <- data.frame(
+  mrt = "Noroeste",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Lavoura", "Pecuária", "Lavoura Anual", "Lavoura Perene", "Pecuária de Corte"),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(22934.17, 28771.40, 22798.00, 40042.94, 22772.54, 22798.00),
+  vti_minimo = c(19494.04, 24455.69, 19378.30, 34036.50, 19356.66, 19378.30),
+  vti_maximo = c(26374.29, 33087.11, 26217.70, 46049.39, 26188.42, 26217.70),
+  vtn_media = c(21349.57, 28142.76, 20769.92, 38904.69, 22623.91, 20769.92),
+  vtn_minimo = c(18147.14, 23921.35, 17654.43, 33068.99, 19230.32, 17654.43),
+  vtn_maximo = c(24552.01, 32364.18, 23885.41, 44740.39, 26017.49, 23885.41)
+)
+
+### 2019 ####
+PRMRT1_2019 <- data.frame(
+  mrt ="Noroeste",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura"),
+  nivel = c(0, 1, 1, 1),
+  vti_media = c(27685.53, 27244.08, 27648.10, 28609.69),
+  vti_minimo = c(23532.70, 23157.47, 23496.64, 24318.23),
+  vti_maximo = c(31838.36, 31330.70, 31789.57, 32901.14),
+  vtn_media = c(26535.47, 25651.45, 26769.71, 28226.56),
+  vtn_minimo = c(22555.15, 21803.73, 22754.25, 23992.58),
+  vtn_maximo = c(30515.79, 29499.17, 30785.17, 32460.55)
+)
+
+### 2021 ####
+PRMRT1_2021 <- data.frame(
+  mrt = "Noroeste",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Agricultura", "Lavoura Anual Superior", "Lavoura Anual Padrão", "Lavoura Perene"),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(43729.71, 42166.89, 48094.17, 112181.51, 52331.28, 39319.62),
+  vti_minimo = c(37170.25, 35841.85, 40880.05, 95354.28, 44481.58, 33421.68),
+  vti_maximo = c(50289.16, 48491.92, 55308.30, 129008.73, 60180.97, 45217.56),
+  vtn_media = c(41636.62, 39144.37, 47026.58, 108612.12, 50576.38, 39133.45),
+  vtn_minimo = c(35391.13, 33272.72, 39972.60, 91970.11, 42989.92, 33263.43),
+  vtn_maximo = c(47882.11, 45016.03, 54080.57, 125430.14, 58162.83, 45003.47)
+)
+
+### 2022 ####
+PRMRT1_2022 <- data.frame(
+  mrt = "Noroeste",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Agricultura", "Pecuária Padrão", "Lavoura Anual Superior", "Lavoura Anual Padrão", "Lavoura Perene"),
+  nivel = c(0, 1, 1, 2, 2, 2, 2),
+  vti_media = c(57825.32, 58244.48, 59695.06, 58560.29, 140869.27, 73072.10, 55764.93),
+  vti_minimo = c(49151.52, 49507.81, 50740.80, 49776.24, 119738.88, 62111.28, 47400.19),
+  vti_maximo = c(66499.12, 66981.15, 68649.32, 67344.33, 161999.66, 84032.91, 64129.67),
+  vtn_media = c(56173.64, 55348.68, 59361.68, 55678.45, 140128.84, 72473.56, 55446.45),
+  vtn_minimo = c(47747.59, 47046.38, 50457.43, 47326.68, 119109.51, 61602.53, 47129.49),
+  vtn_maximo = c(64599.69, 63650.99, 68265.94, 64030.21, 161148.16, 83344.60, 63763.42)
+)
+
+### 2024 ####
+PRMRT1_2024 <- data.frame(
+  mrt = "Noroeste",
+  tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Pecuária", "Agrícola - Grãos Diversos", "Agrícola - Cana", "Agrícola Grãos Soja", "Exploração Mista-Agrícola + Pastagem", "Pecuária - Bovino - Pastagem Formada"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(60972.33, 64436.14, 60007.25, 56546.19, 82374.33, 62243.03, 63456.11, 60943.95, 56546.19),
+  vti_minimo = c(51826.48, 54770.72, 51006.16, 48064.26, 70018.18, 52906.58, 53937.69, 51802.36, 48064.26),
+  vti_maximo = c(70118.18, 74101.56, 69008.34, 65028.12, 94730.48, 71579.48, 72974.53, 70085.54, 65028.12),
+  vtn_media = c(60333.30, 64436.14, 58974.19, 56094.22, 82374.33, 62243.03, 63456.11, 59723.06, 56094.22),
+  vtn_minimo = c(51283.31, 54770.72, 50128.06, 47680.09, 70018.18, 52906.58, 53937.69, 50764.60, 47680.09),
+  vtn_maximo = c(69383.30, 74101.56, 67820.32, 64508.35, 94730.48, 71579.48, 72974.53, 68681.52, 64508.35)
+)
+
+### MRT 02 -  Oeste/Sudoeste ####
+### 2017 ####
+PRmrt_oeste_sudoeste <- data.frame(
+  mrt = "Oeste/Sudoeste",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Lavoura", "Exploração Mista", "Lavoura Padrão", "Exploração Mista Padrão"),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(40023.27, 54783.36, 24669.23, 54783.36, 24669.23),
+  vti_minimo = c(34019.78, 46565.85, 20968.85, 46565.85, 20968.85),
+  vti_maximo = c(46026.76, 63000.86, 28369.62, 63000.86, 28369.62),
+  vtn_media = c(38841.12, 53226.81, 23859.07, 53226.81, 23859.07),
+  vtn_minimo = c(33014.95, 45242.79, 20280.21, 45242.79, 20280.21),
+  vtn_maximo = c(44667.29, 61210.83, 27437.93, 61210.83, 27437.93)
+)
+
+### 2019 ####
+PRMRT2_2019 <- data.frame(
+  mrt = "Oeste/Sudoeste",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura"),
+  nivel = c(0, 1, 1, 1),
+  vti_media = c(44922.18, 22422.65, 37523.27, 75543.31),
+  vti_minimo = c(38183.85, 19059.26, 31894.78, 64211.81),
+  vti_maximo = c(51660.50, 25786.05, 43151.76, 86874.81),
+  vtn_media = c(42150.34, 20914.80, 33486.28, 72678.23),
+  vtn_minimo = c(35827.79, 17777.58, 28463.34, 61776.49),
+  vtn_maximo = c(48472.90, 24052.02, 38509.22, 83579.96)
+)
+
+### 2021####
+PRMRT2_2021 <- data.frame(
+  mrt = "Oeste/Sudoeste",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Pecuária", "Exploração Mista", "Agricultura", "Pecuária Padrão", "Exploração Mista Padrão-Lavoura", "Lavoura Anual Superior", "Lavoura Anual Padrão"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(90847.33, 42247.60, 74121.74, 127464.64, 42247.60, 74121.74, 195632.99, 90017.00),
+  vti_minimo = c(77220.23, 35910.46, 63003.48, 108344.95, 35910.46, 63003.48, 166288.04, 76514.45),
+  vti_maximo = c(104474.44, 48584.74, 85240.00, 146584.34, 48584.74, 85240.00, 224977.93, 103519.55),
+  vtn_media = c(86702.77, 34705.54, 70761.77, 112735.89, 34705.54, 70761.77, 193972.36, 84496.11),
+  vtn_minimo = c(73697.36, 29499.71, 60147.50, 95825.51, 29499.71, 60147.50, 164876.51, 71821.70),
+  vtn_maximo = c(99708.19, 39911.37, 81376.03, 129646.27, 39911.37, 81376.03, 223068.22, 97170.53))
+  
+### 2022 ###
+PRMRT2_2022 <- data.frame(
+  mrt ="Oeste/Sudoeste",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Pecuária Padrão", "Exploração Mista Padrão-Lavoura", "Lavoura Anual Superior", "Lavoura Anual Padrão"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(125665.85, 51932.09, 72218.30, 151435.15, 51932.09, 72218.30, 194337.03, 108643.10),
+  vti_minimo = c(106815.97, 44142.28, 61385.55, 128719.88, 44142.28, 61385.55, 165186.47, 92346.63),
+  vti_maximo = c(144515.73, 59721.91, 83051.04, 174150.42, 59721.91, 83051.04, 223487.58, 124939.56),
+  vtn_media = c(121692.08, 49170.72, 69145.56, 147193.08, 49170.72, 69145.56, 191531.22, 104951.85),
+  vtn_minimo = c(103438.27, 41795.11, 58773.73, 125114.12, 41795.11, 58773.73, 162801.54, 89209.07),
+  vtn_maximo = c(139945.90, 56546.33, 79517.40, 169272.04, 56546.33, 79517.40, 220260.90, 120694.63)
+)
+
+### 2024 ###
+PRMRT2_2024 <- data.frame(
+  mrt = "Oeste/Sudoeste",
+  tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Pecuária", "Agrícola - Grãos Diversos", "Exploração Mista-Agrícola Pastagem", "Pecuária-Bovino-Pastagem Formada"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(104429.94, 121372.68, 93699.98, 43188.76, 121629.97, 93109.12, 50514.24),
+  vti_minimo = c(88765.45, 103166.78, 79644.98, 36710.45, 103385.47, 79142.75, 42937.10),
+  vti_maximo =c(120094.43, 139578.58, 107754.98, 49667.07, 139874.47, 107075.49, 58091.38),
+  vtn_media = c(101666.37, 120893.89, 89010.74, 41217.13, 121107.46, 88087.55, 52872.22),
+  vtn_minimo = c(86416.41, 102759.81, 75659.13, 35034.56, 102941.34, 74874.42, 44941.39),
+  vtn_maximo = c(116916.33, 139027.97, 102362.35, 47399.70, 139273.58, 101300.68, 60803.05)
+)
+
+### MRT 03 - Norte ####
+### 2017 ###
+PRmrt_norte <- data.frame(
+  mrt = "Norte",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Lavoura", "Pecuária", "Exploração Mista", "Lavoura Superior", "Lavoura Regular"),
+  nivel = c(0, 1, 1, 1, 2, 2),
+  vti_media = c(39798.88, 49138.56, 21549.10, 30343.56, 53710.04, 30852.63),
+  vti_minimo = c(33829.05, 41767.77, 18316.73, 25792.03, 45653.53, 26224.74),
+  vti_maximo = c(45768.72, 56509.34, 24781.46, 34895.10, 61766.54, 35480.53),
+  vtn_media = c(39039.28, 48557.94, 19547.70, 29642.93, 53122.35, 30300.29),
+  vtn_minimo = c(33183.39, 41274.25, 16615.54, 25196.49, 45154.00, 25755.25),
+  vtn_maximo = c(44895.17, 55841.63, 22479.85, 34089.37, 61090.70, 34845.34)
+)
+
+### 2019 ###
+PRMRT3_2019 <- data.frame(
+  mrt = "Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Agricultura"),
+  nivel = c(0, 1, 1),
+  vti_media = c(48131.38, 24395.07, 50822.74),
+  vti_minimo = c(40911.68, 20735.81, 43199.33),
+  vti_maximo = c(55351.09, 28054.33, 58446.15),
+  vtn_media = c(46129.84, 23605.42, 49432.52),
+  vtn_minimo = c(39210.36, 20064.61, 42017.64),
+  vtn_maximo = c(53049.31, 27146.24, 56847.40)
+)
+### 2021 ###
+PRMRT3_2021 <- data.frame(
+  mrt = "Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Pecuária Superior", "Pecuária Padrão", "Exploração Mista Padrão-Lavoura", "Lavoura Anual Superior", "Lavoura Anual Padrão", "Lavoura Perene*"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(60524.37, 44779.40, 60590.98, 80760.64, 64389.73, 36490.40, 60590.82, 113582.73, 60556.05, 78739.87),
+  vti_minimo = c(51445.72, 38062.49, 51502.34, 68646.54, 54731.27, 31016.84, 51502.34, 96545.32, 51642.64, 66928.89),
+  vti_maximo = c(69603.03, 51496.32, 69679.63, 92874.73, 74048.18, 41963.96, 67963.93, 130620.14, 69639.46, 90550.85),
+  vtn_media = c(60101.96, 46059.31, 59921.20, 81021.24, 57981.28, 35677.30, 59921.20, 113201.13, 59032.28, 78133.50),
+  vtn_minimo = c(51086.66, 39150.46, 50933.02, 68868.06, 49284.09, 30325.93, 50933.02, 96061.45, 50177.42, 66597.95),
+  vtn_maximo = c(69117.25, 52968.77, 68909.38, 93174.43, 66678.47, 41029.20, 68909.38, 129965.50, 67887.10, 90103.11)
+)
+### 2022 ###
+PRMRT3_2022 <- data.frame(
+  mrt = "Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Pecuária Superior", "Pecuária Padrão", "Exploração Mista Padrão-Lavoura", "Lavoura Anual Superior", "Lavoura Anual Padrão", "Lavoura Perene"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(89554.81, 73768.01, 80566.68, 109201.54, 80901.26, 62127.46, 87172.43, 139269.55, 79562.63, 49135.09),
+  vti_minimo = c(76121.59, 62702.81, 68481.68, 92821.31, 68766.07, 52808.34, 74096.57, 118379.12, 67628.24, 41764.83),
+  vti_maximo = c(102988.03, 84833.21, 92651.68, 125581.77, 93036.45, 71446.58, 100248.29, 160159.99, 91497.03, 56505.36),
+  vtn_media = c(83066.48, 66932.15, 71067.75, 106697.31, 74255.57, 59342.75, 75829.50, 138007.26, 76110.61, 49135.09),
+  vtn_minimo = c(70606.51, 56892.33, 60407.59, 90692.71, 63117.24, 50441.34, 64455.07, 117306.17, 64694.02, 41764.83),
+  vtn_maximo = c(95526.45, 76971.98, 81727.91, 122701.90, 85393.91, 68244.16, 87203.92, 158708.35, 87527.20, 56505.36)
+)
+
+### 2024 ###
+PRMRT3_2024 <- data.frame(
+  mrt = "Norte",
+  tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Pecuária", "Agrícola - Cana", "Agrícola - Grãos Diversos", "Agrícola-Grãos Soja", "Agrícola-Produção Diversificada", "Exploração Mista-Agrícola Pastagem", "Pecuária-Bovino-Pastagem Formada"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(98131.54, 108205.76, 79935.05, 51075.95, 93980.78, 113856.71, 108756.34, 63864.23, 76203.31, 51939.03),
+  vti_minimo = c(83411.81, 91974.90, 67944.79, 43414.56, 79883.66, 96778.20, 92442.89, 54284.60, 64772.81, 44148.18),
+  vti_maximo =  c(112851.27, 124436.62, 91925.31, 58737.34, 108077.90, 130935.22, 125069.79, 73443.86, 87633.81, 59729.88),
+  vtn_media = c(95483.78, 106586.04, 72480.90, 41247.58, 90060.11, 111183.63, 106988.88, 61680.05, 71972.21, 42059.43),
+  vtn_minimo =  c(81161.21, 90598.13, 61608.77, 35060.44, 76551.09, 94506.09, 90940.55, 52428.04, 61176.38, 35750.52),
+  vtn_maximo =  c(109806.35, 122573.95, 83353.04, 47434.72, 103569.13, 127861.17, 123037.21, 70932.06, 82768.04, 48368.34)
+)
+
+### MRT 04 - Litoral/Metropolitana ####
+# Não observaram essse mercado no ano de 2024 - Fonte PPR 2024 PR, link abaixo
+#https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/PPRs_SR09PR_2024.pdf
+### 2017 ####
+PRmrt_litoral <- data.frame(
+  mrt = "Litoral/Metropolitana",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Pecuária", "Reflorestamento", "Pecuária Baixa Lotação", "Reflorestamento Pinus"),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(10787.15, 9208.26, 8167.20, 9208.26, 8557.21),
+  vti_minimo = c(9169.08, 7827.02, 6942.12, 7827.02, 7273.63),
+  vti_maximo = c(12405.22, 10589.49, 9392.28, 10589.49, 9840.79),
+  vtn_media = c(5252.61, 5600.60, 4402.87, 5600.60, 4332.79),
+  vtn_minimo = c(4464.72, 4760.51, 3742.44, 4760.51, 3682.87),
+  vtn_maximo = c(6040.50, 6440.69, 5063.30, 6440.69, 4982.71)
+)
+### 2019 ####
+PRMRT4_2019 <- data.frame(
+  mrt = "Litoral/Metropolitana",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Agricultura", "Reflorestamento"),
+  nivel = c(0, 1, 1, 1),
+  vti_media = c(8994.66, 6938.60, 24232.87, 9514.82),
+  vti_minimo = c(7645.46, 5897.81, 20597.94, 8087.59),
+  vti_maximo = c(10343.86, 7967.89, 27867.80, 10942.04),
+  vtn_media = c(NA, NA, 15303.30, 5406.61),
+  vtn_minimo = c(NA, NA, 13007.81, 4595.62),
+  vtn_maximo = c(NA, NA, 17598.80, 6217.60)
+)
+### 2021 ####
+PRMRT4_2021 <- data.frame(
+  mrt = "Litoral/Metropolitana",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Agricultura", "Reflorestamento", "Vegetação Nativa", "Pecuária Inferior", "Pecuária Padrão", "Lavoura Perene", "Lavoura Anual Padrão", "Agrofloresta", "Mata"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(12397.33, 10281.73, 19704.89, 14371.98, 2889.23, 7851.24, 10655.65, 15385.90, 14682.86, 31611.57, 2889.23),
+  vti_minimo = c(10537.73, 8739.47, 16749.16, 12216.18, 2464.35, 6673.55, 9057.31, 13061.01, 12480.43, 26869.83, 2464.35),
+  vti_maximo = c(14256.93, 11823.99, 22660.63, 16527.77, 3334.12, 9028.93, 12254.00, 17670.78, 16885.29, 36353.31, 3334.12),
+  vtn_media = c(9714.27, 10482.08, 18048.72, 11169.03, 2889.23, 7851.24, 10301.72, 12480.35, 7833.85, 23283.53, 2889.23),
+  vtn_minimo = c(8257.13, 8909.77, 15341.41, 9493.68, 2464.35, 6673.55, 8756.46, 10616.80, 6658.77, 19791.00, 2464.35),
+  vtn_maximo = c(11171.41, 12054.39, 20756.03, 12844.38, 3334.12, 9028.93, 11846.98, 14363.91, 9008.93, 26776.06, 3334.12)
+)
+### 2022 ####
+PRMRT4_2022 <- data.frame(
+  mrt = 4,
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Agricultura", "Reflorestamento", "Vegetação Nativa", "Pecuária Padrão", "Lavoura Anual Superior", "Lavoura Anual Padrão", "Lavoura Perene", "Mata"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(12354.14, 14042.63, 44787.13, 10338.18, 5765.74, 14042.63, 120971.07, 43280.50, 9470.56, 5765.74),
+  vti_minimo = c(10501.02, 11936.24, 38069.06, 8787.46, 4900.88, 11936.24, 102825.41, 36788.42, 8049.98, 4900.88),
+  vti_maximo = c(14207.26, 16149.03, 51505.20, 11888.91, 6630.60, 16149.03, 139116.74, 49772.57, 10891.14, 6630.60),
+  vtn_media = c(11150.98, 13088.56, 35078.39, 10032.21, 4543.72, 13088.56, 115971.07, 35977.53, 10583.72, 5292.79),
+  vtn_minimo = c(9478.33, 11125.28, 29816.64, 8527.38, 3862.16, 11125.28, 98575.41, 30580.90, 8996.17, 4498.88),
+  vtn_maximo = c(12823.63, 15051.85, 40340.15, 11537.04, 5225.27, 15051.85, 133366.74, 41374.16, 12171.28, 6086.71)
+)
+
+#### MRT05: Centro ####
+### 2017 ####
+PRmrt_centro <- data.frame(
+  mrt = "Centro",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Exploração Mista", "Lavoura", "Pastagem", "Exploração Mista Regular", "Exploração Mista Superior", "Lavoura Acesso Inferior", "Lavoura Acesso Superior", "Pastagem Regular", "Pastagem Superior"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(13464.09, 19064.99, 39411.20, 12373.22, 13221.52, 29788.20, 23141.41, 45327.49, 12346.57, 13007.89),
+  vti_minimo = c(11444.47, 16205.24, 33499.52, 10517.24, 11238.29, 25319.97, 19670.20, 38528.36, 10494.59, 11056.71),
+  vti_maximo = c(15483.70, 21924.74, 45322.88, 14229.20, 15204.75, 34256.43, 26612.62, 52126.61, 14198.56, 14959.08),
+  vtn_media = c(13047.81, 18509.97, 39164.31, 11938.51, 12785.82, 28711.73, 22893.47, 45080.97, 11775.21, 12570.85),
+  vtn_minimo = c(11090.64, 15733.48, 33289.66, 10147.73, 10867.94, 24404.97, 19459.45, 38318.83, 10008.93, 10685.22),
+  vtn_maximo = c(15004.99, 21286.47, 45038.95, 13729.29, 14703.69, 33018.49, 26327.50, 51843.12, 13541.50, 14456.47)
+)
+### 2019 ####
+PRMRT5_2019 <- data.frame(
+  mrt = "Centro",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura"),
+  nivel = c(0, 1, 1, 1),
+  vti_media = c(21940.93, 18272.46, 22600.72, 46514.64),
+  vti_minimo = c(18649.79, 15531.59, 19210.61, 39537.44),
+  vti_maximo = c(25232.06, 21013.32, 25990.83, 53491.83),
+  vtn_media = c(21104.10, 17972.16, 21756.97, 45813.21),
+  vtn_minimo = c(17938.48, 15276.34, 18493.74, 38941.23),
+  vtn_maximo = c(24269.71, 20667.99, 25019.59, 52685.19)
+)
+
+### 2021 ####
+PRMRT5_2021 <- data.frame(
+  mrt = "Centro",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Vegetação Nativa", "Pecuária Padrão", "Exploração Mista Padrão-Lavoura", "Lavoura Anual Padrão", "Reserva Legal"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(33250.79, 27594.32, 35214.11, 50367.72, 8402.20, 27594.32, 35214.11, 50367.72, 8402.20),
+  vti_minimo = c(28263.17, 23455.17, 29931.99, 42812.56, 7141.87, 23455.17, 29931.99, 42812.56, 7141.87),
+  vti_maximo = c(38238.41, 31733.46, 40496.23, 57922.87, 9662.53, 31733.46, 40496.23, 57922.87, 9662.53),
+  vtn_media = c(32524.70, 27899.86, 32018.48, 44374.44, 8402.20, 27899.86, 32018.48, 46095.08, 8402.20),
+  vtn_minimo = c(27598.00, 23714.88, 27215.71, 37718.27, 7141.87, 23714.88, 27215.71, 39180.81, 7141.87),
+  vtn_maximo = c(37863.41, 32084.84, 36821.25, 51030.60, 9662.53, 32084.84, 36821.25, 53009.34, 9662.53)
+)
+
+### 2022 ####
+PRMRT5_2022 <- data.frame(
+  mrt = "Centro",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Reflorestamento", "Vegetação Nativa", "Pecuária Padrão", "Pecuária Inferior", "Exploração Mista Padrão-Lavoura", "Lavoura Anual Padrão"),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(53172.54, 35185.59, 59172.08, 114661.98, 56907.24, 63016.53, 36453.21, 28962.76, 59172.08, 114860.58),
+  vti_minimo = c(45196.66, 29907.75, 50296.27, 97462.68, 48371.15, 53564.05, 30985.23, 24618.34, 50296.27, 97631.49),
+  vti_maximo = c(61148.42, 40463.43, 68047.89, 131861.27, 65443.32, 72469.01, 41921.19, 33307.17, 68047.89, 132089.66),
+  vtn_media = c(43021.83, 33728.97, 58862.89, 112518.86, 29601.53, 63016.53, 33567.98, 23136.16, 58862.89, 113871.12),
+  vtn_minimo = c(36568.55, 28669.62, 50033.46, 95641.03, 25161.30, 53564.05, 28532.78, 19665.74, 50033.46, 96790.45),
+  vtn_maximo = c(49475.10, 38788.31, 67692.32, 129396.69, 34041.76, 72469.01, 38603.18, 26606.58, 67692.32, 130951.79)
+)
+
+### 2024 ####
+PRMRT5_2024 <- data.frame(
+  mrt = "Centro",
+  tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Pecuária", "Agrícola - Grãos Diversos", "Exploração Mista-Agrícola Pastagem", "Pecuária-Bovino-Pastagem Formada"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(65358.57, 100435.74, 46626.57, 36685.54, 100435.74, 48029.86, 36838.26),
+  vti_minimo = c(55554.78, 85370.38, 39632.58, 31182.71, 85370.38, 40825.38, 31312.52),
+  vti_maximo = c(75162.36, 115501.10, 53620.56, 42188.37, 115501.10, 55234.34, 42364.00),
+  vtn_media = c(62414.58, 100435.74, 46626.57, 36685.54, 100435.74, 48029.86, 36838.26),
+  vtn_minimo = c(53052.39, 85370.38, 39632.58, 31182.71, 85370.38, 40825.38, 31312.52),
+  vtn_maximo = c(71776.77, 115501.10, 53620.56, 42188.37, 115501.10, 55234.34, 42364.00)
+)
+
+## MRT06 - CENTRO SUL #####
+### 2017 ####
+PRmrt_centro_sul <- data.frame(
+  mrt = "Centro Sul",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Mata", "Exploração Mista", "Pecuária", "Lavoura", "Mata Padrão", "Exploração Mista Regular", "Exploração Mista Superior", "Pecuária Padrão", "Lavoura Regular", "Lavoura Superior"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(9056.21, 3884.76, 11635.02, 9182.51, 20205.14, 3884.76, 6020.38, 17800.66, 9182.51, 14497.50, 24950.00),
+  vti_minimo = c(7697.78, 3302.05, 9889.77, 7805.13, 17174.37, 3302.05, 5117.33, 15130.56, 7805.13, 12322.87, 21207.50),
+  vti_maximo = c(10414.64, 4467.47, 13380.28, 10559.88, 23235.91, 4467.47, 6923.44, 20470.76, 10559.88, 16672.12, 28692.51),
+  vtn_media = c(8684.18, 3884.76, 10899.71, 8834.96, 19690.23, 3884.76, 5910.47, 16797.18, 8834.96, 14227.11, 24232.07),
+  vtn_minimo = c(7381.55, 3302.05, 9264.75, 7509.72, 16736.70, 3302.05, 5023.90, 14277.61, 7509.72, 12093.05, 20597.26),
+  vtn_maximo = c(9986.81, 4467.47, 12534.66, 10160.21, 22643.77, 4467.47, 6797.05, 19316.76, 10160.21, 16361.18, 27866.88)
+)
+
+### 2019 ####
+PRMRT6_2019 <- data.frame(
+  mrt = "Centro Sul",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Vegetação Nativa", "Pecuária Superior", "Pecuária Padrão", "Pecuária Inferior", "Lavoura Anual Padrão", "Lavoura Anual Superior"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(15113.54, 13004.40, 15816.68, 33291.24, 4573.46, 14850.18, 12816.36, 4575.14, 32036.60, 35581.33),
+  vti_minimo = c(12846.51, 11053.74, 13444.18, 28297.55, 3887.44, 12622.65, 10893.90, 3888.04, 27231.11, 30244.13),
+  vti_maximo = c(17380.57, 14955.06, 18189.19, 38284.92, 5259.48, 17089.21, 14738.81, 5261.64, 36842.08, 40918.53),
+  vtn_media = c(14118.74, 12357.69, 14500.65, 31100.79, 4573.46, 13581.70, 12209.40, 4359.63, 30115.46, 34596.70),
+  vtn_minimo = c(12000.93, 10504.04, 12325.55, 26435.67, 3887.44, 11544.44, 10378.00, 3705.69, 25598.14, 29407.27),
+  vtn_maximo = c(16236.55, 14211.35, 16675.75, 35765.91, 5259.48, 15618.95, 14040.82, 5013.58, 34632.78, 39786.30)
+)
+
+### 2021 ####
+PRMRT6_2021 <- data.frame(
+  mrt = "Centro Sul",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploradio Mista", "Agricultura", "Pecuária Padrão", "Exploração Mista Padrão-Lavoura"),
+  nivel = c(0, 1, 1, 1, 2, 2),
+  vti_media = c(20734.44, 22863.01, 19264.29, 26603.34, 22644.02, 20392.84),
+  vti_minimo = c(17624.27, 19433.56, 16374.65, 22612.84, 19247.41, 17333.92),
+  vti_maximo = c(23844.61, 26292.46, 22153.94, 30593.84, 26040.62, 23451.77),
+  vtn_media = c(20414.10, 21312.86, 18245.33, 26045.73, 22531.25, 19533.01),
+  vtn_minimo = c(17351.98, 18115.93, 15508.53, 22138.87, 19151.57, 16603.06),
+  vtn_maximo = c(23476.21, 24509.78, 20982.13, 29952.70, 25910.94, 22462.96)
+)
+
+### 2022 ####
+PRMRT6_2022 <- data.frame(
+  mrt = "Centro Sul",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Reflorestamento", "Vegetação Nativa", "Pecuária Superior", "Pecuária Padrão", "Pecuária Inferior", "Exploração Mista Padrão-Lavoura", "Exploração Mista Padrão-Reflorestame", "Lavoura Anual Superior", "Lavoura Anual Padrão", "Lavoura Anual Inferior", "Mata"),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(33388.91, 25267.67, 43610.71, 70009.54, 15567.22, 5604.18, 36815.53, 27631.17, 22886.33, 47700.14, 29726.94, 104773.15, 68317.65, 54132.48, 5223.99),
+  vti_minimo = c(28380.57, 21477.52, 37069.10, 59508.11, 13232.14, 4763.55, 31293.20, 23486.50, 19453.38, 40545.12, 25267.90, 89057.17, 58070.00, 46012.61, 4440.39),
+  vti_maximo = c(38397.25, 29057.82, 50152.31, 80510.97, 17902.30, 6444.81, 42337.85, 31775.85, 26319.28, 54855.17, 34185.98, 120489.12, 78565.29, 62252.35, 6007.59),
+  vtn_media = c(28468.68, 22385.99, 36243.10, 66925.78, 14681.81, 6972.36, 29444.45, 22814.89, 20085.60, 41415.03, 26691.67, 104773.15, 63206.99, 52829.76, 5466.44),
+  vtn_minimo = c(24198.38, 19028.09, 30806.63, 56886.91, 12479.53, 5926.50, 25027.78, 19392.66, 17072.76, 35202.78, 22687.92, 89057.17, 53725.94, 44905.29, 4646.47),
+  vtn_maximo = c(32738.98, 25743.89, 41679.56, 76964.65, 16884.08, 8018.21, 33861.12, 26237.12, 23098.44, 47627.29, 30695.42, 120489.12, 72688.04, 60754.22, 6286.41)
+)
+
+### 2024 ####
+PRMRT6_2024 <- data.frame(
+  mrt = "Centro Sul",
+  tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Floresta Plantada", "Pecuária", "Vegetação Nativa", "Agrícola - Grãos Diversos", "Agrícola Produção Diversificada", "Exploração Mista - Agricola + Floresta Plantada", "Exploração Mista-Agrícola + Pastagem", "Floresta Plantada - Silvicultura", "Pecuária - Bovino-Pastagem Formada", "Vegetação Nativa - Mata"),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(47505.68, 71996.36, 55580.84, 28680.63, 33753.53, 12305.13, 86584.31, 29523.45, 63912.55, 54491.09, 28680.63, 34168.16, 12305.13),
+  vti_minimo =  c(40379.83, 61196.91, 47243.71, 24378.54, 28690.50, 10459.36, 73596.66, 25094.93, 54325.67, 46317.43, 24378.54, 29042.94, 10459.36),
+  vti_maximo =  c(49187.75, 81329.31, 59240.56, 30351.00, 32044.59, 13868.60, 98502.94, 30125.80, 69427.55, 57702.20, 30351.00, 32433.69, 13868.60),
+  vtn_media = c(42771.96, 70721.14, 51513.53, 26392.17, 27864.86, 12059.65, 85654.73, 26196.35, 60371.78, 50175.83, 26392.17, 28203.21, 12059.65),
+  vtn_minimo = c(36356.17, 60112.97, 43786.50, 22433.34, 23685.13, 10250.70, 72806.52, 22266.90, 51316.01, 42649.46, 22433.34, 23972.73, 10250.70),
+  vtn_maximo = c(49187.75, 81329.31, 59240.56, 30351.00, 32044.59, 13868.60, 98502.94, 30125.80, 69427.55, 57702.20, 30351.00, 32433.69, 13868.60)
+)
+
+### MRT07 - Campos Gerais ####
+### 2017 ####
+PRmrt_campos_gerais <- data.frame(
+  mrt = "Campos Gerais",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Mata", "Exploração Mista", "Lavoura", "Exploração Mista de Alto Potencial", "Exploração Mista de Baixo Potencial"),
+  nivel = c(0, 1, 1, 1, 2, 2),
+  vti_media = c(14611.08, 8861.77, 14330.96, 37778.20, 22667.94, 9754.75),
+  vti_minimo = c(12419.42, 7532.51, 12181.32, 32111.47, 19267.75, 8291.54),
+  vti_maximo = c(16802.74, 10191.04, 16480.61, 43444.93, 26068.13, 11217.96),
+  vtn_media = c(13555.31, 8861.77, 13110.45, 36028.71, 21307.35, 8439.93),
+  vtn_minimo = c(11522.02, 7532.51, 11143.89, 30624.40, 18111.24, 7173.94),
+  vtn_maximo = c(15588.61, 10191.04, 15077.02, 41433.02, 24503.45, 9705.92)
+)
+
+### 2019 ####
+PRMRT7_2019 <- data.frame(
+  mrt = "Campos Gerais",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agricultura", "Vegetação Nativa"),
+  nivel = c(0, 1, 1, 1),
+  vti_media = c(23306.44, 18834.58, 36404.21, 10035.54),
+  vti_minimo = c(19810.48, 16009.40, 30943.58, 8530.21),
+  vti_maximo = c(26802.41, 21659.78, 41864.84, 11540.88),
+  vtn_media = c(18812.19, 13495.87, NA, 9891.08),
+  vtn_minimo = c(15990.36, 11471.49, NA, 8407.42),
+  vtn_maximo = c(21634.02, 15520.25, NA, 11374.74)
+)
+
+### 2021 ####
+PRMRT7_2021 <- data.frame(
+  mrt = "Campos Gerais",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Pecuária Padrão", "Exploração Mista Padrão-Lavoura", "Lavoura Anual Padrão"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(50084.46, 36415.20, 47241.88, 63679.91, 36415.20, 47241.88, 63679.91),
+  vti_minimo = c(42571.79, 30952.92, 40155.43, 54127.92, 30952.92, 40155.43, 54127.92),
+  vti_maximo = c(57597.12, 41877.48, 54127.93, 73231.89, 41877.48, 54327.93, 73231.89),
+  vtn_media = c(46225.77, 32895.71, 43257.71, 57769.34, 32895.71, 43257.71, 57769.34),
+  vtn_minimo = c(39291.90, 27961.35, 36769.06, 49103.94, 27961.35, 36769.06, 49103.94),
+  vtn_maximo = c(53159.63, 37830.07, 49746.06, 66434.74, 37830.07, 49746.06, 66434.74)
+)
+
+### 2022 ####
+PRMRT7_2022 <- data.frame(
+  mrt = "Campos Gerais",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Reflorestamento", "Vegetação Nativa", "Pecuária Padrão", "Pecuária Inferior", "Exploração Mista Padrão-Lavoura", "Exploração Mista Padrão-Refloresta", "Lavoura Anual Superior", "Lavoura Anual Padrão", "Lavoura Anual Inferior", "Lavoura Perene", "Mata"),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(51212.24, 39426.35, 56561.57, 70777.55, 18710.24, 13643.78, 46349.94, 35192.48, 57212.47, 62899.11, 118671.03, 77376.02, 38875.91, 23729.80, 13643.78),
+  vti_minimo = c(43530.40, 33512.40, 48077.33, 60160.92, 15903.71, 11597.21, 39397.45, 29913.61, 48630.60, 53464.25, 100870.38, 65769.61, 33044.53, 20170.33, 11597.21),
+  vti_maximo = c(58894.07, 45340.30, 65045.80, 81394.18, 21516.78, 15690.34, 53302.43, 40471.35, 65794.34, 72333.98, 136471.69, 88982.42, 44707.30, 27289.27, 15690.34),
+  vtn_media = c(42661.62, 32092.48, 47605.00, 65673.59, 19433.80, 13496.20, 33847.56, 29459.85, 47689.29, 47015.01, 115227.51, 71147.00, 33790.75, 20424.02, 13496.20),
+  vtn_minimo = c(36262.37, 27278.61, 40464.25, 55822.55, 16518.73, 11471.77, 28770.43, 25040.88, 40535.90, 39962.76, 97943.38, 60474.95, 28722.14, 17360.41, 11471.77),
+  vtn_maximo = c(49060.86, 36906.35, 54745.76, 75524.63, 22348.87, 15520.63, 38924.70, 33878.83, 54842.68, 54067.26, 132511.63, 81819.05, 38859.37, 23487.62, 15520.63)
+)
+
+### 2024 ####
+PRMRT7_2024 <- data.frame(
+  mrt = 7,
+  tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Pecuária", "Vegetação Nativa", "Agrícola - Grãos Diversos", "Exploração Mista-Agrícola Pastagem", "Pecuária - Bovino - Pastagem Formada", "Vegetação Nativa - Mata"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(74656.68, 99213.01, 39571.74, 93464.36, 26849.30, 99213.01, 43382.92, 92921.78, 26849.30),
+  vti_minimo = c(63458.18, 84331.06, 33635.98, 79444.71, 22821.91, 84331.06, 36875.48, 78983.51, 22821.91),
+  vti_maximo =c(85855.18, 114094.96, 45507.50, 107484.01, 30876.70, 114094.96, 49890.36, 106860.05, 30876.70),
+  vtn_media = c(73251.43, 95556.15, 36983.97, 90399.20, 27861.68, 95556.15, 39781.98, 89418.75, 27861.68),
+  vtn_minimo =  c(62263.72, 81222.73, 31436.37, 76839.32, 23682.43, 81222.73, 33814.68, 76005.94, 23682.43),
+  vtn_maximo =c(84239.14, 109889.57, 42531.57, 103959.08, 32040.93, 109889.57, 45749.28, 102831.56, 32040.93)
+)
+
+### MRT08 - Norte Pioneiro ####
+### 2017 ####
+PRmrt_norte_pioneiro <- data.frame(
+  mrt = "Norte Pioneiro",
+  tipologia_de_uso = c("Uso Indefinido (média geral)", "Exploração Mista", "Lavoura", "Pecuária", "Exploração Mista Regular", "Exploração Mista Superior", "Lavoura Regular", "Lavoura Superior", "Pecuária Regular", "Pecuária Superior"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(22163.11, 22760.29, 31192.37, 18917.18, 19400.35, 26301.33, 29742.12, 35094.44, 16661.60, 21172.76),
+  vti_minimo = c(18838.64, 19346.25, 26513.52, 16079.60, 16490.30, 22356.13, 25280.80, 29830.27, 14162.36, 17996.85),
+  vti_maximo = c(25487.58, 26174.33, 35871.23, 21754.76, 22310.40, 30246.53, 34203.44, 40358.60, 19160.84, 24348.68),
+  vtn_media = c(21206.06, 21712.08, 29784.24, 17945.00, 18541.43, 25363.25, 28765.14, 32349.27, 15842.98, 20047.02),
+  vtn_minimo = c(18025.15, 18455.27, 25316.61, 15253.25, 15760.21, 21558.76, 24450.37, 27496.88, 13466.53, 17039.97),
+  vtn_maximo = c(24386.97, 24968.89, 34251.88, 20636.75, 21322.64, 29167.74, 33079.91, 37201.66, 18219.43, 23054.08)
+)
+
+### 2019 ####
+PRMRT8_2019 <- data.frame(
+  mrt = "Norte Pioneiro",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Pecuária Padrão", "Pecuária Superior"),
+  nivel = c(0, 1, 1, 1, 2, 2),
+  vti_media = c(23047.71, 19744.47, 22771.14, 35167.15, 17997.98, 22756.90),
+  vti_minimo = c(19590.56, 16782.80, 19355.47, 29892.08, 15298.29, 19343.37),
+  vti_maximo = c(26504.87, 22706.14, 26186.82, 40442.23, 20697.68, 26170.44),
+  vtn_media = c(20626.64, 17959.17, 20918.20, 31268.85, 15860.28, 19867.25),
+  vtn_minimo = c(17532.81, 15265.30, 17780.47, 26571.72, 13481.24, 16887.17),
+  vtn_maximo = c(23720.87, 20653.05, 24055.93, 35949.97, 18239.33, 22847.24)
+)
+
+### 2021 ####
+PRMRT8_2021 <- data.frame(
+  mrt = "Norte Pioneiro",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Pecuária Padrão", "Pecuária Inferior", "Exploração Mista Padrão-Lavoura", "Exploração Mista Padrão-Reflorestamento", "Lavoura Anual Superior", "Lavoura Anual Padrão"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(42144.51, 32814.88, 44494.77, 60346.26, 38593.00, 32249.14, 43665.23, 47398.16, 66369.46, 53912.62),
+  vti_minimo = c(35822.84, 27892.65, 37820.55, 51294.32, 32804.05, 27411.94, 35415.44, 40288.43, 56414.04, 45825.73),
+  vti_maximo = c(48466.19, 37737.12, 51168.98, 69398.20, 44381.96, 37086.74, 50215.01, 54507.88, 76324.87, 61999.52),
+  vtn_media = c(39966.95, 30726.96, 36810.99, 59813.54, 36176.88, 30340.41, 38235.97, 37342.97, 61475.37, 53066.89),
+  vtn_minimo = c(33971.91, 26117.92, 31289.34, 50841.51, 30750.35, 25789.34, 32500.00, 31741.52, 52254.01, 45106.86),
+  vtn_maximo = c(45961.99, 35336.01, 42332.64, 68785.57, 41603.42, 34891.91, 43970.43, 42944.41, 70696.61, 61026.93)
+)
+
+### 2022 ####
+PRMRT8_2022 <- data.frame(
+  mrt = "Norte Pioneiro",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Agricultura", "Pecuária Superior", "Pecuária Padrão", "Pecuária Inferior", "Exploração Mista Padrão-Lavoura", "Lavoura Anual Superior", "Lavoura Anual Padrão"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(62204.40, 56805.79, 68411.02, 65106.76, 57723.73, 61515.71, 33084.89, 68411.02, 122551.50, 56168.50),
+  vti_minimo = c(52873.74, 48284.93, 58149.37, 55340.75, 49065.17, 52288.36, 28122.16, 58149.37, 104168.78, 47743.22),
+  vti_maximo = c(71535.06, 65326.66, 78672.67, 74872.78, 66382.29, 70743.07, 38047.63, 78672.67, 140934.23, 64593.77),
+  vtn_media = c(55000.95, 50284.31, 57200.49, 58167.55, 48778.99, 50750.13, 32031.72, 57200.49, 113753.13, 56654.49),
+  vtn_minimo = c(46750.81, 42741.66, 48620.41, 49442.42, 41462.14, 43137.61, 27226.97, 48620.41, 96690.16, 48156.32),
+  vtn_maximo = c(63251.09, 57826.96, 65780.56, 66892.69, 56095.84, 58362.65, 36836.48, 65780.56, 130816.10, 65152.66)
+)
+
+#Esse mercado também não foi observado no ano de 2024. 
+#Link: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/PPRs_SR09PR_2024.pdf
+
+### Consolidação dos dados ####
+PR17 <- rbind(
+  PRmrt_noroeste,
+  PRmrt_oeste_sudoeste,
+  PRmrt_norte,
+  PRmrt_litoral,
+  PRmrt_centro,
+  PRmrt_centro_sul,
+  PRmrt_campos_gerais,
+  PRmrt_norte_pioneiro
+)
+
+PR19 <- rbind(
+  PRMRT1_2019,
+  PRMRT2_2019,
+  PRMRT3_2019,
+  PRMRT4_2019,
+  PRMRT5_2019,
+  PRMRT6_2019,
+  PRMRT7_2019,
+  PRMRT8_2019
+)
+
+
+PR21 <- rbind(
+  PRMRT1_2021,
+  PRMRT2_2021,
+  PRMRT3_2021,
+  PRMRT4_2021,
+  PRMRT5_2021,
+  PRMRT6_2021,
+  PRMRT7_2021,
+  PRMRT8_2021
+)
+
+
+PR22 <- rbind(
+  PRMRT1_2022,
+  PRMRT2_2022,
+  PRMRT3_2022,
+  PRMRT4_2022,
+  PRMRT5_2022,
+  PRMRT6_2022,
+  PRMRT7_2022,
+  PRMRT8_2022
+)
+
+PR24 <- rbind(
+  MRT1_2024,
+  MRT2_2024,
+  MRT3_2024,
+  MRT5_2024,
+  MRT6_2024,
+  MRT7_2024
+)
+
+
+PR17$ano <- 2017
+PR19$ano <- 2019
+PR21$ano <- 2021
+PR22$ano <- 2022
+PR24$ano <- 2024
+
+PRTEMPO <- rbind(PR24, PR22, PR19, PR17)
+PRTEMPO$estado <- 41
+PRTEMPO$regiao <- "sul"
+
+PRTEMPO$mrt[PRTEMPO$mrt == "Noroeste"] <- 907  # Noroeste
+PRTEMPO$mrt[PRTEMPO$mrt == "Oeste/Sudoeste"] <- 908  # Oeste/Sudoeste
+PRTEMPO$mrt[PRTEMPO$mrt == "Norte"] <- 906  # Norte
+PRTEMPO$mrt[PRTEMPO$mrt == "Litoral/Metropolitano"] <- 901 
+PRTEMPO$mrt[PRTEMPO$mrt == "Litoral/Metropolitana"] <- 901
+PRTEMPO$mrt[PRTEMPO$mrt == "Centro"] <- 905  # Centro
+PRTEMPO$mrt[PRTEMPO$mrt == "Centro Sul"] <- 903  # Centro-Sul
+PRTEMPO$mrt[PRTEMPO$mrt == "Campos Gerais"] <- 902  # Campos Gerais
+PRTEMPO$mrt[PRTEMPO$mrt == "Norte Pioneiro"] <- 904  # Norte Pioneiro
+
+PRTEMPO <- PRTEMPO |>
+  mutate(
+    cidades = case_when(
+      mrt == 901 ~ "Adrianópolis, Almirante Tamandaré, Antonina, Bocaiúva do Sul, Campina Grande do Sul, Campo Largo, Campo Magro, Cerro Azul, Colombo, Curitiba, Doutor Ulysses, Guaraqueçaba, Guaratuba, Itaperuçu, Matinhos, Morretes, Paranaguá, Pinhais, Piraquara, Pontal do Paraná, Quatro Barras, Rio Branco do Sul, São José dos Pinhais, Tijucas do Sul e Tunas do Paraná.",
+      mrt == 902 ~ "Agudos do Sul, Antônio Olinto, Araucária, Balsa Nova, Campo do Tenente, Carambeí, Castro, Contenda, Fazenda Rio Grande, Fernandes Pinheiro, Guamiranga, Imbaú, Imbituva, Ipiranga, Irati, Ivaí, Lapa, Mallet, Mandirituba, Palmeira, Paula Freitas, Paulo Frontin, Piên, Piraí do Sul, Ponta Grossa, Porto Amazonas, Quitandinha, Rebouças, Rio Azul, Rio Negro, São João do Triunfo, São Mateus do Sul, Teixeira Soares, Tibagi.",
+      mrt == 903 ~ "Arapoti, Bituruna, Cândido de Abreu, Coronel Domingos Soares, Cruz Machado, Curiúva, General Carneiro, Inácio Martins, Jaguariaíva, Ortigueira, Palmas, Pinhão, Porto Vitória, Prudentópolis, Reserva, Reserva do Iguaçu, Rosário do Ivaí, Sapopema, Sengés, Telêmaco Borba, Turvo, União da Vitória e Ventania.",
+      mrt == 904 ~ "Carlópolis, Congonhinhas, Conselheiro Mairinck, Figueira, Guapirama, Ibaiti, Jaboti, Jacarezinho, Japira, Joaquim Távora, Jundiaí do Sul, Pinhalão, Quatiguá, Ribeirão Claro, Ribeirão do Pinhal, Salto do Itararé, Santana do Itararé, Santo Antônio da Platina, São José da Boa Vista, Siqueira Campos, Tomazina e Wenceslau Braz.",
+      mrt == 905 ~ "Altamira do Paraná, Arapuã, Ariranha do Ivaí, Boa Ventura de São Roque, Campina do Simão, Candói, Cantagalo, Diamante do Sul, Goioxim, Grandes Rios, Guaraniaçu, Guarapuava, Espigão Alto do Iguaçu, Foz do Jordão, Ivaiporã, Jardim Alegre, Laranjal, Laranjeiras do Sul, Manoel Ribas, Marquinho, Mato Rico, Nova Laranjeiras, Nova Tebas, Palmital, Pitanga, Porto Barreiro, Quedas do Iguaçu, Rio Bonito do Iguaçu, Rio Branco do Ivaí, Santa Maria do Oeste e Virmond.",
+      mrt == 906 ~ "Abatiá, Alvorada do Sul, Andirá, Ângulo, Apucarana, Arapongas, Assaí, Astorga, Bandeirantes, Barbosa Ferraz, Barra do Jacaré, Bela Vista do Paraíso, Boa Esperança, Bom Sucesso, Borrazópolis, Cafeara, Califórnia, Cambará, Cambé, Cambira, Campina da Lagoa, Campo Mourão, Centenário do Sul, Cornélio Procópio, Corumbataí do Sul, Cruzmaltina, Doutor Camargo, Engenheiro Beltrão, Faxinal, Fênix, Floraí, Floresta, Florestópolis, Godoy Moreira, Goioerê, Guaraci, Ibiporã, Iguaraçu, Iretama, Itambaracá, Itambé, Ivatuba, Jaguapitã, Jandaia do Sul, Jataizinho, Juranda, Kaloré, Leópolis, Lidianópolis, Londrina, Luiziana, Lunardelli, Lupionópolis, Mamborê, Mandaguaçu, Mandaguari, Marialva, Marilândia do Sul, Maringá, Marumbi, Mauá da Serra, Miraselva, Munhoz de Mello, Nossa Senhora das Graças, Nova América da Colina, Nova Cantu, Nova Fátima, Nova Santa Bárbara, Novo Itacolomi, Ourizona, Paiçandu, Peabiru, Pitangueiras, Porecatu, Prado Ferreira, Presidente Castelo Branco, Primeiro de Maio, Quarto Centenário, Quinta do Sol, Rancho Alegre, Rancho Alegre D'Oeste, Rio Bom, Rolândia, Roncador, Sabáudia, Santa Amélia, Santa Cecília do Pavão, Santa Fé, Santa Mariana, Santo Antônio do Paraíso, São Jerônimo da Serra, São João do Ivaí, São Jorge do Ivaí, São Pedro do Ivaí, São Sebastião da Amoreira, Sarandi, Sertaneja, Sertanópolis, Tamarana, Ubiratã e Uraí.",
+      mrt == 907 ~ "Alto Paraíso, Alto Paraná, Alto Piquiri, Altônia, Amaporã, Araruna, Atalaia, Brasilândia do Sul, Cafezal do Sul, Cianorte, Cidade Gaúcha, Colorado, Cruzeiro do Oeste, Cruzeiro do Sul, Diamante do Norte, Douradina, Esperança Nova, Farol, Flórida, Francisco Alves, Guairaça, Guaporema, Icaraíma, Inajá, Indianópolis, Iporã, Itaguajé, Itapejara D'Oeste, Itaúna do Sul, Ivaté, Janiópolis, Japurá, Jardim Olinda, Jussara, Loanda, Lobato, Maria Helena, Marilena, Mariluz, Mirador, Moreira Sales, Nova Aliança do Ivaí, Nova Esperança, Nova Londrina, Nova Olímpia, Paraíso do Norte, Paranacity, Paranapoema, Paranavaí, Perobal, Pérola, Planaltina do Paraná, Porto Rico, Querência do Norte, Rondon, Santa Cruz de Monte Castelo, Santa Inês, Santa Isabel do Ivaí, Santa Mônica, Santo Antônio do Caiuá, Santo Inácio, São Carlos do Ivaí, São João do Caiuá, São Jorge do Patrocínio, São Manoel do Paraná, São Pedro do Paraná, São Tomé, Tamboara, Tapejara, Tapira, Terra Boa, Terra Rica, Tuneiras do Oeste, Umuarama, Uniflor e Xambrê.",
+      mrt == 908 ~ "Ampère, Anahy, Assis Chateaubriand, Barracão, Bela Vista da Caroba, Boa Esperança do Iguaçu, Boa Vista da Aparecida, Bom Jesus do Sul, Bom Sucesso do Sul, Braganey, Cafelândia, Campo Bonito, Capanema, Capitão Leônidas Marques, Cascavel, Catanduvas, Céu Azul, Chopinzinho, Clevelândia, Corbélia, Coronel Vivida, Cruzeiro do Iguaçu, Diamante d'Oeste, Dois Vizinhos, Enéas Marques, Entre Rios do Oeste, Flor da Serra do Sul, Formosa do Oeste, Foz do Iguaçu, Francisco Beltrão, Guaíra, Honório Serpa, Ibema, Iguatu, Iracema do Oeste, Itaipulândia, Jesuítas, Lindoeste, Manfrinópolis, Mangueirinha, Marechal Cândido Rondon, Mariópolis, Maripá, Marmeleiro, Matelândia, Medianeira, Mercedes, Missal, Nova Aurora, Nova Esperança do Sudoeste, Nova Prata do Iguaçu, Nova Santa Rosa, Ouro Verde do Oeste, Palotina, Pato Bragado, Pato Branco, Pérola d'Oeste, Pinhal de São Bento, Planalto, Pranchita, Quatro Pontes, Ramilândia, Realeza, Renascença, Salgado Filho, Salto do Lontra, Santa Helena, Santa Izabel do Oeste, Santa Lúcia, Santa Tereza do Oeste, Santa Terezinha de Itaipu, Santo Antônio do Sudoeste, São João, São Jorge d'Oeste, São José das Palmeiras, São Miguel do Iguaçu, São Pedro do Iguaçu, Saudade do Iguaçu, Serranópolis do Iguaçu, Sulina, Terra Roxa, Toledo, Três Barras do Paraná, Tupãssi, Vera Cruz do Oeste, Verê e Vitorino.",
+      .default = NA_character_ # seta NA para casos não previstos
+    )
+  )
+
+### 14. Piauí ####
+###MRT01- VALE DO CANINDÉ####
+### 2022 ####
+#Só existe essa observação.
+MRT1_2022 <- data.frame(
+  mrt = "01-Vale do Canindé",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Exploração mista", "2- Vetetação Nativa", "1 - Exploração mista diversificada", "2- Vegetação nativa caatinga"),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(704.11, 697.70, 713.62, 697.70, 713.62),
+  vti_minimo = c(269.78, 272.50, 268.00, 272.50, 268.00),
+  vti_maximo = c(1583.33, 1373.63, 1583.33, 1373.63, 1583.33),
+  vtn_media = c(583.38, 601.13, 557.58, 601.13, 557.58),
+  vtn_minimo = c(251.52, 255.00, 251.52, 255.00, 251.52),
+  vtn_maximo = c(1373.63, 1373.63, 1290.00, 1373.63, 1290.00)
+)
+
+###MRT03- Serra da Capivara####
+### 2022 ####
+MRT2_2022 <- data.frame(
+  mrt = "02-Serra da Capivara",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "1- Agrícola grãos diversos", "2- Exploração mista diversificada", "3- Pecuária diversos"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(510.93, 400.60, 502.49, 663.27, 400.60, 502.49, 663.27),
+  vti_minimo = c(112.50, 185.00, 112.25, 170.00, 185.00, 112.25, 170.00),
+  vti_maximo = c(1391.80, 633.33, 1427.96, 1100.00, 633.33, 1427.96, 1100.00),
+  vtn_media = c(412.96, 400.60, 392.00, 571.24, 400.60, 392.00, 571.24),
+  vtn_minimo = c(112.50, 185.00, 112.25, 170.00, 185.00, 112.25, 170.00),
+  vtn_maximo = c(1096.56, 633.33, 1000.00, 1096.56, 633.33, 1000.00, 1096.56)
+)
+###MRT03- Serra do Quilombo###
+### 2018 ####
+MRT03_2018 <- data.frame(
+  mrt = "MRT-03-SERRA DO QUILOMBO",
+  tipologia_de_uso = c("Agricultura", "Vegetacao Nativa", "Agricultura Familiar", "Agricultura Medio/Alto Nivel Tecnologico", "Vegetacao Nativa Cerrado", "Todas as Tipologias"),
+  nivel = c(1, 1, 2, 2, 2, 0),
+  vti_media = c(888.42, 1315.53, 664.49, 7152.18, 1315.53, 1162.35),
+  vti_minimo = c(755.16, 1118.20, 564.81, 6079.35, 1118.20, 988.00),
+  vti_maximo = c(1021.68, 1512.86, 764.16, 8225.00, 1512.86, 1336.71),
+  vtn_media = c(869.13, 1315.53, 628.66, 7152.18, 1315.53, 1117.91),
+  vtn_minimo = c(738.76, 1118.20, 534.36, 6079.35, 1118.20, 950.22),
+  vtn_maximo = c(999.49, 1512.86, 722.96, 8225.00, 1512.86, 1285.60)
+)
+
+### 2022 ####
+MRT3_2022 <- data.frame(
+  mrt = "03-Serra do Quilombo",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "4- Vegetação Nativa", "1- Agrícola grãos diversos", "2- Exploração mista diversificada", "3- Pecuária diversos", "4- Vegetação nativa cerrado"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(1471.75, 6909.28, 1125.84, 1257.77, 1083.88, 6909.28, 1125.84, 1257.77, 1083.88),
+  vti_minimo = c(439.71, 578.82, 714.25, 749.75, 340.44, 578.82, 714.25, 749.75, 340.44),
+  vti_maximo = c(2956.79, 19480.98, 2322.00, 2191.96, 2430.00, 19480.98, 2322.00, 2191.96, 2430.00),
+  vtn_media = c(1396.75, 6284.23, 1034.83, 1257.77, 1083.88, 6284.23, 1034.83, 1257.77, 1083.88),
+  vtn_minimo = c(439.71, 578.82, 714.25, 749.75, 340.44, 578.82, 714.25, 749.75, 340.44),
+  vtn_maximo = c(2722.23, 18413.77, 1496.66, 2191.96, 2430.00, 18413.77, 1496.66, 2191.96, 2430.00)
+)
+
+###MRT04- Rio Gurguéia####
+### 2022 ####
+MRT4_2022 <- data.frame(
+  mrt = "04-Vale do Rio Gurguéia",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "4- Vegetação Nativa", "1- Agrícola grãos diversos", "2- Exploração mista agrícola+pecuária", "3- Exploração mista diversificada", "4- Pecuária bovino pastagem formada", "5- Pecuária bovino pastagem nativa", "6- Vegetação nativa caatinga", "7- Vegetação nativa cerrado"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(1206.35, 18471.03, 1223.36, 1664.18, 989.62, 18471.03, 1217.05, 2695.66, 1592.55, 2070.09, 672.62, 1068.87),
+  vti_minimo =  c(305.86, 9777.81, 240.00, 662.92, 305.86, 9777.81, 1100.00, 700.00, 662.92, 1207.74, 305.86, 500.00),
+  vti_maximo = c(2692.01, 26514.80, 2413.79, 3200.00, 1842.07, 26514.80, 1351.35, 5678.54, 3200.00, 2750.00, 1206.90, 1842.07),
+  vtn_media = c(1049.77, 17168.52, 1084.79, 1332.08, 921.22, 17168.52, 1217.05, 1754.70, 1279.66, 1629.09, 672.62, 983.37),
+  vtn_minimo = c(189.87, 9777.81, 240.00, 380.58, 189.87, 9777.81, 1100.00, 698.64, 380.58, 553.89, 305.86, 189.87),
+  vtn_maximo = c(2252.87, 24176.09, 1873.35, 2876.35, 1842.07, 24176.09, 1217.05, 3004.56, 2876.35, 2252.54, 1206.90, 1842.07)
+)
+
+###MRT05- Vale do Rio Piauí ####
+### 2020 ####
+MRT05_2020 <- data.frame(
+  mrt = "MRT 05 (VALE DO RIO PIAUI)",
+  tipologia_de_uso = c("Exploracao Mista", "Pecuaria", "Agricultura", "Exploracao Mista - Agricultura familiar", "Exploracao Mista - Nao familiar", "Pecuaria Bovina de Corte - Medio/Alto nivel tecnologico", "Pecuaria Bovina de Corte - Baixo nivel tecnologico", "Agricultura - Medio/Alto Nivel Tecnologico", "Amostra geral"),
+  nivel = c(1, 1, 1, 2, 2, 2, 2, 2, 0),
+  vti_media = c(625.86, 553.63, 1351.49, 517.02, 672.68, 588.28, 307.53, 1351.49, 571.10),
+  vti_minimo = c(531.98, 470.59, 1148.77, 439.46, 571.78, 500.04, 261.40, 1148.77, 485.43),
+  vti_maximo = c(719.74, 636.67, 1554.21, 594.57, 773.58, 676.52, 353.66, 1554.21, 656.76),
+  vtn_media = c(382.80, 510.23, 1156.74, 374.79, 432.62, 534.86, 240.32, 1156.74, 446.59),
+  vtn_minimo = c(325.38, 433.69, 983.23, 318.57, 367.72, 454.63, 204.28, 983.23, 379.60),
+  vtn_maximo = c(440.22, 586.76, 1330.25, 431.01, 497.51, 615.09, 276.37, 1330.25, 513.58)
+)
+
+### 2022 ####
+MRT5_2022 <- data.frame(
+  mrt = "05-Vale do Rio Piauí",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "4- Vegetação Nativa", "1- Agrícola produção diversificada", "2- Exploração mista diversificada", "3- Pecuária bovino pastagem formada", "4- Pecuária diversos", "5- Vegetação nativa cerrado"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(591.06, 1384.52, 596.08, 543.79, 877.36, 1384.52, 642.57, 566.34, 244.37, 877.36),
+  vti_minimo = c(160.00, 1182.78, 160.00, 100.21, 571.10, 1182.78, 160.00, 250.00, 202.59, 571.10),
+  vti_maximo = c(1200.00, 1500.19, 1178.57, 1200.00, 1441.14, 1500.19, 1359.94, 1000.00, 266.61, 1441.14),
+  vtn_media = c(477.08, 1267.15, 412.97, 470.46, 877.36, 1267.15, 438.81, 495.57, 177.15, 877.36),
+  vtn_minimo = c(116.04, 1139.58, 119.27, 100.21, 571.10, 1139.58, 119.27, 250.00, 116.04, 571.10),
+  vtn_maximo = c(1091.00, 1479.10, 886.70, 1079.63, 1441.14, 1479.10, 981.39, 929.12, 212.83, 1441.14)
+)
+
+### MRT 06 - PI ####
+## 2019 #####
+MRT06_2019 <- data.frame(
+  mrt = "MRT 06 (PI)",
+  tipologia_de_uso = c("Agricultura", "Pecuaria", "Agricultura Familiar", "Pecuaria Bovina de Corte", "Todas as Tipologias"),
+  nivel = c(1, 1, 2, 2, 0),
+  vti_media = c(601.64, 810.12, 559.91, 810.12, 729.38),
+  vti_minimo = c(511.39, 688.61, 475.92, 688.61, 619.97),
+  vti_maximo = c(691.88, 931.64, 643.89, 931.64, 838.78),
+  vtn_media =  c(570.53, 750.33, 528.67, 750.33, 691.14),
+  vtn_minimo = c(484.95, 637.78, 449.37, 637.78, 587.47),
+  vtn_maximo = c(656.10, 862.88, 607.96, 862.88, 794.81)
+)
+
+## 2022 #####
+MRT6_2022 <- data.frame(
+  mrt = "06-Norte Piauiense",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "1- Agricola grãos diversos", "2-Exploração mista agrícola+pecuária", "3- Exploração mista diversificada", "4- Pecuária bovino pastagem formada"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(962.78, 925.28, 1028.38, 1027.36, 925.28, 1146.62, 1026.38, 1027.36),
+  vti_minimo = c(260.93, 884.59, 260.93, 136.87, 884.59, 993.11, 260.93, 136.87),
+  vti_maximo = c(1912.65, 969.36, 2407.32, 1912.65, 969.36, 1308.12, 2407.32, 1912.65),
+  vtn_media = c(894.87, 925.28, 911.83, 964.83, 925.28, 1146.62, 889.02, 964.83),
+  vtn_minimo = c(260.93, 884.59, 260.93, 79.84, 884.59, 993.11, 260.93, 79.84),
+  vtn_maximo = c(1912.65, 969.36, 2007.21, 1912.65, 969.36, 1308.12, 1999.85, 1912.65)
+)
+
+### MRT 07 - Sudeste Piauiense ####
+## 2022 ####
+MRT7_2022 <- data.frame(
+  mrt = "07-Sudeste Piauiense",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "4- Vegetação Nativa", "1- Agrícola caju", "2- Agrícola produção diversificada", "3- Exploração mista agrícola+pecuária", "4- Exploração mista diversificada", "5- Pecuária bovino pastagem nativa", "6- Pecuária diversos", "7- Vegetação nativa caatinga"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(1224.43, 1028.72, 1351.47, 1512.12, 896.66, 1121.20, 1485.54, 1299.26, 1904.18, 1063.09, 1812.63, 896.66),
+  vti_minimo = c(295.45, 500.00, 295.45, 363.20, 148.93, 500.00, 687.50, 474.82, 1300.00, 568.18, 363.20, 148.93),
+  vti_maximo = c(2806.92, 1666.67, 2421.05, 3200.00, 1860.55, 1666.67, 2769.13, 2121.21, 2828.41, 1545.79, 3200.00, 1860.55),
+  vtn_media = c(998.63, 919.62, 1040.13, 1185.52, 771.31, 1121.20, 1485.54, 985.84, 1398.14, 998.90, 1425.30, 771.31),
+  vtn_minimo = c(250.65, 345.40, 277.60, 250.65, 135.93, 500.00, 687.50, 277.60, 297.88, 568.18, 363.20, 135.93),
+  vtn_maximo = c(2623.21, 1666.67, 2421.05, 2488.20, 1627.90, 1666.67, 1234.38, 2121.21, 2421.05, 1545.79, 2488.20, 1627.90)
+)
+
+### MRT 08 - Vale do Marataoã ####
+## 2018 ####
+MRT08_2018 <- data.frame(
+  mrt = "Vale do Maratoan MRT-08",
+  tipologia_de_uso = c("Exploracao Mista", "Vegetacao Nativa", "Exploracao Mista Baixo Nivel Tecnologico", "Vegetacao Nativa/Cerrado", "Todas as Tipologias"),
+  nivel = c(1, 1, 2, 2, 0),
+  vti_media = c(745.56, 675.73, 745.56, 675.73, 791.17),
+  vti_minimo = c(633.72, 574.37, 633.72, 574.37, 672.50),
+  vti_maximo = c(857.39, 777.09, 857.39, 777.09, 909.85),
+  vtn_media = c(691.17, 675.73, 718.21, 675.73, 616.22),
+  vtn_minimo = c(587.50, 574.37, 610.48, 574.37, 523.78),
+  vtn_maximo = c(794.85, 777.09, 825.95, 777.09, 825.95)
+)
+
+## 2022 ####
+MRT8_2022 <- data.frame(
+  mrt = "08-Vale do Marataoã",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Exploração mista", "2- Pecuária", "3- Vegetação nativa", "1- Exploração mista diversificada", "2- Pecuária diversos", "3- Vegetação mativa cerrado"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(922.64, 940.23, 837.99, 856.71, 940.23, 837.99, 903.62),
+  vti_minimo = c(249.18, 238.09, 516.12, 387.58, 238.09, 516.12, 498.79),
+  vti_maximo = c(1988.41, 1988.41, 1322.31, 1699.63, 1988.41, 1322.31, 1699.63),
+  vtn_media = c(823.68, 794.53, 837.99, 856.71, 794.53, 837.99, 903.62),
+  vtn_minimo = c(249.18, 238.09, 516.12, 387.58, 238.09, 516.12, 498.79),
+  vtn_maximo = c(1699.63, 1416.40, 1322.31, 1699.63, 1416.40, 1322.31, 1699.63)
+)
+
+### MRT 09 - MEDIO PARNAIBA ####
+## 2018 ####
+MRT09_2018 <- data.frame(
+  mrt = "MRT 09 (MEDIO PARNAIBA)",
+  tipologia_de_uso = c("Agricultura", "Pecuaria", "Exploracao Mista (Aquicultura/Agricultura irrigada)", "Agricultura Familiar", "Agricultura Medio/Alto Nivel Tecnologico", "Pecuaria Bovina de Corte", "Exploracao Mista Medio Nivel Tecnologico", "Amostra geral"),
+  nivel = c(1, 1, 1, 2, 2, 2, 2, 0),
+  vti_media = c(658.70, 482.69, 2988.12, 531.24, 1126.78, 482.69, 2988.12, 857.31),
+  vti_minimo = c(559.90, 410.29, 2539.90, 451.55, 957.77, 410.29, 2539.90, 728.72),
+  vti_maximo = c(757.51, 555.09, 3436.34, 610.92, 1295.80, 555.09, 3436.34, 985.91),
+  vtn_media = c(610.81, 386.59, 2089.85, 497.58, 1036.12, 386.59, 2089.85, 681.27),
+  vtn_minimo = c(519.19, 328.60, 1776.37, 422.94, 880.70, 328.60, 1776.37, 579.08),
+  vtn_maximo = c(702.43, 444.58, 2403.33, 572.22, 1191.54, 444.58, 2403.33, 783.46)
+)
+
+## 2022 ####
+MRT9_2022 <- data.frame(
+  mrt = "09-Médio Parnaíba",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "1- Agrícola produção diversificada", "2- Exploração mista agrícola+pecuária", "3- Exploração mista diversificada", "4- Pecuária bovino pastagem formada"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(1183.61, 4366.61, 1228.83, 789.15, 4366.61, 1287.71, 693.58, 789.15),
+  vti_minimo = c(193.89, 2090.24, 305.71, 348.35, 2090.24, 499.98, 305.71, 348.35),
+  vti_maximo = c(3190.27, 5566.25, 3144.34, 1594.59, 5566.25, 2000.01, 1351.35, 1594.59),
+  vtn_media = c(949.79, 4133.04, 1006.64, 544.86, 4133.04, 1287.71, 648.73, 544.86),
+  vtn_minimo = c(193.89, 1895.05, 204.38, 200.15, 1895.05, 499.98, 204.38, 200.15),
+  vtn_maximo = c(2461.40, 5399.72, 2321.17, 1104.04, 5399.72, 2000.01, 1270.27, 1104.04)
+)
+
+## MRT 10 - Vale da Carnaúba ####
+## 2020####
+MRT10_2020 <- data.frame(
+  mrt = "Vale da Carnauba MRT-10",
+  tipologia_de_uso = c("Pecuaria", "Exploracao Mista", "Pecuaria Baixo Nivel tecnologico", "Exploracao Mista Baixo Nivel tecnologico", "Todas as Tipologias"),
+  nivel = c(1, 1, 2, 2, 0),
+  vti_media = c(933.92, 425.22, 933.92, 425.22, 786.82),
+  vti_minimo = c(793.83, 361.44, 793.83, 361.44, 668.80),
+  vti_maximo = c(1074.01, 489.00, 1074.01, 489.00, 904.85),
+  vtn_media = c(841.53, 383.30, 841.53, 383.30, 649.60),
+  vtn_minimo = c(715.30, 325.80, 715.30, 325.80, 552.16),
+  vtn_maximo = c(967.76, 440.79, 967.76, 440.79, 747.04)
+)
+
+## 2022 ####
+MRT10_2022 <- data.frame(
+  mrt = "10-Vale da Carnaúba",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "4- Vegetação Nativa", "1- Agrícola produção diversificada", "2- Exploração mista agrícola+pecuária", "3- Exploração mista diversificada", "4- Pecuária bovino pastagem formada", "5- Pecuária bovino pastagem nativa", "6- Vegetação nativa caatinga", "7- Vegetação nativa cerrado", "8- Pecuária diversos"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(908.79, 3607.14, 692.67, 1027.24, 1129.42, 3607.14, 1041.28, 667.15, 646.40, 743.84, 1043.27, 1215.57, 1088.30),
+  vti_minimo = c(145.76, 1496.68, 195.72, 142.55, 233.80, 880.95, 310.84, 195.72, 499.43, 232.68, 233.80, 646.72, 200.12),
+  vti_maximo = c(2497.10, 6333.33, 1675.14, 2800.00, 2500.00, 6333.33, 2515.72, 1276.20, 781.57, 1175.87, 2500.00, 2000.00, 2599.21),
+  vtn_media = c(784.24, 1496.68, 598.51, 837.25, 1129.42, 1496.68, 1041.28, 617.15, 579.02, 592.15, 1043.27, 1215.57, 958.36),
+  vtn_minimo = c(101.29, 880.95, 185.00, 101.29, 233.80, 880.95, 310.84, 195.72, 329.77, 101.29, 233.80, 646.72, 200.12),
+  vtn_maximo = c(1960.40, 2112.40, 1675.14, 2510.74, 2500.00, 2112.40, 2270.87, 1000.00, 781.57, 1175.87, 2500.00, 2000.00, 1954.01)
+)
+
+## MRT 11 - Teresina ####
+## 2019 ####
+MRT11_Teresina_2019 <- data.frame(
+  mrt = "MRT11 - Teresina (PI)",
+  tipologia_de_uso = c("Agricultura", "Pecuaria", "Exploracao Mista", "Agricultura Familiar", "Agricultura Medio/Alto Nivel Tecnologico", "Pecuaria Bovina de Corte", "Exploracao Mista Baixo Nivel Tecnologico", "Agricultura Medio Alto Nivel Tecnologico Regiao Metropolitana", "Todas as Tipologias"),
+  nivel = c(1, 1, 1, 2, 2, 2, 2, 3, 0),
+  vti_media = c(1230.10, 864.59, 473.59, 1067.72, 1608.53, 864.59, 473.59, 1608.53, 1142.52),
+  vti_minimo = c(1045.59, 734.90, 402.55, 907.56, 1367.25, 734.90, 402.55, 1387.25, 971.14),
+  vti_maximo = c(1414.62, 994.28, 544.62, 1227.88, 1849.81, 994.28, 544.62, 1849.81, 1313.90),
+  vtn_media = c(1159.38, 769.71, 411.09, 966.50, 1489.18, 780.69, 411.09, 1489.18, 1075.40),
+  vtn_minimo = c(985.47, 654.25, 349.42, 823.23, 1265.81, 663.59, 349.42, 1265.81, 914.09),
+  vtn_maximo = c(1333.28, 885.16, 472.75, 1113.78, 1712.56, 897.80, 472.75, 1712.56, 1236.70)
+)
+
+## 2022 ####
+MRT11_2022 <- data.frame(
+  mrt = "MRT11 - Teresina (PI)",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "Agrícola", "Exploração mista", "Pecuária", "Agrícola cana", "Exploração mista diversificada", "Pecuária diversos", "Agrícola Cana Região Metropolitana Teresina"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 3),
+  vti_media = c(1802.98, 3015.27, 1583.75, 1487.30, 3015.27, 1583.75, 1487.30, 3015.27),
+  vti_minimo = c(616.47, 1029.76, 525.69, 635.80, 1029.76, 525.69, 635.80, 1029.76),
+  vti_maximo = c(4285.50, 4618.56, 3409.60, 2493.37, 4618.56, 3409.60, 2493.37, 4618.56),
+  vtn_media = c(1706.31, 2733.15, 1521.60, 1302.80, 2733.15, 1521.60, 1302.80, 2733.15),
+  vtn_minimo = c(596.68, 1029.76, 525.69, 635.80, 1029.76, 525.69, 635.80, 1029.76),
+  vtn_maximo = c(4075.39, 4285.50, 3409.60, 2493.37, 4285.50, 3409.60, 2493.37, 4285.50)
+)
+
+## entorno ####
+## Eles criaram um rodo anel em teresina e isso acabou valorizando bem algumas propriedades.
+## por isso, optaram por separar o entorno em uma tabela própria. Algo que não se observou no ano seguinte.
+MRT11_Entorno_Teresina_2018 <- data.frame(
+  mrt = "MRT 11-Entorno Teresina",
+  tipologia_de_uso = c("Sitios e Chacaras", "Todas as Tipologias"),
+  nivel = c(1, 0),
+  vti_media = c(72462.84, 72462.84),
+  vti_minimo = c(61593.41, 61593.41),
+  vti_maximo = c(83332.26, 83332.26),
+  vtn_media = c(70462.84, 70462.84),
+  vtn_minimo = c(59893.41, 59893.41),
+  vtn_maximo = c(81032.26, 81032.26)
+)
+
+## MRT 12 - Planíces Litoraneas ####
+## 2018 ####
+MRT12_2018 <- data.frame(
+  mrt = "MRT12 - Planicies Litoraneas",
+  tipologia_de_uso = c("Agricultura", "Pecuaria", "Vegetacao Nativa", "Agricultura Familiar", "Pecuaria Ovinocaprinocultura", "Vegetacao Nativa Caatinga", "Todas as Tipologias"),
+  nivel = c(1, 1, 1, 2, 2, 2, 0),
+  vti_media = c(647.59, 1173.18, 1191.21, 647.59, 1700.00, 1089.74, 828.72),
+  vti_minimo = c(550.45, 997.20, 1012.53, 550.45, 1445.00, 926.28, 704.41),
+  vti_maximo = c(744.73, 1349.16, 1369.89, 744.73, 1955.00, 1253.20, 953.03),
+  vtn_media = c(531.17, 846.53, 1185.71, 531.17, 1052.47, 1083.33, 743.97),
+  vtn_minimo = c(451.49, 719.55, 1007.86, 451.49, 894.60, 920.83, 635.38),
+  vtn_maximo = c(610.84, 973.51, 1363.57, 610.84, 1210.34, 1245.83, 855.57)
+)
+
+## 2022 ####
+MRT12_2022 <- data.frame(
+  mrt = "12-Planície Litorânea",
+  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "4- Vegetação Nativa", "1- Agrícola grãos diversos", "2- Exploração mista diversificada", "3-Pecuária caprino/ovino pastagem formada", "4- Vegetação nativa caatinga", "5- Vegetação nativa cerrado"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(1630.10, 2423.18, 914.89, 2183.94, 1354.97, 2423.18, 914.89, 2183.94, 1203.70, 1657.50),
+  vti_minimo = c(472.11, 2294.45, 630.84, 808.92, 472.11, 2294.45, 630.84, 808.92, 472.11, 1135.56),
+  vti_maximo = c(3190.50, 2551.66, 1162.02, 3190.50, 1998.77, 2551.66, 1162.02, 3190.50, 1889.40, 1998.77),
+  vtn_media = c(1485.80, 2316.81, 781.22, 1355.34, 1350.57, 2316.81, 781.22, 1355.34, 1197.11, 1657.50),
+  vtn_minimo = c(257.06, 2211.41, 586.09, 684.09, 472.11, 2211.41, 586.09, 684.09, 472.11, 1135.56),
+  vtn_maximo = c(3190.50, 2496.45, 1007.68, 1786.68, 1998.77, 2496.45, 1007.68, 1786.68, 1889.40, 1998.77)
+)
+
+### Consolidação dos dados ####
+PI2022 <- rbind(
+  MRT1_2022,
+  MRT2_2022,
+  MRT3_2022,
+  MRT4_2022,
+  MRT5_2022,
+  MRT6_2022,
+  MRT7_2022,
+  MRT8_2022,
+  MRT9_2022,
+  MRT10_2022,
+  MRT11_2022,
+  MRT12_2022
+)
+
+# Consolidação de todos os data.frames em uma única tabela
+PI2020 <- rbind(
+  MRT03_2018,
+  MRT05_2020,
+  MRT06_2019,
+  MRT08_2018,
+  MRT09_2018,
+  MRT10_2020,
+  MRT11_Teresina_2019,
+  MRT11_Entorno_Teresina_2018,
+  MRT12_2018
+)
+PI2020$ano <- 2020
+PI2022$ano <- 2022
+PITEMPORAL <- rbind(PI2020, PI2022)
+PITEMPORAL$estado <- 22
+PITEMPORAL$regiao <- "nordeste"
+PITEMPORAL <- PITEMPORAL |>
+  mutate(
+    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
+    mrt= case_when(
+      grepl("Quilombo", mrt, ignore.case = TRUE)        ~ 2401,
+      grepl("Gurguéia", mrt, ignore.case = TRUE)        ~ 2402,
+      grepl("Norte Piauiense", mrt, ignore.case = TRUE) ~ 2403,
+      grepl("Capivara", mrt, ignore.case = TRUE)        ~ 2404,
+      grepl("Rio Piauí", mrt, ignore.case = TRUE)       ~ 2405,
+      grepl("Canindé", mrt, ignore.case = TRUE)         ~ 2406,
+      grepl("Sudeste", mrt, ignore.case = TRUE)         ~ 2407,
+      grepl("Maratoan|Maratoã", mrt, ignore.case = TRUE) ~ 2408,
+      grepl("Parnaíba", mrt, ignore.case = TRUE)        ~ 2409,
+      grepl("Carnaúba", mrt, ignore.case = TRUE)        ~ 2410,
+      grepl("Teresina", mrt, ignore.case = TRUE)        ~ 2411,
+      grepl("Litorânea", mrt, ignore.case = TRUE)       ~ 2412,
+      .default = NA_integer_
+    ),
+    # Etapa 2: Adiciona a lista de cidades com base no código numérico
+    cidades = case_when(
+      mrt == 2401 ~ "Antônio Almeida, Baixa Grande do Ribeiro, Barreiras do Piauí, Bertolínia, Currais, Gilbués, Manoel Emídio, Monte Alegre do Piauí, Palmeira do Piauí, Ribeiro Gonçalves, Santa Filomena, São Gonçalo do Gurguéia, Sebastião Leal, Uruçuí",
+      mrt == 2402 ~ "Alvorada do Gurguéia, Avelino Lopes, Bom Jesus, Colônia do Gurguéia, Corrente, Cristalândia do Piauí, Cristino Castro, Curimatá, Júlio Borges, Morro Cabeça no Tempo, Parnaguá, Redenção do Gurguéia, Riacho Frio, Santa Luz, Sebastião Barros",
+      mrt == 2403 ~ "Campo Largo do Piauí, Caraúbas do Piauí, Caxingó, Joaquim Pires, Joca Marques, Luzilândia, Madeiro, Matias Olímpio, Miguel Alves, Murici dos Portelas, Nossa Senhora dos Remédios, Porto, São João do Arraial",
+      mrt == 2404 ~ "Anísio de Abreu, Bonfim do Piauí, Brejo do Piauí, Canto do Buriti, Caracol, Coronel José Dias, Dirceu Arcoverde, Dom Inocêncio, Eliseu Martins, Fartura do Piauí, Flores do Piauí, Guaribas, Jurema, Pajeú do Piauí, Pavussu, Rio Grande do Piauí, São Braz do Piauí, São Lourenço do Piauí, São Raimundo Nonato, Tamboril do Piauí, Várzea Branca",
+      mrt == 2405 ~ "Canavieira, Floriano, Guadalupe, Itaueira, Jerumenha, Landri Sales, Marcos Parente, Nazaré do Piauí, Porto Alegre do Piauí, São Francisco do Piauí, São José do Peixe, São Miguel do Fidalgo",
+      mrt == 2406 ~ "Bela Vista do Piauí, Cajazeiras do Piauí, Campinas do Piauí, Campo Alegre do Fidalgo, Capitão Gervásio Oliveira, Colônia do Piauí, Conceição do Canindé, Floresta do Piauí, Isaías Coelho, João Costa, Oeiras, Paes Landim, Paquetá, Pedro Laurentino, Nova Santa Rita, Ribeira do Piauí, Santa Cruz do Piauí, Santa Rosa do Piauí, Santo Inácio do Piauí, São Francisco de Assis do Piauí, São João da Varjota, São João do Piauí, Simplício Mendes, Socorro do Piauí, Tanque do Piauí, Wall Ferraz",
+      mrt == 2407 ~ "Acauã, Alagoinha do Piauí, Alegrete do Piauí, Aroeiras do Itaim, Belém do Piauí, Betânia do Piauí, Bocaina, Caldeirão Grande do Piauí, Campo Grande do Piauí, Caridade do Piauí, Curral Novo do Piauí, Dom Expedito Lopes, Francisco Macedo, Francisco Santos, Fronteiras, Geminiano, Ipiranga do Piauí, Itainópolis, Jacobina do Piauí, Jaicós, Lagoa do Barro do Piauí, Marcolândia, Massapê do Piauí, Monsenhor Hipólito, Padre Marcos, Patos do Piauí, Paulistana, Picos, Pio IX, Queimada Nova, Santana do Piauí, Santo Antônio de Lisboa, São João da Canabrava, São José do Piauí, São Julião, São Luís do Piauí, Simões, Sussuapara, Vera Mendes, Vila Nova do Piauí",
+      mrt == 2408 ~ "Barras, Batalha, Boa Hora, Brasileira, Cabeceiras do Piauí, Domingos Mourão, Esperantina, Lagoa de São Francisco, Milton Brandão, Morro do Chapéu do Piauí, Pedro II, Piracuruca, Piripiri, São João da Fronteira, São José do Divino",
+      mrt == 2409 ~ "Palmeirais, São Pedro do Piauí, Miguel Leão, Agricolândia, Olho D'água do Piauí, Lagoinha do Piauí, Água Branca, São Gonçalo do Piauí, Hugo Napoleão, Santo Antônio dos Milagres, Jardim do Mulato, Angical do Piauí, Amarante, Regeneração, Francinópolis, Barra D'alcântara, Várzea Grande, Arraial, Francisco Ayres",
+      mrt == 2410 ~ "Alto Longá, Altos, Aroazes, Assunção do Piauí, Barro Duro, Beneditinos, Boqueirão do Piauí, Buriti dos Montes, Campo Maior, Capitão de Campos, Castelo do Piauí, Cocal de Telha, Coivaras, Elesbão Veloso, Inhuma, Jatobá do Piauí, Juazeiro do Piauí, Lagoa do Sítio, Nossa Senhora de Nazaré, Novo Oriente do Piauí, Novo Santo Antônio, Passagem Franca do Piauí, Pau D'Arco do Piauí, Pimenteiras, Prata do Piauí, Santa Cruz dos Milagres, São Félix do Piauí, São João da Serra, São Miguel da Baixa Grande, São Miguel do Tapuio, Sigefredo Pacheco, Valença do Piauí",
+      mrt == 2411 ~ "Teresina, Nazária, Curralinhos, Monsenhor Gil, Lagoa do Piauí, Demerval Lobão, José de Freitas, Lagoa Alegre, União",
+      mrt == 2412 ~ "Bom Princípio do Piauí, Buriti dos Lopes, Cajueiro da Praia, Cocal, Cocal dos Alves, Ilha Grande, Luís Correia, Parnaíba",
+      .default = NA_character_
+    )
+  )
+
+### 15. Rio de Janeiro ####
+### MRT:01 - Vale do Paraíba ####
+### 2017 #####
+RJMRT_ValeDoParaiba_2017 <- data.frame(
+  mrt = "ZH Vale do Paraiba",
+  tipologia_de_uso = c(
+    "Uso Indefinido (media geral)",
+    "Pecuária",
+    "Exploração mista",
+    "Mata",
+    "Pecuária bovina em pastagem de baixo suporte",
+    "Pecuária bovina em pastagem de alto suporte",
+    "Exploração mista (pecuária eucalipto piscicultura)",
+    "Exploração mista (pecuária eucalipto)",
+    "Pecuária bovina em pastagem de baixo suporte (Barra Mansa)",
+    "Pecuária bovina em pastagem de baixo suporte (Mangaratiba)",
+    "Pecuária bovina em pastagem de baixo suporte (Paraiba do Sul)",
+    "Pecuária bovina em pastagem de baixo suporte (Pirai)",
+    "Pecuária bovina em pastagem de baixo suporte (Quatis)",
+    "Pecuária bovina em pastagem de baixo suporte (Resende)",
+    "Pecuária bovina em pastagem de baixo suporte (Rio Claro)",
+    "Pecuária bovina em pastagem de baixo suporte (Rio das Flores)",
+    "Pecuária bovina em pastagem de baixo suporte (Sapucaia)",
+    "Pecuária bovina em pastagem de baixo suporte (Valença)",
+    "Pecuária bovina em pastagen de baixo suporte (Vassouras)",
+    "Mata (Paraty)"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(
+    9982.54, 9314.33, 10510.99, 14207.35,
+    9037.48, 11484.11, 11145.11, 10548.51,
+    6941.45, 38019.59, 12492.73, 6863.47,
+    7734.62, 8546.16, 7735.75, 5776.83,
+    9270.13, 9128.30, 9555.77, 17625.92
+  ),
+  vti_minimo = c(
+    8485.16, 7917.18, 8934.34, 12076.25,
+    7681.86, 9761.49, 9473.34, 8966.23,
+    5900.23, 32316.65, 10618.82, 5833.95,
+    6574.43, 7264.24, 6575.39, 4910.31,
+    7879.61, 7759.06, 8122.40, 14982.03
+  )
+  ,
+  vti_maximo = c(
+    11479.92,
+    10711.48, 12087.64, 16338.45,
+    10393.10, 13206.73, 12816.88, 12130.79,
+    7982.67, 43722.53, 14366.64, 7892.99,
+    8894.81, 9828.08, 8896.11, 6643.35,
+    10660.65, 10497.55, 10989.14, 20269.81
+  ),
+  vtn_media = c(NA),
+  vtn_minimo = c(NA),
+  vtn_maximo = c(NA)
+)
+
+### 2022 ####
+RJMRT_Vale_do_Paraiba_2022 <- data.frame(
+  mrt = "ZH Vale do Paraíba",
+  tipologia_de_uso = c("Geral", "Pecuária", "Floresta Plantada", "Exploração Mista", "Vegetação Nativa", "Pecuária Bovino - Pastagem Formada ABAIXO de 1UA por ha ano", "Pecuária Bovino - Pastagem Formada ACIMA de 1UA por ha ano", "Pecuária - Diversos", "Floresta Plantada - Silvicultura", "Exploração Mista - Diversificada", "Exploração Mista - Agrícola + Pastagem", "Exploração Mista - Pastagem+Floresta Plantada", "Vegetação Nativa - Mata Atlântica"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(23544.82, 24175.85, 18406.33, 22818.50, 24700.00, 21999.32, 23186.64, 62088.18, 18406.33, 25067.63, 39259.90, 17777.93, 24700.00),
+  vti_minimo = c(20013.09, 20549.48, 15645.38, 19395.72, 20995.00, 18699.42, 19708.64, 52774.95, 15645.38, 21307.48, 33370.92, 15111.24, 20995.00),
+  vti_maximo = c(27076.54, 27802.23, 21167.28, 26241.27, 28405.00, 25299.22, 26664.63, 71401.41, 21167.28, 28827.77, 45148.89, 20444.62, 28405.00),
+  vtn_media = c(18274.82, 19019.23, 12884.43, 11935.77, 22911.42, 17593.13, 18133.86, 48752.06, 12884.43, 14662.65, 13124.10, 10173.20, 22911.42),
+  vtn_minimo = c(10254.10, 11024.84, 9018.05, 9427.87, 8638.53, 10257.24, 14517.63, 13517.08, 9018.05, 9844.98, 11365.05, 5765.27, 8638.53),
+  vtn_maximo = c(23015.86, 24015.17, 15899.86, 14749.66, 28325.02, 22015.36, 19404.87, 82531.17, 15899.86, 16949.57, 14133.15, 13332.59, 28325.02)
+)
+
+
+### MRT:02 - Leste Fluminense ####
+### 2017 #####
+RJMRT_LesteFluminense_2017 <- data.frame(
+  mrt = "ZH Leste Fluminense",
+  tipologia_de_uso = c(
+    "Uso Indefinido (média geral)",
+    "Pecuária",
+    "Exploração Mista",
+    "Pecuária bovina em pastagem de baixo suporte",
+    "Exploração mista (pecuária cana-de-açúcar)",
+    "Pecuária bovina em pastagem de baixo suporte (Campos dos Goytacazes)",
+    "Pecuária bovina em pastagem de baixo suporte (Carapebus)",
+    "Pecuária bovina em pastagern de baixo suporte (Macaé)",
+    "Pecuária Bovina em pastagem de baixo suporte (São Francisco do Itabapoana)",
+    "Exploração mista: pecuária cana-de-açúcar (Campos dos Goytacazes)"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 3, 3, 3, 3, 3),
+  vti_media = c(12282.98, 11030.46, 16633.52, 11059.00, 16184.64, 9397.81, 9846.27, 13881.21, 14366.17, 16184.64),
+  vti_minimo = c(10440.53, 9375.89, 14138.49, 9400.15, 13756.94, 7988.14, 8369.33, 11799.03, 12211.24, 13756.94),
+  vti_maximo = c(14125.43, 12685.03, 19128.55, 12717.85, 18612.34, 10807.48, 11323.21, 15963.39, 16521.10, 18612.34),
+  vtn_media = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+)
+
+### 2022 ####
+RJMRT_Leste_Fluminense_2022 <- data.frame(
+  mrt = "ZH Leste Fluminense",
+  tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Não Agrícola", "Pecuária Bovino - Pastagem Formada ABAIXO de 1UA por ha ano", "Pecuária Bovino-Pastagem Formada ACIMA de 1UA por ha ano", "Exploração Mista - Diversificada"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(21070.23, 19108.35, 24939.62, 54353.50, 17444.55, 31864.10, 38041.63),
+  vti_minimo = c(17909.69, 16242.10, 21198.68, 46200.48, 14827.87, 27084.49, 32335.39),
+  vti_maximo = c(24230.76, 21974.60, 28680.56, 62506.53, 20061.24, 36643.72, 43747.88),
+  vtn_media = c(16445.74, 15939.30, 17445.18, 44551.84, 14376.16, 27923.34, 26440.02),
+  vtn_minimo = c(13978.88, 13548.40, 14828.41, 37869.07, 12219.74, 23734.84, 22474.02),
+  vtn_maximo = c(18912.60, 18330.19, 20061.96, 51234.62, 16532.59, 32111.84, 30406.02)
+)
+
+### MRT:03 - Serrana ####
+### 2017 ####
+RJMRT_Serrana_2017<- data.frame(
+  mrt = "ZH Serrana",
+  tipologia_de_uso = c(
+    "Uso Indefinido (média geral)",
+    "Pecuária",
+    "Agricultura",
+    "Exploração Mista",
+    "Mata",
+    "Pecuária bovina em pastagem de baixo suporte",
+    "Lavoura Temporária",
+    "Exploração Mista (Pecuária + Silvicultura)",
+    "Pecuária bovina em pastagem de baixo suporte (Bom Jardim)",
+    "Pecuária bovina em pastagem de baixo suporte (Cantagalo)",
+    "Pecuária bovina em pastagem de baixo suporte (Duas Barras)",
+    "Pecuária bovina em pastagem de baixo suporte (Paty do Alferes)",
+    "Pecuária bovina em pastagem de baixo suporte (Trajano de Moraes)",
+    "Exploração Mista: pecuária + Silvicultura (Duas Barras)",
+    "Mata (Nova Friburgo)"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(
+    13564.05, 11042.14, 20802.39, 22409.24, 13160.17, 10146.42, 22308.10,
+    19472.25, 11394.63, 8231.12, 10284.86, 19771.85, 6121.00, 23699.31,
+    20181.59
+  ),
+  vti_minimo = c(
+    11529.44, 9385.82, 17682.03, 19047.85, 11186.14, 8624.46, 18961.89,
+    16551.41, 9685.43, 6996.45, 8742.14, 16806.08, 5202.85, 20144.41,
+    17154.35
+  ),
+  vti_maximo = c(
+    15598.65, 12698.46, 23922.75, 25770.62, 15134.19, 11668.38, 25654.32,
+    22393.09, 13103.82, 9465.79, 11827.59, 22737.63, 7039.15, 27254.21,
+    23208.82
+  ),
+  vtn_media = c(
+    NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
+  ),
+  vtn_minimo = c(
+    NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
+  ))
+
+### 2022 ####
+RJMRT_Serrana_2022 <- data.frame(
+  mrt = "ZH Serrana",
+  tipologia_de_uso = c("Geral", "Pecuária", "Agrícola", "Floresta Plantada", "Exploração Mista", "Vegetação Nativa", "Não Agrícola", "Pecuária - Bovino-Pastagem Formada ABAIXO de 1UA por ha ano", "Pecuária - Bovino-Pastagem Formada ACIMA de 1UA por ha ano", "Pecuária Diversos", "Agrícola - Horticultura/Olericola/Granjeiros", "Floresta Plantada - Silvicultura", "Exploração Mista - Diversificada", "Exploração Mista - Agrícola + Floresta plantada", "Exploração Mista - Agrícola + Pastagem", "Exploração Mista - Pastagem+Fruticultura", "Exploração Mista - Pastagem+Floresta Plantada", "Vegetação Nativa - Mata Atlântica", "Não Agricola - Exploração turistica", "Não Agricola - Periurbanas (predominancia entorno rural)", "Não Agricola - Outros"),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(30724.01, 29446.29, 43529.71, 32656.77, 25237.35, 26317.70, 41681.53, 26462.46, 40578.42, 63288.71, 39056.30, 32656.77, 25580.03, 39877.52, 25544.37, 25648.64, 26996.52, 26317.70, 70287.17, 40417.79, 14801.71),
+  vti_minimo = c(26115.41, 25029.35, 37000.25, 27758.25, 21451.74, 22370.05, 35429.30, 22493.09, 34491.66, 53795.40, 33197.86, 27758.25, 21743.03, 33895.89, 21712.71, 21801.34, 22947.04, 22370.05, 59744.10, 34355.12, 12581.46),
+  vti_maximo = c(46086.02, 44169.43, 65294.56, 48985.16, 37856.02, 39476.55, 62522.29, 39693.69, 60867.64, 94933.06, 58584.45, 48985.16, 38370.05, 59816.28, 38316.55, 38472.96, 40494.78, 39476.55, 105430.76, 60626.69, 22202.57),
+  vtn_media = c(25058.25, 23840.18, 31326.15, 23218.57, 18958.27, 25013.64, 37905.47, 21565.80, 33231.82, 48096.53, 27097.36, 23218.57, 18572.56, 31902.01, 20711.76, 19207.41, 18897.56, 25013.64, 48055.47, 29115.23, 13514.23),
+  vtn_minimo = c(21299.51, 20264.15, 26627.23, 19735.78, 16114.53, 21261.60, 32219.65, 18330.93, 28247.04, 40882.05, 23032.75, 19735.78, 15786.68, 27116.71, 17605.00, 16326.30, 16062.93, 21261.60, 40847.15, 24747.94, 11487.10),
+  vtn_maximo = c(28816.98, 27416.20, 36025.07, 26701.35, 21802.01, 28765.69, 43591.29, 24800.67, 38216.59, 55311.01, 31161.96, 26701.35, 21358.45, 36687.32, 23818.53, 22088.53, 21732.20, 28765.69, 55263.79, 33482.51, 15541.37)
+)
+
+### MRT - Metropolitana ####
+### 2017 ####
+RJMRT_Metropolitana_2017 <- data.frame(
+  mrt = "ZH Metropolitana",
+  tipologia_de_uso = c(
+    "Uso Indefinido (média geral)",
+    "Pecuária",
+    "Exploração Mista",
+    "Mata",
+    "Pecuária bovina em pastagem de baixo suporte",
+    "Pecuária bovina em pastagem de baixo suporte (Cachoeiras de Macacu)",
+    "Pecuária bovina em pastagem de baixo suporte (Rio Bonito)",
+    "Mata (Cachoeiras de Macacu)"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 3, 3, 3),
+  vti_media = c(25148.17, 25439.78, 40971.42, 21008.42, 25439.78, 31246.22, 12176.24, 20983.83),
+  vti_minimo = c(21375.94, 21623.81, 34825.71, 17857.16, 21623.81, 26559.29, 10349.80, 17836.26),
+  vti_maximo = c(28920.40, 29255.75, 47117.13, 24159.68, 29255.75, 35933.15, 14002.68, 24131.40),
+  vtn_media = c(NA, NA, NA, NA, NA, NA, NA, NA),
+  vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA),
+  vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA))
+
+### 2022 ####
+RJMRT_Metropolitana_2022 <- data.frame(
+  mrt = "ZH Metropolitana",
+  tipologia_de_uso = c("Geral", "Pecuária", "Agrícola", "Exploração Mista", "Vegetação Nativa", "Não Agrícola", "Pecuária -Bovino-Pastagem Formada ABAIXO de 1UA por ha ano", "Pecuária-Bovino-Pastagem Formada ACIMA de 1UA por ha ano", "Agrícola - Produção Diversificada", "Pecuária - Diversos", "Vegetação Nativa - Mata Atlântica", "Não Agrícola - Exploração turística", "Não Agrícola - Outros"),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(49733.07, 48216.60, 58331.45, 46072.25, 29751.56, 58090.54, 45123.78, 57959.72, 49975.26, 90799.14, 29751.56, 55662.38, 59376.78),
+  vti_minimo = c(42273.11, 40984.11, 49581.73, 39161.41, 25288.83, 49376.96, 38355.21, 49265.76, 42478.97, 77179.27, 25288.83, 47313.02, 50470.26),
+  vti_maximo = c(74599.60, 72324.90, 87497.17, 69108.37, 44627.34, 87135.81, 67685.67, 86939.58, 74962.89, 136198.72, 44627.34, 83493.57, 89065.17),
+  vtn_media = c(42883.65, 40328.09, 46665.16, 32287.59, 28263.98, 51153.76, 38355.21, 46367.77, 39980.21, 72639.32, 28263.98, 38963.67, 53439.10),
+  vtn_minimo = c(36451.10, 34278.88, 39665.38, 27444.45, 24024.39, 43480.70, 32601.93, 39412.61, 33983.18, 61743.42, 24024.39, 33119.12, 45423.24),
+  vtn_maximo = c(49316.20, 46377.31, 53664.93, 37130.73, 32503.58, 58826.82, 44108.49, 53322.94, 45977.24, 83535.21, 32503.58, 44808.22, 61454.97)
+)
+
+### MRT - Nordeste Fluminense ####
+### 2017 ####
+RJMRT_NordesteFluminense_2017 <- data.frame(
+  mrt = "ZH Nordeste Fluminense",
+  tipologia_de_uso = c(
+    "Uso Indefinido (média geral)",
+    "Pecuária",
+    "Exploração Mista",
+    "Mata",
+    "Pecuária bovina em pastagem de baixo suporte",
+    "Exploração Mista (Pecuária Cafeicultura)",
+    "Mata",
+    "Pecuária bovina em pastagem de baixo suporte (Aperibé)",
+    "Pecuária bovina em pastagem de baixo suporte (Bom Jesus do Itabapoana)",
+    "Pecuária bovina em pastagem de baixo suporte (Cambuci)",
+    "Pecuária bovina em pastagem de baixo suporte (Cardoso Moreira)",
+    "Pecuária bovina em pastagem de baixo suporte (Italva)",
+    "Pecuária bovina em pastagem de baixo suporte (itaocara)",
+    "Pecuária bovina em pastagem de baixo suporte (Itaperuna)",
+    "Pecuária bovina em pastagem de baixo suporte (Natividade)",
+    "Pecuária bovina em pastagem de baixo suporte (São Fidélis)",
+    "Pecuária bovina em pastagen de baixo suporte (Varre-Sai)",
+    "Exploração Mista: pecuária Cafeicultura (Varre-Sai)"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(8722.98, 8960.17, 9668.95, 6727.30, 8954.44, 13852.57, 6727.30, 38333.01, 8810.13, 14538.98, 7763.86, 7696.72, 6754.98, 14300.06, 7909.22, 7329.45, 13452.53, 16108.50),
+  vti_minimo = c(7414.53, 7616.14, 8218.61, 5718.20, 7611.28, 11774.68, 5718.20, 32583.06, 7488.61, 12358.14, 6599.28, 6542.21, 5741.74, 12155.05, 6722.84, 6230.04, 11434.65, 13692.22),
+  vti_maximo = c(10031.42, 10304.19, 11119.29, 7736.39, 10297.61, 15930.45, 7736.39, 44082.96, 10131.65, 16719.83, 8928.44, 8851.22, 7768.23, 16445.07, 9095.60, 8428.87, 15470.41, 18524.77),
+  vtn_media = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+)
+
+### 2022 ####
+RJMRT_Nordeste_Fluminense_2022 <- data.frame(
+  mrt = "ZH Nordeste Fluminense",
+  tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Vegetação Nativa", "Agrícola", "Pecuária Bovino Pastagem Formada ABAIXO de 1UA por ha ano", "Pecuária Bovino-Pastagem Formada ACIMA de 1UA por ha ano", "Vegetação Nativa - Mata Atlântica"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2),
+  vti_media = c(20249.84, 21408.34, 17321.34, 4944.71, 43197.80, 19522.72, 35693.04, 4944.71),
+  vti_minimo = c(17212.37, 18197.09, 14723.14, 4203.00, 36718.13, 16594.31, 30339.09, 4203.00),
+  vti_maximo = c(23287.32, 24619.59, 19919.54, 5686.42, 49677.47, 22451.13, 41047.00, 5686.42),
+  vtn_media = c(17097.63, 17477.63, 14393.76, 4944.71, 24609.71, 16074.21, 28143.62, 4944.71),
+  vtn_minimo = c(14532.98, 14855.98, 12234.69, 4203.00, 20918.25, 13663.08, 23922.08, 4203.00),
+  vtn_maximo = c(19662.27, 20099.27, 16552.82, 5686.42, 28301.16, 18485.34, 32365.16, 5686.42)
+)
+
+### MRT - ZH Lagos #####
+### 2017 #####
+RJMRT_Lagos_2017 <- data.frame(
+  mrt = "ZH Lagos",
+  tipologia_de_uso = c(
+    "Uso Indefinido (média geral)",
+    "Pecuária",
+    "Exploração Mista",
+    "Pecuária bovina em pastagem de baixo suporte",
+    "Exploração Mista (Pecuária Lavoura Temporária)",
+    "Pecuária bovina em pastagem de baixo suporte (Araruama)",
+    "Pecuária bovina em pastagem de baixo suporte (Silva jardim)",
+    "Exploração Mista (Pecuária Lavoura Temporária) em Casimiro de Abreu"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 3, 3, 3),
+  vti_media = c(13730.48, 13878.95, 16062.31, 13878.95, 13752.67, 16844.70, 13754.17, 14877.05),
+  vti_minimo = c(11670.91, 11797.10, 13652.97, 11797.10, 11689.77, 14318.00, 11691.05, 12645.49),
+  vti_maximo = c(15790.05, 15960.79, 18471.66, 15960.79, 15815.57, 19371.41, 15817.30, 17108.60),
+  vtn_media = c(NA, NA, NA, NA, NA, NA, NA, NA),
+  vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA),
+  vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA)
+)
+
+### 2022 #####
+RJMRT_Lagos_2022 <- data.frame(
+  mrt = "ZH Lagos",
+  tipologia_de_uso = c("Geral", "Pecuária", "Agrícola", "Exploração Mista", "Não Agrícola", "Vegetação Nativa", "Pecuária Bovino - Pastagem Formada ABAIXO de 1UA por ha ano", "Pecuária Bovino - Pastagem Formada ACIMA de 1UA por ha ano", "Exploração Mista - Diversificada", "Não Agrícola - Exploração turística", "Não Agrícola - Outros", "Vegetação Nativa - Mata Atlântica"),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(29255.41, 27119.21, 31687.02, 38400.17, 44826.81, 11559.71, 24746.79, 32645.06, 46546.54, 138300.23, 24295.56, 11559.71),
+  vti_minimo = c(24867.10, 23051.33, 26933.97, 32640.15, 38102.78, 9825.75, 21034.77, 27748.30, 39564.56, 117555.20, 20651.23, 9825.75),
+  vti_maximo = c(33643.72, 31187.10, 36440.07, 44160.20, 51550.83, 13293.67, 28458.81, 37541.82, 53528.52, 159045.27, 27939.90, 13293.67),
+  vtn_media = c(24601.41, 23031.75, 25349.62, 31973.06, 40034.25, 11046.84, 21034.77, 27639.23, 39943.06, 96810.16, 20655.92, 11046.84),
+  vtn_minimo = c(20911.20, 19576.99, 21547.17, 27177.10, 34029.11, 9389.81, 17879.55, 23493.34, 33951.60, 82288.64, 17557.53, 9389.81),
+  vtn_maximo = c(28291.62, 26486.52, 29152.06, 36769.02, 46039.39, 12703.87, 24189.99, 31785.11, 45934.52, 111331.69, 23754.31, 12703.87)
+)
+
+### Consolidação dos Dados #####
+RJ17 <- rbind(
+  RJMRT_ValeDoParaiba_2017,
+  RJMRT_LesteFluminense_2017,
+  RJMRT_Serrana_2017,
+  RJMRT_Metropolitana_2017,
+  RJMRT_NordesteFluminense_2017,
+  RJMRT_Lagos_2017
+)
+
+RJ17$vtn_media <- NA
+RJ17$vtn_minimo <- NA
+RJ17$vtn_maximo <- NA 
+RJ17$ano <- 2017 
+
+names(RJ17)[names(RJ17) == "media"] <- "vti_media"
+names(RJ17)[names(RJ17) == "limite_inferior"] <- "vti_minimo"
+names(RJ17)[names(RJ17) == "limite_superior"] <- "vti_maximo"
+
+RJ22 <- rbind(
+  RJMRT_Nordeste_Fluminense_2022,
+  RJMRT_Leste_Fluminense_2022,
+  RJMRT_Serrana_2022,
+  RJMRT_Lagos_2022,
+  RJMRT_Vale_do_Paraiba_2022,
+  RJMRT_Metropolitana_2022
+)
+
+RJTEMPO <- RJTEMPO |>
+  mutate(
+    mrt= case_when(
+      mrt == "ZH Vale do Paraiba" ~701,
+      mrt == "ZH Vale do Paraíba"     ~ 701,
+      mrt == "ZH Leste Fluminense"    ~ 705,
+      mrt == "ZH Serrana"             ~ 703,
+      mrt == "ZH Metropolitana"       ~ 702,
+      mrt == "ZH Nordeste Fluminense" ~ 706,
+      mrt == "ZH Lagos"               ~ 704
+    )
+  )
+
+RJTEMPO<- RJTEMPO |>
+  mutate(
+    cidades = case_when(
+      mrt == "701" ~ "Angra dos Reis, Areal, Barra do Pirai, Barra Mansa, Comendador Levy Gasparian, Engenheiro Paulo de Frontin, Itatiaia, Mangaratiba, Mendes, Miguel Pereira, Paraíba do Sul, Paraty, Pinheiral, Pirai, Porto Real, Quatis, Resende, Rio Claro, Rio das Flores, Sapucaia, Três Rios, Valença, Vassouras, Volta Redonda", # [cite: 540]
+      mrt == "702" ~ "Belford Roxo, Cachoeiras de Macacu, Duque de Caxias, Guapimirim, Itaboral, Itagual, Japeri, Magé, Marica, Mesquita, Nilópolis, Niteroi, Nova Iguaçu, Paracambi, Queimados, Rio Bonito, Rio de Janeiro, São Gançalo, São João de Meriti, Seropédica, Tangua", # [cite: 543]
+      mrt == "703" ~ "Bom Jardim, Cantagalo, Carmo, Cordeiro, Duas Barras, Macuco, Nova Friburgo, Paty do Alferes, Petrópolis, Santa Maria Madalena, São José do Vale do Rio Preto, São Sebastião do Alto, Sumidouro, Teresópolis e Trajano de Moraes", # [cite: 549]
+      mrt == "704" ~ "Araruama, Armação de Búzios, Arraial do Cabo, Cabo Frio, Casimiro de Abreu, Iguaba Grande, Rio das Ostras, São Pedro da Aldeia, Saquarema e Silva Jardim", # [cite: 552, 553]
+      mrt == "705" ~ "Campos dos Goytacazes, Carapebus, Conceição do Macabu, Macaé, Quissamã, São Francisco de Itabapoana, São João da Barra", # [cite: 560]
+      mrt == "706" ~ "Aperibé, Bom Jesus do Itabapoana, Cambuci, Cardoso Moreira, Italva, Itaocara, Itaperuna, Laje do Muriaé, Miracema, Natividade, Porciúncula, Santo Antônio de Pádua, São Fidélis, São José de Ubá e Varre-Sai", # [cite: 562]
+    )
+  )
+
+
+###16.Rio Grande do Norte ####
+### MRT LITORAL NORTE E REGIÃO CENTRAL #####
+### 2017 #####
+MRT_Litoral_Norte_Central_2017 <- data.frame(
+  mrt = "LITORAL NORTE E REGIÃO CENTRAL",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Vegetação Nativa", "Exploração Mista (Agricultura e/ou pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou pecuária de médio rendimento)", "Vegetação nativa (Pedro Avelino)", "Vegetação nativa (Touros)", "Agricultura e/ou Pecuária de médio rendimento (João Câmara)"),
+  nivel = c(0, 1, 1, 2, 2, 3, 3, 3),
+  vti_media = c(3108.75, 5406.75, 2484.03, 8064.29, 2894.39, 1111.10, 4753.34, 2965.78),
+  vti_minimo = c(1312.22, 2268.73, 966.18, 5294.98, 2579.72, 957.13, 4022.21, 2795.74),
+  vti_maximo = c(4905.27, 8544.77, 4001.87, 10833.60, 3209.05, 1265.08, 5484.47, 3135.82),
+  vtn_media = c(2791.61, 4349.81, 2283.99, 6082.70, 2635.80, 875.35, 4597.01, 2639.45),
+  vtn_minimo = c(1192.47, 2086.07, 781.23, 3778.79, 2361.83, 674.70, 4011.25, 2481.66),
+  vtn_maximo = c(4390.75, 6613.54, 3786.74, 8386.62, 2909.77, 1076.00, 5182.77, 2797.24)
+)
+### 2019 #####
+MRT3_2019 <- data.frame(
+  mrt = "LITORAL NORTE E REGIÃO CENTRAL",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Angicos)", "Exploração Mista(Agricultura e/ou Pecuária de médio rendimento (Joâo Câmara)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Pedro Avelino)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Pureza)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Touros)", "Uso Indefinido (Média Geral)"),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  vti_media = c(4278.25, 4278.25, 1955.23, 4233.67, 6312.35, 2761.97, 3104.36, 1254.63, 5504.99, 6903.13, 4278.25),
+  vti_minimo = c(1752.95, 1752.95, 998.66, 2447.16, 4339.99, 2008.49, 1992.38, 802.16, 3522.95, 4325.79, 1752.95),
+  vti_maximo = c(6803.56, 6803.56, 2911.79, 6020.17, 8284.7, 3515.45, 4216.35, 1707.1, 7487.04, 9480.47, 6803.56),
+  vtn_media = c(3524.43, 3524.43, 1627.08, 3765.78, 5056.18, 2347.67, 2927.38, 925.46, 4390.96, 5135.15, 3524.43),
+  vtn_minimo = c(1537.24, 1537.24, 747.39, 2152.98, 3668.23, 1771.13, 1806.7, 590.93, 3169.05, 3870.82, 1537.24),
+  vtn_maximo = c(5511.62, 5511.62, 2506.76, 5378.57, 6444.13, 2924.21, 4048.05, 1259.99, 5612.87, 6399.48, 5511.62)
+)
+### 2020 #####
+MRTJoaoCamara_2020 <- data.frame(
+  mrt = "João Câmara/Estado do Rio Grande do Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Bento Fernandes)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - São Miguel do Gostoso)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Taipu)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Pedra Grande)"),
+  nivel = c(0, 1, 2, 2, 2, 3, 3, 3, 3),
+  vti_media = c(2952.56, 2952.56, 2115.88, 2934.84, 3715.28, 2533.97, 3458.21, 2606.16, 4200.00),
+  vti_minimo = c(1569.19, 1569.19, 1210.28, 1430.59, 2521.38, 2309.45, 2172.31, 1145.80, 2888.51),
+  vti_maximo = c(4335.94, 4335.94, 3021.47, 4439.09, 4909.17, 2758.50, 4744.12, 4066.53, 5511.49),
+  vtn_media = c(2754.52, 2754.52, 1946.81, 2766.76, 3448.42, 2302.60, 3071.87, 2532.56, 3922.71),
+  vtn_minimo = c(1454.90, 1454.90, 1109.29, 1320.79, 2414.66, 2035.84, 2114.15, 1034.99, 2731.02),
+  vtn_maximo = c(4054.15, 4054.15, 2784.33, 4212.73, 4482.18, 2569.35, 4029.58, 4030.14, 5114.41)
+)
+
+### 2025 #####
+MRTJoaoCamara_2025 <- data.frame(
+  mrt = "João Câmara/RN",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricola e/ou Pecuária - baixa capacidade)", "Exploração Mista (Agricola e/ou Pecuária - média capacidade)", "Exploração Mista (Agricola e/ou Pecuária - alta capacidade)", "Exploração Mista - Agrícola e/ou Pecuária - baixa capacidade (Bento Fernandes)", "Exploração Mista - Agrícola e/ou Pecuária - média capacidade (Galinhos)", "Exploração Mista - Agrícola e/ou Pecuária - média capacidade (Jandaíra)", "Exploração Mista - Agrícola e/ou Pecuária - alta capacidade (Jandaíra)", "Exploração Mista - Agrícola e/ou Pecuária - média capacidade (João Câmara)", "Exploração Mista - Agrícola e/ou Pecuária - média capacidade (Parazinho)", "Exploração Mista - Agrícola e/ou Pecuária - alta capacidade (Pedra Grande)", "Exploração Mista - Agrícola e/ou Pecuária - baixa capacidade (Poço Branco)", "Exploração Mista - Agricola e/ou Pecuária - média capacidade (Pureza)", "Exploração Mista - Agrícola e/ou Pecuária - alta capacidade (Pureza)", "Exploração Mista - Agrícola e/ou Pecuária - média capacidade (São Miguel do Gostoso)", "Exploração Mista - Agrícola e/ou Pecuária - média capacidade (Taipu)", "Exploração Mista - Agrícola e/ou Pecuária - média capacidade (Touros)", "Exploração Mista - Agricola e/ou Pecuária - alta capacidade (Touros)"),
+  nivel = c(0, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(5829.11, 5829.11, 3782.66, 5181.35, 7841.70, 4483.55, 3590.52, 3590.30, 5095.26, 5735.95, 5669.05, 5566.76, 4444.44, 7618.93, 9223.47, 4537.24, 5561.90, 7457.12, 9387.76),
+  vti_minimo = c(4954.74, 4954.74, 3215.26, 4404.14, 6665.45, 3811.02, 3051.94, 3051.76, 4330.97, 4875.56, 4818.69, 4731.75, 3777.78, 6476.09, 7839.95, 3856.66, 4727.62, 6338.55, 7979.59),
+  vti_maximo = c(6703.47, 6703.47, 4350.06, 5958.55, 9017.96, 5156.09, 4129.09, 4128.85, 5859.55, 6596.35, 6519.40, 6401.77, 5111.11, 8761.76, 10607.00, 5217.83, 6396.19, 8575.69, 10795.92),
+  vtn_media = c(5223.07, 5223.07, 3428.33, 4638.55, 7089.33, 3817.34, 3244.26, 3279.87, 4662.56, 5316.30, 4307.64, 4745.10, 4110.21, 7030.73, 8544.15, 4016.24, 4573.81, 7192.88, 8022.96),
+  vtn_minimo = c(4439.61, 4439.61, 2914.08, 3942.76, 6025.93, 3244.74, 2757.62, 2787.89, 3963.17, 4518.86, 3661.49, 4033.33, 3493.67, 5976.12, 7262.52, 3413.80, 3887.74, 6113.95, 6819.52),
+  vtn_maximo = c(6006.54, 6006.54, 3942.58, 5334.33, 8152.73, 4389.94, 3730.90, 3771.85, 5361.94, 6113.75, 4953.78, 5456.86, 4726.74, 8085.34, 9825.77, 4618.68, 5259.88, 8271.81, 9226.40)
+)
+
+### MRT LITORAL ORIENTAL #####
+### 2017 #####
+MRT_Litoral_Oriental_2017 <- data.frame(
+  mrt = "LITORAL ORIENTAL",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou pecuária de médio rendimento)", "Agricultura e/ou Pecuária de alto rendimento (Ceará-Mirim)", "Agricultura e/ou Pecuária de alto rendimento (Macaiba)", "Agricultura e/ou Pecuária de alto rendimento (Maxaranguape)", "Agricultura e/ou Pecuária de alto rendimento (Monte Alegre)"),
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3),
+  vti_media = c(8376.65, 8376.65, 8865.14, 4957.26, 11971.01, 5586.68, 8274.35, 7138.47),
+  vti_minimo = c(4803.13, 4803.13, 5313.86, 4123.11, 8531.74, 3452.83, 7975.62, 4952.54),
+  vti_maximo = c(11950.17, 11950.17, 12416.42, 5791.42, 15410.42, 7720.53, 8573.07, 9324.40),
+  vtn_media = c(6525.79, 6525.79, 6782.04, 4732.06, 6970.41, 4130.93, 7218.47, 6466.28),
+  vtn_minimo = c(3984.89, 3984.89, 4169.22, 4052.28, 5690.38, 2554.13, 6738.52, 4245.29),
+  vtn_maximo = c(9066.70, 9066.70, 9394.86, 5411.84, 8250.45, 5707.72, 7698.41, 8687.28)
+)
+### 2019 #####
+MRT4_2019 <- data.frame(
+  mrt = "LITORAL ORIENTAL",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Ceará-Mirim)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Goianinha)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Macaíba)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Maxaranguape)", "Exploração Mista(Agricultura e/ou Pecuária de médio rendimento (Monte Alegre)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Monte Alegre)"),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  vti_media = c(10273.65, 10273.65, 11100.13, 6495.45, 14381.65, 10718.01, 8965.56, 6229.52, 5136.16, 11947.41),
+  vti_minimo = c(5657.71, 5657.71, 6530.38, 3896.75, 9383.92, 8610.31, 4858.58, 4384.57, 3091.62, 7682.09),
+  vti_maximo = c(14889.59, 14889.59, 15669.88, 9094.14, 19379.38, 12825.72, 13072.54, 8074.46, 7180.69, 16212.72),
+  vtn_media = c(7677.27, 7677.27, 8276.2, 4939.3, 9628.64, 8965.39, 6119.16, 5190.0, 4699.53, 9054.4),
+  vtn_minimo = c(4914.27, 4914.27, 5659.05, 3422.12, 7326.64, 7911.85, 3797.74, 3722.15, 2853.84, 6308.19),
+  vtn_maximo = c(10440.27, 10440.27, 10893.34, 6456.49, 11930.63, 10018.94, 8440.59, 6657.86, 6545.21, 11800.6)
+)
+
+### 2020 #####
+MRTCearaMirimGoianinha_2020 <- data.frame(
+  mrt = "Ceará-Mirim Goianinha do Estado do Rio Grande do Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento (Ceará-Mirim))", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento (Goianinha))", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento Macaiba())", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento (Macaíba))", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Maxaranguape))", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento (Monte Alegre))", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento (Pedro Velho))"),
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(9332.29, 9332.29, 11109.82, 6871.99, 14748.37, 10718.01, 7257.44, 5954.79, 7366.49, 11205.76, 10325.00),
+  vti_minimo = c(6174.97, 6174.97, 6722.18, 6469.05, 10336.09, 8610.31, 5681.47, 4424.09, 4872.10, 9258.80, 7898.24),
+  vti_maximo = c(12489.60, 12489.60, 15497.46, 7274.93, 19160.65, 12825.72, 8833.41, 7485.49, 9860.88, 13152.72, 12751.76),
+  vtn_media = c(7443.17, 7443.17, 8711.87, 5278.46, 10921.48, 8965.39, 5734.58, 4286.20, 5996.63, 9114.09, 8579.89),
+  vtn_minimo = c(5130.99, 5130.99, 5593.09, 4472.41, 7798.89, 7911.85, 4582.69, 3131.28, 3949.82, 7725.31, 6646.65),
+  vtn_maximo = c(9755.36, 9755.36, 11830.65, 6084.51, 14044.07, 10018.94, 6886.47, 5441.12, 8043.45, 10502.87, 10513.13)
+)
+
+### 2025 ####
+MRTCearaMirimGoianinha_2025 <- data.frame(
+  mrt = "Ceará-Mirim Goianinha/RN",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Exploração mista - Agrícola + Pastagem alta capacidade", "Exploração mista - Agrícola + Pastagem media capacidade", "Agricola Cana de açúcar", "Agrícola - Horticultura/Olericultura/Granjeiros", "Agrícola - Cana de açúcar (Canguaretama)", "Exploração mista - Agrícola + Pastagem alta capacidade (Ceará-Mirim)", "Exploração mista - Agrícola + Pastagem alta capacidade (Espírito Santo)", "Exploração mista - Agrícola + Pastagem alta capacidade (Extremoz)", "Agrícola Cana de açúcar (Goianinha)", "Exploração mista - Agrícola + Pastagem alta capacidade (Macaiba)", "Exploração mista - Agrícola + Pastagem media capacidade (Macaiba)", "Exploração mista - Agrícola + Pastagem alta capacidade (Maxaranguape)", "Exploração mista - Agrícola + Pastagem alta capacidade (Monte Alegre)", "Exploração mista - Agrícola + Pastagem alta capacidade (Nisia Floresta)", "Exploração mista - Agrícola + Pastagem alta capacidade (Pedro Velho)", "Exploração mista - Agrícola + Pastagem alta capacidade (Rio do Fogo)", "Exploração mista - Agrícola + Pastagem media capacidade (Rio do Fogo)", "Exploração mista - Agrícola + Pastagem alta capacidade (São Gonçalo do Amarante)", "Agrícola - Horticultura/Olericultura/Granjeiros (São José do Mipibu)", "Exploração mista - Agrícola + Pastagem alta capacidade (Vera Cruz)"),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(14857.09, 14345.54, 21480.48, 14590.92, 7721.70, 20299.17, 22779.93, 23916.67, 13949.83, 13207.66, 14895.04, 20254.87, 14081.83, 6827.20, 9800.00, 13788.94, 14727.62, 17903.35, 14368.10, 9531.77, 27052.38, 23922.14, 20000.00),
+  vti_minimo = c(12628.53, 12193.71, 18258.41, 12402.28, 6563.44, 17254.30, 19362.94, 20329.17, 11857.35, 11226.51, 12660.78, 17216.64, 11969.56, 5803.12, 8330.00, 11720.60, 12518.48, 15217.85, 12212.89, 8102.01, 22994.52, 20333.82, 17000.00),
+  vti_maximo = c(17085.65, 16497.37, 24702.56, 16779.56, 8879.95, 23344.05, 26196.92, 27504.17, 16042.30, 15188.81, 17129.29, 23293.09, 16194.10, 7851.28, 11270.00, 15857.28, 16936.76, 20588.85, 16523.32, 10961.54, 31110.24, 27510.46, 23000.00),
+  vtn_media = c(13332.29, 11346.64, 20292.77, 12749.92, 6892.00, 18950.94, 21768.77, 22434.17, 11184.96, 11812.72, 13465.01, 18162.43, 12089.92, 5741.12, 9274.36, 11470.93, 12486.96, 15452.28, 13601.48, 9282.79, 26206.76, 22960.67, 18711.11),
+  vtn_minimo = c(11332.45, 9644.65, 17248.85, 10837.43, 5858.20, 16108.30, 18503.46, 19069.04, 9507.21, 10040.81, 11445.26, 15438.06, 10276.44, 4879.95, 7883.21, 9750.29, 10613.92, 13134.43, 11561.26, 7890.38, 22275.75, 19516.57, 15904.44),
+  vtn_maximo = c(15332.14, 13048.64, 23336.68, 14662.41, 7925.80, 21793.59, 25034.09, 25799.29, 12862.70, 13584.62, 15484.76, 20886.79, 13903.41, 6602.28, 10665.51, 13191.57, 14360.01, 17770.12, 15641.70, 10675.21, 30137.78, 26404.77, 21517.78)
+)
+
+### MRT Agreste Pontegi Trairi #####
+### 2017 #####
+MRT_Agreste_Potengi_Trairi_2017 <- data.frame(
+  mrt = "AGRESTE, POTENGI E TRAIRI",
+  tipologia_de_uso = c(
+    "Uso Indefinido (Média Geral)",
+    "Exploração Mista",
+    "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)",
+    "Exploração Mista (Agricultura e/ou Pecuária de Médio Rendimento)",
+    "Agricultura e/ou pecuária de médio rendimento (Bom Jesus)",
+    "Agricultura e/ou pecuária de baixo rendimento (Japi)",
+    "Agricultura e/ou pecuária de médio rendimento (Santa Maria)",
+    "Agricultura e/ou pecuária de médio rendimento (Santo Antônio)",
+    "Agricultura e/ou pecuária de médio rendimento (São Paulo do Potengi)"
+  ),
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3),
+  vti_media = c(
+    3157.21, 3157.21, 805.25, 4174.65, 6050.90, 795.74, 4123.39, 5266.67, 2780.39
+  ),
+  vti_minimo = c(
+    928.90, 928.90, 673.16, 2373.98, 2549.75, 655.26, 2707.73, 4623.76, 2449.65
+  ),
+  vti_maximo = c(
+    5385.52, 5385.52, 937.34, 5975.33, 9552.05, 936.22, 5539.06, 5909.58, 3111.13
+  ),
+  vtn_media = c(
+    2781.80, 2781.80, 700.34, 3751.18, 5507.31, 716.75, 3666.58, 5075.00, 2416.16
+  ),
+  vtn_minimo = c(
+    713.29, 713.29, 545.71, 1993.25, 2309.44, 593.09, 2357.62, 4392.02, 2114.86
+  ),
+  vtn_maximo = c(
+    4850.31, 4850.31, 854.97, 5509.10, 8705.19, 840.42, 4975.54, 5757.97, 2717.46
+  )
+)
+
+### 2019 #####
+MRT1_2019 <- data.frame(
+  mrt = "AGRESTE, POTENGI E TRAIRÍ",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Médio Rendimento)", "Agricultura e/ou pecuária de baixo rendimento (Barcelona)", "Agricultura e/ou pecuária de baixo rendimento (Bento Fernandes)", "Agricultura e/ou pecuária de baixo rendimento (Lajes Pintadas)", "Agricultura e/ou pecuária de baixo rendimento (Ruy Barbosa)", "Agricultura e/ou pecuária de baixo rendimento (Tangará)", "Agricultura e/ou pecuária de médio rendimento (Bom Jesus)", "Agricultura e/ou pecuária de médio rendimento (Nova Cruz)", "Agricultura e/ou pecuária de médio rendimento (Riachuelo)", "Agricultura e/ou pecuária de médio rendimento (Santa Maria)", "Agricultura e/ou pecuária de médio rendimento (Santo Antônio)", "Agricultura e/ou pecuária de médio rendimento (São Paulo do Potengi)", "Agricultura e/ou pecuária de médio rendimento (São Pedro)", "Agricultura e/ou pecuária de médio rendimento (Serra Caiada)", "Agricultura e/ou pecuária de médio rendimento (Serrinha)"),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  vti_media = c(2887.26, 2887.26, 819.52, 4758.47, 2388.89, 1540.1, 1102.16, 988.53, 800.0, 8638.54, 6503.21, 3249.35, 3590.06, 5439.72, 2618.05, 3983.82, 2160.8, 5815.46),
+  vti_minimo = c(790.88, 790.88, 690.2, 2280.51, 770.13, 956.64, 537.01, 633.18, 800.0, 1850.35, 3382.25, 2717.24, 2886.59, 4928.93, 2352.05, 2692.37, 1336.99, 3377.09),
+  vti_maximo = c(4983.63, 4983.63, 948.83, 7236.42, 4007.65, 2123.57, 1667.32, 1343.87, 800.0, 15426.73, 9624.17, 3781.45, 4293.53, 5950.5, 2884.05, 5275.28, 2984.61, 8253.83),
+  vtn_media = c(2452.81, 2452.81, 691.2, 3937.53, 1025.0, 1360.67, 956.47, 879.99, 658.13, 7084.77, 4630.43, 3002.93, 3155.7, 5224.88, 2317.87, 3374.8, 1739.06, 4338.77),
+  vtn_minimo = c(538.8, 538.8, 566.41, 2069.55, 826.57, 910.5, 541.43, 561.58, 605.09, 2702.87, 3779.44, 2524.14, 2624.83, 4656.78, 2085.2, 2333.57, 1271.22, 1967.22),
+  vtn_maximo = c(4366.82, 4366.82, 816.0, 5805.51, 1223.43, 1810.83, 1371.52, 1198.41, 711.17, 11466.66, 5481.42, 3481.73, 3686.57, 5792.98, 2550.54, 4416.02, 2206.89, 6710.32)
+)
+
+### 2020 #####
+MRTNovaCruzSaoPauloDoPotengi_2020 <- data.frame(
+  mrt = "Nova Cruz São Paulo do Potengi do Estado do Rio Grande do Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Boa Saúde)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Bom Jesus)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Brejinho)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - lelmo Marinho)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Lagoa de Pedras)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Lagoa Salgada)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Nova Cruz)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Riachuelo)", "Exploração Mista (agricultura e/ou Pecuária de médio rendimento - Santa Maria)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Santo Antônio)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - São Paulo do Potengi)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - São Pedro)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Senador Elói de Souza)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Serra Caiada)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Serrinha)"),
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(6030.58, 6030.58, 3978.57, 6452.03, 5146.36, 7400.45, 10572.92, 8908.91, 8450.00, 6390.48, 7832.43, 3978.57, 4267.23, 4431.42, 2590.81, 5631.56, 2422.36, 5254.22, 5472.76),
+  vti_minimo = c(2781.56, 2781.56, 1399.58, 2728.68, 2824.66, 5068.15, 5455.84, 7334.63, 7386.99, 3602.70, 4817.30, 1399.58, 1728.31, 3264.55, 2125.68, 4143.84, 1610.87, 1942.94, 3012.36),
+  vti_maximo = c(9279.60, 9279.60, 6557.56, 10175.37, 7468.05, 9732.75, 15690.00, 10483.19, 9513.01, 9178.25, 10847.57, 6557.56, 6806.14, 5598.29, 3055.94, 7119.28, 3233.84, 8565.50, 7933.17),
+  vtn_media = c(5188.93, 5188.93, 2602.97, 5580.82, 4730.30, 6591.67, 10124.62, 7368.47, 7132.97, 5310.41, 6265.96, 2602.97, 3736.38, 4172.37, 2334.26, 4928.55, 2054.65, 4760.45, 4565.70),
+  vtn_minimo = c(2424.18, 2424.18, 1295.57, 2411.51, 2349.58, 4442.69, 5206.18, 6718.99, 6652.87, 2978.62, 4335.41, 1295.57, 1635.74, 3030.09, 1940.18, 3650.43, 1623.41, 1759.50, 2168.28),
+  vtn_maximo = c(7953.69, 7953.69, 3910.38, 8750.13, 7111.02, 8740.66, 15043.06, 8017.95, 7613.06, 7642.19, 8196.50, 3910.38, 5837.02, 5314.65, 2728.33, 6206.67, 2485.89, 7761.40, 6963.11)
+)
+
+### 2025 #####
+MRTNovaCruzSaoPauloDoPotengi_2025 <- data.frame(
+  mrt = "Nova Cruz São Paulo do Potengi/RN",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração mista", "Pecuária", "Exploração mista - Agrícola + Pastagem media capacidade", "Exploração mista - Agrícola + Pastagem alta capacidade", "Pecuária Bovino - Pastagem Plantada", "Pecuária diversos média capacidade", "Exploração mista - Agricola + Pastagem média capacidade (Boa saúde)", "Exploração mista - Agrícola + Pastagem média capacidade (Bom Jesus)", "Exploração mista - Agrícola + Pastagem alta capacidade (Brejinho)", "Exploração mista - Agrícola + Pastagem média capacidade (lelmo Marinho)", "Exploração mista - Agrícola + Pastagem média capacidade (Lagoa D'Anta)", "Exploração mista - Agrícola + Pastagem média capacidade (Lagoa de Pedras)", "Pecuária Diversos - Média Capacidade (Santo Antônio)", "Exploração Mista - Agrícola e Pastagem de média capacidade (Nova Cruz)", "Exploração Mista - Agrícola e Pastagem de média capacidade (Lagoa Salgada)", "Exploração mista - Agrícola + Pastagem média capacidade (Riachuelo)", "Exploração mista - Agrícola + Pastagem média capacidade (Santa Maria)", "Pecuária Bovino - Pastagem Plantada (Santo Antônio)", "Exploração mista - Agrícola + Pastagem média capacidade (São Paulo do Potengi)", "Exploração mista - Agrícola + Pastagem média capacidade (São Pedro)", "Exploração mista - Agrícola + Pastagem média capacidade (Senador Elói de Souza)", "Exploração mista - Agrícola + Pastagem média capacidade (Serra Caiada)", "Pecuária Bovino - Pastagem Plantada (Serrinha)"),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(8153.91, 7263.98, 10884.83, 6644.46, 13668.11, 11439.63, 10775.62, 4615.54, 5876.85, 15825.40, 7514.22, 4961.54, 9275.00, 10775.62, 16666.67, 12141.31, 4445.64, 3945.92, 11464.09, 5055.25, 6376.01, 8029.80, 5375.07, 11044.32),
+  vti_minimo = c(6930.82, 6174.38, 9252.10, 5647.79, 11617.89, 9723.69, 9159.27, 3923.21, 4995.32, 13451.59, 6387.08, 4217.31, 7883.75, 9159.27, 14166.67, 10320.12, 3778.79, 3354.03, 9744.48, 4296.96, 5419.61, 6825.33, 4568.81, 9387.67),
+  vti_maximo = c(9376.99, 8353.58, 12517.55, 7641.13, 15718.33, 13155.58, 12391.96, 5307.87, 6758.37, 18199.21, 8641.35, 5705.77, 10666.25, 12391.96, 19166.67, 13962.51, 5112.48, 4537.80, 13183.71, 5813.53, 7332.41, 9234.28, 6181.34, 12700.97),
+  vtn_media = c(7215.79, 6451.34, 9447.21, 5936.11, 12262.12, 9758.70, 9954.82, 3788.00, 5402.82, 13806.46, 5986.47, 4791.40, 8848.40, 9954.82, 14032.74, 11141.42, 3381.20, 3313.80, 10253.69, 4468.11, 5517.75, 7249.80, 4868.94, 9364.86),
+  vtn_minimo = c(6133.42, 5483.64, 8030.13, 5045.69, 10422.80, 8294.89, 8461.60, 3219.80, 4592.40, 11735.49, 5088.50, 4072.69, 7521.14, 8461.60, 11927.83, 9470.21, 2874.02, 2816.73, 8715.64, 3797.89, 4690.08, 6162.33, 4138.60, 7960.13),
+  vtn_maximo = c(8298.16, 7419.05, 10864.29, 6826.52, 14101.44, 11222.50, 11448.05, 4356.20, 6213.25, 15877.43, 6884.44, 5510.11, 10175.66, 11448.05, 16137.65, 12812.64, 3888.38, 3810.87, 11791.75, 5138.32, 6345.41, 8337.27, 5599.28, 10769.59)
+)
+
+### MRT SERIDO #####
+### 2017 #####
+MRT_Serido_2017 <- data.frame(
+  mrt = "SERIDÓ",
+  tipologia_de_uso = c(
+    "Uso Indefinido (Média Geral)",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)",
+    "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento) (Acari)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento) (Equador)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento) (Jucurutu)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento) (Parelhas)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento) (Santana do Matos)"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 3, 3, 3, 3, 3),
+  vti_media = c(
+    914.22, 925.45, 869.30, 925.45, 8432.76, 597.13, 1092.04, 841.19, 1124.58, 579.66
+  ),
+  vti_minimo = c(
+    506.69, 485.49, 613.93, 485.49, 5718.23, 258.42, 392.06, 265.16, 812.27, 371.47
+  ),
+  vti_maximo = c(
+    1321.76, 1365.42, 1124.67, 1365.42, 11147.30, 935.84, 1792.02, 1417.22, 1436.89, 787.86
+  ),
+  vtn_media = c(
+    759.08, 756.28, 770.27, 756.28, 7256.82, 526.64, 885.72, 599.90, 918.02, 509.72
+  ),
+  vtn_minimo = c(
+    448.55, 418.46, 592.26, 418.46, 5010.06, 237.55, 376.05, 181.62, 688.48, 337.67
+  ),
+  vtn_maximo = c(
+    1069.62, 1094.10, 948.29, 1094.10, 9503.58, 815.73, 1395.40, 1018.18, 1147.56, 681.77
+  )
+)
+### 2017 #####
+MRT6_2019 <- data.frame(
+  mrt = "SERIDÓ",
+  tipologia_de_uso = c("Uso Indefinido (Média geral)", "Exploração Mista (Agricultura e/ou Pecuária)", "Vegetação Nativa", "Exploração Mista(Agricultura e/ou Pecuária de baixo rend imento)", "Exploração Mista(Agricultura e/ou Pecuária de baix.rend (Jucurutu)", "Exploração Mista(Agricultura e/ou Pecuária de baixo Rend (S. Tomé)", "Exploração Mista(Agricultura e/ou Pecuária de baixo Rend (S.Matos)"),
+  nivel = c(0, 1, 1, 1, 1, 1, 1),
+  vti_media = c(1156.55, 1243.43, 734.56, 1243.43, 1209.08, 3078.52, 1582.72),
+  vti_minimo = c(516.54, 588.08, 390.9, 588.08, 238.23, 1107.06, 781.1),
+  vti_maximo = c(1796.56, 1898.77, 1078.23, 1898.77, 2179.92, 5049.98, 2384.34),
+  vtn_media = c(931.32, 988.56, 653.32, 988.56, 1039.73, 2133.29, 1512.44),
+  vtn_minimo = c(456.34, 497.94, 386.1, 492.94, 284.07, 780.99, 733.05),
+  vtn_maximo = c(1406.31, 1479.18, 920.54, 1484.19, 1795.39, 3485.59, 2291.84)
+)
+
+### 2020 #####
+MRTCaicoCerroCora_2020 <- data.frame(
+  mrt = "Caicó - Cerro-Corá do Estado do Rio Grande do Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Acari))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Bodó))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Caicó))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Currais Novos))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Florânia))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Jardim do Seridó))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Jucurutú))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Parelhas))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Fernando))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Vicente))"),
+  nivel = c(0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(987.24, 987.24, 987.24, 706.00, 294.75, 1560.94, 894.78, 692.30, 1342.76, 714.97, 1239.31, 1487.99, 1254.54),
+  vti_minimo = c(477.23, 477.23, 477.23, 359.65, 283.71, 1081.51, 819.46, 388.27, 571.75, 473.76, 532.88, 607.98, 583.13),
+  vti_maximo = c(1497.25, 1497.25, 1497.25, 1052.34, 305.80, 2040.36, 970.10, 996.32, 2113.77, 956.19, 1945.74, 2368.00, 1925.94),
+  vtn_media = c(783.80, 783.80, 783.80, 578.95, 269.52, 1177.80, 643.40, 617.19, 1115.40, 533.07, 937.70, 1014.84, 944.11),
+  vtn_minimo = c(426.31, 426.31, 426.31, 351.67, 236.33, 938.13, 522.43, 362.63, 568.81, 290.43, 468.08, 573.26, 605.46),
+  vtn_maximo = c(1141.29, 1141.29, 1141.29, 806.23, 302.72, 1417.46, 764.37, 871.75, 1661.99, 775.71, 1407.31, 1456.42, 1282.77)
+)
+
+###2025####
+MRTCaicoCerroCora_2025 <- data.frame(
+  mrt = "Caicó Cerro Corá/RN",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola (Serra de Santana)", "Exploração mista - Agrícola + Pastagem baixa capacidade", "Exploração mista - Agrícola + Pastagem média capacidade", "Agricola - Fruticulturas diversas média capacidade (Serra de Santana)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Acari)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Bodó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Caicó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Carnaúba dos Dantas)", "Agrícola - Fruticulturas diversas média capacidade (Cerro-Corá)", "Exploração mista - Agricola + Pastagem baixa capacidade (Cruzeta)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Currais Novos)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Equador)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Florânia)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jardim de Piranhas)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jardim do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jucurutu)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Ouro Branco)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Parelhas)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Santana do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São Fernando)", "Exploração mista - Agricola + Pastagem baixa capacidade (São João do Sabugi)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São José do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São Vicente)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Serra Negra do Norte)", "Agricola - Fruticulturas diversas média capacidade (Ten. Laurentino Cruz)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Timbaúba dos Batistas)"),
+  nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(2550.75, 2295.68, 14573.49, 2295.68, 21666.67, 14573.49, 1305.68, 2358.31, 2263.92, 3206.11, 26677.81, 2378.76, 1754.23, 3021.74, 2703.59, 2772.81, 1972.14, 1951.89, 3076.61, 2424.67, 2794.54, 2684.53, 1129.06, 4929.68, 2267.30, 1920.95, 10662.60, 1175.28),
+  vti_minimo = c(2168.14, 1951.33, 12387.46, 1951.33, 18416.67, 12387.46, 1109.83, 2004.56, 1924.33, 2725.20, 22676.14, 2021.94, 1491.10, 2568.48, 2298.05, 2356.89, 1676.32, 1659.10, 2615.12, 2060.97, 2375.36, 2281.85, 959.70, 4190.23, 1927.21, 1632.81, 9063.21, 998.99),
+  vti_maximo = c(2933.36, 2640.04, 16759.51, 2640.04, 24916.67, 16759.51, 1501.53, 2712.05, 2603.51, 3687.03, 30679.48, 2735.57, 2017.37, 3475.00, 3109.13, 3188.73, 2267.96, 2244.67, 3538.10, 2788.37, 3213.72, 3087.21, 1298.42, 5669.13, 2607.40, 2209.10, 12261.99, 1351.58),
+  vtn_media = c(1877.22, 1737.84, 13145.76, 1737.84, 14416.67, 13145.76, 1144.69, 1729.34, 1679.98, 2613.33, 22591.05, 1544.91, 1267.06, 1415.32, 1921.69, 1913.05, 1372.18, 1545.91, 2253.86, 1658.83, 2299.78, 2314.33, 1005.84, 3192.13, 1954.21, 1422.24, 9821.40, 1071.30),
+  vtn_minimo = c(1595.64, 1477.16, 11173.90, 1477.16, 12254.17, 11173.90, 972.98, 1469.94, 1427.98, 2221.33, 19202.39, 1313.17, 1077.00, 1203.02, 1633.44, 1626.09, 1166.35, 1314.03, 1915.78, 1410.00, 1954.81, 1967.18, 854.96, 2713.31, 1661.08, 1208.90, 8348.19, 910.61),
+  vtn_maximo = c(2158.80, 1998.51, 15117.63, 1998.51, 16579.17, 15117.63, 1316.39, 1988.74, 1931.98, 3005.33, 25979.70, 1776.64, 1457.12, 1627.62, 2209.94, 2200.00, 1578.01, 1777.80, 2591.94, 1907.65, 2644.75, 2661.48, 1156.71, 3670.95, 2247.34, 1635.57, 11294.61, 1232.00)
+)
+
+### MRT MEDIO OESTE #####
+### 2017 #####
+MRT_Medio_Oeste_2017 <- data.frame(
+  mrt = "MÉDIO OESTE",
+  tipologia_de_uso = c(
+    "Uso Indefinido (Média Geral)",
+    "Exploração Mista (Agricultura e/ou Pecuária)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)",
+    "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)",
+    "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento) (Açu)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento) (Caraúbas)",
+    "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento) (Gov. Dix-Sept Rosado)",
+    "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento) (Ipanguaçu)",
+    "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento) (Mossoró)"
+  ),
+  nivel = c(0, 1, 2, 2, 2, 3, 3, 3, 3, 3),
+  vti_media = c(
+    1819.00, 1819.00, 1327.38, 1873.35, 2482.51, 2013.10, 611.83, 1626.02, 2368.77, 6845.84
+  ),
+  vti_minimo = c(
+    734.45, 734.45, 445.98, 791.47, 1435.26, 1698.05, 480.56, 225.66, 2227.90, 3374.16
+  ),
+  vti_maximo = c(
+    2903.55, 2903.55, 2208.77, 2955.23, 3529.76, 2328.14, 743.10, 3026.38, 2509.64, 10317.52
+  ),
+  vtn_media = c(
+    1551.72, 1551.72, 1085.38, 1524.57, 2237.32, 1535.25, 447.28, 1472.29, 2072.30, 6016.87
+  ),
+  vtn_minimo = c(
+    550.51, 550.51, 287.45, 743.63, 1178.25, 1214.71, 371.11, 190.03, 2025.13, 3005.30
+  ),
+  vtn_maximo = c(
+    2552.94, 2552.94, 1883.31, 2305.51, 3296.40, 1855.78, 523.45, 2754.56, 2119.47, 9028.05
+  )
+)
+
+### 2019 #####
+MRT5_2019 <- data.frame(
+  mrt = "MÉDIO OESTE",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Médio Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Alto Rendimento)", "Agricultura e/ou pecuária de alto rendimento (Apodi)", "Agricultura de baixo rendimento (Caraúbas)", "Agricultura de alto rendimento (Ipanguaçu)", "Agricultura de baixo rendimento (São Rafael)"),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1),
+  vti_media = c(1816.59, 1816.59, 941.35, 1684.97, 2292.65, 2288.29, 1337.6, 14535.35, 698.29),
+  vti_minimo = c(838.19, 838.19, 526.06, 1366.95, 2118.52, 2093.98, 790.83, 12403.27, 420.31),
+  vti_maximo = c(2794.99, 2794.99, 1356.64, 2002.99, 2466.78, 2482.61, 1884.37, 16667.43, 976.26),
+  vtn_media = c(1617.06, 1617.06, 640.93, 1435.28, 2292.65, 2288.29, 907.11, 9973.74, 525.86),
+  vtn_minimo = c(607.42, 607.42, 449.76, 1019.74, 2118.52, 2093.98, 394.39, 6783.38, 385.69),
+  vtn_maximo = c(2626.7, 2626.7, 832.09, 1850.81, 2466.78, 2482.61, 1419.83, 13164.09, 666.04)
+)
+
+### 2020 #####
+MRTMossoroAssu_2020 <- data.frame(
+  mrt = "Mossoró - Assú do Estado do Rio Grande do Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Vale do Açú)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Apodi))", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Apodi)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Areia Branca)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Açů)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Baraúna)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Caraúbas)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Caraúbas)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Felipe Guerra)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Gov. Dix Sept-Rosado)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Guamaré)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Mossoró)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Mossoró)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento Pendencias)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Serra do Mel)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento Upanema)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Upanema)"),
+  nivel = c(0, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(2364.19, 2364.19, 1349.90, 1885.95, 3162.25, 11993.83, 1656.48, 2991.00, 2368.54, 3124.94, 3100.67, 1230.12, 1350.00, 2400.00, 778.57, 1568.25, 2483.78, 5186.50, 1242.57, 3566.67, 1030.30, 1671.43),
+  vti_minimo = c(1054.22, 1054.22, 867.60, 859.74, 1916.92, 9358.03, 781.10, 2543.47, 534.12, 2514.39, 2850.43, 834.24, 1050.00, 1200.00, 619.51, 901.22, 1194.20, 3111.90, 1144.24, 2869.05, 977.82, 762.89),
+  vti_maximo = c(3674.17, 3674.17, 1832.20, 2912.17, 4407.59, 14629.64, 2531.86, 3438.52, 4202.96, 3735.49, 3350.92, 1626.00, 1650.00, 3600.00, 937.63, 2235.28, 3773.35, 7261.10, 1340.91, 4264.28, 1082.79, 2579.96),
+  vtn_media = c(2098.12, 2098.12, 1142.23, 1722.69, 2720.54, 9845.17, 1573.15, 2884.43, 1933.02, 2576.21, 2121.35, 1003.39, 1350.00, 2182.27, 760.39, 1219.05, 2361.69, 4851.40, 1131.46, 2483.33, 1006.06, 1671.43),
+  vtn_minimo = c(898.88, 898.88, 662.27, 819.56, 1499.63, 7776.72, 761.20, 2429.96, 550.77, 2098.10, 1870.36, 697.19, 1050.00, 1091.14, 605.05, 843.85, 1128.16, 2910.84, 1003.19, 1433.73, 995.56, 762.89),
+  vtn_maximo = c(3297.35, 3297.35, 1622.19, 2625.82, 3941.44, 11913.62, 2385.09, 3338.90, 3315.27, 3054.31, 2372.34, 1309.60, 1650.00, 3273.41, 915.73, 1594.24, 3595.21, 6791.96, 1259.73, 3532.94, 1016.56, 2579.96)
+)
+
+### 2025 #####
+MRTMossoroAcu_2025 <- data.frame(
+  mrt = "Mossoró - Açu/RN",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Agrícola", "Exploração Mista", "Agrícola - Fruticultura diversos - média capacidade", "Agrícola - Fruticultura diversos - alta capacidade", "Exploração mista - Agrícola + pastagem baixa capacidade", "Exploração mista - Agrícola + pastagem média capacidade", "Exploração mista - Agrícola + pastagem alta capacidade", "Agrícola - Fruticultura diversos - alta capacidade (Açu)", "Exploração mista - Agrícola + pastagem baixa capacidade (Açu)", "Agricola - Fruticultura diversos - alta capacidade (Afonso Bezerra)", "Exploração mista - Agrícola + pastagem média capacidade (Afonso Bezerra)", "Agricola - Fruticultura diversos - alta capacidade (Apodi)", "Exploração mista - Agricola + pastagem média capacidade (Apodi)", "Agricola - Fruticultura diversos - alta capacidade (Baraúna)", "Exploração mista - Agricola + pastagem média capacidade (Caraúbas)", "Agrícola - Fruticultura diversos - alta capacidade (Carnaubais)", "Exploração mista - Agrícola + pastagem baixa capacidade (Carnaubais)", "Exploração mista - Agrícola + pastagem média capacidade (Felipe Guerra)", "Exploração mista - Agrícola + pastagem média capacidade (Governador Dix-Sept Rosado)", "Exploração mista - Agrícola + pastagem média capacidade (Guamaré)", "Agrícola - Fruticultura diversos - alta capacidade (Ipanguaçu)", "Exploração mista - Agrícola + pastagem média capacidade (Mossoró)", "Agrícola - Fruticultura diversos - média capacidade (Serra do Mel)", "Exploração mista - Agrícola + pastagem alta capacidade (Upanema)"),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(3189.16, 7140.99, 2443.78, 4000.00, 7827.37, 2002.96, 2626.54, 5695.75, 6423.81, 2027.54, 16643.22, 3603.75, 4491.25, 2479.00, 7138.20, 2819.05, 4713.18, 1782.90, 2221.23, 2288.08, 3200.00, 12624.00, 5016.68, 4000.00, 7124.24),
+  vti_minimo = c(2710.78, 6069.84, 2077.21, 3400.00, 6653.27, 1702.52, 2232.56, 4841.39, 5460.24, 1723.41, 14146.73, 3063.19, 3817.56, 2107.15, 6067.47, 2396.19, 4006.20, 1515.47, 1888.04, 1944.86, 2720.00, 10730.40, 4264.17, 3400.00, 6055.61),
+  vti_maximo = c(3667.53, 8212.13, 2810.35, 4600.00, 9001.48, 2303.41, 3020.52, 6550.11, 7387.38, 2331.67, 19139.70, 4144.31, 5164.94, 2850.85, 8208.93, 3241.90, 5420.16, 2050.34, 2554.41, 2631.29, 3680.00, 14517.60, 5769.18, 4600.00, 8192.88),
+  vtn_media = c(2916.17, 6269.59, 2241.31, 3775.00, 7021.21, 1910.72, 2360.20, 5262.66, 6176.79, 2027.54, 11517.50, 3253.65, 4113.82, 2344.43, 5933.50, 2376.66, 4175.95, 1719.47, 2039.12, 2192.58, 2494.44, 11859.81, 4944.43, 3775.00, 6751.14),
+  vtn_minimo = c(2478.74, 5329.15, 1905.11, 3208.75, 5968.03, 1624.11, 2006.17, 4473.26, 5250.27, 1723.41, 9789.88, 2765.60, 3496.75, 1992.76, 5043.48, 2020.16, 3549.56, 1461.55, 1733.25, 1863.69, 2120.28, 10080.84, 4202.77, 3208.75, 5738.47),
+  vtn_maximo = c(3353.59, 7210.03, 2577.51, 4341.25, 8074.39, 2197.33, 2714.22, 6052.06, 7103.30, 2331.67, 13245.13, 3741.70, 4730.90, 2696.09, 6823.53, 2733.16, 4802.34, 1977.39, 2344.99, 2521.46, 2868.61, 13638.78, 5686.10, 4341.25, 7763.81)
+)
+
+### MRT ALTO OESTE #####
+### 2017 #####
+MRT_Alto_Oeste_2017 <- data.frame(
+  mrt = "ALTO OESTE",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Antônio Martins)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Janduis)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Olho d'água dos Borges)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Pilões)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Riacho de Santana)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Umarizal)"),
+  nivel = c(0, 1, 2, 3, 3, 3, 3, 3, 3),
+  vti_media = c(1270.63, 1270.63, 1270.63, 1139.47, 1041.00, 1572.83, 1943.40, 3462.23, 1132.44),
+  vti_minimo = c(897.62, 897.62, 897.62, 850.33, 779.71, 830.14, 762.01, 1294.33, 987.69),
+  vti_maximo = c(1643.64, 1643.64, 1643.64, 1428.60, 1302.29, 2315.51, 3124.79, 5630.13, 1277.19),
+  vtn_media = c(943.89, 943.89, 943.89, 830.73, 733.17, 1123.27, 1066.87, 2267.62, 901.32),
+  vtn_minimo = c(640.24, 640.24, 640.24, 524.96, 562.62, 713.99, 818.59, 763.88, 672.58),
+  vtn_maximo = c(1247.53, 1247.53, 1247.53, 1136.49, 903.73, 1532.56, 1315.14, 3771.36, 1130.07)
+)
+
+### 2019 #####
+MRT2_2019 <- data.frame(
+  mrt = "ALTO OESTE",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Alexandria)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Antônio Martins)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Encanto)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Janduís)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Marcelino Vieira)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Olho d`água dos Borges)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Patu)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Pilões)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Riacho de Santana)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Francisco do Oeste)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Miguel)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Taboleiro Grande)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Umarizal)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Venha Ver)"),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  vti_media = c(1559.14, 1559.14, 1559.14, 1420.46, 913.11, 1358.45, 940.97, 1466.09, 1751.62, 2245.61, 1243.08, 4496.06, 2568.65, 2013.92, 1810.68, 1119.43, 1459.78),
+  vti_minimo = c(807.36, 807.36, 807.36, 1000.49, 854.5, 1177.24, 753.99, 783.61, 994.31, 1107.71, 1174.45, 3579.03, 1422.6, 1551.47, 690.72, 988.66, 616.05),
+  vti_maximo = c(2310.91, 2310.91, 2310.91, 1840.44, 971.73, 1539.66, 1127.95, 2148.57, 2508.93, 3383.51, 1311.71, 5413.1, 3714.71, 2476.37, 2930.63, 1250.21, 2303.51),
+  vtn_media = c(1117.17, 1117.17, 1117.17, 743.95, 579.48, 1273.68, 792.22, 933.3, 1297.1, 1366.12, 867.06, 3379.77, 2294.66, 1731.69, 953.92, 888.57, 906.72),
+  vtn_minimo = c(586.36, 586.36, 586.36, 656.03, 436.93, 1136.47, 611.9, 648.52, 771.06, 532.06, 698.87, 2762.02, 1166.14, 1241.19, 653.93, 669.32, 647.81),
+  vtn_maximo = c(1647.98, 1647.98, 1647.98, 831.86, 722.03, 1410.9, 972.55, 1218.09, 1823.14, 2200.18, 1035.25, 3997.52, 3423.17, 2222.2, 1253.91, 1107.83, 1165.63)
+)
+
+### 2020 #####
+MRTPauDosFerrosCampoGrande_2020 <- data.frame(
+  mrt = "Pau dos Ferros - Campo Grande do Estado do Rio Grande do Norte",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Alexandria))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Almino Afonso))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Campo Grande))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Encanto))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Francisco Dantas))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Janduis))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Luis Gomes))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Marcelino Vieira))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Olho D'água dos Borges))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Paraú))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Patu))", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento (Rafael Godeiro))", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento (Riacho de Santana))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Rodolfo Fernandes))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Francisco do Oeste))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Miguel))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Severiano Melo))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Tenente Ananias))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Umarizal))"),
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(1735.54, 1735.54, 1735.54, 7833.13, 1470.16, 1584.25, 743.89, 1255.28, 2595.01, 1574.32, 764.34, 1938.05, 1795.72, 1771.02, 2559.05, 2333.33, 3251.57, 1691.80, 4325.60, 2205.16, 3379.71, 1478.74, 1494.20),
+  vti_minimo = c(730.38, 730.38, 730.38, 4998.00, 486.50, 743.16, 498.75, 963.18, 1105.29, 884.53, 390.53, 1032.52, 1306.91, 821.90, 1648.12, 1755.98, 1271.90, 1050.43, 404.38, 1682.35, 1564.77, 1105.27, 373.62),
+  vti_maximo = c(2740.69, 2740.69, 2740.69, 10668.26, 2453.82, 2425.33, 989.03, 1547.39, 4084.73, 2264.11, 1138.15, 2843.57, 2284.52, 2720.13, 3469.97, 2910.68, 5231.24, 2333.18, 8246.81, 2727.97, 5194.65, 1852.22, 2614.77),
+  vtn_media = c(1347.39, 1347.39, 1347.39, 3812.37, 996.84, 1235.99, 626.00, 756.74, 1465.92, 1328.08, 584.79, 1724.54, 1504.25, 904.91, 1934.52, 2013.23, 2484.91, 1176.83, 3158.92, 1901.95, 2125.66, 1317.45, 1105.05),
+  vtn_minimo = c(548.86, 548.86, 548.86, 2598.31, 291.62, 596.47, 424.54, 412.10, 835.91, 725.04, 273.99, 905.79, 1085.14, 458.08, 1102.30, 1153.80, 966.35, 842.24, 1286.98, 1265.66, 1096.25, 1010.21, 414.53),
+  vtn_maximo = c(2145.92, 2145.92, 2145.92, 5026.44, 1702.07, 1875.52, 827.46, 1101.38, 2095.94, 1931.12, 895.60, 2543.30, 1923.36, 1351.73, 2766.75, 2872.66, 4003.47, 1511.43, 5030.87, 2538.25, 3155.07, 1624.68, 1795.57)
+)
+
+### 2025 #####
+MRTPauDosFerrosCampoGrande_2025 <- data.frame(
+  mrt = "Pau dos Ferros - Campo Grande/RN",
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Exploração mista - Agrícola + Pastagem baixa capacidade", "Exploração mista - Agrícola + Pastagem média capacidade", "Agrícola - Fruticultura diversos média capacidade (cajueiro)", "Exploração mista - Agricola + Pastagem baixa capacidade (Alexandria)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Almino Afonso)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Antonio Martins)", "Exploração mista - Agricola + Pastagern baixa capacidade (Campo Grande)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Coronel João Pessoa)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Doutor Severiano)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Encanto)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Francisco Dantas)", "Exploração mista - Agricola + Pastagern baixa capacidade (Itau)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Janduis)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Luis Gomes)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Marcelino Vieira)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Martins)", "Exploração mista - Agricola + Pastagem baixa capacidade (Olho d'água dos Borges)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Paraná)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Patu)", "Exploração mista - Agricola + Pastagern baixa capacidade (Pau dos Ferros)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Pilões)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Riacho da Cruz)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Riacho de Santana)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Rodolfo Fernandes)", "Exploração mista - Agricola + Pastagem baixa capacidade (São Francisco do Oeste)", "Exploração mista - Agricola + Pastagem baixa capacidade (São Miguel)", "Exploração mista Agrícola + Pastagem baixa capacidade (Serrinha dos Pintos)", "Agrícola - Fruticultura diversos média capacidade cajueiro (Severiano Melo)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Taboleiro Grande)", "Exploração mista - Agricola + Pastagem baixa capacidade (Tenente Ananias)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Triunfo Potiguar)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Umarizal)", "Exploração mista - Agrícola + Pastagern baixa capacidade (Venha Ver)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Viçosa)"),
+  nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(3025.86, 2977.34, 7129.93, 2919.20, 10300.00, 7129.93, 2698.33, 1643.98, 3041.19, 2689.31, 4134.99, 1141.36, 2671.34, 2796.07, 3553.95, 1752.66, 830.77, 3123.98, 3245.45, 2983.33, 3795.27, 3030.54, 2617.73, 3214.32, 1225.00, 5170.83, 2865.77, 4170.81, 4833.47, 6460.18, 7349.92, 1610.88, 2454.23, 4203.14, 3656.63, 4089.62, 6462.76),
+  vti_minimo = c(2571.98, 2530.74, 6060.44, 2481.32, 8755.00, 6060.44, 2293.58, 1397.38, 2585.01, 2285.92, 3514.74, 970.15, 2270.63, 2376.66, 3020.85, 1489.76, 706.15, 2655.38, 2758.64, 2535.83, 3225.98, 2575.96, 2225.07, 2732.17, 1041.25, 4395.21, 2435.91, 3545.19, 4108.45, 5491.16, 6247.43, 1369.25, 2086.10, 3572.67, 3108.14, 3476.18, 5493.35),
+  vti_maximo = c(3479.73, 3423.94, 8199.42, 3357.08, 11845.00, 8199.42, 3103.07, 1890.58, 3497.37, 3092.71, 4755.24, 1312.56, 3072.04, 3215.48, 4087.04, 2015.56, 955.38, 3592.57, 3732.27, 3430.83, 4364.56, 3485.12, 3010.39, 3696.46, 1408.75, 5946.46, 3295.64, 4796.43, 5558.49, 7429.21, 8452.40, 1852.52, 2822.37, 4833.61, 4205.13, 4703.06, 7432.17),
+  vtn_media = c(2504.81, 2453.42, 5612.19, 2415.40, 9038.89, 5612.19, 1921.01, 1387.02, 2434.55, 2189.97, 3128.36, 1058.02, 2078.62, 1985.53, 3125.18, 1527.63, 753.85, 2836.83, 2345.45, 2845.83, 3396.59, 2470.81, 1916.08, 2937.72, 982.92, 3729.17, 2423.27, 2998.47, 4322.75, 6332.78, 5452.74, 1527.55, 1929.07, 3303.48, 2831.88, 3327.77, 3314.22),
+  vtn_minimo = c(2129.09, 2085.40, 4770.36, 2053.09, 7683.06, 4770.36, 1632.86, 1178.97, 2069.37, 1861.47, 2659.11, 899.32, 1766.82, 1687.70, 2656.41, 1298.48, 640.77, 2411.31, 1993.64, 2418.96, 2887.10, 2100.19, 1628.67, 2497.06, 835.48, 3169.79, 2059.78, 2548.70, 3674.34, 5382.86, 4634.83, 1298.42, 1639.71, 2807.96, 2407.10, 2828.60, 2817.09),
+  vtn_maximo = c(2880.53, 2880.53, 6454.02, 2777.71, 10394.72, 6454.02, 2209.16, 1595.08, 2799.73, 2518.47, 3597.62, 1216.73, 2390.41, 2283.36, 3593.96, 1756.77, 866.92, 3262.36, 2697.27, 3272.71, 3906.08, 2841.43, 2203.49, 3378.38, 1130.35, 4288.54, 2786.76, 3448.24, 4971.17, 7282.70, 6270.65, 1756.68, 2218.44, 3799.00, 3256.67, 3826.93, 3811.36)
+)
+
+### CONSOLIDAÇÃO DOS DADOS #####
+RN2017 <- rbind(
+  MRT_Litoral_Norte_Central_2017,
+  MRT_Litoral_Oriental_2017,
+  MRT_Agreste_Potengi_Trairi_2017,
+  MRT_Serido_2017,
+  MRT_Medio_Oeste_2017,
+  MRT_Alto_Oeste_2017
+)
+
+RN2019 <- rbind(MRT1_2019, MRT2_2019, MRT3_2019, MRT4_2019, MRT5_2019, MRT6_2019)
+
+
+
+RN2020 <- rbind(
+  MRTCearaMirimGoianinha_2020,
+  MRTJoaoCamara_2020,
+  MRTNovaCruzSaoPauloDoPotengi_2020,
+  MRTSantaCruz_2020,
+  MRTMossoroAssu_2020,
+  MRTPauDosFerrosCampoGrande_2020,
+  MRTLajes_2020,
+  MRTCaicoCerroCora_2020
+)
+
+RN2025 <- rbind(
+  MRTCearaMirimGoianinha_2025,
+  MRTJoaoCamara_2025,
+  MRTNovaCruzSaoPauloDoPotengi_2025,
+  MRTSantaCruz_2025,
+  MRTLajes_2025,
+  MRTMossoroAcu_2025,
+  MRTCaicoCerroCora_2025,
+  MRTPauDosFerrosCampoGrande_2025
+)
+
+RN2017$ano <- 2017
+RN2019$ano <- 2019
+RN2020$ano <- 2020
+RN2025$ano <- 2025
+
+RNTEMPORAL <- rbind(RN2025, RN2020, RN2019, RN2017)
+RNTEMPORAL$estado <- 24
+RNTEMPORAL$regiao <- "nordeste"
+RNTEMPORAL <- RNTEMPORAL |>
+  mutate(
+    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
+    mrt= case_when(
+      grepl("ALTO OESTE|PAU DOS FERROS", mrt, ignore.case = TRUE) ~ 1901,
+      grepl("MÉDIO OESTE|MOSSORÓ|ASSÚ", mrt, ignore.case = TRUE) ~ 1902,
+      grepl("SERIDÓ|CAICÓ|CERRO", mrt, ignore.case = TRUE) ~ 1903,
+      grepl("LITORAL NORTE|JOÃO CÂMARA", mrt, ignore.case = TRUE) ~ 1904,
+      grepl("AGRESTE|POTENGI|TRAIRI|NOVA CRUZ|SÃO PAULO DO POTENGI|SANTA CRUZ", mrt, ignore.case = TRUE) ~ 1905,
+      grepl("LITORAL ORIENTAL|CEARÁ-MIRIM|GOIANINHA", mrt, ignore.case = TRUE) ~ 1906,
+      .default = NA_integer_
+    ),
+    # Etapa 2: Adiciona a lista de cidades com base no código numérico
+    cidades = case_when(
+      mrt == 1901 ~ "Paraná, Tenente Ananias, Alexandria, Major Sales, Luís Gomes, Venha-Ver, Coronel João Pessoa, São Miguel, José da Penha, Marcelino Vieira, Riacho de Santana, Água Nova, Pilões, Rafael Fernandes, Doutor Severiano, Encanto, Pau dos Ferros, Francisco Dantas, João Dias, Antônio Martins, Frutuoso Gomes, Almino Afonso, Serrinha dos Pintos, Martins, Lucrécia, Portalegre, Viçosa, São Francisco do Oeste, Taboleiro Grande, Severiano Melo, Rodolfo Fernandes, Itaú, Riacho da Cruz, Umarizal, Rafael Godeiro, Patu, Messias Targino, Janduís, Olho-d'Água do Borges, Campo Grande, Triunfo Potiguar, Paraú",
+      mrt == 1902 ~ "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas, Carnaubais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçu, Macau, Mossoró, Pendências, Porto do Mangue, Tibau, Serra do Mel, Upanema",
+      mrt == 1903 ~ "Acari, Bodó, Caicó, Carnaúba dos Dantas, Cerro Corá, Cruzeta, Currais Novos, Equador, Florânia, Ipueira, Jardim de Piranhas, Jardim do Seridó, Jucurutu, Lagoa Nova, Ouro Branco, Parelhas, Santana do Seridó, São Fernando, São João do Sabugi, São José do Seridó, São Vicente, Serra Negra do Norte, Tenente Laurentino Cruz, Timbaúba dos Batistas",
+      mrt == 1904 ~ "João Câmara, Galinhos, Caiçara do Norte, São Bento do Norte, Pedra Grande, Parazinho, Jandaíra, São Miguel do Gostoso, Touros, Pureza, Poço Branco, Taipu, Bento Fernandes",
+      mrt == 1905 ~ "Boa Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz, Passa e Fica, Passagem, Riachuelo, Santa Maria, Santo Antônio, São Paulo do Potengi, São Pedro, Senador Elói de Souza, Serra Caiada, Serrinha, Várzea",
+      mrt == 1906 ~ "Ceará-Mirim, Rio do Fogo, Maxaranguape, Extremoz, São Gonçalo do Amarante, Natal, Macaíba, Parnamirim, Vera Cruz, Monte Alegre, São José de Mipibu, Nísia Floresta, Senador Georgino Avelino, Arês, Tibau do Sul, Goianinha, Vila Flor, Espírito Santo, Canguaretama, Baía Formosa, Pedro Velho, Montanhas",
+      .default = NA_character_
+    )
+  )
+
