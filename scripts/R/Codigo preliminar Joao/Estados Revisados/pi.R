@@ -128,20 +128,20 @@ MRT10_2022 <- data.frame(
   vtn_media = c(784.24, 1496.68, 598.51, 837.25, 1129.42, 1496.68, 1041.28, 617.15, 579.02, 592.15, 1043.27, 1215.57, 958.36),
   vtn_minimo = c(101.29, 880.95, 185.00, 101.29, 233.80, 880.95, 310.84, 195.72, 329.77, 101.29, 233.80, 646.72, 200.12),
   vtn_maximo = c(1960.40, 2112.40, 1675.14, 2510.74, 2500.00, 2112.40, 2270.87, 1000.00, 781.57, 1175.87, 2500.00, 2000.00, 1954.01)
-)#parei aqui
+)#REVIEW
 
 # MRT 11 - Vale do Canindé (Duplicado)
 MRT11_2022 <- data.frame(
-  mrt = "11-Vale do Canindé",
-  tipologia_de_uso = c("Geral (todas as tipologias)", "1- Agrícola", "2- Exploração mista", "3- Pecuária", "1- Agrícola cana", "2- Exploração mista diversificada", "3- Pecuária diversos", "1- Agrícola Cana Região Metropolitana Teresina"),
-  nivel = c(0, 1, 1, 1, 2, 2, 2, 3),
-  vti_media = c(1802.98, 3015.27, 1583.75, 1487.30, 3015.27, 1583.75, 1487.30, 3015.27),
-  vti_minimo = c(616.47, 1029.76, 525.69, 635.80, 1029.76, 525.69, 635.80, 1029.76),
-  vti_maximo = c(4285.50, 4618.50, 3409.60, 2493.37, 4618.56, 3409.60, 2493.37, 4618.50),
-  vtn_media = c(1706.31, 2733.15, 1521.60, 1302.80, 2733.15, 1521.60, 1302.80, 2733.15),
-  vtn_minimo = c(596.68, 1029.76, 525.69, 635.80, 1029.76, 525.69, 635.80, 1029.76),
-  vtn_maximo = c(4075.39, 4285.50, 3409.60, 2493.37, 4285.50, 3409.60, 2493.37, 4285.50)
-)
+    mrt = "MRT 11 – Teresina",
+    tipologia_de_uso = c("Geral (todas as tipologias)", "Agrícola", "Exploração mista", "Pecuária", "Agrícola cana", "Exploração mista diversificada", "Pecuária diversos", "Agrícola Cana Região Metropolitana Teresina"),
+    nivel = c(0, 1, 1, 1, 2, 2, 2, 3),
+    vti_media = c(1802.98, 3015.27, 1583.75, 1487.30, 3015.27, 1583.75, 1487.30, 3015.27),
+    vti_minimo = c(616.47, 1029.76, 525.69, 635.80, 1029.76, 525.69, 635.80, 1029.76),
+    vti_maximo = c(4285.50, 4618.56, 3409.60, 2493.37, 4618.56, 3409.60, 2493.37, 4618.56),
+    vtn_media = c(1706.31, 2733.15, 1521.60, 1302.80, 2733.15, 1521.60, 1302.80, 2733.15),
+    vtn_minimo = c(596.68, 1029.76, 525.69, 635.80, 1029.76, 525.69, 635.80, 1029.76),
+    vtn_maximo = c(4075.39, 4285.50, 3409.60, 2493.37, 4285.50, 3409.60, 2493.37, 4285.50)
+  )
 
 # MRT 12 - Planície Litorânea
 MRT12_2022 <- data.frame(
