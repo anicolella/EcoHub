@@ -1,8 +1,5 @@
 """"
-Versão final e robusta do script extrator de PPR.
-Atribuição de nível baseada em padrões de texto na tipologia.
-
-@author: jodom (com assistência do Gemini)
+Extrator ppr 
 """
 import camelot
 import re
@@ -81,8 +78,8 @@ def gerar_script_r_from_df(df, nome_mrt, ano, uf="RN"):
 # CONFIGURAÇÕES (Ajuste os valores nesta seção)
 # =============================================================================
 caminho_pdf = r"C:/Users/jodom/OneDrive/Área de Trabalho/RAMT_PPR_RN.pdf"
-paginas_para_ler = '18, 19, 20'
-nome_do_mrt = "caico"
+paginas_para_ler = '4, 5'
+nome_do_mrt = "ceara_mirim"
 ano_dos_dados = 2022
 uf_dos_dados = "RN"
 
