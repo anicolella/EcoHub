@@ -541,3 +541,183 @@ RJTEMPO<- RJTEMPO |>
         )
   )
 
+#### Rio Grande do Norte ####
+RNTEMPORAL <- RNTEMPORAL |>
+  mutate(
+    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
+    mrt= case_when(
+      grepl("ALTO OESTE|PAU DOS FERROS", mrt, ignore.case = TRUE) ~ 1901,
+      grepl("MÉDIO OESTE|MOSSORÓ|ASSÚ", mrt, ignore.case = TRUE) ~ 1902,
+      grepl("SERIDÓ|CAICÓ|CERRO", mrt, ignore.case = TRUE) ~ 1903,
+      grepl("LITORAL NORTE|JOÃO CÂMARA", mrt, ignore.case = TRUE) ~ 1904,
+      grepl("AGRESTE|POTENGI|TRAIRI|NOVA CRUZ|SÃO PAULO DO POTENGI|SANTA CRUZ", mrt, ignore.case = TRUE) ~ 1905,
+      grepl("LITORAL ORIENTAL|CEARÁ-MIRIM|GOIANINHA", mrt, ignore.case = TRUE) ~ 1906,
+      .default = NA_integer_
+    ),
+    # Etapa 2: Adiciona a lista de cidades com base no código numérico
+    cidades = case_when(
+      mrt == 1901 ~ "Paraná, Tenente Ananias, Alexandria, Major Sales, Luís Gomes, Venha-Ver, Coronel João Pessoa, São Miguel, José da Penha, Marcelino Vieira, Riacho de Santana, Água Nova, Pilões, Rafael Fernandes, Doutor Severiano, Encanto, Pau dos Ferros, Francisco Dantas, João Dias, Antônio Martins, Frutuoso Gomes, Almino Afonso, Serrinha dos Pintos, Martins, Lucrécia, Portalegre, Viçosa, São Francisco do Oeste, Taboleiro Grande, Severiano Melo, Rodolfo Fernandes, Itaú, Riacho da Cruz, Umarizal, Rafael Godeiro, Patu, Messias Targino, Janduís, Olho-d'Água do Borges, Campo Grande, Triunfo Potiguar, Paraú",
+      mrt == 1902 ~ "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas, Carnaubais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçu, Macau, Mossoró, Pendências, Porto do Mangue, Tibau, Serra do Mel, Upanema",
+      mrt == 1903 ~ "Acari, Bodó, Caicó, Carnaúba dos Dantas, Cerro Corá, Cruzeta, Currais Novos, Equador, Florânia, Ipueira, Jardim de Piranhas, Jardim do Seridó, Jucurutu, Lagoa Nova, Ouro Branco, Parelhas, Santana do Seridó, São Fernando, São João do Sabugi, São José do Seridó, São Vicente, Serra Negra do Norte, Tenente Laurentino Cruz, Timbaúba dos Batistas",
+      mrt == 1904 ~ "João Câmara, Galinhos, Caiçara do Norte, São Bento do Norte, Pedra Grande, Parazinho, Jandaíra, São Miguel do Gostoso, Touros, Pureza, Poço Branco, Taipu, Bento Fernandes",
+      mrt == 1905 ~ "Boa Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz, Passa e Fica, Passagem, Riachuelo, Santa Maria, Santo Antônio, São Paulo do Potengi, São Pedro, Senador Elói de Souza, Serra Caiada, Serrinha, Várzea",
+      mrt == 1906 ~ "Ceará-Mirim, Rio do Fogo, Maxaranguape, Extremoz, São Gonçalo do Amarante, Natal, Macaíba, Parnamirim, Vera Cruz, Monte Alegre, São José de Mipibu, Nísia Floresta, Senador Georgino Avelino, Arês, Tibau do Sul, Goianinha, Vila Flor, Espírito Santo, Canguaretama, Baía Formosa, Pedro Velho, Montanhas",
+      .default = NA_character_
+    )
+  )
+
+
+#### RondÔnia ####
+ROTEMPORAL <- ROTEMPORAL |>
+  mutate(
+    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
+    mrt= case_when(
+      grepl("Cone Sul", mrt, ignore.case = TRUE)      ~ 1301,
+      grepl("Zona da Mata", mrt, ignore.case = TRUE)  ~ 1302,
+      grepl("BR-429", mrt, ignore.case = TRUE)         ~ 1303,
+      grepl("Mamoré", mrt, ignore.case = TRUE)         ~ 1304,
+      grepl("Região Central", mrt, ignore.case = TRUE) ~ 1305,
+      grepl("Jamari", mrt, ignore.case = TRUE)         ~ 1306,
+      grepl("Rio Madeira", mrt, ignore.case = TRUE)    ~ 1307,
+      .default = NA_integer_
+    ),
+    # Etapa 2: Adiciona a lista de cidades com base no código numérico
+    cidades = case_when(
+      mrt == 1301 ~ "Cabixi, Cerejeiras, Chupinguaia, Colorado do Oeste, Corumbiara, Parecis, Pimenta Bueno, Pimenteiras do Oeste, Primavera de Rondônia, Vilhena",
+      mrt == 1302 ~ "Alta Floresta d'Oeste, Alto Alegre dos Parecis, Castanheiras, Nova Brasilândia D'Oeste, Novo Horizonte do Oeste, Rolim de Moura, Santa Luzia D'Oeste, São Felipe D'Oeste",
+      mrt == 1303 ~ "Alvorada do Oeste, Costa Marques, São Francisco do Guaporé, São Miguel do Guaporé, Seringueiras",
+      mrt == 1304 ~ "Guajará-Mirim, Nova Mamoré",
+      mrt == 1305 ~ "Cacoal, Espigão D'Oeste, Governador Jorge Teixeira, Jaru, Ji-Paraná, Ministro Andreazza, Mirante da Serra, Nova União, Ouro Preto do Oeste, Presidente Médici, Teixeirópolis, Theobroma, Urupá, Vale do Paraíso",
+      mrt == 1306 ~ "Alto Paraíso, Ariquemes, Buritis, Cacaulândia, Campo Novo de Rondônia, Cujubim, Machadinho D'Oeste, Monte Negro, Rio Crespo",
+      mrt == 1307 ~ "Candeias do Jamari, Itapuã do Oeste, Porto Velho",
+      .default = NA_character_
+    )
+  )
+
+### Roraima ####
+RRTEMPORAL <- RRTEMPORAL |>
+  mutate(
+    # Etapa 1: Padroniza os diferentes nomes para um código numérico único do Atlas
+    mrt = case_when(
+      mrt %in% c("MRT-1", "1", "01") ~ 2502,
+      mrt %in% c("MRT-2", "2", "02") ~ 2501,
+      .default = NA_integer_
+    ),
+    # Etapa 2: Adiciona a lista de cidades com base no código numérico
+    cidades = case_when(
+      mrt == 2501 ~ "Alto Alegre, Amajari, Boa Vista, Bonfim, Cantá, Normandia, Pacaraima, Uiramutã",
+      mrt == 2502 ~ "Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São João da Baliza, São Luiz",
+      .default = NA_character_
+    )
+  )
+### Santa Catarina ####
+SCTEMPO <- SCTEMPO |> mutate(
+  mrt = case_when(
+    mrt == "Araranguá"           ~ 1008,
+    mrt == "Blumenau"            ~ 1014,
+    mrt == "Canoinhas"          ~ 1016,
+    mrt == "Chapecó"             ~ 1002,
+    mrt == "Concórdia"          ~ 1004,
+    mrt == "Curitibanos"        ~ 1006,
+    mrt == "Florianópolis"      ~ 1011,
+    mrt == "Ituporanga"         ~ 1012,
+    mrt == "Joaçaba"             ~ 1005,
+    mrt == "Joinville"           ~ 1015,
+    mrt == "Planalto Serrano"    ~ 1007,
+    mrt == "Rancho Queimado"     ~ 1010,
+    mrt == "Rio do Sul"          ~ 1013,
+    mrt == "São Miguel do Oeste" ~ 1001,
+    mrt == "Tubarão"             ~ 1009,
+    mrt == "Xanxerê"             ~ 1003,
+  )
+)
+
+SCTEMPO <- SCTEMPO |>
+  mutate(
+    cidades = case_when(
+      mrt == "1001" ~ "Anchieta, Bandeirante, Barra Bonita, Belmonte, Descanso, Dionísio Cerqueira, Guaraciaba, Guarujá do Sul, Iporã do Oeste, Itapiranga, Mondaí, Palma Sola, Paraíso, Princesa, Riqueza, Romelândia, Santa Helena, São João do Oeste, São José do Cedro, São Miguel do Oeste, Tunápolis",
+      mrt == "1002" ~ "Águas de Chapecó, Águas Frias, Bom Jesus do Oeste, Caibi, Campo Erê, Caxambu do Sul, Chapecó, Cordilheira Alta, Coronel Freitas, Cunha Porã, Cunhataí, Flor do Sertão, Formosa do Sul, Guatambu, Iraceminha, Irati, Jardinópolis, Maravilha, Modelo, Nova Erechim, Nova Itaberaba, Novo Horizonte, Palmitos, Pinhalzinho, Planalto Alegre, Quilombo, Saltinho, Santa Terezinha do Progresso, Santiago do Sul, São Bernardino, São Carlos, São Lourenço do Oeste, São Miguel da Boa Vista, Saudades, Serra Alta, Sul Brasil, Tigrinhos, União do Oeste",
+      mrt == "1003" ~ "Abelardo Luz, Bom Jesus, Coronel Martins, Entre Rios, Faxinal dos Guedes, Galvão, Ipuaçu, Jupiá, Lageado Grande, Marema, Ouro Verde, Passos Maia, Ponte Serrada, São Domingos, Vargeão, Xanxerê, Xaxim",
+      mrt == "1004" ~ "Alto Bela Vista, Arabutã, Arvoredo, Concórdia, Ipira, Ipumirim, Irani, Itá, Lindóia do Sul, Paial, Peritiba, Piratuba, Presidente Castello Branco, Seara, Xavantina",
+      mrt == "1005" ~ "Água Doce, Arroio Trinta, Caçador, Calmon, Capinzal, Catanduvas, Erval Velho, Fraiburgo, Herval d'Oeste, Ibiam, Ibicaré, Iomerê, Jaborá, Joaçaba, Lacerdópolis, Lebon Régis, Luzerna, Macieira, Matos Costa, Ouro, Pinheiro Preto, Rio das Antas, Salto Veloso, Tangará, Treze Tílias, Vargem Bonita, Videira",
+      mrt == "1006" ~ "Abdon Batista, Brunópolis, Campos Novos, Curitibanos, Frei Rogério, Monte Carlo, Ponte Alta, Ponte Alta do Norte, Santa Cecília, São Cristóvão do Sul, Vargem, Zortéa",
+      mrt == "1007" ~ "Anita Garibaldi, Bocaina do Sul, Bom Jardim da Serra, Bom Retiro, Capão Alto, Campo Belo do Sul, Celso Ramos, Cerro Negro, Correia Pinto, Lages, Otacílio Costa, Painel, Palmeira, Rio Rufino, São Joaquim, São José do Cerrito, Urubici, Urupema",
+      mrt == "1008" ~ "Araranguá, Balneário Arroio do Silva, Balneário Gaivota, Ermo, Jacinto Machado, Maracajá, Meleiro, Morro Grande, Passo de Torres, Praia Grande, Santa Rosa do Sul, São João do Sul, Sombrio, Timbé do Sul, Turvo",
+      mrt == "1009" ~ "Armazém, Braço do Norte, Capivari de Baixo, Cocal do Sul, Criciúma, Forquilhinha, Garopaba, Grão Pará, Gravatal, Içara, Imaruí, Imbituba, Jaguaruna, Laguna, Lauro Müller, Morro da Fumaça, Nova Veneza, Orleans, Pedras Grandes, Pescaria Brava, Rio Fortuna, Sangão, Santa Rosa de Lima, São Ludgero, São Martinho, Siderópolis, Treviso, Treze de Maio, Tubarão, Urussanga",
+      mrt == "1010" ~ "Águas Mornas, Alfredo Wagner, Anitápolis, Rancho Queimado, São Bonifácio",
+      mrt == "1011" ~ "Angelina, Antônio Carlos, Biguaçu, Canelinha, Florianópolis, Governador Celso Ramos, Leoberto Leal, Major Gercino, Nova Trento, Palhoça, Paulo Lopes, Santo Amaro da Imperatriz, São João Batista, São José, São Pedro de Alcântara, Tijucas",
+      mrt == "1012" ~ "Agrolândia, Atalanta, Chapadão do Lageado, Imbuia, Ituporanga, Petrolândia, Vidal Ramos",
+      mrt == "1013" ~ "Agronômica, Aurora, Braço do Trombudo, Dona Emma, Ibirama, José Boiteux, Laurentino, Lontras, Mirim Doce, Pouso Redondo, Presidente Getúlio, Presidente Nereu, Rio do Campo, Rio do Oeste, Rio do Sul, Salete, Taió, Trombudo Central, Vitor Meireles, Witmarsum",
+      mrt == "1014" ~ "Apiúna, Ascurra, Benedito Novo, Blumenau, Botuverá, Brusque, Doutor Pedrinho, Gaspar, Guabiruba, Indaial, Luiz Alves, Pomerode, Rio dos Cedros, Rodeio, Timbó",
+      mrt == "1015" ~ "Araquari, Balneário Camboriú, Balneário Barra do Sul, Barra Velha, Bombinhas, Camboriú, Corupá, Garuva, Guaramirim, Ilhota, Itajaí, Itapema, Itapoá, Jaraguá do Sul, Joinville, Massaranduba, Navegantes, Penha, Balneário Piçarras, Porto Belo, São Francisco do Sul, São João do Itaperiú, Schroeder",
+      mrt == "1016" ~ "Bela Vista do Toldo, Campo Alegre, Canoinhas, Irineópolis, Itaiópolis, Mafra, Major Vieira, Monte Castelo, Papanduva, Porto União, Rio Negrinho, Santa Terezinha, São Bento do Sul, Timbó Grande, Três Barras",
+      .default = NA_character_ # Boa prática para casos não mapeados
+    )
+  )
+
+#### Sergipe #####
+SETEMPORAL<- SETEMPORAL |>
+  mutate(
+    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
+    mrt = case_when(
+      grepl("Alto Sertão", mrt, ignore.case = TRUE)    ~ 2301,
+      grepl("Médio Sertão", mrt, ignore.case = TRUE)   ~ 2302,
+      grepl("Agreste de Itabaiana", mrt, ignore.case = TRUE) ~ 2303,
+      grepl("Centro Sul", mrt, ignore.case = TRUE)     ~ 2304,
+      grepl("Sul Sergipano", mrt, ignore.case = TRUE)  ~ 2305,
+      grepl("Cotinguiba", mrt, ignore.case = TRUE)      ~ 2306,
+      grepl("Litoral Norte", mrt, ignore.case = TRUE)  ~ 2307,
+      .default = NA_integer_
+    ),
+    # Etapa 2: Adiciona a lista de cidades com base no código numérico
+    cidades = case_when(
+      mrt == 2301 ~ "Canindé de São Francisco, Gararu, Monte Alegre de Sergipe, Nossa Senhora da Glória, Poço Redondo, Porto da Folha",
+      mrt == 2302 ~ "Aquidabã, Cumbe, Feira Nova, Graccho Cardoso, Itabi, Nossa Senhora Aparecida, Nossa Senhora das Dores, Ribeirópolis, São Miguel do Aleixo",
+      mrt == 2303 ~ "Areia Branca, Carira, Frei Paulo, Itabaiana, Macambira, Malhador, Moita Bonita, Pedra Mole, Pinhão, São Domingos",
+      mrt == 2304 ~ "Lagarto, Poço Verde, Riachão do Dantas, Simão Dias, Tobias Barreto",
+      mrt == 2305 ~ "Arauá, Boquim, Cristinápolis, Estância, Indiaroba, Itabaianinha, Itaporanga d'Ajuda, Pedrinhas, Salgado, Santa Luzia do Itanhy, Tomar do Geru, Umbaúba",
+      mrt == 2306 ~ "Aracaju, Barra dos Coqueiros, Capela, Carmópolis, Divina Pastora, General Maynard, Japaratuba, Laranjeiras, Maruim, Nossa Senhora do Socorro, Pirambu, Riachuelo, Rosário do Catete, Santa Rosa de Lima, Santo Amaro das Brotas, São Cristóvão, Siriri",
+      mrt == 2307 ~ "Amparo de São Francisco, Brejo Grande, Canhoba, Cedro de São João, Ilha das Flores, Japoatã, Malhada dos Bois, Muribeca, Neópolis, Nossa Senhora de Lourdes, Pacatuba, Propriá, Santana do São Francisco, Telha",
+      .default = NA_character_
+    )
+  )
+
+### Tocantins #####
+# Adiciona as colunas com o código do MRT e a lista de cidades
+TOTEMPORAL <- TOTEMPORAL |>
+  mutate(
+    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
+    mrt = case_when(
+      grepl("ARAGUATINS|Aguiarnópolis", mrt, ignore.case = TRUE) ~ 2701,
+      grepl("ARAGUAÍNA|Aragominas", mrt, ignore.case = TRUE)    ~ 2702,
+      grepl("COLINAS", mrt, ignore.case = TRUE)                 ~ 2703,
+      grepl("COLMÉIA", mrt, ignore.case = TRUE)                 ~ 2704,
+      grepl("GUARAÍ|Fortaleza do Tabocão", mrt, ignore.case = TRUE) ~ 2705,
+      grepl("GURUPI|Aliança do TO", mrt, ignore.case = TRUE)    ~ 2706,
+      grepl("PARAÍSO DO TOCANTINS|Abreulândia", mrt, ignore.case = TRUE) ~ 2707,
+      grepl("PEIXE", mrt, ignore.case = TRUE)                   ~ 2708,
+      grepl("NATIVIDADE|Almas", mrt, ignore.case = TRUE)        ~ 2709,
+      grepl("DIANÓPOLIS|Arraias", mrt, ignore.case = TRUE)      ~ 2710,
+      grepl("PEDRO AFONSO|Tupirama", mrt, ignore.case = TRUE)   ~ 2711,
+      grepl("GOIATINS|Barra do Ouro", mrt, ignore.case = TRUE)  ~ 2712,
+      grepl("PALMAS|Brejinho de Nazaré", mrt, ignore.case = TRUE) ~ 2713,
+      .default = NA_integer_
+    ),
+    # Etapa 2: Adiciona a lista de cidades com base no código numérico
+    cidades = case_when(
+      mrt == 2701 ~ "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do Tocantins, Babaçulândia, Buriti do Tocantins, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Itaguatins, Luzinópolis, Maurilândia do Tocantins, Nazaré, Palmeiras do Tocantins, Praia Norte, Riachinho, Sampaio, Santa Terezinha do Tocantins, São Miguel do Tocantins, São Sebastião do Tocantins, Sítio Novo do Tocantins, Tocantinópolis",
+      mrt == 2702 ~ "Aragominas, Araguaína, Araguanã, Arapoema, Bandeirantes do Tocantins, Carmolândia, Filadélfia, Muricilândia, Nova Olinda, Piraquê, Santa Fé do Araguaia, Xambioá",
+      mrt == 2703 ~ "Arapoema, Bandeirantes do Tocantins, Bernardo Sayão, Brasilândia do Tocantins, Colinas do Tocantins, Couto Magalhães, Juarina, Palmeirante, Pau D'Arco, Presidente Kennedy",
+      mrt == 2704 ~ "Colméia, Goianorte, Itaporã do Tocantins, Pequizeiro",
+      mrt == 2705 ~ "Bom Jesus do Tocantins, Fortaleza do Tabocão, Goianorte, Guaraí, Itacajá, Itapiratins, Miracema do Tocantins, Pedro Afonso, Presidente Kennedy, Recursolândia, Rio Sono, Santa Maria do Tocantins, Tabocão, Tupirama",
+      mrt == 2706 ~ "Aliança do Tocantins, Alvorada, Araguaçu, Cariri do Tocantins, Crixás do Tocantins, Dueré, Figueirópolis, Formoso do Araguaia, Gurupi, Jaú do Tocantins, Palmeirópolis, Peixe, Santa Rita do Tocantins, Sandolândia, São Salvador do Tocantins, São Valério, Sucupira, Talismã",
+      mrt == 2707 ~ "Abreulândia, Araguacema, Barrolândia, Caseara, Chapada de Areia, Cristalândia, Divinópolis do Tocantins, Dois Irmãos do Tocantins, Fátima, Lagoa da Confusão, Marianópolis do Tocantins, Monte Santo do Tocantins, Nova Rosalândia, Oliveira de Fátima, Paraíso do Tocantins, Pium, Pugmil, Santa Rita do Tocantins",
+      mrt == 2708 ~ "Jaú do Tocantins, Novo Alegre, Palmeirópolis, Paranã, Peixe, São Salvador do Tocantins, São Valério",
+      mrt == 2709 ~ "Almas, Chapada da Natividade, Conceição do Tocantins, Dianópolis, Natividade, Novo Jardim, Ponte Alta do Bom Jesus, Porto Alegre do Tocantins, Rio da Conceição, Santa Rosa do Tocantins, Taipas do Tocantins",
+      mrt == 2710 ~ "Almas, Aurora do Tocantins, Combinado, Dianópolis, Lavandeira, Novo Alegre, Ponte Alta do Bom Jesus, Porto Alegre do Tocantins, Rio da Conceição, Taguatinga, Taipas do Tocantins",
+      mrt == 2711 ~ "Bom Jesus do Tocantins, Centenário, Itacajá, Itapiratins, Pedro Afonso, Recursolândia, Rio Sono, Santa Maria do Tocantins, Tupirama",
+      mrt == 2712 ~ "Barra do Ouro, Campos Lindos, Goiatins, Itacajá, Lagoa do Tocantins",
+      mrt == 2713 ~ "Aparecida do Rio Negro, Brejinho de Nazaré, Fátima, Ipueiras, Lajeado, Lizarda, Miracema do Tocantins, Miranorte, Monte do Carmo, Palmas, Pindorama do Tocantins, Porto Nacional, Santa Tereza do Tocantins, Silvanópolis, Tocantínia",
+      .default = NA_character_
+    )
+  )

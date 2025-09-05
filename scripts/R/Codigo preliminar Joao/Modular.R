@@ -9735,7 +9735,14 @@ RJTEMPORAL$regiao <- "sudeste"
 
 
 ###19.Rio Grande do Norte ####
-### MRT LITORAL NORTE E REGIÃO CENTRAL #####
+#2017:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr19_2017.pdf
+#2020:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RN_PPR_2020.pdf
+#2021:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/PPR_RAMT_2021___INCRA_RN_.pdf
+#2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_PPR_RN.pdf
+#2025:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RN_PPR_2024.pdf #a PPR é 2-24/25
+#Eles fizeram uma renomeação dos mercados a partir de 2020, também uma reoorganização.
+#Por isso alguns anos tem até 2019.
+###19.1 MRT LITORAL NORTE E REGIÃO CENTRAL #####
 ### 2017 #####
 RNMRT_Litoral_Norte_Central_2017 <- data.frame(
   mrt = "LITORAL NORTE E REGIÃO CENTRAL",
@@ -9769,7 +9776,7 @@ RNMRT3_2019 <- data.frame(
   )
 
 
-### MRT JOAO CAMARA #####
+### 19.2 MRT JOAO CAMARA #####
 ### 2020 #####
 RNMRTJoaoCamara_2020 <- data.frame(
   mrt = "MRT JOÃO CÂMARA/RN",
@@ -9837,7 +9844,7 @@ RNMRTJoaoCamara_2025 <- data.frame(
 Jandaíra, João Câmara, Parazinho, Pedra Grande, Poço Branco, Pureza, São Bento do Norte, São Miguel do Gostoso, Taipú e Touros."
   )
 
-### MRT LITORAL ORIENTAL #####
+###19.3 MRT LITORAL ORIENTAL #####
 ### 2017 #####
 RNMRT_Litoral_Oriental_2017 <- data.frame(
   mrt = "LITORAL ORIENTAL",
@@ -9874,7 +9881,7 @@ RNMRT4_2019 <- data.frame(
 
 ### 2020 #####
 RMMRTCearaMirimGoianinha_2020 <- data.frame(
-  mrt = "MRTCearáMirim",,
+  mrt = "MRTCearáMirim",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento (Ceará-Mirim))", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento (Goianinha))", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento Macaiba())", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento (Macaíba))", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Maxaranguape))", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento (Monte Alegre))", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento (Pedro Velho))"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(9332.29, 9332.29, 11109.82, 6871.99, 14748.37, 10718.01, 7257.44, 5954.79, 7366.49, 11205.76, 10325.00),
@@ -9906,7 +9913,7 @@ RNMRTCearaMirimGoianinha_2021 <- data.frame(
 ### 2022 ####
 RNMRTCearaMirimGoianinha_2022 <- data.frame(
   mrt = "MRTCearáMirim",
-  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Não Agrícola", "Exploração mista – Agrícola + Pastagem alta capacidade", "Exploração mista – Agrícola + Pastagem media capacidade", "Agrícola – Cana-de-açúcar", "Agrícola – Horticultura/Olericultura/Granjeiros", "Não Agrícola – Exploração turística", "Agrícola – Cana-de-açúcar (Arês)", "Exploração mista – Agrícola + Pastagem alta capacidade 
+    tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Não Agrícola", "Exploração mista – Agrícola + Pastagem alta capacidade", "Exploração mista – Agrícola + Pastagem media capacidade", "Agrícola – Cana-de-açúcar", "Agrícola – Horticultura/Olericultura/Granjeiros", "Não Agrícola – Exploração turística", "Agrícola – Cana-de-açúcar (Arês)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Canguaretama)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Ceará-Mirim)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Espírito Santo)", "Exploração mista – Agrícola + Pastagem alta capacidade 
@@ -9915,23 +9922,31 @@ RNMRTCearaMirimGoianinha_2022 <- data.frame(
 (Macaíba)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Maxaranguape)", "Exploração mista – Agrícola + Pastagem media capacidade 
 (Montanhas)", "Exploração mista – Agrícola + Pastagem alta capacidade 
-(Monte Alegre)"), 
-  nivel = c(0, 1, 2, 2, 2, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
-  vti_media = c(15024.66, 13265.01, 23833.58, 103245.68, 15156.08, 7388.5, 20037.53, 32127.08, 103245.68, 22435.16, 24222.22, 14677.99, 14980.07, 14895.04, 18879.09, 13976.62, 7027.94, 9088.72, 8736.84, 13369.41),
-  vti_minimo = c(12770.96, 11275.26, 20258.54, 87758.82, 12882.67, 6280.22, 17031.9, 27308.02, 87758.82, 19069.89, 20588.89, 12476.29, 12733.06, 12660.78, 16047.23, 11880.13, 5647.74, 7725.41, 7426.31, 11364.0), 
-  vti_maximo = c(17278.36, 15254.77, 27408.62, 118732.53, 17429.49, 8496.77, 23043.16, 36946.14, 118732.53, 25800.44, 27855.56, 16879.68, 17227.09, 17129.29, 21710.96, 16073.12, 8408.13, 10452.03, 10047.37, 15374.82),
-  vtn_media = c(13488.8, 11896.79, 20798.58, 103245.68, 13564.99, 6762.65, 18084.34, 26817.53, 103245.68, 19315.02, 23138.89, 12461.59, 12638.89, 13388.68, 17572.84, 12586.76, 6114.39, 7964.48, 8278.64, 11981.21),
-  vtn_minimo = c(11465.48, 10112.27, 17678.79, 87758.82, 11530.24, 5748.25, 15371.69, 22794.9, 87758.82, 16417.77, 19668.06, 10592.35, 10743.06, 11380.38, 14936.91, 10698.75, 4750.19, 6769.81, 7036.85, 10184.03), 
-  vtn_maximo = c(15512.12, 13681.31, 23918.36, 118732.53, 15599.73, 7777.05, 20796.99, 30840.16, 118732.53, 22212.27, 26609.72, 14330.83, 14534.73, 15396.98, 20208.76, 14474.78, 7478.59, 9159.16, 9520.44, 13778.4),
-  origem = "Arês, Baía Formosa, Canguaretama, Ceará-Mirim, Parnamirim, Espírito Santo, Extremoz, Goianinha, Macaíba, Maxaranguape,
+(Monte Alegre)", "Agrícola – Horticultura/Olericultura/Granjeiros (Monte Ale-
+gre)", "Exploração mista – Agrícola + Pastagem alta capacidade 
+(Nísia Floresta)", "Exploração mista – Agrícola + Pastagem alta capacidade 
+(Pedro Velho)", "Exploração mista – Agrícola + Pastagem media capacidade 
+(Pedro Velho)", "Exploração mista – Agrícola + Pastagem alta capacidade 
+(Rio do Fogo)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendi-
+mento (São Gonçalo do Amarante)", "Agrícola – Horticultura/Olericultura/Granjeiros (São José 
+do Mipibu)", "Não Agrícola – Exploração turística (Tibau do Sul)", "Agrícola – Horticultura/Olericultura/Granjeiros (Vera Cruz)", "Exploração mista – Agrícola + Pastagem alta capacidade 
+(Vera Cruz)"),
+    nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+    vti_media = c(15024.66, 13265.01, 23833.58, 103245.68, 15156.08, 7388.50, 20037.53, 32127.08, 103245.68, 22435.16, 24222.22, 14677.99, 14980.07, 14895.04, 18879.09, 13976.62, 7027.94, 9088.72, 8736.84, 13369.41, 27184.83, 16868.22, 12433.33, 7921.90, 13468.39, 27562.19, 33631.51, 103245.68, 46590.91, 15662.34),
+    vti_minimo = c(12770.96, 11275.26, 20258.54, 87758.82, 12882.67, 6280.22, 17031.90, 27308.02, 87758.82, 19069.89, 20588.89, 12476.29, 12733.06, 12660.78, 16047.23, 11880.13, 5647.74, 7725.41, 7426.31, 11364.00, 23107.10, 14337.99, 10568.33, 6733.61, 11448.13, 23427.86, 28586.78, 87758.82, 39602.27, 13312.99),
+    vti_maximo = c(17278.36, 15254.77, 27408.62, 118732.53, 17429.49, 8496.77, 23043.16, 36946.14, 118732.53, 25800.44, 27855.56, 16879.68, 17227.09, 17129.29, 21710.96, 16073.12, 8408.13, 10452.03, 10047.37, 15374.82, 31262.55, 19398.45, 14298.33, 9110.18, 15488.64, 31696.51, 38676.24, 118732.53, 53579.55, 18011.69),
+    vtn_media = c(13488.80, 11896.79, 20798.58, 103245.68, 13564.99, 6762.65, 18084.34, 26817.53, 103245.68, 19315.02, 23138.89, 12461.59, 12638.89, 13388.68, 17572.84, 12586.76, 6114.39, 7964.48, 8278.64, 11981.21, 23463.79, 14920.61, 10466.67, 7838.56, 12797.26, 26917.46, 27490.26, 103245.68, 42468.43, 15241.34),
+    vtn_minimo = c(11465.48, 10112.27, 17678.79, 87758.82, 11530.24, 5748.25, 15371.69, 22794.90, 87758.82, 16417.77, 19668.06, 10592.35, 10743.06, 11380.38, 14936.91, 10698.75, 4750.19, 6769.81, 7036.85, 10184.03, 19944.22, 12682.52, 8896.67, 6662.78, 10877.67, 22879.84, 23366.72, 87758.82, 36098.17, 12955.14),
+    vtn_maximo = c(15512.12, 13681.31, 23918.36, 118732.53, 15599.73, 7777.05, 20796.99, 30840.16, 118732.53, 22212.27, 26609.72, 14330.83, 14534.73, 15396.98, 20208.76, 14474.78, 7478.59, 9159.16, 9520.44, 13778.40, 26983.36, 17158.70, 12036.67, 9014.35, 14716.85, 30955.08, 31613.80, 118732.53, 48838.70, 17527.54),
+    origem = "Arês, Baía Formosa, Canguaretama, Ceará-Mirim, Parnamirim, Espírito Santo, Extremoz, Goianinha, Macaíba, Maxaranguape,
 Montanhas, Monte Alegre, Natal, Nísia Floresta, Rio do Fogo, Pedro Velho, São Gonçalo do Amarante, São José de Mipibu, Senador Georgino
-Avelino, Tibau do Sul, Vera Cruz e Vila Flor."
+Avelino, Tibau do Sul, Vera Cruz e Vila Flor"  
   )
 
 
 ### 2025 ####
 RNMRTCearaMirimGoianinha_2025 <- data.frame(
-  mrt = "MRTCearáMirim",,
+  mrt = "MRTCearáMirim",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Exploração mista - Agrícola + Pastagem alta capacidade", "Exploração mista - Agrícola + Pastagem media capacidade", "Agricola Cana de açúcar", "Agrícola - Horticultura/Olericultura/Granjeiros", "Agrícola - Cana de açúcar (Canguaretama)", "Exploração mista - Agrícola + Pastagem alta capacidade (Ceará-Mirim)", "Exploração mista - Agrícola + Pastagem alta capacidade (Espírito Santo)", "Exploração mista - Agrícola + Pastagem alta capacidade (Extremoz)", "Agrícola Cana de açúcar (Goianinha)", "Exploração mista - Agrícola + Pastagem alta capacidade (Macaiba)", "Exploração mista - Agrícola + Pastagem media capacidade (Macaiba)", "Exploração mista - Agrícola + Pastagem alta capacidade (Maxaranguape)", "Exploração mista - Agrícola + Pastagem alta capacidade (Monte Alegre)", "Exploração mista - Agrícola + Pastagem alta capacidade (Nisia Floresta)", "Exploração mista - Agrícola + Pastagem alta capacidade (Pedro Velho)", "Exploração mista - Agrícola + Pastagem alta capacidade (Rio do Fogo)", "Exploração mista - Agrícola + Pastagem media capacidade (Rio do Fogo)", "Exploração mista - Agrícola + Pastagem alta capacidade (São Gonçalo do Amarante)", "Agrícola - Horticultura/Olericultura/Granjeiros (São José do Mipibu)", "Exploração mista - Agrícola + Pastagem alta capacidade (Vera Cruz)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(14857.09, 14345.54, 21480.48, 14590.92, 7721.70, 20299.17, 22779.93, 23916.67, 13949.83, 13207.66, 14895.04, 20254.87, 14081.83, 6827.20, 9800.00, 13788.94, 14727.62, 17903.35, 14368.10, 9531.77, 27052.38, 23922.14, 20000.00),
@@ -9945,9 +9960,9 @@ Canguaretama, Ceará-Mirim, Parnamirim, Espírito Santo, Extremoz, Goianinha, Ma
 Rio do Fogo, Pedro Velho, São Gonçalo do Amarante, São José de Mipibu, Senador Georgino Avelino, Tibau do Sul, Vera Cruz e Vila Flor."
   )
 
-### MRT Agreste Pontegi Trairi #####
+### 19.4 MRT Agreste Pontegi Trairi #####
 ### 2017 #####
-MRT_Agreste_Potengi_Trairi_2017 <- data.frame(
+RNMRT_Agreste_Potengi_Trairi_2017 <- data.frame(
   mrt = "AGRESTE, POTENGI E TRAIRI",
   tipologia_de_uso = c(
     "Uso Indefinido (Média Geral)",
@@ -9995,7 +10010,7 @@ Vento e Bento Fernandes"
 )
 
 ### 2019 #####
-MRT1_2019 <- data.frame(
+RNMRT1_2019 <- data.frame(
   mrt = "AGRESTE, POTENGI E TRAIRÍ",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Médio Rendimento)", "Agricultura e/ou pecuária de baixo rendimento (Barcelona)", "Agricultura e/ou pecuária de baixo rendimento (Bento Fernandes)", "Agricultura e/ou pecuária de baixo rendimento (Lajes Pintadas)", "Agricultura e/ou pecuária de baixo rendimento (Ruy Barbosa)", "Agricultura e/ou pecuária de baixo rendimento (Tangará)", "Agricultura e/ou pecuária de médio rendimento (Bom Jesus)", "Agricultura e/ou pecuária de médio rendimento (Nova Cruz)", "Agricultura e/ou pecuária de médio rendimento (Riachuelo)", "Agricultura e/ou pecuária de médio rendimento (Santa Maria)", "Agricultura e/ou pecuária de médio rendimento (Santo Antônio)", "Agricultura e/ou pecuária de médio rendimento (São Paulo do Potengi)", "Agricultura e/ou pecuária de médio rendimento (São Pedro)", "Agricultura e/ou pecuária de médio rendimento (Serra Caiada)", "Agricultura e/ou pecuária de médio rendimento (Serrinha)"),
   nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
@@ -10009,9 +10024,9 @@ MRT1_2019 <- data.frame(
 )
 
 
-#### MRT SANTA CRUZ ####
+#### 19.5 MRT SANTA CRUZ ####
 ### 2020 ####
-MRTSantaCruz_2020 <- data.frame(
+RNMRTSantaCruz_2020 <- data.frame(
   mrt = "Santa Cruz do Estado do Rio Grande do Norte",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento Campo Redondo)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento Coronel Ezequiel)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento Japi)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento Ruy Barbosa)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento Santa Cruz)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - São Bento do Trairi)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - São José do Campestre)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - São Tomé)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Sitio Novo)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Tangará)"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10028,7 +10043,7 @@ Novo e Tangará"
 
 
 ### 2021 #####
-RNMRTSANTACRUZ/RN_2021 <- data.frame(
+RNMRTSANTACRUZ_2021 <- data.frame(
   mrt = "MRT SANTA CRUZ/RN",
   tipologia_de_uso = c("Uso indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Barcelona)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Campo Redondo)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Coronel Ezequiel)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Coronel Ezequiel)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Jaçanã)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Japi)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Lajes Pintada)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Ruy Barbosa)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Santa Cruz)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – São Bento do Trairi)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – São José do Campestre)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – São Tomé)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Serra de São Bento)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Sítio Novo)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Tangará)"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10066,7 +10081,7 @@ Monte das Gameleiras, Ruy Barbosa, Santa Cruz, São Bento do Trairí, São José
 )
 
 ### 2022 ####
-RNMRTSANTACRUZRN_2022 <- data.frame(
+RNMRTSANTACRUZ_2022 <- data.frame(
   mrt = "MRT SANTA CRUZ/RN",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Agrícola", "Pecuária", "Exploração mista", "Não Agrícola", "Agrícola – Fruticultura diversa", "Pecuária diversos – média capacidade", "Pecuária Bovino – Pastagem Nativa", "Exploração mista – Agrícola + Pastagem – média 
 capacidade.", "Não Agrícola", "Exploração mista – Agrícola + Pastagem – média 
@@ -10093,7 +10108,7 @@ Ruy Barbosa, Santa Cruz, São Bento do Trairí, São José do Campestre, São To
 )
 
 ### 2025 ####
-MRTSantaCruz_2025 <- data.frame(
+RNMRTSantaCruz_2025 <- data.frame(
   mrt = "Santa Cruz/RN",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Agrícola", "Pecuária", "Exploração mista", "Não Agrícola", "Agrícola - Fruticultura diversos", "Pecuária diversos média capacidade", "Pecuária Bovino - Pastagem Nativa", "Exploração mista - Agrícola + Pastagem média capacidade.", "Não Agrícola - Exploração turística", "Exploração mista - Agrícola + Pastagem - média capacidade (Barcelona)", "Exploração mista - Agrícola + Pastagem - média capacidade (Campo Redondo)", "Agrícola - Fruticultura diversos (Coronél Ezequiel)", "Exploração mista - Agrícola + Pastagem média capacidade (Coronél Ezequiel)", "Agrícola - Fruticultura diversos (Jaçanã)", "Exploração mista - Agrícola + Pastagem - média capacidade (Japi)", "Exploração mista - Agrícola + Pastagem - média capacidade (Lajes Pintada)", "Exploração mista - Agrícola + Pastagem - média capacidade (Monte das Gameleiras)", "Não Agrícola - Exploração turística (Monte das Gameleiras)", "Exploração mista - Agrícola + Pastagem - média capacidade (Ruy Barbosa)", "Exploração mista - Agrícola + Pastagem - média capacidade (Santa Cruz)", "Exploração mista - Agrícola + Pastagem - média capacidade (São Bento do Trairi)", "Pecuária diversos média capacidade (São José do Campestre)", "Pecuária Bovino - Pastagem Nativa (São Tomé)", "Não Agrícola - Exploração turística (Serra de São Bento)", "Exploração mista - Agrícola + Pastagem - média capacidade (Sitio Novo)", "Pecuária diversos média capacidade (Tangará)"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10109,9 +10124,9 @@ de São Bento, Sítio Novo e Tangará"
 )
 
 
-#### Nova Cruz #####
+#### 19.6 Nova Cruz #####
 ### 2020 #####
-MRTNovaCruzSaoPauloDoPotengi_2020 <- data.frame(
+RNMRTNovaCruzSaoPauloDoPotengi_2020 <- data.frame(
   mrt = "MRTNOVACRUZ",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Boa Saúde)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Bom Jesus)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Brejinho)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - lelmo Marinho)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Lagoa de Pedras)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Lagoa Salgada)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Nova Cruz)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Riachuelo)", "Exploração Mista (agricultura e/ou Pecuária de médio rendimento - Santa Maria)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Santo Antônio)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - São Paulo do Potengi)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - São Pedro)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Senador Elói de Souza)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Serra Caiada)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Serrinha)"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10127,7 +10142,7 @@ Senador Elói de Souza, Serra Caiada, Serrinha e Várzea."
 )
 
 ### 2021 #####
-MRTNovaCruzSaoPauloDoPotengi_2021  <- data.frame(
+RNMRTNovaCruzSaoPauloDoPotengi_2021  <- data.frame(
   mrt = "MRTNOVACRUZ",
   tipologia_de_uso = c("Uso indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Boa Saúde)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Bom Jesus)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Brejinho)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento – Brejinho)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Januário Cicco)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Lajes Pintadas)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Monte das Gameleiras)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Nova Cruz)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Passa e Fica)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Passagem)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento – Riachuelo)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Santa Maria)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Santo Antônio)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – São Paulo do Potengi)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – São Pedro)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Senador Elói de Souza)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Serra Caiada)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento – Serrinha)"),
   nivel = c(0, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10166,7 +10181,7 @@ d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz, Passa e Fica, Passagem, Riach
 Senador Elói de Souza, Serra Caiada, Serrinha e Várzea."
 )
 #### 2022 #####
-MRTNOVACRUZRN2022<- data.frame(
+RNMRTNOVACRUZRN2022<- data.frame(
   mrt = "MRTNOVACRUZ",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração mista", "Pecuária", "Exploração mista – Agrícola + Pastagem baixa 
 capacidade", "Exploração mista – Agrícola + Pastagem media 
@@ -10198,7 +10213,7 @@ Caiada, Serrinha e Várzea."
 )
 
 ### 2025 #####
-MRTNOVACRUZRN2025 <- data.frame(
+RNMRTNOVACRUZRN2025 <- data.frame(
   mrt = "MRTNOVACRUZ",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração mista", "Pecuária", "Exploração mista - Agrícola + Pastagem media capacidade", "Exploração mista - Agrícola + Pastagem alta capacidade", "Pecuária Bovino - Pastagem Plantada", "Pecuária diversos média capacidade", "Exploração mista - Agricola + Pastagem média capacidade (Boa saúde)", "Exploração mista - Agrícola + Pastagem média capacidade (Bom Jesus)", "Exploração mista - Agrícola + Pastagem alta capacidade (Brejinho)", "Exploração mista - Agrícola + Pastagem média capacidade (lelmo Marinho)", "Exploração mista - Agrícola + Pastagem média capacidade (Lagoa D'Anta)", "Exploração mista - Agrícola + Pastagem média capacidade (Lagoa de Pedras)", "Pecuária Diversos - Média Capacidade (Santo Antônio)", "Exploração Mista - Agrícola e Pastagem de média capacidade (Nova Cruz)", "Exploração Mista - Agrícola e Pastagem de média capacidade (Lagoa Salgada)", "Exploração mista - Agrícola + Pastagem média capacidade (Riachuelo)", "Exploração mista - Agrícola + Pastagem média capacidade (Santa Maria)", "Pecuária Bovino - Pastagem Plantada (Santo Antônio)", "Exploração mista - Agrícola + Pastagem média capacidade (São Paulo do Potengi)", "Exploração mista - Agrícola + Pastagem média capacidade (São Pedro)", "Exploração mista - Agrícola + Pastagem média capacidade (Senador Elói de Souza)", "Exploração mista - Agrícola + Pastagem média capacidade (Serra Caiada)", "Pecuária Bovino - Pastagem Plantada (Serrinha)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10213,9 +10228,9 @@ Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de Pedr
 Maria, Santo Antônio, São Paulo do Potengi, São Pedro, Senador Elói de Souza, Serra Caiada, Serrinha e Várzea."
   )
 
-### MRT SERIDO #####
+### 19.7 MRT SERIDO #####
 ### 2017 #####
-MRT_Serido_2017 <- data.frame(
+RNMRT_Serido_2017 <- data.frame(
   mrt = "SERIDÓ",
   tipologia_de_uso = c(
     "Uso Indefinido (Média Geral)",
@@ -10259,7 +10274,7 @@ Serra Negra do Norte, Tenente Lautrentino
 Cruz, Timbaúba dos Batistas"
 )
 ### 2019 #####
-MRT6_2019 <- data.frame(
+RNMRT6_2019 <- data.frame(
   mrt = "SERIDÓ",
   tipologia_de_uso = c("Uso Indefinido (Média geral)", "Exploração Mista (Agricultura e/ou Pecuária)", "Vegetação Nativa", "Exploração Mista(Agricultura e/ou Pecuária de baixo rend imento)", "Exploração Mista(Agricultura e/ou Pecuária de baix.rend (Jucurutu)", "Exploração Mista(Agricultura e/ou Pecuária de baixo Rend (S. Tomé)", "Exploração Mista(Agricultura e/ou Pecuária de baixo Rend (S.Matos)"),
   nivel = c(0, 1, 1, 1, 1, 1, 1),
@@ -10273,7 +10288,7 @@ MRT6_2019 <- data.frame(
 )
 
 ### 2020 #####
-MRTCaicoCerroCora_2020 <- data.frame(
+RNMRTCaicoCerroCora_2020 <- data.frame(
   mrt = "MRT Caicó",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Acari))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Bodó))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Caicó))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Currais Novos))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Florânia))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Jardim do Seridó))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Jucurutú))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Parelhas))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Fernando))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Vicente))"),
   nivel = c(0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10357,7 +10372,7 @@ Sabugi, São José do Seridó, São Vicente, Serra Negra do Norte, Tenente Laure
 )
 
 ###2025####
-MRTCaicoCerroCora_2025 <- data.frame(
+RNMRTCaicoCerroCora_2025 <- data.frame(
   mrt = "MRT Caicó",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola (Serra de Santana)", "Exploração mista - Agrícola + Pastagem baixa capacidade", "Exploração mista - Agrícola + Pastagem média capacidade", "Agricola - Fruticulturas diversas média capacidade (Serra de Santana)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Acari)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Bodó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Caicó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Carnaúba dos Dantas)", "Agrícola - Fruticulturas diversas média capacidade (Cerro-Corá)", "Exploração mista - Agricola + Pastagem baixa capacidade (Cruzeta)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Currais Novos)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Equador)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Florânia)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jardim de Piranhas)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jardim do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jucurutu)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Ouro Branco)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Parelhas)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Santana do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São Fernando)", "Exploração mista - Agricola + Pastagem baixa capacidade (São João do Sabugi)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São José do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São Vicente)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Serra Negra do Norte)", "Agricola - Fruticulturas diversas média capacidade (Ten. Laurentino Cruz)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Timbaúba dos Batistas)"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10372,9 +10387,9 @@ Seridó, Jucurutu, Lagoa Nova, Ouro Branco, Parelhas, Santana do Seridó, São F
 Negra do Norte, Tenente Laurentino Cruz e Timbaúba dos Batistas"
  )
 
-### MRT MEDIO OESTE #####
+### 19.8 MRT MEDIO OESTE #####
 ### 2017 #####
-MRT_Medio_Oeste_2017 <- data.frame(
+RNMRT_Medio_Oeste_2017 <- data.frame(
   mrt = "MÉDIO OESTE",
   tipologia_de_uso = c(
     "Uso Indefinido (Média Geral)",
@@ -10419,7 +10434,7 @@ Upanema"
 )
 
 ### 2019 #####
-MRT5_2019 <- data.frame(
+RNMRT5_2019 <- data.frame(
   mrt = "MÉDIO OESTE",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Médio Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Alto Rendimento)", "Agricultura e/ou pecuária de alto rendimento (Apodi)", "Agricultura de baixo rendimento (Caraúbas)", "Agricultura de alto rendimento (Ipanguaçu)", "Agricultura de baixo rendimento (São Rafael)"),
   nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1),
@@ -10432,9 +10447,9 @@ MRT5_2019 <- data.frame(
   origem = "Augusto Severo, Açú, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas, Carnaúbais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçú, Itajá, Itaú, Macau, Mossoró, Paraú, Pendências, Porto do Mangue, Rodolfo Fernandes, São Rafael, Serra do Mél, Severiano Melo, Tibau , Triunfo Potiguar e Upanema"
 )
 
-#### MRT MOSSORO #####
+####19.10 MRT MOSSORO #####
 ### 2020 #####
-MRTMossoroAssu_2020 <- data.frame(
+RNMRTMossoroAssu_2020 <- data.frame(
   mrt = "MRT MOSSORO",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Vale do Açú)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Apodi))", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Apodi)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Areia Branca)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Açů)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Baraúna)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Caraúbas)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Caraúbas)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Felipe Guerra)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Gov. Dix Sept-Rosado)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Guamaré)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Mossoró)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Mossoró)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento Pendencias)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Serra do Mel)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento Upanema)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Upanema)"),
   nivel = c(0, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10449,7 +10464,9 @@ Carnaubais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipangu
 do Mel e Upanema."
   )
 
-MRTMossoroAssu_2021 <- data.frame(
+### 2021 ####
+
+RNMRTMossoroAssu_2021 <- data.frame(
   mrt = "MRT MOSSORO",
   tipologia_de_uso = c(
     "Uso indefinido (Média Geral)",
@@ -10512,7 +10529,7 @@ do Mel e Upanema."
 )
 ### 2022 ####
 RNMRT_Assu_2022 <- data.frame(
-  mrt = "MRT MOSSORO",,
+  mrt = "MRT MOSSORO",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Exploração Mista - Agrícola + pastagem - baixa capacidade", "Exploração Mista - Agrícola + pastagem - média capacidade", "Exploração Mista -Agrícola + pastagem - alta capacida-
 de", "Agrícola - Fruticultura diversa - Média capacidade", "Agrícola - Fruticultura diversa - Alta capacidade", "Agrícola - Fruticultura diversa - Alta capacidade (Açu)", "Expl. Mista - Agrícola + pastagem de baixa capacidade 
 (Açu)", "Expl. Mista - Agrícola + pastagem de média capacidade 
@@ -10545,8 +10562,8 @@ Mel e Upanema"
 )
 
 ### 2025 #####
-MRTMossoroAcu_2025 <- data.frame(
-  mrt = "MRT MOSSORO",,
+RNMRTMossoroAcu_2025 <- data.frame(
+  mrt = "MRT MOSSORO",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Agrícola", "Exploração Mista", "Agrícola - Fruticultura diversos - média capacidade", "Agrícola - Fruticultura diversos - alta capacidade", "Exploração mista - Agrícola + pastagem baixa capacidade", "Exploração mista - Agrícola + pastagem média capacidade", "Exploração mista - Agrícola + pastagem alta capacidade", "Agrícola - Fruticultura diversos - alta capacidade (Açu)", "Exploração mista - Agrícola + pastagem baixa capacidade (Açu)", "Agricola - Fruticultura diversos - alta capacidade (Afonso Bezerra)", "Exploração mista - Agrícola + pastagem média capacidade (Afonso Bezerra)", "Agricola - Fruticultura diversos - alta capacidade (Apodi)", "Exploração mista - Agricola + pastagem média capacidade (Apodi)", "Agricola - Fruticultura diversos - alta capacidade (Baraúna)", "Exploração mista - Agricola + pastagem média capacidade (Caraúbas)", "Agrícola - Fruticultura diversos - alta capacidade (Carnaubais)", "Exploração mista - Agrícola + pastagem baixa capacidade (Carnaubais)", "Exploração mista - Agrícola + pastagem média capacidade (Felipe Guerra)", "Exploração mista - Agrícola + pastagem média capacidade (Governador Dix-Sept Rosado)", "Exploração mista - Agrícola + pastagem média capacidade (Guamaré)", "Agrícola - Fruticultura diversos - alta capacidade (Ipanguaçu)", "Exploração mista - Agrícola + pastagem média capacidade (Mossoró)", "Agrícola - Fruticultura diversos - média capacidade (Serra do Mel)", "Exploração mista - Agrícola + pastagem alta capacidade (Upanema)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(3189.16, 7140.99, 2443.78, 4000.00, 7827.37, 2002.96, 2626.54, 5695.75, 6423.81, 2027.54, 16643.22, 3603.75, 4491.25, 2479.00, 7138.20, 2819.05, 4713.18, 1782.90, 2221.23, 2288.08, 3200.00, 12624.00, 5016.68, 4000.00, 7124.24),
@@ -10560,9 +10577,9 @@ Areia Branca, Baraúna, Caraúbas, Carnaubais, Felipe Guerra, Governador Dix-Sep
 Porto do Mangue, Tibau, Serra do Mel e Upanema."
 )
 
-### MRT ALTO OESTE #####
+###19.11 MRT ALTO OESTE #####
 ### 2017 #####
-MRT_Alto_Oeste_2017 <- data.frame(
+RNMRT_Alto_Oeste_2017 <- data.frame(
   mrt = "MRT ALTO OESTE",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Antônio Martins)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Janduis)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Olho d'água dos Borges)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Pilões)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Riacho de Santana)", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento) (Umarizal)"),
   nivel = c(0, 1, 2, 3, 3, 3, 3, 3, 3),
@@ -10588,7 +10605,7 @@ Ver e Viçosa"
 )
 
 ### 2019 #####
-MRT2_2019 <- data.frame(
+RNMRT2_2019 <- data.frame(
   mrt = "MRT ALTO OESTE",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Alexandria)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Antônio Martins)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Encanto)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Janduís)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Marcelino Vieira)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Olho d`água dos Borges)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Patu)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Pilões)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Riacho de Santana)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Francisco do Oeste)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Miguel)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Taboleiro Grande)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Umarizal)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Venha Ver)"),
   nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
@@ -10603,7 +10620,7 @@ MRT2_2019 <- data.frame(
 
 #### MRT PAU DOS FERROS ####
 ### 2020 #####
-MRTPauDosFerrosCampoGrande_2020 <- data.frame(
+RNMRTPauDosFerrosCampoGrande_2020 <- data.frame(
   mrt = "MRT PAU DOS FERROS",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Alexandria))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Almino Afonso))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Campo Grande))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Encanto))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Francisco Dantas))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Janduis))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Luis Gomes))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Marcelino Vieira))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Olho D'água dos Borges))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Paraú))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Patu))", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento (Rafael Godeiro))", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento (Riacho de Santana))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Rodolfo Fernandes))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Francisco do Oeste))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Miguel))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Severiano Melo))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Tenente Ananias))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Umarizal))"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10620,9 +10637,11 @@ da Cruz, Riacho de Santana, Rodolfo Fernandes, São Francisco do Oeste, São Mig
 Potiguar, Umarizal, Venha-Ver e Viçosa"
 )
 ## 2021 ###
-RNMRT__MRTPaudosFerros__2021 <- data.frame(
+RNMRT__MRTPaudosFerros__2021<- data.frame(
   mrt = "MRT PAU DOS FERROS",
-  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração  Mista  (Agricultura  e/ou  Pecuária  de baixo rendimento)", "Exploração  Mista 
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento)", "Exploração  Mista 
 (Agricultura  e/ou  Pecuária  de 
 médio rendimento)", "Exploração  Mista 
 (Agricultura  e/ou  Pecuária  de 
@@ -10646,23 +10665,39 @@ baixo rendimento - Olho D`água dos Borges)", "Exploração  Mista
 (Agricultura  e/ou  Pecuária  de 
 baixo rendimento - Paraná)", "Exploração  Mista 
 (Agricultura  e/ou  Pecuária  de 
-baixo rendimento - Patu)"), 
-  nivel = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  vti_media = c(1918.33, 1918.33, 1918.33, 9864.93, 1842.82, 747.19, 1669.58, 1811.65, 1493.69, 2838.03, 1151.2, 2135.54, 1661.5, 2939.39, 2577.1),
-  vti_minimo = c(864.33, 864.33, 864.33, nan, 1132.66, 438.13, 1123.16, 1157.9, 813.87, 2317.31, 648.74, 1219.46, 1257.07, 2122.34, 1579.66), 
-  vti_maximo = c(2972.32, 2972.32, 2972.32, nan, 2552.98, 1056.24, 2215.99, 2465.4, 2173.5, 3358.75, 1653.67, 3051.62, 2065.93, 3756.45, 3574.54),
-  vtn_media = c(1483.71, 1483.71, 1483.71, 7486.26, 1234.56, 635.33, 1201.19, 1220.72, 1294.16, 2197.19, 1001.06, 1745.53, 1433.18, 2697.78, 2153.2),
-  vtn_minimo = c(649.25, 649.25, 649.25, 5263.78, 775.75, 394.38, 594.35, 741.44, 664.74, 1823.64, 535.03, 1043.03, 1006.94, 1868.71, 1501.22), 
-  vtn_maximo = c(2318.17, 2318.17, 2318.17, 9708.75, 1693.36, 876.27, 1808.03, 1700.01, 1923.59, 2570.73, 1467.09, 2448.03, 1859.43, 3526.84, 2805.17),
+baixo rendimento - Patu)", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento (Portalegre)", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento - Riacho da Cruz)", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento - Riacho de Santana)", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento - Rodolfo Fernandes)", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento - São Miguel)", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento - Severiano Melo)", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento - Tenente Ananias)", "Exploração  Mista 
+(Agricultura  e/ou  Pecuária  de 
+baixo rendimento - Umarizal)"),
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(1918.33, 1918.33, 1918.33, 9864.93, 1842.82, 747.19, 1669.58, 1811.65, 1493.69, 2838.03, 1151.20, 2135.54, 1661.50, 2939.39, 2577.10, 3258.94, 669.45, 3261.28, 1532.07, 2246.61, 2574.72, 1563.35, 2095.87),
+  vti_minimo = c(864.33, 864.33, 864.33, NA , 1132.66, 438.13, 1123.16, 1157.90, 813.87, 2317.31, 648.74, 1219.46, 1257.07, 2122.34, 1579.66, 1629.47, 334.72, 836.35, 874.33, 1673.98, 992.62, 405.54, 1148.78),
+  vti_maximo = c(2972.32, 2972.32, 2972.32, NA, 2552.98, 1056.24, 2215.99, 2465.40, 2173.50, 3358.75, 1653.67, 3051.62, 2065.93, 3756.45, 3574.54, 4888.41, 1004.17, 5686.21, 2189.81, 2819.24, 4156.82, 2721.16, 3042.97),
+  vtn_media = c(1483.71, 1483.71, 1483.71, 7486.26, 1234.56, 635.33, 1201.19, 1220.72, 1294.16, 2197.19, 1001.06, 1745.53, 1433.18, 2697.78, 2153.20, 1575.94, 656.44, 2023.47, 1147.59, 1967.10, 1953.50, 1458.36, 1432.78),
+  vtn_minimo = c(649.25, 649.25, 649.25, 5263.78, 775.75, 394.38, 594.35, 741.44, 664.74, 1823.64, 535.03, 1043.03, 1006.94, 1868.71, 1501.22, 787.97, 328.22, 816.36, 628.98, 1274.48, 713.92, 349.98, 665.19),
+  vtn_maximo = c(2318.17, 2318.17, 2318.17, 9708.75, 1693.36, 876.27, 1808.03, 1700.01, 1923.59, 2570.73, 1467.09, 2448.03, 1859.43, 3526.84, 2805.17, 2363.90, 984.66, 3230.59, 1666.19, 2659.72, 3193.09, 2566.74, 2200.37),
   origem = "Água Nova, Alexandria, Almino Afonso, Antônio Martins, Campo Grande,
 Coronel João Pessoa, Doutor Severiano, Encanto, Francisco Dantas, Frutuoso Gomes, Itaú, Janduís, João Dias, José da Penha, Lucrécia, Luís Gomes, Major Sales,
 Marcelino Vieira, Martins, Messias Targino, Olho d'Água do Borges, Paraná, Paraú, Patu, Pau dos Ferros, Pilões, Portalegre, Rafael Fernandes, Rafael Godeiro, Riacho
 da Cruz, Riacho de Santana, Rodolfo Fernandes, São Francisco do Oeste, São Miguel, Serrinha dos Pintos, Severiano Melo, Taboleiro Grande, Tenente Ananias, Triunfo
 Potiguar, Umarizal, Venha-Ver e Viçosa."
-  )
+)
 ### 2022 #####
 RNMRT_paudosferros_2022 <- data.frame(
-  mrt = "MRT PAU DOS FERROS",,
+  mrt = "MRT PAU DOS FERROS",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração mista – Agrícola + Pastagem baixa capacidade", "Exploração mista – Agrícola + Pastagem media capacidade", "Exploração mista – Agrícola + Pastagem baixa capacidade (Alexandria)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Almino Afonso)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Antônio Martins)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Campo Grande)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Coronel João Pessoa)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Doutor Severiano)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Encanto)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Francisco Dantas)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Janduís)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Luís Gomes)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Marcelino Vieira)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Martins)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Messias Targino)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Olho D'água dos Borges)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Paraná)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Patu)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Pau dos Ferros)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Pilões)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Riacho da Cruz)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Riacho de Santana)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Rodolfo Fernandes)", "Exploração mista – Agrícola + Pastagem baixa capacidade (São Francisco do Oeste)", "Exploração mista – Agrícola + Pastagem baixa capacidade (São Miguel)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Serrinha dos Pintos)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Severiano Melo)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Taboleiro Grande)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Tenente Ananias)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Triunfo Potiguar)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Umarizal)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Venha Ver)", "Exploração mista – Agrícola + Pastagem baixa capacidade (Viçosa)"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(2363.56, 2363.56, 2356.73, 11025.86, 2091.47, 1835.88, 1978.01, 1337.76, 3116.13, 5832.24, 2442.23, 1696.35, 1295.44, 1081.68, 2596.60, 2914.35, 4331.68, 1533.33, 3471.15, 2425.42, 3813.16, 2605.07, 800.87, 4307.04, 2161.51, 4170.81, 6483.88, 6460.18, 2514.09, 1670.14, 2405.93, 2579.58, 2211.44, 2623.69, 6462.76),
@@ -10678,8 +10713,9 @@ Pilões, Portalegre, Rafael Fernandes, Rafael Godeiro, Riacho da Cruz, Riacho de
 Francisco do Oeste, São Miguel, Serrinha dos Pintos, Severiano Melo, Taboleiro Grande, Tenente Ananias, Triunfo Potiguar,
 Umarizal, Venha-Ver e Viçosa."
 )
+
 ### 2025 #####
-MRTPauDosFerrosCampoGrande_2025 <- data.frame(
+RNMRTPauDosFerrosCampoGrande_2025 <- data.frame(
   mrt = "MRT PAU DOS FERROS",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Exploração mista - Agrícola + Pastagem baixa capacidade", "Exploração mista - Agrícola + Pastagem média capacidade", "Agrícola - Fruticultura diversos média capacidade (cajueiro)", "Exploração mista - Agricola + Pastagem baixa capacidade (Alexandria)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Almino Afonso)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Antonio Martins)", "Exploração mista - Agricola + Pastagern baixa capacidade (Campo Grande)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Coronel João Pessoa)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Doutor Severiano)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Encanto)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Francisco Dantas)", "Exploração mista - Agricola + Pastagern baixa capacidade (Itau)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Janduis)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Luis Gomes)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Marcelino Vieira)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Martins)", "Exploração mista - Agricola + Pastagem baixa capacidade (Olho d'água dos Borges)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Paraná)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Patu)", "Exploração mista - Agricola + Pastagern baixa capacidade (Pau dos Ferros)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Pilões)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Riacho da Cruz)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Riacho de Santana)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Rodolfo Fernandes)", "Exploração mista - Agricola + Pastagem baixa capacidade (São Francisco do Oeste)", "Exploração mista - Agricola + Pastagem baixa capacidade (São Miguel)", "Exploração mista Agrícola + Pastagem baixa capacidade (Serrinha dos Pintos)", "Agrícola - Fruticultura diversos média capacidade cajueiro (Severiano Melo)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Taboleiro Grande)", "Exploração mista - Agricola + Pastagem baixa capacidade (Tenente Ananias)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Triunfo Potiguar)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Umarizal)", "Exploração mista - Agrícola + Pastagern baixa capacidade (Venha Ver)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Viçosa)"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10698,9 +10734,9 @@ Severiano Melo, Taboleiro Grande, Tenente Ananias, Triunfo Potiguar, Umarizal, V
 
 
 
-### MRT LAJES ####
+###19.12 MRT LAJES ####
 ### 2020 ####
-MRTLajes_2020 <- data.frame(
+RNMRTLajes_2020 <- data.frame(
   mrt = "MRT LAJES",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Caiçara do Rio dos Ventos))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Pedro Avelino))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Santana do Matos))", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Rafael))"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3),
@@ -10715,7 +10751,7 @@ Santana do Matos e São Rafae"
   )
 
 ### 2021 ####
-MRTLajes_2021 <- data.frame(
+RNMRTLajes_2021 <- data.frame(
   mrt = "MRT LAJES",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Angicos)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Caiçara do Rio dos Ventos)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Jardim de Angicos)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Lajes)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Pedra Preta)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Pedro Avelino)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - Santana do Matos)", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento - São Rafael)"),
   nivel = c(0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -10753,7 +10789,7 @@ Santana do Matos e São Rafael."
 )
 
 ### 2025 ####
-MRTLajes_2025 <- data.frame(
+RNMRTLajes_2025 <- data.frame(
   mrt = "MRT LAJES",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração mista", "Pecuária Bovino - Pastagem Nativa", "Pecuária Diversos - Baixa Capacidade", "Exploração mista - Agrícola + Pastagem baixa capacidade", "Exploração mista - Agrícola + Pastagem media capacidade", "Pecuária diversos - baixa capacidade (Angicos)", "Exploração mista - Agrícola + Pastagem, baixa capacidade (Caiçara do Rio do Vento)", "Exploração mista - Agrícola + Pastagem, média capacidade (Itajá)", "Exploração mista - Agrícola + Pastagem, baixa capacidade (Jardim de Angicos)", "Pecuária diversos - baixa capacidade (Pedro Avelino)", "Pecuária Bovino - Pastagem Nativa (Santana do Matos)", "Pecuária Bovino - Pastagem Nativa (São Rafael)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3),
@@ -10768,49 +10804,49 @@ Angicos, Lajes, Pedra Preta, Pedro Avelino, Santana do Matos e São Rafael."
 )
 ### CONSOLIDAÇÃO DOS DADOS #####
 RN2017 <- rbind(
-  RNMRT_Litoral_Norte_Central_2017,
+  RNMRT_Litoral_Norte_Central_2017 ,
   RNMRT_Litoral_Oriental_2017,
-  RMMRT_Agreste_Potengi_Trairi_2017,
+  RNMRT_Agreste_Potengi_Trairi_2017,
   RNMRT_Serido_2017,
   RNMRT_Medio_Oeste_2017,
   RNMRT_Alto_Oeste_2017
 )
 
-RN2019 <- rbind(MRT1_2019, MRT2_2019, MRT3_2019, MRT4_2019, MRT5_2019, MRT6_2019)
+RN2019 <- rbind(RNMRT1_2019, RNMRT2_2019, RNMRT3_2019, RNMRT4_2019, RNMRT5_2019, RNMRT6_2019)
 
 RN2021 <- rbind(
   RNMRTJoaoCamara_2021,
   RNMRTCearaMirimGoianinha_2021,
   RNMRTNovaCruzSaoPauloDoPotengi_2021,
-  RNMRTSANTACRUZ/RN_2021`,
+  RNMRTSANTACRUZ_2021,
   RNMRT_MRTCaico___2021,
-  MRTMossoroAssu_2021,
+  RNMRTMossoroAssu_2021,
   RNMRT__MRTPaudosFerros__2021,
-  MRTLajes_2021
+  RNMRTLajes_2021
 )
 
 RN2021$ano <- 2021
 
 RN2020 <- rbind(
-   NNRNMRTCearaMirimGoianinha_2020,
+  RMMRTCearaMirimGoianinha_2020,
   RNMRTJoaoCamara_2020,
-  RNNNNNNMRTNovaCruzSaoPauloDoPotengi_2020,
-  MRTSantaCruz_2020,
-  MRTMossoroAssu_2020,
-  MRTPauDosFerrosCampoGrande_2020,
-  MRTLajes_2020,
-  MRTCaicoCerroCora_2020
+  RNMRTNovaCruzSaoPauloDoPotengi_2020,
+  RNMRTSantaCruz_2020,
+  RNMRTMossoroAssu_2020,
+  RNMRTPauDosFerrosCampoGrande_2020,
+  RNMRTLajes_2020,
+  RNMRTCaicoCerroCora_2020
 )
 
 RN2022 <- rbind(
   RNMRTJoaoCamara_2022,
-  `MRTSANTACRUZ/RN_2022`,
-  `MRTNOVACRUZ/RN2022`,
+  RNMRTSANTACRUZ_2022,
+  RNMRTNOVACRUZRN2022,
   RNMRT_caico_2022,
   RNMRT_Assu_2022,
   RNMRT_paudosferros_2022,
   RNMRT_lajes_2022,
-  RNMRTCearaMirimGoianinha_2022 # Adicionado este que faltou na lista original
+  RNMRTCearaMirimGoianinha_2022 
 )
 
 # Adiciona a coluna 'ano' ao dataframe consolidado de 2022
@@ -10818,14 +10854,14 @@ RN2022$ano <- 2022
 
 
 RN2025 <- rbind(
-  MRTCearaMirimGoianinha_2025,
-  MRTJoaoCamara_2025,
-  MRTNovaCruzSaoPauloDoPotengi_2025,
-  MRTSantaCruz_2025,
-  MRTLajes_2025,
-  MRTMossoroAcu_2025,
-  MRTCaicoCerroCora_2025,
-  MRTPauDosFerrosCampoGrande_2025
+  RNMRTCearaMirimGoianinha_2025,
+  RNMRTJoaoCamara_2025,
+  RNMRTNOVACRUZRN2025 ,
+  RNMRTSantaCruz_2025,
+  RNMRTLajes_2025,
+  RNMRTMossoroAcu_2025,
+  RNMRTCaicoCerroCora_2025,
+  RNMRTPauDosFerrosCampoGrande_2025
 )
 
 RN2017$ano <- 2017
@@ -10836,32 +10872,10 @@ RN2025$ano <- 2025
 RNTEMPORAL <- rbind(RN2025, RN2020, RN2019, RN2017, RN2022, RN2021)
 RNTEMPORAL$estado <- 24
 RNTEMPORAL$regiao <- "nordeste"
-RNTEMPORAL <- RNTEMPORAL |>
-  mutate(
-    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
-    mrt= case_when(
-      grepl("ALTO OESTE|PAU DOS FERROS", mrt, ignore.case = TRUE) ~ 1901,
-      grepl("MÉDIO OESTE|MOSSORÓ|ASSÚ", mrt, ignore.case = TRUE) ~ 1902,
-      grepl("SERIDÓ|CAICÓ|CERRO", mrt, ignore.case = TRUE) ~ 1903,
-      grepl("LITORAL NORTE|JOÃO CÂMARA", mrt, ignore.case = TRUE) ~ 1904,
-      grepl("AGRESTE|POTENGI|TRAIRI|NOVA CRUZ|SÃO PAULO DO POTENGI|SANTA CRUZ", mrt, ignore.case = TRUE) ~ 1905,
-      grepl("LITORAL ORIENTAL|CEARÁ-MIRIM|GOIANINHA", mrt, ignore.case = TRUE) ~ 1906,
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 1901 ~ "Paraná, Tenente Ananias, Alexandria, Major Sales, Luís Gomes, Venha-Ver, Coronel João Pessoa, São Miguel, José da Penha, Marcelino Vieira, Riacho de Santana, Água Nova, Pilões, Rafael Fernandes, Doutor Severiano, Encanto, Pau dos Ferros, Francisco Dantas, João Dias, Antônio Martins, Frutuoso Gomes, Almino Afonso, Serrinha dos Pintos, Martins, Lucrécia, Portalegre, Viçosa, São Francisco do Oeste, Taboleiro Grande, Severiano Melo, Rodolfo Fernandes, Itaú, Riacho da Cruz, Umarizal, Rafael Godeiro, Patu, Messias Targino, Janduís, Olho-d'Água do Borges, Campo Grande, Triunfo Potiguar, Paraú",
-      mrt == 1902 ~ "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas, Carnaubais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçu, Macau, Mossoró, Pendências, Porto do Mangue, Tibau, Serra do Mel, Upanema",
-      mrt == 1903 ~ "Acari, Bodó, Caicó, Carnaúba dos Dantas, Cerro Corá, Cruzeta, Currais Novos, Equador, Florânia, Ipueira, Jardim de Piranhas, Jardim do Seridó, Jucurutu, Lagoa Nova, Ouro Branco, Parelhas, Santana do Seridó, São Fernando, São João do Sabugi, São José do Seridó, São Vicente, Serra Negra do Norte, Tenente Laurentino Cruz, Timbaúba dos Batistas",
-      mrt == 1904 ~ "João Câmara, Galinhos, Caiçara do Norte, São Bento do Norte, Pedra Grande, Parazinho, Jandaíra, São Miguel do Gostoso, Touros, Pureza, Poço Branco, Taipu, Bento Fernandes",
-      mrt == 1905 ~ "Boa Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz, Passa e Fica, Passagem, Riachuelo, Santa Maria, Santo Antônio, São Paulo do Potengi, São Pedro, Senador Elói de Souza, Serra Caiada, Serrinha, Várzea",
-      mrt == 1906 ~ "Ceará-Mirim, Rio do Fogo, Maxaranguape, Extremoz, São Gonçalo do Amarante, Natal, Macaíba, Parnamirim, Vera Cruz, Monte Alegre, São José de Mipibu, Nísia Floresta, Senador Georgino Avelino, Arês, Tibau do Sul, Goianinha, Vila Flor, Espírito Santo, Canguaretama, Baía Formosa, Pedro Velho, Montanhas",
-      .default = NA_character_
-    )
-  )
+
 
 ### 20. Rondônia ####
-### MRT CONE SUL ####
+###20.1 MRT CONE SUL ####
 ### 2019 ####
 ROMRTConeSul_2019 <- data.frame(
   mrt = "Cone Sul",
@@ -10978,7 +10992,7 @@ ROMRTConeSul_2022 <- data.frame(
   origem = "Vilhena, Colorado do Oeste, Cabixi, Cerejeiras, Pimenteiras D'Oeste, Corumbiara, Primavera de Rondônia, Pimenta Bueno, Chupinguaia e Parecis"
 )
 
-### Mercado Regional de Terras Zona da Mata ####
+###20.2 Mercado Regional de Terras Zona da Mata ####
 ### Zona da Mata ####
 ### 2019 ####
 ROMRTZonaDaMata_2019 <- data.frame(
@@ -11057,7 +11071,7 @@ Castanheiras, Alto Alegre dos Parecis, Santa Luzia D'Oeste e São Felipe D'Oeste
   )
 
 
-### BR 429 ####
+###20.3 BR 429 ####
 ### 2019 ####
 ROMRTBR429_2019 <- data.frame(
   mrt = "BR-429",
@@ -11134,7 +11148,7 @@ ROMRTBR429_2022 <- data.frame(
   origem = "São Miguel do Guaporé, Alvorada do Oeste, Seringueiras, São Francisco do Guaporé e Costa Marques"
 )
 
-### vale do Marmore####
+### 20.4 vale do Marmore####
 ### 2019 ####
 ROMRTValeDoMamore_2019 <- data.frame(
   mrt = "Vale do Mamoré",
@@ -11186,7 +11200,7 @@ ROMRTValeDoMamore_2022 <- data.frame(
   origem = "Guajará-Mirim e Nova Mamoré"
 )
 
-###Região Central####
+###20.4 Região Central####
 ### 2019 ####
 ROMRTRegiaoCentral_2019 <- data.frame(
   mrt = "Região Central",
@@ -11270,12 +11284,12 @@ ROMRTRegiaoCentral_2022 <- data.frame(
                  47817.66, 35888.70, 30528.58, 36688.80, 28374.59, 4899.93, 
                  8593.32, 7154.72, 20900.15, 11593.18, 17102.74, 21706.51, 
                  21004.30, 15732.49, 17647.91, 24648.97, 18847.94, 14304.81,
-                 19442.60, 13073.22, 17007.44, 18013.47,),
+                 19442.60, 13073.22, 17007.44, 18013.47),
   origem = "Ji-Paraná, Cacoal, Espigão D'Oeste, Ministro Andreazza, Presidente Médici, Ouro Preto do Oeste, Jaru, Teixeirópolis,
 Vale do Paraíso, Urupá, Nova União, Mirante da Serra, Governador Jorge Teixeira e Theobroma"
   )
   
-###Vale do Jamaril####
+###20.5 Vale do Jamaril####
 ### 2019 ####
 ROMRTValeDoJamari_2019 <- data.frame(
   mrt = "Vale do Jamari",
@@ -11358,7 +11372,7 @@ ROMRTValeDoJamari_2022 <- data.frame(
   origem = "Ariquemes, Cacaulândia, Monte Negro, Vale do Anari, Campo Novo de Rondônia, Buritis, Machadinho D’Oeste, Alto Paraíso, Cujubim e Rio Crespo"
 )
 
-###RIO MADEIRA####
+###20.6 RIO MADEIRA####
 ### 2019 ####
 ROMRTRioMadeira_2019 <- data.frame(
   mrt = "Rio Madeira",
@@ -11475,34 +11489,12 @@ ROTEMPORAL <- rbind(RO22, RO19)
 ROTEMPORAL$estado <- 11
 ROTEMPORAL$regiao <- "norte"  
 
-ROTEMPORAL <- ROTEMPORAL |>
-  mutate(
-    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
-    mrt= case_when(
-      grepl("Cone Sul", mrt, ignore.case = TRUE)      ~ 1301,
-      grepl("Zona da Mata", mrt, ignore.case = TRUE)  ~ 1302,
-      grepl("BR-429", mrt, ignore.case = TRUE)         ~ 1303,
-      grepl("Mamoré", mrt, ignore.case = TRUE)         ~ 1304,
-      grepl("Região Central", mrt, ignore.case = TRUE) ~ 1305,
-      grepl("Jamari", mrt, ignore.case = TRUE)         ~ 1306,
-      grepl("Rio Madeira", mrt, ignore.case = TRUE)    ~ 1307,
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 1301 ~ "Cabixi, Cerejeiras, Chupinguaia, Colorado do Oeste, Corumbiara, Parecis, Pimenta Bueno, Pimenteiras do Oeste, Primavera de Rondônia, Vilhena",
-      mrt == 1302 ~ "Alta Floresta d'Oeste, Alto Alegre dos Parecis, Castanheiras, Nova Brasilândia D'Oeste, Novo Horizonte do Oeste, Rolim de Moura, Santa Luzia D'Oeste, São Felipe D'Oeste",
-      mrt == 1303 ~ "Alvorada do Oeste, Costa Marques, São Francisco do Guaporé, São Miguel do Guaporé, Seringueiras",
-      mrt == 1304 ~ "Guajará-Mirim, Nova Mamoré",
-      mrt == 1305 ~ "Cacoal, Espigão D'Oeste, Governador Jorge Teixeira, Jaru, Ji-Paraná, Ministro Andreazza, Mirante da Serra, Nova União, Ouro Preto do Oeste, Presidente Médici, Teixeirópolis, Theobroma, Urupá, Vale do Paraíso",
-      mrt == 1306 ~ "Alto Paraíso, Ariquemes, Buritis, Cacaulândia, Campo Novo de Rondônia, Cujubim, Machadinho D'Oeste, Monte Negro, Rio Crespo",
-      mrt == 1307 ~ "Candeias do Jamari, Itapuã do Oeste, Porto Velho",
-      .default = NA_character_
-    )
-  )
 
 
-### 20. Roraima ####
+### 21. Roraima ####
+#2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr25_2018.ods
+#2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRRR_2022.pdf
+#2024:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RR_RAMT_2024.pdf
 ### MRT: MRT-1 ####
 ### 2018 ####
 RRMRT1_2018 <- data.frame(
@@ -11516,7 +11508,7 @@ RRMRT1_2018 <- data.frame(
   vtn_media = c(1301.21, 1209.98, 1321.87, 1490.22, 893.56),
   vtn_minimo = c(576.98, 595.14, 525.33, 400.91, 490.36),
   vtn_maximo = c(2025.44, 1824.83, 2118.42, 2899.63, 1296.76),
-  origem - "Alto Alegre, Amajari, Boa Vista, Bonfim, Normandia, Pacaraima, Uiramutá"
+  origem = "Alto Alegre, Amajari, Boa Vista, Bonfim, Normandia, Pacaraima, Uiramutá"
   
 )
 
@@ -11531,7 +11523,7 @@ RRMRT1_2022 <- data.frame(
   vti_minimo = c(3932.27, 4698.50, 2660.69, 4231.39, 
                  4698.50, 2660.69, 4231.39),
   
-  vti_maximo = cc(5320.13, 6356.79, 3599.75, 5724.83, 6356.79,
+  vti_maximo = c(5320.13, 6356.79, 3599.75, 5724.83, 6356.79,
                   3599.75, 5724.83),
   
   vtn_media = c(4353.37, 5527.64, 2989.12, 4978.11,
@@ -11547,39 +11539,53 @@ RRMRT1_2022 <- data.frame(
 
 ### 2024 ####
 RRMRT1_2024 <- data.frame(
-  mrt = "01",
+  mrt = "MRT: 01",
   tipologia_de_uso = c(
-    "Geral", "Agricola", "Exploração Mista", "Pecuária", "Vegetação Nativa",
-    "Exploração Mista Agricola Pastagem", "Pecuária-Bovino Pastagem Formada", "Vegetação Nativa - Lavrado",
-    "Exploração Mista Agrícola Pastagem-Alto Alegre", "Exploração Mista-Agrícola Pastagem-Amajari",
-    "Exploração Mista-Agricola Pastagem - Boa Vista", "Pecuária Bovino-Pastagem Formada - Cantá",
-    "Vegetação Nativa - Lavrado-Bonfim"
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Lavrado",
+    "Exploração Mista - Agrícola + Pastagem - Alto Alegre",
+    "Exploração Mista - Agrícola + Pastagem - Amajari",
+    "Exploração Mista - Agrícola + Pastagem - Boa Vista",
+    "Pecuária - Bovino - Pastagem Formada - Cantá",
+    "Vegetação Nativa - Lavrado - Bonfim"
   ),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3),
-  vti_media = c(5708.06, 7253.78, 4335.03, 5581.64, 
-                7595.14, 4335.03, 5581.64, 11842.78, 
-                2343.77, 4036.68, 5595.48, 4276.78, 11829.30),
-  
-  vti_minimo = c(4851.85, 6165.71, 3684.78, 4744.39, 
-                 6455.87, 3684.78, 4744.39, 10066.36,
-                 1992.20, 3431.18, 4756.16, 3635.26, 10054.91),
-  
-  vti_maximo = c(6564.27, 8341.85, 4985.28, 6418.89, 8734.41, 4985.28, 
-                 6418.89, 13619.20, 2695.34, 4642.18, 6434.80, 4918.30, 
-                 13603.70),
-  
-  vtn_media = c(4535.53, 6496.97, 3881.12, 4239.09,
-                7568.32, 3881.12, 4239.09, 11356.73, 
-                1562.60, 3967.09, 5136.70, 3105.26, 11829.30),
-  
-  vtn_minimo = c(3855.20, 5522.42, 3298.95, 3603.23, 6433.07, 
-                 3298.95, 3603.23, 9653.22, 1328.21, 3372.03,
-                 4366.20, 2639.47, 10054.91),
-  
-  vtn_maximo = c(5215.86, 7471.52, 4463.29, 4874.95, 8703.57, 4463.29, 
-                 , 13060.24, 1796.99, 4562.15, 5907.21, 3571.05, 13603.70),
-  origem = "Alto Alegre, Amajari, Boa Vista, Bonfim, Normandia, Pacaraima, Uiramutá"
+  vti_media = c(
+    5708.06, 7253.78, 4335.03, 5581.64, 7595.14, 4335.03, 5581.64, 11842.78,
+    2343.77, 4036.68, 5595.48, 4276.78, 11829.30
+  ),
+  vti_minimo = c(
+    4851.85, 6165.71, 3684.78, 4744.39, 6455.87, 3684.78, 4744.39, 10066.36,
+    1992.20, 3431.18, 4756.16, 3635.26, 10054.91
+  ),
+  vti_maximo = c(
+    6564.27, 8341.85, 4985.28, 6418.89, 8734.41, 4985.28, 6418.89, 13619.20,
+    2695.34, 4642.18, 6434.80, 4918.30, 13603.70
+  ),
+  vtn_media = c(
+    4535.53, 6496.97, 3881.12, 4239.09, 7568.32, 3881.12, 4239.09, 11356.73,
+    1562.60, 3967.09, 5136.70, 3105.26, 11829.30
+  ),
+  vtn_minimo = c(
+    3855.20, 5522.42, 3298.95, 3603.23, 6433.07, 3298.95, 3603.23, 9653.22,
+    1328.21, 3372.03, 4366.20, 2639.47, 10054.91
+  ),
+  vtn_maximo = c(
+    5215.86, 7471.52, 4463.29, 4874.95, 8703.57, 4463.29, 4874.95, 13060.24,
+    1796.99, 4562.15, 5907.21, 3571.05, 13603.70
+  ),
+  origem = "Alto Alegre, Amajari, Boa Vista, Bonfim, Cantá, Normandia, Pacaraima e Uiramutá."
 )
+
+
+
+
 
 ### MRT: MRT-2 ####
 ### 2018 ####
@@ -11682,24 +11688,13 @@ RRTEMPORAL$estado <-  14
 RRTEMPORAL$regiao <- "Norte"
 
 
-RRTEMPORAL <- RRTEMPORAL |>
-  mutate(
-    # Etapa 1: Padroniza os diferentes nomes para um código numérico único do Atlas
-    mrt = case_when(
-      mrt %in% c("MRT-1", "1", "01") ~ 2502,
-      mrt %in% c("MRT-2", "2", "02") ~ 2501,
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 2501 ~ "Alto Alegre, Amajari, Boa Vista, Bonfim, Cantá, Normandia, Pacaraima, Uiramutã",
-      mrt == 2502 ~ "Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São João da Baliza, São Luiz",
-      .default = NA_character_
-    )
-  )
 
-### 21. Rio Grande do Sul ####
-### Campanha ####
+
+### 23. Rio Grande do Sul ####
+#2017:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr11_2017.pdf
+#2020:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ramt_sr11_2020.pdf
+#2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRRS_2022.pdf
+###23.1 Campanha ####
 ### 2017 ####
 RSMRT01_2017 <- data.frame(
   mrt = "Campanha",
@@ -11748,7 +11743,7 @@ Sul, Herval, Hulha Negra, Lavras do Sul, Pedras Altas, Pinheiro Machado, Piratin
 Boa Vista."
 )
 
-### Planalto ####
+###23.2 Planalto ####
 ### 2017 ####
 RSMRT02_2017 <- data.frame(
   mrt = 2,
@@ -11887,7 +11882,7 @@ Alegre e Vista Gaúcha"
   )
 
 
-### SERRA ####
+###23.3 SERRA ####
 ### 2017 ####
 RSMRT03_2017 <- data.frame(
   mrt = "Serra",
@@ -12033,7 +12028,7 @@ Vanini, Venâncio Aires, Vera Cruz, Veranópolis, Vespasiano Correa, Vila Flores
 Maria, Vista Alegre do Prata e Westfalia"
 )
 
-### Campo de Cima da Serra ####
+###23.3 Campo de Cima da Serra ####
 ### 2017 ####
 RSMRT04_2017 <- data.frame(
   mrt = "Campo de Cima da Serra",
@@ -12083,7 +12078,7 @@ Bonito do Sul, Esmeralda, Ipê, Jaquirana, Lagoa Vermelha, Monte Alegre dos Camp
 Capões, Pinhal da Serra, São Francisco de Paula, São José dos Ausentes e Vacaria."
   )
 
-### Central ####
+###23.4Central ####
 ### 2017 ####
 RSMRT05_2017 <- data.frame(
   mrt = "Central",
@@ -12178,7 +12173,7 @@ Sul, Santa Maria, São Gabriel, São Martinho da
 Serra, São Pedro do Sul, São Sepé,"
 )
 ### 2022 ####
-MRT5_2022 <- data.frame(
+RSMRT5_2022 <- data.frame(
   mrt = "Central",
   tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Exploração Mista", "Agrícola Grãos Soja Baixa", "Agrícola Grãos Soja Média", "Agrícola Arroz com água", "Pecuária Bovino - Pastagem Nativa", "Pecuária Bovino - Pastagem Formada", "Exploração Mista Agrícola/Pastagem", "Agrícola Grãos Soja Baixa Santa Maria", "Agrícola Grãos Soja Baixa Cachoeira do Sul", "Agrícola Grãos Soja Baixa Cacequi", "Agrícola Grãos Soja Média Santa Maria", "Agrícola Grãos Soja Média Cachoeira do Sul", "Agrícola Grãos Soja Média - Cacequi", "Agrícola Arroz com água Santa Maria", "Agrícola Arroz com água Cachoeira do Sul", "Pecuária Bovino - Pastagem Nativa Cacequi", "Pecuária Bovino - Pastagem Formada Santa Maria", "Pecuária Bovino - Pastagem Formada Cacequi", "Exploração Mista Agrícola/Pastagem Santa Maria"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -12194,7 +12189,7 @@ Sul, Santa Maria, São Gabriel, São Martinho da Serra, São Pedro do Sul, São 
 do Sul, Toropi e Vila Nova do Sul. "
   )
 
-### Pelotas ####
+###23.5 Pelotas ####
 ### 2017 ####
 RSMRT06_2017 <- data.frame(
   mrt = "Pelotas",
@@ -12272,6 +12267,7 @@ Guaíba, Mariana Pimentel, Minas do , eão, Morro Redondo, Pantano Grande,
 Pelotas, São Jerônimo, São Lourenço do Sul, Sentinela , o Sul, Sertão Santana, Tapes,
 Turuçu e Vale Verde"
 )
+#### 23.6 Pelotas ####
 ### 2020 ####
 RSMRT6_2020 <- data.frame(
   mrt = "Pelotas",
@@ -12310,7 +12306,7 @@ Chuí, Chuvisca, Cristal, Dom Feliciano, Jaguarão, Morro Redondo, Pelotas, Pedr
 Grande, Santa Vitória do Palmar, São Lourenço do Sul e Turuçu."
 )
 
-### Metropolitano ####
+###23.7 Metropolitano ####
 ### 2017 ####
 RSMRT07_2017 <- data.frame(
   mrt = "Metropolitano",
@@ -12389,7 +12385,7 @@ Rita, Novo Hamburgo, Parobé, Portão, Porto Alegre, São Jerônimo, São Leopol
 Sul, Sentinela do Sul, Sertão Santana, Tapes, Taquara, Triunfo e Viamão."
 )
 
-### Litoral ####
+### 23.8 Litoral ####
 ### 2017 ####
 RSMRT08_2017 <- data.frame(
   mrt = "Litoral",
@@ -12470,7 +12466,7 @@ Palmares do Sul, Riozinho, Rolante, Santo Antônio da Patrulha, São José do No
 de Areia, Torres, Tramandaí, Três Cachoeiras, Três Forquilhas e Xangri-lá"
   )
 
-### Fronteira Oeste ####
+### 23.9 Fronteira Oeste ####
 ### 2017 ####
 RSMRT09_2017 <- data.frame(
   mrt = "Fronteira Oeste",
@@ -12533,7 +12529,7 @@ Livramento, São Francisco de Assis e Uruguaiana"
 )
 
 ### 2022 ####
-MRT9_2022 <- data.frame(
+RSMRT9_2022 <- data.frame(
   mrt = 9,
   tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Exploração Mista", "Agrícola Arroz com água", "Agrícola Grãos Soja Média", "Agrícola Grãos Soja Baixa", "Pecuária Bovino - Pastagem Nativa", "Pecuária Bovino - Pastagem Formada", "Exploração Mista Agrícola/Pastagem", "Agrícola Arroz com água Uruguaiana", "Agrícola Arroz com água Santana do Livramento", "Agrícola Grãos Soja Média- Alegrete", "Agrícola Grãos Soja Média Santana do Livramento", "Agrícola Grãos Soja Baixa Uruguaiana", "Agrícola Grãos Soja Baixa Alegrete", "Agrícola Grãos Soja Baixa Santana do Livramento", "Pecuária Bovino Pastagem Nativa Alegrete", "Pecuária Bovino - Pastagem Nativa Santana do Livramento", "Pecuária Bovino - Pastagem Formada Alegrete", "Pecuária Bovino Pastagem Formada Santana do Livramento", "Exploração Mista Agrícola/Pastagem Uruguaiana", "Exploração Mista Agricola/Pastagem Alegrete", "Exploração Mista Agrícola/Pastagem Santana do Livramento"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
@@ -12548,7 +12544,7 @@ do Livramento, São Francisco de Assis e Uruguaiana"
 )
 
 
-### Missões ####
+###23.10 Missões ####
 ### 2017 ####
 RSMRT10_2017 <- data.frame(
   mrt = "Missões",
@@ -12625,7 +12621,43 @@ Pirapó, Porto Xavier Rolador, Roque Gonzales, Salvador das Missões, Santo Âng
 Santo Antônio das Missões, São Borja, São Luiz Gonzaga, São Miguel das Missões, São
 Nicolau, São Paulo das Missões, São Pedro do Butiá, Vitória das Missões"
 )
-
+###23.11 MRT 11 ####
+## 2020 ####
+RSMRT11_2020 <- data.frame(
+  mrt = "SANTA CRUZ DO SUL",
+  tipologia_de_uso = c("MÉDIA GERAL", "Agricultura", "Pecuária", "Vegetação Nativa/Sivicultura", "Agricultura Terra Agrícola de Arroz - Alagável", "Agricultura Terra Agrícola de Arroz - Sistematizada", "Agricultura Terra Agrícola de Arroz", "Agricultura Terra Agrícola de Alta Produtividade de Grãos- Soja", "Agricultura Terra Agrícola de Média Produtividade de Grãos-Soja", "Agricultura Agricultura Familiar", "Agricultura Terra Agrícola de Produção de Fumo", "Pecuária Pastagem de Baixo Suporte", "Vegetação Nativa/Sivicultura Mata Nativa", "Agricultura Terra Agrícola de Arroz - Alagável - Agudo", "Agricultura Terra Agrícola de Arroz - Sistematizada Agudo", "Agricultura Terra Agrícola de Arroz Agudo", "Agricultura Terra Agrícola de Arroz Rio Pardo", "Agricultura Terra Agrícola de Alta Produtividade de Grãos- Soja Agudo", "Agricultura Terra Agrícola de Alta Produtividade de Grãos-Soja Santa Cruz", "Agricultura Terra Agrícola de Alta Produtividade de Grãos Soja Rio Pardo", "Agricultura Terra Agrícola de Média Produtividade de Grãos- Soja - Agudo", "Agricultura Terra Agrícola de Média Produtividade de Grãos- Soja Santa Cruz", "Agricultura Terra Agrícola de Média Produtividade de Grãos Soja Rio Pardo", "Agricultura Agricultura Familiar - Agudo", "Agricultura Agricultura Familiar Santa Cruz", "Agricultura Terra Agrícola de Produção de Fumo Agudo", "Agricultura Terra Agrícola de Produção de Fumo Santa Cruz", "Pecuária Pastagem de Baixo Suporte Agudo", "Pecuária Pastagem de Baixo Suporte Santa Cruz", "Pecuária Pastagem de Baixo Suporte Rio Pardo", "Vegetação Nativa/Sivicultura Mata Nativa Agudo", "Vegetação Nativa/Sivicultura Mata Nativa Santa Cruz"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(22259.10, 23883.06, 9787.97, 4537.03, 18816.71, 28997.67, 18167.08, 31240.51, 21631.76, 10312.53, 18555.66, 9787.97, 4537.03, 18816.71, 28997.67, 19750.00, 17533.91, 27664.63, 37233.96, 27071.30, 20115.70, 28294.30, 21153.09, 8905.64, 12282.18, 17888.89, 18709.53, 10314.57, 10197.41, 8442.50, 4339.35, 4668.82),
+  vti_minimo = c(18920.24, 20300.60, 8319.78, 3856.48, 15994.20, 24648.02, 15442.02, 26554.43, 18386.99, 8765.65, 15772.31, 8319.78, 3856.48, 15994.20, 24648.02, 16787.50, 14903.83, 23514.94, 31648.86, 23010.61, 17098.35, 24050.15, 17980.13, 7569.80, 10439.85, 15205.56, 15903.10, 8767.39, 8667.80, 7176.13, 3688.45, 3968.49),
+  vti_maximo = c(25597.97, 27465.52, 11256.17, 5217.59, 21639.21, 33347.33, 20892.14, 35926.59, 24876.52, 11859.41, 21339.01, 11256.17, 5217.59, 21639.21, 33347.33, 22712.50, 20164.00, 31814.33, 42819.05, 31132.00, 23133.06, 32538.44, 24326.06, 10241.49, 14124.50, 20572.22, 21515.96, 11861.76, 11727.02, 9708.88, 4990.26, 5369.14),
+  vtn_media = c(21803.49, 23401.06, 9430.35, 4537.03, 18816.71, 28273.64, 17883.48, 31088.85, 21314.61, 9951.34, 16730.73, 9430.35, 4537.03, 18816.71, 28273.64, 19500.00, 17236.88, 27664.63, 36901.78, 26957.30, 19620.17, 28294.30, 21153.09, 8603.92, 11837.73, 16777.78, 16719.87, 10314.57, 9737.85, 7931.14, 4339.35, 4668.82),
+  vtn_minimo = c(18532.97, 19890.90, 8015.80, 3856.48, 15994.20, 24032.59, 15200.96, 26425.52, 18117.42, 8458.64, 14221.12, 8015.80, 3856.48, 15994.20, 24032.59, 16575.00, 14651.34, 23514.94, 31366.51, 22913.70, 16677.14, 24050.15, 17980.13, 7313.33, 10062.07, 14261.11, 14211.89, 8767.39, 8277.17, 6741.47, 3688.45, 3968.49),
+  vtn_maximo = c(25074.02, 26911.22, 10844.90, 5217.59, 21639.21, 32514.68, 20566.00, 35752.17, 24511.81, 11444.04, 19240.34, 10844.90, 5217.59, 21639.21, 32514.68, 22425.00, 19822.41, 31814.33, 42437.04, 31000.89, 22563.19, 32538.44, 24326.06, 9894.51, 13613.39, 19294.44, 19227.86, 11861.76, 11198.53, 9120.81, 4990.26, 5369.14),
+  origem = "53 municípios, dentre eles
+destacam-se: Santa Cruz do Sul, mais ao centro
+deste mercado; a oeste, Agudo e Restinga
+Seca; já ao sul do Mercado estão os municípios
+de Pantano Grande e Rio Pardo; e a leste, o
+Vale do Taquari. "
+)
+## 2022 ####
+RSMRT11_2022 <- data.frame(
+  mrt = "SANTA CRUZ DO SUL",
+  tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Vegetação Nativa", "Agrícola Arroz com água Sistematizado", "Agrícola Arroz - com água", "Agrícola Grãos - Soja Média", "Agrícola Grãos Soja-Baixa", "Pecuária Bovino - Pastagem Nativa", "Exploração Mista Diversificada", "Agrícola Produção Diversificada - Fumo e outros", "Agrícola Arroz com água - Sistematizado Agudo", "Agrícola Arroz com água Agudo", "Agrícola Grãos - Soja- Média Agudo", "Agrícola Grãos - Soja Média Rio Pardo", "Agrícola Grãos Soja Baixa Agudo", "Agrícola Grãos Soja Baixa Santa Cruz", "Agrícola Grãos Soja Baixa Rio Pardo", "Pecuária Bovino - Pastagem Nativa Agudo", "Pecuária Bovino - Pastagem Nativa Santa Cruz", "Pecuária Bovino - Pastagem Nativa Rio Pardo", "Exploração Mista Diversificada Agudo", "Exploração Mista Diversificada Santa Cruz", "Agrícola Produção Diversificada - Fumo e outros Agudo", "Agrícola Produção Diversificada - Fumo e outros Santa Cruz"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(46931.43, 55096.97, 19457.63, 8367.04, 45816.32, 29077.23, 72390.02, 48013.51, 19457.63, 17972.36, 33999.63, 45816.32, 30221.93, 66494.14, 61703.43, 43292.70, 67906.31, 45093.80, 19803.98, 19579.02, 19064.87, 15673.93, 20653.86, 31484.44, 35077.56),
+  vti_minimo = c(39891.72, 46832.43, 16538.99, 7111.98, 38943.87, 24715.64, 61531.52, 40811.48, 16538.99, 15276.50, 28899.68, 38943.87, 25688.64, 56520.02, 52447.91, 36798.80, 57720.37, 38329.73, 16833.39, 16642.17, 16205.14, 13322.84, 17555.78, 26761.78, 29815.93),
+  vti_maximo = c(539071.15, 63361.52, 22376.27, 9622.09, 52688.77, 33438.81, 83248.52, 55215.54, 22376.27, 20668.21, 39099.57, 52688.77, 34755.22, 76468.26, 70958.94, 49786.61, 78092.26, 51857.87, 22774.58, 22515.87, 21924.60, 18025.02, 23751.94, 36207.11, 40339.20),
+  vtn_media = c(45905.72, 53911.26, 18639.80, 8367.04, 44367.28, 28167.68, 71707.48, 46359.94, 18639.80, 17638.95, 31373.97, 44367.28, 29304.07, 65885.95, 60768.02, 42101.68, 64513.08, 43447.07, 18692.87, 19119.46, 17964.86, 15372.21, 20283.49, 30373.33, 31802.81),
+  vtn_minimo = c(39019.86, 45824.57, 15843.83, 7111.98, 37712.19, 23942.53, 60951.36, 39405.95, 15843.83, 14993.11, 26667.87, 37712.19, 24908.46, 56003.06, 51652.82, 35786.43, 54836.12, 36930.01, 15888.94, 16251.54, 15270.13, 13066.38, 17240.97, 25817.33, 27032.39),
+  vtn_maximo = c(52791.57, 61997.95, 21435.76, 9622.09, 51022.37, 32392.83, 82463.60, 53313.94, 21435.76, 20284.80, 36080.06, 51022.37, 33699.68, 75768.84, 69883.22, 48416.94, 74190.04, 49964.14, 21496.80, 21987.38, 20659.58, 17678.04, 23326.01, 34929.33, 36573.24),
+  origem = "53 municípios, dentre eles
+destacam-se: Santa Cruz do Sul, mais ao centro
+deste mercado; a oeste, Agudo e Restinga
+Seca; já ao sul do Mercado estão os municípios
+de Pantano Grande e Rio Pardo; e a leste, o
+Vale do Taquari. "
+)
 ### Consolidação dos dados ####
 RS17<- rbind(
   RSMRT01_2017,
@@ -12683,8 +12715,12 @@ RSTEMPO$estado <- 43
 RSTEMPO$regiao <- "Sul"
 
 
-### 22. Santa Catarina####
-### Araranguá #####
+### 24. Santa Catarina####
+#
+#2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/SC_RAMT_2022.pdf
+#2016_2019:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/copy_of_SC_ramt_2016_a_2019.pdf
+#2022: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/SC_RAMT_2022.pdf
+### 24.1 Araranguá #####
 ### 2022 ####
 SCMRT_Ararangua_2022 <- data.frame(
   mrt = "Araranguá",
@@ -12735,7 +12771,7 @@ SCMRT_Ararangua_2022 <- data.frame(
   origem = "Araranguá, Balneário Arroio do Silva, Balneário Gaivota, Ermo, Jacinto Machado, Maracajá, Meleiro, Morro Grande, Passo de Torres, Praia Grande, Santa Rosa do Sul, São João do Sul, Sombrio, Timbé do Sul e Turvo."
 )
 
-### Blumenau #####
+###24.2 Blumenau #####
 ### 2022 ####
 SCMRT_Blumenau_2022 <- data.frame(
   mrt = "Blumenau",
@@ -12775,7 +12811,7 @@ SCMRT_Blumenau_2022 <- data.frame(
   origem = "Apiúna, Ascurra, Benedito Novo, Blumenau, Botuverá, Brusque, Doutor Pedrinho, Gaspar, Guabiruba, Indaial, Luiz Alves, Pomerode, Rio dos Cedros, Rodeio e Timbó."
 )
 
-### Canoinhas #####
+###24.3 Canoinhas #####
 ### 2016 ####
 SCMRT_Canoinhas_2016_2019 <- data.frame(
   mrt = "Canoinhas",
@@ -12840,7 +12876,7 @@ SCMRT_Canoinhas_2022 <- data.frame(
   origem = "Bela Vista do Toldo, Campo Alegre, Canoinhas, Irineópolis, Itaiópolis, Mafra, Major Vieira, Monte Castelo, Papanduva, Porto União, Rio Negrinho, Santa Terezinha, São Bento do Sul, Timbó Grande e Três Barras"
 )
 
-### Chapeco #####
+###24.4 Chapeco #####
 ### 2022 ####
 SCMRT_Chapeco_2022 <- data.frame(
   mrt = "Chapecó",
@@ -12904,7 +12940,7 @@ SCMRT_Chapeco_2022 <- data.frame(
   origem = "Águas de Chapecó, Águas Frias, Bom Jesus do Oeste, Caibi, Campo Erê, Caxambu do Sul, Chapecó, Cordilheira Alta, Coronel Freitas, Cunha Porã, Cunhataí, Flor do Sertão, Formosa do Sul, Guatambu, Iraceminha, Irati, Jardinópolis, Maravilha, Modelo, Nova Erechim, Nova Itaberaba, Novo Horizonte, Palmitos, Pinhalzinho, Planalto Alegre, Quilombo, Saltinho, Santa Terezinha do Progresso, Santiago do Sul, São Bernardino, São Carlos, São Lourenço do Oeste, São Miguel da Boa Vista, Saudades, Serra Alta, Sul Brasil, Tigrinhos e União do Oeste."
 )
 
-### Concordia #####
+###24.5 Concordia #####
 ### 2022 ####
 SCMRT_Concordia_2022 <- data.frame(
   mrt = "Concórdia",
@@ -12930,7 +12966,7 @@ SCMRT_Concordia_2022 <- data.frame(
   origem = "Alto Bela Vista, Arabutã, Arvoredo, Concórdia, Ipira, Ipumirim, Irani, Itá, Lindoia do Sul, Paial, Peritiba, Piratuba, Presidente Castelo Branco, Seara e Xavantina."
 ) 
 
-### Curitibanos #####
+###24.6 Curitibanos #####
 ### 2017 ####
 SCMRT_Curitibanos_2017 <- data.frame(
   mrt = "Curitibanos",
@@ -13021,7 +13057,7 @@ SCMRT_Curitibanos_2022 <- data.frame(
 )  
 
 
-### Florianópolis #####
+###24.7 Florianópolis #####
 ### 2022 ####
 SCMRT_Florianopolis_2022 <- data.frame(
   mrt = "Florianópolis",
@@ -13064,7 +13100,7 @@ SCMRT_Florianopolis_2022 <- data.frame(
 )
 
 
-### MRT: Ituporanga ####
+###24.8 MRT: Ituporanga ####
 ## 2019  #####
 SCMRT_Ituporanga_2016_2019 <- data.frame(
   mrt = "Ituporanga",
@@ -13129,7 +13165,7 @@ SCMRT_Ituporanga_2022 <- data.frame(
 
 
 
-### MRT: Joacaba ####
+###24.9 MRT: Joacaba ####
 ## 2018 ####
 SCMRT_Joacaba_2018_2019 <- data.frame(
   mrt = "Joaçaba",
@@ -13210,7 +13246,7 @@ SCMRT_Joacaba_2022 <- data.frame(
   origem = "Água Doce, Arroio Trinta, Caçador, Calmon, Capinzal, Catanduvas, Erval Velho, Fraiburgo, Herval d'Oeste, Ibiam, Ibicaré, Iomerê, Jaborá, Joaçaba, Lacerdópolis, Lebon Régis, Luzerna, Macieira, Matos Costa, Ouro, Pinheiro Preto, Rio das Antas, Salto Veloso, Tangará, Treze Tílias, Vargem Bonita e Videira. Está localizada na mesorregião oeste do estado de Santa Catarina."
 )
 
-## MRT: Joinville ####
+##24.10 MRT: Joinville ####
 ## 2022 ####
 SCMRT_Joinville_2022 <- data.frame(
   mrt = "Joinville",
@@ -13248,7 +13284,7 @@ SCMRT_Joinville_2022 <- data.frame(
   origem = "Araquari, Balneário Camboriú, Balneário Barra do Sul, Barra Velha, Bombinhas, Camboriú, Corupá, Garuva, Guaramirim, Ilhota, Itajaí, Itapema, Itapoá, Jaraguá do Sul, Joinville, Massaranduba, Navegantes, Penha, Balneário Piçarras, Porto Belo, São Francisco do Sul, São João do Itaperiú e Schroeder."
 )
 
-### MRT: Planalto Serrano #####
+###24.11  MRT: Planalto Serrano #####
 ### 2016 #####
 SCMRT_Planalto_Serrano_2016 <- data.frame(
   mrt = "Planalto Serrano",
@@ -13267,7 +13303,13 @@ SCMRT_Planalto_Serrano_2016 <- data.frame(
                  27693.00, 17863.63, 23000.00, 20160.00, 30000.00, 
                  16514.30, 25106.90, 20888.63, 9429.64, 7959.90, 23000.00,
                  16566.33),
-  vtn_media = (NA), vtn_minimo = (NA), vtn_maximo= (NA)
+  vtn_media = (NA), vtn_minimo = (NA), vtn_maximo= (NA),
+  origem = "Anita Garibaldi, Bocaina do Sul, Bom Jardim da
+Serra, Bom Retiro, Capão Alto, Campo Belo do
+Sul, Celso Ramos, Cerro Negro, Correia Pinto,
+Lages, Otacílio Costa, Painel, Palmeira, Rio
+Rufino, São Joaquim, São José do Cerrito,
+Urubici e Urupema"
 )
 
 ### 2016 - 2019 #####
@@ -13348,7 +13390,7 @@ SCMRT_Planalto_Serrano_2022 <- data.frame(
   origem = "Anita Garibaldi, Bocaina do Sul, Bom Jardim da Serra, Bom Retiro, Capão Alto, Campo Belo do Sul, Celso Ramos, Cerro Negro, Correia Pinto, Lages, Otacílio Costa, Painel, Palmeira, Rio Rufino, São Joaquim, São José do Cerrito, Urubici e Urupema."
 )
 
-## MRT: Rancho Queimado ####
+##24.12 MRT: Rancho Queimado ####
 ## 2022 ####
 SCMRT_Rancho_Queimado_2022 <- data.frame(
   mrt = "Rancho Queimado",
@@ -13393,7 +13435,7 @@ SCMRT_Rancho_Queimado_2022 <- data.frame(
 )  
 
 
-## MRT: Rio do Sul ####
+##24.13 MRT: Rio do Sul ####
 ## 2022 ####
 SCMRT_Rio_do_Sul_2022 <- data.frame(
   mrt = "Rio do Sul",
@@ -13448,7 +13490,7 @@ SCMRT_Rio_do_Sul_2022 <- data.frame(
 
 
 
-## MRT: São Miguel do Oeste ####
+##24.14 MRT: São Miguel do Oeste ####
 ## 2022 ####
 SCMRT_Sao_Miguel_do_Oeste_2022 <- data.frame(
   mrt = "São Miguel do Oeste",
@@ -13495,7 +13537,7 @@ SCMRT_Sao_Miguel_do_Oeste_2022 <- data.frame(
   origem = "Anchieta, Bandeirante, Barra Bonita, Belmonte, Descanso, Dionísio Cerqueira, Guaraciaba, Guarujá do Sul, Iporã do Oeste, Itapiranga, Mondaí, Palma Sola, Paraíso, Princesa, Riqueza, Romelândia, Santa Helena, São João do Oeste, São José do Cedro, São Miguel do Oeste e Tunápolis."
 )
 
-## MRT: Tubarão ####
+##24.15 MRT: Tubarão ####
 ## 2022 ####
 SCMRT_Tubarao_2022 <- data.frame(
   mrt = "Tubarão",
@@ -13557,7 +13599,7 @@ SCMRT_Tubarao_2022 <- data.frame(
   origem = " Armazém, Braço do Norte, Capivari de Baixo, Cocal do Sul, Criciúma, Forquilhinha, Garopaba, Grão Pará, Gravatal, Içara, Imaruí, Imbituba, Jaguaruna, Laguna, Lauro Müller, Morro da Fumaça, Nova Veneza, Orleans, Pedras Grandes, Pescaria Brava, Rio Fortuna, Sangão, Santa Rosa de Lima, São Ludgero, São Martinho, Siderópolis, Treviso, Treze de Maio, Tubarão e Urussanga."
 )
 
-## MRT: Xanxerê ####
+##24.16 MRT: Xanxerê ####
 #### 2016 ####
 SCMRT_Xanxere_2016 <- data.frame(
   mrt = "Xanxerê",
@@ -13707,84 +13749,35 @@ SC22$ano <- 2022
 SC2019<- rbind(
   SCMRT_Planalto_Serrano_2016_2019,
   SCMRT_Xanxere_2016,
-  SCMRT_Curitibanos_2017,
+  SCMRT_Curitibanos_2016_2019,
   SCMRT_Canoinhas_2016_2019,
-  SCMRT_Curitibanos_2018_2019,
+  SCMRT_Curitibanos_2016_2019,
   SCMRT_Ituporanga_2016_2019,
   SCMRT_Joacaba_2018_2019,
   SCMRT_Xanxere_2019
 )
 
-SC2019$vtn_minimo <- NA
-SC2019$vtn_maximo <- NA 
-SC2019$vtn_media <- NA
+
 SC2019$ano <- 2019
 
-SC2017$vtn_minimo <- NA
-SC2017$vtn_maximo <- NA 
-SC2017$vtn_media <- NA
-names(SC2017)[names(SC2017) == "media"] <- "vti_media"
-names(SC2017)[names(SC2017) == "limite_inferior"] <- "vti_minimo"
-names(SC2017)[names(SC2017) == "limite_superior"] <- "vti_maximo"
-SC2017$vtn_media <- NA
 SC2017$ano <- 2017
-
-SCTEMPO <- rbind(
+SC22$ano <- 2022
+SCTEMPORAL <- rbind(
   SC2019,
   SC2017,
   SC22
 )
 SCTEMPO$estado <-  42
 SCTEMPO$regiao <- "sul"
-SCTEMPO <- SCTEMPO |> mutate(
-  mrt = case_when(
-    mrt == "Araranguá"           ~ 1008,
-    mrt == "Blumenau"            ~ 1014,
-    mrt == "Canoinhas"          ~ 1016,
-    mrt == "Chapecó"             ~ 1002,
-    mrt == "Concórdia"          ~ 1004,
-    mrt == "Curitibanos"        ~ 1006,
-    mrt == "Florianópolis"      ~ 1011,
-    mrt == "Ituporanga"         ~ 1012,
-    mrt == "Joaçaba"             ~ 1005,
-    mrt == "Joinville"           ~ 1015,
-    mrt == "Planalto Serrano"    ~ 1007,
-    mrt == "Rancho Queimado"     ~ 1010,
-    mrt == "Rio do Sul"          ~ 1013,
-    mrt == "São Miguel do Oeste" ~ 1001,
-    mrt == "Tubarão"             ~ 1009,
-    mrt == "Xanxerê"             ~ 1003,
-  )
-)
 
-SCTEMPO <- SCTEMPO |>
-  mutate(
-    cidades = case_when(
-      mrt == "1001" ~ "Anchieta, Bandeirante, Barra Bonita, Belmonte, Descanso, Dionísio Cerqueira, Guaraciaba, Guarujá do Sul, Iporã do Oeste, Itapiranga, Mondaí, Palma Sola, Paraíso, Princesa, Riqueza, Romelândia, Santa Helena, São João do Oeste, São José do Cedro, São Miguel do Oeste, Tunápolis",
-      mrt == "1002" ~ "Águas de Chapecó, Águas Frias, Bom Jesus do Oeste, Caibi, Campo Erê, Caxambu do Sul, Chapecó, Cordilheira Alta, Coronel Freitas, Cunha Porã, Cunhataí, Flor do Sertão, Formosa do Sul, Guatambu, Iraceminha, Irati, Jardinópolis, Maravilha, Modelo, Nova Erechim, Nova Itaberaba, Novo Horizonte, Palmitos, Pinhalzinho, Planalto Alegre, Quilombo, Saltinho, Santa Terezinha do Progresso, Santiago do Sul, São Bernardino, São Carlos, São Lourenço do Oeste, São Miguel da Boa Vista, Saudades, Serra Alta, Sul Brasil, Tigrinhos, União do Oeste",
-      mrt == "1003" ~ "Abelardo Luz, Bom Jesus, Coronel Martins, Entre Rios, Faxinal dos Guedes, Galvão, Ipuaçu, Jupiá, Lageado Grande, Marema, Ouro Verde, Passos Maia, Ponte Serrada, São Domingos, Vargeão, Xanxerê, Xaxim",
-      mrt == "1004" ~ "Alto Bela Vista, Arabutã, Arvoredo, Concórdia, Ipira, Ipumirim, Irani, Itá, Lindóia do Sul, Paial, Peritiba, Piratuba, Presidente Castello Branco, Seara, Xavantina",
-      mrt == "1005" ~ "Água Doce, Arroio Trinta, Caçador, Calmon, Capinzal, Catanduvas, Erval Velho, Fraiburgo, Herval d'Oeste, Ibiam, Ibicaré, Iomerê, Jaborá, Joaçaba, Lacerdópolis, Lebon Régis, Luzerna, Macieira, Matos Costa, Ouro, Pinheiro Preto, Rio das Antas, Salto Veloso, Tangará, Treze Tílias, Vargem Bonita, Videira",
-      mrt == "1006" ~ "Abdon Batista, Brunópolis, Campos Novos, Curitibanos, Frei Rogério, Monte Carlo, Ponte Alta, Ponte Alta do Norte, Santa Cecília, São Cristóvão do Sul, Vargem, Zortéa",
-      mrt == "1007" ~ "Anita Garibaldi, Bocaina do Sul, Bom Jardim da Serra, Bom Retiro, Capão Alto, Campo Belo do Sul, Celso Ramos, Cerro Negro, Correia Pinto, Lages, Otacílio Costa, Painel, Palmeira, Rio Rufino, São Joaquim, São José do Cerrito, Urubici, Urupema",
-      mrt == "1008" ~ "Araranguá, Balneário Arroio do Silva, Balneário Gaivota, Ermo, Jacinto Machado, Maracajá, Meleiro, Morro Grande, Passo de Torres, Praia Grande, Santa Rosa do Sul, São João do Sul, Sombrio, Timbé do Sul, Turvo",
-      mrt == "1009" ~ "Armazém, Braço do Norte, Capivari de Baixo, Cocal do Sul, Criciúma, Forquilhinha, Garopaba, Grão Pará, Gravatal, Içara, Imaruí, Imbituba, Jaguaruna, Laguna, Lauro Müller, Morro da Fumaça, Nova Veneza, Orleans, Pedras Grandes, Pescaria Brava, Rio Fortuna, Sangão, Santa Rosa de Lima, São Ludgero, São Martinho, Siderópolis, Treviso, Treze de Maio, Tubarão, Urussanga",
-      mrt == "1010" ~ "Águas Mornas, Alfredo Wagner, Anitápolis, Rancho Queimado, São Bonifácio",
-      mrt == "1011" ~ "Angelina, Antônio Carlos, Biguaçu, Canelinha, Florianópolis, Governador Celso Ramos, Leoberto Leal, Major Gercino, Nova Trento, Palhoça, Paulo Lopes, Santo Amaro da Imperatriz, São João Batista, São José, São Pedro de Alcântara, Tijucas",
-      mrt == "1012" ~ "Agrolândia, Atalanta, Chapadão do Lageado, Imbuia, Ituporanga, Petrolândia, Vidal Ramos",
-      mrt == "1013" ~ "Agronômica, Aurora, Braço do Trombudo, Dona Emma, Ibirama, José Boiteux, Laurentino, Lontras, Mirim Doce, Pouso Redondo, Presidente Getúlio, Presidente Nereu, Rio do Campo, Rio do Oeste, Rio do Sul, Salete, Taió, Trombudo Central, Vitor Meireles, Witmarsum",
-      mrt == "1014" ~ "Apiúna, Ascurra, Benedito Novo, Blumenau, Botuverá, Brusque, Doutor Pedrinho, Gaspar, Guabiruba, Indaial, Luiz Alves, Pomerode, Rio dos Cedros, Rodeio, Timbó",
-      mrt == "1015" ~ "Araquari, Balneário Camboriú, Balneário Barra do Sul, Barra Velha, Bombinhas, Camboriú, Corupá, Garuva, Guaramirim, Ilhota, Itajaí, Itapema, Itapoá, Jaraguá do Sul, Joinville, Massaranduba, Navegantes, Penha, Balneário Piçarras, Porto Belo, São Francisco do Sul, São João do Itaperiú, Schroeder",
-      mrt == "1016" ~ "Bela Vista do Toldo, Campo Alegre, Canoinhas, Irineópolis, Itaiópolis, Mafra, Major Vieira, Monte Castelo, Papanduva, Porto União, Rio Negrinho, Santa Terezinha, São Bento do Sul, Timbó Grande, Três Barras",
-      .default = NA_character_ # Boa prática para casos não mapeados
-    )
-  )
 
-## 23. SÃO PAULO #### 
+## 25. SÃO PAULO #### 
+#2018: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr08_2018.xls
+#2022: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRSP_2022.pdf
 ## MRT: Oeste ####
-## 2018 ####
-sPMRT_Oeste_2018 <- data.frame(
-  mrt = "Oeste",
+##25.1 2018 ####
+SPMRT_Oeste_2018 <- data.frame(
+  mrt = "Mercado Regional de Terras Oeste",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Agricultura", "Agricultura (Cana-de-açúcar)", "Pecuária – POLO 1", "Pecuária – POLO 2", "Pecuária – POLO 3", "Cana-de-açúcar – POLO 1", "Cana-de-açúcar – POLO 2", "Cana-de-açúcar – POLO 3", "Cana-de-açúcar – POLO 4"),
   nivel = c(0, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(19280.79, 17310.32, 21672.78, 21672.78, 15637.45,
@@ -13808,7 +13801,7 @@ sPMRT_Oeste_2018 <- data.frame(
 )
 
 ## 2022 ####
-MRTOeste_2022 <- data.frame(
+SPMRTOeste_2022 <- data.frame(
   mrt = "Mercado Regional de Terras Oeste",
   tipologia_de_uso = c("Geral", "Agrícola", "Pecuária", "Exploração Mista", "Agrícola Grãos Diversos", "Agrícola - Cana", "Pecuária-Bovino, Pastagem Formada", "Exploração Mista Agrícola Pastagem", "Agrícola Cana Polo I", "Agrícola Cana Polo II", "Agrícola Cana Polo III", "Agrícola Cana Polo IV", "Pecuária Bovino, Pastagem Formada Polo I", "Pecuária Bovino, Pastagem Formada Polo II", "Pecuária Bovino, Pastagem Formada Polo III"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3),
@@ -13832,10 +13825,10 @@ Sandovalina, Santa Mercedes, Santo Anastácio, Santo Expedito, Santópolis do Ag
 D’álho, Taciba, Tarabaí, Tarumã, Teodoro Sampaio, Tupã, Tupi Paulista, Valparaíso."
 )
 
-## MRT: Central ####
+##25.2 MRT: Central ####
 ##2018 ####
-MRT_Central_2018 <- data.frame(
-  mrt = "Central",
+SPMRT_Central_2018 <- data.frame(
+  mrt = "Mercado Regional de Terras Central",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Agricultura (Cana-de-açúcar)", "Agricultura (Grãos)", "Pecuária – POLO 1", "Pecuária – POLO 2", "Cana-de-açúcar – POLO 1", "Cana-de-açúcar – POLO 2"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3),
   vti_media = c(25164.17, 20119.85, 27814.11, 30945.61, 17469.56, 
@@ -13859,7 +13852,7 @@ MRT_Central_2018 <- data.frame(
 )
 
 ## 2022 #####
-MRTCentral_2022 <- data.frame(
+SPMRTCentral_2022 <- data.frame(
   mrt = "Mercado Regional de Terras Central",
   tipologia_de_uso = c("Geral", "Agrícola", "Pecuária", "Floresta Plantada", "Exploração Mista", "Vegetação Nativa", "Agrícola-Cana", "Agrícola Grãos Diversos", "Pecuária-Bovino Pastagem formada", "Floresta Plantada-Silvicultura"),
   nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2),
@@ -13882,9 +13875,9 @@ Grande, Santa Cruz do Rio Pardo, São Manuel, São Pedro do Turvo, Sarutaiá, Ta
 Ubirajara, Uru, Vera Cruz."
 )
 
-## MRT: NOROESTE ####
+##25.3 MRT: NOROESTE ####
 ##2018 ####
-MRT_Noroeste_2018 <- data.frame(
+SPMRT_Noroeste_2018 <- data.frame(
   mrt = "Noroeste",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Floresta Plantada", "Agricultura (Cana-de-açúcar)", "Agricultura (Grãos)", "Agricultura (Citros)", "Floresta Plantada (Seringueira)", "Pecuária – POLO 1", "Pecuária – POLO 2", "Pecuária – POLO 3", "Cana-de-açúcar – POLO 1", "Cana-de-açúcar – POLO 2", "Cana-de-açúcar – POLO 3"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
@@ -13915,8 +13908,8 @@ MRT_Noroeste_2018 <- data.frame(
 )
 
 ##2022 ####
-MRTNoroeste_2022 <- data.frame(
-  mrt = "Mercado Regional de Terras Noroeste",
+SPMRTNoroeste_2022 <- data.frame(
+  mrt = "Noroeste",
   tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Pecuária (Bovinos e Pastagem Plant)", "Agrícola Cana de Açúcar", "Mista (Agrícola Pastagem)", "Pecuária (Bovinos e Pastagem Plant)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2),
   vti_media = c(55088.90, 54373.19, 60015.07, 54522.38, 54373.19, 60802.08, 54522.38),
@@ -13943,8 +13936,8 @@ Urânia, Urupês,Valentim Gentil, Vitória Brasil, Votuporanga, Zacarias."
 )
 
 
-## MRT Norte - 2022 ####
-MRTNorte_2022 <- data.frame(
+## 25.4 MRT Norte - 2022 ####
+SPMRTNorte_2022 <- data.frame(
   mrt = "Mercado Regional de Terras Norte",
   tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Pecuária", "Vegetação Nativa", "Exploração Mista Agrícola Pastagem", "Pecuária-Bovino-Pastagem Formada", "Agrícola-Café Arábica", "Agrícola Cana", "Agrícola Fruticultura Diversos", "Agrícola Grãos Diversos", "Vegetação Nativa-Mata"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
@@ -13969,7 +13962,7 @@ Alto."
 )
 
 ## MRT Metropolitana e adjacências - 2022 ####
-MRTMetropolitana_2022 <- data.frame(
+SPMRTMetropolitana_2022 <- data.frame(
   mrt = "Mercado Regional de Terras Metropolitana e adjacências",
   tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Floresta plantada", "Não agrícola", "Pecuária", "Vegetação Nativa", "Pecuária Bovino-Pastagem-formada", "Agrícola Cana", "E. Mista Diversificada", "Não agrícola Exploração turística", "Agrícola Grãos Diversos", "Agrícola-Hortícola Olerícola/Citronféiro", "Vegetação Nativa-Mata", "Não agrícola Outros", "E.mista Pastagem floresta plantada", "Não agrícola - Periurbana (predominância entorno rural)", "Floresta Plantada Silvicultura"),
   nivel = c(0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
@@ -13993,8 +13986,8 @@ Peruíbe; Várzea Paulista; Guarulhos; Piedade; Vinhedo; Ibiúna; Pinhalzinho; V
 caia; Indaiatuba; Pirapora do Bom Jesus."
 )
 
-## MRT Leste - 2022 ####
-MRTLeste_2022 <- data.frame(
+##25.4 MRT Leste - 2022 ####
+SPMRTLeste_2022 <- data.frame(
   mrt = "Mercado Regional de Terras Leste",
   tipologia_de_uso = c("Geral", "Pecuária", "Exploração mista", "Floresta plantada", "Vegetação nativa", "Não agrícola", "Pecuária Bovino Pastagem formada", "Exploração mista Diversificada", "Floresta plantada Silvicultura", "Vegetação nativa Mata Atlântica", "Pecuária Bovino Pastagem formada - Polo 1", "Pecuária Bovino Pastagem formada - Polo 2"),
   nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3),
@@ -14012,8 +14005,8 @@ Potim e Roseira; Cruzeiro, Arapeí, Areias, Bananal, Lavrinhas, Queluz, São Jos
 Caraguatatuba, Ilhabela, Ubatuba e São Sebastião."
 )
 
-## MRT Sul - 2022 ####
-MRTSul_2022 <- data.frame(
+##25.5 MRT Sul - 2022 ####
+SPMRTSul_2022 <- data.frame(
   mrt = "Mercado Regional de Terras Sul",
   tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Floresta plantada", "Não agrícola", "Pecuária", "E. mista Agrícola pastagem", "Pecuária-Bovino-Pastagem formada", "Agrícola - Grãos Diversos", "E. mista Pastagem floresta plantada"),
   nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2),
@@ -14032,8 +14025,8 @@ Porangaba, Quadra, Registro, Ribeira, Ribeirão Branco, Ribeirão Grande, Rivers
 Sarapuí, Sete Barras, Taquarituba, Taquarivaí, Tatuí, Torre de Pedra."
 )
 
-## MRT Mogiana - 2022 ####
-MRTMogiana_2022 <- data.frame(
+##25.6 MRT Mogiana - 2022 ####
+SPMRTMogiana_2022 <- data.frame(
   mrt = "Mercado Regional de Terras Mogiana",
   tipologia_de_uso = c("Geral", "Agrícola", "Pecuária", "Exploração Mista", "Floresta Plantada", "Vegetação Nativa", "Não Agrícola", "Agrícola-Cana", "Agrícola Grãos Diversos", "Agrícola Cultura Café", "Exploração Mista-Agrícola Pastagem", "Pecuária Bovino, Pastagem. Formada", "Floresta Plantada-Silvicultura", "Não Agrícola Periurbanas (predomin", "Vegetação Nativa Mata"),
   nivel = c(0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
@@ -14059,60 +14052,35 @@ Tapiratiba, Tietê, Torrinha, Vargem Grande do Sul"
 
 ## Consolidação dos dados ####
 SP18 <- rbind(
-  MRT_Oeste_2018,
-  MRT_Central_2018,
-  MRT_Noroeste_2018
+  SPMRT_Oeste_2018,
+  SPMRT_Central_2018,
+  SPMRT_Noroeste_2018
 )
 
 SP22 <- rbind(
-  MRTNoroeste_2022,
-  MRTOeste_2022,
-  MRTNorte_2022,
-  MRTMetropolitana_2022,
-  MRTLeste_2022,
-  MRTSul_2022,
-  MRTMogiana_2022,
-  MRTCentral_2022
+  SPMRTNoroeste_2022,
+  SPMRTOeste_2022,
+  SPMRTNorte_2022,
+  SPMRTMetropolitana_2022,
+  SPMRTLeste_2022,
+  SPMRTSul_2022,
+  SPMRTMogiana_2022,
+  SPMRTCentral_2022
 )
 
 SP18$ano <- 2018
 SP22$ano <- 2022
-SPTEMPO <- rbind(SP22, SP18)
+SPTEMPORAL <- rbind(SP22, SP18)
 SPTEMPO$estado <- 35
 SPTEMPO$regiao <- "Sudeste"
 
-SPTEMPO <- SPTEMPO |>
-  mutate(
-    mrt = case_when(
-      mrt == "Noroeste"                    ~ 807,
-      mrt == "Oeste"                       ~ 808,
-      mrt == "Norte"                       ~ 806,
-      mrt == "Metropolitana e adjacências" ~ 802,
-      mrt == "Leste"                       ~ 801,
-      mrt == "Sul"                         ~ 804,
-      mrt == "Mogiana"                     ~ 803,
-      mrt == "Central"                     ~ 805
-    )
-  )
-
-SPTEMPO <- SPTEMPO |>
-  mutate(
-    cidades = case_when(
-      mrt == 801 ~ "São José dos Campos, Caçapava, Igaratá, Jacarei, Jambeiro, Monteiro Lobato, Paraibuna, Santa Branca, Taubaté, Campos do Jordão, Lagoinha, Natividade da Serra, Pindamonhangaba, Santo Antônio do Pinhal, São Bento do Sapucaí, São Luiz do Paraitinga, Tremembé, Redenção da Serra, Guaratinguetá, Aparecida, Cachoeira Paulista, Canas, Cunha, Lorena, Piquete, Potim, Roseira, Arapeí, Areias, Bananal, Lavrinhas, Queluz, São José do Barreiro, Silveiras, Caraguatatuba, Ilhabela, Ubatuba, São Sebastião",
-      mrt == 802 ~ "Alumínio, Araçariguama, Araçoiaba da Serra, Arujá, Atibaia, Barueri, Bertioga, Biritiba-Mirim, Boituva, Bom Jesus dos Perdões, Bragança Paulista, Cabreúva, Caieiras, Cajamar, Campo Limpo Paulista, Carapicuíba, Cotia, Cubatão, Diadema, Embu das Artes, Embu-Guaçu, Ferraz de Vasconcelos, Francisco Morato, Franco da Rocha, Guararema, Guarujá, Guarulhos, Ibiúna, Igaratá, Indaiatuba, Iperó, Itanhaém, Itapecerica da Serra, Itapevi, Itaquaquecetuba, Itariri, Itatiba, Itu, Itupeva, Jandira, Jarinu, Joanópolis, Jundiaí, Juquitiba, Louveira, Mairinque, Mairiporã, Mauá, Mogi das Cruzes, Mongaguá, Morungaba, Nazaré Paulista, Osasco, Pedra Bela, Pedro de Toledo, Peruíbe, Piedade, Pinhalzinho, Piracaia, Pirapora do Bom Jesus, Poá, Porto Feliz, Praia Grande, Ribeirão Pires, Rio Grande da Serra, Salto, Salto de Pirapora, Santa Isabel, Santana de Parnaíba, Santo André, Santos, São Bernardo do Campo, São Caetano do Sul, São Lourenço da Serra, São Paulo, São Roque, São Vicente, Sorocaba, Suzano, Taboão da Serra, Tapiraí, Tuiuti, Valinhos, Vargem, Vargem Grande Paulista, Várzea Paulista, Vinhedo, Votorantim",
-      mrt == 803 ~ "Aguaí, Águas da Prata, Águas de Lindóia, Águas de São Pedro, Americana, Amparo, Analândia, Anhembi, Araras, Artur Nogueira, Brotas, Caconde, Campinas, Capivari, Casa Branca, Cerquilho, Charqueada, Conchal, Conchas, Cordeirópolis, Descalvado, Divinolândia, Dourado, Elias Fausto, Engenheiro Coelho, Espírito Santo do Pinhal, Estiva Gerbi, Holambra, Hortolândia, Ibaté, Indaiatuba, Ipeúna, Iracemápolis, Itapira, Itirapina, Itobi, Jaguariúna, Jumirim, Laranjal Paulista, Leme, Limeira, Lindóia, Mococa, Mogi Guaçu, Mogi Mirim, Mombuca, Monte Alegre do Sul, Monte Mor, Nova Odessa, Paulínia, Pedreira, Pereiras, Piracicaba, Pirassununga, Porto Ferreira, Rafard, Ribeirão Bonito, Rio Claro, Rio das Pedras, Saltinho, Santa Bárbara d'Oeste, Santa Cruz da Conceição, Santa Cruz das Palmeiras, Santa Gertrudes, Santa Maria da Serra, Santa Rita do Passa Quatro, Santa Rosa de Viterbo, Santo Antônio de Posse, Santo Antônio do Jardim, São Carlos, São João da Boa Vista, São José do Rio Pardo, São Pedro, São Sebastião da Grama, Serra Negra, Socorro, Sumaré, Tambaú, Tapiratiba, Tietê, Torrinha, Vargem Grande do Sul",
-      mrt == 804 ~ "Alambari, Angatuba, Apiaí, Barra do Chapéu, Barra do Turvo, Bofete, Bom Sucesso de Itararé, Buri, Cajati, Campina do Monte Alegre, Cananéia, Capão Bonito, Capela do Alto, Cesário Lange, Coronel Macedo, Eldorado, Guapiara, Guareí, Iguape, Ilha Comprida, Iporanga, Itaberá, Itaí, Itaóca, Itapetininga, Itapeva, Itapirapuã Paulista, Itaporanga, Itararé, Itatinga, Jacupiranga, Juquiá, Miracatu, Nova Campina, Paranapanema, Pardinho, Pariquera-Açu, Pilar do Sul, Porangaba, Quadra, Registro, Ribeira, Ribeirão Branco, Ribeirão Grande, Riversul, São Miguel Arcanjo, Sarapuí, Sete Barras, Taquarituba, Taquarivaí, Tatuí, Torre de Pedra",
-      mrt == 805 ~ "Águas de Santa Bárbara, Agudos, Álvaro de Carvalho, Alvinlândia, Arealva, Arandu, Areiópolis, Avaí, Avaré, Balbinos, Barão de Antonina, Bariri, Barra Bonita, Bauru, Bernardino de Campos, Bocaina, Boraceia, Borborema, Borebi, Botucatu, Cabrália Paulista, Cafelândia, Campos Novos Paulista, Cândido Mota, Canitar, Cerqueira César, Chavantes, Dois Córregos, Duartina, Echaporã, Espírito Santo do Turvo, Fartura, Fernão, Gália, Garça, Getulina, Guaiçara, Guaimbê, Guarantã, Iacanga, Iaras, Ibirarema, Ibitinga, Igaraçu do Tietê, Ipaussu, Itaju, Itapuí, Jaú, Júlio Mesquita, Lins, Lucianópolis, Lupércio, Macatuba, Manduri, Marília, Mineiros do Tietê, Novo Horizonte, Ocauçu, Óleo, Oriente, Ourinhos, Oscar Bressane, Paulistânia, Palmital, Pederneiras, Piraju, Pirajuí, Piratininga, Platina, Pompéia, Pongaí, Pratânia, Presidente Alves, Reginópolis, Ribeirão do Sul, Salto Grande, Santa Cruz do Rio Pardo, São Manuel, São Pedro do Turvo, Sarutaiá, Taguaí, Tejupá, Timburi, Ubirajara, Uru, Vera Cruz",
-      mrt == 806 ~ "Altair, Altinópolis, Américo Brasiliense, Araraquara, Aramina, Ariranha, Barrinha, Barretos, Batatais, Bebedouro, Boa Esperança do Sul, Brodowski, Buritizal, Cândido Rodrigues, Cajobi, Cajuru, Cássia dos Coqueiros, Catanduva, Catiguá, Colina, Colômbia, Cravinhos, Cristais Paulista, Dobrada, Dumont, Elisiário, Embaúba, Fernando Prestes, Franca, Guaíra, Guara, Guaraci, Guariba, Guatapará, Ipuã, Itajobi, Itápolis, Itirapuã, Ituverava, Jaborandi, Jaboticabal, Jardinópolis, Jeriquara, Marapoama, Matão, Miguelópolis, Monte Alto, Monte Azul Paulista, Morro Agudo, Motuca, Novais, Nova Europa, Nuporanga, Olímpia, Orlândia, Palmares Paulista, Paraíso, Patrocínio Paulista, Pedregulho, Pindorama, Pirangi, Pradópolis, Restinga, Ribeirão Corrente, Ribeirão Preto, Rifaina, Rincão, Sales Oliveira, Santa Adélia, Santa Cruz da Esperança, Santa Ernestina, Santa Lúcia, Santa Rosa de Viterbo, Santo Antônio da Alegria, São Joaquim da Barra, São José da Bela Vista, São Simão, Serra Azul, Serrana, Sertãozinho, Severínia, Tabapuã, Tabatinga, Taiaçu, Taiúva, Taquaral, Taquaritinga, Terra Roxa, Trabiju, Uchoa, Viradouro, Vista Alegre do Alto",
-      mrt == 807 ~ "Adolfo, Alto Alegre, Álvares Florence, Américo de Campos, Aparecida d'Oeste, Araçatuba, Aspásia, Auriflama, Avanhandava, Bady Bassitt, Bálsamo, Barbosa, Bilac, Birigui, Braúna, Brejo Alegre, Buritama, Cardoso, Cedral, Coroados, Cosmorama, Dirce Reis, Dolcinópolis, Estrela d'Oeste, Fernandópolis, Floreal, Gastão Vidigal, General Salgado, Glicério, Guapiaçu, Guarani d'Oeste, Guararapes, Guzolândia, Ibirá, Icém, Ilha Solteira, Indiaporã, Ipiguá, Irapuã, Jaci, Jales, José Bonifácio, Lourdes, Macaubal, Macedônia, Magda, Marinópolis, Mendonça, Meridiano, Mesópolis, Mira Estrela, Mirassol, Mirassolândia, Monções, Monte Aprazível, Neves Paulista, Nhandeara, Nipoã, Nova Aliança, Nova Canaã Paulista, Nova Castilho, Nova Granada, Nova Luzitânia, Onda Verde, Orindiúva, Ouroeste, Palestina, Palmeira d'Oeste, Paranapuã, Parisi, Paulo de Faria, Pedranópolis, Penápolis, Pereira Barreto, Planalto, Poloni, Pontalinda, Pontes Gestal, Populina, Potirendaba, Promissão, Riolândia, Rubinéia, Sabino, Sales, Santa Albertina, Santa Clara d'Oeste, Santa Fé do Sul, Santana da Ponte Pensa, Santa Rita d'Oeste, Santa Salete, Santo Antônio do Aracanguá, São Francisco, São João das Duas Pontes, São João de Iracema, São José do Rio Preto, Sebastianópolis do Sul, Sud Mennucci, Suzanápolis, Tanabi, Três Fronteiras, Turiúba, Turmalina, Ubarana, União Paulista, Urânia, Urupês, Valentim Gentil, Vitória Brasil, Votuporanga, Zacarias",
-      mrt == 808 ~ "Adamantina, Alfredo Marcondes, Álvares Machado, Andradina, Anhumas, Arco-Íris, Bastos, Bento de Abreu, Borá, Caiabu, Caiuá, Castilho, Clementina, Cruzália, Dracena, Emilianópolis, Estrela do Norte, Euclides da Cunha Paulista, Flora Rica, Flórida Paulista, Florínea, Gabriel Monteiro, Guaraçaí, Herculândia, Iacri, Iepê, Indiana, Inúbia Paulista, Irapuru, Itapura, João Ramalho, Junqueirópolis, Lavínia, Lucélia, Luiziânia, Lutécia, Marabá Paulista, Maracaí, Mariápolis, Martinópolis, Mirandópolis, Mirante do Paranapanema, Monte Castelo, Murutinga do Sul, Nantes, Narandiba, Nova Guataporanga, Nova Independência, Osvaldo Cruz, Ouro Verde, Pacaembu, Panorama, Paraguaçu Paulista, Parapuã, Paulicéia, Pedrinhas Paulista, Piacatu, Piquerobi, Pirapozinho, Pracinha, Presidente Bernardes, Presidente Epitácio, Presidente Prudente, Presidente Venceslau, Quatá, Queiroz, Quintana, Rancharia, Regente Feijó, Ribeirão dos Índios, Rinópolis, Rosana, Rubiácea, Sagres, Salmourão, Sandovalina, Santa Mercedes, Santo Anastácio, Santo Expedito, Santópolis do Aguapeí, São João do Pau d'Alho, Taciba, Tarabai, Tarumã, Teodoro Sampaio, Tupã, Tupi Paulista, Valparaíso"
-      
-    )
-  )
 
 
-## 24. Sergipe #### 
-## Alto Sertao Sergipano ####
+## 26. Sergipe #### 
+#2017: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr23_2017.pdf
+#2020: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SR23_SE_2020_parcial.pdf
+#2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRSE_2022.pdf
+## 26.1 Alto Sertao Sergipano ####
 ## 2017 ####
 SEMRTAltoSertaoSergipano_2017 <- data.frame(
   mrt = "Alto Sertão Sergipano",
@@ -14200,7 +14168,7 @@ SEMRT1_2022 <- data.frame(
   origem = "Abrangência: Canindé de São Francisco, Gararu, Monte Alegre de Sergipe, Nossa Senhora da Glória, Poço Redondo e Porto da Folha"
 )
 
-##  Centro/Sul Sergipano ####
+## 26.2  Centro/Sul Sergipano ####
 ## 2017 ####
 SEMRTCentroSulSergipano_2017 <- data.frame(
   mrt = "Centro Sul Sergipano",
@@ -14227,7 +14195,7 @@ SEMRTCentroSulSergipano_2017 <- data.frame(
 
 ## 2020 ####
 SEMRT2_2020 <- data.frame(
-  mrt = "PPR/SR-23/SE/N° 01/2020/MRT 2 - Centro/Sul Sergipano",
+  mrt = "Centro/Sul Sergipano",
   tipologia_de_uso = c(
     "Uso indef hido (média geral do MRT)",
     "Terra de exploração agrícola",
@@ -14322,7 +14290,7 @@ SEMRTSulSergipano_2017 <- data.frame(
 )
 ## 2020 ####
 SEMRT3_2020 <- data.frame(
-  mrt = "PPR/SR-23/SE/N° 01/2020/MRT 3 - Sul Sergipano",
+  mrt = "Sul Sergipano",
   tipologia_de_uso = c(
     "Uso indef nido (média geral do MRT)",
     "Terra de exploração agrícola",
@@ -14422,7 +14390,7 @@ SEMRTAgresteDeItabaiana_2017 <- data.frame(
 )
 ## 2020 #####
 SEMRT4_2020 <- data.frame(
-  mrt = "PPR/SR-23/SE/N° 01/2020/MRT 4 - Agreste de Itabaiana",
+  mrt = "Agreste de Itabaiana",
   tipologia_de_uso = c(
     "Uso indef nido (média geral do MRT)",
     "Terra de exploração agrícola",
@@ -14507,7 +14475,7 @@ SEMRTMedioSertaoSergipano_2017 <- data.frame(
 
 ## 2020 ####
 SEMRT5_2020 <- data.frame(
-  mrt = "PPR/SR-23/SE/N° 01/2020/MRT 5 - Médio Sertão Sergipano",
+  mrt = "Médio Sertão Sergipano",
   tipologia_de_uso = c(
     "Uso indef nido (média geral do MRT)",
     "Terra de exploração agrícola",
@@ -14593,7 +14561,7 @@ São Francisco, Amparo do São Francisco e Malhada dos Bois."
 
 ## 2020 ####
 SEMRT6_2020 <- data.frame(
-  mrt = "PPR/SR-23/SE/N° 01/2020/MRT 6 - Litoral Norte e Baixo São Francisco",
+  mrt = "Litoral Norte e Baixo São Francisco",
   tipologia_de_uso = c(
     "Uso indef nido (média geral do MRT)",
     "Terra de exploração agrícola",
@@ -14755,33 +14723,11 @@ SETEMPORAL <- rbind(SE2022, SE20, SE20)
 SETEMPORAL$estado <- 28
 SETEMPORAL$regiao <- "nordeste"
 
-SETEMPORAL<- SETEMPORAL |>
-  mutate(
-    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
-    mrt = case_when(
-      grepl("Alto Sertão", mrt, ignore.case = TRUE)    ~ 2301,
-      grepl("Médio Sertão", mrt, ignore.case = TRUE)   ~ 2302,
-      grepl("Agreste de Itabaiana", mrt, ignore.case = TRUE) ~ 2303,
-      grepl("Centro Sul", mrt, ignore.case = TRUE)     ~ 2304,
-      grepl("Sul Sergipano", mrt, ignore.case = TRUE)  ~ 2305,
-      grepl("Cotinguiba", mrt, ignore.case = TRUE)      ~ 2306,
-      grepl("Litoral Norte", mrt, ignore.case = TRUE)  ~ 2307,
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 2301 ~ "Canindé de São Francisco, Gararu, Monte Alegre de Sergipe, Nossa Senhora da Glória, Poço Redondo, Porto da Folha",
-      mrt == 2302 ~ "Aquidabã, Cumbe, Feira Nova, Graccho Cardoso, Itabi, Nossa Senhora Aparecida, Nossa Senhora das Dores, Ribeirópolis, São Miguel do Aleixo",
-      mrt == 2303 ~ "Areia Branca, Carira, Frei Paulo, Itabaiana, Macambira, Malhador, Moita Bonita, Pedra Mole, Pinhão, São Domingos",
-      mrt == 2304 ~ "Lagarto, Poço Verde, Riachão do Dantas, Simão Dias, Tobias Barreto",
-      mrt == 2305 ~ "Arauá, Boquim, Cristinápolis, Estância, Indiaroba, Itabaianinha, Itaporanga d'Ajuda, Pedrinhas, Salgado, Santa Luzia do Itanhy, Tomar do Geru, Umbaúba",
-      mrt == 2306 ~ "Aracaju, Barra dos Coqueiros, Capela, Carmópolis, Divina Pastora, General Maynard, Japaratuba, Laranjeiras, Maruim, Nossa Senhora do Socorro, Pirambu, Riachuelo, Rosário do Catete, Santa Rosa de Lima, Santo Amaro das Brotas, São Cristóvão, Siriri",
-      mrt == 2307 ~ "Amparo de São Francisco, Brejo Grande, Canhoba, Cedro de São João, Ilha das Flores, Japoatã, Malhada dos Bois, Muribeca, Neópolis, Nossa Senhora de Lourdes, Pacatuba, Propriá, Santana do São Francisco, Telha",
-      .default = NA_character_
-    )
-  )
 
 ## 25.Tocantins  #### 
+#2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2016.pdf
+#2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2018.ods
+#2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRTO_2022.pdf
 ##Araguatins ####
 ##2016 #### 
 MRT1_2016 <- data.frame(
@@ -15404,42 +15350,5 @@ TOTEMPORAL<- rbind(TO2016, TO2018, TO22)
 TOTEMPORAL$estado <- 17
 TOTEMPORAL$regiao <- "norte"
 
-# Adiciona as colunas com o código do MRT e a lista de cidades
-TOTEMPORAL <- TOTEMPORAL |>
-  mutate(
-    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
-    mrt = case_when(
-      grepl("ARAGUATINS|Aguiarnópolis", mrt, ignore.case = TRUE) ~ 2701,
-      grepl("ARAGUAÍNA|Aragominas", mrt, ignore.case = TRUE)    ~ 2702,
-      grepl("COLINAS", mrt, ignore.case = TRUE)                 ~ 2703,
-      grepl("COLMÉIA", mrt, ignore.case = TRUE)                 ~ 2704,
-      grepl("GUARAÍ|Fortaleza do Tabocão", mrt, ignore.case = TRUE) ~ 2705,
-      grepl("GURUPI|Aliança do TO", mrt, ignore.case = TRUE)    ~ 2706,
-      grepl("PARAÍSO DO TOCANTINS|Abreulândia", mrt, ignore.case = TRUE) ~ 2707,
-      grepl("PEIXE", mrt, ignore.case = TRUE)                   ~ 2708,
-      grepl("NATIVIDADE|Almas", mrt, ignore.case = TRUE)        ~ 2709,
-      grepl("DIANÓPOLIS|Arraias", mrt, ignore.case = TRUE)      ~ 2710,
-      grepl("PEDRO AFONSO|Tupirama", mrt, ignore.case = TRUE)   ~ 2711,
-      grepl("GOIATINS|Barra do Ouro", mrt, ignore.case = TRUE)  ~ 2712,
-      grepl("PALMAS|Brejinho de Nazaré", mrt, ignore.case = TRUE) ~ 2713,
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 2701 ~ "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do Tocantins, Babaçulândia, Buriti do Tocantins, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Itaguatins, Luzinópolis, Maurilândia do Tocantins, Nazaré, Palmeiras do Tocantins, Praia Norte, Riachinho, Sampaio, Santa Terezinha do Tocantins, São Miguel do Tocantins, São Sebastião do Tocantins, Sítio Novo do Tocantins, Tocantinópolis",
-      mrt == 2702 ~ "Aragominas, Araguaína, Araguanã, Arapoema, Bandeirantes do Tocantins, Carmolândia, Filadélfia, Muricilândia, Nova Olinda, Piraquê, Santa Fé do Araguaia, Xambioá",
-      mrt == 2703 ~ "Arapoema, Bandeirantes do Tocantins, Bernardo Sayão, Brasilândia do Tocantins, Colinas do Tocantins, Couto Magalhães, Juarina, Palmeirante, Pau D'Arco, Presidente Kennedy",
-      mrt == 2704 ~ "Colméia, Goianorte, Itaporã do Tocantins, Pequizeiro",
-      mrt == 2705 ~ "Bom Jesus do Tocantins, Fortaleza do Tabocão, Goianorte, Guaraí, Itacajá, Itapiratins, Miracema do Tocantins, Pedro Afonso, Presidente Kennedy, Recursolândia, Rio Sono, Santa Maria do Tocantins, Tabocão, Tupirama",
-      mrt == 2706 ~ "Aliança do Tocantins, Alvorada, Araguaçu, Cariri do Tocantins, Crixás do Tocantins, Dueré, Figueirópolis, Formoso do Araguaia, Gurupi, Jaú do Tocantins, Palmeirópolis, Peixe, Santa Rita do Tocantins, Sandolândia, São Salvador do Tocantins, São Valério, Sucupira, Talismã",
-      mrt == 2707 ~ "Abreulândia, Araguacema, Barrolândia, Caseara, Chapada de Areia, Cristalândia, Divinópolis do Tocantins, Dois Irmãos do Tocantins, Fátima, Lagoa da Confusão, Marianópolis do Tocantins, Monte Santo do Tocantins, Nova Rosalândia, Oliveira de Fátima, Paraíso do Tocantins, Pium, Pugmil, Santa Rita do Tocantins",
-      mrt == 2708 ~ "Jaú do Tocantins, Novo Alegre, Palmeirópolis, Paranã, Peixe, São Salvador do Tocantins, São Valério",
-      mrt == 2709 ~ "Almas, Chapada da Natividade, Conceição do Tocantins, Dianópolis, Natividade, Novo Jardim, Ponte Alta do Bom Jesus, Porto Alegre do Tocantins, Rio da Conceição, Santa Rosa do Tocantins, Taipas do Tocantins",
-      mrt == 2710 ~ "Almas, Aurora do Tocantins, Combinado, Dianópolis, Lavandeira, Novo Alegre, Ponte Alta do Bom Jesus, Porto Alegre do Tocantins, Rio da Conceição, Taguatinga, Taipas do Tocantins",
-      mrt == 2711 ~ "Bom Jesus do Tocantins, Centenário, Itacajá, Itapiratins, Pedro Afonso, Recursolândia, Rio Sono, Santa Maria do Tocantins, Tupirama",
-      mrt == 2712 ~ "Barra do Ouro, Campos Lindos, Goiatins, Itacajá, Lagoa do Tocantins",
-      mrt == 2713 ~ "Aparecida do Rio Negro, Brejinho de Nazaré, Fátima, Ipueiras, Lajeado, Lizarda, Miracema do Tocantins, Miranorte, Monte do Carmo, Palmas, Pindorama do Tocantins, Porto Nacional, Santa Tereza do Tocantins, Silvanópolis, Tocantínia",
-      .default = NA_character_
-    )
-  )
-
+#### consolidação final dos dados ####
+BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGtemporal, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)
