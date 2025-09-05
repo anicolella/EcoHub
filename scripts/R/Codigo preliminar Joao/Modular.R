@@ -872,6 +872,8 @@ AMTEMPORAL$regiao <- "Norte"
 ### 5.0 Bahia ####
 #2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr05_2018.ods
 #2020:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_ramt_sr05_2020.pdf 
+#Tem um documento mais antigo, porém os dados são os Mesmos da ppr de 2018.
+#Os mercados de 2018 tem nomes meio genéricos então deixei as cidades na frente...
 #Esses mercados sofreram uma grande reorganização, boa parte dos municipios não são listados nas tabelas.
 ###5.1 MRT-01####
 ###2018####
@@ -890,7 +892,7 @@ BAMRT01_2018 <- data.frame(
 )
 ###2020####
 BAMRT2903_2020 <- data.frame(
-  mrt = "Nova Viçosa, Mucuri, Itamaraju, Prado, Alcobaça, Caravelas, Lajedão, Ibirapuã, Teixeira de Freitas, Medeiros Neto, Vereda, Itanhém, Jucuruçu, Itabela, Porto Seguro, Guaratinga, Eunápolis, Santa Cruz Cabrália, Itagimirim, Belmonte, Itapebi, Mascote, Canavieiras, Santa Luzia, Pau Brasil, Camacã, Arataca, Una, São José da Vitória, Buerarema, Itaju do Colônia, Itabuna, Ilhéus, Uruçuca, Coaraci, Almadina, Floresta Azul, Ibicaraí, Itapé, Jussari, Itajuípe, Ipiaú, Ibirataia, Itagi, Jitaúna, Aiquara, Barra do Rocha, Ubatã, Gongogi, Dário Meira, Boa Nova, Itagibá, Jaguaquara, Lafaiete Coutinho, Maracás, Planaltino, Irajuba, Brejões, Nova Itarana, Santa Inês, Cravolândia, Ubaíra, Laje, Mutuípe, Jiquiriçá, Valença, Presidente Tancredo Neves, Taperoá, Nilo Peçanha, Cairu, Ituberá, Igrapiúna, Camamu, Maraú, Itacaré, Aurelino Leal, Ubaitaba, Itapitanga, Maraú",
+  mrt = "MRT 2903 - ITABUNA",
   tipologia_de_uso = c("Geral", "EXPLORAÇÃO MISTA", "PECUÁRIA", "TERRA AGRÍCOLA", "EXPLORAÇÃO MISTA AGROPECUÁRIA", "PECUÁRIA PASTAGEM PLANTADA ABAIXO DE 1UA POR HA ANO", "PECUÁRIA PASTAGEM PLANTADA ACIMA DE 1UA POR HA ANO", "TERRA AGRÍCOLA SISTEMAS AGROFLORESTAIS", "PECUÁRIA PASTAGEM PLANTADA ABAIXO DE 1UA POR HA ANO SEQUEIRO"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
   vti_media = c(7112.54, 5564.57, 7941.93, 6890.52, 5686.83, 5843.38, 4610.55, 8642.41, 5679.15),
@@ -919,7 +921,7 @@ BAMRT02_2018 <- data.frame(
 
 ###2020####
 BAMRT2909 <- data.frame(
-  mrt = "Olindina, Nova Soure, Cipó, Ribeira do Amparo, Tucano, Heliópolis, Quijingue, Ribeira do Pombal, Cansanção, Banzaê, Fátima, Paripiranga, Adustina, Cícero Dantas, Antas, Novo Triunfo, Euclides da Cunha, Sítio do Quinto, Coronel João Sá, Monte Santo, Pedro Alexandre, Canudos, Jeremoabo, Santa Brígida, Paulo Afonso, Glória, Macururé, Rodelas, Chorrochó, Abaré",
+  mrt = "MRT PAULO AFONSO",
   tipologia_de_uso = c("Geral", "PECUÁRIA", "TERRA AGRÍCOLA", "EXPLORAÇÃO MISTA", "PECUÁRIA COM PASTAGEM PLANTADA ABAIXO DE 1UA POR HA ANO", "TERRA AGRÍCOLA TEMPORÁRIA IRRIGADA", "TERRA AGRÍCOLA TEMPORÁRIA SEQUEIRO"),
   nivel = c(0, 1, 1, 1, 2, 2, 2),
   vti_media = c(4013.25, 3646.68, 9416.23, 2721.95, 3646.68, 8402.17, 11038.73),
@@ -948,7 +950,7 @@ BAMRT03_2018 <- data.frame(
 
 ###2020####
 BAMRT2908 <- data.frame(
-  mrt = "Campo Alegre de Lourdes, Pilão Arcado, Remanso, Sento Sé, Sobradinho, Casa Nova, Juazeiro, Curaçá, Uauá, Andorinha, Jaguarari, Campo Formoso, Antônio Gonçalves, Senhor do Bonfim, Filadélfia, Itiúba, Pindobaçu e Ponto Novo.",
+  mrt = "MRT JUAZEIRO",
   tipologia_de_uso = c("Geral", "Terra Agrícola", "Pecuária", "Exploração Mista", "Terra Agrícola Temporária Irrigada", "Terra Agrícola Perene Irrigada", "Pecuária Pastagem Nativa", "Pecuária Pastagem Plantada Abaixo de Jua Por Ha Ano", "Exploração Mista Agropecuária"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
   vti_media = c(1656.73, 17827.43, 1350.47, 2232.51, 14163.20, 20025.97, 633.21, 2776.18, 2232.51),
@@ -1007,7 +1009,7 @@ BAMRT06_2018 <- data.frame(
 )
 ###2020####
 BAMRT2902_2020 <- data.frame(
-  mrt = "Camamu, Igrapiúna, Ituberá, Nilo Peçanha, Taperoá, Cairu, Presidente Tancredo Neves, Valença, Mutuípe, Jiquiriçá, Ubaíra, Laje, Aratuípe, São Miguel das Matas, Muniz Ferreira, Brejões, Vera Cruz, Santo Antônio de Jesus, Jaguaripe, Amargosa, Nova Itarana, Elísio Medrado, Dom Macedo Costa, Varzedo, Nazaré, Itaparica, Salinas da Margarida, Milagres, Conceição do Almeida, São Felipe, Maragogipe, Sapeaçu, Cruz das Almas, São Félix, Muritiba, Santa Teresinha, Castro Alves, Governador Mangabeira, Cachoeira, Cabaceiras do Paraguaçu",
+  mrt = "MRT 2902 - SANTO ANTÔNIO DE JESUS",
   tipologia_de_uso = c("Geral", "EXPLORAÇÃO MISTA", "TERRA AGRÍCOLA", "EXPLORAÇÃO MISTA AGROPECUÁRIA", "TERRA AGRÍCOLA PERENE SEQUEIRO"),
   nivel = c(0, 1, 1, 2, 2),
   vti_media = c(7038.92, 9618.87, 5485.87, 8550.76, 5485.87),
@@ -1050,7 +1052,7 @@ BAMRT08_2018 <- data.frame(
 )
 ##2020####
 BAMRT2906_2020 <- data.frame(
-  mrt = "Angical, Baianópolis, Barreiras, Brejolândia, Canápolis, Catolândia, Cocos, Coribe, Correntina, Cotegipe, Cristópolis, Formosa do Rio Preto, Jaborandi, Luís Eduardo Magalhães, Mansidão, Riachão das Neves, Santa Maria da Vitória, Santa Rita de Cássia, Santana, São Desidério, São Félix do Coribe, Serra Dourada, Tabocas do Brejo Velho, Wanderley",
+  mrt = "MRT REGIÃO DE BARREIRAS",
   tipologia_de_uso = c("Geral", "Exploração Mista", "Pecuária", "Terra Agrícola", "Vegetação Nativa", "Exploração Mista Agropecuária", "Exploração Mista Sistemas Agroflorestais", "Pecuária Pastagem Plantada Abaixo De 1au Por Ha Ano", "Terra Agrícola Temporária Irrigada", "Terra Agrícola Temporária De Sequeiro", "Vegetação Nativa Cerrado"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
   vti_media = c(2168.82, 2376.69, 1620.16, 8169.50, 1080.00, 5139.73, 2033.33, 1620.16, 11472.14, 9506.04, 1080.00),
@@ -1142,7 +1144,7 @@ BAMRT13_2018 <- data.frame(
 ## 5.14 MRT 2901_A ####
 #Essa coluna de origem provavelmente tem algum problema de digitação, a visualização está realmente complicada. pg.11 - 2020
 BAMRT2901 <- data.frame(
-  mrt = "Aporá, Inhambupe, Jandaíra, Sátiro Dias, Crisópolis, Rio Real, Itapicuru",
+  mrt = "MRT SALVADOR",
   tipologia_de_uso = c("Geral", "EXPLORAÇÃO MISTA", "PECUÁRIA", "TERRA AGRÍCOLA", "EXPLORAÇÃO MISTA AGROPECUÁRIA", "PECUÁRIA PASTAGEM PLANTADA ABAIXO DE 1UA POR HA ANO", "TERRA AGRÍCOLA TEMPORÁRIA IRRIGADA"),
   nivel = c(0, 1, 1, 1, 2, 2, 2),
   vti_media = c(6690.16, 4230.59, 6870.69, 7791.09, 3888.38, 1856.56, 7738.86),
@@ -1157,7 +1159,7 @@ BAMRT2901 <- data.frame(
 
 ## 5.15 MRT 2905 (Ano não identificado) ####
 BAMRT2905 <- data.frame(
-  mrt = "Caculé, Jacaraci, Carinhanha, Iuiu, Caetité, Malhada, Guanambi, Bom Jesus da Lapa, Paratinga, Riacho de Santana, Igaporã, Tanque Novo, Botuporã, Sítio do Mato, Boquira, Ibipitanga e Matina",
+  mrt = "MRT GUANAMBI",
   tipologia_de_uso = c("Geral", "Vegetação nativa", "Pecuária", "Exploração mista", "Vegetação nativa caatinga", "Pecuária Pastagem plantada abaixo 1 ha", "Pecuária Pastagem plantada acima 1 ha", "Exploração mista agropecuária"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
   vti_media = c(2098.60, 1513.99, 2297.47, 4666.67, 1513.99, 1740.07, 3755.28, 4666.67),
@@ -1171,7 +1173,7 @@ BAMRT2905 <- data.frame(
 
 ## 5.16 MRT 2904 (Ano 2019) #####
 BAMRT2904_2019 <- data.frame(
-  mrt = "Vitória da Conquista e região",
+  mrt = "MRT Vitória da Conquista e região",
   tipologia_de_uso = c("Geral", "TERRA AGRÍCOLA", "PECUÁRIA", "EXPLORAÇÃO MISTA", "VEGETAÇÃO NATIVA", "TERRA AGRÍCOLA PERENE SEQUEIRO", "PECUÁRIA PASTAGEM PLANTADA < 1UA / HA / ANO", "EXPLORAÇÃO MISTA AGROPECUÁRIA", "VEGETAÇÃO NATIVA CAATINGA", "TERRA AGRÍCOLA CACAU em CABRUCA"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
   vti_media = c(5263.60, 8808.33, 4723.17, 7531.07, 867.47, 10209.19, 5034.79, 7531.09, 949.21, 7874.42),
@@ -1187,7 +1189,7 @@ BAMRT2904_2019 <- data.frame(
 
 ##5.17  MRT 2907 (Ano não identificado) #####
 BAMRT2907 <- data.frame(
-  mrt = "América Dourada, Barra, Barra do Mendes, Barro Alto, Brotas de Macaúbas, Cafarnaum, Canarana, Central, Gentio do Ouro, Ibotirama, Ibipeba, Ibititá, Ipupiara, Irecê, Itaguaçu da Bahia, João Dourado, Jussara, Lapão, Muquém do São Francisco, Oliveira dos Brejinhos, Presidente Dutra, São Gabriel, Uibaí e Xique-Xique",
+  mrt = "MRT IRICE",
   tipologia_de_uso = c("Geral", "TERRA AGRÍCOLA", "PECUÁRIA", "NÃO AGRÍCOLA", "TERRA AGRÍCOLA TEMPORÁRIA IRRIGADA", "TERRA AGRÍCOLA PERENE SEQUEIRO", "TERRA AGRÍCOLA PERENE IRRIGADA", "EXPLORAÇÃO MISTA AGROPECUÁRIA", "NÃO AGRÍCOLA ENERGIA", "NÃO AGRÍCOLA MINERAÇÃO", "PECUÁRIA PAST. ABAIXO DE 1UA POR HA-ANO", "PECUÁRIA PASTAGEM NATIVA"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(1699.69, 3362.75, 699.49, 1253.51, 3573.19, 4041.74, 3813.65, 2572.44, 674.13, 1393.35, 775.56, 514.44),
@@ -1235,39 +1237,7 @@ BATEMPORAL$estado <- 29
 BATEMPORAL$regiao <- "nordeste"
 
 
-BATEMPORAL <- BATEMPORAL |>
-  mutate(
-    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
-    mrt = case_when(
-      grepl("MRT-24|Amargosa, Andaraí", mrt, ignore.case = TRUE) ~ 888888,
-      grepl("Barreiras|Luís Eduardo|Formosa do Rio Preto", mrt, ignore.case = TRUE) ~ 501,
-      grepl("Irecê|Ibotirama|Xique-Xique", mrt, ignore.case = TRUE) ~ 502,
-      grepl("Guanambi|Bom Jesus da Lapa", mrt, ignore.case = TRUE) ~ 503,
-      grepl("Juazeiro|Senhor do Bonfim", mrt, ignore.case = TRUE) ~ 504,
-      grepl("Feira de Santana|Jacobina|Seabra", mrt, ignore.case = TRUE) ~ 505,
-      grepl("Paulo Afonso|Euclides da Cunha|Ribeira do Pombal", mrt, ignore.case = TRUE) ~ 506,
-      grepl("Salvador|Camaçari|Alagoinhas", mrt, ignore.case = TRUE) ~ 507,
-      grepl("Santo Antônio de Jesus|Valença", mrt, ignore.case = TRUE) ~ 508,
-      grepl("Vitória da Conquista|Brumado|Itapetinga", mrt, ignore.case = TRUE) ~ 509,
-      grepl("Ilhéus|Itabuna|Eunápolis|Teixeira de Freitas|Porto Seguro", mrt, ignore.case = TRUE) ~ 510,
-      
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt== 501 ~ "Angical, Baianópolis, Barreiras, Brejolândia, Canápolis, Catolândia, Cocos, Coribe, Correntina, Cotegipe, Cristópolis, Formosa do Rio Preto, Jaborandi, Luís Eduardo Magalhães, Mansidão, Riachão das Neves, Santa Maria da Vitória, Santa Rita de Cássia, Santana, São Desidério, São Félix do Coribe, Serra Dourada, Tabocas do Brejo Velho, Wanderley",
-      mrt == 502 ~ "América Dourada, Barra, Barra do Mendes, Barro Alto, Brotas de Macaúbas, Cafarnaum, Canarana, Central, Gentio do Ouro, Ibotirama, Ibipeba, Ibititá, Ipupiara, Irecê, Itaguaçu da Bahia, João Dourado, Jussara, Lapão, Morpará, Mulungu do Morro, Muquém do São Francisco, Oliveira dos Brejinhos, Presidente Dutra, São Gabriel, Uibaí, Xique-Xique",
-      mrt == 503 ~ "Boquira, Botuporã, Bom Jesus da Lapa, Caculé, Caetité, Carinhanha, Guajeru, Guanambi, Ibipitanga, Igaporã, Iuiú, Jacaraci, Macaúbas, Malhada, Paratinga, Riacho de Santana, Sítio do Mato, Tanque Novo",
-      mrt == 504 ~ "Andorinha, Antônio Gonçalves, Campo Alegre de Lourdes, Campo Formoso, Canudos, Casa Nova, Curaçá, Filadélfia, Itiúba, Jaguarari, Juazeiro, Pilão Arcado, Pindobaçu, Ponto Novo, Remanso, Sento Sé, Senhor do Bonfim, Sobradinho, Uauá",
-      mrt == 505 ~ "Água Fria, Amélia Rodrigues, Andaraí, Anguera, Antônio Cardoso, Araci, Baixa Grande, Barrocas, Biritinga, Boa Vista do Tupim, Boninal, Caém, Caldeirão Grande, Candeal, Capela do Alto Alegre, Capim Grosso, Conceição da Feira, Conceição do Coité, Conceição do Jacuípe, Coração de Maria, Feira de Santana, Gavião, Iaçu, Ibiquera, Ibitiara, Ichu, Ipecaetá, Ipirá, Iraquara, Irará, Itaberaba, Itaetê, Jacobina, Lajedinho, Lamarão, Lençóis, Macajuba, Mairi, Marcionílio Souza, Miguel Calmon, Mirangaba, Mucugê, Mundo Novo, Nordestina, Nova Fátima, Nova Redenção, Novo Horizonte, Ouriçangas, Ourolândia, Palmeiras, Pé de Serra, Piatã, Pintadas, Piritiba, Queimadas, Quixabeira, Rafael Jambeiro, Retirolândia, Riachão do Jacuípe, Ruy Barbosa, Santa Bárbara, Santaluz, Santanópolis, Santo Estêvão, São Domingos, São Gonçalo dos Campos, São José do Jacuípe, Saúde, Seabra, Serra Preta, Serrinha, Serrolândia, Souto Soares, Tanquinho, Tapiramutá, Teofilândia, Umburanas, Utinga, Valente, Várzea da Roça, Várzea do Poço, Várzea Nova, Wagner",
-      mrt == 506 ~ "Abaré, Adustina, Antas, Banzaê, Cansanção, Canudos, Chorrochó, Cícero Dantas, Cipó, Coronel João Sá, Euclides da Cunha, Fátima, Glória, Heliópolis, Jeremoabo, Macururé, Monte Santo, Nova Soure, Novo Triunfo, Olindina, Paripiranga, Paulo Afonso, Pedro Alexandre, Quijingue, Ribeira do Amparo, Ribeira do Pombal, Rodelas, Santa Brígida, Sítio do Quinto, Tucano",
-      mrt == 507 ~ "Acajutiba, Alagoinhas, Aporá, Araçás, Aramari, Camaçari, Candeias, Cardeal da Silva, Catu, Conde, Crisópolis, Dias d'Ávila, Entre Rios, Esplanada, Inhambupe, Itanagra, Itapicuru, Jandaíra, Lauro de Freitas, Madre de Deus, Mata de São João, Pedrão, Pojuca, Rio Real, Salvador, Santo Amaro, São Francisco do Conde, São Sebastião do Passé, Sátiro Dias, Saubara, Simões Filho, Teodoro Sampaio, Terra Nova",
-      mrt == 508 ~ "Amargosa, Aratuípe, Brejões, Cabaceiras do Paraguaçu, Cachoeira, Cairu, Camamu, Castro Alves, Conceição do Almeida, Cruz das Almas, Dom Macedo Costa, Elísio Medrado, Governador Mangabeira, Igrapiúna, Itaparica, Itatim, Ituberá, Jaguaripe, Jiquiriçá, Laje, Maragogipe, Milagres, Muniz Ferreira, Muritiba, Mutuípe, Nazaré, Nilo Peçanha, Nova Itarana, Presidente Tancredo Neves, Salinas da Margarida, Santa Teresinha, Santo Antônio de Jesus, São Felipe, São Félix, São Miguel das Matas, Sapeaçu, Taperoá, Ubaíra, Valença, Varzedo, Vera Cruz",
-      mrt == 509 ~ "Abaíra, Aiquara, Anagé, Apuarema, Aracatu, Barra da Estiva, Barra do Choça, Belo Campo, Boa Nova, Bom Jesus da Serra, Brumado, Caatiba, Caetanos, Cândido Sales, Caraíbas, Caturama, Condeúba, Contendas do Sincorá, Cordeiros, Cravolândia, Dário Meira, Dom Basílio, Encruzilhada, Érico Cardoso, Gongogi, Guajeru, Ibicoara, Ibicuí, Ibirataia, Iguaí, Ipiaú, Iramaia, Itagi, Itagibá, Itambé, Itarantim, Itiruçu, Itororó, Ituaçu, Jaguaquara, Jequié, Jitaúna, Jussiape, Lafaiete Coutinho, Lajedo do Tabocal, Livramento de Nossa Senhora, Macarani, Maetinga, Maiquinique, Malhada de Pedras, Manoel Vitorino, Maracás, Mirante, Nova Canaã, Paramirim, Piripá, Planaltino, Planalto, Poções, Potiraguá, Presidente Jânio Quadros, Ribeirão do Largo, Rio de Contas, Rio do Pires, Santa Inês, Tanhaçu, Teolândia, Tremedal, Ubatã, Vitória da Conquista, Wenceslau Guimarães",
-      mrt == 510 ~ "Alcobaça, Almadina, Arataca, Aurelino Leal, Barro Preto, Belmonte, Buerarema, Camacan, Canavieiras, Caravelas, Coaraci, Eunápolis, Firmino Alves, Floresta Azul, Guaratinga, Ibicaraí, Ibirapuã, Ilhéus, Itabela, Itabuna, Itacaré, Itagimirim, Itaju do Colônia, Itajuípe, Itamaraju, Itanhém, Itapé, Itapebi, Itapitanga, Jucuruçu, Jussari, Lajedão, Mascote, Medeiros Neto, Mucuri, Nova Viçosa, Pau Brasil, Porto Seguro, Prado, Santa Cruz Cabrália, Santa Cruz da Vitória, Santa Luzia, São José da Vitória, Teixeira de Freitas, Ubaitaba, Una, Uruçuca, Vereda",
-      mrt == 888888 ~ "Amargosa, Andaraí, Brejões, Cravolândia, Irajuba, Itaeté, Itaquara, Itiruçu, Jaguaquara, Jiquiriçá, Lafayette Coutinho, Lagedo do Tabocal, Lajedinho, Lençóis, Nova Itarana, Nova Redenção, Planaltino, Santa Inês, Ubaíra, Wagner",
-      .default = NA_character_
-    )
-  )
+
 #### 6.0 DADOS RAMT - CE ####
 #2017:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr02_2017.pdf
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRCE_2022.pdf
@@ -1276,7 +1246,7 @@ BATEMPORAL <- BATEMPORAL |>
 ###MRT: Litoral Leste####
 ### 6.1 2017####
 CEMRTLitoralLeste_2017 <- data.frame(
-  mrt = "Litoral Leste",
+  mrt = "LITORAL LESTE",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Agricultura", "Mista", "Carcinicultura", "Agricultura em solos de médio suporte", "Agricultura em solos de médio suporte com mata.", "Agricultura em solos arenosos com cajueiro", "Mista em solos de médio suporte", "Carcinicultura s/ estrutura", "Carcinicultura c/ estrutura", "Agricultura em solos de médio suporte no Litoral Leste", "Agricultura em solos de médio suporte com mata no Litoral Leste", "Agricultura em solos arenosos com cajueiro no Litoral Leste", "Mista em solos de médio suporte à margem do canal do trabalhador", "Mista em solos de médio suporte no Sertão do Litoral Leste", "Carcinicultura s/ estrutura no Litoral Leste", "Carcinicultura c/ estrutura no Litoral Leste"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(4849.12, 2683.48, 2102.79, 31198.08, 4859.16, 1625.00, 2277.23, 2102.79, 13324.29, 78861.52, 4859.16, 1625.00, 2277.23, 3560.00, 1061.92, 13324.29, 78861.52),
@@ -1304,7 +1274,7 @@ CEMRTLitoralLeste_2022 <- data.frame(
 ### 6.2 MRT: Região Metropolitana de Fortaleza ####
 ### 2017####
 CEMRTRMF_2017 <- data.frame(
-  mrt = "Região Metropolitana de Fortaleza",
+  mrt = "REGIÃO METROPOLITANA DE FORTALEZA",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Agricultural", "Mista", "Agricultura em solos arenosos com cajueiro", "Mista em solos de médio suporte.", "Mista em solos de médio suporte estruturada", "Mista em solos arenosos.", "Agricultura em solos arenosos com cajueiro na RMF", "Mista em solos de médio suporte na RMF", "Mista em solos de médio suporte na serra de Maranguape", "Mista em solos de médio suporte estruturada na RMF", "Mista em solos arenosos no entorno de área urbana na RMF"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3),
   vti_media = c(16434.95, 3328.89, 14939.84, 3328.89, 7352.29, 17247.77, 21054.26, 3328.89, 8549.59, 4957.69, 17247.77, 21054.26),
@@ -1332,7 +1302,7 @@ CEMRTRMF_2022 <- data.frame(
 ### 6.3  MRT: Curu/Aracatiaçu ####
 ### 2017###
 CEMRTCuruAracatiacu_2017 <- data.frame(
-  mrt = "Curu/Aracatiaçu",
+  mrt = "VALES DO CURU/ARACATIAÇU",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Agricultura", "Mista", "Pecuária", "Agricultura em solos arenosos c/ coqueiro irrigado", "Agricultura em solos arenosos com cajueiro", "Agricultura em solos arenosos", "Mista c/exploração de carnaúba", "Mista em solos de aluvião", "Mista em solos de médio suporte.", "Mista em solos de baixo suporte", "Pecuária em solos de baixo suporte", "Agricultura em solos arenosos c/ coqueiro irrigado no litoral do Curu/Aracatiaçu", "Agricultura em solos arenosos com cajueiro no litoral do Curu/Aracatiaçu", "Agricultura em solos arenosos no litoral do Curu/Aracatiaçu", "Mista c/ exploração de carnaúba no Curu/Aracatiaçu", "Mista em solos de aluvião à margem dos Rios Curu/Mundaů", "Mista em solos de médio suporte nas sertões do Curu/Aracatiaçu", "Mista em solos de baixo suporte nos sertões do Curu/Aracatiaçu", "Pecuária em solos de baixo suporte nos sertões do Curu/Aracatiaçu"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(2436.21, 3913.66, 1788.42, 397.12, 22466.67, 1680.80, 2636.87, 1472.84, 6862.88, 1744.23, 552.62, 397.12, 22466.67, 1680.80, 2636.87, 1472.84, 6862.88, 1744.23, 552.62, 397.12),
@@ -1361,7 +1331,7 @@ CEMRTValesCuruAracatiacu_2022 <- data.frame(
 ### 6.4 MRT: Litoral Oeste####
 ###2017####
 CEMRTLitoralOeste_2017 <- data.frame(
-  mrt = "Litoral Oeste",
+  mrt = "LITORAL OESTE - MRT 04",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Agricultura", "Mista", "Agricultura em solos arenosos com cajueiro", "Mista em solos de médio suporte", "Mista em solos de aluvião", "Agricultura em solos arenosos com cajueiro no Litoral Oeste", "Mista em solos de médio suporte no Litoral Oeste", "Mista em solos de aluvião no Litoral Oeste"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3),
   vti_media = c(1609.42, 2423.31, 988.69, 2180.11, 803.39, 3461.84, 2180.11, 803.39, 3461.84),
@@ -1400,7 +1370,7 @@ CEMRTLitoralOeste_2022  <- data.frame(
 ### 6.5 MRT: Serra da Ibiapaba####
 ###2017####
 CEMRTSerraIbiapaba_2017 <- data.frame(
-  mrt = "Serra da Ibiapaba",
+  mrt = "IBIAPABA",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Agricultural", "Mista", "Agricultura em solos de médio suporte estruturada", "Agricultura em solos de médio suporte", "Mista em solos de médio suporte", "Mista em solos arenosos.", "Agricultura em solos de médio suporte estruturada na encosta úmida da Ibiapaba", "Agricultura em solos de médio suporte na encosta úmida da Ibiapaba", "Mista em solos de médio suporte na Serra de Ibiapaba", "Mista em solos arenosos na Serra de Ibiapaba"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
   vti_media = c(3745.04, 4661.83, 1413.14, 6781.26, 3556.50, 1892.09, 934.18, 6781.26, 3556.50, 1892.09, 934.18),
@@ -1428,7 +1398,7 @@ CEMRTIbiapaba_2022 <- data.frame(
 ### 6.6 MRT: Sertões Norte####
 ###2017####
 CEMRTSertoesNorte_2017 <- data.frame(
-  mrt = "Sertões Norte",
+  mrt = "SERTÃO NORTE",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Mista", "Agricultura", "Mista em solos de baixo suporte", "Mista em solos de médio suporte", "Mista em solos de médio suporte", "Agricultura com potencial de irrigação", "Mista em solos de baixo suporte nos Sertões Norte", "Mista em solos de médio suporte nos Sertões Norte", "Mista em solos de médio suporte nos Sertões Norte", "Agricultura com potencial de irrigação nos Sertões Norte"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
   vti_media = c(678.87, 790.59, 4809.85, 324.01, 900.74, 1970.64, 4809.85, 324.01, 900.74, 1970.64, 4809.85),
@@ -1457,7 +1427,7 @@ CEMRTSertaoNorte_2022 <- data.frame(
 ### 6.7 MRT: Vale do Jaguaribe ####
 ###2017####
 CEMRTValeJaguaribe_2017 <- data.frame(
-  mrt = "Vale do Jaguaribe",
+  mrt = "JAGUARIBANO",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Agricultura", "Mista", "Mata", "Agricultura irrigada com fruticultura", "Agricultura em salos de média suporte com potencial de irrigação", "Mista em solos de aluvião", "Mista em solos de médio suporte", "Mista em solos de baixo suporte", "Na mata em solos de médio suporte com potencial de irrigação", "Agricultura irrigada com fruticultura na Chapada do Apodi", "Agricultura em solos de médio suporte com potencial de irrigação na Chapada do Apodi", "Mista em solos de aluvião no Sertão Jaguaribano", "Mista em solos de médio suporte no Sertão Jaguaribano", "Mista em solos de baixo suporte no Sertão Jaguaribano", "Na mata em solos de médio suporte com potencial de irrigação na Chapada do Apodi", "Na mata com potencial de irrigação no Perímetro Irrigado Tabuleiro de Russas"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(5109.54, 12750.24, 2042.37, 5292.86, 19136.90, 7091.43, 2542.37, 1911.39, 795.30, 5292.86, 19136.90, 7091.43, 2542.37, 1911.39, 795.30, 4666.67, 5561.22),
@@ -1485,7 +1455,7 @@ CEMRTJaguaribano_2022 <- data.frame(
 ### 6.8 MRT: Sertão Central #####
 ###2017####
 CEMRTSertaoCentral_2017 <- data.frame(
-  mrt = "Sertão Central",
+  mrt = "SERTÃO CENTRAL",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Mista", "Mista em solos de baixo suporte", "Mista em solos de médio suporte", "Mista em solos de baixo suporte no Sertão Central", "Mista em solos de médio suporte no Sertão Central"),
   nivel = c(0, 1, 2, 2, 3, 3),
   vti_media = c(682.28, 682.28, 497.18, 1092.15, 497.18, 1092.15),
@@ -1513,7 +1483,7 @@ CEMRTSertaoCentral_2022 <- data.frame(
 ### 6.9 MRT: Sertões de Canindé####
 ###2017####
 CEMRTSertoesCaninde_2017 <- data.frame(
-  mrt = "Sertões de Canindé",
+  mrt = "SERTÃO DE CANINDÉ",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Mista", "Mista em solos de baixo suporte", "Mista em solos de médio suporte", "Mista em solos de baixo suporte nos Sertões de Canindé", "Mista em solos de médio suporte nos Sertões de Canindé"),
   nivel = c(0, 1, 2, 2, 3, 3),
   vti_media = c(360.59, 315.35, 257.66, 781.96, 257.66, 781.96),
@@ -1541,7 +1511,7 @@ CEMRTSertaoCaninde_2022 <- data.frame(
 ### 6.10 MRT: Inhamuns####
 ###2017####
 CEMRTInhamuns_2017 <- data.frame(
-  mrt = "Inhamuns",
+  mrt = "SERTÃO DOS INHAMUNS",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Mista", "Pecuária", "Mista em solos de alto suporte", "Mista em solos de médio suporte", "Mista em solos de baixo suporte", "Pecuária em solos de baixo suporte", "Mista em solos de alto suporte nos sertões do Inhamuns", "Mista em solos de médio suporte do Inhamuns", "Mista em solos de baixo suporte do Inhamuns", "Pecuária em solos de baixo suporte do Inhamuns"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
   vti_media = c(756.85, 1345.73, 295.21, 3101.90, 1394.65, 418.41, 295.21, 3101.90, 1394.65, 418.41, 295.21),
@@ -1569,7 +1539,7 @@ CEMRTSertaoInhamuns_2022 <- data.frame(
 ### 6.11 MRT: Centro Sul####
 ###2017####
 CEMRTCentroSul_2017 <- data.frame(
-  mrt = "Centro Sul",
+  mrt = "CENTRO SUL",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Mista", "Mista em solos de médio suporte estruturada", "Mista em solos de médio suporte", "Mista em solos de baixo suporte", "Mista em solos de médio suporte estruturada no Centro Sul", "Mista em solos de médio suporte no Centro Sul", "Mista em solos de baixo suporte no Centro Sul"),
   nivel = c(0, 1, 2, 2, 2, 3, 3, 3),
   vti_media = c(1790.23, 1790.23, 3646.37, 1656.42, 728.58, 3646.37, 1656.42, 728.58),
@@ -1598,7 +1568,7 @@ CEMRTCentroSul_2022 <- data.frame(
 ### MRT: Cariri ####
 ### 2017 #####
 CEMRTCariri_2017 <- data.frame(
-  mrt = "Cariri",
+  mrt = "CARIRI",
   tipologia_de_uso = c("Uso Indefinido (média geral)", "Agricultural", "Mista", "Mata", "Agricultura em solos de alto suporte com potencial de irrigação", "Agricultura em solos de alto suporte", "Mista em solos de alto suporte", "Mista em solos de médio suporte", "Mista em solos de baixo suporte", "Mista em solos de médio suporte estruturada", "Mista em solos de médio suporte com potencial de irrigação", "Agricultura em solos de alto suporte com potencial de irrigação no Cariri Leste", "Agricultura em solos de alto suporte no Cariri Leste", "Mista em solos de alto suporte no Cariri Leste", "Mista em solos de médio suporte no Cariri", "Mista em solos de baixo suporte no Cariri Leste", "Mista em solos de baixo suporte no Cariri Oeste", "Mista em solos de médio suporte estruturada no Cariri Oeste", "Mista em solos de médio suporte com potencial de irrigação no Cariri Leste"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(2889.65, 12871.50, 2464.81, 551.57, 13408.24, 8466.20, 5682.49, 1706.84, 546.18, 3589.74, 7305.45, 13408.24, 8466.20, 5682.49, 1706.84, 635.24, 456.56, 3589.74, 7305.45),
@@ -1673,64 +1643,10 @@ CE2022 <- rbind(
 CE17$ano <- 2017
 CE2022$ano <- 2022
 CETEMPORAL <- rbind(CE2022, CE17)
-CETEMPORAL <- CETEMPORAL %>%
-  mutate(mrt = case_when(
-    # Mapeamento para os nomes de 2017
-    mrt == "Litoral Leste" ~ 204,
-    mrt == "Região Metropolitana de Fortaleza" ~ 203,
-    mrt == "Curu/Aracatiaçu" ~ 202,
-    mrt == "Litoral Oeste" ~ 201,
-    mrt == "Serra da Ibiapaba" ~ 208,
-    mrt == "Sertões Norte" ~ 207,
-    mrt == "Vale do Jaguaribe" ~ 211,
-    mrt == "Sertão Central" ~ 210,
-    mrt == "Sertões de Canindé" ~ 206,
-    mrt == "Inhamuns" ~ 209,
-    mrt == "Centro Sul" ~ 212,
-    mrt == "Cariri" ~ 213,
-    
-    # Mapeamento para os nomes de 2022
-    mrt == "LITORAL LESTE" ~ 204,
-    mrt == "REGIÃO METROPOLITANA DE FORTALEZA" ~ 203,
-    mrt == "VALES DO CURU/ARACATIAÇU" ~ 202,
-    mrt == "LITORAL OESTE" ~ 201,
-    mrt == "IBIAPABA" ~ 208,
-    mrt == "SERTÃO NORTE" ~ 207,
-    mrt == "JAGUARIBANO" ~ 211,
-    mrt == "BATURITÉ" ~ 205,
-    mrt == "SERTÃO CENTRAL" ~ 210,
-    mrt == "SERTÃO DE CANINDÉ" ~ 206,
-    mrt == "SERTÃO DOS INHAMUNS" ~ 209,
-    mrt == "CENTRO SUL" ~ 212,
-    mrt == "CARIRI" ~ 213,
-    
-    # Caso algum valor não corresponda, mantém como NA numérico
-    TRUE ~ NA_real_
-  ))
-
 CETEMPORAL$estado <- 23
 CETEMPORAL$regiao <- "nordeste"
 
-CETEMPORAL <- CETEMPORAL |>
-  mutate(
-    cidades = case_when(
-      mrt == 201 ~ "Amontada, Apuiarés, General Sampaio, Irauçuba, Itapajé, Itapipoca, Itarema, Miraíma, Paraipaba, Paracuru, Pentecoste, São Gonçalo do Amarante, São Luís do Curu, Tejuçuoca",
-      mrt == 202 ~ "Amontada, Apuiarés, General Sampaio, Irauçuba, Itapajé, Itapipoca, Itarema, Miraíma, Paraipaba, Paracuru, Pentecoste, São Gonçalo do Amarante, São Luís do Curu, Tejuçuoca, Trairi, Tururu, Umirim, Uruburetama",
-      mrt == 203 ~ "Caucaia, Chorozinho, Guaiúba, Horizonte, Itaitinga, Maranguape, Pacajus, Pacatuba",
-      mrt == 204 ~ "Aracati, Beberibe, Cascavel, Fortim, Icapuí, Itaiçaba, Jaguaruana, Pindoretama",
-      mrt == 205 ~ "Acarape, Aracoiaba, Aratuba, Barreira, Baturité, Capistrano, Guaramiranga, Itapiúna, Mulungu, Ocara, Pacoti, Palmácia, Redenção",
-      mrt == 206 ~ "Boa Viagem, Canindé, Caridade, Itatira, Madalena, Paramoti",
-      mrt == 207 ~ "Alcântaras, Cariré, Coreaú, Forquilha, Frecheirinha, Graça, Groaíras, Massapê, Meruoca, Moraújo, Mucambo, Pacujá, Reriutaba, Santana do Acaraú, Senador Sá, Sobral, Varjota",
-      mrt == 208 ~ "Carnaubal, Croatá, Guaraciaba do Norte, Ibiapina, São Benedito, Tianguá, Ubajara, Viçosa do Ceará",
-      mrt == 209 ~ "Aiuaba, Arneiroz, Catunda, Crateús, Hidrolândia, Independência, Ipaporanga, Ipu, Ipueiras, Monsenhor Tabosa, Nova Russas, Novo Oriente, Parambu, Pires Ferreira, Poranga, Quiterianópolis, Santa Quitéria, Tamboril, Tauá",
-      mrt == 210 ~ "Banabuiú, Choró, Deputado Irapuan Pinheiro, Ibaretama, Ibicuitinga, Milhã, Mombaça, Pedra Branca, Piquet Carneiro, Quixadá, Quixeramobim, Senador Pompeu, Solonópole",
-      # ATENÇÃO: A lista de municípios para MRT-211 e MRT-212 é idêntica no documento fonte, o que é um provável erro no Atlas.
-      mrt == 211 ~ "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro, Jaguaribe",
-      mrt == 212 ~ "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro, Jaguaribe",
-      mrt == 213 ~ "Abaiara, Altaneira, Antonina do Norte, Araripe, Assaré, Aurora, Barbalha, Barro, Brejo Santo, Campos Sales, Caririaçu, Crato, Farias Brito, Granjeiro, Jardim, Jati, Juazeiro do Norte, Mauriti, Milagres, Missão Velha, Nova Olinda, Penaforte, Porteiras, Potengi, Santana do Cariri, Salitre, Tarrafas, Várzea Alegre",
-      .default = NA_character_
-    )
-  )
+
 
 ### 7.0 Distrito Federal ####
 #2017:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr28_2017.pdf
@@ -1749,7 +1665,7 @@ CETEMPORAL <- CETEMPORAL |>
 ##7.1 MRT - VÃO PARANÃ ####
 ## 2017 ####
 DFMRT1_2017 <- data.frame(
-  mrt = "MRT 1 - Vão do Paranã (GO)",
+  mrt = "MRT 1 – VÃO DO PARANÃ",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "Exploração Mista (Pecuária de Baixo Suporte/Reserva Legal)", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Pecuária de Baixo Suporte (Alvorada do Norte)", "Pecuária de Médio Suporte (Alvorada do Norte)", "Pecuária de Médio Suporte (Monte Alegre)", "Pecuária de Médio Suporte (Flores de Goiás)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(4524.05, 4620.65, 982.92, 982.92, 2870.36, 4788.14, 5756.78, 2761.60, 5102.86, 6062.88 , 4490.17),
@@ -1763,7 +1679,7 @@ DFMRT1_2017 <- data.frame(
 
 ## 2020 ####
 DFMRT1_2020 <- data.frame(
-  mrt = "Vão Pará",
+  mrt = "MRT 1 – VÃO DO PARANÃ",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte (Alvorada do Norte)", "Pecuária de Médio Suporte (Monte Alegre de Goiás)", "Pecuária de Médio Suporte (Flores de Goiás)", "Pecuária de Médio Suporte (São Domingos)", "Pecuária de Médio Suporte (Vila Boa)"),
   nivel = c(0, 1, 2, 2, 2, 3, 3, 3, 3, 3),
   vti_media = c(5521.18, 5529.66, 1966.93, 5817.24, 10537.19, 5084.50, 5433.88, 6523.54, 4677.00, 5871.21),
@@ -1808,8 +1724,9 @@ DFMRT1_2021 <- data.frame(
 
 ##7.2 MRT - Buritis####
 ## 2017 ####
+#O MRT mudou de nome pós 2020, o nome anterior era: "MRT 2-Buritis / Arinos"
 DFMRT2_2017 <- data.frame(
-  mrt = "MRT 2-Buritis / Arinos",
+  mrt ="MRT 2 – MAMBAÍ/ FORMOSO" ,
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista (lavoura e pecuária)", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Médio Suporte (Buritis)"),
   nivel = c(0, 1, 1, 2, 2, 2),
   vti_media = c(4306.52, 4184.09, 4691.05, 2519.03, 4756.51, 4867.94),
@@ -1854,7 +1771,7 @@ DFMRT2_2021 <- data.frame(
 ##7.3 MRT - Unaí ####
 ## 2017 ####
 DFMRT3_2017 <- data.frame(
-  mrt = "MRT 3 - Unaí/ Cristalina",
+  mrt = "MRT 3 – UNAÍ / CRISTALINA",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista (lavoura e pecuária)", "Lavoura", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Lavoura de Alta Produtiviade", "Pecuária de Médio Suporte (Unai)", "Pecuária de Alto Suporte (Unai)", "Lavoura de Alta Produtiviade (Cristalina)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
   vti_media = c(9887.72, 7967.66, 13684.76, 12671.14,  7621.87,7271.46, 12671.14, 8008.33, 7833.80, 12671.14),
@@ -1916,7 +1833,7 @@ DFMRT3_2021 <- data.frame(
 ##7.4 MRT 4- Alexânia ####
 ## 2017 ####
 DFMRT4_2017 <- data.frame(
-  mrt = "MRT 4- Alexânia",
+  mrt = "MRT 4 – ALEXÂNIA",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Pecuária de Médio Suporte", "Pecuária de Médio Suporte (Alexânia)"),
   nivel = c(0, 1, 2, 2),
   vti_media = c(8316.23, 10656.72, 10656.72, 11391.62),
@@ -1960,7 +1877,7 @@ DFMRT4_2021 <- data.frame(
 ##7.5 MRT 5-Padre Bernardo ####
 ## 2017 ####
 DFMRT5_2017 <- data.frame(
-  mrt = "MRT 5-Padre Bernardo",
+  mrt = "MRT 5 – PADRE BERNARDO",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Lavoura", "Lavoura de Alta Produtividade"),
   nivel = c(0, 1, 1, 2),
   vti_media = c(7322.89, 6365.49, 12010.90, 12010.90),
@@ -2003,7 +1920,7 @@ DFMRT5_2021 <- data.frame(
 ##7.6 MRT 6- Formosa / São João D'Aliança ####
 ## 2017 ####
 DFMRT6_2017 <- data.frame(
-  mrt = "MRT 6- Formosa / São João D'Aliança",
+  mrt = "MRT 6 – FORMOSA / SÃO JOÃO D'ALIANÇA",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "Lavoura", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Exploração Mista (Lavoura de Média Produtividade e Pecuária de Médio Suporte)", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte (São João da Aliança)", "Lavoura de Alta Produtividade (Planaltina de Goiás)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(6098.68, 5590.91, 6362.91, 16827.59, 2396.00, 4931.23, 8888.37, 4481.69, 21375.00, 4952.28, 24500.00),
@@ -2056,7 +1973,7 @@ DFMRT6_2021 <- data.frame(
 ##7.7 MRT 7- Chapada dos Veadeiros ####
 ## 2017 ####
 DFMRT7_2017 <- data.frame(
-  mrt = "MRT 7- Chapada dos Veadeiros",
+  mrt = "MRT 7 – CHAPADA DOS VEADEIROS",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Exploração Mista", "Exploração Mista (Pecuária de Baixo Suporte e Reserva Legal)", "Exploração Mista (Pecuária de Baixo Suporte e Reserva Legal) - Teresina de Goiás", "Exploração Mista (Pecuária de Baixo Suporte e Reserva Legal) - Cavalcante"),
   nivel = c(0, 1, 2, 2, 2),
   vti_media = c(1000.26, 1000.26, 1000.26, 991.38, 1193.07),
@@ -2110,7 +2027,7 @@ DFMRT7_2021 <- data.frame(
 ##7.8 MRT 8- Distrito Federal ####
 ## 2017 ####
 DFMRT8_2017 <- data.frame(
-  mrt = "MRT 8-Distrito Federal",
+  mrt = "MRT 8 – DISTRITO FEDERAL",
   tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte (DF)", "Pecuária de Alto Suporte (DF)"),
   nivel = c(0, 1, 2, 2, 2, 2),
   vti_media = c(25190.48, 25799.45, 21502.75, 32029.30, 21502.75, 32029.30),
@@ -2696,7 +2613,7 @@ ESMRT_Centro_Leste_2022 <- data.frame(
 
 ### 2024 #####
 ESMRT_Centro_Leste_2024 <- data.frame(
-  mrt = "VI - CENTRO-LESTE",
+  mrt = "Centro-Leste",
   tipologia_de_uso = c(
     "Geral",
     "Agrícola",
@@ -3311,51 +3228,13 @@ ESTEMPORAL <- rbind(ES16, ES18, ES21, ES22, ES24)
 ESTEMPORAL$estado <- 32
 ESTEMPORAL$regiao <- "Sudeste"
 
-### Setagem de cidades #####
-ESTEMPORAL <- ESTEMPORAL |>
-  mutate(
-    mrt = case_when(
-      mrt == "Norte"             ~ 2001,
-      mrt == "Nordeste"           ~ 2002,
-      mrt == "Centro-Norte I"     ~ 2004,
-      mrt == "Noroeste"           ~ 2005,
-      mrt == "Centro-Norte II"    ~ 2003,
-      mrt == "Centro-Leste"      ~ 2006,
-      mrt == "Centro-Oeste"      ~ 2007,
-      mrt == "Serrano"            ~ 2008,
-      mrt == "Vitória e Entorno" ~ 2013,
-      mrt == "Sudoeste I"         ~ 2009,
-      mrt == "Sudoeste II"        ~ 2010,
-      mrt == "Litoral Sul"        ~ 2012,
-      mrt == "Sul"                ~ 2011,
-      .default = NA_integer_ # Atribui NA se o nome não for encontrado
-    )
-  )
 
-ESTEMPORAL <- ESTEMPORAL |>
-  mutate(
-    cidades = case_when(
-      mrt == "2001" ~ "Conceição da Barra, Ecoporanga, Montanha, Mucurici, Pedro Canário, Ponto Belo",
-      mrt == "2002" ~ "Boa Esperança, Linhares, Pinheiros, São Mateus",
-      mrt == "2003" ~ "Jaguaré, Governador Lindenberg, Marilândia, Rio Bananal, Sooretama, Vila Valério",
-      mrt == "2004" ~ "Águia Branca, Nova Venécia, São Domingos do Norte, São Gabriel da Palha, Vila Pavão",
-      mrt == "2005" ~ "Água Doce do Norte, Alto Rio Novo, Barra de São Francisco, Mantenópolis, Pancas",
-      mrt == "2006" ~ "Aracruz, Colatina, Fundão, Ibiraçu, João Neiva",
-      mrt == "2007" ~ "Baixo Guandu, Itaguaçu, Itarana, Laranja da Terra, São Roque do Canaã",
-      mrt == "2008" ~ "Afonso Cláudio, Alfredo Chaves, Castelo, Conceição do Castelo, Domingos Martins, Marechal Floriano, Santa Leopoldina, Santa Maria de Jetibá, Santa Teresa, Vargem Alta, Venda Nova do Imigrante",
-      mrt == "2009" ~ "Brejetuba, Ibatiba, Irupi, Iúna",
-      mrt == "2010" ~ "Divino de São Lourenço, Dores do Rio Preto, Guaçuí, Ibitirama, Muniz Freire",
-      mrt == "2011" ~ "Alegre, Apiacá, Atilio Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul, São José do Calçado",
-      mrt == "2012" ~ "Anchieta, Guarapari, Itapemirim, Marataízes, Piúma, Presidente Kennedy",
-      mrt == "2013" ~ "Cariacica, Serra, Viana, Vila Velha, Vitória",
-    )
-  )
 
 #### 9.0 Goiás ####
 #2017:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr04_2017.ods
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/GO_RAMT_PPR_2022.pdf
 #2024:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/GO_PPR_2024.pdf 
-#Não foi observada mudança na composição dos municípios do mercado
+#Houve apenas modificação no mercado Rio dos Bois, com a inclusão de uma cidade.
 ####9.1 Vale do Araguáia###
 ####2017###
 GOMRT1_2017 <- data.frame(
@@ -3368,11 +3247,11 @@ GOMRT1_2017 <- data.frame(
   vtn_media = c(7134.99, 5037.77, 3384.21, 4607.16, 5271.15, 7128.49, 8002.52, 8544.08, 8978.66, 12129.48, 14640.49, 10899.93, 28003.12),
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  origem = "Aragarças, Araguapaz, Arenópolis, Aruanã, Baliza, Bom Jardim de Goiás, Britânia, Crixás, Diorama, Faina, Goiás, Itapirapuã, Jussara, Matrinchã, Montes Claros de Goiás, Mozarlândia, Mundo Novo, Nova Crixás, Novo Planalto, Piranhas, Santa Fé de Goiás, São Miguel do Araguaia, Uirapuru."
+  origem = "Aragarças, Araguapaz, Arenópolis, Aruanã, Baliza, Bom Jardim de Goiás, Britânia, Crixás, Diorama, Faina, Goiás, Itapirapuã, Jussara, Matrinchã, Montes Claros de Goiás, Mozarlândia, Mundo Novo, Nova Crixás, Novo Planalto, Piranhas, Santa Fé de Goiás, São Miguel do Araguaia e Uirapuru."
 )
 ####2022###
 GOMRT01_2022 <- data.frame(
-  mrt = "VALE DO ARAGUAIA",
+  mrt = "MRT 1 - VALE DO ARAGUAIA",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura-grãos diversos",
@@ -3398,7 +3277,7 @@ GOMRT01_2022 <- data.frame(
 
 ####2024###
 GOMRT01_2024 <- data.frame(
-  mrt = "01 - VALE DO ARAGUAIA",
+  mrt = "MRT 1 - VALE DO ARAGUAIA",
   tipologia_de_uso = c("Uso indefinido", "Agricultura- grãos diversos", "Exploração Mista - Agricola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Agricultura - Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura - Alto Suporte", "Agricultura + Pastagem-Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem- Alto Suporte", "Bovino-Pastagem Formada-Baixo Suporte", "Bovino-Pastagem Formada-Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(29922.35, 39944.37, 28475.71, 24819.50, 26388.00, 37606.32, 52710.40, 18903.24, 29424.47, 36530.18, 16786.19, 24894.57, 34610.49),
@@ -3429,7 +3308,7 @@ GOMRT2_2017 <- data.frame(
 ###2022####
 
 GOMRT02_2022 <- data.frame(
-  mrt = "RIO MARANHÃO",
+  mrt = "MRT 2 – RIO MARANHÃO",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura-grãos diversos",
@@ -3453,7 +3332,7 @@ GOMRT02_2022 <- data.frame(
 ###2024####
 
 GOMRT02_2024 <- data.frame(
-  mrt = "02 - RIO MARANHÃO",
+  mrt = "MRT 2 – RIO MARANHÃO",
   tipologia_de_uso = c("Uso indefinido", "Agricultura-grãos diversos", "Exploração Mista - Agricola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Agricultura-Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura - Alto Suporte", "Agricultura + Pastagem-Baixo Suporte", "Agricultura + Pastagem-Médio Suporte", "Agricultura + Pastagem-Alto Suporte", "Bovino-Pastagem Formada-Baixo Suporte", "Bovino-Pastagem Formada- Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(26958.87, 32300.00, 27265.71, 21543.64, 25800.00, 31285.71, 40468.75, 21910.00, 25946.67, 35545.45, 15090.00, 21441.18, 29182.35),
@@ -3482,7 +3361,7 @@ GOMRT3_2017 <- data.frame(
 
 ###2022####
 GOMRT03_2022 <- data.frame(
-  mrt = "SÃO PATRÍCIO",
+  mrt = "MRT 3 – SÃO PATRÍCIO",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura-grãos diversos",
@@ -3506,7 +3385,7 @@ GOMRT03_2022 <- data.frame(
 
 ###2022####
 GOMRT03_2024 <- data.frame(
-  mrt = "03 - SÃO PATRÍCIO",
+  mrt = "MRT 3 – SÃO PATRÍCIO",
   tipologia_de_uso = c("Uso indefinido", "Agricultura-grãos diversos", "Exploração Mista - Agricola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Agricultura - Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura - Alto Suporte", "Agricultura + Pastagem- Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem- Alto Suporte", "Bovino-Pastagem Formada-Baixo Suporte", "Bovino-Pastagem Formada- Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(35323.21, 54103.79, 37278.39, 23613.87, 41178.60, NA, 65543.53, 29850.10, NA, 44770.16, 18678.41, NA, 33924.56),
@@ -3537,7 +3416,7 @@ GOMRT4_2017 <- data.frame(
 
 ###2022####
 GOMRT04_2022 <- data.frame(
-  mrt = "SERRA DOURADA",
+  mrt = "MRT 4 – SERRA DOURADA",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura-grãos diversos",
@@ -3560,7 +3439,7 @@ GOMRT04_2022 <- data.frame(
 ###2024####
 
 GOMRT04_2024 <- data.frame(
-  mrt = "04 - SERRA DOURADA",
+  mrt = "MRT 4 – SERRA DOURADA",
   tipologia_de_uso = c("Uso indefinido", "Agricultura-grãos diversos", "Exploração Mista - Agricola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Cerrado-Vegetação nativa", "Agricultura - Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura - Alto Suporte", "Agricultura + Pastagem- Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem- Alto Suporte", "Bovino-Pastagem Formada-Baixo Suporte", "Bovino-Pastagem Formada-Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(41165.28, 50155.53, 44069.77, 38259.44, NA, 37865.87, 50216.23, 59327.25, 33264.13, NA, 54415.33, 28820.60, 42201.30, 50567.35),
@@ -3589,7 +3468,7 @@ GOMRT5_2017 <- data.frame(
 
 ### 2022####
 GOMRT05_2022 <- data.frame(
-  mrt = "CINTURÃO VERDE",
+  mrt = "MRT 5 – CINTURÃO VERDE",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura- grãos diversos",
@@ -3613,7 +3492,7 @@ GOMRT05_2022 <- data.frame(
 
 ### 2024####
 GOMRT05_2024 <- data.frame(
-  mrt = "05 - CINTURÃO VERDE",
+  mrt = "MRT 5 – CINTURÃO VERDE",
   tipologia_de_uso = c("Uso indefinido", "Agricultura- grãos diversos", "Exploração Mista - Agricola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Agricultura - Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura - Alto Suporte", "Agricultura + Pastagem- Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem- Alto Suporte", "Bovino-Pastagem Formada-Baixo Suporte", "Bovino-Pastagem Formada- Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(59197.05, 67020.48, 57153.85, 51370.46, 54000.00, 67200.00, 71790.95, 47250.00, 57000.00, 66142.86, 34800.00, 50214.29, 64362.67),
@@ -3643,7 +3522,7 @@ GOMRT6_2017 <- data.frame(
 
 ### 2022 ####
 GOMRT06_2022 <- data.frame(
-  mrt = "CAIAPÓ",
+  mrt = "MRT 6 – CAIAPÓ",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura-grãos diversos",
@@ -3665,7 +3544,7 @@ GOMRT06_2022 <- data.frame(
 
 ### 2024 ####
 GOMRT06_2024 <- data.frame(
-  mrt = "06 - CAIAPÓ",
+  mrt = "MRT 6 – CAIAPÓ",
   tipologia_de_uso = c("Uso indefinido", "Agricultura-grãos diversos", "Exploração Mista - Agricola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Agricultura-Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura - Alto Suporte", "Agricultura + Pastagem- Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem- Alto Suporte", "Bovino-Pastagem Formada- Baixo Suporte", "Bovino-Pastagem Formada-Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(44660.38, 60041.67, 44312.50, 21575.00, 37687.50, 56785.71, 92000.00, 28500.00, 39000.00, NA, 14785.71, 20000.00, 29714.29),
@@ -3690,12 +3569,12 @@ GOMRT7_2017 <- data.frame(
   vtn_media = c(12834.19, 8433.66, 3375.54, 12654.87, 8433.66, 12406.47, 7626.57, 11930.28, 13467.98, 20745.97, 20914.98, 24971.21, 31055.57),
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  origem = "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara, Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palmelo, Palminópolis, Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de Goiás, São Miguel do Passa Quatro, Urutaí, Varjão, Vicentinópolis."
+  origem = "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara, Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palminópolis, Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de Goiás, São Miguel do Passa Quatro, Urutaí, Varjão e Vicentinópolis."
 )
 
 ### 2022 ####
 GOMRT07_2022 <- data.frame(
-  mrt = "RIO DOS BOIS",
+  mrt = "MRT 7 – RIO DOS BOIS",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura-grãos diversos",
@@ -3715,12 +3594,12 @@ GOMRT07_2022 <- data.frame(
   vtn_media = c(46795.67, 48756.61, 54004.13, 33389.83, NA, 37839.55, 63312.67, 56380.17, 41740.20, 29158.24),
   vtn_minimo = c(39776.32, 41443.11, 45903.51, 28381.36, NA, 32163.62, 53815.77, 47923.14, 35479.17, 24784.50),
   vtn_maximo = c(53815.02, 56070.10, 62104.75, 38398.31, NA, 43515.49, 72809.57, 64837.19, 48001.22, 33531.97),
-  origem = "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara, Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palmelo, Palminópolis, Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de Goiás, São Miguel do Passa Quatro, Urutaí, Varjão, Vicentinópolis."
-)
+  origem = "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara, Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palmelo, Palminópolis, Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de Goiás, São Miguel do Passa Quatro, Urutaí, Varjão e Vicentinópolis." 
+  )
 
 ### 2024 ####
 GOMRT07_2024 <- data.frame(
-  mrt = "07 - RIO DOS BOIS",
+  mrt = "MRT 7 – RIO DOS BOIS",
   tipologia_de_uso = c("Uso indefinido", "Agricultura- grãos diversos", "Exploração Mista Agrícola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Agricultura-Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura Alto Suporte", "Agricultura + Pastagem- Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem- Alto Suporte", "Bovino-Pastagem Formada- Baixo Suporte", "Bovino-Pastagem Formada- Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(54080.98, 69831.24, 61420.11, 46137.87, 54214.40, 64555.43, 98139.75, 51194.40, 60092.93, 73415.40, 34600.16, 47935.98, 64251.87),
@@ -3729,7 +3608,7 @@ GOMRT07_2024 <- data.frame(
   vtn_media = c(51134.34, 68295.36, 58821.99, 42563.24, 52466.48, 61932.92, 97571.57, 49611.49, 57351.94, 69992.56, 32117.69, 44103.81, 59079.03),
   vtn_minimo = c(41810.23, 57367.43, 54406.91, 35833.51, 51021.11, 59411.57, 87995.04, 47718.30, 55802.28, 69072.94, 28763.93, 39972.36, 53875.05),
   vtn_maximo = c(60458.46, 79223.29, 63237.07, 49292.98, 53911.85, 64454.26, 107148.11, 51504.69, 58901.61, 70912.19, 35471.46, 48235.25, 64283.01),
-  origem = "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara, Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palmelo, Palminópolis, Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de Goiás, São Miguel do Passa Quatro, Urutaí, Varjão, Vicentinópolis."
+  origem = "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara, Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palmelo, Palminópolis, Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de Goiás, São Miguel do Passa Quatro, Urutaí, Varjão e Vicentinópolis." 
 )
 
 #### 9.8 MRT 08 - Baixo PARNAIBA ####
@@ -3748,7 +3627,7 @@ GOMRT8_2017 <- data.frame(
 )
 ### 2022####
 GOMRT08_2022 <- data.frame(
-  mrt = "BAIXO PARANAIBA",
+  mrt = "MRT 8 – BAIXO PARANAIBA",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura- grãos diversos",
@@ -3772,7 +3651,7 @@ GOMRT08_2022 <- data.frame(
 
 ### 2024 ####
 GOMRT08_2024 <- data.frame(
-  mrt = "08 - BAIXO PARANAIBA",
+  mrt = "MRT 8 – BAIXO PARANAIBA",
   tipologia_de_uso = c("Uso indefinido", "Agricultura- grãos diversos", "Exploração Mista - Agrícola + Pastagem", "Pecuária - Bovino-Pastagem Formada", "Cerrado-Vegetação nativa", "Agricultura - Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura - Alto Suporte", "Agricultura + Pastagem- Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem- Alto Suporte", "Bovino-Pastagem Formada- Baixo Suporte", "Bovino-Pastagem Formada- Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(48158.90, 61006.43, 52265.18, 31736.13, NA, 51394.13, 58061.35, 72861.67, 34038.98, NA, 75757.20, 18764.58, 29771.46, 48979.15),
@@ -3801,7 +3680,7 @@ GOMRT9_2017 <- data.frame(
 
 #### 2022 ####
 GOMRT09_2022 <- data.frame(
-  mrt = "RIO VERDÃO",
+  mrt = "MRT 9 – RIO VERDÃO",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura-grãos diversos",
@@ -3825,7 +3704,7 @@ GOMRT09_2022 <- data.frame(
 
 #### 2024 ####
 GOMRT09_2024 <- data.frame(
-  mrt = "09 - RIO VERDÃO",
+  mrt = "MRT 9 – RIO VERDÃO",
   tipologia_de_uso = c("Uso indefinido", "Agricultura-grãos diversos", "Exploração Mista - Agrícola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Cerrado-Vegetação nativa", "Agricultura-Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura-Alto Suporte", "Agricultura + Pastagem- Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem-Alto Suporte", "Bovino-Pastagem Formada- Baixo Suporte", "Bovino-Pastagem Formada-Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(92209.60, 107557.08, 61704.11, 38197.87, 7195.12, 70241.43, 91474.18, 142143.50, 34199.09, 69929.53, 102838.97, 21233.66, 37753.57, 66255.62),
@@ -3856,7 +3735,7 @@ GOMRT10_2017 <- data.frame(
 )
 ###2022###
 GOMRT10_2022 <- data.frame(
-  mrt = "ALTO PARANAIBA",
+  mrt = "MRT 10 – ALTO PARANAIBA",
   tipologia_de_uso = c(
     "Geral",
     "Pecuária - Bovino-Pastagem Formada",
@@ -3876,7 +3755,7 @@ GOMRT10_2022 <- data.frame(
 
 ###2024###
 GOMRT10_2024 <- data.frame(
-  mrt = "10- ALTO PARANAIBA",
+  mrt = "MRT 10 – ALTO PARANAIBA",
   tipologia_de_uso = c("Uso indefinido", "Agricultura-grãos diversos", "Exploração Mista - Agricola + Pastagem", "Pecuária-Bovino-Pastagem Formada", "Agricultura - Baixo Suporte", "Agricultura - Médio Suporte", "Agricultura - Alto Suporte", "Agricultura + Pastagem- Baixo Suporte", "Agricultura + Pastagem- Médio Suporte", "Agricultura + Pastagem- Alto Suporte", "Bovino-Pastagem Formada-Baixo Suporte", "Bovino-Pastagem Formada- Médio Suporte", "Bovino-Pastagem Formada- Alto Suporte"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(39600.00, 50333.33, 34200.00, 28330.00, 40500.00, NA, 66000.00, 23700.00, NA, 43500.00, 14333.33, 28125.00, 35666.67),
@@ -3935,46 +3814,16 @@ GOTEMPORAL <- rbind(GO24, GO22, GO17)
 GOTEMPORAL$estado <- 62
 GOTEMPORAL$região <- "Centro-Oeste"
 
-GOTEMPORAL <- GOTEMPORAL %>%
-  mutate(
-    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
-    mrt = case_when(
-      grepl("ALTO PARANAIBA", mrt, ignore.case = TRUE)  ~ 401,
-      grepl("RIO VERDÃO", mrt, ignore.case = TRUE)      ~ 402,
-      grepl("BAIXO PARANAIBA", mrt, ignore.case = TRUE) ~ 403,
-      grepl("RIO DOS BOIS", mrt, ignore.case = TRUE)    ~ 404,
-      grepl("CAIAPÓ", mrt, ignore.case = TRUE)          ~ 405,
-      grepl("CINTURÃO VERDE", mrt, ignore.case = TRUE)  ~ 406,
-      grepl("SERRA DOURADA", mrt, ignore.case = TRUE)   ~ 407,
-      grepl("SÃO PATRÍCIO", mrt, ignore.case = TRUE)    ~ 408,
-      grepl("VALE DO ARAGUAIA", mrt, ignore.case = TRUE) ~ 409,
-      grepl("RIO MARANHÃO", mrt, ignore.case = TRUE)    ~ 410,
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 401 ~ "Aparecida do Rio Doce, Aporé, Cachoeira Alta, Caçu, Itajá, Itarumã, Lagoa Santa, Paranaiguara, São Simão, Serranópolis",
-      mrt == 402 ~ "Acreúna, Bom Jesus de Goiás, Castelândia, Chapadão do Céu, Edéia, Goiatuba, Gouvelândia, Jataí, Maurilândia, Mineiros, Montividiu, Perolândia, Porteirão, Portelândia, Quirinópolis, Rio Verde, Santa Helena de Goiás, Santa Rita do Araguaia, Santo Antônio da Barra, Turvelândia",
-      mrt == 403 ~ "Água Limpa, Anhanguera, Buriti Alegre, Cachoeira Dourada, Caldas Novas, Campo Alegre de Goiás, Catalão, Corumbaíba, Cumari, Davinópolis, Gameleira de Goiás, Goiandira, Inaciolândia, Ipameri, Itumbiara, Marzagão, Nova Aurora, Orizona, Ouvidor, Panamá, Silvânia, Três Ranchos, Vianópolis",
-      mrt == 404 ~ "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara, Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palminópolis, Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de Goiás, São Miguel do Passa Quatro, Urutaí, Varjão, Vicentinópolis",
-      mrt == 405 ~ "Caiapônia, Doverlândia, Palestina de Goiás, Paraúna, São João da Paraúna",
-      mrt == 406 ~ "Abadia de Goiás, Abadiânia, Anápolis, Anicuns, Aparecida de Goiânia, Araçu, Aragoiânia, Avelinópolis, Bela Vista de Goiás, Bonfinópolis, Brazabrantes, Caldazinha, Campo Limpo de Goiás, Caturai, Goianápolis, Goiânia, Goianira, Guapó, Hidrolândia, Inhumas, Leopoldo de Bulhões, Nazário, Nerópolis, Nova Veneza, Ouro Verde de Goiás, Santa Bárbara de Goiás, Santo Antônio de Goiás, Senador Canedo, Terezópolis de Goiás, Trindade",
-      mrt == 407 ~ "Adelândia, Americano do Brasil, Amorinópolis, Aurilândia, Buriti de Goiás, Cachoeira de Goiás, Córrego do Ouro, Damolândia, Fazenda Nova, Firminópolis, Guaraita, Heitoraí, Iporá, Israelândia, Itaberaí, Itaguari, Itaguaru, Itapuranga, Itauçu, Ivolândia, Jaraguá, Jaupaci, Jesúpolis, Moiporá, Mossâmedes, Novo Brasil, Petrolina de Goiás, Pirenópolis, Sanclerlândia, Santa Rosa de Goiás, São Francisco de Goiás, São Luís de Montes Belos, Taquaral de Goiás, Turvânia, Uruana",
-      mrt == 408 ~ "Barro Alto, Carmo do Rio Verde, Ceres, Goianésia, Guarinos, Hidrolina, Ipiranga de Goiás, Itapaci, Morro Agudo de Goiás, Nova América, Nova Glória, Pilar de Goiás, Rialma, Rianápolis, Rubiataba, Santa Isabel, Santa Rita do Novo Destino, São Luiz do Norte, São Patrício, Vila Propício",
-      mrt == 409 ~ "Aragarças, Araguapaz, Arenópolis, Aruanã, Baliza, Bom Jardim de Goiás, Britânia, Crixás, Diorama, Faina, Goiás, Itapirapuã, Jussara, Matrinchã, Montes Claros de Goiás, Mozarlândia, Mundo Novo, Nova Crixás, Novo Planalto, Piranhas, Santa Fé de Goiás, São Miguel do Araguaia, Uirapuru",
-      mrt == 410 ~ "Alto Horizonte, Amaralina, Bonópolis, Campinaçu, Campinorte, Campos Verdes, Estrela do Norte, Formoso, Mara Rosa, Minaçu, Montividiu do Norte, Mutunópolis, Niquelândia, Nova Iguaçu de Goiás, Porangatu, Santa Tereza de Goiás, Santa Terezinha de Goiás, Trombas, Uruaçu",
-      .default = NA_character_
-    )
-  )
 
 #### 10.0 Maranhão ####
 #2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr12_2018.ods
 #2021: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ramt_sr12_2021.pdf
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT__MA_2022.pdf
+# O município de Jenipapo dos Vieiras foi lista em 2021/2022 o MRT transição - anteriormente não listado.
 #Apesar da presença de PPR isolada que permite uma extração mais direta foi usada a RAMT para complementar o MRT metropolitano
 #### 10.1 MRT1: Cocais ####
 #### 2018 ####
-MRT1_2018 <- data.frame(
+MAMRT1_2018 <- data.frame(
   mrt = "COCAIS",
   tipologia_de_uso = c(
     "Uso indefinido (média geral)",
@@ -4005,8 +3854,8 @@ MRT1_2018 <- data.frame(
   )
 
 #### 2021 ####
-MRT02_2021<- data.frame(
-  mrt = "PPR/MRT 02-COCAIS ",
+MAMRT02_2021<- data.frame(
+  mrt = "COCAIS",
   tipologia_de_uso = c(
     "Agricultura",
     "Pecuária",
@@ -4033,8 +3882,8 @@ MRT02_2021<- data.frame(
 )
 
 #### 2022 ####
-MRT02_2022 <- data.frame(
-  mrt = "02-COCAIS",
+MAMRT02_2022 <- data.frame(
+  mrt = "COCAIS",
   tipologia_de_uso = c("Geral", "Agricultura", "Pecuária", "Vegetação Nativa", "Agricola - Grãos Diversos - Capacidade Alta", "Agricola - Grãos Diversos - Capacidade Média", "Agricola - Subsistência", "Pecuária - Bovino - Pastagem Formada - Capacidade Baixa", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa", "Vegetação Nativa - Cerrado com aptidão para grãos", "Vegetação Nativa - Babaçu (cocal) com aptidão para pecuária", "Vegetação Nativa - Capoeira com aptidão para reserva legal", "Agricola - Grãos Diversos - Capacidade Alta - Polo Regional Chapadinha", "Agricola - Grãos Diversos - Capacidade Média - Polo Regional Caxias", "Agricola - Subsistência - Polo Regional Caxias", "Pecuária - Bovino - Pastagem Formada - Capacidade Baixa - Polo Regional Codó/Caxias", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Codó/Caxias", "Vegetação Nativa - Cerrado com aptidão para grãos - Polo Regional Chapadinha/Caxias", "Vegetação Nativa - Babaçu (cocal) com aptidão para pecuária - Polo Regional Caxias/Codó", "Vegetação Nativa - Capoeira com aptidão para reserva legal - Polo Regional Chapadinha"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(3153.20, 15992.25, 4551.71, 2826.30, 33331.69, 17476.97, 1657.14, 5505.74, 3733.98, 3054.45, 2859.39, 1466.04, 33331.69, 17476.97, 1657.14, 5505.74, 3733.98, 3054.45, 2859.39, 1466.04),
@@ -4048,7 +3897,7 @@ MRT02_2022 <- data.frame(
 
 #### 10.2 MRT-02 BAIXADA MARANHENSE ####
 ### 2018 ####
-MRT2_2018 <- data.frame(
+MAMRT2_2018 <- data.frame(
   mrt = "BAIXADA MARANHENSE",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual", "Agricultura de Subsistência", "Pecuária de alto nível tecnológico", "Agricultura de Subsistência na margem da BR ou MA", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual na margem da BR ou MA"),
   nivel = c(0, 1, 1, 1, 2, 2, 2),
@@ -4061,8 +3910,8 @@ MRT2_2018 <- data.frame(
   origem = "Alcântara, Amapá do Maranhão, Anajatuba, Apicum-Açu, Arari, Bacuri, Bacurituba, Bela Vista do Maranhão, Bequimão, Cajapió, Cajari, Cândido Mendes, Carutapera, Cedral, Central do Maranhão, Conceição do Lago-Açú, Cururupu, Godofredo Viana, Guimarães, Igarapé do Meio, Luís Domingues, Matinha, Mirinzal, Monção, Olinda Nova do Maranhão, Palmeirândia, Pedro do Rosário, Penalva, Peri Mirim, Pinheiro, Porto Rico do Maranhão, Presidente Sarney, Santa Helena, Santa Luzia, São Bento, São João Batista, São Vicente Ferrer, Serrano do Maranhão, Turiaçu, Turilândia, Viana e Vitória do Mearim."
 )
 ### 2021 ####
-MRT07_2021 <- data.frame(
-  mrt = "07-BAIXADA MARANHENSE",
+MAMRT07_2021 <- data.frame(
+  mrt = "BAIXADA MARANHENSE",
   tipologia_de_uso = c(
     "Agricultura",
     "Pecuária",
@@ -4084,8 +3933,8 @@ MRT07_2021 <- data.frame(
 )
 
 ### 2022 ####
-MRT07_2022 <- data.frame(
-  mrt = "07-BAIXADA MARANHENSE",
+MAMRT07_2022 <- data.frame(
+  mrt = "BAIXADA MARANHENSE",
   tipologia_de_uso = c("Geral", "Agricultura", "Pecuária", "Agricola - Baixa capacidade", "Pecuária - Baixa capacidade", "Pecuária - Média Capacidade"),
   nivel = c(0, 1, 1, 2, 2, 2),
   vti_media = c(4886.77, 1574.00, 5203.32, 1574.00, 4321.41, 13890.37),
@@ -4099,7 +3948,7 @@ MRT07_2022 <- data.frame(
 
 ###10.3 MRT03 - ITAPECURU ####
 ### 2018 ####
-MRT3_2018 <- data.frame(
+MAMRT3_2018 <- data.frame(
   mrt = "ITAPECURU-MIRIM",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Agricultura", "Pecuária", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual", "Vegetação Nativa", "Agricultura de Subsistência", "Pecuária com baixo nível tecnológico", "Pecuária com alto nível tecnológico", "Agricultura de Subsistência", "Pecuária com baixo nível tecnológico até 30 km da BR ou MA", "Pecuária com alto nível tecnológico na margem da BR ou MA", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual até  30 km da margem da BR ou MA", "Vegetação Nativa com até 30 km da BR ou MA"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
@@ -4113,8 +3962,8 @@ MRT3_2018 <- data.frame(
 )
 
 ### 2021 ####
-MRT06_2021<- data.frame(
-  mrt = "PPR/MRT 06-ITAPECURU MIRIM ",
+MAMRT06_2021<- data.frame(
+  mrt = "ITAPECURU-MIRIM",
   tipologia_de_uso = c(
     "Agricultura",
     "Pecuária",
@@ -4137,8 +3986,8 @@ MRT06_2021<- data.frame(
 )
 
 ### 2022 ####
-MRT06_2022 <- data.frame(
-  mrt = "06-ITAPECURU",
+MAMRT06_2022 <- data.frame(
+  mrt = "ITAPECURU-MIRIM",
   tipologia_de_uso = c("Geral", "Pecuária", "Vegetação Nativa", "Exploração Mista", "Pecuária - Bovino - Margem da BR ou MA", "Pecuária - Bovino - Até 30 km da BR ou MA", "Vegetação Nativa - Capoeira - Margem da BR ou MA", "Vegetação Nativa - Capoeira - Até 30 km da BR ou MA"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
   vti_media = c(2719.84, 2554.23, 1318.73, 4240.74, 6381.34, 2582.17, 3500.00, 4616.74),
@@ -4153,7 +4002,7 @@ MRT06_2022 <- data.frame(
 
 ### 10.4 MRT4 -  TRANSIÇÃO ####
 ### 2018 ####
-MRT4_2018 <- data.frame(
+MAMRT4_2018 <- data.frame(
   mrt = "TRANSICAO",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual", "Vegetação Nativa", "Pecuária de baixo nível tecnológico", "Pecuária de alto nível tecnológico", "Pecuária de baixo nível tecnológico na margem da BR ou MA", "Pecuária com baixo nível tecnológico até 30 km da margem da BR ou MA", "Pecuária com baixo nível tecnológico a mais de 30 km da margem da BR ou MA", "Vegetação Nativa a mais de 30 km da margem da BR ou MA"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
@@ -4167,8 +4016,8 @@ MRT4_2018 <- data.frame(
   )
 
 ### 2021 ####
-MRT05_2021 <- data.frame(
-  mrt = "PPR/MRT 05-TRANSIÇÃO ",
+MAMRT05_2021 <- data.frame(
+  mrt = "TRANSICAO",
   tipologia_de_uso = c(
     "Pecuária",
     "Mosaico de Pastagens, Florestas abertas e vegetação degradada com babaçu",
@@ -4195,8 +4044,8 @@ MRT05_2021 <- data.frame(
 )
 
 ### 2022 ####
-MRT05_2022 <- data.frame(
-  mrt = "05-TRANSICAO",
+MAMRT05_2022 <- data.frame(
+  mrt = "TRANSICAO",
   tipologia_de_uso = c("Geral", "Agricola", "Pecuária", "Vegetação Nativa", "Agricultura/Grãos - médio nível tecnológico", "Agricultura de subsistência - Baixo nivel tecnológico", "Pasto Plantado/Criação de Bovinos", "Pasto Nativo/Criação de Bovinos", "Mata Secundária/Cerrado pouco Denso"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
   vti_media = c(6664.85, 6919.71, 7454.73, 4385.94, 7252.56, 6053.85, 7739.72, 5323.35, 4385.94),
@@ -4205,12 +4054,12 @@ MRT05_2022 <- data.frame(
   vtn_media = c(5739.02, 6525.23, 5964.31, 4375.52, 6338.62, 5990.15, 6020.74, 5029.37, 4375.52),
   vtn_minimo = c(4617.71, 5253.42, 4966.23, 3735.82, 5987.58, 4730.07, 4853.73, 4586.70, 3735.82),
   vtn_maximo = c(6860.33, 7797.05, 6962.38, 5015.22, 6689.65, 7250.23, 7187.75, 5472.04, 5015.22),
-  origem = "Altamira do Maranhão, Arame, Bacabal, Barra do Corda, Bernardo do Mearim, Bom Lugar, Brejo de Areia, Dom Pedro, Esperantinópolis, Fernando Falcão, Formosa da Serra Negra, Fortuna, Gonçalves Dias, Governador Archer, Governador Eugênio Barros, Governador Luiz Rocha, Graça Aranha, Grajaú, Igarapé Grande, Itaipava do Grajaú, Jenipapo dos Vieiras, Joselândia, Lago da Pedra, Lago do Junco, Lago Verde, Lago dos Rodrigues, Lagoa Grande do Maranhão, Lima Campos, Marajá do Sena, Olho D'água das Cunhãs, Paulo Ramos, Pedreiras, Pindaré-Mirim, Pio XII, Poção de Pedras, Presidente Dutra, Santa Filomena do Maranhão, Santa Inês, Santo Antônio dos Lopes, São Domingos do Maranhão, São José dos Basílios, São Luís Gonzaga do Maranhão, São Mateus do Maranhão, São Raimundo do Doca Bezerra, São Roberto, Satubinha, Senador Alexandre Costa, Sítio Novo, Trizidela do Vale, Tuntum e Vitorino Freire."
-)
+  origem = "Altamira do Maranhão, Arame, Bacabal, Barra do Corda, Bernardo do Mearim, Bom Lugar, Brejo de Areia, Dom Pedro, Esperantinópolis, Fernando Falcão, Formosa da Serra Negra, Fortuna, Gonçalves Dias, Governador Archer, Governador Eugênio Barros, Governador Luiz Rocha, Graça Aranha, Grajaú, Igarapé Grande, Itaipava do Grajaú, Jenipapo dos Vieiras, Joselândia, Lago da Pedra, Lago do Junco, Lago Verde, Lago dos Rodrigues, Lagoa Grande do Maranhão, Lima Campos, Marajá do Sena, Olho D'água das Cunhas, Paulo Ramos, Pedreiras, Pindaré-Mirim, Pio XII, Poção de Pedras, Presidente Dutra, Santa Filomena do Maranhão, Santa Inês, Santo Antônio dos Lopes, São Domingos do Maranhão, São José dos Basílios, São Luís Gonzaga do Maranhão, São Mateus do Maranhão, São Raimundo do Doca Bezerra, São Roberto, Satubinha, Senador Alexandre Costa, Sítio Novo, Trizidela do Vale, Tuntum e Vitorino Freire"
+  )
 
 ###  10.5 MRT 5 - METROPOLITANA  ####
 ### 2018 ####
-MRT5_2018 <- data.frame(
+MAMRT5_2018 <- data.frame(
   mrt = "METROPOLITANA",
   tipologia_de_uso = c("Uso indefinido (média geral)"),
   nivel = c(0),
@@ -4223,8 +4072,8 @@ MRT5_2018 <- data.frame(
   origem = "Paço do Lumiar, Raposa, São José de Ribamar e São Luís."
 )
 ### 2021 ####
-MRT08_2022 <- data.frame(
-  mrt = "8-REGIÃO METROPOLITANA",
+MAMRT08_2022 <- data.frame(
+  mrt = "METROPOLITANA",
   tipologia_de_uso = c("Geral", "Horticultura/Olericultura/Granjeiros", "Outros - Area de especulação imobiliária"),
   nivel = c(0, 1, 2),
   vti_media = c(233158.75, 94915.39, 316022.27),
@@ -4237,8 +4086,8 @@ MRT08_2022 <- data.frame(
 )
 
 ### 2022 ####
-MRT08_2022 <- data.frame(
-  mrt = "8-REGIÃO METROPOLITANA",
+MAMRT08_2022 <- data.frame(
+  mrt = "METROPOLITANA",
   tipologia_de_uso = c("Geral", "Horticultura/Olericultura/Granjeiros", "Outros - Area de especulação imobiliária"),
   nivel = c(0, 1, 2),
   vti_media = c(233158.75, 94915.39, 316022.27),
@@ -4252,7 +4101,7 @@ MRT08_2022 <- data.frame(
 
 ### 10.6 MRT06 - LITORAL ORIENTAL ####
 ### 2018 ####
-MRT6_2018 <- data.frame(
+MAMRT6_2018 <- data.frame(
   mrt = "LITORAL ORIENTAL",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Agricultura Moderna/Intensiva", "Pecuária de baixo nível tecnológico", "Agricultura Moderna/Intensiva na margem da BR ou MA", "Agricultura Moderna/Intensiva até 30 km da margem da BR", "Agricultura moderna/intensiva a mais de 30 km da margem da BR"),
   nivel = c(0, 1, 1, 2, 2, 2, 2),
@@ -4266,8 +4115,8 @@ MRT6_2018 <- data.frame(
 )
 
 ### 2021 ####
-MRT03_2021 <- data.frame(
-  mrt = "PPR/MRT 03-LITORAL ORIENTAL ",
+MAMRT03_2021 <- data.frame(
+  mrt = "LITORAL ORIENTAL",
   tipologia_de_uso = c("Agricultura",
                        "Mosaico de Pastagens, Florestas abertas e vegetação degradada com babaçu/babaçual",
                        "Vegetação Nativa*",
@@ -4293,8 +4142,8 @@ MRT03_2021 <- data.frame(
 
 ### 2022 ####
 
-MRT03_2022 <- data.frame(
-  mrt = "03-LITORAL ORIENTAL",
+MAMRT03_2022 <- data.frame(
+  mrt = "LITORAL ORIENTAL",
   tipologia_de_uso = c("Geral", "Agricola/Culturas de Subsistência/Fruticultura", "Pecuária/Pasto Plantado/Pasto Nativo (Bovinocultura)", "Vegetação Nativa (Mata/Babaçual/Cerrado pouco Denso)"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(2188.10, 2919.09, 2446.25, 1593.62),
@@ -4308,7 +4157,7 @@ MRT03_2022 <- data.frame(
 )
 ### 10.7 MRT07 -PRE-AMAZONICO ####
 ### 2018 ####
-MRT7_2018 <- data.frame(
+MAMRT7_2018 <- data.frame(
   mrt = "PRÉ-AMAZÔNICO",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária"),
   nivel = c(0, 1),
@@ -4323,8 +4172,8 @@ MRT7_2018 <- data.frame(
 )
 
 ### 2021 ####
-MRT01_2021 <- data.frame(
-  mrt = "PPR/MRT 01-PRÉ-AMAZÔNICO",
+MAMRT01_2021 <- data.frame(
+  mrt = "PRÉ-AMAZÔNICO",,
   tipologia_de_uso = c("Agricultura", "Pecuária", "Mosaico de Vegetação (Pastagens Degradadas, Florestas Nativas Abertas e Vegetação com Babaçu)",
                        "Agricultura Moderna/Intensiva", "Pecuária com Baixo Nível Tecnológico", "Pecuária com Alto Nível Tecnológico",
                        "Agricultura Moderna Intensiva Regional Buriticupu", "Agricultura Moderna Intensiva Regional Imperatriz",
@@ -4342,8 +4191,8 @@ MRT01_2021 <- data.frame(
 )
 
 ### 2022 ####
-MRT01_2022 <- data.frame(
-  mrt = "01-PRÉ-AMAZÔNICO",
+MAMRT01_2022 <- data.frame(
+  mrt = "PRÉ-AMAZÔNICO",
   tipologia_de_uso = c("Geral", "Agricultura", "Pecuária", "Vegetação Nativa", "Agricola - Grãos Diversos - Capacidade Alta", "Agricola - Grãos Diversos - Capacidade Média", "Pecuária - Bovino - Pastagem Formada - Capacidade Alta", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Baixa", "Agricola - Grãos Diversos - Capacidade Alta - Polo Regional Buriticupu", "Agricola - Grãos Diversos - Capacidade Média - Polo Regional Buriticupu", "Agricola - Grãos Diversos - Capacidade Média - Polo Regional Zé Doca", "Pecuária - Bovino - Pastagem Formada - Capacidade Alta Polo Regional Buriticupu", "Pecuária - Bovino - Pastagem Formada - Capacidade Alta - Polo Regional Zé Doca", "Pecuária - Bovino - Pastagem Formada Capacidade Alta - Polo Regional Imperatriz", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Baixa - Polo Regional Buriticupu", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Baixa - Polo Regional Zé Doca", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Baixa - Polo Regional Imperatriz", "Vegetação Nativa - Floresta Amazônica/Floresta de Transição/Capoeira - Polo Regional Buriticupu", "Vegetação Nativa - Floresta Amazônica/Floresta de Transição/Capoeira - Polo Regional Imperatriz"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(11360.09, 20690.21, 10512.85, 3019.00, 42391.85, 20003.44, 14742.57, 6955.03, 42391.85, 19731.97, 20750.00, 12620.06, 12825.06, 16043.52, 6872.39, 5611.94, 9943.61, 2150.00, 3771.34),
@@ -4357,7 +4206,7 @@ MRT01_2022 <- data.frame(
 
 ###10.8 MRT 8 - SUL MARANHENSE ####
 ### 2018 ####
-MRT8_2018 <- data.frame(
+MAMRT8_2018 <- data.frame(
   mrt = "SUL MARANHENSE",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Agricultura", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual", "Vegetação Nativa", "Agricultura Moderna/Intensiva", "Agricultura Moderna/Intensiva até 30 km da margem da BR", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual na margem da BR ou MA", "Vegetação Nativa até 30 km da margem da BR ou MA"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
@@ -4371,8 +4220,8 @@ MRT8_2018 <- data.frame(
 )
 
 ### 2021 ####
-MRT04_2021 <- data.frame(
-  mrt = "PPR/MRT 04-SUL MARANHENSE",
+MAMRT04_2021 <- data.frame(
+  mrt = "SUL MARANHENSE",
   tipologia_de_uso = c(
     "Agricultura Moderna",
     "Pecuária",
@@ -4430,8 +4279,8 @@ MRT04_2021 <- data.frame(
 )
 
 ### 2022 ####
-MRT04_2022 <- data.frame(
-  mrt = "04-SUL DO MARANHÃO",
+MAMRT04_2022 <- data.frame(
+  mrt = "SUL MARANHENSE",
   tipologia_de_uso = c("Geral", "Agricola - Grãos Diversos", "Pecuária - Bovino - Pastagem Nativa/Formada", "Vegetação Nativa - Cerrado", "Agrícola - Grãos Diversos - Capacidade Alta", "Agricola - Grãos Diversos - Capacidade Baixa", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa", "Vegetação Nativa - Cerrado - Capacidade Alta", "Vegetação Nativa - Cerrado - Capacidade Baixa", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Balsas", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Colinas", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Porto Franco", "Agricola - Grãos Diversos - Capacidade Baixa - Polo Regional Balsas", "Agricola - Grãos Diversos - Capacidade Baixa - Polo Regional Colinas", "Agrícola - Grãos Diversos - Capacidade Baixa - Polo Regional Porto Franco", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Balsas", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Colinas", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Porto Franco", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Balsas", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Colinas", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Porto Franco", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Balsas", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Colinas", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Porto Franco", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Balsas", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Colinas", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Porto Franco"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(5083.31, 10967.87, 3549.09, 1774.31, 13994.19, 7664.11, 4669.60, 2739.83, 3478.60, 1033.49, 20216.35, 14087.24, 11585.56, 7691.51, 7375.00, 7918.95, 4612.50, 3941.13, 5637.29, 2286.28, 1764.00, 3593.27, 2377.16, 3108.75, 5225.25, 906.68, 1022.85, 1528.06),
@@ -4445,33 +4294,33 @@ MRT04_2022 <- data.frame(
 ### Consolidação dos dados #####
 
 MA2018 <- rbind(
-  MRT1_2018, 
-  MRT2_2018, 
-  MRT3_2018, 
-  MRT4_2018, 
-  MRT5_2018, 
-  MRT6_2018, 
-  MRT7_2018, 
-  MRT8_2018)
+  MAMRT1_2018, 
+  MAMRT2_2018, 
+  MAMRT3_2018, 
+  MAMRT4_2018, 
+  MAMRT5_2018, 
+  MAMRT6_2018, 
+  MAMRT7_2018, 
+  MAMRT8_2018)
 
 MA2021 <- rbind(
-  MRT01_2021, 
-  MRT02_2021,
-  MRT03_2021,
-  MRT04_2021, 
-  MRT05_2021, 
-  MRT06_2021, 
-  MRT07_2021)
+  MAMRT01_2021, 
+  MAMRT02_2021,
+  MAMRT03_2021,
+  MAMRT04_2021, 
+  MAMRT05_2021, 
+  MAMRT06_2021, 
+  MAMRT07_2021)
 
 MA22 <- rbind(
-  MRT01_2022,
-  MRT02_2022,
-  MRT03_2022,
-  MRT04_2022,
-  MRT05_2022,
-  MRT06_2022,
-  MRT07_2022,
-  MRT08_2022
+  MAMRT01_2022,
+  MAMRT02_2022,
+  MAMRT03_2022,
+  MAMRT04_2022,
+  MAMRT05_2022,
+  MAMRT06_2022,
+  MAMRT07_2022,
+  MAMRT08_2022
 )
 
 MA2018$ano <- 2018
@@ -4481,73 +4330,34 @@ MATEMPORAL <- rbind(MA22, MA2018, MA2021)
 MATEMPORAL$estado <- 21
 MATEMPORAL$regiao <- "nordeste"
 
-### Cidades - e indexação ####
-MATEMPORAL <- MATEMPORAL |> 
-  mutate(
-    # Etapa 1: Limpa os nomes e padroniza para um código numérico
-    mrt_padronizado = trimws(mrt), # Remove espaços antes e depois
-    mrt = case_when(
-      mrt_padronizado %in% c("SUL MARANHENSE", "PPR/MRT 04-SUL MARANHENSE", "04-SUL DO MARANHÃO") ~ 1201,
-      mrt_padronizado %in% c("TRANSICAO", "PPR/MRT 05-TRANSIÇÃO", "05-TRANSICAO") ~ 1202,
-      mrt_padronizado %in% c("COCAIS", "PPR/MRT 02-COCAIS", "02-COCAIS") ~ 1203,
-      mrt_padronizado %in% c("LITORAL ORIENTAL", "PPR/MRT 03-LITORAL ORIENTAL", "03-LITORAL ORIENTAL") ~ 1204,
-      mrt_padronizado %in% c("METROPOLITANA", "8-REGIÃO METROPOLITANA") ~ 1205,
-      mrt_padronizado %in% c("BAIXADA MARANHENSE", "PPR/MRT 07-BAIXADA MARANHENSE", "07-BAIXADA MARANHENSE") ~ 1206,
-      mrt_padronizado %in% c("PRÉ-AMAZÔNICO", "01-PRÉ-AMAZÔNICO", "PPR/MRT 01-PRÉ-AMAZÔNICO") ~ 1207,
-      mrt_padronizado %in% c("ITAPECURU-MIRIM", "PPR/MRT 06-ITAPECURU MIRIM", "06-ITAPECURU") ~ 1208,
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 1201 ~ "Campestre do Maranhão, Porto Franco, Lageado Novo, Carolina, Feira Nova do Maranhão, Fortaleza dos Nogueiras, São Pedro dos Crentes, Estreito, Formosa da Serra Negra, Tasso Fragoso, Balsas, Sambaíba, Riachão, São Raimundo das Mangabeiras, Loreto, Benedito Leite, São João dos Patos, Mirador, Colinas, Pastos Bons, Nova Iorque, Parnarama, Sucupira do Riachão, Passagem Franca, Jatobá, São Félix de Balsas",
-      mrt == 1202 ~ "Altamira do Maranhão, Arame, Bacabal, Barra do Corda, Bernardo do Mearim, Bom Lugar, Brejo de Areia, Dom Pedro, Esperantinópolis, Fernando Falcão, Formosa da Serra Negra, Fortuna, Gonçalves Dias, Governador Archer, Governador Eugênio Barros, Governador Luiz Rocha, Graça Aranha, Grajaú, Igarapé Grande, Itaipava do Grajaú, Jenipapo dos Vieiras, Joselândia, Lago da Pedra, Lago do Junco, Lago Verde, Lago dos Rodrigues, Lagoa Grande do Maranhão, Lima Campos, Marajá do Sena, Olho D'água das Cunhãs, Paulo Ramos, Pedreiras, Pindaré-Mirim, Pio XII, Poção de Pedras, Presidente Dutra, Santa Filomena do Maranhão, Santa Inês, Santo Antônio dos Lopes, São Domingos do Maranhão, São José dos Basílios, São Luís Gonzaga do Maranhão, São Mateus do Maranhão, São Raimundo do Doca Bezerra, São Roberto, Satubinha, Senador Alexandre Costa, Sítio Novo, Trizidela do Vale, Tuntum, Vitorino Freire",
-      mrt == 1203 ~ "Anapurus, Belágua, Brejo, Buriti, Chapadinha, Mata Roma, Milagres do Maranhão, São Benedito do Rio Preto, Urbano Santos, Alto Alegre do Maranhão, Capinzal do Norte, Codó, Coroatá, Peritoró, Timbiras, Afonso Cunha, Aldeias Altas, Coelho Neto, Duque Bacelar, Buriti Bravo, Caxias, Matões, Parnarama, São João do Soter, Timon",
-      mrt == 1204 ~ "Água Doce do Maranhão, Araioses, Axixá, Barreirinhas, Cachoeira Grande, Humberto de Campos, Icatu, Magalhães de Almeida, Morros, Paulino Neves, Presidente Juscelino, Primeira Cruz, Santa Quitéria do Maranhão, Santana do Maranhão, Santo Amaro do Maranhão, São Bernardo, Tutóia",
-      mrt == 1205 ~ "Paço do Lumiar, Raposa, São José de Ribamar, São Luís",
-      mrt == 1206 ~ "Anajatuba, Arari, Bela Vista do Maranhão, Cajari, Conceição do Lago Açu, Igarapé do Meio, Matinha, Monção, Nova Olinda do Maranhão, Palmeirândia, Pedro do Rosário, Penalva, Peri-Mirim, Pinheiro, Presidente Sarney, Santa Helena, São Bento, São João Batista, São Vicente de Ferrer, Viana, Vitória do Mearim, Alcântara, Apicum-Açu, Bacuri, Bacurituba, Bequimão, Cajapió, Cedral, Central do Maranhão, Cururupu, Guimarães, Mirinzal, Porto Rico do Maranhão, Serrano do Maranhão, Amapá do Maranhão, Cândido Mendes, Carutapera, Godofredo Viana, Luís Domingues, Turiaçu, Turilândia",
-      mrt == 1207 ~ "Açailândia, Alto Alegre do Pindaré, Amarante do Maranhão, Araguanã, Boa Vista do Gurupi, Bom Jardim, Bom Jesus das Selvas, Buriticupu, Buritirana, Centro do Guilherme, Centro Novo do Maranhão, Cidelândia, Davinópolis, Governador Edson Lobão, Governador Newton Bello, Governador Nunes Freire, Imperatriz, Itinga do Maranhão, João Lisboa, Junco do Maranhão, Lajeado Novo, Maracaçumé, Maranhãozinho, Montes Altos, Nova Olinda do Maranhão, Presidente Médici, Ribamar Fiquene, Santa Luzia, Santa Luzia do Paruá, São Francisco do Brejão, São João do Carú, São Pedro da Água Branca, Senador La Rocque, Tufilândia, Vila Nova dos Martírios, Zé Doca",
-      mrt == 1208 ~ "Bacabeira, Cantanhede, Itapecuru-Mirim, Matões do Norte, Miranda do Norte, Nina Rodrigues, Pirapemas, Presidente Vargas, Rosário, Santa Rita, Vargem Grande",
-      .default = NA_character_
-    )
-  ) |> 
-  select(-mrt_padronizado) # Remove a coluna auxiliar/
+
 
 #### 11. DADOS RAMT - MT ####
+#2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr13_2018.ods
+#2019:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr13_2019.xls
+#2023:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SR_13_MT_2023.pdf
+#2024:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SR_13_MT_2024.pdf
 #Houve uma quantidade gigantesca de mudanças ao longo dos anos.
 #Entre 2018 e 2019:
-  
-  #A estrutura geral dos MRTs permaneceu muito parecida, com apenas pequenas trocas de municípios:
-  
-  #MRT 4 e 5: O município de Jaciara estava no MRT 4 em 2018 e passou para o MRT 5 em 2019. Em contrapartida, 
-
+#A estrutura geral dos MRTs permaneceu muito parecida, com apenas pequenas trocas de municípios:
+#MRT 4 e 5: O município de Jaciara estava no MRT 4 em 2018 e passou para o MRT 5 em 2019. Em contrapartida, 
 #Dom Aquino estava no MRT 5 em 2018 e foi para o MRT 4 em 2019.
-
 #MRT 6 e 7: O município de Canabrava do Norte estava no MRT 6 em 2018 e foi movido para o MRT 7 em 2019.
-
 #MRT 8: O município de Santo Antônio de Leverger não estava listado em 2018, mas foi incluído no relatório de 2019.
-
 #Entre 2019 e 2023/2024:
-  
 #Ocorreu uma reorganização significativa, alterando a composição da maioria dos mercados.
-
-  
 # MRT 2 (Centro): Expandiu de 10 para 16 municípios.
-
 #MRT 3 (Parecis): Foi reconfigurado, perdendo os municípios de Primavera do Leste e Campo Verde para o MRT 5 e ganhando outros como Arenápolis e Nortelândia.
-
 #MRT 4 (Médio Araguaia): Foi reduzido de 21 para 16 municípios, com vários sendo realocados para os MRTs 5 e 8.
-
 #MRT 5 (Sul): Foi o que mais cresceu, passando de 10 para 17 municípios, absorvendo cidades dos MRTs 3 e 4.
-
 #MRT 8 (Pantanal): Foi significativamente reduzido, de 21 para 15 municípios, com cidades sendo transferidas para os MRTs 3 e 9.
-
 #MRT 9 (Capital): Dobrou de tamanho, de 3 para 6 municípios, incorporando cidades que antes pertenciam ao MRT 8.
 
 
 
 #MRT 01 - Apiacás,Aripuanã, Colniza, Cotriguaçu, Juruena, Nova Bandeirantes, Nova Monte Verde e Rondolândia.
 # MRT 1
-## 1.1 Região 1 ####
+## 11.1 Região 1 ####
 ## 2018 ####
 MTMRT1_2018 <- data.frame(
   mrt = 1,
@@ -4607,7 +4417,7 @@ MTMRT1_2024 <- data.frame(
 )
 
 
-## 1.2 Região 2 ####
+## 11.2 Região 2 ####
 #MRT2 - São José do Rio Claro, Lucas do Rio Verde, Nova Mutum, Nova Ubiratã, Sorriso, Tapurah, Ipiranga do Norte, Santa Rita do Trivelato, Sinop, Vera
 
 ## 2018 ####
@@ -4672,7 +4482,7 @@ MTMRT2_2024 <- data.frame(
   origem = "Santa Carmem, Cláudia, Feliz Natal, União do Sul, Tabaporã, Itanhangá, Ipiranga do Norte, Lucas do Rio Verde, Nova Mutum, Nova Ubiratã, Santa Rita do Trivelato, São José do Rio Claro, Sinop, Sorriso, Tapurah e Vera"
 )
 
-## 1.3 Região 3 ####
+## 11.3 Região 3 ####
 #MRT 3 -Brasnorte, Campo Novo dos Parecis, Sapezal, Campos de Júlio, Diamantino, Nova Maringá, Tangará da Serra, Santo Antônio do Leste, Primavera do Leste, Campo Verde.
 
 ## 2018 ####
@@ -4729,7 +4539,7 @@ MTMRT3_2024 <- data.frame(
   origem = "Brasnorte, Campo Novo do Parecis, Sapezal, Campos de Júlio, Diamantino, Nova Maringá, Tangará da Serra, Santo Afonso, Nova Marilândia, Nortelândia e Arenápolis."
 )
 
-## 1.4 Região 4 ####
+## 11.4 Região 4 ####
 #MRT 4 - Planalto da Serra, Nova Brasilândia, Paranatinga, Gaúcha do Norte,
 #Alto Boa Vista, Bom Jesus do Araguaia, Ribeirão Cascalheira, Novo São
 #Joaquim, Querência, Campinápolis, Canarana, Água Boa, Nova Xavantina,
@@ -4793,7 +4603,7 @@ MTMRT4_2024 <- data.frame(
   origem = "Paranatinga, Gaúcha do Norte, Planalto da Serra, Nova Brasilândia, Alto Boa Vista, Bom Jesus do Araguaia, Ribeirão Cascalheira, Água Boa, Campinápolis, Canarana, Nova Xavantina, Novo São Joaquim, Querência, Barra do Garças, Chapada dos Guimarães e General Carneiro."
 )
 
-## 1.5 Região 5 ####
+## 11.5 Região 5 ####
 #MRT 5 -Rondonópolis, São Pedro da Cipa, Pedra Preta, São José do Povo, Juscimeira, Itiquira, Dom Aquino, Alto Garça, Alto Taquari, Alto Araguaia.
 MTMRT5_2018 <- data.frame(
   mrt = 5,
@@ -4848,7 +4658,7 @@ MTMRT5_2024 <- data.frame(
   origem = "Rondonópolis, São Pedro da Cipa, Pedra Preta, São José do Povo, Juscimeira, Itiquira, Dom Aquino, Alto Garças, Alto Taquari, Alto Araguaia, Primavera do Leste, Campo Verde, Santo Antônio do Leste, Guiratinga, Tesouro, Poxoréo e Jaciara. "
 )
 
-## 1.6 Região 6 ####
+## 11.6 Região 6 ####
 #MRT 6 -Carlinda, Alta Floresta, Paranaíta, Novo Mundo, Guarantã do Norte,
 #Colíder, Terra Nova do Norte, Nova Canaã do Norte, Nova Guarita, Matupá,
 #Tabaporã, Marcelândia, Santa Carmem, Cláudia, Nova Santa Helena, Itaúba,
@@ -4908,7 +4718,7 @@ MTMRT6_2024 <- data.frame(
   origem = "Alta Floresta, Carlinda, Paranaíta, Novo Mundo, Guarantã do Norte, Colíder, Terra Nova do Norte, Nova Canaã do Norte, Nova Guarita, Matupá, Marcelândia, Nova Santa Helena, Itaúba, Peixoto de Azevedo"
 )
 
-## 1.7 Região 7 ####
+## 11.7 Região 7 ####
 #MRT 7 -Peixoto de Azevedo, União do Sul, Feliz Natal, Vila Rica, Santa Cruz
 #do Xingú, Novo Santo Antônio, São José do Xingu, Serra Nova Dourada,
 #Confresa, Luciara, Santa Teresinha, São Félix do Araguaia, Porto Alegre do
@@ -4969,7 +4779,7 @@ MTMRT7_2024 <- data.frame(
   origem = "Vila Rica, Santa Cruz do Xingú, Novo Santo Antônio,São José do Xingu, Serra Nova Dourada, Confresa, Luciara, Santa Terezinha, São Félix do Araguaia, Porto Alegre do Norte, Nova Nazaré, Araguaiana, Cocalinho, Ribeirãozinho, Torixoréu, Araguainha, Pontal do Araguaia"
 )
 
-## 1.8 Região 8 ####
+## 11.8 Região 8 ####
 #MRT 8 -Nobres, Denise, Nova Olímpia, Porto Estrela, Barra do Bugres,
 #Mirassol d´ Oeste, Curvelândia, Rio Branco, Salto do Céu, Lambari d’ Oeste,
 #Nortelândia, Arenápolis, Alto Paraguai, Santo Afonso, Nova Marilândia, Rosário
@@ -5088,7 +4898,7 @@ MTMRT9_2024 <- data.frame(
   origem = "Rosário Oeste, Nobres,Acorizal, Jangada, Cuiabáe Várzea Grande."
 )
 
-## 1.10 Região 10 ####
+## 11.10 Região 10 ####
 #MRT 10 -Juina, Castanheira, Comodoro, Juara, Novo Horizonte do Norte, Porto dos Gaúchos, Itanhangá.
 
 ## 2018 ####
@@ -5145,7 +4955,7 @@ MTMRT10_2024 <- data.frame(
   origem = "Juina, Castanheira, Comodoro, Juara, Novo Horizonte do Norte, Porto dos Gaúchos, Itanhangá."
 )
 
-## 1.11 Região 11 ####
+## 11.11 Região 11 ####
 #MRT 11 - Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale
 #do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste,
 #Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto
@@ -5249,8 +5059,7 @@ MRTMT23 <- rbind(
   MTMRT11_2023
 )
 MRTMT23$ano <- 2023
-MRTMT23$estado <- "MT"
-MRTMT23$regiao<- "Centro-Oeste"
+
 
 
 MRTMT19 <- rbind(
@@ -5258,8 +5067,7 @@ MRTMT19 <- rbind(
   MTMRT6_19, MTMRT7_19, MTMRT8_19, MTMRT9_19, MTMRT10_19, MTMRT11_2019
 )
 MRTMT19$ano <- 2019
-MRTMT19$estado <- "MT"
-MRTMT19$regiao <- "Centro-Oeste"
+
 
 MRTMT18 <- rbind(
   MTMRT1_2018, 
@@ -5274,58 +5082,34 @@ MRTMT18 <- rbind(
   MTMRT10_2018
 )
 MRTMT18$ano <- 2018
-MRTMT18$estado <- "MT"
 MRTMT18$regiao <- "Centro-Oeste"
 
 #Junção de tudo
-MTTEMPO <- rbind( MRTMT23, MRTMT18, MRTMT19, MRTMT24)
-MTTEMPO$estado <- 51
-
+MTTEMPORAL <- rbind( MRTMT23, MRTMT18, MRTMT19, MRTMT24)
+MTTEMPORAL$estado <- 51
+MTTEMPORAL$regiao <- "Centro Oeste"
 #Associação cidades mercados (O formato adotado aqui é distinto dos outros df montados)
 #padronização para índice do atlas do mercado de terras.
 
-MTTEMPO$mrt[MTTEMPO$mrt == 1] <- 1311
-MTTEMPO$mrt[MTTEMPO$mrt == 2] <- 1309
-MTTEMPO$mrt[MTTEMPO$mrt == 3] <- 1303
-MTTEMPO$mrt[MTTEMPO$mrt == 4] <- 1305
-MTTEMPO$mrt[MTTEMPO$mrt == 5] <- 1306
-MTTEMPO$mrt[MTTEMPO$mrt == 6] <- 1308
-MTTEMPO$mrt[MTTEMPO$mrt == 7] <- 1307
-MTTEMPO$mrt[MTTEMPO$mrt == 8] <- 1301
-MTTEMPO$mrt[MTTEMPO$mrt == 9] <- 1304
-MTTEMPO$mrt[MTTEMPO$mrt == 10] <- 1310
-MTTEMPO$mrt[MTTEMPO$mrt == 11] <- 1302
+MTTEMPO$mrt[MTTEMPO$mrt == 1] <- "Terras Noroeste"
+MTTEMPO$mrt[MTTEMPO$mrt == 2] <- "Terras Centro"
+MTTEMPO$mrt[MTTEMPO$mrt == 3] <- "Terras Parecis"
+MTTEMPO$mrt[MTTEMPO$mrt == 4] <- "Terras Medio Araguaia"
+MTTEMPO$mrt[MTTEMPO$mrt == 5] <- "Terras Sul"
+MTTEMPO$mrt[MTTEMPO$mrt == 6] <- "Terras Norte" 
+MTTEMPO$mrt[MTTEMPO$mrt == 7] <- "Terras Norte Araguaia" 
+MTTEMPO$mrt[MTTEMPO$mrt == 8] <- "Terras Pantanal"
+MTTEMPO$mrt[MTTEMPO$mrt == 9] <- "Terras Capital"
+MTTEMPO$mrt[MTTEMPO$mrt == 10] <-"Terras Oeste" 
+MTTEMPO$mrt[MTTEMPO$mrt == 11] <- "Terras Sudoeste"
 
-#Associação código mrt atlas - cidade.
-MTTEMPO <- MTTEMPO |> mutate(  
-  cidades = case_when
-  (
-    mrt == 1311 ~ "Aripuanã, Colniza, Rondolândia, Cotriguaçu, Juruena, Nova Monte Verde, Nova Bandeirante, Apiacás.",
-    
-    mrt == 1309 ~ "São José do Rio Claro, Lucas do Rio Verde, Nova Mutum, Nova Ubiratã, Sorriso, Tapurah,Ipiranga do Norte, Santa Rita do Trivelato, Sinop, Vera.",
-    
-    mrt == 1303 ~ "Brasnorte, Campo Novo dos Parecis, Sapezal, Campos de Júlio, Diamantino, Nova Maringá, Tangará da Serra, Santo Antônio do Leste, Primavera do Leste e Campo Verde.",
-    
-    mrt == 1305 ~ "Planalto da Serra, Nova Brasilândia, Paranatinga, Gaúcha do Norte, Alto Boa Vista, Bom Jesus do Araguaia, Ribeirão Cascalheira, Novo São Joaquim, Querência, Campinápolis, Canarana, Água Boa, Nova Xavantina, Barra do Garças, Santo Antônio de Leverger, Chapada dos Guimarães, Guiratinga, Tesouro, Poxoréu, General Carneiro, Jaciara.",
-    
-    mrt ==1306 ~ "Rondonópolis, São Pedro da Cipa, Pedra Preta, São José do Povo, Juscimeira, Itiquira, Dom Aquino, Alto Garça, Alto Taquari, Alto Araguaia.",
-    
-    mrt == 1308 ~ "Carlinda, Alta Floresta, Paranaíta, Novo Mundo, Guarantã do Norte, Colíder, Terra Nova do Norte, Nova Canaã do Norte, Nova Guarita, Matupá, Tabaporã, Marcelândia, Santa Carmem,Cláudia, Nova Santa Helena, Itaúba, Canabrava do Norte.",
-    
-    mrt == 1307 ~ "Peixoto de Azevedo, União do Sul, Feliz Natal, Vila Rica, Santa Cruz do Xingú, Novo Santo Antônio, São José do Xingu, Serra Nova Dourada, Confresa, Luciara, Santa Teresinha, São Félix do Araguaia, Porto Alegre do Norte, Nova Nazaré, Araguaiana, Cocalinho, Ribeirãozinho, Torixoréu, Araguainha, Pontal do Araguaia, Ponte Branca.",
-    
-    mrt == 1301 ~ "Nobres, Denise, Nova Olímpia, Porto Estrela, Barra do Bugres, Mirassol D´Oeste, Curvelândia, Rio Branco, Salto do Céu, Lambari D’Oeste, Nortelândia, Arenápolis, Alto Paraguai, Santo Afonso, Nova Marilândia, Rosário D’Oeste, Jangada, Nossa Senhora do Livramento, Cáceres, Poconé, Barão de Melgaço.",
-    
-    mrt == 1304 ~ "Acorizal, Cuiabá, Várzea Grande.",
-    
-    mrt == 1310 ~ "Juina, Castanheira, Comodoro, Juara, Novo Horizonte do Norte, Porto dos Gaúchos, Itanhangá.",
-    
-    
-    mrt ==1302 ~ "Vila Bela da Santíssima Trindade, Pontes e Lacerda, Conquista D’Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis D’Oeste, Porto Esperidião."
-  ))
 
 
 ## 12.Minas Gerais #####
+#Esses mercados não estão agrupados no formato modular, pois houve muita instabilidade e mudanças nos mercados de terra.
+###12.1 2020 ####
+#2020:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr06_2020.ods
+#2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_PPR_MG_2022.pdf
 MGMRT01_2020 <- data.frame(
   mrt = "Ituiutaba - Ituiutaba, Limeira D’Oeste, Santa",
   tipologia_de_uso = c("Triângulo/Ituiutaba/Geral", "Ituiutaba – Culturas Anuais", "Ituiutaba – Exploração Mista (pastagens e culturas)", "Ituiutaba – Pecuária"),
@@ -5656,6 +5440,7 @@ MG2020 <- rbind(MGMRT01_2020,
 # Extração de dados do documento ppr_sr06_2020 (1) - RAMT MG .pdf
 
 
+###12.2 2022 ####
 MGMRT_Divinopolis_2022 <- data.frame(
   mrt = "Divinópolis",
   tipologia_de_uso = c("Geral", "Pecuaria", "Exploracao Mista", "Pecuaria Bovino-Pastagem Formada", "Exploracao Mista-Agricola Pastagem", "Exploracao Mista-Pastagem+Floresta Plantada"),
@@ -5666,7 +5451,7 @@ MGMRT_Divinopolis_2022 <- data.frame(
   vtn_media = c(25033.41, 19551.36, 26799.26, 19551.36, 30948.77, 13313.34),
   vtn_minimo = c(22155.82, 18012.04, 25095.07,18012.04  , 26970.32, 12442.33),
   vtn_maximo = c(27911.00, 21090.68, 28503.45, 21090.68, 34927.22, 15126.50),
-  origem = ""
+  origem = "Abaeté, Divinópolis, Dores do Indaiá, Formiga, Oliveira e Pará de Minas." #aqui só tinha as regiões em uma imagem, infelizmente não tinha por extenso como os demais.
   
 )
 
@@ -5835,54 +5620,24 @@ MG22 <- rbind(
   MGMRT_Patos_de_Minas_2022
 )
 
-MG2020$ano <- 2022
-MG22$estado <- 31
-MG22 <- MG22 |>
-  
-  mutate(
-    mrt= case_when(
-      # Mapeamentos diretos
-      mrt == "Divinópolis"                 ~ 605,
-      mrt == "Pouso Alegre"                  ~ 607,
-      mrt == "Barbacena"                     ~ 608,
-      mrt == "Varginha"                      ~ 606,
-      mrt == "Montes Claros"                ~ 601,
-      mrt == "Governador Valadares"         ~ 612,
-      mrt == "Patos de Minas"                ~ 602,
-      
-      # Mapeamentos baseados nos municípios contidos em cada MRT do Atlas
-      mrt == "Uberlândia"                   ~ 603,
-      mrt == "Ituiutaba"                     ~ 603, # Município do MRT Uberlândia
-      mrt == "Uberaba"                      ~ 604,
-      mrt == "Araxá"                         ~ 604, # Município do MRT Uberaba
-      mrt == "Paracatu"                      ~ 602, # Município do MRT Patos de Minas
-      mrt == "João Pinheiro"                 ~ 602, # Município do MRT Patos de Minas
-      mrt == "São Romão"                     ~ 601, # Município do MRT Montes Claros
-      mrt == "Januária"                      ~ 601, # Município do MRT Montes Claros
-      mrt == "Janaúba"                       ~ 601, # Município do MRT Montes Claros
-      mrt == "Pirapora"                      ~ 601, # Município do MRT Montes Claros
-      mrt == "Metropolitana IV"              ~ 610, # Região de BH, corresponde ao MRT Três Marias
-      mrt == "Curvelo"                       ~ 610, # Município do MRT Três Marias
-      mrt == "Caratinga"                     ~ 611, # Município do MRT Timóteo
-      mrt == "Aimorés"                       ~ 612, # Município do MRT Gov. Valadares
-      mrt == "Guanhães"                      ~ 612, # Município do MRT Gov. Valadares
-      mrt == "Parcial Norte - Juiz de Fora"  ~ 609, # Corresponde ao MRT Juiz de Fora
-      mrt == "Jequitinhonha 1 Almenara"    ~ 613, # Todos Jequitinhonha/Mucuri mapeiam para o MRT-613
-      mrt == "Jequitinhonha 2 Araçuai"     ~ 613,
-      mrt == "Jequitinhonha 3 Capelinha"    ~ 613,
-      mrt == "Jequitinhonha 4 Diamantina"   ~ 613,
-      mrt == "Mucuri 1 Carlos Chagas"      ~ 613,
-      mrt == "Mucuri 2 Teofilo Otoni"      ~ 613,
-    )
-  )
+MG2020$ano <- 2020
+MG22$ano <- 2022
+
+MGTEMPORAL <- rbind(MG2020, MG22)
+MGTEMPORAL$estado <- 31 
+MGTEMPORAL$regiao <- "sudeste" 
 
 
 
 ## 13.0 DADOS RAMT MS ####
-### MRT1 - Dourados ####
+#2017:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ramt_sr16_2017.pdf
+#2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr16_2018.ods
+#2020:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ramt_sr16_2020.pdf
+#Na PPR de 2018 iguatemi não tem as cidades discrimidas, assim, duplicou-se as de 2017/2020
+### 13.1 MRT1 - Dourados ####
 ### 2017 ####
 MSMRT1_2017 <- data.frame(
-  mrt = "Dourados, Douradina e Itaporã",
+  mrt = " MRT-1 – Dourados ",
   tipologia_de_uso = c("Lavoura", "Lavoura de Alta Produtividade", "Lavoura de Alta Produtividade Douradina e Itaporã"),
   nivel = c(1, 2, 3),
   vti_media = c(26421.00, 26754.00, 29461.00),
@@ -5895,7 +5650,7 @@ MSMRT1_2017 <- data.frame(
 )
 ### 2018 ####
 MSMRT01_2018 <- data.frame(
-  mrt = "Dourados, Douradina e Itaporã",
+  mrt = " MRT-1 – Dourados ",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Lavoura de Alta Produtividade", "Lavoura de Alta Produtividade (Douradina e Itaporã)"),
   nivel = c(0, 2, 2, 2),
   vti_media = c(26530.0, 26421.0, 26754.0, 29461.0),
@@ -5908,7 +5663,7 @@ MSMRT01_2018 <- data.frame(
 )
 ### 2020 ####
 MSMRT1_2020 <- data.frame(
-  mrt = "Dourados, Douradina e Itaporã",
+  mrt = " MRT-1 – Dourados ",
   tipologia_de_uso = c("Lavoura", "Lavoura de Alta Produtividade"),
   nivel = c(1, 2),
   vti_media = c(45961.00, 50179.00),
@@ -5920,10 +5675,10 @@ MSMRT1_2020 <- data.frame(
   origem = "Itaporã, Douradina e Dourados"
 )
 
-#### MRT 02 - TRÊS LAGOAS ####
+#### 13.2 MRT 02 - TRÊS LAGOAS ####
 #### 2017 ####
 MSMRT2_2017 <- data.frame(
-  mrt = "Três Lagoas, Água Clara, Brasilândia, Ribas do Rio Pardo e Santa Rita do Pardo",
+  mrt = "MRT-2 – Três Lagoas",
   tipologia_de_uso = c("Pecuária", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 2, 2, 2),
   vti_media = c(8389.00, 9989.00, 8279.00, 7124.00),
@@ -5936,7 +5691,7 @@ MSMRT2_2017 <- data.frame(
 )
 #### 2018 ####
 MSMRT02_2018 <- data.frame(
-  mrt = "Três Lagoas, Água Clara, Brasilândia, Ribas do Rio Pardo e Santa Rita do Pardo",
+  mrt = "MRT-2 – Três Lagoas",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(0, 2, 2, 2, 2),
   vti_media = c(8389.0, 8389.0, 9989.0, 8279.0, 7124.0),
@@ -5949,7 +5704,7 @@ MSMRT02_2018 <- data.frame(
 )
 #### 2020 ####
 MSMRT2_2020 <- data.frame(
-  mrt = "Três Lagoas, Agua Clara, Brasilandia, Ribas do Rio Pardo e Santa Rita do Pardo",
+  mrt =  "MRT-2 – Três Lagoas",
   tipologia_de_uso = c("Pecuária", "Silvicultura", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 1, 2, 2, 2),
   vti_media = c(10807.00, 10416.00, 16156.00, 13679.00, 9051.00),
@@ -5961,10 +5716,10 @@ MSMRT2_2020 <- data.frame(
   origem = "Água Clara, Brasilândia, Ribas do Rio Pardo, Santa Rita do Pardo e Três Lagoas."
 )
 
-### MRT03 - Campo Grande####
+### 13.3 MRT03 - Campo Grande####
 #### 2017 ####
 MSMRT3_2017 <- data.frame(
-  mrt = "Campo Grande, Bandeirantes, Corguinho, Dois Irmãos do Buriti, Jaraguari, Rio Negro, Rochedo, São Gabriel do Oeste e Terenos",
+  mrt = "MRT03 - Campo Grande",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Lavoura de Média Produtividade", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte", "Lavoura de Alta Produtividade Bandeirantes, Terenos e Dois Irmãos do Buriti", "Lavoura de Média produtividade Bandeirantes, Terenos e Dois Irmãos do Buriti"),
   nivel = c(1, 1, 2, 2, 2, 2, 2, 3, 3),
   vti_media = c(15816.00, 10592.00, 21632.00, 13827.00, 14740.00, 10718.00, 5813.00, 21632.00, 13827.00),
@@ -5977,7 +5732,7 @@ MSMRT3_2017 <- data.frame(
 )
 #### 2018 ####
 MSMRT03_2018 <- data.frame(
-  mrt = "Campo Grande, Bandeirantes, Corguinho, Dois Irmãos do Buriti, Jaraguari, Rio Negro, Rochedo, São Gabriel do Oeste e Terenos",
+  mrt = "MRT03 - Campo Grande",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Lavoura de Média Produtividade", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte", "Lavoura de Alta Produtividade (Bandeirantes, Terenos e Dois Irmãos do Buriti)", "Lavoura de Media Produtividade (Bandeirantes, Terenos e Dois Irmãos do Buriti)"),
   nivel = c(0, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(11539.0, 15816.0, 10592.0, 21632.0, 13827.0, 14740.0, 10718.0, 5813.0, 21632.0, 13827.0),
@@ -5991,7 +5746,7 @@ MSMRT03_2018 <- data.frame(
 
 #### 2020 ####
 MSMRT3_2020 <- data.frame(
-  mrt = "Campo Grande, Bandeirantes, Corguinho, Dois Irmãos do Buriti, Jaraguari, Rio Negro, Rochedo, São Gabriel do Oeste e Terenos",
+  mrt = "MRT03 - Campo Grande",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte próximo a Campo Grande"),
   nivel = c(1, 1, 2, 2, 2, 2, 3),
   vti_media = c(44134.00, 12571.00, 44134.00, 18653.00, 12810.00, 7783.00, 28320.00),
@@ -6003,10 +5758,10 @@ MSMRT3_2020 <- data.frame(
   origem = "Bandeirantes, Campo Grande, Corguinho, Dois Irmãos do Buriti, Jaraguari, Rio Negro, Rochedo, São Gabriel do Oeste e Terenos."
 )
 
-### MRT04 - Terras de Coxim ####
+### 13.4 MRT04 - Terras de Coxim ####
 #### 2017 ####
 MSMRT4_2017 <- data.frame(
-  mrt = "Coxim, Alcinópolis, Camapua, Figueirão, Pedro Gomes, Rio Verde de Mato Grosso e Sonora",
+  mrt = "MRT04 - Terras de Coxim",
   tipologia_de_uso = c("Pecuária", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 2, 2),
   vti_media = c(7459.00, 9039.00, 6434.00),
@@ -6020,7 +5775,7 @@ MSMRT4_2017 <- data.frame(
 
 #### 2018 ####
 MSMRT04_2018 <- data.frame(
-  mrt = "Coxim, Alcinópolis, Camapuã, Figueirão, Pedro Gomes, Rio Verde de Mato Grosso e Sonora",
+  mrt = "MRT04 - Terras de Coxim",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(0, 2, 2, 2),
   vti_media = c(7459.0, 7459.0, 9039.0, 6434.0),
@@ -6035,7 +5790,7 @@ MSMRT04_2018 <- data.frame(
 
 #### 2020 ####
 MSMRT4_2020 <- data.frame(
-  mrt = "Coxim, Alcinópolis, Camapua, Figueirão, Pedro Gomes, Rio Verde de Mato Grosso e Sonora",
+  mrt = "MRT04 - Terras de Coxim",
   tipologia_de_uso = c("Pecuária", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 2, 2),
   vti_media = c(10891.00, 11605.00, 7420.00),
@@ -6048,10 +5803,10 @@ MSMRT4_2020 <- data.frame(
 )
 
 
-#### MRT5 - CHAPADÃO DO SUL####
+#### 13.5 MRT5 - CHAPADÃO DO SUL####
 #### 2017 ####
 MSMRT5_2017 <- data.frame(
-  mrt = "Chapadão do Sul, Costa Rica e Paraiso das Aguas",
+  mrt = "MRT5 - CHAPADÃO DO SUL",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Lavoura de Média Produtividade", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte", "Lavoura de Alta Produtividade Chapadão do Sul"),
   nivel = c(1, 1, 2, 2, 2, 2, 3),
   vti_media = c(28521.00, 8246.00, 33592.00, 17885.00, 8924.00, 6891.00, 31393.00),
@@ -6065,7 +5820,7 @@ MSMRT5_2017 <- data.frame(
 
 #### 2018 ####
 MSMRT05_2018 <- data.frame(
-  mrt = "Chapadão do Sul, Costa Rica e Paraíso das Águas",
+  mrt = "MRT5 - CHAPADÃO DO SUL",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Lavoura de Média Produtividade", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte", "Lavoura de Alta Produtividade (Chapadão do Sul)"),
   nivel = c(0, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(9924.0, 28521.0, 8246.0, 33592.0, 17885.0, 8924.0, 6891.0, 31393.0),
@@ -6079,7 +5834,7 @@ MSMRT05_2018 <- data.frame(
 
 #### 2020 ####
 MSMRT5_2020 <- data.frame(
-  mrt = "Chapadão do Sul, Costa Rica e Paraíso das Águas",
+  mrt = "MRT5 - CHAPADÃO DO SUL",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Lavoura de Média Produtividade", "Lavoura de Alta Produtividade no municipio de Chapadão Sul"),
   nivel = c(1, 1, 2, 2, 3),
   vti_media = c(22314.00,8490.00,  62320.00, 20986.00, 62320.00),
@@ -6091,10 +5846,10 @@ MSMRT5_2020 <- data.frame(
   origem = "Chapadão do Sul, Costa Rica e Paraíso das Águas"
 )
 
-#### MRT6 - PARNAIBA ####
+#### 13.6 MRT6 - PARNAIBA ####
 #### 2017 ####
 MSMRT6_2017 <- data.frame(
-  mrt = "Paranaiba, Aparecida do Taboado, Cassilândia, Inocência e Selviria",
+  mrt = "MRT6 - PARNAIBA",
   tipologia_de_uso = c("Pecuária", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte"),
   nivel = c(1, 2, 2),
   vti_media = c(9906.00, 12149.00, 9345.00),
@@ -6108,7 +5863,7 @@ MSMRT6_2017 <- data.frame(
 
 #### 2018 ####
 MSMRT06_2018 <- data.frame(
-  mrt = "Paranaíba, Aparecida do Taboado, Cassilândia, Inocência e Selvíria",
+  mrt = "MRT6 - PARNAIBA",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte"),
   nivel = c(0, 2, 2, 2),
   vti_media = c(9906.0, 9906.0, 12149.0, 9345.0),
@@ -6122,7 +5877,7 @@ MSMRT06_2018 <- data.frame(
 
 #### 2020 ####
 MSMRT6_2020 <- data.frame(
-  mrt = "Paranaíba, Aparecida do Taboado, Cassilândia, Inocência e Selviria",
+  mrt = "MRT6 - PARNAIBA",
   tipologia_de_uso = c("Pecuária", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte"),
   nivel = c(1, 2, 2),
   vti_media = c(11181.00, 12947.00, 10481.00),
@@ -6134,10 +5889,10 @@ MSMRT6_2020 <- data.frame(
   origem = "Aparecida do Taboado, Cassilândia, Inocência, Paranaíba e Selvíria."
 )
 
-#### MRT7 - SIDROLÂNDIA ####
+####13.7 MRT7 - SIDROLÂNDIA ####
 #### 2017 ####
 MSMRT7_2017 <- data.frame(
-  mrt = "Sidrolândia, Angélica e Nova Alvorada do Sul",
+  mrt = "MRT7 - SIDROLÂNDIA",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Lavoura de Alta Produtividade - Angélica", "Lavoura de Alta Produtividade - Sidrolândia"),
   nivel = c(1, 1, 2, 2, 2, 3, 3),
   vti_media = c(22031.00, 14710.00, 22538.00, 17565.00, 12588.00, 19466.00, 25610.00),
@@ -6151,7 +5906,7 @@ MSMRT7_2017 <- data.frame(
 
 #### 2018 ####
 MSMRT07_2018 <- data.frame(
-  mrt = "Sidrolândia, Angélica e Nova Alvorada do Sul",
+  mrt = "MRT7 - SIDROLÂNDIA",,
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Lavoura de Alta Produtividade (Angélica)", "Lavoura de Alta Produtividade (Sidrolândia)"),
   nivel = c(0, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(17372.0, 22031.0, 14710.0, 22538.0, 17565.0, 12588.0, 19466.0, 25610.0),
@@ -6166,7 +5921,7 @@ MSMRT07_2018 <- data.frame(
 
 #### 2020 ####
 MSMRT7_2020 <- data.frame(
-  mrt = "Sidrolândia, Angélica e Nova Alvorada do Sul",
+  mrt = "MRT7 - SIDROLÂNDIA",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte"),
   nivel = c(1, 1, 2, 2),
   vti_media = c(33205.00, 17180.00, 37183.00, 15594.00),
@@ -6179,10 +5934,10 @@ MSMRT7_2020 <- data.frame(
 
 )
 
-#### MRT8 - MARACAJU ####
+####13.8 MRT8 - MARACAJU ####
 #### 2017 ####
 MSMRT8_2017 <- data.frame(
-  mrt = "Maracaju, Ponta Pora e Rio Brilhante",
+  mrt = "MRT8 - MARACAJU",
   tipologia_de_uso = c("Lavoura", "Lavoura de Alta Produtividade"),
   nivel = c(1, 2),
   vti_media = c(25338.00, 25338.00),
@@ -6196,7 +5951,7 @@ MSMRT8_2017 <- data.frame(
 
 #### 2018 ####
 MSMRT08_2018 <- data.frame(
-  mrt = "Maracaju, Ponta Porã e Rio Brilhante",
+  mrt = "MRT8 - MARACAJU",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Lavoura de Alta Produtividade"),
   nivel = c(0, 2, 2),
   vti_media = c(23231.0, 25338.0, 25338.0),
@@ -6210,7 +5965,7 @@ MSMRT08_2018 <- data.frame(
 
 #### 2020 ####
 MSMRT8_2020 <- data.frame(
-  mrt = "Maracaju, Ponta Pora e Rio Brilhante",
+  mrt = "MRT8 - MARACAJU",
   tipologia_de_uso = c("Lavoura", "Lavoura de Alta Produtividade", "Lavoura de Média Produtividade"),
   nivel = c(1, 2, 2),
   vti_media = c(32007.00, 36131.00, 24036.00),
@@ -6222,10 +5977,10 @@ MSMRT8_2020 <- data.frame(
   origem = "Maracaju, Ponta Porã e Rio Brilhante."
 )
 
-#### MRT9 - Corumbá ####
+####13.9 MRT9 - Corumbá ####
 #### 2017 ####
 MSMRT9_2017 <- data.frame(
-  mrt = "Corumba, Caracol, Ladário e Porto Murtinho",
+  mrt = "MRT9 - Corumbá",
   tipologia_de_uso = c("Pecuária", "Pecuária no Alto Pantanal", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 2, 2, 2),
   vti_media = c(5211.00, 2369.00, 8192.00, 5369.00),
@@ -6239,7 +5994,7 @@ MSMRT9_2017 <- data.frame(
 
 #### 2018 ####
 MSMRT09_2018 <- data.frame(
-  mrt = "Corumbá, Caracol, Ladário e Porto Murtinho",
+  mrt = "MRT9 - Corumbá",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária no Alto Pantanal", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(0, 2, 2, 2, 2),
   vti_media = c(5095.0, 5211.0, 2369.0, 8192.0, 5369.0),
@@ -6253,7 +6008,7 @@ MSMRT09_2018 <- data.frame(
 
 #### 2020 ####
 MSMRT9_2020 <- data.frame(
-  mrt = "Corumbá, Caracol, Ladário e Porto Murtinho",
+  mrt = "MRT9 - Corumbá",
   tipologia_de_uso = c("Pecuária", "Pecuária no Pantanal", "Pecuária de Baixo Suporte", "Pecuária no Pantanal - Longos ciclos de cheia"),
   nivel = c(1, 2, 2, 3),
   vti_media = c(1838.00, 1758.00, 6675.00, 1357.00),
@@ -6265,10 +6020,10 @@ MSMRT9_2020 <- data.frame(
   origem = "Caracol, Corumbá, Ladário e Porto Murtinho."
 )
 
-### MRT10 - Navirai ####
+###13.10 MRT10 - Navirai ####
 ### 2017 ####
 MSMRT10_2017 <- data.frame(
-  mrt = "Naviral, Amambai, Aral Moreira, Caarapó, Juti e Laguna Carapa",
+  mrt = "MRT10 - Navirai",
   tipologia_de_uso = c("Lavoura", "Exploração Mista (Lavoura e Pecuária)", "Lavoura de Alta Produtividade", "Exploração Mista de Média Produtividade"),
   nivel = c(1, 1, 2, 2),
   vti_media = c(27824.00, 16269.00, 27824.00, 16269.00),
@@ -6282,7 +6037,7 @@ MSMRT10_2017 <- data.frame(
 
 ### 2018 ####
 MSMRT10_2018 <- data.frame(
-  mrt = "Naviraí, Amambaí, Aral Moreira, Caarapó, Juti e Laguna Carapã",
+  mrt = "MRT10 - Navirai",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Exploração Mista (Lavoura e Pecuária)", "Lavoura de Alta Produtividade", "Exploração Mista de Média Propriedade"),
   nivel = c(0, 2, 2, 2, 2),
   vti_media = c(22289.0, 27824.0, 16269.0, 27824.0, 16269.0),
@@ -6296,7 +6051,7 @@ MSMRT10_2018 <- data.frame(
 
 ### 2020 ####
 MSMRT10_2020 <- data.frame(
-  mrt = "Naviral, Amambai, Aral Moreira, Caarapó, Juti e Laguna Carapā",
+  mrt = "MRT10 - Navirai",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 1, 2, 2, 2),
   vti_media = c(31379.00, 15893.00,32164.00 ,18479.00 , 10987.00),
@@ -6308,10 +6063,10 @@ MSMRT10_2020 <- data.frame(
   origem = "Amambai, Aral Moreira, Caarapó, Juti, Laguna Carapã e Naviraí."
 )
 
-### MRT 11 -  Nova Andradina ####
+###13.11 MRT 11 - Nova Andradina ####
 ### 2017 ####
 MSMRT11_2017 <- data.frame(
-  mrt = "Nova Andradina, Anaurilândia, Batayporã, Bataguassu e Taquarussu",
+  mrt = "MRT 11 - Nova Andradina",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Média Produtividade", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte Anaurilândia, Bataguassu e Nova Andradina", "Pecuária de Médio Suporte Anaurilândia, Bataguassu e Nova Andradina"),
   nivel = c(1, 1, 2, 2, 2, 3, 3),
   vti_media = c(19229.00, 13044.00, 19229.00, 20238.00, 11427.00, 20238.00, 11352.00),
@@ -6326,7 +6081,7 @@ MSMRT11_2017 <- data.frame(
 
 ### 2018 ####
 MSMRT11_2018 <- data.frame(
-  mrt = "Nova Andradina, Anaurilândia, Batayporã, Bataguassu e Taquarussu",
+  mrt = "MRT 11 - Nova Andradina",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Pecuária", "Lavoura de Média Produtividade", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte (Anaurilândia, Bataguassu e Nova Andradina", "Pecuária de Médio Suporte (Anaurilândia, Bataguassu e Nova Andradina"),
   nivel = c(0, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(13972.0, 19229.0, 13044.0, 19229.0, 20238.0, 11427.0, 20238.0, 11352.0),
@@ -6341,7 +6096,7 @@ MSMRT11_2018 <- data.frame(
 
 ### 2020 ####
 MSMRT11_2020 <- data.frame(
-  mrt = "Nova Andradina, Anauriländia, Batayporã, Bataguassu e Taquarussu",
+  mrt = "MRT 11 - Nova Andradina",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Média Produtividade", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte", "Pecuária Alto Suporte Anaurilândia, Bataguassu e Nova Andradina", "Pecuária Médio Suporte Anaurilândia, Bataguassu e Nova Andradina", "Pecuária Baixo Suporte Anaurilândia, Bataguassu e Nova Andradina"),
   nivel = c(1, 1, 2, 2, 2, 2, 3, 3, 3),
   vti_media = c(25688.00, 16747.00, 23039.00, 21791.00, 15931.00, 11953.00, 21695.00, 15931.00, 12383.00),
@@ -6353,10 +6108,10 @@ MSMRT11_2020 <- data.frame(
   origem = "Anaurilândia, Batayporã, Bataguassu, Nova Andradina e Taquarussu."
 )
 
-### MRT12  - Ivinhema ####
+###13.12 MRT12  - Ivinhema ####
 ### 2017 ####
 MSMRT12_2017 <- data.frame(
-  mrt = "Ivinhema, Deodápolis, Fátima do Sul, Glória de Dourados, Jatel, Novo Horizonte do Sul e Vicentina",
+  mrt = "MRT12  - Ivinhema ",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Exploração Mista (Lavoura e Pecuária)", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte", "Exploração Mista de Média Produtividade"),
   nivel = c(1, 1, 1, 2, 2, 2),
   vti_media = c(23400.00, 15537.00, 19172.00, 24051.00, 15885.00, 19172.00),
@@ -6371,7 +6126,7 @@ MSMRT12_2017 <- data.frame(
 
 ### 2018 ####
 MSMRT12_2018 <- data.frame(
-  mrt = "Ivinhema, Deodápolis, Fátima do Sul, Glória de Dourados, Jatei, Novo Horizonte do Sul e Vicentina",
+  mrt = "MRT12  - Ivinhema ",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Pecuária", "Exploração Mista (Lavoura e Pecuária)", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte", "Exploração Mista de Média Produtividade"),
   nivel = c(0, 2, 2, 2, 2, 2, 2),
   vti_media = c(18417.0, 23400.0, 15537.0, 19172.0, 24051.0, 15885.0, 19172.0),
@@ -6385,7 +6140,7 @@ MSMRT12_2018 <- data.frame(
 
 ### 2020 ####
 MSMRT12_2020 <- data.frame(
-  mrt = "Ivinhema, Deodápolis, Fátima do Sul, Glória de Dourados, Jatei, Novo Horizonte do Sul e Vicentina",
+  mrt = "MRT12  - Ivinhema ",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Lavoura de Média Produtividade"),
   nivel = c(1, 1, 2),
   vti_media = c(23923.00, 23506.00, 22289.00),
@@ -6397,10 +6152,10 @@ MSMRT12_2020 <- data.frame(
   origem = "Deodápolis, Fátima do Sul, Glória de Dourados, Ivinhema, Jateí, Novo Horizonte do Sul e Vicentina."
 )
 
-### MRT13  - Aquidana ####
+###13.13 MRT13  - Aquidana ####
 ### 2017 ####
 MSMRT13_2017 <- data.frame(
-  mrt = "Aquidauana e Miranda",
+  mrt = "MRT13  - Aquidana",
   tipologia_de_uso = c("Pecuária", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 2, 2),
   vti_media = c(7128.00, 9149.00, 5647.00),
@@ -6414,7 +6169,7 @@ MSMRT13_2017 <- data.frame(
 
 ### 2018 ####
 MSMRT13_2018 <- data.frame(
-  mrt = "Aquidauana e Miranda",
+  mrt = "MRT13  - Aquidana",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(0, 2, 2, 2),
   vti_media = c(7128.0, 7128.0, 9149.0, 5647.0),
@@ -6427,7 +6182,7 @@ MSMRT13_2018 <- data.frame(
 )
 ### 2020 ####
 MSMRT13_2020 <- data.frame(
-  mrt = "Aquidauana e Miranda",
+  mrt = "MRT13  - Aquidana",
   tipologia_de_uso = c("Pecuária", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte", "Pecuária no Pantanal"),
   nivel = c(1, 2, 2, 2),
   vti_media = c(4257.00,11691.00 ,7154.00, 3589.00),
@@ -6439,10 +6194,10 @@ MSMRT13_2020 <- data.frame(
   origem = "Aquidauana e Miranda."
 )
 
-### MRT14  - Jardim ####
+###13.14 MRT14  - Jardim ####
 ### 2017 ####
 MSMRT14_2017 <- data.frame(
-  mrt = "Jardim, Anastácio, Antonio João, Bela Vista, Bodoquena, Bonito, Guia Lopes da Laguna e Nioaque",
+  mrt = "MRT14  - Jardim",
   tipologia_de_uso = c("Pecuária", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 2, 2, 2),
   vti_media = c(9617.00, 11826.00, 9348.00, 6939.00),
@@ -6456,7 +6211,7 @@ MSMRT14_2017 <- data.frame(
 
 ### 2018 ####
 MSMRT14_2018 <- data.frame(
-  mrt = "Jardim, Anastácio, Antônio João, Bela Vista, Bodoquena, Bonito, Guia Lopes da Laguna e Nioaque",
+  mrt = "MRT14  - Jardim",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte", "Pecuária de baixo nível tecnológico"),
   nivel = c(0, 2, 2, 2, 2),
   vti_media = c(9673.0, 9617.0, 11826.0, 9348.0, 6939.0),
@@ -6470,7 +6225,7 @@ MSMRT14_2018 <- data.frame(
 
 ### 2020 ####
 MSMRT14_2020 <- data.frame(
-  mrt = "Jardim, Anastácio, Antonio João, Bela Vista, Bodoquena, Bonito, Guia Lopes da Laguna e Nioaque",
+  mrt = "MRT14  - Jardim",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 1, 2, 2),
   vti_media = c(20437.00, 12285.00, 12967.00, 8032.00),
@@ -6482,10 +6237,10 @@ MSMRT14_2020 <- data.frame(
   origem = "Anastácio, Antônio João, Bela Vista, Bodoquena, Bonito, Guia Lopes da Laguna, Jardim e Nioaque."
 )
 
-### MRT15  - IGUATEMI ####
+###13.15 MRT15  - IGUATEMI ####
 ### 2017 ####
 MSMRT15_2017 <- data.frame(
-  mrt = "Iguatemi, Coronel Sapucaia, Eldorado, Itaquarai, Japorã, Mundo Novo, Paranhos, Sete Quedas e Tacuru",
+  mrt = " MRT15  - IGUATEMI",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Exploração Mista (Lavoura e Pecuária)", "Lavoura de Média Produtividade", "Exploração Mista de Média Produtividade", "Pecuária de Baixo Suporte"),
   nivel = c(1, 1, 1, 2, 2, 2),
   vti_media = c(18904.00, 11161.00, 17680.00, 18462.00, 17743.00, 11161.00),
@@ -6499,7 +6254,7 @@ MSMRT15_2017 <- data.frame(
 
 ### 2018 ####
 MSMRT15_2018 <- data.frame(
-  mrt = "Iguatemi, Coronel Sapucaia, Eldorado, Itaquarai, Japorã, Mundo Novo, Paranhos, Sete Quedas e Tacuru",
+  mrt = " MRT15  - IGUATEMI",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Lavoura", "Pecuária", "Exploração Mista (Lavoura e Pecuária)", "Lavoura de Média Produtividade", "Exploração Mista de Média Produtividade", "Pecuária de Baixo Suporte"),
   nivel = c(0, 2, 2, 2, 2, 2, 2),
   vti_media = c(17728.0, 18904.0, 11161.0, 17680.0, 18462.0, 17743.0, 11161.0),
@@ -6513,7 +6268,7 @@ MSMRT15_2018 <- data.frame(
 
 ### 2020 ####
 MSMRT15_2020 <- data.frame(
-  mrt = "Iguatemi, Coronel Sapucaia, Eldorado, Itaquarai, Japorã, Mundo Novo, Paranhos, Sete Quedas e Tacuru",
+  mrt = " MRT15  - IGUATEMI",
   tipologia_de_uso = c("Lavoura", "Pecuária", "Exploração Mista (Lavoura e Pecuária)", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte"),
   nivel = c(1, 1, 1, 2, 2),
   vti_media = c(26551.00, 17882.00, 16501.00, 20060.00, 16234.00),
@@ -6550,48 +6305,11 @@ MSTEMPORAL <- rbind(MS2020, MS2018, MS2017)
 MSTEMPORAL$estado <- 50
 MSTEMPORAL$regiao <- "Centro-Oeste"
 
-MSTEMPORAL<- MSTEMPORAL |> mutate( mrt = case_when(
-  grepl("Corumbá", mrt, ignore.case = TRUE)      ~ 1601,
-  grepl("Coxim", mrt, ignore.case = TRUE)        ~ 1602,
-  grepl("Aquidauana", mrt, ignore.case = TRUE)   ~ 1603,
-  grepl("Jardim", mrt, ignore.case = TRUE)       ~ 1604,
-  grepl("Campo Grande", mrt, ignore.case = TRUE)~ 1605,
-  grepl("Chapadão do Sul", mrt, ignore.case = TRUE) ~ 1606,
-  grepl("Paranaíba", mrt, ignore.case = TRUE)    ~ 1607,
-  grepl("Três Lagoas", mrt, ignore.case = TRUE)  ~ 1608,
-  grepl("Nova Andradina", mrt, ignore.case = TRUE) ~ 1609,
-  grepl("Sidrolândia", mrt, ignore.case = TRUE)  ~ 1610,
-  grepl("Maracaju", mrt, ignore.case = TRUE)     ~ 1611,
-  grepl("Dourados", mrt, ignore.case = TRUE)     ~ 1612,
-  grepl("Ivinhema", mrt, ignore.case = TRUE)     ~ 1613,
-  grepl("Naviraí", mrt, ignore.case = TRUE)      ~ 1614,
-  grepl("Iguatemi", mrt, ignore.case = TRUE)     ~ 1615,
-  .default = NA_integer_
-))
-# Etapa 2: Adiciona a lista de cidades com base no código numérico padronizado
-MSTEMPORAL<- MSTEMPORAL |> mutate( cidade = case_when(
-  mrt == 1601 ~ "Corumbá, Caracol, Ladário, Porto Murtinho",
-  mrt == 1602 ~ "Coxim, Alcinópolis, Camapuã, Figueirão, Pedro Gomes, Rio Verde de Mato Grosso, Sonora",
-  mrt == 1603 ~ "Aquidauana, Miranda",
-  mrt == 1604 ~ "Jardim, Anastácio, Antônio João, Bela Vista, Bodoquena, Bonito, Guia Lopes da Laguna, Nioaque",
-  mrt == 1605 ~ "Campo Grande, Bandeirantes, Corguinho, Dois Irmãos do Buriti, Jaraguari, Rio Negro, Rochedo, São Gabriel do Oeste, Terenos",
-  mrt == 1606 ~ "Chapadão do Sul, Costa Rica, Paraíso das Águas",
-  mrt == 1607 ~ "Paranaíba, Aparecida do Taboado, Cassilândia, Inocência, Selvíria",
-  mrt == 1608 ~ "Três Lagoas, Água Clara, Brasilândia, Ribas do Rio Pardo, Santa Rita do Pardo",
-  mrt == 1609 ~ "Nova Andradina, Anaurilândia, Batayporã, Bataguassu, Taquarussu",
-  mrt == 1610 ~ "Sidrolândia, Angélica, Nova Alvorada do Sul",
-  mrt == 1611 ~ "Maracaju, Ponta Porã, Rio Brilhante",
-  mrt == 1612 ~ "Dourados, Douradina, Itaporã",
-  mrt == 1613 ~ "Ivinhema, Deodápolis, Fátima do Sul, Glória de Dourados, Jateí, Novo Horizonte do Sul, Vicentina",
-  mrt == 1614 ~ "Naviraí, Amambai, Aral Moreira, Caarapó, Juti, Laguna Carapã",
-  mrt == 1615 ~ "Iguatemi, Coronel Sapucaia, Eldorado, Itaquiraí, Japorã, Mundo Novo, Paranhos, Sete Quedas, Tacuru"
-)
-)
 
 
 
-## 13.0 DADOS RAMT PB ####
-##MRT 01 - Zona da Mata Paraíbana####
+## 14.0 DADOS RAMT PB ####
+##14.1 MRT 01 - Zona da Mata Paraíbana####
 ##2018####
 PBMRT1_2018 <- data.frame(
   mrt = "ZONA DA MATA PARAIBANA (Alhandra, Baía da Traição, Bayeux, Caaporã, Cabedelo, Capim, Conde, Cruz do Espírito Santo, João Pessoa, Juripiranga, Lucena, Mamanguape, Marcação, Mataraca, Pedras de Fogo, Pitimbu, Rio Tinto, Santa Rita, São Miguel de Taipu, Sapé e Sobrado.)",
@@ -6658,7 +6376,7 @@ PBMRT_ZONA_DA_MATA_PARAIBANA_2024 <- data.frame(
   origem = "Alhandra, Baía da Traição, Bayeux, Caaporã, Cabedelo, Capim, Conde, Cruz do Espírito Santo, João Pessoa, Juripiranga, Lucena, Mamanguape, Marcação, Mataraca, Pedras de Fogo, Pitimbu, Rio Tinto, Santa Rita, São Miguel de Taipu, Sapé e Sobrado. "
 )
 
-##MRT 02 - AGRESTE####
+##14.2 MRT 02 - AGRESTE####
 ## 2018 ####
 PBMRT2_2018 <- data.frame(
   mrt = "AGRESTE E BREJO PARAIBANO (Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Campo de Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro.)",
@@ -6833,7 +6551,7 @@ PBMRT_AGRESTE_E_BREJO_PARAIBANO_2024 <- data.frame(
             Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro. " 
 )
 
-##MRT 03 - CARIRI E CURIMATAÚ PARAIBANO####
+##14.3 MRT 03 - CARIRI E CURIMATAÚ PARAIBANO####
 ## 2018 ####
 PBMRT3_2018 <- data.frame(
   mrt = "CARIRI E CURIMATAÚ PARAIBANO (Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê.)",
@@ -6983,7 +6701,7 @@ Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e 
   
 )
 
-##MRT 03 - SERTÃO PARAIBANO 1 ####
+## 14.4 MRT 04 - SERTÃO PARAIBANO 1 ####
 ## 2018 ####
 PBMRT4_2018 <- data.frame(
   mrt = "SERTÃO PARAIBANO 1 (Água Branca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios, Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy, Imaculada, Itaporanga, Juru, Mãe D’água, Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, Princesa Isabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, São José de Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares. Todos os municípios estão localizados nos limites da mesorregião do Sertão e nas microrregiões de Catolé do Rocha, Sousa, Patos, Seridó Oriental, Cajazeiras e Piancó.)",
@@ -7071,7 +6789,7 @@ Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra 
 Isabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, São José de
 Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares.")
 
-##MRT 04 - SERTÃO PARAIBANO 2 ####
+## 14.5 MRT 05 - SERTÃO PARAIBANO 2 ####
 ## 2018 ####
 PBMRT5_2018 <- data.frame(
   mrt = "SERTÃO PARAIBANO 2 (Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana.)",
@@ -7259,35 +6977,15 @@ PBTEMPORAL <- rbind(PB2024,PB2022, PB2021, PB2020, PB2018)
 PBTEMPORAL$estado <- 25
 PBTEMPORAL$regiao <- "Nordeste"
 
-PBTEMPORAL <- PBTEMPORAL |>
-  mutate(
-    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
-    mrt = case_when(
-      grepl("ZONA DA MATA", mrt, ignore.case = TRUE) ~ 1801,
-      grepl("AGRESTE E BREJO", mrt, ignore.case = TRUE) ~ 1802,
-      grepl("CARIRI E CURIMATAÚ", mrt, ignore.case = TRUE) ~ 1803,
-      grepl("SERTÃO PARAIBANO 1", mrt, ignore.case = TRUE) ~ 1804,
-      grepl("SERTÃO PARAIBANO 2", mrt, ignore.case = TRUE) ~ 1805,
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 1801 ~ "Alhandra, Baía da Traição, Bayeux, Caaporã, Cabedelo, Capim, Conde, Cruz do Espírito Santo, João Pessoa, Juripiranga, Lucena, Mamanguape, Marcação, Mataraca, Pedras de Fogo, Pitimbu, Rio Tinto, Santa Rita, São Miguel de Taipu, Sapé, Sobrado",
-      mrt == 1802 ~ "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Campo de Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro",
-      mrt == 1803 ~ "Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro Velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório, Zabelê",
-      mrt == 1804 ~ "Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis, Vista Serrana",
-      mrt == 1805 ~ "Água Branca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios, Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy, Imaculada, Itaporanga, Juru, Mãe D'água, Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, Princesa Isabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, São José de Caiana, São José de Piranhas, São José de Princesa, Serra Grande, Tavares",
-      .default = NA_character_
-    )
-  )
 
-### 14. Dados RAMT PERNAMBUCO ####
-# Aqui eles dividem o estado em duas RAMTS diferentes, então alguns estados tem mais observações que outros.
+### 15. Dados RAMT PERNAMBUCO ####
+# Aqui eles dividem o estado em duas RAMTS diferentes, então alguns mercados tem mais observações que outros.
+#A separação descrita acima ocorre por conta que existem duas unidades administrativas responsáveis
 #2017:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr03_2017.pdf
 #2019:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr03_2019.xls
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_UAE_Sertao_SRPE_2022.pdf
 #2024: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_29MSF_2024.pdf
-### MRT Sertão Pernambucano ####
+###15.1 MRT Sertão Pernambucano ####
 ### 2017  ####
 PEMRT_SERTAO_PERNAMBUCANO_2017 <- data.frame(
   mrt = "Sertão Pernambucano",
@@ -7338,7 +7036,7 @@ PEMRT1_Sertao_Pernambucano_2022 <- data.frame(
 )
 
 
-### MRT Sertão do São Francisco ####
+### 15.2 MRT Sertão do São Francisco ####
 ## 2017 ####
 PEMRT_SERTAO_SAO_FRANCISCO_PE_2017 <- data.frame(
   mrt = "Sertão do São Franscisco - PE",
@@ -7410,7 +7108,7 @@ PEMRT2_Sertao_SF_Pernambucano_2024 <- data.frame(
   origem = "Belém do São Francisco, Betânia, Cabrobó, Carnaubeira da Penha, Floresta, Ibimirim, Inajá, Itacuruba, Jatobá, Lagoa Grande, Orocó, Petrolândia, Santa Maria da Boa Vista, Serra Talhada e Tacaratu."
   )
 
-## Petrolina ####
+## 15.3 Petrolina ####
 ## 2017 ####
 PEMRT_PETROLINA_2017 <- data.frame(
   mrt = "Petrolina",
@@ -7439,7 +7137,7 @@ PEMRT_Petrolina_29003_2019 <- data.frame(
   mrt = "Petrolina - 29003",
   tipologia_de_uso = c("Geral", "Terra de pecuária", "Terra de agricultura", "Terra de pecuária de sequeiro", "Terra de agricultura irrigada na margem do rio São Francisco", "Terra de agricultura irrigada em Perímetro Irrigado", "Terra de agricultura irrigada em Perímetro Irrigado - PISNC", "Terra de agricultura irrigada em Perímetro Irrigado - Maria Tereza"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3),
-  vti_media = c(39981.80, 1076.29, 46065.79, 1076.29, 147523,40.48, 47038.12, 52322.15, 35295.85),
+  vti_media = c(39981.80, 1076.29, 46065.79, 1076.29, 147523.40, 47038.12, 52322.15, 35295.85),
   vti_minimo = c(32266.25, 337.56, 38602.07, 337.56, 16051.55, 39129.95, 42356.36, 23042.64),
   vti_maximo = c(47697.35, 1815.02, 53529.51, 1815.02, 278995.25, 54946.29, 62287.94, 47549.06),
   vtn_media = c(28873.96, 985.65, 33341.35, 985.65, 96455.29, 30117.92, 36267.37, 26028.40),
@@ -7476,7 +7174,7 @@ PEMRT3_Petrolina_2024 <- data.frame(
   origem = "petrolina"
 )
 
-## MRT Sertão do São Franscisco - BA ####
+##15.4 MRT Sertão do São Franscisco - BA ####
 ## 2017 ####
 PEMRT_SERTAO_SAO_FRANCISCO_BA_2017 <- data.frame(
   mrt = "Sertão do São Franscisco - BA",
@@ -7521,7 +7219,7 @@ PEMRT_Sertao_do_Sao_Francisco_BA_29004_2019 <- data.frame(
 # https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_ramt_UA_sertao_petrolina_2020.pdf
 # Alguns anos divergem dos documentos, pois, os anos das planilhas nos documentos são distintos do ano do próprio documento.
 
-## MRT - Metropolitana ####
+## 15.6 MRT - Metropolitana ####
 ## 2019 ####
 PEMRT_I_Metropolitana_2019 <- data.frame(
   mrt = "I - Metropolitana",
@@ -7533,10 +7231,10 @@ PEMRT_I_Metropolitana_2019 <- data.frame(
   vtn_media = c(5351.65, 5351.65),
   vtn_minimo = c(3632.76, 3632.76),
   vtn_maximo = c(7070.54, 7070.54),
-  
+  origem = "Abreu e Lima, Cabo de Santo Agostinho, Camaragibe, Goiana, Igarassu, Ilha de Itamaracá, Ipojuca, Itapissuma, Jaboatão dos Guararapes, Moreno, Olinda, Paulista, Recife e São Lourenço da Mata"
 )
 
-## MRT - Mata norte ####
+## 15.7 MRT - Mata norte ####
 ## 2019 ####
 PEMRT_II_Mata_Norte_2019 <- data.frame(
   mrt = "II -Mata Norte",
@@ -7564,7 +7262,7 @@ PEMRT_II_Mata_Norte_2022 <- data.frame(
   origem = "Aliança, Araçoiaba, Buenos Aires, Camutanga, Carpina, Chã de Alegria, Condado, Ferreiros, Glória do Goitá, Itambé, Itaquitinga, Lagoa do Carro, Lagoa de Itaenga, Macaparana, Machados, Nazaré da Mata, Paudalho, Pombos, São Vicente Férrer, Timbaúba, Tracunhaém, Vicência e Vitória de Santo Antão "
 )
 
-## MRT - Mata sul ####
+## 15.8 MRT - Mata sul ####
 ## 2019 ####
 PEMRT_III_Mata_Sul_2019 <- data.frame(
   mrt = "III - Mata Sul",
@@ -7594,7 +7292,7 @@ PEMRT_III_Mata_Sul_2022 <- data.frame(
 
   )
 
-## MRT - Agreste Leste ####
+## 15.9 MRT - Agreste Leste ####
 ## 2019 ####
 PEMRT_IV_Agreste_Leste_2019 <- data.frame(
   mrt = "IV - Agreste Leste",
@@ -7606,7 +7304,7 @@ PEMRT_IV_Agreste_Leste_2019 <- data.frame(
   vtn_media = c(8471.36, 8479.73, 8469.15, 8678.7, 8380.24, 9629.7, 4764.49, 8365.99, 7916.06, 13721.85, 10510.09, 5629.63, 13704.24),
   vtn_minimo = c(5690.9, 6405.33, 5503.3, 6714.16, 6071.06, 6344.54, 3624.43, 5466.39, 5778.78, 7988.34, 7249.6, 4365.65, 13344.0),
   vtn_maximo = c(11251.83, 10554.13, 11435.0, 10643.25, 10689.42, 12914.86, 5904.56, 11265.59, 10053.34, 19455.36, 13770.58, 6893.6, 14064.47),
-  origem - "Agrestina, Altinho, Bezerros, Bom Jardim, Caruaru, Casinhas, Chã Grande, Cumaru, Feira Nova, Frei Miguelinho, Gravatá, João Alfredo, Limoeiro, Orobó, Passira, Riacho das Almas, Salgadinho, Santa Maria do Cambucá, Surubim, Toritama, Vertente do Lério e Vertentes"
+  origem = "Agrestina, Altinho, Bezerros, Bom Jardim, Caruaru, Casinhas, Chã Grande, Cumaru, Feira Nova, Frei Miguelinho, Gravatá, João Alfredo, Limoeiro, Orobó, Passira, Riacho das Almas, Salgadinho, Santa Maria do Cambucá, Surubim, Toritama, Vertente do Lério e Vertentes"
   )
 
 ## 2022 ####
@@ -7623,7 +7321,7 @@ PEMRT_IV_Agreste_Leste_2022 <- data.frame(
   origem = "Agrestina, Altinho, Bezerros, Bom Jardim, Caruaru, Casinhas, Chã Grande, Cumaru, Feira Nova, Frei Miguelinho, Gravatá, João Alfredo, Limoeiro, Orobó, Passira, Riacho das Almas, Salgadinho, Santa Maria do Cambucá, Surubim, Toritama, Vertente do Lério e Vertentes")
 
 
-## MRT - Agreste Oeste ####
+## 15.10 MRT - Agreste Oeste ####
 ## 2019 ####
 PEMRT_V_Agreste_Oeste_2019 <- data.frame(
   mrt = "V - Agreste Oeste",
@@ -7654,7 +7352,7 @@ origem = "Águas Belas, Alagoinha, Angelim, Arcoverde, Belo Jardim, Brejo da Mad
 
 
 
-## MRT - Bonito ####
+##15.11 MRT - Bonito ####
 ##2019####
 PEMRT_VI_Bonito_2019 <- data.frame(
   mrt = "VI - Bonito",
@@ -7682,7 +7380,7 @@ PEMRT_VI_Bonito_2022 <- data.frame(
   origem = "  Barra de Guabiraba, Bonito, Camocim de São Félix, Sairé e São Joaquim do Monte "
   )
 
-## MRT - Garanhuns ####
+## 15.12 MRT - Garanhuns ####
 ##2019####
 PEMRT_VII_Garanhuns__2019 <- data.frame(
   mrt = "VII - Garanhuns",
@@ -7710,10 +7408,10 @@ PEMRT_VII_Garanhuns_2022 <- data.frame(
   origem = "Bom Conselho, Brejão, Correntes, Garanhuns, Lagoa do Ouro, São João e Terezinha. "
 )
 
-## MRT - Garanhuns ####
+##15.13 MRT - Sertão ####
 ##2019####
 PEMRT_VIII_Serto_2019 <- data.frame(
-  mrt = "VIII - Sertãoo",
+  mrt = "VIII - Sertão",
   tipologia_de_uso = c("Uso indefinido (mÃ©dia geral do MRT)", "Terra de exploraÃ§Ã£o mista", "Terra de pecuÃ¡ria", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos", "Terra de exploraÃ§Ã£o mista/Sem recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem nativa com recursos hÃ­dricos", "Terra de pecuÃ¡ria/pastagem nativa sem recursos hÃ­dricos", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos (SertÃ¢nia)", "Terra de pecuÃ¡ria/Com pastagem nativa com recursos hÃ­dricos (SertÃ¢nia)", "Terra de pecuÃ¡ria/Com pastagem nativa sem recursos hÃ­dricos (SertÃ¢nia)", "Terra de exploraÃ§Ã£o mista/Sem recursos hÃ­dricos (Inguaracy)", "Terra de exploraÃ§Ã£o mista/Com recursos hÃ­dricos (Afogados da Ingazeira)", "Terra de pecuÃ¡ria/Com pastagem nativa sem recursos hÃ­dricos (Tabira)"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
   vti_media = c(1377.33, 2105.21, 1269.25, 3226.01, 1304.64, 1173.46, 1163.37, 2260.59, 1078.53, 964.38, 1136.42, 1600.23, 1421.74),
@@ -7739,6 +7437,20 @@ PEMRT_VIII_Serto_2022 <- data.frame(
   origem = "Triunfo e Santa Cruz da Baixa Verde"
   )
 
+#### Triunfo #####
+PEMRT_IX_Triunfo_2019 <- data.frame(
+  mrt = "IX - Triunfo",
+  tipologia_de_uso = c("Uso indefinido (mÃ©dia geral do MRT)", "Terra de pecuÃ¡ria", "Terra de pecuÃ¡ria/pastagem plantada com recursos hÃ­dricos", "Terra de pecuÃ¡ria/Com pastagem plantada com recursos hÃ­dricos (Triunfo)"),
+  nivel = c(0, 1, 2, 3),
+  vti_media = c(3172.37, 3733.63, 3733.63, 3733.63),
+  vti_minimo = c(1784.91, 2304.74, 2304.74, 2304.74),
+  vti_maximo = c(4559.83, 5162.52, 5162.52, 5162.52),
+  vtn_media = c(3012.07, 3533.25, 3533.25, 3533.25),
+  vtn_minimo = c(1623.89, 1784.91, 2078.37, 2078.37),
+  vtn_maximo = c(4400.25, 4559.83, 4988.13, 4988.13),
+  origem = "Santa Cruz da Baixa Verde e Triunfo "
+)
+
 ## Consolidação dos dados ####
 PE2017 <- rbind(
   PEMRT_SERTAO_PERNAMBUCANO_2017,
@@ -7748,7 +7460,7 @@ PE2017 <- rbind(
 )
 
 PE19 <- rbind(
-  PEMRT_Sertao_Pernambucano_29001_2019,
+  PEMRT_Sertao_Pernambucano_29001_20,
   PEMRT_Sertao_do_Sao_Francisco_PE_29002_2019,
   PEMRT_Petrolina_29003_2019,
   PEMRT_Sertao_do_Sao_Francisco_BA_29004_2019,
@@ -7776,9 +7488,9 @@ PE22<- rbind(
 
 PE2022 <- rbind(
   
-  MRT1_Sertao_Pernambucano_2022,
-  MRT2_Sertao_SF_Pernambucano_2022,
-  MRT3_Petrolina_2022
+  PEMRT1_Sertao_Pernambucano_2022,
+  PEMRT2_Sertao_SF_Pernambucano_2022,
+  PEMRT3_Petrolina_2022
 )
 
 # No ano de 24 não fizeram a área do sertão pernambucano
@@ -7798,51 +7510,14 @@ PETEMPORAL <- rbind(PE19, PE2017, PE22, PE2024, PE2022)
 PETEMPORAL$estado <- 26
 PETEMPORAL$regiao <- "Nordeste"
 
-PETEMPORAL <- PETEMPORAL |>
-  mutate(
-    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
-    mrt = case_when(
-      # Mapeamentos mais específicos primeiro para evitar sobreposição
-      grepl("Sertão do São Francisco", mrt, ignore.case = TRUE) ~ 310,
-      grepl("Sertão Pernambucano", mrt, ignore.case = TRUE) & !grepl("São Francisco", mrt, ignore.case = TRUE) ~ 311,
-      
-      # Mapeamentos gerais
-      grepl("Metropolitana", mrt, ignore.case = TRUE) ~ 301,
-      grepl("Mata Norte", mrt, ignore.case = TRUE) ~ 302,
-      grepl("Bonito", mrt, ignore.case = TRUE) ~ 303,
-      grepl("Mata Sul", mrt, ignore.case = TRUE) ~ 304,
-      grepl("Garanhuns", mrt, ignore.case = TRUE) ~ 305,
-      grepl("Agreste Leste", mrt, ignore.case = TRUE) ~ 306,
-      grepl("Agreste Oeste", mrt, ignore.case = TRUE) ~ 307,
-      grepl("Triunfo", mrt, ignore.case = TRUE) ~ 309,
-      grepl("Petrolina", mrt, ignore.case = TRUE) ~ 312,
-      
-      # Mapeamento genérico para "Sertão" por último
-      grepl("Sertão", mrt, ignore.case = TRUE) ~ 308,
-      
-      .default = NA_integer_
-    ),
-    # Etapa 2: Adiciona a lista de cidades com base no código numérico
-    cidades = case_when(
-      mrt == 301 ~ "Abreu e Lima, Cabo de Santo Agostinho, Camaragibe, Goiana, Igarassu, Ilha de Itamaracá, Ipojuca, Itapissuma, Jaboatão dos Guararapes, Moreno, Olinda, Paulista, Recife, São Lourenço da Mata",
-      mrt == 302 ~ "Aliança, Araçoiaba, Buenos Aires, Camutanga, Carpina, Chã de Alegria, Condado, Ferreiros, Glória do Goitá, Itambé, Itaquitinga, Lagoa do Carro, Lagoa do Itaenga, Macaparana, Machados, Nazaré da Mata, Paudalho, Pombos, São Vicente Férrer, Timbaúba, Tracunhaém, Vicência, Vitória de Santo Antão",
-      mrt == 303 ~ "Barra de Guabiraba, Bonito, Camocim de São Félix, Sairê, São Joaquim do Monte",
-      mrt == 304 ~ "Água Preta, Amaraji, Barreiros, Belém de Maria, Catende, Cortês, Escada, Gameleira, Jaqueira, Joaquim Nabuco, Maraial, Palmares, Primavera, Quipapá, Ribeirão, Rio Formoso, São Benedito do Sul, São José da Coroa Grande, Sirinhaém, Tamandaré, Xexéu",
-      mrt == 305 ~ "Bom Conselho, Brejão, Correntes, Garanhuns, Lagoa do Ouro, Terezinha",
-      mrt == 306 ~ "Agrestina, Altinho, Bezerros, Bom Jardim, Caruaru, Casinhas, Chã Grande, Cumaru, Feira Nova, Frei Miguelinho, Gravatá, João Alfredo, Limoeiro, Orobó, Passira, Riacho das Almas, Salgadinho, Santa Maria do Cambucá, Surubim, Toritama, Vertente do Lério, Vertentes",
-      mrt == 307 ~ "Águas Belas, Alagoinha, Angelim, Arcoverde, Belo Jardim, Brejo da Madre de Deus, Buíque, Cachoeirinha, Caetés, Calçado, Canhotinho, Capoeiras, Cupira, Iati, Ibirajuba, Itaíba, Jataúba, Jucati, Jupi, Jurema, Lagoa dos Gatos, Lajedo, Manari, Palmeirina, Panelas, Paranatama, Pedra, Pesqueira, Poção, Saloá, Sanharó, Santa Cruz do Capibaribe, São Bento do Una, São Caetano, São João, Tacaimbó, Taquaritinga do Norte, Tupanatinga, Venturosa",
-      mrt == 308 ~ "Afogados da Ingazeira, Brejinho, Calumbi, Carnaíba, Custódia, Flores, Iguaracy, Ingazeira, Itapetim, Quixaba, Santa Terezinha, São José do Egito, Sertânia, Solidão, Tabira, Tuparetama",
-      mrt == 309 ~ "Santa Cruz da Baixa Verde, Triunfo",
-      mrt == 310 ~ "Belém de São Francisco, Cabrobó, Orocó, Santa Maria da Boa Vista, Lagoa Grande, Carnaubeira da Penha, Floresta, Itacuruba, Betânia, Serra Talhada, Ibimirim, Inajá, Jatobá, Petrolândia, Tacaratu",
-      mrt == 311 ~ "Afrânio, Araripina, Bodocó, Cedro, Dormentes, Exu, Granito, Ipubi, Mirandiba, Moreilândia, Ouricuri, Parnamirim, Salgueiro, Santa Cruz, Santa Filomena, São José do Belmonte, Serrita, Terra Nova, Trindade, Verdejante",
-      mrt == 312 ~ "Petrolina",
-      .default = NA_character_
-    )
-  )
 
-### PARÁ #####
-### 15. Pará - Nordeste #####
 
+### 16.PARÁ #####
+### 16.1 Pará - Nordeste #####
+#2016 e 2019 diferem em um ano do material de referencia no site, isso ocorre pois a ppr e do ano anterior nesses casos
+#2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ramt_sr27_2017.pdf
+#2019:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ramt_sr27_2020.pdf
+#2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ramt_sudeste_para_2022.pdf
 # Mercado Regional de Terras MRT PA 150 2016
 PAMRTPA150_2016 <- data.frame(
   mrt = "MRT PA 150",
@@ -7875,7 +7550,7 @@ PAMRTPA150_2019 <- data.frame(
 )
 
 
-#### BR - 10 ####
+####16.2 BR - 10 ####
 ### 2016 ####
 PAMRTBR010_2016 <- data.frame(
   mrt = "MRT BR 010",
@@ -7891,7 +7566,7 @@ PAMRTBR010_2016 <- data.frame(
 do Rio, Paragominas, São Domingos do Capim, São
 Miguel do Guamá e Ulianópolis."
 )
-
+### 2019 ####
 PAMRTBR010_2019 <- data.frame(
   mrt = "MRT BR 010",
   tipologia_de_uso = c("Uso indefinido (média geral)", "PECUÁRIA", "AGRICULTURA", "TERRA NUA", "Agricultura de Grãos", "Agricultura de Grãos em Paragominas"),
@@ -7908,7 +7583,8 @@ Miguel do Guamá e Ulianópolis."
 )
 
 
-# Mercado Regional de Terras MRT REGIÃO BRAGANTINA 2016
+### Mercado Regional de Terras MRT REGIÃO BRAGANTINA 2016 ####
+### 2016 ####
 PAMRTREGIAOBRAGANTINA_2016 <- data.frame(
   mrt = "MRT REGIÃO BRAGANTINA",
   tipologia_de_uso = c("Uso indefinido (média geral)", "PECUÁRIA", "TERRA NUA", "PECUÁRIA DE BAIXO SUPORTE"),
@@ -7927,7 +7603,7 @@ Santarém Novo, São João de Pirabas, Tracuateua e
 Viseu."
   
 )
-
+### 2019 ####
 PAMRTREGIAOBRAGANTINA_2019 <- data.frame(
   mrt = "MRT REGIÃO BRAGANTINA",
   tipologia_de_uso = c("Uso indefinido (média geral)", "PECUÁRIA", "AGRICULTURA", "TERRA NUA"),
@@ -7945,9 +7621,9 @@ Primavera, Quatipuru, Salinópolis, Santa Luzia do Pará,
 Santarém Novo, São João de Pirabas, Tracuateua e
 Viseu."
 )
-
-PAMRT2_ANO <- data.frame(
-  mrt = "Região Bragança",
+### 2022 ####
+PAMRT2_2022 <- data.frame(
+  mrt = "MRT REGIÃO BRAGANTINA",
   tipologia_de_uso = c("Geral", "Agricola", "Pecuária", "Agricola Subsistência - Não Comercial", "Agricola-Fruticultura", "Pecuária-Bovinos-Pastagem Formada"),
   nivel = c(0, 1, 1, 2, 2, 2),
   vti_media = c(5739.55, 4724.52, 6796.88, 3522.22, 8285.50, 6796.88),
@@ -7963,9 +7639,8 @@ PAMRT2_ANO <- data.frame(
             Santarém Novo, São João de Pirabas, Tracuateua e
             Viseu."
 )
-
-
-# Mercado Regional de Terras MRT REGIÃO CASTANHAL 2016
+#### MRT REGIÃO CASTANHAL 2016 ####
+### 2016 ####
 PAMRTREGIAOCASTANHAL_2016 <- data.frame(
   mrt = "MRT REGIÃO CASTANHAL",
   tipologia_de_uso = c("Uso indefinido (média geral)", "PECUÁRIA", "AGRICULTURA", "TERRA NUA", "PECUÁRIA DE BAIXO SUPORTE", "AGRICULTURA FRUTICULTURA", "AGRICULTURA FRUTICULTURA - Santa Izabel do Pará"),
@@ -7984,7 +7659,7 @@ Caetano de Odivelas, São Francisco do Pará, São João da
 Ponta, Terra Alta e Vigia"
 )
 
-
+### 2019 ####
 PAMRTREGIAOCASTANHAL_2019 <- data.frame(
   mrt = "MRT REGIÃO CASTANHAL",
   tipologia_de_uso = c("Uso indefinido (média geral)", "PECUÁRIA", "AGRICULTURA", "TERRA NUA"),
@@ -7998,9 +7673,9 @@ PAMRTREGIAOCASTANHAL_2019 <- data.frame(
   origem = "Ananindeua, Belém, Benevides, Castanhal, Colares, Curuçá, Igarapé-Açu, Inhangapi, Magalhães Barata, Maracanã, Marapanim, Marituba, Santa Bárbara do Pará, Santa Izabel do Pará, Santa Maria do Pará, Santo Antônio do Tauá, São Caetano de Odivelas, São Francisco do Pará, São João da Ponta, Terra Alta e Vigia."
 )
 
-
+### 2022 ####
 PAMRT1_2022 <- data.frame(
-  mrt = "Castanhal",
+  mrt = "MRT REGIÃO CASTANHAL",
   tipologia_de_uso = c("Geral", "Agrícola", "Pecuária", "Exploração Mista", "Agricola Fruticultura", "Agricola Produção Diversificada", "Agricola-Subsistência (não-comercial)", "Pecuária Bovino-Pastagem Formada", "Exploração Mista-Diversificada"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
   vti_media = c(8234.53, 7027.47, 11843.39, 11400.31, 7555.29, 7921.88, 4666.25, 11843.39, 11400.31),
@@ -8018,7 +7693,7 @@ Ponta, Terra Alta e Vigia."
 
 
 
-Nordeste_22 <- rbind(MRT1_ANO, MRT2_ANO)
+Nordeste_22 <- rbind(PAMRT1_2022, MRT2_2022)
 
 
 Nordeste_2019 <- rbind(
@@ -8036,6 +7711,8 @@ PANordeste_2016 <- rbind(
 )
 
 ### Pará - Santarém #####
+#apresenta apenas esse ano de observação.
+#2016: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr30_2016.pdf
 
 PAMRT1_2016 <- data.frame(
   mrt = "Pacaja",
@@ -8197,7 +7874,7 @@ PAMRT12_2016 <- data.frame(
 Santarém2016 <- rbind(PAMRT1_2016, PAMRT2_2016, PAMRT3_2016, PAMRT4_2016,
                       PAMRT5_2016, PAMRT6_2016, PAMRT7_2016, PAMRT8_2016, 
                       PAMRT9_2016, PAMRT10_2016, PAMRT11_2016, PAMRT12_2016)
-
+Santarém2016$ano <- 2016
 
 ### Pará - Marabá #####
 PAMRT1_2017 <- data.frame(
