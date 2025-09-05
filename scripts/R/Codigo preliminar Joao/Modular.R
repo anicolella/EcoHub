@@ -14261,7 +14261,7 @@ SEMRT2_2022 <- data.frame(
   origem = "Lagarto, Poço Verde, Riachão do Dantas, Simão Dias e Tobias Barreto."
 )
 
-## MRT3: Sul Sergipano ####
+## 26.3 MRT3: Sul Sergipano ####
 ## 2017 ####
 SEMRTSulSergipano_2017 <- data.frame(
   mrt = "Sul Sergipano",
@@ -14365,7 +14365,7 @@ SEMRT3_2022 <- data.frame(
   origem = "Itaporanga d'Ajuda, Estância, Boquim, Salgado, Arauá, Itabaianinha, Santa Luzia do Itanhy, Tomar do Geru, Umbaúba, Cristinápolis, Indiaroba.e Pedrinhas"
 )
 
-## MRT: Agreste de Itabaiana #####
+## 26.4 MRT: Agreste de Itabaiana #####
 ## 2017 #####
 SEMRTAgresteDeItabaiana_2017 <- data.frame(
   mrt = "Agreste de Itabaiana",
@@ -14451,7 +14451,7 @@ SEMRT4_2022 <- data.frame(
   origem = "Carira, Frei Paulo, Pinhão, Pedra Mole, Macambira, Campo do Brito, São Domingos, Areia Branca, Itabaiana, Malhador e Moita Bonita."
 )
 
-## MRT5: Médio Sertão Sergipano ####
+## 26.4 MRT5: Médio Sertão Sergipano ####
 ## 2017 ####
 SEMRTMedioSertaoSergipano_2017 <- data.frame(
   mrt = "Médio Sertão Sergipano",
@@ -14535,7 +14535,7 @@ SEMRT5_2022 <- data.frame(
   origem = "Nossa Senhora Aparecida, Feira Nova, Itabi, Aquidabã, Gracho Cardoso, São Miguel do Aleixo, Cumbe, Nossa Senhora das Dores e Ribeirópolis"
 )
 
-## MRT 6: Litoral Norte e Baixo São Francisco ####
+##  26.8 MRT 6: Litoral Norte e Baixo São Francisco ####
 ## 2017 ####
 SEMRTLitoralNorte_2017 <- data.frame(
   mrt = "Litoral Norte e Baixo São Francisco",
@@ -14630,7 +14630,7 @@ SEMRT6_2022 <- data.frame(
   origem = "Ilha das Flores, Canhoba, Telha, Propriá, Santana do São Francisco, Muribeca, Neópolis, Japoatã, Pacatuba, Brejo Grande, São Francisco, Cedro de São João, Nossa Senhora de Lourdes, Amparo do São Francisco e Malhada dos Bois."
 )
 
-## MRT: Cotinguiba ####
+##  26.9 MRT: Cotinguiba ####
 ## 2017 ####
 SEMRTCotinguiba_2017 <- data.frame(
   mrt = "Cotinguiba",
@@ -14724,11 +14724,11 @@ SETEMPORAL$estado <- 28
 SETEMPORAL$regiao <- "nordeste"
 
 
-## 25.Tocantins  #### 
+## 27.Tocantins  #### 
 #2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2016.pdf
 #2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2018.ods
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRTO_2022.pdf
-##Araguatins ####
+##27.1 Araguatins ####
 ##2016 #### 
 MRT1_2016 <- data.frame(
   mrt = "1-ARAGUATINS",
@@ -14772,7 +14772,7 @@ MRT1_2022 <- data.frame(
 )
 
 
-## MRT: II - ARAGUAÍNA #####
+##27.2 MRT: II - ARAGUAÍNA #####
 ## 2016 #####
 MRT2_2016 <- data.frame(
   mrt = "II-ARAGUAÍNA",
@@ -14817,7 +14817,7 @@ MRT2_2022 <- data.frame(
 )
 
 
-## MRT: III - Colinas #####
+##27.3 MRT: III - Colinas #####
 ##2016 #####
 MRT3_2016 <- data.frame(
   mrt = "III-COLINAS",
@@ -14860,7 +14860,7 @@ MRT3_2022 <- data.frame(
   
 )
 
-## MRT: IV - Colméia #####
+##27.4 MRT: IV - Colméia #####
 ##2016 #####
 MRT4_2016 <- data.frame(
   mrt = "IV-COLMÉIA",
@@ -14904,7 +14904,7 @@ MRT4_2022 <- data.frame(
   
 )
 
-## MRT: V - Guaraí #####
+##27.5 MRT: V - Guaraí #####
 ##2016 #####
 MRT5_2016 <- data.frame(
   mrt = "V-GUARAÍ",
@@ -14947,7 +14947,7 @@ MRT5_2022 <- data.frame(
   
 )
 
-## MRT: VI - GURUPI #####
+##27.6 MRT: VI - GURUPI #####
 ##2016 #####
 MRT6_2016 <- data.frame(
   mrt = "VI-GURUPI",
@@ -14991,7 +14991,7 @@ MRT6_2022 <- data.frame(
   
 )
 
-## MRT: VII-PARAÍSO DO TOCANTINS #####
+##27.7 MRT: VII-PARAÍSO DO TOCANTINS #####
 ##2016 #####
 MRT7_2016 <- data.frame(
   mrt = "VII-PARAÍSO DO TOCANTINS",
@@ -15035,7 +15035,7 @@ MRT7_2022 <- data.frame(
   
 )
 
-## MRT: VIII - PEIXE #####
+##27.8 MRT: VIII - PEIXE #####
 ##2016 #####
 MRT8_2016 <- data.frame(
   mrt = "VIII-PEIXE",
@@ -15080,7 +15080,7 @@ MRT8_2022 <- data.frame(
 )
 
 
-## MRT: IX - NATIVIDADE #####
+##27.9 MRT: IX - NATIVIDADE #####
 ##2016 #####
 MRT9_2016 <- data.frame(
   mrt = "IX-NATIVIDADE",
@@ -15124,7 +15124,7 @@ MRT9_2022 <- data.frame(
   
 )
 
-## MRT: X - DIANÓPOLIS #####
+##27.11 MRT: X - DIANÓPOLIS #####
 ##2016 #####
 MRT10_2016 <- data.frame(
   mrt = "X-DIANÓPOLIS",
@@ -15166,7 +15166,7 @@ MRT10_2022 <- data.frame(
   
 )
 
-## MRT: XI - PEDRO AFONSO #####
+##27.12 MRT: XI - PEDRO AFONSO #####
 ##2016 #####
 MRT11_2016 <- data.frame(
   mrt = "XI-PEDRO AFONSO",
@@ -15208,7 +15208,7 @@ MRT11_2022 <- data.frame(
   
 )
 
-## MRT: XII - Goiatnns  #####
+##27.13 MRT: XII - Goiatnns  #####
 ##2016 #####
 MRT12_2016 <- data.frame(
   mrt = "XII-GOIATINS",
@@ -15250,7 +15250,7 @@ MRT12_2022 <- data.frame(
   
 )
 
-## MRT:XIII - PALMAS  #####
+##27.14 MRT:XIII - PALMAS  #####
 ##2016 #####
 MRT13_2016 <- data.frame(
   mrt = "XIII-PALMAS",
