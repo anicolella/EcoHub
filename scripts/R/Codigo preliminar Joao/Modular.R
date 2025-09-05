@@ -14724,11 +14724,19 @@ SETEMPORAL$estado <- 28
 SETEMPORAL$regiao <- "nordeste"
 
 
+<<<<<<< HEAD
 ## 27.Tocantins  #### 
 #2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2016.pdf
 #2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2018.ods
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRTO_2022.pdf
 ##27.1 Araguatins ####
+=======
+## 25.Tocantins  #### 
+#2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2016.pdf
+#2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2018.ods
+#2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRTO_2022.pdf
+##Araguatins ####
+>>>>>>> 32de8d0683c477e6d5b5c2d1910bb037bf7fcade
 ##2016 #### 
 MRT1_2016 <- data.frame(
   mrt = "1-ARAGUATINS",
@@ -15351,5 +15359,8 @@ TOTEMPORAL$estado <- 17
 TOTEMPORAL$regiao <- "norte"
 
 #### consolidação final dos dados ####
+<<<<<<< HEAD
 #fim 
+=======
+>>>>>>> 32de8d0683c477e6d5b5c2d1910bb037bf7fcade
 BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGtemporal, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)
