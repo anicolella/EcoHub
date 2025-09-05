@@ -4173,7 +4173,7 @@ MAMRT7_2018 <- data.frame(
 
 ### 2021 ####
 MAMRT01_2021 <- data.frame(
-  mrt = "PRÉ-AMAZÔNICO",,
+  mrt = "PRÉ-AMAZÔNICO",
   tipologia_de_uso = c("Agricultura", "Pecuária", "Mosaico de Vegetação (Pastagens Degradadas, Florestas Nativas Abertas e Vegetação com Babaçu)",
                        "Agricultura Moderna/Intensiva", "Pecuária com Baixo Nível Tecnológico", "Pecuária com Alto Nível Tecnológico",
                        "Agricultura Moderna Intensiva Regional Buriticupu", "Agricultura Moderna Intensiva Regional Imperatriz",
@@ -4216,7 +4216,7 @@ MAMRT8_2018 <- data.frame(
   vtn_media = c(2353.61, 7794.09, 1130.26, 965.78, 7794.09, 7794.09, 1130.26, 965.78),
   vtn_minimo =c(2000.57, 6624.98, 960.71, 820.91, 6624.98, 6624.98, 960.71, 820.91),
   vtn_maximo =c(2706.65, 8963.20, 1299.79, 1110.64, 8963.20, 8963.20, 1299.79, 1110.64),
-  origem = ""
+  origem = "Alto Parnaíba, Balsas, Barão de Grajaú, Benedito Leite, Campestre do Maranhão, Carolina, Colinas, Estreito, Feira Nova do Maranhão, Fortaleza dos Nogueiras, Jatobá, Lagoa do Mato, Loreto, Mirador, Nova Colinas, Nova Iorque, Paraibano, Passagem Franca, Pastos Bons, Porto Franco, Riachão, Sambaíba, São Domingos do Azeitão, São Félix de Balsas, São Francisco do Maranhão, São João do Paraíso, São João dos Patos, São Pedro dos Crentes, São Raimundo das Mangabeiras, Sucupira do Norte, Sucupira do Norte, Sucupira do Riachão e Tasso Fragoso"
 )
 
 ### 2021 ####
