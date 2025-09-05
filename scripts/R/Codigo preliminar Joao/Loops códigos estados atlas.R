@@ -450,3 +450,94 @@ PETEMPORAL <- PETEMPORAL |>
       .default = NA_character_
     )
   )
+
+#### Paraná #####
+PRTEMPO$mrt[PRTEMPO$mrt == "Noroeste"] <- 907  # Noroeste
+PRTEMPO$mrt[PRTEMPO$mrt == "Oeste/Sudoeste"] <- 908  # Oeste/Sudoeste
+PRTEMPO$mrt[PRTEMPO$mrt == "Norte"] <- 906  # Norte
+PRTEMPO$mrt[PRTEMPO$mrt == "Litoral/Metropolitano"] <- 901 
+PRTEMPO$mrt[PRTEMPO$mrt == "Litoral/Metropolitana"] <- 901
+PRTEMPO$mrt[PRTEMPO$mrt == "Centro"] <- 905  # Centro
+PRTEMPO$mrt[PRTEMPO$mrt == "Centro Sul"] <- 903  # Centro-Sul
+PRTEMPO$mrt[PRTEMPO$mrt == "Campos Gerais"] <- 902  # Campos Gerais
+PRTEMPO$mrt[PRTEMPO$mrt == "Norte Pioneiro"] <- 904  # Norte Pioneiro
+
+PRTEMPO <- PRTEMPO |>
+  mutate(
+    cidades = case_when(
+      mrt == 901 ~ "Adrianópolis, Almirante Tamandaré, Antonina, Bocaiúva do Sul, Campina Grande do Sul, Campo Largo, Campo Magro, Cerro Azul, Colombo, Curitiba, Doutor Ulysses, Guaraqueçaba, Guaratuba, Itaperuçu, Matinhos, Morretes, Paranaguá, Pinhais, Piraquara, Pontal do Paraná, Quatro Barras, Rio Branco do Sul, São José dos Pinhais, Tijucas do Sul e Tunas do Paraná.",
+      mrt == 902 ~ "Agudos do Sul, Antônio Olinto, Araucária, Balsa Nova, Campo do Tenente, Carambeí, Castro, Contenda, Fazenda Rio Grande, Fernandes Pinheiro, Guamiranga, Imbaú, Imbituva, Ipiranga, Irati, Ivaí, Lapa, Mallet, Mandirituba, Palmeira, Paula Freitas, Paulo Frontin, Piên, Piraí do Sul, Ponta Grossa, Porto Amazonas, Quitandinha, Rebouças, Rio Azul, Rio Negro, São João do Triunfo, São Mateus do Sul, Teixeira Soares, Tibagi.",
+      mrt == 903 ~ "Arapoti, Bituruna, Cândido de Abreu, Coronel Domingos Soares, Cruz Machado, Curiúva, General Carneiro, Inácio Martins, Jaguariaíva, Ortigueira, Palmas, Pinhão, Porto Vitória, Prudentópolis, Reserva, Reserva do Iguaçu, Rosário do Ivaí, Sapopema, Sengés, Telêmaco Borba, Turvo, União da Vitória e Ventania.",
+      mrt == 904 ~ "Carlópolis, Congonhinhas, Conselheiro Mairinck, Figueira, Guapirama, Ibaiti, Jaboti, Jacarezinho, Japira, Joaquim Távora, Jundiaí do Sul, Pinhalão, Quatiguá, Ribeirão Claro, Ribeirão do Pinhal, Salto do Itararé, Santana do Itararé, Santo Antônio da Platina, São José da Boa Vista, Siqueira Campos, Tomazina e Wenceslau Braz.",
+      mrt == 905 ~ "Altamira do Paraná, Arapuã, Ariranha do Ivaí, Boa Ventura de São Roque, Campina do Simão, Candói, Cantagalo, Diamante do Sul, Goioxim, Grandes Rios, Guaraniaçu, Guarapuava, Espigão Alto do Iguaçu, Foz do Jordão, Ivaiporã, Jardim Alegre, Laranjal, Laranjeiras do Sul, Manoel Ribas, Marquinho, Mato Rico, Nova Laranjeiras, Nova Tebas, Palmital, Pitanga, Porto Barreiro, Quedas do Iguaçu, Rio Bonito do Iguaçu, Rio Branco do Ivaí, Santa Maria do Oeste e Virmond.",
+      mrt == 906 ~ "Abatiá, Alvorada do Sul, Andirá, Ângulo, Apucarana, Arapongas, Assaí, Astorga, Bandeirantes, Barbosa Ferraz, Barra do Jacaré, Bela Vista do Paraíso, Boa Esperança, Bom Sucesso, Borrazópolis, Cafeara, Califórnia, Cambará, Cambé, Cambira, Campina da Lagoa, Campo Mourão, Centenário do Sul, Cornélio Procópio, Corumbataí do Sul, Cruzmaltina, Doutor Camargo, Engenheiro Beltrão, Faxinal, Fênix, Floraí, Floresta, Florestópolis, Godoy Moreira, Goioerê, Guaraci, Ibiporã, Iguaraçu, Iretama, Itambaracá, Itambé, Ivatuba, Jaguapitã, Jandaia do Sul, Jataizinho, Juranda, Kaloré, Leópolis, Lidianópolis, Londrina, Luiziana, Lunardelli, Lupionópolis, Mamborê, Mandaguaçu, Mandaguari, Marialva, Marilândia do Sul, Maringá, Marumbi, Mauá da Serra, Miraselva, Munhoz de Mello, Nossa Senhora das Graças, Nova América da Colina, Nova Cantu, Nova Fátima, Nova Santa Bárbara, Novo Itacolomi, Ourizona, Paiçandu, Peabiru, Pitangueiras, Porecatu, Prado Ferreira, Presidente Castelo Branco, Primeiro de Maio, Quarto Centenário, Quinta do Sol, Rancho Alegre, Rancho Alegre D'Oeste, Rio Bom, Rolândia, Roncador, Sabáudia, Santa Amélia, Santa Cecília do Pavão, Santa Fé, Santa Mariana, Santo Antônio do Paraíso, São Jerônimo da Serra, São João do Ivaí, São Jorge do Ivaí, São Pedro do Ivaí, São Sebastião da Amoreira, Sarandi, Sertaneja, Sertanópolis, Tamarana, Ubiratã e Uraí.",
+      mrt == 907 ~ "Alto Paraíso, Alto Paraná, Alto Piquiri, Altônia, Amaporã, Araruna, Atalaia, Brasilândia do Sul, Cafezal do Sul, Cianorte, Cidade Gaúcha, Colorado, Cruzeiro do Oeste, Cruzeiro do Sul, Diamante do Norte, Douradina, Esperança Nova, Farol, Flórida, Francisco Alves, Guairaça, Guaporema, Icaraíma, Inajá, Indianópolis, Iporã, Itaguajé, Itapejara D'Oeste, Itaúna do Sul, Ivaté, Janiópolis, Japurá, Jardim Olinda, Jussara, Loanda, Lobato, Maria Helena, Marilena, Mariluz, Mirador, Moreira Sales, Nova Aliança do Ivaí, Nova Esperança, Nova Londrina, Nova Olímpia, Paraíso do Norte, Paranacity, Paranapoema, Paranavaí, Perobal, Pérola, Planaltina do Paraná, Porto Rico, Querência do Norte, Rondon, Santa Cruz de Monte Castelo, Santa Inês, Santa Isabel do Ivaí, Santa Mônica, Santo Antônio do Caiuá, Santo Inácio, São Carlos do Ivaí, São João do Caiuá, São Jorge do Patrocínio, São Manoel do Paraná, São Pedro do Paraná, São Tomé, Tamboara, Tapejara, Tapira, Terra Boa, Terra Rica, Tuneiras do Oeste, Umuarama, Uniflor e Xambrê.",
+      mrt == 908 ~ "Ampère, Anahy, Assis Chateaubriand, Barracão, Bela Vista da Caroba, Boa Esperança do Iguaçu, Boa Vista da Aparecida, Bom Jesus do Sul, Bom Sucesso do Sul, Braganey, Cafelândia, Campo Bonito, Capanema, Capitão Leônidas Marques, Cascavel, Catanduvas, Céu Azul, Chopinzinho, Clevelândia, Corbélia, Coronel Vivida, Cruzeiro do Iguaçu, Diamante d'Oeste, Dois Vizinhos, Enéas Marques, Entre Rios do Oeste, Flor da Serra do Sul, Formosa do Oeste, Foz do Iguaçu, Francisco Beltrão, Guaíra, Honório Serpa, Ibema, Iguatu, Iracema do Oeste, Itaipulândia, Jesuítas, Lindoeste, Manfrinópolis, Mangueirinha, Marechal Cândido Rondon, Mariópolis, Maripá, Marmeleiro, Matelândia, Medianeira, Mercedes, Missal, Nova Aurora, Nova Esperança do Sudoeste, Nova Prata do Iguaçu, Nova Santa Rosa, Ouro Verde do Oeste, Palotina, Pato Bragado, Pato Branco, Pérola d'Oeste, Pinhal de São Bento, Planalto, Pranchita, Quatro Pontes, Ramilândia, Realeza, Renascença, Salgado Filho, Salto do Lontra, Santa Helena, Santa Izabel do Oeste, Santa Lúcia, Santa Tereza do Oeste, Santa Terezinha de Itaipu, Santo Antônio do Sudoeste, São João, São Jorge d'Oeste, São José das Palmeiras, São Miguel do Iguaçu, São Pedro do Iguaçu, Saudade do Iguaçu, Serranópolis do Iguaçu, Sulina, Terra Roxa, Toledo, Três Barras do Paraná, Tupãssi, Vera Cruz do Oeste, Verê e Vitorino.",
+      .default = NA_character_ # seta NA para casos não previstos
+    )
+  )
+
+#### Piauí ####
+PITEMPORAL <- PITEMPORAL |>
+  mutate(
+    # Etapa 1: Padroniza os nomes para um código numérico único do Atlas
+    mrt= case_when(
+      grepl("Quilombo", mrt, ignore.case = TRUE)        ~ 2401,
+      grepl("Gurguéia", mrt, ignore.case = TRUE)        ~ 2402,
+      grepl("Norte Piauiense", mrt, ignore.case = TRUE) ~ 2403,
+      grepl("Capivara", mrt, ignore.case = TRUE)        ~ 2404,
+      grepl("Rio Piauí", mrt, ignore.case = TRUE)       ~ 2405,
+      grepl("Canindé", mrt, ignore.case = TRUE)         ~ 2406,
+      grepl("Sudeste", mrt, ignore.case = TRUE)         ~ 2407,
+      grepl("Maratoan|Maratoã", mrt, ignore.case = TRUE) ~ 2408,
+      grepl("Parnaíba", mrt, ignore.case = TRUE)        ~ 2409,
+      grepl("Carnaúba", mrt, ignore.case = TRUE)        ~ 2410,
+      grepl("Teresina", mrt, ignore.case = TRUE)        ~ 2411,
+      grepl("Litorânea", mrt, ignore.case = TRUE)       ~ 2412,
+      .default = NA_integer_
+    ),
+    # Etapa 2: Adiciona a lista de cidades com base no código numérico
+    cidades = case_when(
+      mrt == 2401 ~ "Antônio Almeida, Baixa Grande do Ribeiro, Barreiras do Piauí, Bertolínia, Currais, Gilbués, Manoel Emídio, Monte Alegre do Piauí, Palmeira do Piauí, Ribeiro Gonçalves, Santa Filomena, São Gonçalo do Gurguéia, Sebastião Leal, Uruçuí",
+      mrt == 2402 ~ "Alvorada do Gurguéia, Avelino Lopes, Bom Jesus, Colônia do Gurguéia, Corrente, Cristalândia do Piauí, Cristino Castro, Curimatá, Júlio Borges, Morro Cabeça no Tempo, Parnaguá, Redenção do Gurguéia, Riacho Frio, Santa Luz, Sebastião Barros",
+      mrt == 2403 ~ "Campo Largo do Piauí, Caraúbas do Piauí, Caxingó, Joaquim Pires, Joca Marques, Luzilândia, Madeiro, Matias Olímpio, Miguel Alves, Murici dos Portelas, Nossa Senhora dos Remédios, Porto, São João do Arraial",
+      mrt == 2404 ~ "Anísio de Abreu, Bonfim do Piauí, Brejo do Piauí, Canto do Buriti, Caracol, Coronel José Dias, Dirceu Arcoverde, Dom Inocêncio, Eliseu Martins, Fartura do Piauí, Flores do Piauí, Guaribas, Jurema, Pajeú do Piauí, Pavussu, Rio Grande do Piauí, São Braz do Piauí, São Lourenço do Piauí, São Raimundo Nonato, Tamboril do Piauí, Várzea Branca",
+      mrt == 2405 ~ "Canavieira, Floriano, Guadalupe, Itaueira, Jerumenha, Landri Sales, Marcos Parente, Nazaré do Piauí, Porto Alegre do Piauí, São Francisco do Piauí, São José do Peixe, São Miguel do Fidalgo",
+      mrt == 2406 ~ "Bela Vista do Piauí, Cajazeiras do Piauí, Campinas do Piauí, Campo Alegre do Fidalgo, Capitão Gervásio Oliveira, Colônia do Piauí, Conceição do Canindé, Floresta do Piauí, Isaías Coelho, João Costa, Oeiras, Paes Landim, Paquetá, Pedro Laurentino, Nova Santa Rita, Ribeira do Piauí, Santa Cruz do Piauí, Santa Rosa do Piauí, Santo Inácio do Piauí, São Francisco de Assis do Piauí, São João da Varjota, São João do Piauí, Simplício Mendes, Socorro do Piauí, Tanque do Piauí, Wall Ferraz",
+      mrt == 2407 ~ "Acauã, Alagoinha do Piauí, Alegrete do Piauí, Aroeiras do Itaim, Belém do Piauí, Betânia do Piauí, Bocaina, Caldeirão Grande do Piauí, Campo Grande do Piauí, Caridade do Piauí, Curral Novo do Piauí, Dom Expedito Lopes, Francisco Macedo, Francisco Santos, Fronteiras, Geminiano, Ipiranga do Piauí, Itainópolis, Jacobina do Piauí, Jaicós, Lagoa do Barro do Piauí, Marcolândia, Massapê do Piauí, Monsenhor Hipólito, Padre Marcos, Patos do Piauí, Paulistana, Picos, Pio IX, Queimada Nova, Santana do Piauí, Santo Antônio de Lisboa, São João da Canabrava, São José do Piauí, São Julião, São Luís do Piauí, Simões, Sussuapara, Vera Mendes, Vila Nova do Piauí",
+      mrt == 2408 ~ "Barras, Batalha, Boa Hora, Brasileira, Cabeceiras do Piauí, Domingos Mourão, Esperantina, Lagoa de São Francisco, Milton Brandão, Morro do Chapéu do Piauí, Pedro II, Piracuruca, Piripiri, São João da Fronteira, São José do Divino",
+      mrt == 2409 ~ "Palmeirais, São Pedro do Piauí, Miguel Leão, Agricolândia, Olho D'água do Piauí, Lagoinha do Piauí, Água Branca, São Gonçalo do Piauí, Hugo Napoleão, Santo Antônio dos Milagres, Jardim do Mulato, Angical do Piauí, Amarante, Regeneração, Francinópolis, Barra D'alcântara, Várzea Grande, Arraial, Francisco Ayres",
+      mrt == 2410 ~ "Alto Longá, Altos, Aroazes, Assunção do Piauí, Barro Duro, Beneditinos, Boqueirão do Piauí, Buriti dos Montes, Campo Maior, Capitão de Campos, Castelo do Piauí, Cocal de Telha, Coivaras, Elesbão Veloso, Inhuma, Jatobá do Piauí, Juazeiro do Piauí, Lagoa do Sítio, Nossa Senhora de Nazaré, Novo Oriente do Piauí, Novo Santo Antônio, Passagem Franca do Piauí, Pau D'Arco do Piauí, Pimenteiras, Prata do Piauí, Santa Cruz dos Milagres, São Félix do Piauí, São João da Serra, São Miguel da Baixa Grande, São Miguel do Tapuio, Sigefredo Pacheco, Valença do Piauí",
+      mrt == 2411 ~ "Teresina, Nazária, Curralinhos, Monsenhor Gil, Lagoa do Piauí, Demerval Lobão, José de Freitas, Lagoa Alegre, União",
+      mrt == 2412 ~ "Bom Princípio do Piauí, Buriti dos Lopes, Cajueiro da Praia, Cocal, Cocal dos Alves, Ilha Grande, Luís Correia, Parnaíba",
+      .default = NA_character_
+    )
+  )
+
+#### Rio de Janeiro #####
+
+RJTEMPO <- RJTEMPO |>
+  mutate(
+    mrt= case_when(
+      mrt == "ZH Vale do Paraiba" ~701,
+      mrt == "ZH Vale do Paraíba"     ~ 701,
+      mrt == "ZH Leste Fluminense"    ~ 705,
+      mrt == "ZH Serrana"             ~ 703,
+      mrt == "ZH Metropolitana"       ~ 702,
+      mrt == "ZH Nordeste Fluminense" ~ 706,
+      mrt == "ZH Lagos"               ~ 704
+    )
+  )
+
+RJTEMPO<- RJTEMPO |>
+  mutate(
+        cidades = case_when(
+          mrt == "701" ~ "Angra dos Reis, Areal, Barra do Pirai, Barra Mansa, Comendador Levy Gasparian, Engenheiro Paulo de Frontin, Itatiaia, Mangaratiba, Mendes, Miguel Pereira, Paraíba do Sul, Paraty, Pinheiral, Pirai, Porto Real, Quatis, Resende, Rio Claro, Rio das Flores, Sapucaia, Três Rios, Valença, Vassouras, Volta Redonda", # [cite: 540]
+          mrt == "702" ~ "Belford Roxo, Cachoeiras de Macacu, Duque de Caxias, Guapimirim, Itaboral, Itagual, Japeri, Magé, Marica, Mesquita, Nilópolis, Niteroi, Nova Iguaçu, Paracambi, Queimados, Rio Bonito, Rio de Janeiro, São Gançalo, São João de Meriti, Seropédica, Tangua", # [cite: 543]
+          mrt == "703" ~ "Bom Jardim, Cantagalo, Carmo, Cordeiro, Duas Barras, Macuco, Nova Friburgo, Paty do Alferes, Petrópolis, Santa Maria Madalena, São José do Vale do Rio Preto, São Sebastião do Alto, Sumidouro, Teresópolis e Trajano de Moraes", # [cite: 549]
+          mrt == "704" ~ "Araruama, Armação de Búzios, Arraial do Cabo, Cabo Frio, Casimiro de Abreu, Iguaba Grande, Rio das Ostras, São Pedro da Aldeia, Saquarema e Silva Jardim", # [cite: 552, 553]
+          mrt == "705" ~ "Campos dos Goytacazes, Carapebus, Conceição do Macabu, Macaé, Quissamã, São Francisco de Itabapoana, São João da Barra", # [cite: 560]
+          mrt == "706" ~ "Aperibé, Bom Jesus do Itabapoana, Cambuci, Cardoso Moreira, Italva, Itaocara, Itaperuna, Laje do Muriaé, Miracema, Natividade, Porciúncula, Santo Antônio de Pádua, São Fidélis, São José de Ubá e Varre-Sai", # [cite: 562]
+        )
+  )
+

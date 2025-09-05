@@ -79,7 +79,7 @@ def gerar_script_r_from_df(df, nome_mrt, ano, uf="RN"):
 # =============================================================================
 caminho_pdf = r"C:/Users/jodom/OneDrive/Área de Trabalho/RAMT_PPR_RN.pdf"
 paginas_para_ler = '4, 5'
-nome_do_mrt = "ceara_mirim"
+nome_do_mrt = "paudosferros"
 ano_dos_dados = 2022
 uf_dos_dados = "RN"
 
