@@ -33,3 +33,5 @@ Thumbs.db
 # ---- Dados locais (opcional – só se existir uma pasta de dados não versionados)
 data/
 dados/
+
+/.quarto/

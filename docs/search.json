@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Projeto BD Ambiental",
+    "section": "",
+    "text": "Coleta & metadados (fontes, licenças, cobertura)\nTratamento & integração (tabelas, séries, shapefiles/rasters)\nEDA, modelagem estatística/econométrica e visualizações\nReprodutibilidade (R/Python, ambientes, trilhas de auditoria)\nPacotes (R e Python) para automatizar o processo\n\n\n\n\n\n\n\nNote\n\n\n\nCada etapa possui scripts, logs e checklists de auditoria.\n\n\n\n\n\nCatálogo de Dados\nPipelines\nAnálises\nVisualizações\nPacotes\n\n\n\n\nOs códigos de trabalho ficam em _SCRIPTS_BD_AMBIENTAL/ (R e Python).\nRelatórios e documentação final são renderizados aqui no site via Quarto."
+  },
+  {
+    "objectID": "index.html#navegação-rápida",
+    "href": "index.html#navegação-rápida",
+    "title": "Projeto BD Ambiental",
+    "section": "",
+    "text": "Catálogo de Dados\nPipelines\nAnálises\nVisualizações\nPacotes"
+  },
+  {
+    "objectID": "index.html#estrutura-de-código",
+    "href": "index.html#estrutura-de-código",
+    "title": "Projeto BD Ambiental",
+    "section": "",
+    "text": "Os códigos de trabalho ficam em _SCRIPTS_BD_AMBIENTAL/ (R e Python).\nRelatórios e documentação final são renderizados aqui no site via Quarto."
+  }
+]
