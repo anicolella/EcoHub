@@ -27,14 +27,6 @@ Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisa
 
 ---
 
-## 📂 Estrutura do Repositório
-
-A organização atual do projeto está assim:
-
-
-
----
-
 ## 📌 Nota sobre os scripts
 
 Os **scripts principais do projeto ficam na pasta `_SCRIPTS_BD_AMBIENTAL`**, organizados em **R** e **Python**.  
