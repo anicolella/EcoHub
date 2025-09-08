@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Projeto BD Ambiental (USP)"
+  navbar:
+    left:
+      - text: "Início"
+        href: index.qmd
+      - text: "Catálogo de Dados"
+        href: data_catalog/index.qmd
+      - text: "Pipelines"
+        href: pipelines/index.qmd
+      - text: "Análises"
+        href: analysis/index.qmd
+      - text: "Pacotes"
+        href: packages/index.qmd
+      - text: "Visualizações"
+        href: viz/index.qmd
+  page-footer:
+    left: "© 2025 BD Ambiental"
+    right: "Licenças & Citações"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: show
+    number-sections: true
+
+execute:
+  freeze: auto    # cache de resultados; re-renderiza só quando mudar o fonte
