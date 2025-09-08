@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Projeto BD Ambiental – Projeto BD Ambiental (USP)</title>
+<title>ETL Shapefile – Projeto BD Ambiental (USP)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Projeto BD Ambiental (USP)</span>
     </a>
   </div>
@@ -88,27 +88,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data_catalog/index.html"> 
+    <a class="nav-link" href="../data_catalog/index.html"> 
 <span class="menu-text">Catálogo de Dados</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pipelines/index.html"> 
+    <a class="nav-link" href="../pipelines/index.html"> 
 <span class="menu-text">Pipelines</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./analysis/index.html"> 
+    <a class="nav-link" href="../analysis/index.html"> 
 <span class="menu-text">Análises</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./packages/index.qmd"> 
+    <a class="nav-link" href="../packages/index.qmd"> 
 <span class="menu-text">Pacotes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./viz/index.html"> 
+    <a class="nav-link" href="../viz/index.html"> 
 <span class="menu-text">Visualizações</span></a>
   </li>  
 </ul>
@@ -122,25 +122,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">1</span> Objetivos</a>
-  <ul class="collapse">
-  <li><a href="#navegação-rápida" id="toc-navegação-rápida" class="nav-link" data-scroll-target="#navegação-rápida"><span class="header-section-number">1.1</span> Navegação rápida</a></li>
-  <li><a href="#estrutura-de-código" id="toc-estrutura-de-código" class="nav-link" data-scroll-target="#estrutura-de-código"><span class="header-section-number">1.2</span> Estrutura de código</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projeto BD Ambiental</h1>
+<h1 class="title">ETL Shapefile</h1>
 </div>
 
 
@@ -157,46 +147,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="objetivos" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Objetivos</h1>
-<ul>
-<li>Coleta &amp; metadados (fontes, licenças, cobertura)</li>
-<li>Tratamento &amp; integração (tabelas, séries, shapefiles/rasters)</li>
-<li>EDA, modelagem estatística/econométrica e visualizações</li>
-<li>Reprodutibilidade (R/Python, ambientes, trilhas de auditoria)</li>
-<li>Pacotes (R e Python) para automatizar o processo</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Cada etapa possui scripts, logs e <em>checklists</em> de auditoria.</p>
-</div>
-</div>
-<section id="navegação-rápida" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="navegação-rápida"><span class="header-section-number">1.1</span> Navegação rápida</h2>
-<ul>
-<li><a href="./data_catalog/index.html">Catálogo de Dados</a></li>
-<li><a href="./pipelines/index.html">Pipelines</a></li>
-<li><a href="./analysis/index.html">Análises</a></li>
-<li><a href="./viz/index.html">Visualizações</a></li>
-<li><a href="packages/index.qmd">Pacotes</a></li>
-</ul>
-</section>
-<section id="estrutura-de-código" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="estrutura-de-código"><span class="header-section-number">1.2</span> Estrutura de código</h2>
-<p>Os códigos de trabalho ficam em <code>_SCRIPTS_BD_AMBIENTAL/</code> (R e Python).<br>
-Relatórios e documentação final são renderizados aqui no site via Quarto.</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

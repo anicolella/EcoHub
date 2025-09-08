@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "components/footer-links.html",
+    "href": "components/footer-links.html",
+    "title": "Projeto BD Ambiental (USP)",
+    "section": "",
+    "text": "Rodap� com links"
+  },
+  {
+    "objectID": "components/hero.html",
+    "href": "components/hero.html",
+    "title": "1 Hero section",
+    "section": "",
+    "text": "1 Hero section"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Projeto BD Ambiental",
