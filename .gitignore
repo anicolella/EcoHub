@@ -1,4 +1,35 @@
-.Rproj.user
+# ---- R / RStudio
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
+.Rprofil*
+.Rbuildignore
+
+# renv (manter renv.lock; ignorar libs locais)
+renv/library/
+renv/staging/
+
+# ---- Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+
+# ---- Quarto
+# docs/            # ignorar se publicar via branch gh-pages
+# _freeze/         # cache de execução
+# .quarto/         # metadados locais do quarto
+
+# ---- SO / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ---- Dados locais (opcional – só se existir uma pasta de dados não versionados)
+data/
+dados/
