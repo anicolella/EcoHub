@@ -3595,7 +3595,7 @@ GOMRT07_2022 <- data.frame(
   vtn_minimo = c(39776.32, 41443.11, 45903.51, 28381.36, NA, 32163.62, 53815.77, 47923.14, 35479.17, 24784.50),
   vtn_maximo = c(53815.02, 56070.10, 62104.75, 38398.31, NA, 43515.49, 72809.57, 64837.19, 48001.22, 33531.97),
   origem = "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara, Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palmelo, Palminópolis, Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de Goiás, São Miguel do Passa Quatro, Urutaí, Varjão e Vicentinópolis." 
-  )
+)
 
 ### 2024 ####
 GOMRT07_2024 <- data.frame(
@@ -3851,7 +3851,7 @@ MAMRT1_2018 <- data.frame(
   vtn_minimo = c(828.54, 929.03, 618.32, 842.84, 516.80, 781.21, 1297.74, 630.48, 812.44, NA, 1671.67, NA, 597.83, 952.20, 845.84, 796.57),
   vtn_maximo = c(1120.97, 1256.92, 836.55, 1140.32, 699.20, 1056.93, 1755.77, 853.01, 1099.18, NA, 2261.67, NA, 808.83, 1288.27, 1144.37, 1077.71),
   origem = "Afonso Cunha, Aldeias Altas, Alto Alegre do Maranhão, Anapurus, Belágua, Brejo, Buriti, Buriti Bravo, Capinzal do Norte, Caxias, Chapadinha, Codó, Coelho Neto, Coroatá, Duque Bacelar, Mara Roma, Matões, Milagres do Maranhão, Parnarama, Peritoró, São Benedito do Rio Preto, São João do Sóter, Timbiras, Timon e Urbano Santos"
-  )
+)
 
 #### 2021 ####
 MAMRT02_2021<- data.frame(
@@ -4013,7 +4013,7 @@ MAMRT4_2018 <- data.frame(
   vtn_minimo =  c(1037.54, 1125.00, 1441.64, 882.09, 1133.29, 1061.41, 1248.97, 1205.09, 867.61, 804.96),
   vtn_maximo = c(1403.73, 1522.05, 1950.46, 1193.42, 1533.28, 1436.03, 1689.79, 1630.42, 1173.82, 1089.07),
   origem = "Altamira do Maranhão, Arame, Bacabal, Barra do Corda, Bernardo do Mearim, Bom Lugar, Brejo de Areia, Dom Pedro, Esperantinópolis, Fernando Falcão, Formosa da Serra Negra, Fortuna, Gonçalves Dias, Governador Archer, Governador Eugênio Barros, Governador Luiz Rocha, Graça Aranha, Grajaú, Igarapé Grande, Itaipava do Grajaú, Jenipapo dos Vieiras, Joselândia, Lago da Pedra, Lago do Junco, Lago Verde, Lago dos Rodrigues, Lagoa Grande do Maranhão, Lima Campos, Marajá do Sena, Olho D'água das Cunhãs, Paulo Ramos, Pedreiras, Pindaré-Mirim, Pio XII, Poção de Pedras, Presidente Dutra, Santa Filomena do Maranhão, Santa Inês, Santo Antônio dos Lopes, São Domingos do Maranhão, São José dos Basílios, São Luís Gonzaga do Maranhão, São Mateus do Maranhão, São Raimundo do Doca Bezerra, São Roberto, Satubinha, Senador Alexandre Costa, Sítio Novo, Trizidela do Vale, Tuntum e Vitorino Freire."
-  )
+)
 
 ### 2021 ####
 MAMRT05_2021 <- data.frame(
@@ -4055,7 +4055,7 @@ MAMRT05_2022 <- data.frame(
   vtn_minimo = c(4617.71, 5253.42, 4966.23, 3735.82, 5987.58, 4730.07, 4853.73, 4586.70, 3735.82),
   vtn_maximo = c(6860.33, 7797.05, 6962.38, 5015.22, 6689.65, 7250.23, 7187.75, 5472.04, 5015.22),
   origem = "Altamira do Maranhão, Arame, Bacabal, Barra do Corda, Bernardo do Mearim, Bom Lugar, Brejo de Areia, Dom Pedro, Esperantinópolis, Fernando Falcão, Formosa da Serra Negra, Fortuna, Gonçalves Dias, Governador Archer, Governador Eugênio Barros, Governador Luiz Rocha, Graça Aranha, Grajaú, Igarapé Grande, Itaipava do Grajaú, Jenipapo dos Vieiras, Joselândia, Lago da Pedra, Lago do Junco, Lago Verde, Lago dos Rodrigues, Lagoa Grande do Maranhão, Lima Campos, Marajá do Sena, Olho D'água das Cunhas, Paulo Ramos, Pedreiras, Pindaré-Mirim, Pio XII, Poção de Pedras, Presidente Dutra, Santa Filomena do Maranhão, Santa Inês, Santo Antônio dos Lopes, São Domingos do Maranhão, São José dos Basílios, São Luís Gonzaga do Maranhão, São Mateus do Maranhão, São Raimundo do Doca Bezerra, São Roberto, Satubinha, Senador Alexandre Costa, Sítio Novo, Trizidela do Vale, Tuntum e Vitorino Freire"
-  )
+)
 
 ###  10.5 MRT 5 - METROPOLITANA  ####
 ### 2018 ####
@@ -4370,7 +4370,7 @@ MTMRT1_2018 <- data.frame(
   vtn_minimo = c(2658.26, 3544.19, 1456.14, 2057.28, 510.52, 1628.38, 2581.31, 4329.49, 2057.28, 1979.11, 2192.57, 2361.19, 4436.73, 4614.88),
   vtn_maximo = c(3596.47, 4795.09, 1970.07, 2783.38, 690.7, 2203.1, 3492.36, 5857.54, 2783.38, 2677.62, 2966.42, 3194.55, 6002.63, 6243.67),
   origem = "Aripuanã, Colniza, Rondolândia, Cotriguaçu, Juruena, Nova Monte Verde, Nova Bandeirante, Apiacás."
-  )
+)
 
 #Adição de dados mais completos refrentes a PPR
 
@@ -4400,7 +4400,7 @@ MTMRT1_2023 <- data.frame(
   vtn_minimo = c(12313.01, 11938.51, 14892.61, 12708.96, 5726.02, 17565.33),
   vtn_maximo = c(16658.78, 16152.10, 20148.83, 17194.47, 7746.96, 23764.86),
   origem = "Apiacás, Aripuanã, Colniza, Cotriguaçu, Juruena, Nova Bandeirantes,Nova Monte Verde e Rondolândia."
-  )
+)
 
 ## 2024 ####
 MTMRT1_2024 <- data.frame(
@@ -4452,7 +4452,7 @@ MTMRT2_19 <- data.frame(
   vtn_maximo = c(24609.13, 29115.24, 8108.49, 8571.50, 29703.72, 19699.57, 15090.16, 6363.08, 7423.80),
   origem = "Ipiranga do Norte, Lucas do Rio Verde, Nova Mutum, Nova Ubiratã, Santa Rita do Trivelato, São José do Rio Claro, Sinop, Sorriso, Tapurah e Vera"
   
- 
+  
 )
 
 ## 2023 ####
@@ -4515,15 +4515,15 @@ MTMRT3_19 <- data.frame(
 
 ## 2023 ####
 MTMRT3_2023 <- data.frame(mrt = 3, tipologia_de_uso = c("MÉDIA GERAL", "Pecuária", "Exploração Mista", "Agrícola", "Pecuária - Bovino-Pastagem Formada (baixa cap. sup.)", "Pecuária - Bovino-Pastagem Formada (media cap. sup.)", "Exploração Mista - Agrícola + Pastagem (alta cap.prod. e sup.)", "Agrícola - Grãos Soja (alta cap. prod.)", "Exploração Mista - Agrícola + Pastagem (alta cap.prod. e sup.)"),
-                        nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2), 
-                        vti_media = c(42026.00, 16461.42, 66008.30, 52840.14, 9756.57, 23670.38, 66000.04, 64358.97, 44332.20), 
-                        vti_minimo = c(35722.10, 13992.21, 56107.05, 44914.12, 8293.08, 20119.83, 56100.04, 54705.13, 37682.37), 
-                        vti_maximo = c(48329.91, 18930.63, 75909.54, 60766.16, 11220.05, 27220.94, 75900.05, 74012.82, 50982.03), 
-                        vtn_media = c(37861.53, 14779.40, 59407.47, 47708.61, 8998.10, 21068.60, 59400.04, 58249.83, 39898.98), 
-                        vtn_minimo = c(32182.30, 12562.49, 50496.35, 40552.32, 7648.38, 17908.31, 50490.03, 49512.36, 33914.13), 
-                        vtn_maximo = c(43540.76, 16996.31, 68318.59, 54864.90, 10347.81, 24228.90, 68310.04, 66987.30, 45883.83),
-                        origem = " Brasnorte, Campo Novo do Parecis, Sapezal, Campos de Júlio, Diamantino, Nova Maringá, Tangará da Serra, Santo Afonso, Nova Marilândia, Nortelândia e Arenápolis."
-                        )
+                          nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2), 
+                          vti_media = c(42026.00, 16461.42, 66008.30, 52840.14, 9756.57, 23670.38, 66000.04, 64358.97, 44332.20), 
+                          vti_minimo = c(35722.10, 13992.21, 56107.05, 44914.12, 8293.08, 20119.83, 56100.04, 54705.13, 37682.37), 
+                          vti_maximo = c(48329.91, 18930.63, 75909.54, 60766.16, 11220.05, 27220.94, 75900.05, 74012.82, 50982.03), 
+                          vtn_media = c(37861.53, 14779.40, 59407.47, 47708.61, 8998.10, 21068.60, 59400.04, 58249.83, 39898.98), 
+                          vtn_minimo = c(32182.30, 12562.49, 50496.35, 40552.32, 7648.38, 17908.31, 50490.03, 49512.36, 33914.13), 
+                          vtn_maximo = c(43540.76, 16996.31, 68318.59, 54864.90, 10347.81, 24228.90, 68310.04, 66987.30, 45883.83),
+                          origem = " Brasnorte, Campo Novo do Parecis, Sapezal, Campos de Júlio, Diamantino, Nova Maringá, Tangará da Serra, Santo Afonso, Nova Marilândia, Nortelândia e Arenápolis."
+)
 
 ## 2024 ####
 MTMRT3_2024 <- data.frame(
@@ -4578,16 +4578,16 @@ MTMRT4_19 <- data.frame(
 
 ## 2023 ####
 MTMRT4_2023 <- data.frame(mrt = 4,
-                        tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Exploração Mista", "Agrícola - Grãos Diversos alta", "Agrícola - Grãos Diversos médio", "Pecuária - Bovino-Pastagem Formada Alta", "Pecuária - Bovino-Pastagem Formada Média", "Água Boa - Agrícola - Grãos Diversos", "Água Boa - Pecuária - Bovino-Pastagem Formada", "Água Boa - Pecuária - Bovino-Pastagem Formada alta", "Água Boa - Pecuária - Bovino-Pastagem Formada média"),
-                        nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3), 
-                        vti_media = c(30754.93, 48779.37, 25844.93, 33939.52, 53381.08, 36508.13, 32278.73, 15411.56, 39362.71, 28587.93, 37088.87, 21369.44), 
-                        vti_minimo = c(26141.69, 41462.46, 21968.19, 28848.59, 45373.92, 31031.91, 27436.92, 11571.94, 33458.30, 24299.74, 31525.54, 18164.03), 
-                        vti_maximo = c(35368.17, 56096.27, 29721.67, 39030.45, 61388.25, 41984.34, 37120.54, 15656.16, 45267.12, 32876.12, 42652.20, 24574.86), 
-                        vtn_media = c(27001.18, 41462.46, 22047.71, 28954.84, 45373.92, 31031.91, 27681.51, 13099.82, 33458.30, 24453.11, 31739.83, 18164.03), 
-                        vtn_minimo = c(22951.00, 35243.09, 18740.55, 24611.62, 38567.83, 26377.12, 23529.28, 10414.75, 28439.56, 20785.15, 26978.85, 15439.42), 
-                        vtn_maximo = c(31051.36, 47681.83, 25354.86, 33298.07, 52180.01, 35686.69, 31833.73, 14090.54, 38477.05, 28121.08, 36500.80, 20888.63),
-                        origem = "Paranatinga, Gaúcha do Norte, Planalto da Serra, Nova Brasilândia, Alto Boa Vista, Bom Jesus do Araguaia, Ribeirão Cascalheira, Água Boa, Campinápolis, Canarana, Nova Xavantina, Novo São Joaquim, Querência, Barra do Garças, Chapada dos Guimarães e General Carneiro."
-                        )
+                          tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Exploração Mista", "Agrícola - Grãos Diversos alta", "Agrícola - Grãos Diversos médio", "Pecuária - Bovino-Pastagem Formada Alta", "Pecuária - Bovino-Pastagem Formada Média", "Água Boa - Agrícola - Grãos Diversos", "Água Boa - Pecuária - Bovino-Pastagem Formada", "Água Boa - Pecuária - Bovino-Pastagem Formada alta", "Água Boa - Pecuária - Bovino-Pastagem Formada média"),
+                          nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3), 
+                          vti_media = c(30754.93, 48779.37, 25844.93, 33939.52, 53381.08, 36508.13, 32278.73, 15411.56, 39362.71, 28587.93, 37088.87, 21369.44), 
+                          vti_minimo = c(26141.69, 41462.46, 21968.19, 28848.59, 45373.92, 31031.91, 27436.92, 11571.94, 33458.30, 24299.74, 31525.54, 18164.03), 
+                          vti_maximo = c(35368.17, 56096.27, 29721.67, 39030.45, 61388.25, 41984.34, 37120.54, 15656.16, 45267.12, 32876.12, 42652.20, 24574.86), 
+                          vtn_media = c(27001.18, 41462.46, 22047.71, 28954.84, 45373.92, 31031.91, 27681.51, 13099.82, 33458.30, 24453.11, 31739.83, 18164.03), 
+                          vtn_minimo = c(22951.00, 35243.09, 18740.55, 24611.62, 38567.83, 26377.12, 23529.28, 10414.75, 28439.56, 20785.15, 26978.85, 15439.42), 
+                          vtn_maximo = c(31051.36, 47681.83, 25354.86, 33298.07, 52180.01, 35686.69, 31833.73, 14090.54, 38477.05, 28121.08, 36500.80, 20888.63),
+                          origem = "Paranatinga, Gaúcha do Norte, Planalto da Serra, Nova Brasilândia, Alto Boa Vista, Bom Jesus do Araguaia, Ribeirão Cascalheira, Água Boa, Campinápolis, Canarana, Nova Xavantina, Novo São Joaquim, Querência, Barra do Garças, Chapada dos Guimarães e General Carneiro."
+)
 
 ## 2024 ####
 MTMRT4_2024 <- data.frame(
@@ -4634,15 +4634,15 @@ MTMRT5_19 <- data.frame(
 
 ## 2023 ####
 MTMRT5_2023 <- data.frame(mrt = 5, tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Exploração Mista", "Agrícola - Grãos Diversos Alta", "Pecuária - Bovino-Pastagem Formada", "Pecuária - Bovino-Pastagem Formada Alta", "Pecuária - Bovino-Pastagem Formada Média", "Exploração Mista - Agrícola + Pastagem", "Exploração Mista - Agrícola + Pastagem Alta", "Agrícola - Grãos Diversos Alta Norte", "Agrícola - Grãos Diversos Alta Centro", "Pecuária - Bovino - Pastagem Formada Alta Centro", "Pecuária - Bovino - Pastagem Formada Alta Sul", "Pecuária - Bovino - Pastagem Formada Média Centro"), 
-                        nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3), 
-                        vti_media = c(33933.87, 100552.34, 17267.83, 49589.51, 100552.34, 17267.83, 15076.21, 13629.01, 49589.51, 92632.94, 131364.21, 78726.94, 22980.14, 12617.50, 13621.47), 
-                        vti_minimo = c(28843.79, 85469.49, 14677.65, 42151.09, 85469.49, 14677.65, 12814.78, 11584.66, 42151.09, 78738.00, 111659.58, 66917.90, 19533.12, 10724.87, 11578.25), 
-                        vti_maximo = c(39023.95, 115635.19, 19858.00, 57027.94, 115635.19, 19858.00, 17337.64, 15673.36, 57027.94, 106527.88, 151068.84, 90535.98, 26427.16, 14510.12, 15664.69), 
-                        vtn_media = c(30633.17, 92003.31, 15541.05, 44630.56, 92003.31, 15541.05, 13568.59, 12266.11, 44630.56, 83369.65, 118851.89, 73346.55, 20682.13, 11355.75, 12259.33), 
-                        vtn_minimo = c(26038.20, 78202.81, 13209.89, 37935.98, 78202.81, 13209.89, 11533.30, 10426.19, 37935.98, 70864.20, 101024.11, 62344.57, 17579.81, 9652.38, 10420.43), 
-                        vtn_maximo = c(35228.15, 105803.80, 17872.20, 51325.15, 105803.80, 17872.20, 15603.88, 14106.03, 51325.15, 95875.09, 136679.68, 84348.53, 23784.45, 13059.11, 14098.22),
-                        origem = "Rondonópolis, São Pedro da Cipa, Pedra Preta, São José do Povo, Juscimeira, Itiquira, Dom Aquino, Alto Garças, Alto Taquari, Alto Araguaia, Primavera do Leste, Campo Verde, Santo Antônio do Leste, Guiratinga, Tesouro, Poxoréo e Jaciara."
-                        )
+                          nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3), 
+                          vti_media = c(33933.87, 100552.34, 17267.83, 49589.51, 100552.34, 17267.83, 15076.21, 13629.01, 49589.51, 92632.94, 131364.21, 78726.94, 22980.14, 12617.50, 13621.47), 
+                          vti_minimo = c(28843.79, 85469.49, 14677.65, 42151.09, 85469.49, 14677.65, 12814.78, 11584.66, 42151.09, 78738.00, 111659.58, 66917.90, 19533.12, 10724.87, 11578.25), 
+                          vti_maximo = c(39023.95, 115635.19, 19858.00, 57027.94, 115635.19, 19858.00, 17337.64, 15673.36, 57027.94, 106527.88, 151068.84, 90535.98, 26427.16, 14510.12, 15664.69), 
+                          vtn_media = c(30633.17, 92003.31, 15541.05, 44630.56, 92003.31, 15541.05, 13568.59, 12266.11, 44630.56, 83369.65, 118851.89, 73346.55, 20682.13, 11355.75, 12259.33), 
+                          vtn_minimo = c(26038.20, 78202.81, 13209.89, 37935.98, 78202.81, 13209.89, 11533.30, 10426.19, 37935.98, 70864.20, 101024.11, 62344.57, 17579.81, 9652.38, 10420.43), 
+                          vtn_maximo = c(35228.15, 105803.80, 17872.20, 51325.15, 105803.80, 17872.20, 15603.88, 14106.03, 51325.15, 95875.09, 136679.68, 84348.53, 23784.45, 13059.11, 14098.22),
+                          origem = "Rondonópolis, São Pedro da Cipa, Pedra Preta, São José do Povo, Juscimeira, Itiquira, Dom Aquino, Alto Garças, Alto Taquari, Alto Araguaia, Primavera do Leste, Campo Verde, Santo Antônio do Leste, Guiratinga, Tesouro, Poxoréo e Jaciara."
+)
 
 ## 2024 ####
 MTMRT5_2024 <- data.frame(
@@ -4694,15 +4694,15 @@ MTMRT6_19 <- data.frame(
 
 ## 2023 ####
 MTMRT6_2023 <- data.frame(mrt = 6, tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Exploração Mista", "Vegetação Nativa", "Agrícola - Grãos Diversos Alta", "Pecuária - Bovino - Pastagem Formada", "Pecuária - Bovino - Pastagem Formada Alta", "Pecuária - Bovino - Pastagem Formada Média", "Exploração Mista - Agrícola + Pastagem Alta", "Agrícola - Grãos Diversos Alta Leste (rod. 163)", "Agrícola - Grãos Diversos Média Oeste", "Pecuária - Bovino - Pastagem Formada Leste (rod. 163)", "Pecuária - Bovino - Pastagem Formada Oeste", "Pecuária - Bovino - Pastagem Formada Alta Leste (rod. 163)", "Pecuária - Bovino - Pastagem Formada Alta Oeste", "Pecuária - Bovino - Pastagem Formada Média Leste (rod. 163)", "Pecuária - Bovino - Pastagem Formada Média Oeste"),
-                        nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3), 
-                        vti_media = c(29915.80, 43104.53, 29716.16, 25207.58, 4281.50, 100552.34, 29716.16, 30006.43, 23340.64, 25207.58, 60331.57, 31619.83, 31370.23, 25090.26, 38167.02, 33834.00, 37279.56, 11671.93), 
-                        vti_minimo = c(25428.43, 36638.85, 25258.74, 21426.45, 3639.28, 85469.49, 25258.74, 25505.47, 19839.55, 11571.94, 51281.84, 26876.86, 26664.69, 21326.72, 32441.97, 28758.90, 31687.63, 9921.14), 
-                        vti_maximo = c(34403.17, 49570.21, 34173.59, 28988.72, 4923.73, 115635.19, 34173.59, 34507.40, 26841.74, 15656.16, 69381.31, 36362.81, 36075.76, 28853.79, 43892.08, 38909.09, 42871.50, 13422.72), 
-                        vtn_media = c(27053.49, 38162.86, 27060.54, 22492.38, 4281.50, 92003.31, 27060.54, 27235.85, 21469.61, 22492.38, 52915.20, 28327.97, 28785.85, 22728.43, 34149.66, 33834.00, 27565.35, 10683.22), 
-                        vtn_minimo = c(22995.46, 32438.43, 23001.46, 19118.53, 3639.28, 78202.81, 23001.46, 23150.47, 18249.17, 10414.75, 44977.92, 24078.77, 24467.98, 19319.17, 29027.21, 28758.90, 23430.55, 9080.74), 
-                        vtn_maximo = c(31111.51, 43887.29, 31119.62, 25866.24, 4923.73, 105803.80, 31119.62, 31321.23, 24690.05, 14090.54, 60852.48, 32577.16, 33103.73, 26137.70, 39272.11, 38909.09, 31700.16, 12285.71),
-                        origem = "Carlinda, Paranaíta, Novo Mundo, Guarantã do Norte, Colíder, Terra Nova do Norte, Nova Canaã do Norte, NovaGuarita, Matupá, Marcelândia, Nova Santa Helena, Itaúba, Canabrava do Norte, Peixoto de Azevedo."
-                        )
+                          nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3), 
+                          vti_media = c(29915.80, 43104.53, 29716.16, 25207.58, 4281.50, 100552.34, 29716.16, 30006.43, 23340.64, 25207.58, 60331.57, 31619.83, 31370.23, 25090.26, 38167.02, 33834.00, 37279.56, 11671.93), 
+                          vti_minimo = c(25428.43, 36638.85, 25258.74, 21426.45, 3639.28, 85469.49, 25258.74, 25505.47, 19839.55, 11571.94, 51281.84, 26876.86, 26664.69, 21326.72, 32441.97, 28758.90, 31687.63, 9921.14), 
+                          vti_maximo = c(34403.17, 49570.21, 34173.59, 28988.72, 4923.73, 115635.19, 34173.59, 34507.40, 26841.74, 15656.16, 69381.31, 36362.81, 36075.76, 28853.79, 43892.08, 38909.09, 42871.50, 13422.72), 
+                          vtn_media = c(27053.49, 38162.86, 27060.54, 22492.38, 4281.50, 92003.31, 27060.54, 27235.85, 21469.61, 22492.38, 52915.20, 28327.97, 28785.85, 22728.43, 34149.66, 33834.00, 27565.35, 10683.22), 
+                          vtn_minimo = c(22995.46, 32438.43, 23001.46, 19118.53, 3639.28, 78202.81, 23001.46, 23150.47, 18249.17, 10414.75, 44977.92, 24078.77, 24467.98, 19319.17, 29027.21, 28758.90, 23430.55, 9080.74), 
+                          vtn_maximo = c(31111.51, 43887.29, 31119.62, 25866.24, 4923.73, 105803.80, 31119.62, 31321.23, 24690.05, 14090.54, 60852.48, 32577.16, 33103.73, 26137.70, 39272.11, 38909.09, 31700.16, 12285.71),
+                          origem = "Carlinda, Paranaíta, Novo Mundo, Guarantã do Norte, Colíder, Terra Nova do Norte, Nova Canaã do Norte, NovaGuarita, Matupá, Marcelândia, Nova Santa Helena, Itaúba, Canabrava do Norte, Peixoto de Azevedo."
+)
 
 ## 2024 ####
 MTMRT6_2024 <- data.frame(
@@ -4755,15 +4755,15 @@ MTMRT7_19 <- data.frame(
 
 ## 2023 ####
 MTMRT7_2023 <- data.frame(mrt = 7, 
-                        tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Exploração Mista", "Vegetação Nativa", "Agrícola - Grãos Diversos Alta", "Pecuária - Bovino-Pastagem Formada Média", "Pecuária - Bovino-Pastagem Formada Alta", "Exploração Mista - Agrícola + Pastagem Média", "Agrícola - Grãos Diversos Alta Cerrado", "Pecuária - Bovino-Pastagem Formada Alta Rio Araguaia", "Pecuária - Bovino-Pastagem Formada Cerrado Alta", "Pecuária - Bovino-Pastagem Formada Cerrado Média"), nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-                        vti_media = c(23814.01, 48946.45, 22028.98, 33687.48, 9774.03, 48449.72, 18535.83, 27037.78, 33687.48, 60557.06, 13463.12, 33214.00, 17791.05), 
-                        vti_minimo = c(20241.91, 41604.49, 18724.63, 28634.36, 8307.92, 41182.27, 15755.46, 22982.11, 28634.36, 51473.50, 11443.65, 28231.90, 15122.40), 
-                        vti_maximo = c(27386.11, 56288.42, 25333.33, 38740.60, 11240.13, 55717.18, 21316.21, 31093.44, 38740.60, 69640.62, 15482.59, 38196.10, 20459.71), 
-                        vtn_media = c(21498.53, 42489.85, 20106.05, 29920.47, 9469.61, 41994.42, 17105.16, 24529.27, 29920.47, 52014.40, 11981.74, 30466.25, 16380.03),
-                        vtn_minimo = c(18273.75, 36116.37, 17090.14, 25432.40, 8049.17, 35695.26, 14539.39, 20849.88, 25432.40, 44212.24, 10184.48, 25896.31, 13923.03),
-                        vtn_maximo = c(24723.31, 48863.33, 23121.96, 34408.54, 10890.05, 48293.59, 19670.94, 28208.66, 34408.54, 59816.55, 13779.00, 35036.19, 18837.04),
-                        origem = "ila Rica, Santa Cruz do Xingú, Novo Santo Antônio, São José do Xingu, Serra Nova Dourada, Confresa, Luciara, Santa Terezinha, São Félix do Araguaia, Porto Alegre do Norte, Nova Nazaré, Araguaiana, Cocalinho, Ribeirãozinho, Torixoréu, Araguainha, Pontal do Araguaia e Ponte Branca."
-                          )
+                          tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Exploração Mista", "Vegetação Nativa", "Agrícola - Grãos Diversos Alta", "Pecuária - Bovino-Pastagem Formada Média", "Pecuária - Bovino-Pastagem Formada Alta", "Exploração Mista - Agrícola + Pastagem Média", "Agrícola - Grãos Diversos Alta Cerrado", "Pecuária - Bovino-Pastagem Formada Alta Rio Araguaia", "Pecuária - Bovino-Pastagem Formada Cerrado Alta", "Pecuária - Bovino-Pastagem Formada Cerrado Média"), nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+                          vti_media = c(23814.01, 48946.45, 22028.98, 33687.48, 9774.03, 48449.72, 18535.83, 27037.78, 33687.48, 60557.06, 13463.12, 33214.00, 17791.05), 
+                          vti_minimo = c(20241.91, 41604.49, 18724.63, 28634.36, 8307.92, 41182.27, 15755.46, 22982.11, 28634.36, 51473.50, 11443.65, 28231.90, 15122.40), 
+                          vti_maximo = c(27386.11, 56288.42, 25333.33, 38740.60, 11240.13, 55717.18, 21316.21, 31093.44, 38740.60, 69640.62, 15482.59, 38196.10, 20459.71), 
+                          vtn_media = c(21498.53, 42489.85, 20106.05, 29920.47, 9469.61, 41994.42, 17105.16, 24529.27, 29920.47, 52014.40, 11981.74, 30466.25, 16380.03),
+                          vtn_minimo = c(18273.75, 36116.37, 17090.14, 25432.40, 8049.17, 35695.26, 14539.39, 20849.88, 25432.40, 44212.24, 10184.48, 25896.31, 13923.03),
+                          vtn_maximo = c(24723.31, 48863.33, 23121.96, 34408.54, 10890.05, 48293.59, 19670.94, 28208.66, 34408.54, 59816.55, 13779.00, 35036.19, 18837.04),
+                          origem = "ila Rica, Santa Cruz do Xingú, Novo Santo Antônio, São José do Xingu, Serra Nova Dourada, Confresa, Luciara, Santa Terezinha, São Félix do Araguaia, Porto Alegre do Norte, Nova Nazaré, Araguaiana, Cocalinho, Ribeirãozinho, Torixoréu, Araguainha, Pontal do Araguaia e Ponte Branca."
+)
 
 ## 2024 ####
 MTMRT7_2024 <- data.frame(
@@ -4816,15 +4816,15 @@ MTMRT8_19 <- data.frame(
 
 ## 2023 ####
 MTMRT8_2023 <- data.frame(mrt = 8, tipologia_de_uso = c("MÉDIA GERAL", "Pecuária", "Vegetação Nativa", "Pecuária Pastagem Nativa -- Pantanal Baixo", "Pecuária - Bovino-Pastagem Formada (Baixa cap. sup.)", "Pecuária - Bovino-Pastagem Formada (Média cap. sup.)", "Pecuária - Bovino-Pastagem Formada (Alta cap. sup.)", "Vegetação Nativa-Cerrado"),
-                        nivel = c(0, 1, 1, 2, 2, 2, 2, 2), 
-                        vti_media = c(18091.72, 18423.00, 10037.19, 2040.00, 6941.08, 11925.00, 26534.87, 10037.19), 
-                        vti_minimo = c(15377.96, 15659.55, 8531.61, 1734.00, 5899.92, 10136.25, 22554.64, 8531.61),
-                        vti_maximo = c(20805.48, 21186.45, 11542.76, 2346.00, 7982.25, 13713.75, 30515.10, 11542.76), 
-                        vtn_media = c(16303.26, 16556.08, 10037.19, 1878.50, 6246.98, 10801.61, 23789.87, 10037.19), 
-                        vtn_minimo = c(13857.77, 14072.67, 8531.61, 1596.73, 5309.93, 9181.37, 20221.39, 8531.61), 
-                        vtn_maximo = c(18748.75, 19039.49, 11542.76, 2160.27, 7184.02, 12421.86, 27358.35, 11542.76),
-                        origem ="Alto Paraguai, Denise, Nova Olímpia, Barra do Bugres, Porto Estrela,Santo Antônio de Leverger,Barão de Melgaço, NossaSenhora do Livramento, Poconé, Cáceres, Curvelândia, Lambari d'Oeste, Rio Branco, Salto do Céu, Mirassol d'Oeste."
-                          )
+                          nivel = c(0, 1, 1, 2, 2, 2, 2, 2), 
+                          vti_media = c(18091.72, 18423.00, 10037.19, 2040.00, 6941.08, 11925.00, 26534.87, 10037.19), 
+                          vti_minimo = c(15377.96, 15659.55, 8531.61, 1734.00, 5899.92, 10136.25, 22554.64, 8531.61),
+                          vti_maximo = c(20805.48, 21186.45, 11542.76, 2346.00, 7982.25, 13713.75, 30515.10, 11542.76), 
+                          vtn_media = c(16303.26, 16556.08, 10037.19, 1878.50, 6246.98, 10801.61, 23789.87, 10037.19), 
+                          vtn_minimo = c(13857.77, 14072.67, 8531.61, 1596.73, 5309.93, 9181.37, 20221.39, 8531.61), 
+                          vtn_maximo = c(18748.75, 19039.49, 11542.76, 2160.27, 7184.02, 12421.86, 27358.35, 11542.76),
+                          origem ="Alto Paraguai, Denise, Nova Olímpia, Barra do Bugres, Porto Estrela,Santo Antônio de Leverger,Barão de Melgaço, NossaSenhora do Livramento, Poconé, Cáceres, Curvelândia, Lambari d'Oeste, Rio Branco, Salto do Céu, Mirassol d'Oeste."
+)
 
 
 ## 2024 ####
@@ -4874,15 +4874,15 @@ MTMRT9_19 <- data.frame(
 
 ## 2023 ####
 MTMRT9_2023 <- data.frame(mrt = 9, tipologia_de_uso = c("MÉDIA GERAL", "Agrícola", "Pecuária", "Vegetação Nativa", "Agrícola - Horticultura/Olerícola/Granjeiros Alta", "Pecuária - Bovino-Pastagem Formada", "Pecuária - Bovino-Pastagem Formada Média", "Periurbano", "Agrícola - Horticultura/Olerícola/Granjeiros Periurbano CUIABÁ", "Pecuária - Bovino-Pastagem Formada ROSÁRIO OESTE"),
-                        nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3), 
-                        vti_media = c(24304.16, 84533.73, 15233.74, 26547.62, 84533.73, 15233.74, 17499.20, 54390.45, 84533.73, 13563.40),
-                        vti_minimo = c(20658.54, 71853.67, 12948.68, 22565.48, 71853.67, 12948.68, 14874.32, 46231.88, 71853.67, 11528.89),
-                        vti_maximo = c(27949.79, 97213.79, 17518.80, 30529.76, 97213.79, 17518.80, 20124.08, 62549.02, 97213.79, 15597.91), 
-                        vtn_media = c(22164.84, 56452.38, 13584.98, 23880.95, 56452.38, 13584.98, 15853.73, 34099.02, 56452.38, 12024.98),
-                        vtn_minimo = c(18840.11, 47984.52, 11547.23, 20298.81, 47984.52, 11547.23, 13475.67, 28984.17, 47984.52, 10221.23), 
-                        vtn_maximo = c(25489.56, 64920.24, 15622.73, 27463.10, 64920.24, 15622.73, 18231.79, 39213.88, 64920.24, 13828.72),
-                        origem = "Rosário Oeste, Nobres,Acorizal, Jangada, Cuiabáe Várzea Grande."
-                        )
+                          nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3), 
+                          vti_media = c(24304.16, 84533.73, 15233.74, 26547.62, 84533.73, 15233.74, 17499.20, 54390.45, 84533.73, 13563.40),
+                          vti_minimo = c(20658.54, 71853.67, 12948.68, 22565.48, 71853.67, 12948.68, 14874.32, 46231.88, 71853.67, 11528.89),
+                          vti_maximo = c(27949.79, 97213.79, 17518.80, 30529.76, 97213.79, 17518.80, 20124.08, 62549.02, 97213.79, 15597.91), 
+                          vtn_media = c(22164.84, 56452.38, 13584.98, 23880.95, 56452.38, 13584.98, 15853.73, 34099.02, 56452.38, 12024.98),
+                          vtn_minimo = c(18840.11, 47984.52, 11547.23, 20298.81, 47984.52, 11547.23, 13475.67, 28984.17, 47984.52, 10221.23), 
+                          vtn_maximo = c(25489.56, 64920.24, 15622.73, 27463.10, 64920.24, 15622.73, 18231.79, 39213.88, 64920.24, 13828.72),
+                          origem = "Rosário Oeste, Nobres,Acorizal, Jangada, Cuiabáe Várzea Grande."
+)
 
 ## 2024 ####
 MTMRT9_2024 <- data.frame(
@@ -4931,14 +4931,14 @@ MTMRT10_19 <- data.frame(
 
 ## 2023 ####
 MTMRT10_2023 <- data.frame(mrt = 10, tipologia_de_uso = c("MÉDIA GERAL", "Pecuária", "Exploração Mista", "Agrícola", "Pecuária (média cap. sup.)", "Pecuária (alta cap. sup.)", "Exploração Mista (média cap. sup. e prod.)", "Agrícola -- Grãos Diversos (média cap. prod.)"), 
-                         nivel = c(0, 1, 1, 1, 2, 2, 2, 2), 
-                         vti_media = c(24581.35, 22481.20, 34340.64, 44300.53, 22148.71, 38695.59, 33270.32, 44300.53), 
-                         vti_minimo = c(20894.15, 19109.02, 29189.54, 37655.45, 18826.41, 32891.25, 28279.77, 37655.45), 
-                         vti_maximo = c(28268.56, 25853.39, 39491.73, 50945.61, 25471.02, 44499.93, 38260.86, 50945.61), 
-                         vtn_media = c(21942.92, 20226.09, 29762.56, 37875.34, 19926.27, 34826.03, 29695.35, 37875.34), 
-                         vtn_minimo = c(18651.48, 17192.18, 25298.18, 32194.04, 16937.33, 29602.13, 25241.05, 32194.04), 
-                         vtn_maximo = c(25234.36, 23260.01, 34226.95, 43556.64, 22915.21, 40049.94, 34149.65, 43556.64),
-                         origem = "Juina, Castanheira, Comodoro, Juara, Novo Horizonte do Norte, Porto dos Gaúchos, Itanhangá.")
+                           nivel = c(0, 1, 1, 1, 2, 2, 2, 2), 
+                           vti_media = c(24581.35, 22481.20, 34340.64, 44300.53, 22148.71, 38695.59, 33270.32, 44300.53), 
+                           vti_minimo = c(20894.15, 19109.02, 29189.54, 37655.45, 18826.41, 32891.25, 28279.77, 37655.45), 
+                           vti_maximo = c(28268.56, 25853.39, 39491.73, 50945.61, 25471.02, 44499.93, 38260.86, 50945.61), 
+                           vtn_media = c(21942.92, 20226.09, 29762.56, 37875.34, 19926.27, 34826.03, 29695.35, 37875.34), 
+                           vtn_minimo = c(18651.48, 17192.18, 25298.18, 32194.04, 16937.33, 29602.13, 25241.05, 32194.04), 
+                           vtn_maximo = c(25234.36, 23260.01, 34226.95, 43556.64, 22915.21, 40049.94, 34149.65, 43556.64),
+                           origem = "Juina, Castanheira, Comodoro, Juara, Novo Horizonte do Norte, Porto dos Gaúchos, Itanhangá.")
 
 
 ## 2024 ####
@@ -4973,31 +4973,31 @@ MTMRT11_2018 <- data.frame(
   vtn_minimo = c(6096.89, 11333.8, 6084.6, 2552.45, 11333.8, 2552.45, 1787.84, 7547.14),
   vtn_maximo = c(8248.73, 15333.97, 8232.11, 3453.32, 15333.97, 3453.32, 2418.85, 10210.84),
   origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
-  )
-  
+)
+
 ## 2019 ####
-  MTMRT11_2019 <- data.frame(
-    mrt = 11,
-    tipologia_de_uso = c(
-      "Uso indefinido (média geral)",
-      "Agricultura",
-      "Pecuária",
-      "Exploração Mista",
-      "Agricultura - Alto Rendimento",
-      "Exploração Mista – Silvicultura/Pastagem",
-      "Pecuária – Pastagem de Baixo Suporte",
-      "Pecuária – Pastagem de Alto Suporte"
-    ),
-    nivel = c(0, 1, 1, 1, 2, 2, 2, 2), # <-- COLUNA "nivel" ADICIONADA
-    vti_media = c(8856.09, 15917.36, 8796.29, 3708.85, 15917.36, 3708.85, 2492.24, 11065.75),
-    vti_minimo = c(7527.68, 13529.75, 7476.85, 3152.52, 13529.75, 3152.52, 2118.40, 9405.89),
-    vti_maximo = c(10184.50, 18304.96, 10115.73, 4265.18, 18304.96, 4265.18, 2866.08, 12725.61),
-    vtn_media = c(7172.81, 13333.88, 7158.86, 3002.89, 13333.88, 3002.89, 2103.35, 8878.99),
-    vtn_minimo = c(6096.89, 11333.80, 6084.60, 2552.45, 11333.80, 2552.45, 1787.84, 7547.14),
-    vtn_maximo = c(8248.73, 15333.97, 8232.11, 3453.32, 15333.97, 3453.32, 2418.85, 10210.84),
-    origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
-  )
-  
+MTMRT11_2019 <- data.frame(
+  mrt = 11,
+  tipologia_de_uso = c(
+    "Uso indefinido (média geral)",
+    "Agricultura",
+    "Pecuária",
+    "Exploração Mista",
+    "Agricultura - Alto Rendimento",
+    "Exploração Mista – Silvicultura/Pastagem",
+    "Pecuária – Pastagem de Baixo Suporte",
+    "Pecuária – Pastagem de Alto Suporte"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2), # <-- COLUNA "nivel" ADICIONADA
+  vti_media = c(8856.09, 15917.36, 8796.29, 3708.85, 15917.36, 3708.85, 2492.24, 11065.75),
+  vti_minimo = c(7527.68, 13529.75, 7476.85, 3152.52, 13529.75, 3152.52, 2118.40, 9405.89),
+  vti_maximo = c(10184.50, 18304.96, 10115.73, 4265.18, 18304.96, 4265.18, 2866.08, 12725.61),
+  vtn_media = c(7172.81, 13333.88, 7158.86, 3002.89, 13333.88, 3002.89, 2103.35, 8878.99),
+  vtn_minimo = c(6096.89, 11333.80, 6084.60, 2552.45, 11333.80, 2552.45, 1787.84, 7547.14),
+  vtn_maximo = c(8248.73, 15333.97, 8232.11, 3453.32, 15333.97, 3453.32, 2418.85, 10210.84),
+  origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
+)
+
 ## 2023 ####
 MTMRT11_2023 <- data.frame(mrt = 11, 
                            tipologia_de_uso = c("MÉDIA GERAL", "Vegetação Nativa", "Pecuária", "Agrícola", "Vegetação Nativa - Cerrado", "Pecuária (baixa cap. sup.)", "Pecuária (média cap. sup.)", "Pecuária (alta cap. sup.)", "Agrícola - Grãos Soja (média cap. prod.)", "Agrícola - Grãos Soja (alta cap. prod.)"),
@@ -5009,7 +5009,7 @@ MTMRT11_2023 <- data.frame(mrt = 11,
                            vtn_minimo = c(17106.67, 6532.89, 17959.84, 26937.93, 6532.89, 7036.28, 11580.85, 29850.80, 15312.75, 48328.50), 
                            vtn_maximo = c(23144.32, 8838.62, 24298.60, 36445.44, 8838.62, 9519.68, 15668.21, 40386.38, 20717.25, 65385.62),
                            origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
-                           )
+)
 
 ## 2024 ####
 MTMRT11_2024 <- data.frame(
@@ -5931,7 +5931,7 @@ MSMRT7_2020 <- data.frame(
   vtn_minimo = c(26388.00, 12694.00, 29095.00, 11812.00),
   vtn_maximo = c(35700.00, 17174.00, 39364.00, 15981.00),
   origem = "Angélica, Nova Alvorada do Sul e Sidrolândia."
-
+  
 )
 
 ####13.8 MRT8 - MARACAJU ####
@@ -6513,7 +6513,7 @@ PBMRT_AGRESTE_E_BREJO_PARAIBANO_2022 <- data.frame(
             Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão
             do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de
             Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro. " 
-  )
+)
 
 ## 2024 ####
 PBMRT_AGRESTE_E_BREJO_PARAIBANO_2024 <- data.frame(
@@ -6911,11 +6911,11 @@ PBMRT_SERTAO_PARAIBANO_2_2024 <- data.frame(
   ),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(7230.13, 8518.85, 4775.28, 31770.94, 8293.18, 25262.88, 2958.35, 6137.54, 31770.94, 8034.47, 9998.11, 4713.84, 42941.44, 7584.31, 4804.36, 8922.62, 2021.12),
-                vti_minimo = c(6145.61, 7241.03, 4058.99, 27005.30, 7049.20, 21473.45, 2514.60, 5216.91, 27005.30, 6829.30, 8498.39, 4006.77, 36500.23, 6446.67, 4083.70, 7584.23, 1483.90),
-                vti_maximo = c(8314.65, 9796.68, 5491.58, 36536.59, 9537.16, 29052.31, 3402.11, 7058.17, 36536.59, 9239.64, 11497.83, 5420.92, 49382.66, 8721.96, 5525.01, 10261.01, 2007.63),
-                vtn_media = c(6215.46, 7217.66, 3907.45, 28652.89, 6932.42, 19018.58, 2404.77, 5264.71, 28652.89, 6620.25, 8029.65, 4021.58, 30804.69, 7232.46, 4804.36, 8029.84, 1745.77),
-                vtn_minimo = c(5283.14, 6135.01, 3321.33, 24354.96, 5892.56, 16165.79, 2044.06, 4475.00, 24354.96, 5627.21, 6825.21, 3418.35, 26183.99, 6147.59, 4083.70, 6825.36, 1483.90),
-                vtn_maximo = c(7147.78, 8300.31, 4493.56, 32950.82, 7972.28, 21871.36, 2765.49, 6054.41, 32950.82, 7613.29, 9234.10, 4624.82, 35425.40, 8317.33, 5525.01, 9234.31, 2007.63),
+  vti_minimo = c(6145.61, 7241.03, 4058.99, 27005.30, 7049.20, 21473.45, 2514.60, 5216.91, 27005.30, 6829.30, 8498.39, 4006.77, 36500.23, 6446.67, 4083.70, 7584.23, 1483.90),
+  vti_maximo = c(8314.65, 9796.68, 5491.58, 36536.59, 9537.16, 29052.31, 3402.11, 7058.17, 36536.59, 9239.64, 11497.83, 5420.92, 49382.66, 8721.96, 5525.01, 10261.01, 2007.63),
+  vtn_media = c(6215.46, 7217.66, 3907.45, 28652.89, 6932.42, 19018.58, 2404.77, 5264.71, 28652.89, 6620.25, 8029.65, 4021.58, 30804.69, 7232.46, 4804.36, 8029.84, 1745.77),
+  vtn_minimo = c(5283.14, 6135.01, 3321.33, 24354.96, 5892.56, 16165.79, 2044.06, 4475.00, 24354.96, 5627.21, 6825.21, 3418.35, 26183.99, 6147.59, 4083.70, 6825.36, 1483.90),
+  vtn_maximo = c(7147.78, 8300.31, 4493.56, 32950.82, 7972.28, 21871.36, 2765.49, 6054.41, 32950.82, 7613.29, 9234.10, 4624.82, 35425.40, 8317.33, 5525.01, 9234.31, 2007.63),
   origem = "Aparecida,
 Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos,
 Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta,
@@ -6948,7 +6948,7 @@ PB2021 <- rbind(
   PBMRT03_2021, 
   PBMRT04_2021,
   PBMRT05_2021
-  )
+)
 
 PB2022 <- rbind(
   PBMRT_ZONA_DA_MATA_PARAIBANA_2022,
@@ -7019,8 +7019,8 @@ PEMRT_Sertao_Pernambucano_29001_20 <- data.frame(
   vtn_minimo = c(1084.38, 1184.55, 856.68, 1184.55, 776.73, 1268.86, 914.80),
   vtn_maximo = c(1431.84, 1625.57, 1382.98, 1625.57, 1424.83, 1856.30, 1524.42),
   origem = "frânio, Araripina, Bodocó, Cedro, Dormentes, Exu, Granito, Ipubi, Mirandiba, Moreilândia, Ouricuri, Parnamirim, Salgueiro, Santa Cruz, Santa Filomena, São José do Belmonte, Serrita, Terra Nova, Trindade e Verdejante" 
-    
-    )
+  
+)
 ### 2022  ####
 PEMRT1_Sertao_Pernambucano_2022 <- data.frame(
   mrt = "MRT 1 - Sertão Pernambucano",
@@ -7091,8 +7091,8 @@ PEMRT2_Sertao_SF_Pernambucano_2022 <- data.frame(
   vtn_minimo = c(1312.97, 515.98, 5117.00, 1168.93, 515.98, 5117.00, 1168.93, 396.92, 420.28, 717.61, 5797.86, 1631.26, 417.20, 1019.88),
   vtn_maximo = c(1926.33, 722.44, 7932.72, 1871.25, 722.44, 7932.72, 1871.25, 673.20, 572.38, 1275.09, 8904.30, 5742.60, 2075.06, 1718.76),
   origem = "Belém do São Francisco, Betânia, Cabrobó, Carnaubeira da Penha, Floresta, Ibimirim, Inajá, Itacuruba, Jatobá, Lagoa Grande, Orocó, Petrolândia, Santa Maria da Boa Vista, Serra Talhada e Tacaratu."
-   
-  )
+  
+)
 
 ## 2024 ####
 PEMRT2_Sertao_SF_Pernambucano_2024 <- data.frame(
@@ -7106,7 +7106,7 @@ PEMRT2_Sertao_SF_Pernambucano_2024 <- data.frame(
   vtn_minimo = c(1701.22, 722.34, 4302.51, 1367.07, 722.34, 3731.41, 1367.07, 388.32, 556.62, 762.99, 888.75, 3637.61, 2851.41, 28711.17, 632.89, 1470.10),
   vtn_maximo = c(2403.78, 1105.48, 6235.83, 3192.59, 1105.48, 5647.35, 3192.59, 693.16, 687.68, 1532.83, 1063.13, 4788.59, 7649.65, 43231.83, 1528.13, 3318.04),
   origem = "Belém do São Francisco, Betânia, Cabrobó, Carnaubeira da Penha, Floresta, Ibimirim, Inajá, Itacuruba, Jatobá, Lagoa Grande, Orocó, Petrolândia, Santa Maria da Boa Vista, Serra Talhada e Tacaratu."
-  )
+)
 
 ## 15.3 Petrolina ####
 ## 2017 ####
@@ -7289,8 +7289,8 @@ PEMRT_III_Mata_Sul_2022 <- data.frame(
   vtn_minimo = c(10467.92, 10630.53, 12572.63, 7886.43, 12014.87, 10452.07, 7886.43, 12014.87, 9380.08, 7604.19, 5194.08, 2077.33, 6603.18, 2867.47),
   vtn_maximo = c(12341.60, 13076.67, 15524.15, 11766.05, 15401.25, 12946.63, 11766.05, 15401.25, 15067.78, 18390.13, 16833.70, 24660.15, 10916.30, 18516.27),
   origem = " Água Peta, Amaraji, Barreiros, Belém de Maria, Catende, Cortês, Escada, Gameleira, Jaqueira, Joaquim Nabuco, Maraial, Palmares, Primavera, Quipapá, Ribeirão, Rio Formoso, São Benedito do Sul, São José da Coroa Grande, Sirinhaém, Tamandaré e Xexéu "
-
-  )
+  
+)
 
 ## 15.9 MRT - Agreste Leste ####
 ## 2019 ####
@@ -7305,7 +7305,7 @@ PEMRT_IV_Agreste_Leste_2019 <- data.frame(
   vtn_minimo = c(5690.9, 6405.33, 5503.3, 6714.16, 6071.06, 6344.54, 3624.43, 5466.39, 5778.78, 7988.34, 7249.6, 4365.65, 13344.0),
   vtn_maximo = c(11251.83, 10554.13, 11435.0, 10643.25, 10689.42, 12914.86, 5904.56, 11265.59, 10053.34, 19455.36, 13770.58, 6893.6, 14064.47),
   origem = "Agrestina, Altinho, Bezerros, Bom Jardim, Caruaru, Casinhas, Chã Grande, Cumaru, Feira Nova, Frei Miguelinho, Gravatá, João Alfredo, Limoeiro, Orobó, Passira, Riacho das Almas, Salgadinho, Santa Maria do Cambucá, Surubim, Toritama, Vertente do Lério e Vertentes"
-  )
+)
 
 ## 2022 ####
 PEMRT_IV_Agreste_Leste_2022 <- data.frame(
@@ -7338,16 +7338,16 @@ PEMRT_V_Agreste_Oeste_2019 <- data.frame(
 
 ## 2022 ####
 PEMRT_V_Agreste_Oeste_2022 <- data.frame(
-mrt = "MRT-5, Agreste Oeste",
-tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Não Agrícola", "Pecuária - Bovino - Pastagem Formada", "Pecuária - Diversos", "Exploração Mista - Diversificada", "Pecuária - Bovino - Pastagem Formada - Águas Belas", "Pecuária - Bovino - Pastagem Formada - Angelim", "Pecuária - Bovino - Pastagem Formada - Cachoeirinha", "Pecuária - Bovino - Pastagem Formada - Caetés", "Pecuária - Bovino - Pastagem Formada - Capoeiras", "Pecuária - Bovino - Pastagem Formada - Iati", "Pecuária - Bovino - Pastagem Formada - Ibirajuba", "Pecuária - Bovino - Pastagem Formada - Jurema", "Pecuária - Bovino - Pastagem Formada - Lagoa do Ouro", "Pecuária - Bovino - Pastagem Formada - Paranatama", "Pecuária - Bovino - Pastagem Nativa - Águas Belas", "Pecuária - Bovino - Pastagem Nativa - Cachoeirinha", "Pecuária - Bovino - Pastagem Nativa - Itaíba", "Pecuária - Bovino - Pastagem Nativa - Paranatama", "Exploração Mista - Diversificada - Águas Belas", "Exploração Mista - Diversificada - Angelim", "Exploração Mista - Diversificada - Brejo da Madre de Deus", "Exploração Mista - Diversificada - Cachoeirinha", "Exploração Mista - Diversificada - Garanhuns", "Exploração Mista - Diversificada - Itaíba", "Exploração Mista - Diversificada - Jupi", "Exploração Mista - Diversificada - Lajedo", "Exploração Mista - Diversificada - Taquaritinga do Norte"),
-nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
-vti_media = c(5135.28, 5255.28, 4847.34, 16348.79, 6519.91, 3589.71, 4396.82, 4847.34, 5090.26, 24234.28, 9420.11, 11584.96, 8011.34, 3979.04, 3689.88, 7116.23, 1992.24, 4952.20, 2991.63, 3455.78, 3300.00, 2982.91, 2391.68, 7979.97, 3536.98, 4998.18, 2591.12, 5007.82, 4522.52, 4967.32),
-vti_minimo = c(4741.09, 4755.09, 4245.06, -3895.69, 5755.91, 3058.09, 615.11, 4245.05, 4091.84, 10791.55, 4974.59, 8660.64, 5203.86, 2985.53, 3331.20, 106.89, 1611.89, 2151.02, 2977.40, 538.68, 704.66, 2932.99, 1913.50, 3840.63, 2504.75, 1370.28, 827.56, 1900.53, 4489.01, 4871.90),
-vti_maximo =  c(5529.87, 5755.47, 5449.62, 36595.27, 7283.91, 4121.33, 8178.53, 5449.63, 6088.68, 37677.01, 13865.63, 14509.28, 10818.82, 4972.55, 4048.56, 14125.57, 2372.59, 7753.38, 3005.86, 6372.88, 5895.34, 3032.83, 2869.88, 12119.31, 4569.23, 8626.08, 4354.68, 8115.11, 4556.03, 5062.74),
-vtn_media = c(3974.19, 3869.21, 4004.83, 5287.86, 4710.14, 2905.88, 2760.32, 4004.83, 3215.94, 19318.28, 6781.24, 8024.88, 4987.98, 2387.43, 3290.38, 4814.00, 2017.73, 4651.29, 2258.11, 3455.78, 2913.33, 2982.91, 1912.79, 6120.77, 3048.82, 4760.23, 2591.12, 4045.91, 4525.58, 5000.00),
-vtn_minimo = c(3704.60, 3542.16, 3571.78, -2358.53, 4184.50, 2521.32, 843.82, 3571.76, 2667.69, 749.71, 4803.18, 6480.59, 3680.57, 1791.32, 2718.37, -324.67, 1650.66, 1785.05, 1492.01, 538.68, -141.07, 2932.99, 1678.87, 4166.87, 1845.60, 1021.63, 827.56, 1970.05, 4479.41, 4871.90),
-vtn_maximo = c(4243.78, 4196.26, 4437.80, 12934.31, 5225.78, 3290.44, 4676.82, 4437.90, 3764.19, 37886.85, 8758.30, 9568.39, 6295.39, 2983.54, 3852.39, 9952.67, 2384.80, 7517.73, 3024.21, 6372.88, 5967.73, 3032.83, 2146.67, 8074.67, 4248.04, 8498.83, 4354.68, 6121.77, 4642.29, 5062.74),
-origem = "Águas Belas, Alagoinha, Angelim, Arcoverde, Belo Jardim, Brejo da Madre de Deus, Buíque, Cachoeirinha, Caetés, Calçado, Canhotinho, Capoeiras, Cupira, Iati, Ibirajuba, Itaíba, Jataúba, Jucati, Jupi, Jurema, Lagoa dos Gatos, Lajedo, Manari, Palmeirina, Panelas, Paranatama, Pedra, Pesqueira, Poção, Saloá, Sanharó, Santa Cruz do Capibaribe, São Caetano, São Bento do Una, Tacaimbó, Taquaritinga do Norte, Tupanatinga e Venturosa"
+  mrt = "MRT-5, Agreste Oeste",
+  tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Não Agrícola", "Pecuária - Bovino - Pastagem Formada", "Pecuária - Diversos", "Exploração Mista - Diversificada", "Pecuária - Bovino - Pastagem Formada - Águas Belas", "Pecuária - Bovino - Pastagem Formada - Angelim", "Pecuária - Bovino - Pastagem Formada - Cachoeirinha", "Pecuária - Bovino - Pastagem Formada - Caetés", "Pecuária - Bovino - Pastagem Formada - Capoeiras", "Pecuária - Bovino - Pastagem Formada - Iati", "Pecuária - Bovino - Pastagem Formada - Ibirajuba", "Pecuária - Bovino - Pastagem Formada - Jurema", "Pecuária - Bovino - Pastagem Formada - Lagoa do Ouro", "Pecuária - Bovino - Pastagem Formada - Paranatama", "Pecuária - Bovino - Pastagem Nativa - Águas Belas", "Pecuária - Bovino - Pastagem Nativa - Cachoeirinha", "Pecuária - Bovino - Pastagem Nativa - Itaíba", "Pecuária - Bovino - Pastagem Nativa - Paranatama", "Exploração Mista - Diversificada - Águas Belas", "Exploração Mista - Diversificada - Angelim", "Exploração Mista - Diversificada - Brejo da Madre de Deus", "Exploração Mista - Diversificada - Cachoeirinha", "Exploração Mista - Diversificada - Garanhuns", "Exploração Mista - Diversificada - Itaíba", "Exploração Mista - Diversificada - Jupi", "Exploração Mista - Diversificada - Lajedo", "Exploração Mista - Diversificada - Taquaritinga do Norte"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(5135.28, 5255.28, 4847.34, 16348.79, 6519.91, 3589.71, 4396.82, 4847.34, 5090.26, 24234.28, 9420.11, 11584.96, 8011.34, 3979.04, 3689.88, 7116.23, 1992.24, 4952.20, 2991.63, 3455.78, 3300.00, 2982.91, 2391.68, 7979.97, 3536.98, 4998.18, 2591.12, 5007.82, 4522.52, 4967.32),
+  vti_minimo = c(4741.09, 4755.09, 4245.06, -3895.69, 5755.91, 3058.09, 615.11, 4245.05, 4091.84, 10791.55, 4974.59, 8660.64, 5203.86, 2985.53, 3331.20, 106.89, 1611.89, 2151.02, 2977.40, 538.68, 704.66, 2932.99, 1913.50, 3840.63, 2504.75, 1370.28, 827.56, 1900.53, 4489.01, 4871.90),
+  vti_maximo =  c(5529.87, 5755.47, 5449.62, 36595.27, 7283.91, 4121.33, 8178.53, 5449.63, 6088.68, 37677.01, 13865.63, 14509.28, 10818.82, 4972.55, 4048.56, 14125.57, 2372.59, 7753.38, 3005.86, 6372.88, 5895.34, 3032.83, 2869.88, 12119.31, 4569.23, 8626.08, 4354.68, 8115.11, 4556.03, 5062.74),
+  vtn_media = c(3974.19, 3869.21, 4004.83, 5287.86, 4710.14, 2905.88, 2760.32, 4004.83, 3215.94, 19318.28, 6781.24, 8024.88, 4987.98, 2387.43, 3290.38, 4814.00, 2017.73, 4651.29, 2258.11, 3455.78, 2913.33, 2982.91, 1912.79, 6120.77, 3048.82, 4760.23, 2591.12, 4045.91, 4525.58, 5000.00),
+  vtn_minimo = c(3704.60, 3542.16, 3571.78, -2358.53, 4184.50, 2521.32, 843.82, 3571.76, 2667.69, 749.71, 4803.18, 6480.59, 3680.57, 1791.32, 2718.37, -324.67, 1650.66, 1785.05, 1492.01, 538.68, -141.07, 2932.99, 1678.87, 4166.87, 1845.60, 1021.63, 827.56, 1970.05, 4479.41, 4871.90),
+  vtn_maximo = c(4243.78, 4196.26, 4437.80, 12934.31, 5225.78, 3290.44, 4676.82, 4437.90, 3764.19, 37886.85, 8758.30, 9568.39, 6295.39, 2983.54, 3852.39, 9952.67, 2384.80, 7517.73, 3024.21, 6372.88, 5967.73, 3032.83, 2146.67, 8074.67, 4248.04, 8498.83, 4354.68, 6121.77, 4642.29, 5062.74),
+  origem = "Águas Belas, Alagoinha, Angelim, Arcoverde, Belo Jardim, Brejo da Madre de Deus, Buíque, Cachoeirinha, Caetés, Calçado, Canhotinho, Capoeiras, Cupira, Iati, Ibirajuba, Itaíba, Jataúba, Jucati, Jupi, Jurema, Lagoa dos Gatos, Lajedo, Manari, Palmeirina, Panelas, Paranatama, Pedra, Pesqueira, Poção, Saloá, Sanharó, Santa Cruz do Capibaribe, São Caetano, São Bento do Una, Tacaimbó, Taquaritinga do Norte, Tupanatinga e Venturosa"
 )
 
 
@@ -7365,7 +7365,7 @@ PEMRT_VI_Bonito_2019 <- data.frame(
   vtn_minimo = c(12243.88, 10206.85, 13738.5, 10206.85, 12698.89, 13280.05, 9162.22, 21138.24, 14380.09),
   vtn_maximo = c(18093.2, 24896.92, 19446.72, 24896.92, 18500.74, 14002.0, 9236.85, 23175.07, 16506.41),
   origem = "Barra de Guabiraba, Bonito, Camocim de São Félix, Sairé e São Joaquim do Monte"
-    )
+)
 ##2022####
 PEMRT_VI_Bonito_2022 <- data.frame(
   mrt ="VI - Bonito",
@@ -7378,7 +7378,7 @@ PEMRT_VI_Bonito_2022 <- data.frame(
   vtn_minimo = c(13723.66, 13418.40, 18100.12, 12570.31, 3955.80, 18100.12, 11121.96, 8621.53, 9194.86, 13975.71, 6052.98, 13700.80, 11494.93, 22525.55),
   vtn_maximo =c(16953.44, 17045.48, 26909.90, 16201.91, 31844.96, 26909.90, 17933.02, 18702.61, 35072.52, 23733.39, 12038.60, 24053.66, 17662.55, 51418.47),
   origem = "  Barra de Guabiraba, Bonito, Camocim de São Félix, Sairé e São Joaquim do Monte "
-  )
+)
 
 ## 15.12 MRT - Garanhuns ####
 ##2019####
@@ -7435,7 +7435,7 @@ PEMRT_VIII_Serto_2022 <- data.frame(
   vtn_minimo = c(1689.84, 1533.26, 1648.06, 15497.74, 1495.68, 2709.61, 732.00, 1232.59, 268.95, 1467.16, -407.85, 804.82, 875.51, 847.73, 615.94, -1046.85, 1393.21, -1218.17, 2233.98, 972.01),
   vtn_maximo = c(2164.56, 2080.86, 2473.86, 29207.78, 2033.68, 7911.05, 2490.64, 3959.65, 7454.57, 4025.98, 4645.71, 2830.48, 1273.09, 10885.59, 2035.02, 5467.35, 1597.77, 5348.37, 5563.38, 2017.55),
   origem = "Triunfo e Santa Cruz da Baixa Verde"
-  )
+)
 
 #### Triunfo #####
 PEMRT_IX_Triunfo_2019 <- data.frame(
@@ -7689,8 +7689,8 @@ PAMRT1_2022 <- data.frame(
 Magalhães Barata, Maracanã, Marapanim, Marituba, Santa Bárbara do Pará, Santa Izabel do Pará, Santa Maria do Pará,
 Santo Antônio do Tauá, São Caetano de Odivelas, São Francisco do Pará, São João da
 Ponta, Terra Alta e Vigia."
-
-  )
+  
+)
 
 
 
@@ -8776,8 +8776,8 @@ PRMRT6_2022 <- data.frame(
   origem = "Arapoti, Bituruna, Cândido de Abreu, Coronel Domingos Soares, Cruz Machado, Curiúva, General Carneiro,
 Inácio Martins, Jaguariaíva, Ortigueira, Palmas, Pinhão, Porto Vitória, Prudentópolis, Reserva, Reserva do
 Iguaçu, Rosário do Ivaí, Sapopema, Sengés, Telêmaco Borba, Turvo, União da Vitória e Ventania."
-
-  )
+  
+)
 
 ### 2024 ####
 PRMRT6_2024 <- data.frame(
@@ -8859,7 +8859,7 @@ PRMRT7_2022 <- data.frame(
             Fazenda Rio Grande, Fernandes Pinheiro, Guamiranga, Imbaú, Imbituva, Ipiranga, Irati, Ivaí, Lapa, Mallet,
             Mandirituba, Palmeira, Paula Freitas, Paulo Frontin, Piên, Piraí do Sul, Ponta Grossa, Porto Amazonas,
             Quitandinha, Rebouças, Rio Azul, Rio Negro, São João do Triunfo, São Mateus do Sul, Teixeira Soares, Tibagi"
-  )
+)
 
 ### 2024 ####
 PRMRT7_2024 <- data.frame(
@@ -9105,8 +9105,8 @@ MRT05_2020 <- data.frame(
   origem = " Guadalupe, Jerumenha, Marcos Parente, Canavieira, Landri Sales, Porto
           Alegre do Piauí, Itaueira, Floriano, Nazaré do Piauí, São José do Peixe, São Miguel do
           Fidalgo e São Francisco do Piauí. "
-
-  )
+  
+)
 
 ### 2022 ####
 MRT5_2022 <- data.frame(
@@ -9166,7 +9166,7 @@ MRT7_2022 <- data.frame(
   vtn_minimo = c(250.65, 345.40, 277.60, 250.65, 135.93, 500.00, 687.50, 277.60, 297.88, 568.18, 363.20, 135.93),
   vtn_maximo = c(2623.21, 1666.67, 2421.05, 2488.20, 1627.90, 1666.67, 1234.38, 2121.21, 2421.05, 1545.79, 2488.20, 1627.90),
   origem = "Acauã, Alagoinha do Piauí, Alegrete do Piauí, Aroeiras do Itaim, Belém do Piauí, Betânia do Piauí, Bocaina, Caldeirão Grande do Piauí, Campo Grande do Piauí, Caridade do Piauí, Curral Novo do Piauí, Dom Expedito Lopes, Francisco Macedo, Francisco Santos, Fronteiras, Geminiano, Ipiranga do Piauí, Itainópolis, Jacobina do Piauí, Jaicós, Lagoa do Barro do Piauí, Marcolândia, Massapê do Piauí, Monsenhor Hipólito, Padre Marcos, Patos do Piauí, Paulistana, Picos, Pio IX, Queimada Nova, Santana do Piauí, Santo Antônio de Lisboa, São João da Canabrava, São José do Piauí, São Julião, São Luís do Piauí, Simões, Sussuapara, Vera Mendes e Vila Nova do Piauí."
-  )
+)
 
 ###18.8 MRT 08 - Vale do Marataoã ####
 ## 2018 ####
@@ -9265,7 +9265,7 @@ MRT10_2022 <- data.frame(
   vtn_minimo = c(101.29, 880.95, 185.00, 101.29, 233.80, 880.95, 310.84, 195.72, 329.77, 101.29, 233.80, 646.72, 200.12),
   vtn_maximo = c(1960.40, 2112.40, 1675.14, 2510.74, 2500.00, 2112.40, 2270.87, 1000.00, 781.57, 1175.87, 2500.00, 2000.00, 1954.01),
   origem = "Agricolândia, Amarante, Angical do Piauí, Arraial, Água Branca, Barra D'Alcântara, Francinópolis, Francisco Ayres, Hugo Napoleão, Jardim do Mulato, Lagoinha do Piauí, Miguel Leão, Olho D'Água do Piauí, Palmeirais, Regeneração, Santo Antônio dos Milagres, São Gonçalo do Piauí, São Pedro do Piauí e Várzea Grande."
-  )
+)
 
 ##18.11 MRT 11 - Teresina ####
 ## 2019 ####
@@ -9294,7 +9294,7 @@ MRT11_2022 <- data.frame(
   vtn_minimo = c(596.68, 1029.76, 525.69, 635.80, 1029.76, 525.69, 635.80, 1029.76),
   vtn_maximo = c(4075.39, 4285.50, 3409.60, 2493.37, 4285.50, 3409.60, 2493.37, 4285.50),
   origem = "Curralinhos, Demerval Lobão, José de Freitas, Lagoa Alegre, Lagoa do Piauí, Monsenhor Gil, Nazária, Teresina e União."
-  )
+)
 
 ## entorno ####
 ## Eles criaram um rodo anel em teresina e isso acabou valorizando bem algumas propriedades.
@@ -9339,7 +9339,7 @@ MRT12_2022 <- data.frame(
   vtn_minimo = c(257.06, 2211.41, 586.09, 684.09, 472.11, 2211.41, 586.09, 684.09, 472.11, 1135.56),
   vtn_maximo = c(3190.50, 2496.45, 1007.68, 1786.68, 1998.77, 2496.45, 1007.68, 1786.68, 1889.40, 1998.77),
   origem = "Bom Princípio do Piauí, Buriti dos Lopes, Cajueiro da Praia, Cocal, Cocal dos Alves, Ilha Grande, Luís Correia e Parnaíba."
-  )
+)
 
 ### Consolidação dos dados ####
 PI2022 <- rbind(
@@ -9454,7 +9454,7 @@ Itatiaia, Mangaratiba, Mendes, Miguel Pereira, Paraíba do Sul,
 Paraty, Pinheiral, Piraí, Porto Real, Quatis, Resende, Rio Claro,
 Rio das Flores, Sapucaia, Três Rios, Valença, Vassouras e Volta
 Redonda"
-  )
+)
 
 
 ### 19.2 MRT:02 - Leste Fluminense ####
@@ -9549,7 +9549,7 @@ RJMRT_Serrana_2017<- data.frame(
 Friburgo, Paty do Alferes, Petrópolis, Santa Maria Madalena, São José
 do Vale do Rio Preto, São Sebastião do Alto, Sumidouro, Teresópolis e
 Trajano de Moraes"
-  )
+)
 
 ### 2022 ####
 RJMRT_Serrana_2022 <- data.frame(
@@ -9591,7 +9591,7 @@ RJMRT_Metropolitana_2017 <- data.frame(
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA),
   origem = "Cachoeiras de Macacu, Duque de Caxias, Guapimirim, Itaboraí, Itaguaí,
 Magé, Maricá, Nova Iguaçu, Paracambi, Rio Bonito, Tanguá"
-  )
+)
 
 ### 2022 ####
 RJMRT_Metropolitana_2022 <- data.frame(
@@ -9609,7 +9609,7 @@ Guapimirim, Itaboraí, Itaguaí, Japeri, Magé, Maricá, Mesquita,
 Nilópolis, Niterói, Nova Iguaçu, Paracambi, Queimados, Rio
 Bonito, Rio de Janeiro, São Gonçalo, São João de Meriti,
 Seropédica e Tanguá"
-  )
+)
 
 ###19.5 MRT - Nordeste Fluminense ####
 ### 2017 ####
@@ -9773,7 +9773,7 @@ RNMRT3_2019 <- data.frame(
   vtn_minimo = c(1537.24, 1537.24, 747.39, 2152.98, 3668.23, 1771.13, 1806.7, 590.93, 3169.05, 3870.82, 1537.24),
   vtn_maximo = c(5511.62, 5511.62, 2506.76, 5378.57, 6444.13, 2924.21, 4048.05, 1259.99, 5612.87, 6399.48, 5511.62),
   origem = "Afonso Bezerra, Angicos, Caiçara do Norte, Fernando Pedroza, Galinhos, Jandaíra, Jardim de Angicos, João Câmara, Lajes, Parazinho, Pedra Grande, Pedra Preta, Pedro Avelino, Poço Branco, Pureza, São Bento do Borte, São Miguel do Gostoso, Taipú e Touros"
-  )
+)
 
 
 ### 19.2 MRT JOAO CAMARA #####
@@ -9808,7 +9808,7 @@ Parazinho, Pedra Grande, Poço Branco, Pureza, São Bento do Norte, São Miguel 
 ### 2022 ####
 RNMRTJoaoCamara_2022  <- data.frame(
   mrt = "MRT JOÃO CÂMARA/RN",
-    tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Agrícola", "Exploração Mista", "Agrícola (Horticultura/Olericultura/Granjeiros)", "Agrícola (Cana-de-açúcar)", "Agrícola - Fruticultura diversa média capacidade", "Agrícola - Fruticultura diversa Alta capacidade", "Exploração Mista - Agrícola + pastagem - Baixa capacidade", "Exploração Mista - Agrícola + pastagem - Média capacida-
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Agrícola", "Exploração Mista", "Agrícola (Horticultura/Olericultura/Granjeiros)", "Agrícola (Cana-de-açúcar)", "Agrícola - Fruticultura diversa média capacidade", "Agrícola - Fruticultura diversa Alta capacidade", "Exploração Mista - Agrícola + pastagem - Baixa capacidade", "Exploração Mista - Agrícola + pastagem - Média capacida-
 de", "Exploração Mista - Agrícola + pastagem Alta capacidade", "Exploração mista - Agrícola + pastagem - baixa capacidade 
 (Bento Fernandes)", "Agrícola - Fruticultura diversa - média capacidade (Jandai-
 ra)", "Agrícola - Fruticultura diversa- Alta capacidade (Jandaira)", "Exploração mista - agrícola + pastagem - média capacidade", "Exploração mista - agrícola + pastagem - Média capacidade
@@ -9819,14 +9819,14 @@ ra)", "Agrícola - Fruticultura diversa- Alta capacidade (Jandaira)", "Exploraç
 (São Miguel do Gostoso)", "Exploração mista - agrícola + pastagem - Média capacidade
 (Taipu)", "Agrícola  - Horticultura/Olericultura/Granjeiros - Touros", "Exploração mista - agrícola + pastagem - Média capacidade
 (Touros)"),
-    nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
-    vti_media = c(4954.88, 5774.86, 4455.92, 9202.40, 9234.06, 4095.13, 5000.00, 2940.00, 6360.29, 5853.94, 3222.29, 4095.13, 5000.00, 4420.82, 11986.35, 3995.27, 5138.58, 9234.06, 6847.62, 7777.65, 5998.88, 9202.40, 6056.09),
-    vti_minimo = c(4211.65, 4908.64, 3787.53, 7822.04, 7848.95, 3480.86, 4250.00, 2499.00, 5406.25, 4975.85, 2738.95, 3480.86, 4250.00, 3757.69, 10188.40, 3395.98, 4367.79, 7848.95, 5820.47, 6611.00, 5099.05, 7822.04, 5147.67),
-    vti_maximo = c(5698.11, 6641.09, 5124.30, 10582.76, 10619.16, 4709.40, 5750.00, 3380.99, 7314.33, 6732.03, 3705.64, 4709.40, 5750.00, 5083.94, 13784.31, 4594.56, 5909.37, 10619.16, 7874.76, 8944.29, 6898.71, 10582.76, 6964.50),
-    vtn_media = c(4367.87, 5040.05, 3965.80, 7535.10, 8674.49, 3613.31, 4489.65, 2650.94, 5735.16, 5045.63, 2778.93, 3613.31, 4489.65, 4100.08, 8630.87, 3461.42, 4244.87, 7065.76, 6246.13, 7285.36, 5195.66, 7535.10, 5487.27),
-    vtn_minimo = c(3712.69, 4284.04, 3370.93, 6404.84, 7373.31, 3071.31, 3816.20, 2253.30, 4874.88, 4288.78, 2362.09, 3071.31, 3816.20, 3485.07, 7336.24, 2942.21, 3608.14, 6005.90, 5309.21, 6192.56, 4416.31, 6404.84, 4664.18),
-    vtn_maximo = c(5023.05, 5796.05, 4560.67, 8665.37, 9975.66, 4155.30, 5163.09, 3048.58, 6595.43, 5802.47, 3195.77, 4155.30, 5163.09, 4715.09, 9925.49, 3980.64, 4881.60, 8125.63, 7183.05, 8378.16, 5975.01, 8665.37, 6310.36),
-    origem = "Bento Fernandes, Caiçara do Norte, Galinhos, Jandaíra, João Câmara, Parazinho, Pedra Grande, Poço Branco, Pureza, São Bento do Norte, São Miguel do Gostoso, Taipú e Touros."
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(4954.88, 5774.86, 4455.92, 9202.40, 9234.06, 4095.13, 5000.00, 2940.00, 6360.29, 5853.94, 3222.29, 4095.13, 5000.00, 4420.82, 11986.35, 3995.27, 5138.58, 9234.06, 6847.62, 7777.65, 5998.88, 9202.40, 6056.09),
+  vti_minimo = c(4211.65, 4908.64, 3787.53, 7822.04, 7848.95, 3480.86, 4250.00, 2499.00, 5406.25, 4975.85, 2738.95, 3480.86, 4250.00, 3757.69, 10188.40, 3395.98, 4367.79, 7848.95, 5820.47, 6611.00, 5099.05, 7822.04, 5147.67),
+  vti_maximo = c(5698.11, 6641.09, 5124.30, 10582.76, 10619.16, 4709.40, 5750.00, 3380.99, 7314.33, 6732.03, 3705.64, 4709.40, 5750.00, 5083.94, 13784.31, 4594.56, 5909.37, 10619.16, 7874.76, 8944.29, 6898.71, 10582.76, 6964.50),
+  vtn_media = c(4367.87, 5040.05, 3965.80, 7535.10, 8674.49, 3613.31, 4489.65, 2650.94, 5735.16, 5045.63, 2778.93, 3613.31, 4489.65, 4100.08, 8630.87, 3461.42, 4244.87, 7065.76, 6246.13, 7285.36, 5195.66, 7535.10, 5487.27),
+  vtn_minimo = c(3712.69, 4284.04, 3370.93, 6404.84, 7373.31, 3071.31, 3816.20, 2253.30, 4874.88, 4288.78, 2362.09, 3071.31, 3816.20, 3485.07, 7336.24, 2942.21, 3608.14, 6005.90, 5309.21, 6192.56, 4416.31, 6404.84, 4664.18),
+  vtn_maximo = c(5023.05, 5796.05, 4560.67, 8665.37, 9975.66, 4155.30, 5163.09, 3048.58, 6595.43, 5802.47, 3195.77, 4155.30, 5163.09, 4715.09, 9925.49, 3980.64, 4881.60, 8125.63, 7183.05, 8378.16, 5975.01, 8665.37, 6310.36),
+  origem = "Bento Fernandes, Caiçara do Norte, Galinhos, Jandaíra, João Câmara, Parazinho, Pedra Grande, Poço Branco, Pureza, São Bento do Norte, São Miguel do Gostoso, Taipú e Touros."
 )
 
 ### 2025 #####
@@ -9842,7 +9842,7 @@ RNMRTJoaoCamara_2025 <- data.frame(
   vtn_maximo = c(6006.54, 6006.54, 3942.58, 5334.33, 8152.73, 4389.94, 3730.90, 3771.85, 5361.94, 6113.75, 4953.78, 5456.86, 4726.74, 8085.34, 9825.77, 4618.68, 5259.88, 8271.81, 9226.40),
   origem = " João Câmara/RN. Abrangência: Bento Fernandes, Caiçara do Norte, Galinhos,
 Jandaíra, João Câmara, Parazinho, Pedra Grande, Poço Branco, Pureza, São Bento do Norte, São Miguel do Gostoso, Taipú e Touros."
-  )
+)
 
 ###19.3 MRT LITORAL ORIENTAL #####
 ### 2017 #####
@@ -9877,7 +9877,7 @@ RNMRT4_2019 <- data.frame(
   vtn_minimo = c(4914.27, 4914.27, 5659.05, 3422.12, 7326.64, 7911.85, 3797.74, 3722.15, 2853.84, 6308.19),
   vtn_maximo = c(10440.27, 10440.27, 10893.34, 6456.49, 11930.63, 10018.94, 8440.59, 6657.86, 6545.21, 11800.6),
   origem = "Arês, Baía Formosa, Canguaretama, Ceará-Mirim, Espirito Santo, Extremoz, Goianinha, Macaíba, Rio do Fogo, Maxaranguape, Montanhas, Monte Alegre, Natal, Nísia Floresta, Parnamirim, Pedro Velho, São Gonçalo do Amarante, São José de Mipibu, Senador Georgino, velino, Tibau do Sul, Vera Cruz e Vila Flor"
-  )
+)
 
 ### 2020 #####
 RMMRTCearaMirimGoianinha_2020 <- data.frame(
@@ -9908,12 +9908,12 @@ RNMRTCearaMirimGoianinha_2021 <- data.frame(
   vtn_maximo = c(15376.75, 15376.75, 15607.48, 7995.11, 28313.09, 35589.70, 14364.27, 11043.48, 15153.21, 11599.23, 7294.51, 8316.10, 9666.03, 14354.28, 23189.38, 15611.21, 8025.69, 24150.32, 31047.10, 85820.90, 18323.28),
   origem = "Arês, Baía Formosa, Canguaretama, Ceará-Mirim, Parnamirim, Espírito Santo, Extremoz, Goianinha, Macaíba, Maxaranguape, Montanhas, Monte Alegre, Natal, Nísia Floresta, Rio do Fogo, Pedro Velho, São Gonçalo do Amarante, São José de Mipibu, Senador Georgino Avelino, Tibau do Sul, 
   Vera Cruz e Vila Flor"
-  )
-  
+)
+
 ### 2022 ####
 RNMRTCearaMirimGoianinha_2022 <- data.frame(
   mrt = "MRTCearáMirim",
-    tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Não Agrícola", "Exploração mista – Agrícola + Pastagem alta capacidade", "Exploração mista – Agrícola + Pastagem media capacidade", "Agrícola – Cana-de-açúcar", "Agrícola – Horticultura/Olericultura/Granjeiros", "Não Agrícola – Exploração turística", "Agrícola – Cana-de-açúcar (Arês)", "Exploração mista – Agrícola + Pastagem alta capacidade 
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola", "Não Agrícola", "Exploração mista – Agrícola + Pastagem alta capacidade", "Exploração mista – Agrícola + Pastagem media capacidade", "Agrícola – Cana-de-açúcar", "Agrícola – Horticultura/Olericultura/Granjeiros", "Não Agrícola – Exploração turística", "Agrícola – Cana-de-açúcar (Arês)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Canguaretama)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Ceará-Mirim)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Espírito Santo)", "Exploração mista – Agrícola + Pastagem alta capacidade 
@@ -9931,17 +9931,17 @@ gre)", "Exploração mista – Agrícola + Pastagem alta capacidade
 mento (São Gonçalo do Amarante)", "Agrícola – Horticultura/Olericultura/Granjeiros (São José 
 do Mipibu)", "Não Agrícola – Exploração turística (Tibau do Sul)", "Agrícola – Horticultura/Olericultura/Granjeiros (Vera Cruz)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Vera Cruz)"),
-    nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
-    vti_media = c(15024.66, 13265.01, 23833.58, 103245.68, 15156.08, 7388.50, 20037.53, 32127.08, 103245.68, 22435.16, 24222.22, 14677.99, 14980.07, 14895.04, 18879.09, 13976.62, 7027.94, 9088.72, 8736.84, 13369.41, 27184.83, 16868.22, 12433.33, 7921.90, 13468.39, 27562.19, 33631.51, 103245.68, 46590.91, 15662.34),
-    vti_minimo = c(12770.96, 11275.26, 20258.54, 87758.82, 12882.67, 6280.22, 17031.90, 27308.02, 87758.82, 19069.89, 20588.89, 12476.29, 12733.06, 12660.78, 16047.23, 11880.13, 5647.74, 7725.41, 7426.31, 11364.00, 23107.10, 14337.99, 10568.33, 6733.61, 11448.13, 23427.86, 28586.78, 87758.82, 39602.27, 13312.99),
-    vti_maximo = c(17278.36, 15254.77, 27408.62, 118732.53, 17429.49, 8496.77, 23043.16, 36946.14, 118732.53, 25800.44, 27855.56, 16879.68, 17227.09, 17129.29, 21710.96, 16073.12, 8408.13, 10452.03, 10047.37, 15374.82, 31262.55, 19398.45, 14298.33, 9110.18, 15488.64, 31696.51, 38676.24, 118732.53, 53579.55, 18011.69),
-    vtn_media = c(13488.80, 11896.79, 20798.58, 103245.68, 13564.99, 6762.65, 18084.34, 26817.53, 103245.68, 19315.02, 23138.89, 12461.59, 12638.89, 13388.68, 17572.84, 12586.76, 6114.39, 7964.48, 8278.64, 11981.21, 23463.79, 14920.61, 10466.67, 7838.56, 12797.26, 26917.46, 27490.26, 103245.68, 42468.43, 15241.34),
-    vtn_minimo = c(11465.48, 10112.27, 17678.79, 87758.82, 11530.24, 5748.25, 15371.69, 22794.90, 87758.82, 16417.77, 19668.06, 10592.35, 10743.06, 11380.38, 14936.91, 10698.75, 4750.19, 6769.81, 7036.85, 10184.03, 19944.22, 12682.52, 8896.67, 6662.78, 10877.67, 22879.84, 23366.72, 87758.82, 36098.17, 12955.14),
-    vtn_maximo = c(15512.12, 13681.31, 23918.36, 118732.53, 15599.73, 7777.05, 20796.99, 30840.16, 118732.53, 22212.27, 26609.72, 14330.83, 14534.73, 15396.98, 20208.76, 14474.78, 7478.59, 9159.16, 9520.44, 13778.40, 26983.36, 17158.70, 12036.67, 9014.35, 14716.85, 30955.08, 31613.80, 118732.53, 48838.70, 17527.54),
-    origem = "Arês, Baía Formosa, Canguaretama, Ceará-Mirim, Parnamirim, Espírito Santo, Extremoz, Goianinha, Macaíba, Maxaranguape,
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(15024.66, 13265.01, 23833.58, 103245.68, 15156.08, 7388.50, 20037.53, 32127.08, 103245.68, 22435.16, 24222.22, 14677.99, 14980.07, 14895.04, 18879.09, 13976.62, 7027.94, 9088.72, 8736.84, 13369.41, 27184.83, 16868.22, 12433.33, 7921.90, 13468.39, 27562.19, 33631.51, 103245.68, 46590.91, 15662.34),
+  vti_minimo = c(12770.96, 11275.26, 20258.54, 87758.82, 12882.67, 6280.22, 17031.90, 27308.02, 87758.82, 19069.89, 20588.89, 12476.29, 12733.06, 12660.78, 16047.23, 11880.13, 5647.74, 7725.41, 7426.31, 11364.00, 23107.10, 14337.99, 10568.33, 6733.61, 11448.13, 23427.86, 28586.78, 87758.82, 39602.27, 13312.99),
+  vti_maximo = c(17278.36, 15254.77, 27408.62, 118732.53, 17429.49, 8496.77, 23043.16, 36946.14, 118732.53, 25800.44, 27855.56, 16879.68, 17227.09, 17129.29, 21710.96, 16073.12, 8408.13, 10452.03, 10047.37, 15374.82, 31262.55, 19398.45, 14298.33, 9110.18, 15488.64, 31696.51, 38676.24, 118732.53, 53579.55, 18011.69),
+  vtn_media = c(13488.80, 11896.79, 20798.58, 103245.68, 13564.99, 6762.65, 18084.34, 26817.53, 103245.68, 19315.02, 23138.89, 12461.59, 12638.89, 13388.68, 17572.84, 12586.76, 6114.39, 7964.48, 8278.64, 11981.21, 23463.79, 14920.61, 10466.67, 7838.56, 12797.26, 26917.46, 27490.26, 103245.68, 42468.43, 15241.34),
+  vtn_minimo = c(11465.48, 10112.27, 17678.79, 87758.82, 11530.24, 5748.25, 15371.69, 22794.90, 87758.82, 16417.77, 19668.06, 10592.35, 10743.06, 11380.38, 14936.91, 10698.75, 4750.19, 6769.81, 7036.85, 10184.03, 19944.22, 12682.52, 8896.67, 6662.78, 10877.67, 22879.84, 23366.72, 87758.82, 36098.17, 12955.14),
+  vtn_maximo = c(15512.12, 13681.31, 23918.36, 118732.53, 15599.73, 7777.05, 20796.99, 30840.16, 118732.53, 22212.27, 26609.72, 14330.83, 14534.73, 15396.98, 20208.76, 14474.78, 7478.59, 9159.16, 9520.44, 13778.40, 26983.36, 17158.70, 12036.67, 9014.35, 14716.85, 30955.08, 31613.80, 118732.53, 48838.70, 17527.54),
+  origem = "Arês, Baía Formosa, Canguaretama, Ceará-Mirim, Parnamirim, Espírito Santo, Extremoz, Goianinha, Macaíba, Maxaranguape,
 Montanhas, Monte Alegre, Natal, Nísia Floresta, Rio do Fogo, Pedro Velho, São Gonçalo do Amarante, São José de Mipibu, Senador Georgino
 Avelino, Tibau do Sul, Vera Cruz e Vila Flor"  
-  )
+)
 
 
 ### 2025 ####
@@ -9958,7 +9958,7 @@ RNMRTCearaMirimGoianinha_2025 <- data.frame(
   origem = "Arês, Baía Formosa,
 Canguaretama, Ceará-Mirim, Parnamirim, Espírito Santo, Extremoz, Goianinha, Macaíba, Maxaranguape, Montanhas, Monte Alegre, Natal, Nísia Floresta,
 Rio do Fogo, Pedro Velho, São Gonçalo do Amarante, São José de Mipibu, Senador Georgino Avelino, Tibau do Sul, Vera Cruz e Vila Flor."
-  )
+)
 
 ### 19.4 MRT Agreste Pontegi Trairi #####
 ### 2017 #####
@@ -10226,7 +10226,7 @@ RNMRTNOVACRUZRN2025 <- data.frame(
   origem = " Boa
 Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz, Passa e Fica, Passagem, Riachuelo, Santa
 Maria, Santo Antônio, São Paulo do Potengi, São Pedro, Senador Elói de Souza, Serra Caiada, Serrinha e Várzea."
-  )
+)
 
 ### 19.7 MRT SERIDO #####
 ### 2017 #####
@@ -10385,7 +10385,7 @@ RNMRTCaicoCerroCora_2025 <- data.frame(
   origem = "Acari, Bodó, Caicó, Carnaúba dos Dantas, Cerro Corá, Cruzeta, Currais Novos, Equador, Florânia, Ipueira, Jardim de Piranhas, Jardim do
 Seridó, Jucurutu, Lagoa Nova, Ouro Branco, Parelhas, Santana do Seridó, São Fernando, São João do Sabugi, São José do Seridó, São Vicente, Serra
 Negra do Norte, Tenente Laurentino Cruz e Timbaúba dos Batistas"
- )
+)
 
 ### 19.8 MRT MEDIO OESTE #####
 ### 2017 #####
@@ -10459,10 +10459,10 @@ RNMRTMossoroAssu_2020 <- data.frame(
   vtn_media = c(2098.12, 2098.12, 1142.23, 1722.69, 2720.54, 9845.17, 1573.15, 2884.43, 1933.02, 2576.21, 2121.35, 1003.39, 1350.00, 2182.27, 760.39, 1219.05, 2361.69, 4851.40, 1131.46, 2483.33, 1006.06, 1671.43),
   vtn_minimo = c(898.88, 898.88, 662.27, 819.56, 1499.63, 7776.72, 761.20, 2429.96, 550.77, 2098.10, 1870.36, 697.19, 1050.00, 1091.14, 605.05, 843.85, 1128.16, 2910.84, 1003.19, 1433.73, 995.56, 762.89),
   vtn_maximo = c(3297.35, 3297.35, 1622.19, 2625.82, 3941.44, 11913.62, 2385.09, 3338.90, 3315.27, 3054.31, 2372.34, 1309.60, 1650.00, 3273.41, 915.73, 1594.24, 3595.21, 6791.96, 1259.73, 3532.94, 1016.56, 2579.96),
-   origem = "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas,
+  origem = "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas,
 Carnaubais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçu, Macau, Mossoró, Pendências, Porto do Mangue, Tibau, Serra
 do Mel e Upanema."
-  )
+)
 
 ### 2021 ####
 
@@ -10522,7 +10522,7 @@ RNMRTMossoroAssu_2021 <- data.frame(
     3749.78, 1645.62, 2604.11, 6653.70, 1905.35, 2396.85, 3453.94, 5252.50,
     16016.38, 7611.66, 3797.83, 5969.17, 18092.53
   ),
-
+  
   origem = "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas,
 Carnaubais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçu, Macau, Mossoró, Pendências, Porto do Mangue, Tibau, Serra
 do Mel e Upanema."
@@ -10730,7 +10730,7 @@ Alexandria, Almino Afonso, Antônio Martins, Campo Grande, Coronel João Pessoa,
 Dias, José da Penha, Lucrécia, Luís Gomes, Major Sales, Marcelino Vieira, Martins, Messias Targino, Olho d'Água do Borges, Paraná, Paraú, Patu, Pau dos Ferros, Pilões,
 Portalegre, Rafael Fernandes, Rafael Godeiro, Riacho da Cruz, Riacho de Santana, Rodolfo Fernandes, São Francisco do Oeste, São Miguel, Serrinha dos Pintos,
 Severiano Melo, Taboleiro Grande, Tenente Ananias, Triunfo Potiguar, Umarizal, Venha-Ver e Viçosa."
-  )
+)
 
 
 
@@ -10748,7 +10748,7 @@ RNMRTLajes_2020 <- data.frame(
   vtn_maximo = c(1693.70, 1693.70, 1426.58, 2694.20, 1334.90, 1506.50, 1395.21, 1279.42),
   origem = "Angicos, Caiçara do Rio do Vento, Fernando Pedroza, Itajá, Jardim de Angicos, Lajes, Pedra Preta, Pedro Avelino,
 Santana do Matos e São Rafae"
-  )
+)
 
 ### 2021 ####
 RNMRTLajes_2021 <- data.frame(
@@ -11068,7 +11068,7 @@ ROMRTZonaDaMata_2022 <- data.frame(
                  13237.05, 14710.74, 18958.48, 17962.81, 16776.32),
   origem = " Rolim de Moura, Novo Horizonte do Oeste, Nova Brasilândia D'Oeste, Alta Floresta D'Oeste,
 Castanheiras, Alto Alegre dos Parecis, Santa Luzia D'Oeste e São Felipe D'Oeste"
-  )
+)
 
 
 ###20.3 BR 429 ####
@@ -11102,7 +11102,7 @@ ROMRTBR429_2019 <- data.frame(
                  11568.32, 7626.74, 6106.06),
   origem = "Alvorada do Oeste, São Miguel do Guaporé, Seringueiras, São Francisco do Guaporé, e Costa Marques"
   
-  )
+)
 
 ### 2022 ####
 ROMRTBR429_2022 <- data.frame(
@@ -11287,8 +11287,8 @@ ROMRTRegiaoCentral_2022 <- data.frame(
                  19442.60, 13073.22, 17007.44, 18013.47),
   origem = "Ji-Paraná, Cacoal, Espigão D'Oeste, Ministro Andreazza, Presidente Médici, Ouro Preto do Oeste, Jaru, Teixeirópolis,
 Vale do Paraíso, Urupá, Nova União, Mirante da Serra, Governador Jorge Teixeira e Theobroma"
-  )
-  
+)
+
 ###20.5 Vale do Jamaril####
 ### 2019 ####
 ROMRTValeDoJamari_2019 <- data.frame(
@@ -11524,7 +11524,7 @@ RRMRT1_2022 <- data.frame(
                  4698.50, 2660.69, 4231.39),
   
   vti_maximo = c(5320.13, 6356.79, 3599.75, 5724.83, 6356.79,
-                  3599.75, 5724.83),
+                 3599.75, 5724.83),
   
   vtn_media = c(4353.37, 5527.64, 2989.12, 4978.11,
                 5527.64, 2989.12, 4978.11),
@@ -11614,8 +11614,8 @@ RRMRT2_2018 <- data.frame(
   vtn_minimo =  c(1151.68, 1149.42, 1023.12, 1438.84, 333.85, 672.64, 1009.98, 934.55, 1514.33, 954.20, 1054.04, 921.54, 103.53),
   vtn_maximo = c(2736.05, 2761.06, 2132.44, 3191.29, 715.76, 1713.40, 1746.69, 1924.58, 2553.27, 2238.19, 2622.42, 2245.70, 1816.79),
   origem = "Cantá, Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São Luís, São João da Baliza"
-
-  )
+  
+)
 
 ### 2022 ####
 RRMRT2_2022 <- data.frame(
@@ -11709,7 +11709,7 @@ RSMRT01_2017 <- data.frame(
   origem = "Aceguá, Arroio Grande, Bagé, Caçapava do Sul, Candiota, Cerrito, Dom Pedrito,
 Encruzilhada do Sul, Herval, Hulha Negra, Jaguarão, Lavras do Sul, Pedras Altas, Pedro
 Osório, Pinheiro Machado, Piratini e Santana da Boa Vista"
-  )
+)
 ### 2020 ####
 RSMRT1_2020 <- data.frame(
   mrt = "Campanha",
@@ -11725,7 +11725,7 @@ RSMRT1_2020 <- data.frame(
 Candiota, Dom Pedrito, Encruzilhada do Sul,
 Herval, Hulha Negra, Lavras do Sul, Pedras Altas,
 Pinheiro Machado, Piratini e Santana da Boa Vista."
-  )
+)
 
 ### 2022 ####
 RSMRT1_2022 <- data.frame(
@@ -11879,7 +11879,7 @@ Tenente Portela, Tio Hugo, Tiradentes do Sul, Três Arroios, Três de Maio, Trê
 Palmeiras, Três Passos, Trindade do Sul, Tucunduva, Tupanci do Sul, Tupanciretã,
 Tuparendi, Ubiretama, Viadutos, Vicente Dutra, Victor Graeff, Vila Lângaro, Vista
 Alegre e Vista Gaúcha"
-  )
+)
 
 
 ###23.3 SERRA ####
@@ -11969,7 +11969,7 @@ RSMRT3_2020 <- data.frame(
     46230.88, 36115.45, 12987.45, 56972.93, 56972.93, 12987.45, 39253.36,
     49993.03, 28378.69, 50177.31, 47502.23, 111103.28, 12321.00, 39253.36,
     49993.03, 28378.69
-    ),
+  ),
   origem = "Alto Feliz, André da Rocha, Anta Gorda, Antônio Prado, Arroio do Meio, Arroio do
 Tigre, Arvorezinha, Barão, Barros Cassal, Bento Gonçalves, Boa Vista do Sul, Bom
 Princípio, Bom Retiro do Sul, Boqueirão do Leão, Brochier, Camargo, Canudos do
@@ -12061,7 +12061,7 @@ Bonito do Sul, Esmeralda, Ipê, Jaquirana, Lagoa
 Vermelha, Monte Alegre dos Campos, Muitos
 Capões, Pinhal da Serra, São Francisco de
 Paula, São José dos Ausentes e Vacaria."
-  )
+)
 ### 2022 ####
 RSMRT4_2022 <- data.frame(
   mrt = "Campo de Cima da Serra",
@@ -12076,7 +12076,7 @@ RSMRT4_2022 <- data.frame(
   origem = " André da Rocha, Bom Jesus, Cambará do Sul, Campestre da Serra, Capão
 Bonito do Sul, Esmeralda, Ipê, Jaquirana, Lagoa Vermelha, Monte Alegre dos Campos, Muitos
 Capões, Pinhal da Serra, São Francisco de Paula, São José dos Ausentes e Vacaria."
-  )
+)
 
 ###23.4Central ####
 ### 2017 ####
@@ -12187,7 +12187,7 @@ RSMRT5_2022 <- data.frame(
 Itaara, Jaguari, Jari, Mata, Nova Esperança do Sul, Passa Sete, Quevedos, Santa Margarida do
 Sul, Santa Maria, São Gabriel, São Martinho da Serra, São Pedro do Sul, São Sepé, São Vicente
 do Sul, Toropi e Vila Nova do Sul. "
-  )
+)
 
 ###23.5 Pelotas ####
 ### 2017 ####
@@ -12464,7 +12464,7 @@ RSMRT8_2022 <- data.frame(
 Dom Pedro de Alcântara, Imbé, Itati, Mampituba, Maquiné, Morrinhos do Sul, Mostardas, Osório,
 Palmares do Sul, Riozinho, Rolante, Santo Antônio da Patrulha, São José do Norte, Tavares, Terra
 de Areia, Torres, Tramandaí, Três Cachoeiras, Três Forquilhas e Xangri-lá"
-  )
+)
 
 ### 23.9 Fronteira Oeste ####
 ### 2017 ####
@@ -12990,8 +12990,8 @@ SCMRT_Curitibanos_2017 <- data.frame(
   vtn_minimo = (NA),
   vtn_maximo = (NA),
   origem = "Abdon Batista, Brunópolis, Campos Novos, Curitibanos, Frei Rogério, Monte Carlo, Ponte Alta, Ponte Alta do Norte, Santa Cecília, São Cristóvão do Sul, Vargem e Zortéa."
-
-  )
+  
+)
 
 ### 2019 ####
 SCMRT_Curitibanos_2016_2019 <- data.frame(
@@ -13017,7 +13017,7 @@ SCMRT_Curitibanos_2016_2019 <- data.frame(
   vtn_minimo = (NA),
   vtn_maximo = (NA),
   origem = "Abdon Batista, Brunópolis, Campos Novos, Curitibanos, Frei Rogério, Monte Carlo, Ponte Alta, Ponte Alta do Norte, Santa Cecília, São Cristóvão do Sul, Vargem e Zortéa."
-    
+  
 )
 
 ### 2022 ####
@@ -13606,22 +13606,22 @@ SCMRT_Xanxere_2016 <- data.frame(
   tipologia_de_uso = c("Uso indefinido (média geral)", "Agricultura", "Pecuária", "Mata", "Silvicultura", "Exploração Mista", "Agricultura de Alta Produtividade", "Agricultura de Média Produtividade", "Agricultura de Baixa Produtividade", "Pecuária com pastagem de alto suporte", "Pecuária com pastagem de baixo suporte", "Exploração Mista (Lavoura + Pecuária)", "Exploração Mista (Lavoura + Silvicultura)", "Exploração Mista (Pecuária + Silvicultura)", "Exploração Mista (Lavoura + Pecuária + Silvicultura)", "Agricultura de Alta Produtividade (Abelardo Luz)", "Agricultura de Alta Produtividade (Ipuaçu)", "Agricultura de Alta Produtividade (Ouro Verde)", "Agricultura de Alta Produtividade (Ponte Serrada)", "Agricultura de Alta Produtividade (São Domingos)", "Agricultura de Alta Produtividade (Xanxerê)", "Agricultura de Alta Produtividade (Galvão)", "Pecuária com pastagem de baixo suporte (Abelardo Luz)", "Exploração Mista: Lavoura e Pecuária (Abelardo Luz)", "Silvicultura (Ponte Serrana)"),
   nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(32567.60, 43600.71, 26503.49, 9544.59, 17146.46, 
-            22576.27, 51451.40, 30298.21, 12721.26, 41263.28, 
-            18053.71, 28530.37, 21307.30, 15469.27, 16675.96, 
-            56659.84, 60433.88, 52663.43, 40506.46, 52117.13,
-            53224.78, 27430.64, 19541.70, 30749.01, 13173.55),
+                22576.27, 51451.40, 30298.21, 12721.26, 41263.28, 
+                18053.71, 28530.37, 21307.30, 15469.27, 16675.96, 
+                56659.84, 60433.88, 52663.43, 40506.46, 52117.13,
+                53224.78, 27430.64, 19541.70, 30749.01, 13173.55),
   
   vti_minimo = c(4132.23, 9917.36, 10080.00, 4132.23, 7438.02,
-                      7438.02, 24173.55, 12272.73, 9917.36, 24793.39, 
-                      10080.00, 7438.02, 8832.64, 9767.09, 7943.51, 
-                      54593.42, 59271.69, 50357.17, 34430.49, 49381.52,
-                      52373.18, 25501.88, 18317.89, 26136.66, 12201.32),
+                 7438.02, 24173.55, 12272.73, 9917.36, 24793.39, 
+                 10080.00, 7438.02, 8832.64, 9767.09, 7943.51, 
+                 54593.42, 59271.69, 50357.17, 34430.49, 49381.52,
+                 52373.18, 25501.88, 18317.89, 26136.66, 12201.32),
   
   vti_maximo  = c(72520.66, 72520.66, 58441.56, 12086.78, 29752.07, 
-                      49923.64, 72520.66, 53095.48, 21130.43, 58441.56,
-                      34710.74, 49923.64, 34533.65, 22314.05, 33842.98, 
-                      58726.26, 61596.07, 54969.69, 46582.43, 54852.74, 
-                      54076.37, 29359.40, 20765.50, 35361.36, 14145.79),
+                  49923.64, 72520.66, 53095.48, 21130.43, 58441.56,
+                  34710.74, 49923.64, 34533.65, 22314.05, 33842.98, 
+                  58726.26, 61596.07, 54969.69, 46582.43, 54852.74, 
+                  54076.37, 29359.40, 20765.50, 35361.36, 14145.79),
   vtn_media = c(
     NA),
   vtn_minimo = c(
@@ -14685,13 +14685,13 @@ SEMRT7_2022 <- data.frame(
 
 ## Consolidação dos dados #####
 SE2017 <- rbind(
- SEMRTAltoSertaoSergipano_2017,
- SEMRTCentroSulSergipano_2017,
- SEMRTSulSergipano_2017,
- SEMRTAgresteDeItabaiana_2017,
- SEMRTMedioSertaoSergipano_2017,
- SEMRTLitoralNorte_2017,
- SEMRTCotinguiba_2017
+  SEMRTAltoSertaoSergipano_2017,
+  SEMRTCentroSulSergipano_2017,
+  SEMRTSulSergipano_2017,
+  SEMRTAgresteDeItabaiana_2017,
+  SEMRTMedioSertaoSergipano_2017,
+  SEMRTLitoralNorte_2017,
+  SEMRTCotinguiba_2017
 )
 
 SE20 <- rbind(
@@ -14731,7 +14731,7 @@ SETEMPORAL$regiao <- "nordeste"
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRTO_2022.pdf
 ##27.1 Araguatins ####
 =======
-## 25.Tocantins  #### 
+  ## 25.Tocantins  #### 
 #2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2016.pdf
 #2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2018.ods
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRTO_2022.pdf
@@ -14851,8 +14851,8 @@ MRT_III_2018 <- data.frame(
   vtn_minimo = c(1685.89, 2599.13, 1728.02),
   vtn_maximo = c(2280.91, 3516.47, 2337.91),
   origem = "Brasilândia do Tocantins, Colinas do TO, Filadélfia, Nova Olinda, Palmeirante, Presidente Kennedy e Tupiratins"
-
-  )
+  
+)
 ##2022 #####
 MRT3_2022 <- data.frame(
   mrt =  "III - COLINAS do TO",
@@ -15358,9 +15358,19 @@ TOTEMPORAL<- rbind(TO2016, TO2018, TO22)
 TOTEMPORAL$estado <- 17
 TOTEMPORAL$regiao <- "norte"
 
+
+# ERROS ENCONTRADOS
 #### consolidação final dos dados ####
-<<<<<<< HEAD
-#fim 
-=======
->>>>>>> 32de8d0683c477e6d5b5c2d1910bb037bf7fcade
-BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGtemporal, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)
+# <<<<<<< HEAD
+# #fim 
+# =======
+# >>>>>>> 32de8d0683c477e6d5b5c2d1910bb037bf7fcade
+# BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGtemporal, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)
+objs21 <- sprintf("MAMRT%02d_2021", 1:7)
+sizes21 <- t(sapply(objs21, function(nm){
+  if (!exists(nm)) return(c(rows=NA, cols=NA))
+  x <- get(nm)
+  c(rows = nrow(x), cols = ncol(x))
+}))
+sizes21
+# MAMRT04_2021 possui 9 colunas, não 10
