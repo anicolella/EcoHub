@@ -1,0 +1,18 @@
+=====================
+CONTROLE DE VERSÕES
+BD Ambiental USP
+=====================
+
+------------------------------------------
+[v0.1, de 21082025]
+* Criação do Github
+* Scripts R iniciais João
+..........................................
+
+
+------------------------------------------
+[v0.2, de 08092025]
+* Reorganização projeto (pasta _SCRIPTS_BD_AMBIENTAL)
+* Quarto configurado na raiz
+* Alteração do readme.md
+..........................................
