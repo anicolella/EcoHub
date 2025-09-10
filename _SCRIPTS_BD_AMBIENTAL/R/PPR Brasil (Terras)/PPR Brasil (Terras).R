@@ -4275,7 +4275,11 @@ MAMRT04_2021 <- data.frame(
   vtn_maximo = c(
     10723.72, 3795.72, 1325.75, 14454.57, 7755.37, 4881.23, 2760.29, 3068.13, 1199.10,
     12461.94, 19570.53, 11947.71, 7154.10, 7783.29, 8321.74, 5748.01, 5012.07, 2975.37, 3790.20, 1988.20, 2156.87, 5544.64, 2672.47, NA, 1055.32, 1114.87
-  )
+  ),
+  origem = "Alto Parnaíba, Balsas, Barão de Grajaú, Benedito Leite, Campestre do Maranhão, Carolina, Colinas, Estreito, Feira
+Nova do Maranhão, Fortaleza dos Nogueiras, Jatobá, Lagoa do Mato, Loreto, Mirador, Nova Colinas, Nova Iorque, Paraibano, Passagem Franca, Pastos Bons,
+Porto Franco, Riachão, Sambaíba, São Domingos do Azeitão, São Félix de Balsas, São Francisco do Maranhão, São João Do Paraíso, São João dos Patos, São Pedro
+dos Crentes, São Raimundo das Mangabeiras, Sucupira do Norte, Sucupira do Riachão e Tasso Fragoso"
 )
 
 ### 2022 ####
@@ -4288,7 +4292,11 @@ MAMRT04_2022 <- data.frame(
   vti_maximo = c(7160.38, 12962.76, 4241.79, 2358.20, 16246.35, 8077.05, 5208.48, 3217.76, 4175.90, 1150.68, 24318.70, 17164.12, 12767.46, 8211.82, 7779.92, 8246.58, 4961.53, 4433.40, 6064.23, 2784.26, 1804.25, 3791.60, 2598.89, 3550.33, 5566.35, 1032.83, 1104.31, 1804.48),
   vtn_media = c(4686.01, 10173.52, 3264.57, 1664.11, 13327.83, 6743.80, 4244.55, 2556.81, 3218.94, 1006.81, 19024.87, 13522.74, 10836.47, 6768.08, 7236.30, 6220.96, 4358.32, 3550.55, 4998.27, 2100.69, 1729.51, 3295.83, 2323.89, 2735.28, 4821.43, 906.60, 982.70, 1491.52),
   vtn_minimo = c(2743.42, 8089.93, 2619.27, 1137.30, 10966.70, 6221.54, 3669.56, 2126.36, 2536.05, 880.47, 15406.76, 10237.41, 9812.02, 6083.23, 6799.43, 5900.61, 4040.52, 2867.16, 4546.17, 1726.35, 1674.73, 3012.71, 2096.49, 2167.75, 4366.92, 780.49, 878.69, 1232.56),
-  vtn_maximo = c(6628.60, 12257.11, 3909.88, 2190.91, 15688.97, 7266.07, 4819.54, 2987.27, 3901.84, 1133.15, 22642.98, 16808.06, 11860.91, 7452.93, 7673.16, 6541.30, 4676.12, 4233.94, 5450.38, 2475.03, 1784.29, 3578.95, 2551.29, 3302.80, 5275.94, 1032.71, 1086.70, 1750.48)
+  vtn_maximo = c(6628.60, 12257.11, 3909.88, 2190.91, 15688.97, 7266.07, 4819.54, 2987.27, 3901.84, 1133.15, 22642.98, 16808.06, 11860.91, 7452.93, 7673.16, 6541.30, 4676.12, 4233.94, 5450.38, 2475.03, 1784.29, 3578.95, 2551.29, 3302.80, 5275.94, 1032.71, 1086.70, 1750.48),
+  origem = "Alto Parnaíba, Balsas, Barão de Grajaú, Benedito Leite, Campestre do Maranhão, Carolina, Colinas, Estreito, Feira
+Nova do Maranhão, Fortaleza dos Nogueiras, Jatobá, Lagoa do Mato, Loreto, Mirador, Nova Colinas, Nova Iorque, Paraibano, Passagem Franca, Pastos Bons,
+Porto Franco, Riachão, Sambaíba, São Domingos do Azeitão, São Félix de Balsas, São Francisco do Maranhão, São João Do Paraíso, São João dos Patos, São Pedro
+dos Crentes, São Raimundo das Mangabeiras, Sucupira do Norte, Sucupira do Riachão e Tasso Fragoso"
 )
 
 ### Consolidação dos dados #####
@@ -12716,7 +12724,6 @@ RSTEMPO$regiao <- "Sul"
 
 
 ### 24. Santa Catarina####
-#
 #2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/SC_RAMT_2022.pdf
 #2016_2019:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/copy_of_SC_ramt_2016_a_2019.pdf
 #2022: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/SC_RAMT_2022.pdf
@@ -14724,19 +14731,19 @@ SETEMPORAL$estado <- 28
 SETEMPORAL$regiao <- "nordeste"
 
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 ## 27.Tocantins  #### 
 #2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2016.pdf
 #2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2018.ods
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRTO_2022.pdf
 ##27.1 Araguatins ####
-=======
+#=======
   ## 25.Tocantins  #### 
 #2016:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2016.pdf
 #2018:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_sr26_2018.ods
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_SRTO_2022.pdf
 ##Araguatins ####
->>>>>>> 32de8d0683c477e6d5b5c2d1910bb037bf7fcade
+#>>>>>>> 32de8d0683c477e6d5b5c2d1910bb037bf7fcade
 ##2016 #### 
 MRT1_2016 <- data.frame(
   mrt = "1-ARAGUATINS",
