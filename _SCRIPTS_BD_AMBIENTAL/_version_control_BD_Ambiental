@@ -30,4 +30,13 @@ para 'PPR Brasil (Terras).R', na pasta de
 mesmo nome
 ..........................................
 
+------------------------------------------
+[v0.5, de 18092025]
+* Atualizações solicitadas da Reunião João - Fernando.
+Referentes ao dia 15092025;
+*Remoção da pasta scripts.
+*Padronização dos nomes do estados em letras minusculas.
+*Atualização do script de junção
+*Criação de um script para escrever os dados dos CSVS.
+..........................................
 
