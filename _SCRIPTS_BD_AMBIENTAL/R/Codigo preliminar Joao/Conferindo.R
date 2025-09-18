@@ -62,3 +62,4 @@ comparar_cabecalhos <- function(lista_de_dfs, ignorar_ordem = FALSE) {
 
 # Executar a análise na lista criada automaticamente
 comparar_cabecalhos(lista_de_data_frames)
+
