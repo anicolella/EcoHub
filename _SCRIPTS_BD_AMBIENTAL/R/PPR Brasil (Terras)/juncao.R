@@ -7,7 +7,7 @@ estados <- c(
   "distrito federal", "espirito santo", "goias", "maranhao", 
   "mato grosso", "mato grosso do sul", "minas gerais", "para", 
   "paraiba", "parana", "pernambuco", "piaui", "rio de Janeiro", 
-  "rio grande do norte", "rio grande do sul", "rondônia", "roraima", 
+  "rio grande do norte", "rio grande do sul", "rondonia", "roraima", 
   "santa catarina", "sao paulo", "sergipe", "tocantins"
 )
 # 2. Caminho base da pasta
@@ -48,47 +48,5 @@ for (estado in estados) {
 
 print("--- Execução finalizada ---")
 
-# Passo 1: Defina a pasta onde os arquivos CSV serão salvos
-# ==============================================================================
-# Lembre-se de CRIAR ESTA PASTA no seu computador antes de rodar.
-# Use barras normais "/" no caminho.
-caminho_saida <- "C:/Users/jodom/OneDrive/Área de Trabalho/Resultados_CSV/"
-
-
-# Passo 2: Listar automaticamente os dataframes na memória
-# ==============================================================================
-# Pelo que você escreveu (ALTEMPORAL, ACTEMPORA), parece que todos terminam com "TEMPORAL".
-# O comando abaixo vai encontrar todos os objetos no seu ambiente que seguem esse padrão.
-# O "$" garante que ele só pegue nomes que TERMINAM com "TEMPORAL".
-nomes_dos_dataframes <- ls(pattern = "TEMPORAL$")
-
-# Vamos verificar se a lista foi criada corretamente.
-# Rode esta linha e veja se os nomes que aparecem no Console estão certos.
-print("Dataframes que serão salvos:")
-print(nomes_dos_dataframes)
-
-
-# Passo 3: Loop para salvar cada dataframe como um arquivo CSV
-# ==============================================================================
-print("--- Iniciando o processo para salvar os arquivos CSV ---")
-
-for (nome_df in nomes_dos_dataframes) {
-  
-  # Pega o dataframe real a partir do seu nome em texto
-  dataframe_atual <- get(nome_df)
-  
-  # Cria o nome do arquivo de saída (ex: "C:/.../Resultados_CSV/ALTEMPORAL.csv")
-  caminho_arquivo_csv <- paste0(caminho_saida, nome_df, ".csv")
-  
-  # Mensagem para sabermos o que está acontecendo
-  print(paste("Salvando arquivo:", caminho_arquivo_csv))
-  
-  # Salva o arquivo usando write.csv2 (melhor para Excel em português/brasileiro)
-  # O parâmetro row.names = FALSE evita que o R salve uma coluna extra com os números das linhas.
-  write.csv2(dataframe_atual, file = caminho_arquivo_csv, row.names = FALSE)
-  
-}
-
-print("--- Processo finalizado! Todos os arquivos foram salvos. ---")
 
 BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGTEMPORAL, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)
