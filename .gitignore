@@ -48,3 +48,6 @@ dados/
 __pycache__/
 .DS_Store
 
+site/.quarto/
+site/_freeze/
+site/docs/
