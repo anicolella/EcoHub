@@ -40,6 +40,8 @@ Já os resultados validados (relatórios, análises, documentação) são integr
 
 O site é renderizado via **Quarto** e publicado automaticamente pelo **GitHub Pages** a partir da pasta `docs/`.  
 
+O endereço online do site é: https://fernandovieira1.github.io/ambiental_bd_usp/
+
 Para visualizar localmente:
 
 ```bash
