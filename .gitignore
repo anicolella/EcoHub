@@ -35,3 +35,16 @@ data/
 dados/
 
 /.quarto/
+
+.quarto/idx/
+.quarto/project-cache/
+.quarto/xref/
+.Rproj.user/
+.Rhistory
+.RData
+.Renviron
+.env
+.venv/
+__pycache__/
+.DS_Store
+
