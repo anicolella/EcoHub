@@ -23,3 +23,5 @@ Cada etapa possui scripts, logs e *checklists* de auditoria.
 ## Estrutura de código
 Os códigos de trabalho ficam em `_SCRIPTS_BD_AMBIENTAL/` (R e Python).  
 Relatórios e documentação final são renderizados aqui no site via Quarto.
+
+<!-- trigger build 2025-09-20T17:33:39 -->
