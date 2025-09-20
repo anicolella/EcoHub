@@ -1,0 +1,25 @@
+---
+title: "Projeto BD Ambiental"
+---
+
+# Objetivos
+- Coleta & metadados (fontes, licenças, cobertura)
+- Tratamento & integração (tabelas, séries, shapefiles/rasters)
+- EDA, modelagem estatística/econométrica e visualizações
+- Reprodutibilidade (R/Python, ambientes, trilhas de auditoria)
+- Pacotes (R e Python) para automatizar o processo
+
+::: callout-note
+Cada etapa possui scripts, logs e *checklists* de auditoria.
+:::
+
+## Navegação rápida
+- [Catálogo de Dados](data_catalog/index.qmd)
+- [Pipelines](pipelines/index.qmd)
+- [Análises](analysis/index.qmd)
+- [Visualizações](viz/index.qmd)
+- [Pacotes](packages/index.qmd)
+
+## Estrutura de código
+Os códigos de trabalho ficam em `_SCRIPTS_BD_AMBIENTAL/` (R e Python).  
+Relatórios e documentação final são renderizados aqui no site via Quarto.

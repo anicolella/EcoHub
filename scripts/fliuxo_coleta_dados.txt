@@ -1,0 +1,10 @@
+FLUXO DE COLETA SUGERIDO
+
+Nesta ordem:
+(1) Verificar se os dados desejados estão em disponibilizados em formato estruturado (csv, xlsx, bd etc.)
+
+(2) Verificar se há API ou biblioteca (R ou Python) disponível para coleta dos dados.
+
+(3) Ligar no órgão e consultar se de fatos os dados pretendidos não estão disponíveis por meios alternativos (e-mail, Lei de Acesso à Informação, convênio etc).
+
+(4) Construir script Raspagem/Scrapping de dados.
