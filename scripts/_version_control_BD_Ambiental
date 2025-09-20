@@ -1,0 +1,42 @@
+=====================
+CONTROLE DE VERSÕES
+BD Ambiental USP
+=====================
+
+------------------------------------------
+[v0.1, de 21082025]
+* Criação do Github
+* Scripts R iniciais João
+..........................................
+
+
+------------------------------------------
+[v0.2, de 08092025]
+* Reorganização projeto (pasta _SCRIPTS_BD_AMBIENTAL)
+* Quarto configurado na raiz
+* Alteração do readme.md
+..........................................
+
+------------------------------------------
+[v0.3, de 08092025]
+* Quarto reconfigurado para compartimentar
+pastas e arquivos
+..........................................
+
+------------------------------------------
+[v0.4, de 08092025]
+* Reunião com João - Código Modular renomeado
+para 'PPR Brasil (Terras).R', na pasta de 
+mesmo nome
+..........................................
+
+------------------------------------------
+[v0.5, de 18092025]
+* Atualizações solicitadas da Reunião João - Fernando.
+Referentes ao dia 15092025;
+*Remoção da pasta scripts.
+*Padronização dos nomes do estados em letras minusculas.
+*Atualização do script de junção
+*Criação de um script para escrever os dados dos CSVS.
+..........................................
+

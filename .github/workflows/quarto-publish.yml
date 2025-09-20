@@ -8,11 +8,12 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write      # necessário para publicar no gh-pages
+      contents: write   # necessário para publicar no gh-pages
+
     steps:
       - uses: actions/checkout@v4
 
-      # Quarto
+      # Instalar Quarto
       - uses: quarto-dev/quarto-actions/setup@v2
 
       # Linguagens (habilite as que usar)
@@ -23,17 +24,19 @@ jobs:
 
       # Dependências do projeto (opcionais)
       - name: Instalar deps do projeto (opcional)
+        working-directory: site
         run: |
           pip install -r requirements.txt || true
           Rscript -e 'if ("renv" %in% rownames(installed.packages())) renv::restore(prompt = FALSE) else invisible(TRUE)'
 
-      # Renderizar
+      # Renderizar site (a partir da pasta `site`)
       - name: Render
         run: quarto render
+        working-directory: site
 
-      # Publicar em GitHub Pages
+      # Publicar em GitHub Pages (docs gerados dentro de site/docs)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: site/docs
