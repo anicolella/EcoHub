@@ -29,6 +29,9 @@ Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisa
 
 ## 📂 Estrutura do Repositório
 
+A estrutura do repositório é a seguinte:
+
+```text
 ambiental_bd_usp/
 │ .gitignore # Arquivos e pastas ignorados pelo Git
 │ ambiental_bd_usp.Rproj # Projeto RStudio
@@ -40,9 +43,7 @@ ambiental_bd_usp/
 │
 └───site/ # Site em Quarto (documentação, análises e visualizações)
 
----
-
-## 📌 Nota sobre os scripts
+```
 
 Os **scripts principais do projeto** estão na pasta `scripts/`, divididos em:
 
