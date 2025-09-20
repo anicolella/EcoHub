@@ -4,16 +4,19 @@
 # ==============================================================================
 estados <- c(
   "acre", "alagoas", "amapa", "amazonas", "bahia", "ceara", 
-  "distrito federal", "espirito santo", "goias", "maranhao", 
-  "mato grosso", "mato grosso do sul", "minas gerais", "para", 
-  "paraiba", "parana", "pernambuco", "piaui", "rio de Janeiro", 
-  "rio grande do norte", "rio grande do sul", "rondonia", "roraima", 
-  "santa catarina", "sao paulo", "sergipe", "tocantins"
+  "distrito_federal", "espirito_santo", "goias", "maranhao", 
+  "mato_grosso", "mato_grosso_do_sul", "minas_gerais", "para", 
+  "paraiba", "parana", "pernambuco", "piaui", "rio_de_Janeiro", 
+  "rio_grande_do_norte", "rio_grande_do_sul", "rondonia", "roraima", 
+  "santa_catarina", "sao_paulo", "sergipe", "tocantins"
 )
 # 2. Caminho base da pasta
 # ==============================================================================
-caminho_base <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\ambiental_bd_usp\\_SCRIPTS_BD_AMBIENTAL\\R\\PPR Brasil (Terras)\\Estados separados\\"
 
+path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\ambiental_bd_usp\\_SCRIPTS_BD_AMBIENTAL\\R\\PPR Brasil (Terras)\\Estados separados\\"
+path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\scripts\\R\\PPR Brasil (Terras)\\Estados separados"
+
+caminho_base <- path_fernando
 
 # 3. Loop principal - Modificado para funcionar com seus nomes de arquivo
 # ==============================================================================
