@@ -12,7 +12,7 @@ O CONTEÚDO DO SITE AINDA SERÁ INSERIDO, MAS A ESTRUTURA ATUAL, PARA VALIDAÇÃ
 * O botão de pesquisar (ícone de lupa) também está localizado no canto direito da página, ao lado do menu gaveta/sanduíche.
 * A ideia é que o site seja interativo, permitindo postagens pelos participantes do projeto sem a necessidade de codificar (a definir e construir isso futuramente).
 
-*Versão atual: 21/09/2025 (f.)*
+*Versão atual: 21/09/2025 01:19 PM (f.) 
 
 
 # Projeto BD Ambiental
