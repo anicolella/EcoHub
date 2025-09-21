@@ -5,11 +5,9 @@
 .Ruserdata
 .Rprofil*
 .Rbuildignore
-
 # renv (manter renv.lock; ignorar libs locais)
 renv/library/
 renv/staging/
-
 # ---- Python
 __pycache__/
 *.pyc
@@ -18,28 +16,23 @@ __pycache__/
 venv/
 .env
 .env.*
-
 # ---- Quarto
 # NÃO ignore docs/ → necessário para GitHub Pages
 # _freeze/         # cache de execução
 # .quarto/         # metadados locais do quarto
-
 # ---- SO / editor
 .DS_Store
 Thumbs.db
 *.swp
 *.swo
-
 # ---- Dados locais (opcional – só se existir uma pasta de dados não versionados)
 data/
 dados/
-
 # ---- Ignorar caches temporários do Quarto (mas manter build final em docs/)
 .quarto/
 .quarto/idx/
 .quarto/project-cache/
 .quarto/xref/
-
 # ---- Evitar duplicação de regras
 .Rproj.user/
 .Rhistory
@@ -49,9 +42,10 @@ dados/
 .venv/
 __pycache__/
 .DS_Store
-
 # Quarto build local
 SITE/_site/
 SITE/.quarto/
 SITE/_freeze/
 SITE/site_libs/
+/.quarto/
+index.qmd

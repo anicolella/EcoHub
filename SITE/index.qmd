@@ -2,6 +2,19 @@
 title: ""
 ---
 
+**AVISOS TEMPORÁRIOS -- VERSÃO ALPHA DO SITE**
+
+O CONTEÚDO DO SITE AINDA SERÁ INSERIDO, MAS A ESTRUTURA ATUAL, PARA VALIDAÇÃO E SUGESTÕES, FOI PENSADA DA SEGUINTE FORMA:
+
+* Página clean e intuitiva, com poucos menus/seções.
+* Menus diretamente relacionados ao Projeto BD Ambiental foram centralizados na barra superior.
+* Páginas auxiliares (indiretamente ligados ao projeto) -- cursos, tutoriais, dicas, links externos etc -- serão agregadas no menu gaveta (sanduíche), localizado no canto direito da página.
+* O botão de pesquisar (ícone de lupa) também está localizado no canto direito da página, ao lado do menu gaveta/sanduíche.
+* A ideia é que o site seja interativo, permitindo postagens pelos participantes do projeto sem a necessidade de codificar (a definir e construir isso futuramente).
+
+*Versão atual: 21/09/2025 (f.)*
+
+
 # Projeto BD Ambiental
 
 Repositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.
