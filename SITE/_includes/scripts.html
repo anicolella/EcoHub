@@ -76,3 +76,11 @@
 
 
 <script>console.debug("[EcoHub] scripts.html carregado (stub)");</script>
+
+<script>
+  (function () {
+    var y = document.getElementById('eco-year');
+    if (y) y.textContent = new Date().getFullYear();
+  })();
+</script>
+

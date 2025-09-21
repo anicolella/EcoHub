@@ -24,7 +24,7 @@ website:
         aria-label: "Menu"
         href: "javascript:void(0)"   # como o JS abre a gaveta
   page-footer:
-    center: "© {{< today fmt='YYYY' >}} EcoHub"
+    center: "© 2025 EcoHub"
 
 format:
   html:

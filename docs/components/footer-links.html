@@ -267,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<link rel="stylesheet" href="../assets/styles.scss">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -535,6 +535,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script>console.debug("[EcoHub] scripts.html carregado (stub)");</script>
+
+
+
+<script>
+
+  (function () {
+
+    var y = document.getElementById('eco-year');
+
+    if (y) y.textContent = new Date().getFullYear();
+
+  })();
+
+</script>
+
+
 
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -942,7 +958,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© {{&lt; today fmt='YYYY' &gt;}} EcoHub</p>
+<p>© 2025 EcoHub</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
