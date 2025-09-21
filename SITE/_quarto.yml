@@ -4,6 +4,7 @@ project:
 
 website:
   title: "EcoHub"
+  site-url: "https://fernandovieira1.github.io/ambiental_bd_usp/"
   favicon: assets/favicon.svg
   search: true
   repo-url: "https://github.com/fernandovieira1/ambiental_bd_usp"
@@ -23,12 +24,12 @@ website:
         aria-label: "Menu"
         href: "javascript:void(0)"   # como o JS abre a gaveta
   page-footer:
-    center: "© {{< meta year >}} EcoHub"
+    center: "© {{< today fmt='YYYY' >}} EcoHub"
 
 format:
   html:
-    theme: [default]                  # tema base
-    css: assets/styles.scss           # SCSS customizado
+    theme: [default]                  
+    css: assets/styles.css           
     toc: false
     smooth-scroll: true
     include-in-header: _includes/header.html
