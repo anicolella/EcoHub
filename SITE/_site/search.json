@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "sobre.html",
-    "href": "sobre.html",
-    "title": "Sobre",
+    "objectID": "viz/index.html",
+    "href": "viz/index.html",
+    "title": "Visualiza��es",
     "section": "",
-    "text": "O projeto integra bases ambientais difusas, padroniza formatos, documenta metadados e oferece análises para apoiar pesquisa acadêmica e formulação de políticas públicas."
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
   },
   {
     "objectID": "sobre.html#descrição-do-projeto",
@@ -21,6 +21,13 @@
     "text": "Cronograma (Roadmap)\n\nFase 1 — Levantamento & Documentação (metadados, licenças, fontes)\n\nFase 2 — ETL & Padronização (tabelas, séries, shapefiles/rasters)\n\nFase 3 — Análises & Visualizações (exploratórias, econométricas)\n\nFase 4 — Pacotes & Automação (R/Python, pipelines reprodutíveis)"
   },
   {
+    "objectID": "pipelines/etl_shapefile.html",
+    "href": "pipelines/etl_shapefile.html",
+    "title": "ETL Shapefile",
+    "section": "",
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
+  },
+  {
     "objectID": "equipe.html",
     "href": "equipe.html",
     "title": "Equipe",
@@ -32,14 +39,42 @@
     "href": "components/hero.html",
     "title": "Hero section",
     "section": "",
-    "text": "Hero section"
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações\n\n    \n\n  \n\n\n\n\n\n\n\n\nHero section"
+  },
+  {
+    "objectID": "analysis/index.html",
+    "href": "analysis/index.html",
+    "title": "An�lises",
+    "section": "",
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
+  },
+  {
+    "objectID": "analysis/casos/amazonia.html",
+    "href": "analysis/casos/amazonia.html",
+    "title": "Amaz�nia",
+    "section": "",
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
+  },
+  {
+    "objectID": "analysis/casos/mt.html",
+    "href": "analysis/casos/mt.html",
+    "title": "Mato Grosso",
+    "section": "",
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
   },
   {
     "objectID": "components/footer-links.html",
     "href": "components/footer-links.html",
-    "title": "Banco de Dados Ambiental — USP",
+    "title": "EcoHub",
     "section": "",
-    "text": "Rodap� com links"
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações\n\n    \n\n  \n\n\n\n\n\n\n\nRodap� com links"
+  },
+  {
+    "objectID": "data_catalog/index.html",
+    "href": "data_catalog/index.html",
+    "title": "Cat�logo de Dados",
+    "section": "",
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
   },
   {
     "objectID": "index.html",
@@ -47,6 +82,13 @@
     "title": "Projeto BD Ambiental",
     "section": "",
     "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações\n\n    \n\n  \n\n\n\n\n\n\n\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
+  },
+  {
+    "objectID": "pipelines/index.html",
+    "href": "pipelines/index.html",
+    "title": "Pipelines",
+    "section": "",
+    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
   },
   {
     "objectID": "suporte.html",
