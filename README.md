@@ -39,9 +39,9 @@ ambiental_bd_usp/
 │
 ├───.github/ # Configuração de workflows (CI/CD)
 │
-├───scripts/ # Scripts de análise, tratamento e ETL em R e Python
+├───SCRIPTS/ # Scripts de análise, tratamento e ETL em R e Python
 │
-└───site/ # Site em Quarto (documentação, análises e visualizações)
+└───SITE/ # Site em Quarto (documentação, análises e visualizações)
 
 ```
 
