@@ -1,1 +1,27 @@
 /* Estilos principais do site */
+/* --- grudando a omnibar na navbar do Quarto --- */
+
+/* 1) zera qualquer margem/“respiro” abaixo da topbar (navbar) */
+#quarto-header,
+#quarto-header .navbar,
+.quarto-navbar {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important; /* se houver uma bordinha que pareça espaço */
+}
+
+/* 2) garante que a sua omnibar (faixa abaixo) não crie margem superior */
+#omnibar {
+  margin-top: 0 !important;
+}
+
+/* 3) se a omnibar for sticky/fixa, alinhe a posição ao topo da navbar fixa do Quarto */
+#omnibar.sticky-top,
+#omnibar.fixed-top {
+  top: var(--quarto-nav-height, 56px); /* 56px é o fallback */
+}
+
+/* 4) às vezes o “vão” é só a margem do primeiro H1: zere no topo da página */
+main .quarto-title-block h1 {
+  margin-top: 0 !important;
+}

@@ -1,0 +1,2 @@
+* Boostrap 5.3 é a base do quarto atual.
+    - Components: https://getbootstrap.com/docs/5.3/components/accordion/
