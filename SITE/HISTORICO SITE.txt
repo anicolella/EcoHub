@@ -1,7 +1,7 @@
 
-************************************
+*************************************
         SITE PROJETO ECOHUB
-************************************
+*************************************
 
 * Dividir o registro histórico das tarefas (bullets) em: 
     - Novidades: tudo (funcionalidades, sites, visual etc) que for construído de novo.
