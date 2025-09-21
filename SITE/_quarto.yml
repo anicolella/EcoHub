@@ -20,14 +20,14 @@ website:
     tools:
       - icon: list
         aria-label: "Menu"
-        href: "javascript:void(0)"   # não navega; o JS abre a gaveta
+        href: "javascript:void(0)"   # como o JS abre a gaveta
   page-footer:
     center: "© {{< meta year >}} EcoHub"
 
 format:
   html:
-    theme: [default]                  # mantém o tema base
-    css: assets/styles.scss           # seu SCSS customizado
+    theme: [default]                  # tema base
+    css: assets/styles.scss           # SCSS customizado
     toc: false
     smooth-scroll: true
     include-in-header: _includes/header.html
