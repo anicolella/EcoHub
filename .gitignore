@@ -20,7 +20,7 @@ venv/
 .env.*
 
 # ---- Quarto
-# docs/            # ignorar se publicar via branch gh-pages
+# NÃO ignore docs/ → necessário para GitHub Pages
 # _freeze/         # cache de execução
 # .quarto/         # metadados locais do quarto
 
@@ -34,11 +34,13 @@ Thumbs.db
 data/
 dados/
 
-/.quarto/
-
+# ---- Ignorar caches temporários do Quarto (mas manter build final em docs/)
+.quarto/
 .quarto/idx/
 .quarto/project-cache/
 .quarto/xref/
+
+# ---- Evitar duplicação de regras
 .Rproj.user/
 .Rhistory
 .RData
@@ -48,6 +50,6 @@ dados/
 __pycache__/
 .DS_Store
 
-site/.quarto/
-site/_freeze/
-site/docs/
+# ---- Ignorar somente build temporário dentro de SITE/
+SITE/.quarto/
+SITE/_freeze/
