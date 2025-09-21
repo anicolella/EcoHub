@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mato Grosso – Banco de Dados Ambiental — USP</title>
+<title>Mato Grosso – EcoHub</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -68,11 +69,201 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<!-- Metatags básicas -->
+<!-- Header include (EcoHub) -->
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
 
-<link rel="icon" href="../../assets/favicon.svg">
+  (function () {
+
+    const log = (...a) => console.debug("[EcoHub]", ...a);
+
+    const qs  = (sel, root=document) => root.querySelector(sel);
+
+
+
+    // 1) Garante que a gaveta exista (cria se faltar)
+
+    function ensureDrawerDOM() {
+
+      let drawer  = qs('#drawer');
+
+      let overlay = qs('#drawer-overlay');
+
+
+
+      if (!drawer) {
+
+        drawer = document.createElement('aside');
+
+        drawer.id = 'drawer';
+
+        drawer.className = 'drawer';
+
+        drawer.setAttribute('aria-label', 'Menu lateral');
+
+        drawer.setAttribute('aria-hidden', 'true');
+
+        drawer.innerHTML = `
+
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #e5e7eb;">
+
+            <strong>Menu EcoHub</strong>
+
+            <button id="drawer-close" aria-label="Fechar menu lateral" style="font-size:20px;line-height:1;border:0;background:none;cursor:pointer">✕</button>
+
+          </div>
+
+          <nav style="padding:16px 20px">
+
+            <ul class="drawer-menu">
+
+              <li><a href="#" class="menu-link">🌱 Cursos</a></li>
+
+              <li><a href="#" class="menu-link">📦 Pacotes (R / Python)</a></li>
+
+              <li><a href="#" class="menu-link">📊 Dashboards</a></li>
+
+              <li><a href="#" class="menu-link">🛰️ Dados Geoespaciais</a></li>
+
+              <li><a href="#" class="menu-link">🧪 Laboratório EcoHub</a></li>
+
+              <li><a href="#" class="menu-link">⚙️ Configurações</a></li>
+
+            </ul>
+
+          </nav>`;
+
+        document.body.appendChild(drawer);
+
+      }
+
+
+
+      if (!overlay) {
+
+        overlay = document.createElement('div');
+
+        overlay.id = 'drawer-overlay';
+
+        overlay.className = 'drawer-overlay';
+
+        overlay.setAttribute('aria-hidden', 'true');
+
+        document.body.appendChild(overlay);
+
+      }
+
+      return { drawer, overlay };
+
+    }
+
+
+
+    // 2) Ações do drawer
+
+    function openDrawer() {
+
+      const { drawer, overlay } = ensureDrawerDOM();
+
+      drawer.classList.add('open');
+
+      drawer.setAttribute('aria-hidden', 'false');
+
+      overlay.classList.add('show');
+
+      overlay.setAttribute('aria-hidden', 'false');
+
+    }
+
+    function closeDrawer() {
+
+      const drawer  = qs('#drawer');
+
+      const overlay = qs('#drawer-overlay');
+
+      if (!drawer || !overlay) return;
+
+      drawer.classList.remove('open');
+
+      drawer.setAttribute('aria-hidden', 'true');
+
+      overlay.classList.remove('show');
+
+      overlay.setAttribute('aria-hidden', 'true');
+
+    }
+
+
+
+    // Expor para testes no console
+
+    window.__eco_openDrawer  = openDrawer;
+
+    window.__eco_closeDrawer = closeDrawer;
+
+
+
+    // 3) Intercepta o clique no sanduíche (capturing) e abre a gaveta
+
+    const TRIGGER = ".quarto-navbar-tools a[aria-label='Menu'], .quarto-navbar-tools i.bi.bi-list, .quarto-navbar-tools .quarto-navigation-tool";
+
+    document.addEventListener('click', function (e) {
+
+      const t = e.target.closest(TRIGGER);
+
+      if (!t) return;
+
+      e.preventDefault(); e.stopPropagation();
+
+      const a = t.closest('a');
+
+      if (a) { a.setAttribute('href', 'javascript:void(0)'); a.setAttribute('role','button'); a.style.cursor='pointer'; }
+
+      openDrawer();
+
+    }, true);
+
+
+
+    // 4) Fechar por overlay, X e ESC (delegação)
+
+    document.addEventListener('click', (e) => {
+
+      if (e.target.closest('#drawer-overlay') || e.target.closest('#drawer-close')) {
+
+        e.preventDefault(); closeDrawer();
+
+      }
+
+    });
+
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+
+
+    // 5) Garante DOM pronto e cria a estrutura se faltar
+
+    function init() {
+
+      ensureDrawerDOM();
+
+      log("header.html carregado e drawer garantido");
+
+    }
+
+    if (document.readyState === 'loading') {
+
+      document.addEventListener('DOMContentLoaded', init);
+
+    } else {
+
+      init();
+
+    }
+
+  })();
+
+</script>
 
 
 
@@ -90,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="../../assets/logo.svg" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Banco de Dados Ambiental — USP</span>
+    <span class="navbar-title">EcoHub</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -116,15 +307,9 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Sobre</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="../../#"> <i class="bi bi-list" role="img" aria-label="Menu">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+    <a href="javascript:void(0)" title="" class="quarto-navigation-tool px-1" aria-label="Menu"><i class="bi bi-list"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -135,7 +320,57 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
+<!-- Overlay -->
+
+<div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+
+
+
+<!-- Overlay -->
+
+<div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+
+
+
+<!-- Drawer -->
+
+<aside id="drawer" class="drawer" aria-label="Menu lateral" aria-hidden="true">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #e5e7eb;">
+
+    <strong>Menu EcoHub</strong>
+
+    <button id="drawer-close" aria-label="Fechar menu lateral" style="font-size:20px;line-height:1;border:0;background:none;cursor:pointer">✕</button>
+
+  </div>
+
+
+
+  <nav style="padding:16px 20px">
+
+    <ul class="drawer-menu">
+
+      <li><a href="#" class="menu-link">💡 VOU FAZER DEPOIS</a></li>
+
+      <li><a href="#" class="menu-link">🌱 Cursos</a></li>
+
+      <li><a href="#" class="menu-link">📦 Pacotes (R / Python)</a></li>
+
+      <li><a href="#" class="menu-link">📊 Dashboards</a></li>
+
+      <li><a href="#" class="menu-link">🛰️ Dados Geoespaciais</a></li>
+
+      <li><a href="#" class="menu-link">🧪 Laboratório EcoHub</a></li>
+
+      <li><a href="#" class="menu-link">⚙️ Configurações</a></li>
+
+    </ul>
+
+  </nav>
+
+</aside>
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -160,6 +395,162 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
+<script>
+
+(function () {
+
+  const drawer   = document.getElementById('drawer');
+
+  const overlay  = document.getElementById('drawer-overlay');
+
+  const closeBtn = document.getElementById('drawer-close');
+
+
+
+  if (!drawer || !overlay) return;
+
+
+
+  function openDrawer() {
+
+    drawer.classList.add('open');
+
+    drawer.setAttribute('aria-hidden', 'false');
+
+    overlay.classList.add('show');
+
+    overlay.setAttribute('aria-hidden', 'false');
+
+  }
+
+
+
+  function closeDrawer() {
+
+    drawer.classList.remove('open');
+
+    drawer.setAttribute('aria-hidden', 'true');
+
+    overlay.classList.remove('show');
+
+    overlay.setAttribute('aria-hidden', 'true');
+
+  }
+
+
+
+  // Fecha: overlay, botão X, tecla Esc
+
+  overlay.addEventListener('click', closeDrawer);
+
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+
+
+  // Liga o gatilho (ícone do sanduíche) e neutraliza navegação
+
+  function bindTrigger(root = document) {
+
+    // <a aria-label="Menu"> é o botão gerado pelo Quarto
+
+    let trigger = root.querySelector('.quarto-navbar-tools a[aria-label="Menu"]');
+
+    if (!trigger) {
+
+      const icon = root.querySelector('.quarto-navbar-tools i.bi.bi-list');
+
+      if (icon && icon.closest('a')) trigger = icon.closest('a');
+
+    }
+
+    if (!trigger) return;
+
+
+
+    if (trigger.dataset.drawerBound === '1') return;
+
+    trigger.dataset.drawerBound = '1';
+
+
+
+    // impedir /# e afins
+
+    trigger.setAttribute('href', 'javascript:void(0)');
+
+    trigger.setAttribute('role', 'button');
+
+    trigger.style.cursor = 'pointer';
+
+
+
+    trigger.addEventListener('click', (e) => {
+
+      e.preventDefault();
+
+      e.stopPropagation();
+
+      openDrawer();
+
+    });
+
+
+
+    trigger.addEventListener('keydown', (e) => {
+
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDrawer(); }
+
+    });
+
+  }
+
+
+
+  // Primeira ligação
+
+  if (document.readyState === 'loading') {
+
+    document.addEventListener('DOMContentLoaded', () => bindTrigger());
+
+  } else {
+
+    bindTrigger();
+
+  }
+
+
+
+  // Se a topbar for recriada (headroom/bootstrap), re-liga
+
+  const header = document.getElementById('quarto-header') || document.body;
+
+  if ('MutationObserver' in window) {
+
+    const mo = new MutationObserver(() => bindTrigger(header));
+
+    mo.observe(header, { childList: true, subtree: true });
+
+  }
+
+
+
+  // util p/ teste manual no console
+
+  window.__eco_openDrawer  = openDrawer;
+
+  window.__eco_closeDrawer = closeDrawer;
+
+})();
+
+</script>
+
+
+
+
+
+<script>console.debug("[EcoHub] scripts.html carregado (stub)");</script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -232,7 +623,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/fernandovieira1\.github\.io\/ambiental_bd_usp\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -566,7 +957,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© <strong>?meta:year</strong> BD Ambiental — USP</p>
+<p>© <strong>?meta:year</strong> EcoHub</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
