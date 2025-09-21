@@ -1,0 +1,12 @@
+---
+title: "Sobre"
+---
+
+## Descrição do Projeto
+O projeto integra bases ambientais difusas, padroniza formatos, documenta metadados e oferece análises para apoiar pesquisa acadêmica e formulação de políticas públicas.
+
+## Cronograma (Roadmap)
+- **Fase 1** — Levantamento & Documentação (metadados, licenças, fontes)  
+- **Fase 2** — ETL & Padronização (tabelas, séries, shapefiles/rasters)  
+- **Fase 3** — Análises & Visualizações (exploratórias, econométricas)  
+- **Fase 4** — Pacotes & Automação (R/Python, pipelines reprodutíveis)

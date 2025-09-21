@@ -1,0 +1,23 @@
+---
+title: "Suporte"
+---
+
+::: {.grid .cols-3}
+:::{.card}
+### Documentação
+Bancos consolidados, metadados e guias de uso (fonte, licença, cobertura, granularidade).  
+[Ver documentação](#){.button}
+:::
+
+:::{.card}
+### GitHub
+Repositório, issues, versionamento e trilha de auditoria.  
+[Ir para o GitHub](#){.button}
+:::
+
+:::{.card}
+### Google Drive
+Materiais complementares e dados brutos (quando aplicável).  
+[Abrir Drive](#){.button}
+:::
+:::
