@@ -45,14 +45,17 @@ ambiental_bd_usp/
 
 ```
 
-Os **scripts principais do projeto** estão na pasta `scripts/`, divididos em:
+Os **scripts principais do projeto** estão na pasta `SCRIPTS/`, divididos em:
 
 - **Python** → automação, tratamento e coleta de dados.  
 - **R** → análises estatísticas/econométricas, consolidação de bases e protótipos.  
 
 Essa pasta é o espaço de **trabalho ativo** (prototipagem, testes, ETL, análises preliminares).  
 
-Já os resultados validados (relatórios, análises, documentação) são integrados ao **site Quarto**, gerado a partir dos arquivos `.qmd` na pasta `site/`.
+Já os resultados validados (relatórios, análises, documentação) são integrados ao **site Quarto**, gerado a partir dos arquivos `.qmd` na pasta `SITE/`.
+
+☢️IMPORTANTE: Esteja ciente que poderá ser manipulado apenas pastas e arquivos em MAIÚSCULAS constantes na raiz, ou seja, todo o conteúdo das 
+pastas `SCRIPTS/`, `SITE/` e do arquivo `README.md/`. Os outros arquivos e pastas não são passíveis de sair da raiz por exigências de configuração do github, logo, devem ser ignorados.
 
 ---
 
