@@ -610,7 +610,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/fernandovieira1\.github\.io\/ambiental_bd_usp\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -944,7 +944,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© <strong>?meta:year</strong> EcoHub</p>
+<p>© {{&lt; today fmt='YYYY' &gt;}} EcoHub</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
