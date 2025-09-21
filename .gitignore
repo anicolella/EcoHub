@@ -6,7 +6,7 @@
 .Rprofil*
 .Rbuildignore
 
-# renv (manter renv.lock; ignorar libs locais)
+# ---- renv (manter renv.lock; ignorar libs locais)
 renv/library/
 renv/staging/
 
@@ -21,8 +21,14 @@ venv/
 
 # ---- Quarto
 # NÃO ignore docs/ → necessário para GitHub Pages
-# _freeze/         # cache de execução
-# .quarto/         # metadados locais do quarto
+.quarto/
+.quarto/idx/
+.quarto/project-cache/
+.quarto/xref/
+SITE/_site/
+SITE/.quarto/
+SITE/_freeze/
+SITE/site_libs/
 
 # ---- SO / editor
 .DS_Store
@@ -30,29 +36,9 @@ Thumbs.db
 *.swp
 *.swo
 
-# ---- Dados locais (opcional – só se existir uma pasta de dados não versionados)
+# ---- Dados locais (se existirem)
 data/
 dados/
 
-# ---- Ignorar caches temporários do Quarto (mas manter build final em docs/)
-.quarto/
-.quarto/idx/
-.quarto/project-cache/
-.quarto/xref/
-
-# ---- Evitar duplicação de regras
-.Rproj.user/
-.Rhistory
-.RData
+# ---- Ambiente R
 .Renviron
-.env
-.venv/
-__pycache__/
-.DS_Store
-
-# Quarto build local
-SITE/_site/
-SITE/.quarto/
-SITE/_freeze/
-SITE/site_libs/
-/.quarto/
