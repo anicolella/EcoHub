@@ -50,6 +50,9 @@ dados/
 __pycache__/
 .DS_Store
 
-# ---- Ignorar somente build temporário dentro de SITE/
+# Quarto build local
+SITE/_site/
 SITE/.quarto/
 SITE/_freeze/
+SITE/site_libs/
+/.quarto/
