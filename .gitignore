@@ -42,3 +42,4 @@ dados/
 
 # ---- Ambiente R
 .Renviron
+SITE/.gitignore
