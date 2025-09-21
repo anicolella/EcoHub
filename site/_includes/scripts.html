@@ -1,0 +1,78 @@
+<script>
+(function () {
+  const drawer   = document.getElementById('drawer');
+  const overlay  = document.getElementById('drawer-overlay');
+  const closeBtn = document.getElementById('drawer-close');
+
+  if (!drawer || !overlay) return;
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    overlay.classList.add('show');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  // Fecha: overlay, botão X, tecla Esc
+  overlay.addEventListener('click', closeDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+  // Liga o gatilho (ícone do sanduíche) e neutraliza navegação
+  function bindTrigger(root = document) {
+    // <a aria-label="Menu"> é o botão gerado pelo Quarto
+    let trigger = root.querySelector('.quarto-navbar-tools a[aria-label="Menu"]');
+    if (!trigger) {
+      const icon = root.querySelector('.quarto-navbar-tools i.bi.bi-list');
+      if (icon && icon.closest('a')) trigger = icon.closest('a');
+    }
+    if (!trigger) return;
+
+    if (trigger.dataset.drawerBound === '1') return;
+    trigger.dataset.drawerBound = '1';
+
+    // impedir /# e afins
+    trigger.setAttribute('href', 'javascript:void(0)');
+    trigger.setAttribute('role', 'button');
+    trigger.style.cursor = 'pointer';
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openDrawer();
+    });
+
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDrawer(); }
+    });
+  }
+
+  // Primeira ligação
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => bindTrigger());
+  } else {
+    bindTrigger();
+  }
+
+  // Se a topbar for recriada (headroom/bootstrap), re-liga
+  const header = document.getElementById('quarto-header') || document.body;
+  if ('MutationObserver' in window) {
+    const mo = new MutationObserver(() => bindTrigger(header));
+    mo.observe(header, { childList: true, subtree: true });
+  }
+
+  // util p/ teste manual no console
+  window.__eco_openDrawer  = openDrawer;
+  window.__eco_closeDrawer = closeDrawer;
+})();
+</script>
+
+
+<script>console.debug("[EcoHub] scripts.html carregado (stub)");</script>

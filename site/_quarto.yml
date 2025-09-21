@@ -1,33 +1,35 @@
 project:
   type: website
-  output-dir: docs
 
 website:
-  title: "Projeto BD Ambiental (USP)"
+  title: "EcoHub"
+  favicon: assets/favicon.svg
+  search: true
+  repo-url: "https://github.com/fernandovieira1/ambiental_bd_usp"
   navbar:
+    logo: assets/logo.svg
     left:
-      - text: "Início"
+      - text: Início
         href: index.qmd
-      - text: "Catálogo de Dados"
-        href: data_catalog/index.qmd
-      - text: "Pipelines"
-        href: pipelines/index.qmd
-      - text: "Análises"
-        href: analysis/index.qmd
-      - text: "Pacotes"
-        href: packages/index.qmd
-      - text: "Visualizações"
-        href: viz/index.qmd
+      - text: Suporte
+        href: suporte.qmd
+      - text: Equipe
+        href: equipe.qmd
+      - text: Sobre
+        href: sobre.qmd
+    tools:
+      - icon: list
+        aria-label: "Menu"
+        href: "javascript:void(0)"   # não navega; o JS abre a gaveta
   page-footer:
-    left: "© 2025 BD Ambiental"
-    right: "Licenças & Citações"
+    center: "© {{< meta year >}} EcoHub"
 
 format:
   html:
-    theme: cosmo
-    toc: true
-    code-fold: show
-    number-sections: true
-
-execute:
-  freeze: auto    # cache de resultados; re-renderiza só quando mudar o fonte
+    theme: [default]                  # mantém o tema base
+    css: assets/styles.scss           # seu SCSS customizado
+    toc: false
+    smooth-scroll: true
+    include-in-header: _includes/header.html
+    include-before-body: _includes/drawer.html
+    include-after-body: _includes/scripts.html

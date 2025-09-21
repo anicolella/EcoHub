@@ -1,0 +1,23 @@
+---
+title: "Equipe"
+---
+
+::: {.grid .cols-3}
+:::{.card}
+### Lattes
+Links para currículos dos pesquisadores (CNPq).  
+[Ver Lattes](#){.button}
+:::
+
+:::{.card}
+### GitHub
+Perfis e principais contribuições no repositório.  
+[Ver perfis](#){.button}
+:::
+
+:::{.card}
+### E-mail
+Contatos institucionais e formulário de comunicação.  
+[Entrar em contato](mailto:contato@exemplo.br){.button}
+:::
+:::
