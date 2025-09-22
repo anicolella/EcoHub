@@ -14,7 +14,7 @@ estados <- c(
 # ==============================================================================
 
 path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\ambiental_bd_usp\\_SCRIPTS_BD_AMBIENTAL\\R\\PPR Brasil (Terras)\\Estados separados\\"
-path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\scripts\\R\\PPR Brasil (Terras)\\Estados separados"
+path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\scripts\\R\\PPR Brasil (Terras)\\Estados separados\\"
 
 caminho_base <- path_fernando
 
