@@ -32,6 +32,11 @@ tabela_uf <- tibble::tribble(
 # Ponto de Atenção: Garanta que a coluna 'estado' seja numérica
 # Se a sua coluna 'estado' for texto ("35"), este comando a converte para número (35)
 # Se já for numérica, não tem problema rodar.
+df_novo2$origem  <- gsub("TO", "Tocantins", df_novo2$origem)
+
+df_novo2 <- df_novo2 %>%
+  mutate(origem = str_remove(origem, "^e "))
+
 df_novo2 <- df_novo2 %>%
   mutate(estado = as.numeric(as.character(estado)))
 
@@ -46,3 +51,10 @@ base_colunas_limpas <- df_novo2 %>%
 resultado <- base_colunas_limpas %>% 
   incluir_codigo_ibge()
 
+new_23 <- resultado |> filter(is.na(resultado$id_municipio)) |> unique(new_23$origem)
+
+valores_unicos <- new_23 %>%
+  distinct(origem) %>%
+  pull()
+
+print(valores_unicos)
