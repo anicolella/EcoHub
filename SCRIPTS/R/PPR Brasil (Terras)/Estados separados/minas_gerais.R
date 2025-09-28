@@ -292,7 +292,7 @@ MGMRT22_2020 <- data.frame(
 MGMRT23_2020 <- data.frame(
   mrt = "Metropolitana IV - Belo Horizonte, Betim, Brumadinho, Caeté,",
   tipologia_de_uso = c("Metropolitana IV (Belo Horizonte)", "Metropolitana IV(BH) – Terras de uso diversificado de cultura/mata", "Metropolitana IV(BH) – Terras de uso diversificado em campo/cerrado"),
-  nivel = c(0, 1, 1, 1, 1, 1),
+  nivel = c(1, 1, 1),
   vti_media = c(13703.62, 16301.6, 9371.3),
   vti_minimo = c(5780.35, 11855.67, 5780.35),
   vti_maximo = c(20720.02, 20720.02, 12000.0),
