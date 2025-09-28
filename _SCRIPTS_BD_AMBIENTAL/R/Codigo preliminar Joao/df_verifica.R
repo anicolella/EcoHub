@@ -12,6 +12,7 @@ summary(BRASILTEMPORAL)
 
 summary(df_sem_duplicatas) == summary(df_sem_duplicatas)
 
+df_sem_duplicatas == df_sem_duplicatas2
 
 library(dplyr)
 
@@ -19,6 +20,7 @@ library(dplyr)
 
 # 1. Defina as colunas-chave que determinam uma duplicata
 #    (No seu caso, todas, exceto 'origem')
+
 colunas_chave <- c("mrt", "tipologia_de_uso", "nivel", "vti_media", 
                    "vti_minimo", "vti_maximo", "vtn_media", 
                    "vtn_minimo", "vtn_maximo", "ano", 
@@ -42,6 +44,10 @@ duplicatas_para_olhar <- BRASILTEMPORAL %>%
 # 3. Olhe o resultado
 print("--- Duplicatas encontradas com base nas colunas-chave ---")
 print(duplicatas_para_olhar)
+
+SETEMPORAL %>% 
+  count(across(everything())) %>% 
+  filter(n > 1)
 
 # Dica: No RStudio, o comando View() abre uma tabela interativa,
 # o que é excelente para explorar os dados.

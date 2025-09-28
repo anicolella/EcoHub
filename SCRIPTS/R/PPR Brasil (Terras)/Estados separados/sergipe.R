@@ -640,7 +640,7 @@ SE2022 <- rbind(
 SE20$ano <- 2020
 SE2022$ano <- 2022
 SE2017$ano <- 2017
-SETEMPORAL <- rbind(SE2022, SE20, SE20)
+SETEMPORAL <- rbind(SE2022, SE20, SE2017)
 
 SETEMPORAL$estado <- 28
 SETEMPORAL$regiao <- "nordeste"
