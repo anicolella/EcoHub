@@ -1,5 +1,5 @@
 ### CÓGO CORRIGIDO PARA OS SEUS ARQUIVOS ###
-
+library(tidyverse)
 # 1. Lista com os nomes dos estados (deve ser idêntica aos nomes dos arquivos)
 # ==============================================================================
 estados <- c(
@@ -13,10 +13,18 @@ estados <- c(
 # 2. Caminho base da pasta
 # ==============================================================================
 
-path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\ambiental_bd_usp\\_SCRIPTS_BD_AMBIENTAL\\R\\PPR Brasil (Terras)\\Estados separados\\"
-path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\scripts\\R\\PPR Brasil (Terras)\\Estados separados\\"
+# Configuração de caminhos para diferentes usuários
+path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\Estados separados\\"
+path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\Estados separados\\"
 
-caminho_base <- path_fernando
+# Detecção automática do usuário atual
+if (Sys.getenv("USERNAME") == "jodom") {
+  caminho_base <- path_joao
+} else if (Sys.getenv("USERNAME") == "ferna") {
+  caminho_base <- path_fernando
+} else {
+  caminho_base <- path_fernando  # padrão
+}
 
 # 3. Loop principal - Modificado para funcionar com seus nomes de arquivo
 # ==============================================================================
@@ -51,5 +59,37 @@ for (estado in estados) {
 
 print("--- Execução finalizada ---")
 
+BRASILTEMPORAL <- bind_rows(
+  ACTEMPORAL = ACTEMPORAL,
+  ALTEMPORAL = ALTEMPORAL,
+  AMTEMPORAL = AMTEMPORAL,
+  APTEMPORAL = APTEMPORAL,
+  BATEMPORAL = BATEMPORAL,
+  CETEMPORAL = CETEMPORAL,
+  DFTEMPORAL = DFTEMPORAL,
+  ESTEMPORAL = ESTEMPORAL,
+  GOTEMPORAL = GOTEMPORAL,
+  MATEMPORAL = MATEMPORAL,
+  MGTEMPORAL = MGTEMPORAL,
+  MSTEMPORAL = MSTEMPORAL,
+  MTTEMPORAL = MTTEMPORAL,
+  PATEMPORAL = PATEMPORAL,
+  PBTEMPORAL = PBTEMPORAL,
+  PETEMPORAL = PETEMPORAL,
+  PITEMPORAL = PITEMPORAL,
+  PRTEMPORAL = PRTEMPORAL,
+  RJTEMPORAL = RJTEMPORAL,
+  RNTEMPORAL = RNTEMPORAL,
+  ROTEMPORAL = ROTEMPORAL,
+  RRTEMPORAL = RRTEMPORAL,
+  RSTEMPORAL = RSTEMPORAL,
+  SCTEMPORAL = SCTEMPORAL,
+  SETEMPORAL = SETEMPORAL,
+  SPTEMPORAL = SPTEMPORAL,
+  TOTEMPORAL = TOTEMPORAL,
+  .id = "df"
+)
 
-BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGTEMPORAL, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)
+SETEMPORALt <- SETEMPORAL |> unique()
+
+#BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGTEMPORAL, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)

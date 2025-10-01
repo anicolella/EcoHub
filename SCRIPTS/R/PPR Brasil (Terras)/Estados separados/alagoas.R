@@ -158,7 +158,7 @@ ALMRT3_2024 <- data.frame(
 ALMRT4_2018 <- data.frame(
   mrt = "MRT 4-MACEIÓ E ENTORNO" ,
   tipologia_de_uso = c("MÉDIA GERAL"),
-  nivel = c(0, 1, 1, 1, 1),
+  nivel = c(0),
   vti_media = c(15963.07),
   vti_minimo = c(6201.5),
   vti_maximo = c(25724.63),

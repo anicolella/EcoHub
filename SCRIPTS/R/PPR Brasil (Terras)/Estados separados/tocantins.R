@@ -335,14 +335,14 @@ MRT8_2016 <- data.frame(
 ##2018 #####
 MRT_VIII_2018 <- data.frame(
   mrt = "VIII - PEIXE",
-  tipologia_de_uso = c("Pecuária", "Exploração Mista", "Floresta Nativa/Cerrado", "Agropecuária Tecnificada", "Floresta Nativa/Cerrado"),
-  nivel = c(1, 1, 2, 1, 2),
-  vti_media = c(5544.33, 6818.18, 3286.13, 8089.78, 3286.13),
-  vti_minimo = c(4712.68, 5795.45, 2793.21, 6876.31, 2793.21),
-  vti_maximo = c(6375.98, 7840.91, 3779.05, 9303.25, 3779.05),
-  vtn_media = c(3140.10, 5098.14, 3211.11, 3920.58, 3211.11),
-  vtn_minimo = c(2669.08, 4333.42, 2729.44, 3332.49, 2729.44),
-  vtn_maximo = c(3611.11, 5862.86, 3692.78, 4508.66, 3692.78),
+  tipologia_de_uso = c("Pecuária", "Exploração Mista", "Floresta Nativa/Cerrado", "Agropecuária Tecnificada"),
+  nivel = c(1, 1, 2, 2),
+  vti_media = c(5544.33, 6818.18, 3286.13, 8089.78),
+  vti_minimo = c(4712.68, 5795.45, 2793.21, 6876.31),
+  vti_maximo = c(6375.98, 7840.91, 3779.05, 9303.25),
+  vtn_media = c(3140.10, 5098.14, 3211.11, 3920.58),
+  vtn_minimo = c(2669.08, 4333.42, 2729.44, 3332.49),
+  vtn_maximo = c(3611.11, 5862.86, 3692.78, 4508.66),
   origem = "Alvorada, Araguaçu, Cariri do TO, Figueirópolis, Jaú do Tocantins, Palmeirópolis, Peixe, São Salvador do TO, Sucupira e Talismã"
 )
 
