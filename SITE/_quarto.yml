@@ -13,6 +13,8 @@ website:
     left:
       - text: Início
         href: index.qmd
+      - text: Projeto
+        href: projeto.qmd
       - text: Suporte
         href: suporte.qmd
       - text: Equipe
