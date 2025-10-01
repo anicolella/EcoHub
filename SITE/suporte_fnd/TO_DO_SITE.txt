@@ -107,6 +107,14 @@ Até aqui:
 --
 
 ******************************************************
+------Novidades------
+* (x) Ajuste do alinnhamento da seção 'Projetos' na topbar
+---
+Até aqui:
+[v. 0.5a, de 01/10/2025]
+--
+
+******************************************************
 ------Ajustes------
 * ( ) Distância do conteúdo para a topbar em dropdown-menu
 * ( ) Ícone do e-mail sem @
