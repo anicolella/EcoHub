@@ -235,14 +235,14 @@ PAMRT2_2016 <- data.frame(
 PAMRT3_2016 <- data.frame(
   mrt = "Atamira",
   tipologia_de_uso = c("Uso indefinido (média geral)"),
-  nivel = c(0, 0),
+  nivel = c(0),
   vti_media = c(2373.88),
   vti_minimo = c(2017.80),
   vti_maximo = c(2729.96),
   vtn_media = c(1860.20 ),
   vtn_minimo = c(1581.17 ),
   vtn_maximo = c(2139.23 ),
-  origem = "Medicilândia, Uruará e  Placas"
+  origem = "Medicilândia, Uruará e Placas"
 )
 
 ###16.8 MRT 4 #####
@@ -368,6 +368,7 @@ PAMRT12_2016 <- data.frame(
 Santarém2016 <- rbind(PAMRT1_2016, PAMRT2_2016, PAMRT3_2016, PAMRT4_2016,
                       PAMRT5_2016, PAMRT6_2016, PAMRT7_2016, PAMRT8_2016, 
                       PAMRT9_2016, PAMRT10_2016, PAMRT11_2016, PAMRT12_2016)
+
 Santarém2016$ano <- 2016
 
 ### 16.17 Pará - Marabá #####

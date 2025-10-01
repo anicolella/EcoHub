@@ -40,3 +40,15 @@ Referentes ao dia 15092025;
 *Criação de um script para escrever os dados dos CSVS.
 ..........................................
 
+
+------------------------------------------
+[v0.5, de 28092025]
+* Atualizações solicitadas da Reunião João - Alexandre.
+Referentes ao dia 19092025;
+*Verificação dos dados separados por cidades.
+*Houveram duplicatas sendo feitas anteriormente por problemas no RBIND em tocantins, 
+ademais, os estados SC(vetor a mais no nivel) , TO (observação duplicada), PA(vetor a mais no nivel), MG(vetor a mais no nivel)
+apresentaram erro de duplicatas.
+*erros de duplicatas corrigidos. Falta uma parcela de reorganização das pastas e o código do IBGE por 
+município
+..........................................

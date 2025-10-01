@@ -87,7 +87,7 @@ SEMRT1_2022 <- data.frame(
   vtn_media = c(8677.60, 46865.01, 12676.15, 3268.89, 46865.01, 12676.15, 11371.58, 3268.89, 46865.01, 7660.15, 14043.61, 22259.44, 7703.05, 11371.58, 2597.22, 4376.85),
   vtn_minimo = c(5793.13, 39835.26, 9308.33, 2741.53, 39835.26, 9308.33, 9348.17, 2741.53, 39835.26, 6303.04, 11892.20, 17664.85, 4853.15, 9348.17, 2207.64, 3720.32),
   vtn_maximo = c(11562.08, 53894.76, 16043.97, 3796.25, 53894.76, 16043.97, 13394.99, 3796.25, 53894.76, 9017.26, 16195.02, 26854.04, 10552.95, 13394.99, 2986.81, 5033.38),
-  origem = "Abrangência: Canindé de São Francisco, Gararu, Monte Alegre de Sergipe, Nossa Senhora da Glória, Poço Redondo e Porto da Folha"
+  origem = "Canindé de São Francisco, Gararu, Monte Alegre de Sergipe, Nossa Senhora da Glória, Poço Redondo e Porto da Folha"
 )
 
 ## 26.2  Centro/Sul Sergipano ####
@@ -640,7 +640,7 @@ SE2022 <- rbind(
 SE20$ano <- 2020
 SE2022$ano <- 2022
 SE2017$ano <- 2017
-SETEMPORAL <- rbind(SE2022, SE20, SE20)
+SETEMPORAL <- rbind(SE2022, SE20, SE2017)
 
 SETEMPORAL$estado <- 28
 SETEMPORAL$regiao <- "nordeste"

@@ -1033,12 +1033,10 @@ SC2019<- rbind(
   SCMRT_Xanxere_2016,
   SCMRT_Curitibanos_2016_2019,
   SCMRT_Canoinhas_2016_2019,
-  SCMRT_Curitibanos_2016_2019,
   SCMRT_Ituporanga_2016_2019,
   SCMRT_Joacaba_2018_2019,
   SCMRT_Xanxere_2019
 )
-
 
 SC2019$ano <- 2019
 
