@@ -18,7 +18,8 @@ Links e dicas
 Logo                    : https://turbologo.com/
 Emojis                  : https://emojipedia.org/
 Cores hex               : https://www.color-hex.com/
-Boostrap                : https://getbootstrap.com/docs/5.3/components
+Boostrap                : https://getbootstrap.com/docs/5.3/components (components)
+                          https://bootstrapextensions.com/ (extensions)
 Sites Inspiração        : https://oneamazon.com/ , https://quarto.org/  , 
 
 ......................................................................................................................
@@ -52,6 +53,7 @@ Até aqui:
 [v. 0.1, de 20/09/2025]
 --
 
+******************************************************
 ------Ajustes------
 * (x) Criação do menu sanduíche/gaveta
 * (x) Formatação de cores
@@ -61,6 +63,7 @@ Até aqui:
 [v. 0.2, de 21/09/2025]
 --
 
+******************************************************
 ------Ajustes------
 * (x) Criação das regras de versionamento ('HISTORICO SITE.txt')
 * (x) Testes complementares no uso do site -- tudo ok
@@ -68,7 +71,7 @@ Até aqui:
 Até aqui:
 [v. 0.2.1 (site), de 21/09/2025]
 --
-
+******************************************************
 ------Ajustes------
 * (x) Remover espaço em branco entre topbar e omnibox
 
@@ -80,9 +83,10 @@ Até aqui:
 ---
 Até aqui:
 [v. 0.3, de 30/09/2025]
+[v. 0.3a, de 30/09/2025] - Novos itens TO DO e mínimos ajustes dropdown menu
 --
 
-
+******************************************************
 ------Ajustes------
 * ( ) Distância do conteúdo para a topbar em dropdown-menu
 * ( ) Ícone do e-mail sem @
@@ -90,12 +94,18 @@ Até aqui:
 * ( ) Aumentar a largura de conteúdo das páginas
 * ( ) Modo dark menos escuro
 * ( ) Verificar site em celular
-
+* ( ) Links redes sociais abrir em nova aba
+* ( ) Escrever nos menus o que cada um deve conter para inserir depois
+* ( ) Publicar no Github Pages
 ------Novidades----
 * ( ) Estrutura menus e páginas "Cursos" (estilo quarto.org)
 * ( ) Estrutura menus e páginas "Geral"
 * ( ) Integração com commits do GitHub
 * ( ) Links para Google Drive
+* ( ) Barra de progresso do roadmap do projeto
+* ( ) Dropdown menu no estilo collapse
+* ( ) Página inicial no estilo Paralax Scrolling
+* ( ) Criar menu Projeto
 ---
 Até aqui:
 [v. 0.4, de xx/09/2025]
