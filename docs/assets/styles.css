@@ -547,8 +547,19 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   transition: all 0.1s ease !important;
 }
 
-/* Melhora a área clicável do dropdown toggle */
+/* Melhora a área clicável do dropdown toggle e alinha com outros itens */
 .navbar-nav .nav-item.dropdown .dropdown-toggle {
-  padding: 12px 16px !important;
+  padding: 8px 16px !important; /* Mesmo padding dos outros nav-links */
   position: relative !important;
+  vertical-align: middle !important;
+  line-height: normal !important;
+}
+
+/* Garante alinhamento vertical consistente para todos os nav-links */
+.navbar-nav .nav-link,
+.navbar-nav .dropdown-toggle {
+  padding: 8px 16px !important;
+  vertical-align: middle !important;
+  display: flex !important;
+  align-items: center !important;
 }
