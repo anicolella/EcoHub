@@ -83,7 +83,18 @@ Até aqui:
 ---
 Até aqui:
 [v. 0.3, de 30/09/2025]
-[v. 0.3a, de 30/09/2025] - Novos itens TO DO e mínimos ajustes dropdown menu
+[v. 0.3a, de 30/09/2025]
+--
+
+******************************************************
+------Novidades------
+* (x) Criar menu Projeto
+
+------Ajustes------
+* (x) Novos itens TO DO e mínimos ajustes dropdown menu
+---
+Até aqui:
+[v. 0.4, de 01/10/2025]
 --
 
 ******************************************************
@@ -105,10 +116,10 @@ Até aqui:
 * ( ) Barra de progresso do roadmap do projeto
 * ( ) Dropdown menu no estilo collapse
 * ( ) Página inicial no estilo Paralax Scrolling
-* ( ) Criar menu Projeto
+* ( ) Editor/Gerenciador/Publisher markdown p/ html integrado ao site
 ---
 Até aqui:
-[v. 0.4, de xx/09/2025]
+[v. 0.5, de xx/10/2025]
 --
 
 ......................................................................................................................
