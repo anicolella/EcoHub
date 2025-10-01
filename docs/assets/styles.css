@@ -1,5 +1,5 @@
 /* =========================
-   Paleta e base
+   Paleta e base - Updated 2025-10-01 15:30 GMT-3
    ========================= */
 :root {
   --brand-green:  #065f46; /* verde */
@@ -567,4 +567,41 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   display: inline-block !important;
   height: auto !important;
   margin: 0 !important;
+}
+
+/* =========================
+   FORÇA ALINHAMENTO - CSS v2.0 para cache bust
+   ========================= */
+
+/* Super específico para forçar alinhamento - override completo */
+#quarto-header .navbar .navbar-nav.navbar-nav-scroll.me-auto .nav-item.dropdown .dropdown-toggle,
+#quarto-header .navbar .navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle {
+  padding: 8px 16px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  vertical-align: baseline !important;
+  line-height: 1.5rem !important;
+  height: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1rem !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Força mesmo comportamento para todos os nav-links */
+#quarto-header .navbar .navbar-nav.navbar-nav-scroll.me-auto .nav-item .nav-link:not(.dropdown-toggle) {
+  padding: 8px 16px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  vertical-align: baseline !important;
+  line-height: 1.5rem !important;
+  height: auto !important;
+  display: inline-block !important;
+  font-size: 1rem !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
 }
