@@ -4,10 +4,10 @@ project:
 
 website:
   title: "EcoHub"
-  site-url: "https://fernandovieira1.github.io/ambiental_bd_usp/"
+  site-url: "https://github.com/anicolella/anicolella"
   favicon: assets/favicon.svg
   search: true
-  repo-url: "https://github.com/fernandovieira1/ambiental_bd_usp"
+  repo-url: "https://github.com/anicolella/anicolella"
   navbar:
     logo: assets/logo.svg
     left:
@@ -20,9 +20,41 @@ website:
       - text: Sobre
         href: sobre.qmd
     tools:
-      - icon: list
-        aria-label: "Menu"
-        href: "javascript:void(0)"   # como o JS abre a gaveta
+      - icon: moon
+        href: "javascript:void(0)"
+        aria-label: "Toggle dark mode"
+      - icon: github
+        href: "https://github.com/fernandovieira1/ambiental_bd_usp"
+        aria-label: "GitHub repository"
+      - icon: envelope-at
+        href: "mailto:contato@ecohub.com"
+        aria-label: "Enviar e-mail"
+      - text: "🖇️"
+        menu:
+          - text: "📚 CURSOS"
+            href: "#"
+          - text: "Curso A"
+            href: "#"
+          - text: "Curso B"
+            href: "#"
+          - text: "Curso C"
+            href: "#"
+          - text: "Curso D"
+            href: "#"
+          - text: "💻 PACOTES"
+            href: "#"
+          - text: "R"
+            href: "#"
+          - text: "Python"
+            href: "#"
+          - text: "⚒️ UTILITÁRIOS"
+            href: "#"
+          - text: "Site tal"
+            href: "#"
+          - text: "Site tal"
+            href: "#"
+          - text: "App tal"
+            href: "#"
   page-footer:
     center: "© 2025 EcoHub"
 

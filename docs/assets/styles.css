@@ -9,15 +9,81 @@
   --brand-yellow: #ffff00; /* amarelo */
 }
 
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+/* Aplicar a mesma fonte aos elementos principais */
+h1, h2, h3, h4, h5, h6, p, div, span, a, li, td, th {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+/* Fonte específica para a navbar */
+.navbar, .navbar-brand, .nav-link, .navbar-text {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
 /* =========================
    TOPBAR (navbar / headroom)
    ========================= */
+
+/* Elimina completamente qualquer gap entre omnibox e topbar */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove margens do container principal */
+.quarto-container,
+.container-fluid,
+main,
+.main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#quarto-header {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+}
+
 #quarto-header .navbar {
+  color: #fff !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: 0 !important;
+}
+
+/* Topbar Light Mode (padrão) */
+html[data-bs-theme="light"] #quarto-header .navbar,
+html:not([data-bs-theme]) #quarto-header .navbar {
+  background: linear-gradient(
+    140deg,
+    #33a4faff 0%,
+    #4188beff 12%,   
+    #0ccbe9ff 45%,   
+    #5ab434ff 55%,   
+    #1bbe90ff 65%,   
+    #0ca278ff 85%,   
+    rgb(229, 229, 229) 100%   
+  ) !important;
+}
+
+/* Topbar Dark Mode */
+html[data-bs-theme="dark"] #quarto-header .navbar {
   background: linear-gradient(
     140deg,
     #2986cc 0%,
@@ -28,7 +94,6 @@ body {
     #065f46 85%,   
     #000000 100%   
   ) !important;
-  color: #fff !important;
 }
 
 #quarto-header .navbar,
@@ -37,6 +102,9 @@ body {
   top: 0;
   z-index: 100;
   backdrop-filter: blur(6px);
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* textos/ícones na barra */
@@ -64,28 +132,30 @@ body {
   width: auto !important;
 }
 
-/* LINKS centralizados (UL no centro exato) */
+/* LINKS à esquerda, próximo ao logo - REMOVE CENTRALIZAÇÃO */
 #quarto-header .navbar #navbarCollapse { position: static !important; }
 #quarto-header .navbar #navbarCollapse .navbar-nav {
-  position: absolute !important;
-  left: 50% !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
   display: flex !important;
   gap: .6rem !important;
-  margin: 0 !important;
+  margin-left: 200px !important; /* Espaço para o logo */
+  margin-right: 0 !important;
   width: auto !important;
+  justify-content: flex-start !important; /* Alinha à esquerda */
 }
 #quarto-header .navbar #navbarCollapse .navbar-nav.me-auto,
 #quarto-header .navbar #navbarCollapse .navbar-nav.ms-auto {
-  margin-left: 0 !important;
+  margin-left: 200px !important; /* Consistente com acima */
   margin-right: 0 !important;
 }
 
 /* SEARCH e TOOLS à direita */
 #quarto-header .navbar #quarto-search {
   position: absolute !important;
-  right: 48px !important;
+  right: 180px !important; /* Mais espaço para os novos botões */
   top: 50% !important;
   transform: translateY(-50%) !important;
 }
@@ -96,6 +166,43 @@ body {
   transform: translateY(-50%) !important;
   display: flex !important;
   gap: .5rem;
+  align-items: center !important;
+}
+
+/* Estilos para os novos botões */
+#quarto-header .navbar .quarto-navbar-tools a[aria-label],
+#quarto-header .navbar .quarto-navbar-tools .quarto-navigation-tool {
+  color: #fff !important;
+  padding: 8px !important;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#quarto-header .navbar .quarto-navbar-tools a[aria-label]:hover,
+#quarto-header .navbar .quarto-navbar-tools .quarto-navigation-tool:hover {
+  background-color: rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+}
+
+/* Ícones dos botões */
+#quarto-header .navbar .quarto-navbar-tools .bi {
+  font-size: 1.1em !important;
+}
+
+/* Ícone de email específico - sem rebarbas */
+#quarto-header .navbar .quarto-navbar-tools .bi-envelope-at {
+  font-weight: bold !important;
+  font-size: 1.0em !important;
+}
+
+/* Estilos específicos para emojis nos tools */
+#quarto-header .navbar .quarto-navbar-tools a[href^="mailto"] {
+  font-size: 1.2em !important;
+  line-height: 1 !important;
 }
 
 /* hover/ativo nos links do topo */
@@ -123,28 +230,140 @@ body {
     position: static !important;
     transform: none !important;
   }
+  
   #quarto-header .navbar .navbar-container.container-fluid {
     display: block !important;
   }
+  
   #quarto-header .navbar #navbarCollapse .navbar-nav {
     width: 100% !important;
-    justify-content: center !important;
+    justify-content: flex-start !important; /* Mantém alinhamento à esquerda */
+    padding: .25rem 0 !important;
+    margin-left: 0 !important; /* Remove margem no mobile */
+  }
+  
+  #quarto-header .navbar .quarto-navbar-tools {
+    justify-content: flex-end !important;
     padding: .25rem 0 !important;
   }
 }
 
 /* =========================
-   Drawer base (classe .open)
+   Dropdown menu nativo do Quarto
    ========================= */
-.drawer {
-  position: fixed; right: 0; top: 0;
-  width: min(380px, 92%); height: 100%;
-  background: #fff; border-left: 1px solid #e5e7eb;
-  transform: translateX(100%); transition: transform .25s ease-out;
-  z-index: 9999;  /* acima do header */
-  overflow-y: auto;
+
+/* Estilização para o dropdown nos tools da navbar */
+.quarto-navbar-tools .dropdown-toggle {
+  color: #fff !important;
+  font-size: 1.2em !important;
+  border: none !important;
+  background: none !important;
+  padding: 8px 12px !important;
+  text-decoration: none !important;
 }
-.drawer.open { transform: translateX(0); }
+
+.quarto-navbar-tools .dropdown-toggle:hover,
+.quarto-navbar-tools .dropdown-toggle:focus {
+  color: #fff !important;
+  background-color: rgba(255,255,255,0.1) !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+}
+
+/* Posicionamento do dropdown */
+.quarto-navbar-tools .dropdown {
+  position: relative !important;
+}
+
+/* Dropdown Light Mode (padrão) */
+html[data-bs-theme="light"] .quarto-navbar-tools .dropdown-menu,
+html:not([data-bs-theme]) .quarto-navbar-tools .dropdown-menu {
+  background: linear-gradient(
+    140deg,
+    #33a4faff 0%,
+    #4188beff 12%,   
+    #0ccbe9ff 45%,   
+    #5ab434ff 55%,   
+    #1bbe90ff 65%,   
+    #0ca278ff 85%,   
+    #bbacacff 100%   
+  ) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 8px !important;
+  min-width: 220px !important;
+  
+  /* Posicionamento correto */
+  position: absolute !important;
+  top: calc(100% + 5px) !important;  /* 5px abaixo da topbar */
+  right: 0 !important;               /* Alinhado à direita do botão */
+  left: auto !important;             /* Remove alinhamento à esquerda */
+  transform: translateX(0) !important;
+  
+  /* Garante que apareça acima de outros elementos */
+  z-index: 9999 !important;
+  
+  /* Sombra para destaque */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Dropdown Dark Mode */
+html[data-bs-theme="dark"] .quarto-navbar-tools .dropdown-menu {
+  background: linear-gradient(
+    140deg,
+    #2986cc 0%,
+    #2b587a 12%,   
+    #0ab9d3 45%,   
+    #3f7a25 55%,   
+    #065f46 65%,   
+    #065f46 85%,   
+    #000000 100%   
+  ) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 8px !important;
+  min-width: 220px !important;
+  
+  /* Posicionamento correto */
+  position: absolute !important;
+  top: calc(100% + 5px) !important;  /* 5px abaixo da topbar */
+  right: 0 !important;               /* Alinhado à direita do botão */
+  left: auto !important;             /* Remove alinhamento à esquerda */
+  transform: translateX(0) !important;
+  
+  /* Garante que apareça acima de outros elementos */
+  z-index: 9999 !important;
+  
+  /* Sombra para destaque */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Para telas menores, ajusta para não sair da tela */
+@media (max-width: 768px) {
+  .quarto-navbar-tools .dropdown-menu {
+    right: -10px !important;
+    min-width: 200px !important;
+  }
+}
+
+.quarto-navbar-tools .dropdown-item {
+  color: #fff !important;
+  padding: 10px 16px !important;
+  transition: background-color 0.2s ease !important;
+  border: none !important;
+  white-space: nowrap !important;
+}
+
+.quarto-navbar-tools .dropdown-item:hover,
+.quarto-navbar-tools .dropdown-item:focus {
+  background-color: rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+}
+
+/* 
+   CÓDIGO DA GAVETA COMENTADO - NÃO MAIS NECESSÁRIO
+   =========================
+   Drawer base (classe .open)
+   =========================
+*/
 
 /* Overlay neutro: sem escurecer, sem bloquear cliques */
 .drawer-overlay {
@@ -166,9 +385,10 @@ body {
 }
 
 
-/* =========================
-   Drawer: menu + efeitos
-   ========================= */
+/*
+   =========================
+   Drawer: menu + efeitos - COMENTADO
+   =========================
 .drawer-menu { list-style: none; padding: 0; margin: 0; }
 .drawer-menu li { margin-bottom: 10px; }
 
@@ -183,6 +403,7 @@ body {
 }
 .drawer-menu .menu-link:hover  { background-color: #e5f9ef; color: #065f46; }
 .drawer-menu .menu-link:active { transform: scale(0.98); background-color: #bbf7d0; }
+*/
 
 /* =========================
    Cards / Grid / misc

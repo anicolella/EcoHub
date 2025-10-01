@@ -1,98 +1,54 @@
 <!-- Header include (EcoHub) -->
+<!-- Menu dropdown nativo do Quarto - sem JavaScript customizado necessário -->
+
+<!-- Google Fonts - Source Sans Pro -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
 <script>
-  (function () {
-    const log = (...a) => console.debug("[EcoHub]", ...a);
-    const qs  = (sel, root=document) => root.querySelector(sel);
-
-    // 1) Garante que a gaveta exista (cria se faltar)
-    function ensureDrawerDOM() {
-      let drawer  = qs('#drawer');
-      let overlay = qs('#drawer-overlay');
-
-      if (!drawer) {
-        drawer = document.createElement('aside');
-        drawer.id = 'drawer';
-        drawer.className = 'drawer';
-        drawer.setAttribute('aria-label', 'Menu lateral');
-        drawer.setAttribute('aria-hidden', 'true');
-        drawer.innerHTML = `
-          <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #e5e7eb;">
-            <strong>Menu EcoHub</strong>
-            <button id="drawer-close" aria-label="Fechar menu lateral" style="font-size:20px;line-height:1;border:0;background:none;cursor:pointer">✕</button>
-          </div>
-          <nav style="padding:16px 20px">
-            <ul class="drawer-menu">
-              <li><a href="#" class="menu-link">🌱 Cursos</a></li>
-              <li><a href="#" class="menu-link">📦 Pacotes (R / Python)</a></li>
-              <li><a href="#" class="menu-link">📊 Dashboards</a></li>
-              <li><a href="#" class="menu-link">🛰️ Dados Geoespaciais</a></li>
-              <li><a href="#" class="menu-link">🧪 Laboratório EcoHub</a></li>
-              <li><a href="#" class="menu-link">⚙️ Configurações</a></li>
-            </ul>
-          </nav>`;
-        document.body.appendChild(drawer);
-      }
-
-      if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.id = 'drawer-overlay';
-        overlay.className = 'drawer-overlay';
-        overlay.setAttribute('aria-hidden', 'true');
-        document.body.appendChild(overlay);
-      }
-      return { drawer, overlay };
+// Dark mode toggle functionality
+(function() {
+  function initDarkModeToggle() {
+    // Encontra o botão de dark mode
+    const darkModeBtn = document.querySelector('a[aria-label="Toggle dark mode"]');
+    if (!darkModeBtn) return;
+    
+    // Verifica preferência salva ou do sistema
+    const savedTheme = localStorage.getItem('ecohub-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+    
+    // Aplica tema inicial
+    if (isDark) {
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
+      updateIcon(darkModeBtn, true);
     }
-
-    // 2) Ações do drawer
-    function openDrawer() {
-      const { drawer, overlay } = ensureDrawerDOM();
-      drawer.classList.add('open');
-      drawer.setAttribute('aria-hidden', 'false');
-      overlay.classList.add('show');
-      overlay.setAttribute('aria-hidden', 'false');
-    }
-    function closeDrawer() {
-      const drawer  = qs('#drawer');
-      const overlay = qs('#drawer-overlay');
-      if (!drawer || !overlay) return;
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden', 'true');
-      overlay.classList.remove('show');
-      overlay.setAttribute('aria-hidden', 'true');
-    }
-
-    // Expor para testes no console
-    window.__eco_openDrawer  = openDrawer;
-    window.__eco_closeDrawer = closeDrawer;
-
-    // 3) Intercepta o clique no sanduíche (capturing) e abre a gaveta
-    const TRIGGER = ".quarto-navbar-tools a[aria-label='Menu'], .quarto-navbar-tools i.bi.bi-list, .quarto-navbar-tools .quarto-navigation-tool";
-    document.addEventListener('click', function (e) {
-      const t = e.target.closest(TRIGGER);
-      if (!t) return;
-      e.preventDefault(); e.stopPropagation();
-      const a = t.closest('a');
-      if (a) { a.setAttribute('href', 'javascript:void(0)'); a.setAttribute('role','button'); a.style.cursor='pointer'; }
-      openDrawer();
-    }, true);
-
-    // 4) Fechar por overlay, X e ESC (delegação)
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('#drawer-overlay') || e.target.closest('#drawer-close')) {
-        e.preventDefault(); closeDrawer();
-      }
+    
+    // Adiciona evento de clique
+    darkModeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('ecohub-theme', newTheme);
+      updateIcon(darkModeBtn, newTheme === 'dark');
     });
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
-
-    // 5) Garante DOM pronto e cria a estrutura se faltar
-    function init() {
-      ensureDrawerDOM();
-      log("header.html carregado e drawer garantido");
+  }
+  
+  function updateIcon(btn, isDark) {
+    const icon = btn.querySelector('i');
+    if (icon) {
+      icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon';
     }
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
-  })();
+  }
+  
+  // Inicializa quando DOM estiver pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDarkModeToggle);
+  } else {
+    initDarkModeToggle();
+  }
+})();
 </script>
