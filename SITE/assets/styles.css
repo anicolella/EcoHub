@@ -429,12 +429,32 @@ footer .center { text-align: center; color: #6b7280; }
    Dropdown menu principal (Projeto)
    ========================= */
 
-/* Ativa dropdown com hover para itens do menu principal */
-.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-  display: block !important;
+/* Cria uma área expandida para o hover do dropdown */
+.navbar-nav .nav-item.dropdown {
+  position: relative !important;
 }
 
-/* Remove a necessidade de clicar para mostrar */
+/* Área invisible que conecta o botão ao dropdown */
+.navbar-nav .nav-item.dropdown::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 10px; /* Ponte invisível de 10px */
+  background: transparent;
+  z-index: 9998;
+}
+
+/* Ativa dropdown com hover - inclui a área de ponte */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu,
+.navbar-nav .dropdown-menu:hover {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Remove a setinha do dropdown */
 .navbar-nav .nav-item.dropdown .dropdown-toggle::after {
   display: none !important;
 }
@@ -455,9 +475,12 @@ html:not([data-bs-theme]) .navbar-nav .dropdown-menu {
   border: 1px solid rgba(255,255,255,0.2) !important;
   border-radius: 8px !important;
   min-width: 200px !important;
-  margin-top: 5px !important;
+  margin-top: 10px !important; /* Espaço para a ponte */
   z-index: 9999 !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
 }
 
 /* Estilização do dropdown do menu principal - Dark Mode */
@@ -475,18 +498,22 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   border: 1px solid rgba(255,255,255,0.2) !important;
   border-radius: 8px !important;
   min-width: 200px !important;
-  margin-top: 5px !important;
+  margin-top: 10px !important; /* Espaço para a ponte */
   z-index: 9999 !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
 }
 
 /* Itens do dropdown do menu principal */
 .navbar-nav .dropdown-item {
   color: #fff !important;
-  padding: 10px 16px !important;
+  padding: 12px 18px !important;
   transition: background-color 0.2s ease !important;
   border: none !important;
   text-decoration: none !important;
+  display: block !important;
 }
 
 .navbar-nav .dropdown-item:hover,
@@ -494,16 +521,34 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   background-color: rgba(255,255,255,0.15) !important;
   color: #fff !important;
   border-radius: 4px !important;
+  text-decoration: none !important;
 }
 
-/* Garante transição suave para o dropdown */
+/* Estado inicial do dropdown - escondido com transição suave */
 .navbar-nav .dropdown-menu {
-  transition: opacity 0.2s ease, visibility 0.2s ease !important;
+  display: none !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease !important;
   opacity: 0 !important;
   visibility: hidden !important;
+  transform: translateY(-10px) !important;
 }
 
-.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+/* Estado ativo do dropdown - visível com animação */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu,
+.navbar-nav .dropdown-menu:hover {
+  display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* Delay para evitar fechamento acidental */
+.navbar-nav .nav-item.dropdown {
+  transition: all 0.1s ease !important;
+}
+
+/* Melhora a área clicável do dropdown toggle */
+.navbar-nav .nav-item.dropdown .dropdown-toggle {
+  padding: 12px 16px !important;
+  position: relative !important;
 }
