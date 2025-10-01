@@ -424,3 +424,86 @@ footer .center { text-align: center; color: #6b7280; }
 
 /* hero antigo fora */
 .hero { display: none; }
+
+/* =========================
+   Dropdown menu principal (Projeto)
+   ========================= */
+
+/* Ativa dropdown com hover para itens do menu principal */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+/* Remove a necessidade de clicar para mostrar */
+.navbar-nav .nav-item.dropdown .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Estilização do dropdown do menu principal - Light Mode */
+html[data-bs-theme="light"] .navbar-nav .dropdown-menu,
+html:not([data-bs-theme]) .navbar-nav .dropdown-menu {
+  background: linear-gradient(
+    140deg,
+    #33a4faff 0%,
+    #4188beff 12%,   
+    #0ccbe9ff 45%,   
+    #5ab434ff 55%,   
+    #1bbe90ff 65%,   
+    #0ca278ff 85%,   
+    #bbacacff 100%   
+  ) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 8px !important;
+  min-width: 200px !important;
+  margin-top: 5px !important;
+  z-index: 9999 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Estilização do dropdown do menu principal - Dark Mode */
+html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
+  background: linear-gradient(
+    140deg,
+    #2986cc 0%,
+    #2b587a 12%,   
+    #0ab9d3 45%,   
+    #3f7a25 55%,   
+    #065f46 65%,   
+    #065f46 85%,   
+    #000000 100%   
+  ) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 8px !important;
+  min-width: 200px !important;
+  margin-top: 5px !important;
+  z-index: 9999 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Itens do dropdown do menu principal */
+.navbar-nav .dropdown-item {
+  color: #fff !important;
+  padding: 10px 16px !important;
+  transition: background-color 0.2s ease !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+  background-color: rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+}
+
+/* Garante transição suave para o dropdown */
+.navbar-nav .dropdown-menu {
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
