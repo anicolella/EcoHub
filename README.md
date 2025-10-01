@@ -6,8 +6,15 @@
 [![Quarto](https://img.shields.io/badge/Quarto-%3E%3D1.0-purple)](https://quarto.org/)
 [![LaTeX](https://img.shields.io/badge/LaTeX-Project-lightgrey)](https://www.latex-project.org/)
 [![License](https://img.shields.io/badge/License-USP-green.svg)](LICENSE)
+[![Site](https://img.shields.io/badge/Site-EcoHub-brightgreen)](https://fernandovieira1.github.io/ambiental_bd_usp/)
 
 Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisar, tratar e integrar bases de dados ambientais** para aplicações acadêmicas e de políticas públicas.
+
+## 🌐 Site do Projeto
+
+**EcoHub**: https://fernandovieira1.github.io/ambiental_bd_usp/
+
+O site contém documentação, tracker do projeto, análises e visualizações desenvolvidas pela equipe.
 
 ------------------------------------------------------------------------
 
