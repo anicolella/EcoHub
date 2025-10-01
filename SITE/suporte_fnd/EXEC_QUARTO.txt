@@ -1,0 +1,11 @@
+Em /SITE
+
+Visualizar localmente um documento Quarto
+--------------------------------------------------
+> quarto render
+> quarto preview
+
+
+Publicar um documento Quarto
+--------------------------------------------------
+> quarto publish

@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "viz/index.html",
-    "href": "viz/index.html",
-    "title": "Visualiza��es",
+    "objectID": "sobre.html",
+    "href": "sobre.html",
+    "title": "Sobre",
     "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
+    "text": "O projeto integra bases ambientais difusas, padroniza formatos, documenta metadados e oferece análises para apoiar pesquisa acadêmica e formulação de políticas públicas."
   },
   {
     "objectID": "sobre.html#descrição-do-projeto",
     "href": "sobre.html#descrição-do-projeto",
     "title": "Sobre",
-    "section": "Descrição do Projeto",
-    "text": "Descrição do Projeto\nO projeto integra bases ambientais difusas, padroniza formatos, documenta metadados e oferece análises para apoiar pesquisa acadêmica e formulação de políticas públicas."
+    "section": "",
+    "text": "O projeto integra bases ambientais difusas, padroniza formatos, documenta metadados e oferece análises para apoiar pesquisa acadêmica e formulação de políticas públicas."
   },
   {
     "objectID": "sobre.html#cronograma-roadmap",
@@ -21,80 +21,38 @@
     "text": "Cronograma (Roadmap)\n\nFase 1 — Levantamento & Documentação (metadados, licenças, fontes)\n\nFase 2 — ETL & Padronização (tabelas, séries, shapefiles/rasters)\n\nFase 3 — Análises & Visualizações (exploratórias, econométricas)\n\nFase 4 — Pacotes & Automação (R/Python, pipelines reprodutíveis)"
   },
   {
-    "objectID": "pipelines/etl_shapefile.html",
-    "href": "pipelines/etl_shapefile.html",
-    "title": "ETL Shapefile",
-    "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
-  },
-  {
     "objectID": "equipe.html",
     "href": "equipe.html",
     "title": "Equipe",
     "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações\n\n    \n\n  \n\n\n\n\n\n\n\n\n\nLattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
+    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
   },
   {
     "objectID": "components/hero.html",
     "href": "components/hero.html",
     "title": "Hero section",
     "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações\n\n    \n\n  \n\n\n\n\n\n\n\n\nHero section"
-  },
-  {
-    "objectID": "analysis/index.html",
-    "href": "analysis/index.html",
-    "title": "An�lises",
-    "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
-  },
-  {
-    "objectID": "analysis/casos/amazonia.html",
-    "href": "analysis/casos/amazonia.html",
-    "title": "Amaz�nia",
-    "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
-  },
-  {
-    "objectID": "analysis/casos/mt.html",
-    "href": "analysis/casos/mt.html",
-    "title": "Mato Grosso",
-    "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
+    "text": "Hero section"
   },
   {
     "objectID": "components/footer-links.html",
     "href": "components/footer-links.html",
     "title": "EcoHub",
     "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações\n\n    \n\n  \n\n\n\n\n\n\n\nRodap� com links"
-  },
-  {
-    "objectID": "data_catalog/index.html",
-    "href": "data_catalog/index.html",
-    "title": "Cat�logo de Dados",
-    "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
+    "text": "Rodap� com links"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Projeto BD Ambiental",
     "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações\n\n    \n\n  \n\n\n\n\n\n\n\nAVISOS TEMPORÁRIOS – VERSÃO ALPHA DO SITE\nO CONTEÚDO DO SITE AINDA SERÁ INSERIDO, MAS A ESTRUTURA ATUAL, PARA VALIDAÇÃO E SUGESTÕES, FOI PENSADA DA SEGUINTE FORMA:\n\nPágina clean e intuitiva, com poucos menus/seções.\nMenus diretamente relacionados ao Projeto BD Ambiental foram centralizados na barra superior.\nPáginas auxiliares (indiretamente ligados ao projeto) – cursos, tutoriais, dicas, links externos etc – serão agregadas no menu gaveta (sanduíche), localizado no canto direito da página.\nO botão de pesquisar (ícone de lupa) também está localizado no canto direito da página, ao lado do menu gaveta/sanduíche.\nA ideia é que o site seja interativo, permitindo postagens pelos participantes do projeto sem a necessidade de codificar (a definir e construir isso futuramente).\n\n*Versão atual: 21/09/2025 01:19 PM (f.)\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
-  },
-  {
-    "objectID": "pipelines/index.html",
-    "href": "pipelines/index.html",
-    "title": "Pipelines",
-    "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações"
+    "text": "AVISOS TEMPORÁRIOS – VERSÃO ALPHA DO SITE\nO CONTEÚDO DO SITE AINDA SERÁ INSERIDO, MAS A ESTRUTURA ATUAL, PARA VALIDAÇÃO E SUGESTÕES, FOI PENSADA DA SEGUINTE FORMA:\n\nPágina clean e intuitiva, com poucos menus/seções.\nMenus diretamente relacionados ao Projeto BD Ambiental foram centralizados na barra superior.\nPáginas auxiliares (indiretamente ligados ao projeto) – cursos, tutoriais, dicas, links externos etc – serão agregadas no menu gaveta (sanduíche), localizado no canto direito da página.\nO botão de pesquisar (ícone de lupa) também está localizado no canto direito da página, ao lado do menu gaveta/sanduíche.\nA ideia é que o site seja interativo, permitindo postagens pelos participantes do projeto sem a necessidade de codificar (a definir e construir isso futuramente).\n\n*Versão atual: 21/09/2025 01:19 PM (f.)\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
   },
   {
     "objectID": "suporte.html",
     "href": "suporte.html",
     "title": "Suporte",
     "section": "",
-    "text": "Menu EcoHub\n\n    ✕\n\n  \n\n\n\n  \n\n    \n\n      💡 VOU FAZER DEPOIS\n\n      🌱 Cursos\n\n      📦 Pacotes (R / Python)\n\n      📊 Dashboards\n\n      🛰️ Dados Geoespaciais\n\n      🧪 Laboratório EcoHub\n\n      ⚙️ Configurações\n\n    \n\n  \n\n\n\n\n\n\n\n\n\nDocumentação\nBancos consolidados, metadados e guias de uso (fonte, licença, cobertura, granularidade).\nVer documentação\n\n\nGitHub\nRepositório, issues, versionamento e trilha de auditoria.\nIr para o GitHub\n\n\nGoogle Drive\nMateriais complementares e dados brutos (quando aplicável).\nAbrir Drive"
+    "text": "Documentação\nBancos consolidados, metadados e guias de uso (fonte, licença, cobertura, granularidade).\nVer documentação\n\n\nGitHub\nRepositório, issues, versionamento e trilha de auditoria.\nIr para o GitHub\n\n\nGoogle Drive\nMateriais complementares e dados brutos (quando aplicável).\nAbrir Drive"
   }
 ]

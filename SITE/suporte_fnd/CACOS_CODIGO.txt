@@ -1,0 +1,39 @@
+Aparência da topbar dark
+------------------------------------------
+#quarto-header .navbar {
+  background: linear-gradient(
+    140deg,
+    #2986cc 0%,
+    #2b587a 12%,   
+    #0ab9d3 45%,   
+    #3f7a25 55%,   
+    #065f46 65%,   
+    #065f46 85%,   
+    #000000 100%   
+  ) !important;
+  color: #fff !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: 0 !important;
+}
+
+Aparência da topbar light
+------------------------------------------
+#quarto-header .navbar {
+  background: linear-gradient(
+    140deg,
+    #33a4faff 0%,
+    #4188beff 12%,   
+    #0ccbe9ff 45%,   
+    #5ab434ff 55%,   
+    #1bbe90ff 65%,   
+    #0ca278ff 85%,   
+    #bbacacff 100%   
+  ) !important;
+  color: #fff !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: 0 !important;
+}

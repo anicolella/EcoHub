@@ -1,0 +1,86 @@
+
+*************************************
+        SITE PROJETO ECOHUB
+*************************************
+
+* Dividir o registro histórico das tarefas (bullets) em: 
+    - Novidades: tudo (funcionalidades, sites, visual etc) que for construído de novo.
+    - Ajustes: o que for consertado ou aperfeiçoado das novidades.
+
+* Boostrap 5.3 é a base do quarto atual.
+    - Components: https://getbootstrap.com/docs/5.3/components/accordion/
+
+......................................................................................................................
+
+====================================
+Links e dicas
+====================================
+Logo                    : https://turbologo.com/
+Emojis                  : https://emojipedia.org/
+Cores hex               : https://www.color-hex.com/
+Boostrap                : https://getbootstrap.com/docs/5.3/components
+Sites Inspiração        : https://oneamazon.com/ , https://quarto.org/  , 
+
+......................................................................................................................
+
+//////////////////
+     Versões 
+//////////////////
+
++ Alpha  : 0.x.xx
++ beta   : 1.x.xx
++ Estável: 2.x.xx
+
+Para controle das versões:
+    * v.: Significa 'Versão'.
+    * x: Alterações substanciais, geralmente relacionadas a 'Novidades';
+    * xx: Modificações e consertos incrementais, geralmente relacionadas as 'Ajustes'.
+
+Assim, o controle das versões fica: 'v.x.xx (site), de dd/mm/YYYY', sendo 'x' números inteiros e 'xx' e 
+caracteres alfanuméricos.
+
+......................................................................................................................
+
+========HISTÓRICO DE ALTERAÇÕES===========
+
+------Novidades----
+* (x) Mockup da estrutura do site
+* (x) Codificação da estrutura pensada
+* (x) Design (cores e funcionalidades) da estrutura
+---
+Até aqui:
+[v. 0.1, de 20/09/2025]
+--
+
+------Ajustes------
+* (x) Criação do menu sanduíche/gaveta
+* (x) Formatação de cores
+* (x) Configuração e publicação Github Pages
+---
+Até aqui:
+[v. 0.2, de 21/09/2025]
+--
+
+------Ajustes------
+* (x) Criação das regras de versionamento ('HISTORICO SITE.txt')
+* (x) Testes complementares no uso do site -- tudo ok
+---
+Até aqui:
+[v. 0.2.1 (site), de 21/09/2025]
+--
+
+------Ajustes------
+* (x) Remover espaço em branco entre topbar e omnibox
+
+------Novidades----
+* (x) Substituir gaveta por menu dropdown
+* (x) Botões de redes sociais inseridos na topbar
+* (x) Mode toggle (dark/light) inserido na topbar e no site
+* (x) Fontes alteradas para google font "Source Sans Pro"
+---
+Até aqui:
+[v. 0.3, de 30/09/2025]
+--
+
+......................................................................................................................
+

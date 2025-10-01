@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-991b1886d3c685c7aa2b62b80640c7af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,197 +72,109 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 <!-- Header include (EcoHub) -->
 
+<!-- Menu dropdown nativo do Quarto - sem JavaScript customizado necessário -->
+
+
+
+<!-- Google Fonts - Source Sans Pro -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;display=swap" rel="stylesheet">
+
+
+
 <script>
 
-  (function () {
+// Dark mode toggle functionality
 
-    const log = (...a) => console.debug("[EcoHub]", ...a);
+(function() {
 
-    const qs  = (sel, root=document) => root.querySelector(sel);
+  function initDarkModeToggle() {
 
+    // Encontra o botão de dark mode
 
+    const darkModeBtn = document.querySelector('a[aria-label="Toggle dark mode"]');
 
-    // 1) Garante que a gaveta exista (cria se faltar)
+    if (!darkModeBtn) return;
 
-    function ensureDrawerDOM() {
+    
 
-      let drawer  = qs('#drawer');
+    // Verifica preferência salva ou do sistema
 
-      let overlay = qs('#drawer-overlay');
+    const savedTheme = localStorage.getItem('ecohub-theme');
 
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
 
-      if (!drawer) {
+    
 
-        drawer = document.createElement('aside');
+    // Aplica tema inicial
 
-        drawer.id = 'drawer';
+    if (isDark) {
 
-        drawer.className = 'drawer';
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
 
-        drawer.setAttribute('aria-label', 'Menu lateral');
-
-        drawer.setAttribute('aria-hidden', 'true');
-
-        drawer.innerHTML = `
-
-          <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #e5e7eb;">
-
-            <strong>Menu EcoHub</strong>
-
-            <button id="drawer-close" aria-label="Fechar menu lateral" style="font-size:20px;line-height:1;border:0;background:none;cursor:pointer">✕</button>
-
-          </div>
-
-          <nav style="padding:16px 20px">
-
-            <ul class="drawer-menu">
-
-              <li><a href="#" class="menu-link">🌱 Cursos</a></li>
-
-              <li><a href="#" class="menu-link">📦 Pacotes (R / Python)</a></li>
-
-              <li><a href="#" class="menu-link">📊 Dashboards</a></li>
-
-              <li><a href="#" class="menu-link">🛰️ Dados Geoespaciais</a></li>
-
-              <li><a href="#" class="menu-link">🧪 Laboratório EcoHub</a></li>
-
-              <li><a href="#" class="menu-link">⚙️ Configurações</a></li>
-
-            </ul>
-
-          </nav>`;
-
-        document.body.appendChild(drawer);
-
-      }
-
-
-
-      if (!overlay) {
-
-        overlay = document.createElement('div');
-
-        overlay.id = 'drawer-overlay';
-
-        overlay.className = 'drawer-overlay';
-
-        overlay.setAttribute('aria-hidden', 'true');
-
-        document.body.appendChild(overlay);
-
-      }
-
-      return { drawer, overlay };
+      updateIcon(darkModeBtn, true);
 
     }
 
+    
 
+    // Adiciona evento de clique
 
-    // 2) Ações do drawer
+    darkModeBtn.addEventListener('click', function(e) {
 
-    function openDrawer() {
+      e.preventDefault();
 
-      const { drawer, overlay } = ensureDrawerDOM();
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
 
-      drawer.classList.add('open');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-      drawer.setAttribute('aria-hidden', 'false');
+      
 
-      overlay.classList.add('show');
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
 
-      overlay.setAttribute('aria-hidden', 'false');
+      localStorage.setItem('ecohub-theme', newTheme);
 
-    }
-
-    function closeDrawer() {
-
-      const drawer  = qs('#drawer');
-
-      const overlay = qs('#drawer-overlay');
-
-      if (!drawer || !overlay) return;
-
-      drawer.classList.remove('open');
-
-      drawer.setAttribute('aria-hidden', 'true');
-
-      overlay.classList.remove('show');
-
-      overlay.setAttribute('aria-hidden', 'true');
-
-    }
-
-
-
-    // Expor para testes no console
-
-    window.__eco_openDrawer  = openDrawer;
-
-    window.__eco_closeDrawer = closeDrawer;
-
-
-
-    // 3) Intercepta o clique no sanduíche (capturing) e abre a gaveta
-
-    const TRIGGER = ".quarto-navbar-tools a[aria-label='Menu'], .quarto-navbar-tools i.bi.bi-list, .quarto-navbar-tools .quarto-navigation-tool";
-
-    document.addEventListener('click', function (e) {
-
-      const t = e.target.closest(TRIGGER);
-
-      if (!t) return;
-
-      e.preventDefault(); e.stopPropagation();
-
-      const a = t.closest('a');
-
-      if (a) { a.setAttribute('href', 'javascript:void(0)'); a.setAttribute('role','button'); a.style.cursor='pointer'; }
-
-      openDrawer();
-
-    }, true);
-
-
-
-    // 4) Fechar por overlay, X e ESC (delegação)
-
-    document.addEventListener('click', (e) => {
-
-      if (e.target.closest('#drawer-overlay') || e.target.closest('#drawer-close')) {
-
-        e.preventDefault(); closeDrawer();
-
-      }
+      updateIcon(darkModeBtn, newTheme === 'dark');
 
     });
 
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+  }
 
+  
 
+  function updateIcon(btn, isDark) {
 
-    // 5) Garante DOM pronto e cria a estrutura se faltar
+    const icon = btn.querySelector('i');
 
-    function init() {
+    if (icon) {
 
-      ensureDrawerDOM();
-
-      log("header.html carregado e drawer garantido");
-
-    }
-
-    if (document.readyState === 'loading') {
-
-      document.addEventListener('DOMContentLoaded', init);
-
-    } else {
-
-      init();
+      icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon';
 
     }
 
-  })();
+  }
+
+  
+
+  // Inicializa quando DOM estiver pronto
+
+  if (document.readyState === 'loading') {
+
+    document.addEventListener('DOMContentLoaded', initDarkModeToggle);
+
+  } else {
+
+    initDarkModeToggle();
+
+  }
+
+})();
 
 </script>
 
@@ -278,7 +191,8 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/logo.svg" alt="" class="navbar-logo">
+    <img src="../assets/logo.svg" alt="" class="navbar-logo light-content">
+    <img src="../assets/logo.svg" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EcoHub</span>
@@ -308,8 +222,75 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-    <a href="javascript:void(0)" title="" class="quarto-navigation-tool px-1" aria-label="Menu"><i class="bi bi-list"></i></a>
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="javascript:void(0)" title="" class="quarto-navigation-tool px-1" aria-label="Toggle dark mode"><i class="bi bi-moon"></i></a>
+    <a href="https://github.com/fernandovieira1/ambiental_bd_usp" title="" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
+    <a href="mailto:contato@ecohub.com" title="" class="quarto-navigation-tool px-1" aria-label="Enviar e-mail"><i class="bi bi-envelope-at"></i></a>
+    <div class="dropdown">
+      <a href="" title="🖇️" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="🖇️"><i class="bi bi-"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            📚 CURSOS
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            Curso A
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            Curso B
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            Curso C
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            Curso D
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            💻 PACOTES
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            R
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            Python
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            ⚒️ UTILITÁRIOS
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            Site tal
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            Site tal
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="../#">
+            App tal
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -320,56 +301,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-<!-- Overlay -->
-
-<div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
-
-
-
-<!-- Overlay -->
-
-<div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
-
-
-
-<!-- Drawer -->
-
-<aside id="drawer" class="drawer" aria-label="Menu lateral" aria-hidden="true">
-
-  <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #e5e7eb;">
-
-    <strong>Menu EcoHub</strong>
-
-    <button id="drawer-close" aria-label="Fechar menu lateral" style="font-size:20px;line-height:1;border:0;background:none;cursor:pointer">✕</button>
-
-  </div>
-
-
-
-  <nav style="padding:16px 20px">
-
-    <ul class="drawer-menu">
-
-      <li><a href="#" class="menu-link">💡 VOU FAZER DEPOIS</a></li>
-
-      <li><a href="#" class="menu-link">🌱 Cursos</a></li>
-
-      <li><a href="#" class="menu-link">📦 Pacotes (R / Python)</a></li>
-
-      <li><a href="#" class="menu-link">📊 Dashboards</a></li>
-
-      <li><a href="#" class="menu-link">🛰️ Dados Geoespaciais</a></li>
-
-      <li><a href="#" class="menu-link">🧪 Laboratório EcoHub</a></li>
-
-      <li><a href="#" class="menu-link">⚙️ Configurações</a></li>
-
-    </ul>
-
-  </nav>
-
-</aside>
+<main class="content" id="quarto-document-content">
+<!-- Drawer removido - usando menu dropdown nativo do Quarto -->
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -618,13 +551,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -639,7 +573,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/fernandovieira1\.github\.io\/ambiental_bd_usp\/");
+        var filterRegex = new RegExp("https:\/\/github\.com\/anicolella\/anicolella");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
