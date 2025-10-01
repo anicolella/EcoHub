@@ -7,10 +7,10 @@ project:
 
 website:
   title: "EcoHub"
-  site-url: "https://github.com/anicolella/anicolella"
+  site-url: "https://fernandovieira1.github.io/ambiental_bd_usp/"
   favicon: assets/favicon.svg
   search: true
-  repo-url: "https://github.com/anicolella/anicolella"
+  repo-url: "https://github.com/fernandovieira1/ambiental_bd_usp"
   navbar:
     logo: assets/logo.svg
     left:
