@@ -1,5 +1,47 @@
 [
   {
+    "objectID": "suporte.html",
+    "href": "suporte.html",
+    "title": "Suporte",
+    "section": "",
+    "text": "Documentação\nBancos consolidados, metadados e guias de uso (fonte, licença, cobertura, granularidade).\nVer documentação\n\n\nGitHub\nRepositório, issues, versionamento e trilha de auditoria.\nIr para o GitHub\n\n\nGoogle Drive\nMateriais complementares e dados brutos (quando aplicável).\nAbrir Drive"
+  },
+  {
+    "objectID": "projeto.html",
+    "href": "projeto.html",
+    "title": "Projeto",
+    "section": "",
+    "text": "Olá, Projeto"
+  },
+  {
+    "objectID": "equipe.html",
+    "href": "equipe.html",
+    "title": "Equipe",
+    "section": "",
+    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
+  },
+  {
+    "objectID": "components/hero.html",
+    "href": "components/hero.html",
+    "title": "Hero section",
+    "section": "",
+    "text": "Hero section"
+  },
+  {
+    "objectID": "components/footer-links.html",
+    "href": "components/footer-links.html",
+    "title": "EcoHub",
+    "section": "",
+    "text": "Rodap� com links"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Projeto BD Ambiental",
+    "section": "",
+    "text": "AVISOS TEMPORÁRIOS – VERSÃO ALPHA DO SITE\nO CONTEÚDO DO SITE AINDA SERÁ INSERIDO, MAS A ESTRUTURA ATUAL, PARA VALIDAÇÃO E SUGESTÕES, FOI PENSADA DA SEGUINTE FORMA:\n\nPágina clean e intuitiva, com poucos menus/seções.\nMenus diretamente relacionados ao Projeto BD Ambiental foram centralizados na barra superior.\nPáginas auxiliares (indiretamente ligados ao projeto) – cursos, tutoriais, dicas, links externos etc – serão agregadas no menu gaveta (sanduíche), localizado no canto direito da página.\nO botão de pesquisar (ícone de lupa) também está localizado no canto direito da página, ao lado do menu gaveta/sanduíche.\nA ideia é que o site seja interativo, permitindo postagens pelos participantes do projeto sem a necessidade de codificar (a definir e construir isso futuramente).\n\n*Versão atual: 30/09/2025 23:07 PM (f.)\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
+  },
+  {
     "objectID": "sobre.html",
     "href": "sobre.html",
     "title": "Sobre",
@@ -21,45 +63,10 @@
     "text": "Cronograma (Roadmap)\n\nFase 1 — Levantamento & Documentação (metadados, licenças, fontes)\n\nFase 2 — ETL & Padronização (tabelas, séries, shapefiles/rasters)\n\nFase 3 — Análises & Visualizações (exploratórias, econométricas)\n\nFase 4 — Pacotes & Automação (R/Python, pipelines reprodutíveis)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Projeto BD Ambiental",
+    "objectID": "tracker.html",
+    "href": "tracker.html",
+    "title": "Tracker",
     "section": "",
-    "text": "AVISOS TEMPORÁRIOS – VERSÃO ALPHA DO SITE\nO CONTEÚDO DO SITE AINDA SERÁ INSERIDO, MAS A ESTRUTURA ATUAL, PARA VALIDAÇÃO E SUGESTÕES, FOI PENSADA DA SEGUINTE FORMA:\n\nPágina clean e intuitiva, com poucos menus/seções.\nMenus diretamente relacionados ao Projeto BD Ambiental foram centralizados na barra superior.\nPáginas auxiliares (indiretamente ligados ao projeto) – cursos, tutoriais, dicas, links externos etc – serão agregadas no menu gaveta (sanduíche), localizado no canto direito da página.\nO botão de pesquisar (ícone de lupa) também está localizado no canto direito da página, ao lado do menu gaveta/sanduíche.\nA ideia é que o site seja interativo, permitindo postagens pelos participantes do projeto sem a necessidade de codificar (a definir e construir isso futuramente).\n\n*Versão atual: 30/09/2025 23:07 PM (f.)\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
-  },
-  {
-    "objectID": "components/footer-links.html",
-    "href": "components/footer-links.html",
-    "title": "EcoHub",
-    "section": "",
-    "text": "Rodap� com links"
-  },
-  {
-    "objectID": "components/hero.html",
-    "href": "components/hero.html",
-    "title": "Hero section",
-    "section": "",
-    "text": "Hero section"
-  },
-  {
-    "objectID": "equipe.html",
-    "href": "equipe.html",
-    "title": "Equipe",
-    "section": "",
-    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
-  },
-  {
-    "objectID": "projeto.html",
-    "href": "projeto.html",
-    "title": "Projeto",
-    "section": "",
-    "text": "Olá, Projeto"
-  },
-  {
-    "objectID": "suporte.html",
-    "href": "suporte.html",
-    "title": "Suporte",
-    "section": "",
-    "text": "Documentação\nBancos consolidados, metadados e guias de uso (fonte, licença, cobertura, granularidade).\nVer documentação\n\n\nGitHub\nRepositório, issues, versionamento e trilha de auditoria.\nIr para o GitHub\n\n\nGoogle Drive\nMateriais complementares e dados brutos (quando aplicável).\nAbrir Drive"
+    "text": "Registro rápido dos fatos do projeto. Apenas membros autenticados (colaboradores do repositório) podem publicar.\n\n➕ Publicar novo registro\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
