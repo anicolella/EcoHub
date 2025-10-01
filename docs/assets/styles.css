@@ -547,19 +547,24 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   transition: all 0.1s ease !important;
 }
 
-/* Melhora a área clicável do dropdown toggle e alinha com outros itens */
-.navbar-nav .nav-item.dropdown .dropdown-toggle {
-  padding: 8px 16px !important; /* Mesmo padding dos outros nav-links */
+/* Melhora a área clicável do dropdown toggle e força alinhamento */
+#quarto-header .navbar .navbar-nav .nav-item.dropdown .dropdown-toggle {
+  padding: 8px 16px !important;
   position: relative !important;
-  vertical-align: middle !important;
-  line-height: normal !important;
+  vertical-align: baseline !important;
+  line-height: 1.5 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  height: auto !important;
+  margin: 0 !important;
 }
 
-/* Garante alinhamento vertical consistente para todos os nav-links */
-.navbar-nav .nav-link,
-.navbar-nav .dropdown-toggle {
+/* Remove flexbox dos nav-links que pode estar causando problemas */
+#quarto-header .navbar .navbar-nav .nav-link {
   padding: 8px 16px !important;
-  vertical-align: middle !important;
-  display: flex !important;
-  align-items: center !important;
+  vertical-align: baseline !important;
+  line-height: 1.5 !important;
+  display: inline-block !important;
+  height: auto !important;
+  margin: 0 !important;
 }
