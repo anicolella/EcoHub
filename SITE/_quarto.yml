@@ -22,6 +22,10 @@ website:
             href: projeto.qmd
           - text: "Tracker"
             href: tracker.qmd
+          - text: "Commits"
+            href: '#'
+          - text: "Wiki"
+            href: '#'
       - text: Suporte
         href: suporte.qmd
       - text: Equipe
