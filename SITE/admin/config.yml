@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: fernandovieira1/ambiental_bd_usp
+  branch: main
+
+media_folder: "tracker/_media"
+public_folder: "/tracker/_media"
+
+publish_mode: editorial_workflow  # use 'simple' para commit direto
+
+collections:
+  - name: "tracker"
+    label: "Tracker"
+    folder: "tracker"
+    create: true
+    format: "frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Título", name: "title", widget: "string", required: true }
+      - label: "Tipo"
+        name: "categories"
+        widget: "select"
+        options: ["Reunião", "Aviso", "Sugestão", "Crítica"]
+        required: true
+      - { label: "Resumo (opcional)", name: "description", widget: "string", required: false }
+      - label: "Texto (máx. 500)"
+        name: "body"
+        widget: "markdown"
+        hint: "Markdown: **negrito**, _itálico_, listas, tabelas, imagens. Sublinhado via <u>…</u>."
+        pattern:
+          - "^[\\s\\S]{0,500}$"
+          - "No máximo 500 caracteres."
+        required: true
+      - { label: "Data", name: "date", widget: "datetime", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ", required: true }

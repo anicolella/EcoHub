@@ -1,0 +1,14 @@
+---
+title: "Tracker"
+listing:
+  contents: "tracker"          # lista os .md em SITE/tracker/
+  sort: "date desc"
+  type: default
+  categories: true
+  fields: [title, date, categories, description]
+page-layout: article
+---
+
+> Registro rápido dos fatos do projeto. Apenas membros autenticados (colaboradores do repositório) podem publicar.
+
+[➕ Publicar novo registro](/admin/#/collections/tracker/new)

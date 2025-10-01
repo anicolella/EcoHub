@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: ../docs
+  resources:
+    - "admin/**"
+    - "tracker/_media/**"
 
 website:
   title: "EcoHub"
@@ -13,8 +16,12 @@ website:
     left:
       - text: Início
         href: index.qmd
-      - text: Projeto
-        href: projeto.qmd
+      - text: "Projeto"
+        menu:
+          - text: "Visão Geral"
+            href: projeto.qmd
+          - text: "Tracker"
+            href: tracker.qmd
       - text: Suporte
         href: suporte.qmd
       - text: Equipe
