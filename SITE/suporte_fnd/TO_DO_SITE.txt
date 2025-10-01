@@ -82,5 +82,24 @@ Até aqui:
 [v. 0.3, de 30/09/2025]
 --
 
+
+------Ajustes------
+* ( ) Distância do conteúdo para a topbar em dropdown-menu
+* ( ) Ícone do e-mail sem @
+* ( ) Formatar o rodapé
+* ( ) Aumentar a largura de conteúdo das páginas
+* ( ) Modo dark menos escuro
+* ( ) Verificar site em celular
+
+------Novidades----
+* ( ) Estrutura menus e páginas "Cursos" (estilo quarto.org)
+* ( ) Estrutura menus e páginas "Geral"
+* ( ) Integração com commits do GitHub
+* ( ) Links para Google Drive
+---
+Até aqui:
+[v. 0.4, de xx/09/2025]
+--
+
 ......................................................................................................................
 
