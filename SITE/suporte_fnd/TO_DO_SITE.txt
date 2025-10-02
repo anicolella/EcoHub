@@ -1,6 +1,6 @@
 
 *************************************
-        SITE PROJETO ECOHUB
+        SITE PROJETO EcoHub
 *************************************
 
 * Dividir o registro histórico das tarefas (bullets) em: 
