@@ -1,51 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/suporte.html</loc>
-    <lastmod>2025-09-21T02:28:18.132Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/suporte.html</loc>
+    <lastmod>2025-10-02T14:05:22.934Z</lastmod>
   </url>
   <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/projeto.html</loc>
-    <lastmod>2025-10-01T05:45:28.157Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/projeto.html</loc>
+    <lastmod>2025-10-02T14:05:22.925Z</lastmod>
   </url>
   <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/pipelines/etl_shapefile.html</loc>
-    <lastmod>2025-09-21T02:28:18.132Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/pipelines/etl_shapefile.html</loc>
+    <lastmod>2025-10-02T14:05:22.920Z</lastmod>
   </url>
   <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/equipe.html</loc>
-    <lastmod>2025-09-21T02:28:18.132Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/equipe.html</loc>
+    <lastmod>2025-10-02T14:05:22.908Z</lastmod>
   </url>
   <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/components/hero.html</loc>
-    <lastmod>2025-09-21T02:28:18.132Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/components/hero.html</loc>
+    <lastmod>2025-10-02T14:05:22.905Z</lastmod>
   </url>
   <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/analysis/casos/amazonia.html</loc>
-    <lastmod>2025-09-21T02:28:18.128Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/analysis/casos/amazonia.html</loc>
+    <lastmod>2025-10-02T14:05:22.852Z</lastmod>
   </url>
   <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/analysis/casos/mt.html</loc>
-    <lastmod>2025-09-21T02:28:18.128Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/analysis/casos/mt.html</loc>
+    <lastmod>2025-10-02T14:05:22.856Z</lastmod>
   </url>
   <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/components/footer-links.html</loc>
-    <lastmod>2025-09-21T02:28:18.132Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/index.html</loc>
-    <lastmod>2025-10-01T02:07:50.408Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/sobre.html</loc>
-    <lastmod>2025-09-21T02:28:18.132Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fernandovieira1.github.io/ambiental_bd_usp/tracker.html</loc>
-    <lastmod>2025-10-01T17:16:37.096Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/components/footer-links.html</loc>
+    <lastmod>2025-10-02T14:05:22.902Z</lastmod>
   </url>
   <url>
     <loc>https://anicolella.github.io/EcoHub/index.html</loc>
     <lastmod>2025-10-02T14:05:22.911Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/sobre.html</loc>
+    <lastmod>2025-10-02T14:05:22.926Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/tracker.html</loc>
+    <lastmod>2025-10-02T14:05:22.940Z</lastmod>
   </url>
 </urlset>
