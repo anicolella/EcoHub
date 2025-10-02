@@ -68,18 +68,3 @@ Essa pasta é o espaço de **trabalho ativo** (prototipagem, testes, ETL, análi
 Já os resultados validados (relatórios, análises, documentação) são integrados ao **site Quarto**, gerado a partir dos arquivos `.qmd` na pasta `SITE/`.
 
 ☢️IMPORTANTE: Poderão ser manipulados apenas as astas e arquivos em MAIÚSCULAS constantes na raiz, ou seja, todo o conteúdo das pastas `SCRIPTS/`, `SITE/` e do arquivo `README.md/`. Os outros arquivos e pastas não são passíveis de sair da raiz por exigências de configuração do github, logo, devem ser ignorados.
-
-------------------------------------------------------------------------
-
-## 🌐 Site do Projeto
-
-O site é renderizado via **Quarto** e publicado automaticamente pelo **GitHub Pages**.
-
-📍 Endereço online:
-👉 <https://fernandovieira1.github.io/ambiental_bd_usp/>
-
-Para visualizar localmente:
-
-```bash
-quarto render 
-quarto preview
