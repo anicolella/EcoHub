@@ -1,0 +1,43 @@
+name: Deploy EcoHub Site
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'SITE/**'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        version: pre-release
+        
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc
+        
+    - name: Render Quarto site
+      run: |
+        cd SITE
+        quarto render
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+        force_orphan: true
+        
+    - name: Notify completion
+      run: |
+        echo "✅ Site deployed successfully!"
+        echo "📝 New tracker entries are now live at https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"

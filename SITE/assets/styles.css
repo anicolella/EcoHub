@@ -33,6 +33,77 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, li, td, th {
 }
 
 /* =========================
+   MODO ESCURO - Estilos Globais
+   ========================= */
+
+/* Fundo e texto principal do modo escuro */
+html[data-bs-theme="dark"] body {
+  background-color: #383A3D !important;
+  color: #e9ecef !important;
+}
+
+/* Títulos no modo escuro */
+html[data-bs-theme="dark"] h1,
+html[data-bs-theme="dark"] h2,
+html[data-bs-theme="dark"] h3,
+html[data-bs-theme="dark"] h4,
+html[data-bs-theme="dark"] h5,
+html[data-bs-theme="dark"] h6 {
+  color: #f8f9fa !important;
+}
+
+/* Parágrafos e textos no modo escuro */
+html[data-bs-theme="dark"] p,
+html[data-bs-theme="dark"] div,
+html[data-bs-theme="dark"] span:not(.navbar *):not(.dropdown *):not(.nav-footer *) {
+  color: #e9ecef !important;
+}
+
+/* Cards no modo escuro */
+html[data-bs-theme="dark"] .card {
+  background-color: #495057 !important;
+  border-color: #6c757d !important;
+  color: #f8f9fa !important;
+}
+
+/* Conteúdo principal no modo escuro */
+html[data-bs-theme="dark"] main,
+html[data-bs-theme="dark"] .content,
+html[data-bs-theme="dark"] #quarto-document-content {
+  background-color: #383A3D !important;
+  color: #e9ecef !important;
+}
+
+/* Container principal no modo escuro */
+html[data-bs-theme="dark"] .quarto-container {
+  background-color: #383A3D !important;
+}
+
+/* Links no modo escuro */
+html[data-bs-theme="dark"] a:not(.navbar *):not(.dropdown *):not(.btn *) {
+  color: #6EA8FE !important;
+}
+
+html[data-bs-theme="dark"] a:not(.navbar *):not(.dropdown *):not(.btn *):hover {
+  color: #9EC5FE !important;
+}
+
+/* Listas no modo escuro */
+html[data-bs-theme="dark"] ul,
+html[data-bs-theme="dark"] ol,
+html[data-bs-theme="dark"] li {
+  color: #e9ecef !important;
+}
+
+/* Elementos com texto que podem estar aparecendo em branco */
+html[data-bs-theme="dark"] .quarto-title-block,
+html[data-bs-theme="dark"] .quarto-title,
+html[data-bs-theme="dark"] .content-block,
+html[data-bs-theme="dark"] .page-columns {
+  color: #e9ecef !important;
+}
+
+/* =========================
    TOPBAR (navbar / headroom)
    ========================= */
 
@@ -294,7 +365,7 @@ html:not([data-bs-theme]) .quarto-navbar-tools .dropdown-menu {
   
   /* Posicionamento correto */
   position: absolute !important;
-  top: calc(100% + 5px) !important;  /* 5px abaixo da topbar */
+  top: calc(100% + 15px) !important;  /* 15px abaixo da topbar para igualar o espaçamento do conteúdo */
   right: 0 !important;               /* Alinhado à direita do botão */
   left: auto !important;             /* Remove alinhamento à esquerda */
   transform: translateX(0) !important;
@@ -324,7 +395,7 @@ html[data-bs-theme="dark"] .quarto-navbar-tools .dropdown-menu {
   
   /* Posicionamento correto */
   position: absolute !important;
-  top: calc(100% + 5px) !important;  /* 5px abaixo da topbar */
+  top: calc(100% + 15px) !important;  /* 15px abaixo da topbar para igualar o espaçamento do conteúdo */
   right: 0 !important;               /* Alinhado à direita do botão */
   left: auto !important;             /* Remove alinhamento à esquerda */
   transform: translateX(0) !important;
@@ -421,6 +492,21 @@ html[data-bs-theme="dark"] .quarto-navbar-tools .dropdown-menu {
 .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.06); }
 
 footer .center { text-align: center; color: #6b7280; }
+
+/* =========================
+   Navfooter / Rodapé
+   ========================= */
+
+/* Navfooter Light Mode (padrão) */
+html[data-bs-theme="light"] .nav-footer,
+html:not([data-bs-theme]) .nav-footer {
+  background-color: #E8E8E8 !important;
+}
+
+/* Navfooter Dark Mode */
+html[data-bs-theme="dark"] .nav-footer {
+  background-color: #CAC9C9 !important;
+}
 
 /* hero antigo fora */
 .hero { display: none; }

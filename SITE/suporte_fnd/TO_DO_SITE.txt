@@ -124,10 +124,16 @@ Até aqui:
 
 ******************************************************
 ------Ajustes------
-* ( ) Distância do conteúdo para a topbar em dropdown-menu
-* ( ) Ícone do e-mail sem @
-* ( ) Formatar o rodapé
-* ( ) Aumentar a largura de conteúdo das páginas
+* (x) Distância barras dropdown-menu para o topo ajustadas
+* (x) Formatar o rodapé - cores light e dark ajustadas
+* (x) Tema dark 
+---
+Até aqui:
+[v. 0.7, de 02/10/2025]
+--
+
+******************************************************
+------Ajustes------
 * ( ) Modo dark menos escuro
 * ( ) Verificar site em celular
 * ( ) Links redes sociais abrir em nova aba

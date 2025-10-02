@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Nova Entrada - Tracker EcoHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/styles.css" rel="stylesheet">
+    <style>
+        .tracker-form {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #0ca278;
+            box-shadow: 0 0 0 0.2rem rgba(12, 162, 120, 0.25);
+        }
+        
+        #conteudo {
+            min-height: 200px;
+            resize: vertical;
+        }
+        
+        .btn-publicar {
+            background: linear-gradient(140deg, #0ca278 0%, #065f46 100%);
+            border: none;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-publicar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(12, 162, 120, 0.3);
+            color: white;
+        }
+        
+        .auth-section {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-github {
+            background: #24292e;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-github:hover {
+            background: #1a1e22;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .user-info {
+            background: #d4edda;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .alert {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Seção de Autenticação -->
+        <div id="auth-section" class="auth-section">
+            <h2 class="mb-3">🔐 Acesso Restrito</h2>
+            <p class="mb-4">Este formulário é exclusivo para colaboradores do projeto EcoHub no GitHub.</p>
+            <a href="#" id="github-login" class="btn-github">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                Entrar com GitHub
+            </a>
+        </div>
+
+        <!-- Seção do Usuário (oculta inicialmente) -->
+        <div id="user-section" class="user-info" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>Logado como:</strong> <span id="user-name"></span> (<span id="user-login"></span>)
+                </div>
+                <button id="logout" class="btn btn-sm btn-outline-secondary">Sair</button>
+            </div>
+        </div>
+
+        <!-- Formulário (oculto inicialmente) -->
+        <div id="tracker-form" class="tracker-form" style="display: none;">
+            <h2 class="mb-4">📝 Nova Entrada do Tracker</h2>
+            
+            <form id="entryForm">
+                <!-- Campo Tipo -->
+                <div class="mb-3">
+                    <label for="tipo" class="form-label">Tipo *</label>
+                    <select class="form-select" id="tipo" required>
+                        <option value="">Selecione o tipo de entrada</option>
+                        <option value="reuniao-operacional">Reunião operacional</option>
+                        <option value="reuniao-coordenador">Reunião coordenador do projeto e equipe</option>
+                        <option value="aviso">Aviso</option>
+                        <option value="sugestao">Sugestão</option>
+                    </select>
+                </div>
+
+                <!-- Campo Título -->
+                <div class="mb-3">
+                    <label for="titulo" class="form-label">Título *</label>
+                    <input type="text" class="form-control" id="titulo" required 
+                           placeholder="Digite o título da entrada" maxlength="100">
+                    <div class="form-text">Máximo 100 caracteres</div>
+                </div>
+
+                <!-- Campo Conteúdo -->
+                <div class="mb-4">
+                    <label for="conteudo" class="form-label">Conteúdo *</label>
+                    <textarea class="form-control" id="conteudo" required 
+                              placeholder="Digite o conteúdo da entrada. Você pode usar Markdown para formatação."></textarea>
+                    <div class="form-text">
+                        Você pode usar <strong>Markdown</strong> para formatação: **negrito**, *itálico*, 
+                        - listas, ## títulos, etc.
+                    </div>
+                </div>
+
+                <!-- Botão Publicar -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-publicar">
+                        📤 Publicar Entrada
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Carregando...</span>
+            </div>
+            <p class="mt-2">Processando entrada...</p>
+        </div>
+
+        <!-- Mensagens -->
+        <div id="messages"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="tracker-auth.js"></script>
+</body>
+</html>

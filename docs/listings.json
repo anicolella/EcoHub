@@ -1,6 +1,8 @@
 [
   {
     "listing": "/tracker.html",
-    "items": []
+    "items": [
+      "/tracker/configuracao-inicial.html"
+    ]
   }
 ]
