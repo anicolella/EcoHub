@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://anicolella.github.io/EcoHub/suporte.html</loc>
-    <lastmod>2025-10-02T14:05:22.934Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anicolella.github.io/EcoHub/projeto.html</loc>
-    <lastmod>2025-10-02T14:05:22.925Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anicolella.github.io/EcoHub/pipelines/etl_shapefile.html</loc>
-    <lastmod>2025-10-02T14:05:22.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anicolella.github.io/EcoHub/equipe.html</loc>
-    <lastmod>2025-10-02T14:05:22.908Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anicolella.github.io/EcoHub/components/hero.html</loc>
-    <lastmod>2025-10-02T14:05:22.905Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anicolella.github.io/EcoHub/analysis/casos/amazonia.html</loc>
-    <lastmod>2025-10-02T14:05:22.852Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anicolella.github.io/EcoHub/analysis/casos/mt.html</loc>
-    <lastmod>2025-10-02T14:05:22.856Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anicolella.github.io/EcoHub/components/footer-links.html</loc>
-    <lastmod>2025-10-02T14:05:22.902Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anicolella.github.io/EcoHub/index.html</loc>
-    <lastmod>2025-10-02T14:05:22.911Z</lastmod>
+    <loc>https://anicolella.github.io/EcoHub/tracker/configuracao-inicial.html</loc>
+    <lastmod>2025-10-02T23:01:20.108Z</lastmod>
   </url>
   <url>
     <loc>https://anicolella.github.io/EcoHub/sobre.html</loc>
-    <lastmod>2025-10-02T14:05:22.926Z</lastmod>
+    <lastmod>2025-10-02T21:58:12.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/index.html</loc>
+    <lastmod>2025-10-02T21:58:12.109Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/components/footer-links.html</loc>
+    <lastmod>2025-10-02T21:58:12.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/analysis/casos/mt.html</loc>
+    <lastmod>2025-10-02T21:58:12.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/analysis/casos/amazonia.html</loc>
+    <lastmod>2025-10-02T21:58:12.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/components/hero.html</loc>
+    <lastmod>2025-10-02T21:58:12.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/equipe.html</loc>
+    <lastmod>2025-10-02T21:58:12.109Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/pipelines/etl_shapefile.html</loc>
+    <lastmod>2025-10-02T21:58:12.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/projeto.html</loc>
+    <lastmod>2025-10-02T21:58:12.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anicolella.github.io/EcoHub/suporte.html</loc>
+    <lastmod>2025-10-02T21:58:12.114Z</lastmod>
   </url>
   <url>
     <loc>https://anicolella.github.io/EcoHub/tracker.html</loc>
-    <lastmod>2025-10-02T14:05:22.940Z</lastmod>
+    <lastmod>2025-10-02T23:43:45.462Z</lastmod>
   </url>
 </urlset>
