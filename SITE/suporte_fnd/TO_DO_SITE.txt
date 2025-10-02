@@ -116,6 +116,14 @@ Até aqui:
 
 ******************************************************
 ------Ajustes------
+* (x) Transferência Git Prof. Nicolella
+---
+Até aqui:
+[v. 0.6, de 02/10/2025]
+--
+
+******************************************************
+------Ajustes------
 * ( ) Distância do conteúdo para a topbar em dropdown-menu
 * ( ) Ícone do e-mail sem @
 * ( ) Formatar o rodapé
