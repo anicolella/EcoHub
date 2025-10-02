@@ -12,7 +12,7 @@ Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisa
 
 ## 🌐 Site do Projeto
 
-**EcoHub**: https://fernandovieira1.github.io/ambiental_bd_usp/
+**EcoHub**: https://anicolella.github.io/EcoHub/
 
 O site contém documentação, tracker do projeto, análises e visualizações desenvolvidas pela equipe.
 
