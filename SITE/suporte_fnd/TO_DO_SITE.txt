@@ -140,6 +140,7 @@ Até aqui:
 * ( ) Escrever nos menus o que cada um deve conter para inserir depois
 * ( ) Publicar no Github Pages
 ------Novidades----
+* ( ) Configurar OAuth para ativar formulário tracker completamente
 * ( ) Estrutura menus e páginas "Cursos" (estilo quarto.org)
 * ( ) Estrutura menus e páginas "Geral"
 * ( ) Integração com commits do GitHub
