@@ -20,6 +20,7 @@ remotes::install_github("curso-r/munifacil")
 library(munifacil)
 
 # Passo 1: Criar a tabela de conversão
+# Tem um problema entre a localização no df do DF e Goiás. Aparentemente, o MRT não bate com o espaço df do software
 tabela_uf <- tibble::tribble(
   ~codigo_ibge, ~UF,
   11, "RO", 12, "AC", 13, "AM", 14, "RR", 15, "PA", 16, "AP",
@@ -51,10 +52,16 @@ base_colunas_limpas <- df_novo2 %>%
 resultado <- base_colunas_limpas %>% 
   incluir_codigo_ibge()
 
-new_23 <- resultado |> filter(is.na(resultado$id_municipio)) |> unique(new_23$origem)
+new13 <- resultado |> filter(is.na(resultado$id_municipio))
 
-valores_unicos <- new_23 %>%
-  distinct(origem) %>%
-  pull()
+valores_unicos <- new13 %>%
+  distinct(origem, UF, df, mrt, ano)
+
+
+valores_unicos2 <- base_colunas_limpas %>%
+  distinct(origem)
+
+valores_unicos <- new13 %>%
+  distinct(origem)
 
 print(valores_unicos)
