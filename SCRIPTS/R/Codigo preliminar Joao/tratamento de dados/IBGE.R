@@ -11,6 +11,8 @@ library(geobr)
 library(dplyr)
 library(purrr)
 library(sf)
+install.packages("fuzzyjoin")
+library(fuzzyjoin)
 
 cat("Bibliotecas carregadas com sucesso.\n")
 
@@ -33,13 +35,24 @@ tabela_uf <- tibble::tribble(
 # Ponto de Atenção: Garanta que a coluna 'estado' seja numérica
 # Se a sua coluna 'estado' for texto ("35"), este comando a converte para número (35)
 # Se já for numérica, não tem problema rodar.
-df_novo2$origem  <- gsub("TO", "Tocantins", df_novo2$origem)
+df_novo2$origem  <- gsub(" TO", " Tocantins", df_novo2$origem)
+
+## Correção nos nomes de cidades: 
+# Lembre-se de substituir "nome_da_sua_coluna_de_cidades" pelo nome real da sua coluna.
+df_novo2$origem <- tolower(df_novo2$origem)
+# A sintaxe é: iconv(sua_coluna, from = "UTF-8", to = "ASCII//TRANSLIT")
+
+# Exemplo aplicado na sua coluna 'origem' dentro de um mutate do dplyr:
+
+df_novo2 <- df_novo2 %>%
+  mutate(origem_sem_acento = iconv(origem, from = "UTF-8", to = "ASCII//TRANSLIT"))
 
 df_novo2 <- df_novo2 %>%
   mutate(origem = str_remove(origem, "^e "))
 
-df_novo2 <- df_novo2 %>%
+df_novot <- df_novot %>%
   mutate(estado = as.numeric(as.character(estado)))
+
 
 # Passo 2: Juntar as tabelas para adicionar a coluna UF
 df_novo2 <- df_novo2 %>%
@@ -48,6 +61,7 @@ df_novo2 <- df_novo2 %>%
 base_colunas_limpas <- df_novo2 %>% 
   limpar_colunas(col_muni = origem,
                  col_uf = UF)
+
 
 resultado <- base_colunas_limpas %>% 
   incluir_codigo_ibge()
@@ -64,4 +78,67 @@ valores_unicos2 <- base_colunas_limpas %>%
 valores_unicos <- new13 %>%
   distinct(origem)
 
-print(valores_unicos)
+
+
+
+# 1. PREPARAR AS BASES DE DADOS
+# -------------------------------------------------------------------
+
+# CARREGAR A TABELA GABARITO (use o operador ::)
+tabela_referencia_munifacil <- munifacil::municipios_brasileiros
+
+# CRIAR UMA CHAVE DE JUNÇÃO PADRONIZADA NO GABARITO
+# A chave será o nome do município em minúsculas e sem acentos.
+tabela_referencia_limpa <- tabela_referencia_munifacil %>%
+  mutate(
+    chave_gabarito = iconv(tolower(muni_join), from = "UTF-8", to = "ASCII//TRANSLIT")
+  )
+
+# CRIAR UMA CHAVE DE JUNÇÃO PADRONIZADA NA SUA BASE DE DADOS
+# Assumindo que sua base 'new13' tem a coluna 'origem' e uma coluna de UF
+# Se sua coluna UF não existir ou tiver outro nome, ajuste aqui.
+new13_limpa <- new13 %>%
+  # Adiciona um ID único para cada linha. ISSO É MUITO IMPORTANTE para agrupar depois.
+  mutate(id_linha_original = row_number()) %>% 
+  mutate(
+    chave_suja = iconv(tolower(origem), from = "UTF-8", to = "ASCII//TRANSLIT")
+  )
+
+cat("Bases de dados preparadas para o fuzzy join.\n")
+
+# 2. EXECUTAR O FUZZY JOIN CORRIGIDO
+# -------------------------------------------------------------------
+# Agora usamos as chaves padronizadas e um max_dist sensato
+resultado_bruto <- stringdist_left_join(
+  new13_limpa,                  # Sua base com a chave_suja
+  tabela_referencia_limpa,      # Gabarito com a chave_gabarito
+  by = c("chave_suja" = "chave_gabarito"), # A correspondência correta
+  method = "jw",
+  max_dist = 0.2,               # <<<<<< CORRIGIDO!
+  distance_col = "distancia"
+)
+
+cat("Fuzzy join concluído. Agora vamos filtrar o melhor resultado.\n")
+
+# 3. FILTRAR O MELHOR MATCH PARA CADA LINHA ORIGINAL
+# -------------------------------------------------------------------
+resultado_final <- resultado_bruto %>%
+  # Agrupa por cada linha original da sua base
+  group_by(id_linha_original) %>%
+  
+  # Seleciona apenas a correspondência com a MENOR distância (o melhor match)
+  slice_min(order_by = distancia, n = 1, with_ties = FALSE) %>%
+  
+  # Desagrupa para continuar o trabalho
+  ungroup()
+
+# 4. VERIFICAR O RESULTADO
+# -------------------------------------------------------------------
+cat("\n--- Amostra do Resultado Final (Melhor Match) ---\n")
+print(head(resultado_final))
+
+# Verifique se ainda sobrou alguma linha que não deu match
+falhas <- resultado_final %>%
+  filter(is.na(nome_municipio)) # nome_municipio vem do gabarito
+
+cat("\nNúmero de linhas que não encontraram correspondência:", nrow(falhas), "\n")
