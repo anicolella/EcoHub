@@ -50,7 +50,7 @@ AMMRTSul_Amazonense_2016 <- data.frame(
   vtn_media = c(766.57, 712.32, 786.85, 832.82, 712.32, 773.65, 832.82, 773.65, 811.46, 748.92),
   vtn_minimo = c(651.58, 605.37, 668.82, 707.90, 605.52, 657.60, 707.90, 657.60, 689.74, 636.58),
   vtn_maximo = c(881.56, 819.23, 904.87, 957.74, 819.23, 889.69, 957.74, 889.69, 933.18, 861.25),
-  origem = "Apuí, Beruri, Boca do Acre, Canutama,Careiro, Humaitá, Lábrea, Manicoré,Novo Aripuanã e Tapauá"
+  origem = "Apuí, Beruri, Boca do Acre, Canutama,Careiro, Humaitá, Lábrea, Manicoré, Novo Aripuanã e Tapauá"
 )
 ##2023####
 AMMRT3_2023 <- data.frame(
@@ -63,7 +63,7 @@ AMMRT3_2023 <- data.frame(
   vtn_media = c(5697.59, 5768.64, 1819.16, 5768.64, 1218.62),
   vtn_minimo = c(4842.95, 4903.35, 1546.29, 4903.35, 1035.83),
   vtn_maximo = c(6552.23, 6633.94, 2092.04, 6633.94, 1401.42),
-  origem = "Apuí, Beruri, Boca do Acre, Canutama, Humaitá, Lábrea, Manicoré,Novo Aripuanã e Tapauá"
+  origem = "Apuí, Beruri, Boca do Acre, Canutama, Humaitá, Lábrea, Manicoré, Novo Aripuanã e Tapauá"
 )
 
 ## 4.3 MRT: Iranduba ####
@@ -106,7 +106,7 @@ AMMRTCentro_Leste_Amazonense_2016 <- data.frame(
   vtn_media = c(1064.86, 1020.38, 1119.22, 974.65, 1119.22, 995.82, 1123.51, 1093.21),
   vtn_minimo = c(905.13, 867.33, 951.34, 828.45, 951.34, 846.44, 954.98, 929.23),
   vtn_maximo = c(1224.59, 1173.45, 1287.11, 1120.84, 1287.11, 1145.19, 1292.03, 1257.19),
-  origem = "Anamã, Anori, Autazes, Barcelos, Barreirinha, Boa Vista dos Ramos, Borba, Caapiranga, Careiro da Várzea, Coari, Codajás, Itapiranga, Manacapuru, Manaquiri, Manués, Nhamundá, Nova Olinda do Norte, Novo Airão, Parintíns, Rio Preto da Eva, São Sebastião do Uatumã, Tefé,Urucará e Urucurituba"
+  origem = "Anamã, Anori, Autazes, Barcelos, Barreirinha, Boa Vista dos Ramos, Borba, Caapiranga, Careiro da Várzea, Coari, Codajás, Itapiranga, Manacapuru, Manaquiri, Manués, Nhamundá, Nova Olinda do Norte, Novo Airão, Parintíns, Rio Preto da Eva, São Sebastião do Uatumã, Tefé, Urucará e Urucurituba"
 )
 ## 2023 ####
 AMMRT2_2023 <- data.frame(
@@ -119,7 +119,7 @@ AMMRT2_2023 <- data.frame(
   vtn_media = c(4539.32, 9052.35, 3258.33, 5333.61, 5796.07, 9052.35, 1830.56, 5412.98),
   vtn_minimo = c(3858.42, 7694.50, 2769.58, 4533.57, 5026.48, 7694.50, 1555.97, 4601.03),
   vtn_maximo = c(5220.22, 10410.20, 3747.08, 6133.65, 6800.54, 10410.20, 2105.14, 6224.92),
-  origem = "Anamã, Anori, Autazes, Barcelos, Barreirinha, Boa Vista dos Ramos, Borba,Caapiranga, Careiro, Careiro da Várzea, Coari, Codajás, Itapiranga, Maués,Manaquiri,Nhamundá, Nova Olinda do Norte, Novo Airão, Parintins,São Sebastião do Uatumã, Silves, Tefé, Urucará e Urucurituba"
+  origem = "Anamã, Anori, Autazes, Barcelos, Barreirinha, Boa Vista dos Ramos, Borba,Caapiranga, Careiro, Careiro da Várzea, Coari, Codajás, Itapiranga, Maués,Manaquiri, Nhamundá, Nova Olinda do Norte, Novo Airão, Parintins,São Sebastião do Uatumã, Silves, Tefé, Urucará e Urucurituba"
 )
 
 ## 4.5 MRT OESTE AMAZONENSE####
@@ -151,5 +151,4 @@ AM23 <- rbind(AMMRT1_2023, AMMRT2_2023, AMMRT3_2023, AMMRT4_2023)
 AM23$ano <- 2023
 AM16$ano <- 2016
 AMTEMPORAL <- rbind(AM23, AM16)
-AMTEMPORAL$estado <- 13
 AMTEMPORAL$regiao <- "Norte"

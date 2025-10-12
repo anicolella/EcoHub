@@ -579,5 +579,6 @@ GO17$ano <- 2017
 GO22$ano <- 2022
 GO24$ano <- 2024
 GOTEMPORAL <- rbind(GO24, GO22, GO17)
+
 GOTEMPORAL$estado <- 52
 GOTEMPORAL$regiao <- "Centro-Oeste"

@@ -32,6 +32,8 @@ tabela_uf <- tibble::tribble(
   51, "MT", 52, "GO", 53, "DF"
 )
 
+
+
 # Ponto de Atenção: Garanta que a coluna 'estado' seja numérica
 # Se a sua coluna 'estado' for texto ("35"), este comando a converte para número (35)
 # Se já for numérica, não tem problema rodar.
@@ -53,10 +55,10 @@ df_novo2 <- df_novo2 %>%
 df_novot <- df_novot %>%
   mutate(estado = as.numeric(as.character(estado)))
 
-
-# Passo 2: Juntar as tabelas para adicionar a coluna UF
 df_novo2 <- df_novo2 %>%
   left_join(tabela_uf, by = c("estado" = "codigo_ibge"))
+
+dep <- df_novo2 |> filter(is.na(df_novo2$UF))
 
 base_colunas_limpas <- df_novo2 %>% 
   limpar_colunas(col_muni = origem,
@@ -85,7 +87,7 @@ valores_unicos <- new13 %>%
 # -------------------------------------------------------------------
 
 # CARREGAR A TABELA GABARITO (use o operador ::)
-tabela_referencia_munifacil <- munifacil::municipios_brasileiros
+tabela_referencia_munifacil <- munifacil::depara_muni_codigo()
 
 # CRIAR UMA CHAVE DE JUNÇÃO PADRONIZADA NO GABARITO
 # A chave será o nome do município em minúsculas e sem acentos.

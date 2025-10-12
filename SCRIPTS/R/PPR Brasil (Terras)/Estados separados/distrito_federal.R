@@ -332,7 +332,7 @@ DFMRT7_2017 <- data.frame(
   vtn_media = c(873.33, 873.33, 873.33, 869.74, 1096.81),
   vtn_minimo = c(699.99, 699.99, 699.99, 686.00, 692.35),
   vtn_maximo = c(1046.67, 1046.67, 1046.67, 1053.49, 1501.28),
-  origem = "Alto Paraíso de Goiás, Cavalcante, Colinas do Sul, e Teresina de Goiás."
+  origem = "Alto Paraíso de Goiás, Cavalcante, Colinas do Sul, Teresina de Goiás."
 )
 ## 2020 ####
 DFMRT7_2020 <- data.frame(
@@ -345,7 +345,7 @@ DFMRT7_2020 <- data.frame(
   vtn_media = c(3233.93, 1840.77, 3568.21, 1840.77, 2496.08, 4044.71, 3584.81, 4427.11),
   vtn_minimo = c(2587.14, 1564.65, 2854.57, 1564.65, 1996.87, 3235.77, 2867.85, 3541.69),
   vtn_maximo = c(3880.71, 2116.88, 4281.85, 2116.88, 2995.30, 4853.65, 4301.78, 5312.54),
-  origem = "Alto Paraíso de Goiás, Cavalcante, Colinas do Sul, e Teresina de Goiás."
+  origem = "Alto Paraíso de Goiás, Cavalcante, Colinas do Sul, Teresina de Goiás."
 )
 ## 2021 ####
 DFMRT7_2021 <- data.frame(
@@ -369,7 +369,7 @@ DFMRT7_2021 <- data.frame(
   
   vtn_maximo = c(4053.73, 2243.36, 4670.95, 2243.36, 2995.86, 
                  5089.73, 2243.36, 4416.62, 5164.38),
-  origem = "Alto Paraíso de Goiás, Cavalcante, Colinas do Sul, e Teresina de Goiás."
+  origem = "Alto Paraíso de Goiás, Cavalcante, Colinas do Sul, Teresina de Goiás."
 )
 
 
@@ -417,7 +417,7 @@ DFMRT8_2020 <- data.frame(
   vtn_maximo = c(21032.82, 17253.05, 21654.16, 24214.75, 15366.40,
                  20896.63, 21654.16, 24214.75, 15366.40, 20896.63, 
                  21654.16, 24214.75),
-  origem = "Distrito Federal, Novo Gama, Valparaíso de Goiás, e Águas Lindas de Goiás."
+  origem = "Distrito Federal, Novo Gama, Valparaíso de Goiás, Águas Lindas de Goiás."
 )
 
 ##  2021 ####
@@ -454,7 +454,7 @@ DFMRT8_2021 <- data.frame(
                  14695.06, 39095.07, 46588.28, 35992.09, 71568.06,
                  104075.10, 14695.06, 39095.07, 46588.28, 35992.09, 
                  71568.06, 104075.10),
-  origem = "Distrito Federal, Novo Gama, Valparaíso de Goiás, e Águas Lindas de Goiás."
+  origem = "Distrito Federal, Novo Gama, Valparaíso de Goiás, Águas Lindas de Goiás."
 )
 
 
@@ -473,7 +473,7 @@ DFMRT9_2020 <- data.frame(
   vtn_media = c(1900.53, 1497.31, 1999.09, 1497.31, 1838.16, 3886.07, 2176.27),
   vtn_minimo = c(1520.42, 1197.85, 1599.27, 1197.85, 1470.53, 3108.86, 1741.02),
   vtn_maximo = c(2280.63, 1796.77, 2398.91, 1796.77, 2205.79, 4663.29, 2611.53),
-  origem = "Arinos, Chapada Gaúcha, Pintópolis, Riachinho, Urucuia, e Uruana de Minas."
+  origem = "Arinos, Chapada Gaúcha, Pintópolis, Riachinho, Urucuia, Uruana de Minas."
 )
 
 
@@ -502,7 +502,7 @@ DFMRT9_2021 <- data.frame(
   
   vtn_maximo = c(6762.57, 2707.31, 7157.77, 16030.21, 2707.31, 4929.71,
                  9135.12, 11560.96, 3016.10, 5794.64, 5997.16, 3466.40),
-  origem = "Arinos, Chapada Gaúcha, Pintópolis, Riachinho, Urucuia, e Uruana de Minas."
+  origem = "Arinos, Chapada Gaúcha, Pintópolis, Riachinho, Urucuia, Uruana de Minas."
 )
 
 
@@ -519,7 +519,7 @@ DFMRT10_2020 <- data.frame(
   vtn_media = c(5394.15, 5394.15, 3833.21, 6174.63, 4956.22),
   vtn_minimo = c(4315.32, 4315.32, 3258.23, 4939.70, 3964.98),
   vtn_maximo = c(6472.99, 6472.99, 4408.20, 7409.55, 5947.46),
-  origem = "Bonfinópolis de Minas, Brasilândia de Minas, Dom Bosco, e Natalândia."
+  origem = "Bonfinópolis de Minas, Brasilândia de Minas, Dom Bosco, Natalândia."
 )
 ## 2021 ####
 DFMRT10_2021 <- data.frame(
@@ -532,7 +532,7 @@ DFMRT10_2021 <- data.frame(
   vtn_media = c(5549.21, 5221.03, 30003.75, 5172.77, 7165.86, 5735.97),
   vtn_minimo = c(4439.37, 4176.82, 24003.00, 4138.22, 6090.99, 4671.18),
   vtn_maximo = c(6659.05, 6265.23, 36004.50, 6207.33, 8240.74, 6800.75),
-  origem = "Bonfinópolis de Minas, Brasilândia de Minas, Dom Bosco, e Natalândia."
+  origem = "Bonfinópolis de Minas, Brasilândia de Minas, Dom Bosco, Natalândia."
 )
 
 
@@ -545,5 +545,5 @@ DF2021$ano <- 2021
 DF2020$ano <- 2020
 
 DFTEMPORAL <- rbind(DF2017, DF2020, DF2021)
-DFTEMPORAL$estado <- 53
+DFTEMPORAL$estado <- 52
 DFTEMPORAL$regiao <- "Centro Oeste"

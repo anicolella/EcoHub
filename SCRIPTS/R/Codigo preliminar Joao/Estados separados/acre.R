@@ -10,7 +10,7 @@ ACMRT_Zona1_2016 <- data.frame(
   vtn_media = c(679.26, 351.38, 1364.15),
   vtn_minimo = c(NA, 239.62, 930.28),
   vtn_maximo = c(NA, 463.14, 1798.02),
-  origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves e Mâncio Lima"
+  origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves, Mâncio Lima"
 )
 ##2019####
 ACMRT_01_2019 <- data.frame(
@@ -23,7 +23,7 @@ ACMRT_01_2019 <- data.frame(
   vtn_media = c(NA, NA),
   vtn_minimo = c(NA, NA),
   vtn_maximo = c(NA, NA),
-  origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves e Mâncio Lima"
+  origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves, Mâncio Lima"
 )
 
 ##2021####
@@ -50,7 +50,7 @@ ACMRT1_2021 <- data.frame(
   vtn_media = c(2037.42, 923.33, 2477.52, 2053.29, 3668.18, NA, 1779.51, NA, NA, NA, 3750.67, NA),
   vtn_minimo = c(1731.81, 784.83, 2105.89, 1745.30, 3117.95, NA, 1512.59, NA, NA, NA, 3188.07, NA),
   vtn_maximo = c(2343.03, 1061.83, 2849.15, 2361.29, 3117.95, NA, 2046.44, NA, NA, NA, 4313.27, NA),
-  origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves e Mâncio Lima"
+  origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves, Mâncio Lima"
 )
 
 ##2022####
@@ -78,7 +78,7 @@ ACMRT01_2025 <- data.frame(
   vtn_media = c(4320.50, 6347.47, 983.33, 2546.64, 5805.44, 11086.43),
   vtn_minimo = c(3672.43, 5395.35, 835.83, 2164.64, 4934.62, 9423.47),
   vtn_maximo = c(4968.58, 7299.60, 1130.83, 2928.64, 6676.25, 12749.40),
-  origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves e Mâncio Lima"
+  origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves, Mâncio Lima"
 )
 
 ##1.2 MRT: Zona 2/ZH02####
@@ -172,7 +172,7 @@ ACMRT_Zona3_2016 <- data.frame(
   vtn_media = c(2272.69, 636.51, 2238.34),
   vtn_minimo = c(NA, 434.07, 1526.43),
   vtn_maximo = c(NA, 838.95, 2950.24),
-  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido deCastro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasi"
+  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido deCastro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasil"
 )
 ##2019####
 ACMRT_03_2019 <- data.frame(
@@ -185,7 +185,7 @@ ACMRT_03_2019 <- data.frame(
   vtn_media = c(NA, NA),
   vtn_minimo = c(NA, NA),
   vtn_maximo = c(NA, NA),
-  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasi"
+  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasil"
 )
 ##2021####
 ACMRT3_2021 <- data.frame(
@@ -211,7 +211,7 @@ ACMRT3_2021 <- data.frame(
   vtn_media = c(7071.68, 857.20, 8033.33, 5389.52, 8924.32, 14854.95, 3771.32, NA, 6842.49, 7620.21, 9475.76, 14854.95),
   vtn_minimo = c(6010.93, 728.62, 6828.33, 4581.09, 7585.68, 12626.70, 3205.62, NA, 5816.11, 6477.18, 8054.39, 12626.70),
   vtn_maximo = c(8132.44, 985.77, 9238.33, 6197.95, 10262.97, 17083.19, 4337.02, NA, 7868.86, 8763.25, 10897.12, 17083.10),
-  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasi"
+  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasil"
 )
 ##2022####
 ACMRT03_2022 <- data.frame(
@@ -224,7 +224,7 @@ ACMRT03_2022 <- data.frame(
   vtn_media = c(15001.93, 27710.00, 14686.30, 4061.38, 21781.25, 13879.27, 10813.19),
   vtn_minimo = c(12751.64, 23553.50, 12483.36, 3452.17, 18514.06, 11797.38, 9191.21),
   vtn_maximo = c(17252.22, 31866.50, 16889.25, 4670.58, 25048.44, 15961.16, 12435.17),
-  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasi"
+  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasil"
 )
 ##2025####
 ACMRT03_2025 <- data.frame(
@@ -237,7 +237,7 @@ ACMRT03_2025 <- data.frame(
   vtn_media = c(12881.23, 13960.50, 24992.71, 2200.03, 8354.89, 14685.27, 20151.66),
   vtn_minimo = c(10949.04, 11866.42, 21243.80, 1870.03, 7101.66, 12482.48, 17128.91),
   vtn_maximo = c(14813.41, 16054.57, 28741.62, 2530.04, 9608.12, 16888.06, 23174.41),
-  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasi"
+  origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasil"
 )
 
 ##Junção dos DF e inclusão do ano####

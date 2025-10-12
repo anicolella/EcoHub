@@ -14,7 +14,7 @@ estados <- c(
 # ==============================================================================
 
 # Configuração de caminhos para diferentes usuários
-path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\Estados separados\\"
+path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\Estados separados\\"
 path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\Estados separados\\"
 
 # Detecção automática do usuário atual
@@ -90,6 +90,6 @@ BRASILTEMPORAL <- bind_rows(
   .id = "df"
 )
 
-SETEMPORALt <- SETEMPORAL |> unique()
+SETEMPORAL <- SETEMPORAL |> unique()
 
 #BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGTEMPORAL, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)

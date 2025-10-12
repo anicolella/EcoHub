@@ -17,7 +17,7 @@ BAMRT01_2018 <- data.frame(
   vtn_media = c(250193.0, 258586.0, 233806.0, 249965.0, 218128.0, 286783.0, 233806.0, 249965.0),
   vtn_minimo = c(1958.9, 1996.4, 2088.68, 1826.79, 1892.81, 2440.0, 2088.68, 1826.79),
   vtn_maximo = c(2994.95, 30375.0, 2742.39, 3138.75, 2291.67, 3250.0, 2742.39, 3138.75),
-  origem = "Belmonte, Buerarema, Canavieiras, Ilhéus, Itabuna, Mascote, Santa Cruz Cabrália, Santa Luzia, São José da Vitória e Una."
+  origem = "Belmonte, Buerarema, Canavieiras, Ilhéus, Itabuna, Mascote, Santa Cruz Cabrália, Santa Luzia, São José da Vitória e Una"
 )
 ###2020####
 BAMRT2903_2020 <- data.frame(
@@ -30,7 +30,7 @@ BAMRT2903_2020 <- data.frame(
   vtn_media = c(7112.54, 3118.52, 5572.86, 2907.90, 3235.00, 2338.06, 2446.52, 6928.18, 2853.59),
   vtn_minimo = c(4650.86, 1950.00, 3540.21, 2337.76, 2072.85, 2088.68, 1939.21, 4000.00, 2514.09),
   vtn_maximo = c(9000.00, 3927.00, 7200.32, 3479.59, 4390.99, 2742.39, 2947.50, 9750.00, 3320.38),
-  origem = "Nova Viçosa, Mucuri, Ibirapuã, Caravelas, Lajedão, Alcobaça, Teixeira de Freitas, Medeiros Neto, Vereda, Prado, Itanhém, Itamaraju, Jucuruçu, Itabela, Porto Seguro, Guaratinga, Eunápolis, Santa Cruz Cabrália, Itagimirim, Belmonte, Itapebi, Mascote, Canavieiras, Santa Luzia, Pau Brasil, Camacan, Arataca, Una, São José da Vitória, Jussari, Itaju do Colônia, Buerarema, Itapé, Firmino Alves, Ibicaraí, Santa Cruz da Vitória, Floresta Azul, Barro Preto, Lomanto Júnior, Itabuna, Almadina, Coaraci, Itajuípe, Ilhéus, Uruçuca, Itapitanga, Bicuri, Aurelino Leal, Itacaré, Ubatã, Ibirapitanga, Maraú."
+  origem = "Nova Viçosa, Mucuri, Ibirapuã, Caravelas, Lajedão, Alcobaça, Teixeira de Freitas, Medeiros Neto, Vereda, Prado, Itanhém, Itamaraju, Jucuruçu, Itabela, Porto Seguro, Guaratinga, Eunápolis, Santa Cruz Cabrália, Itagimirim, Belmonte, Itapebi, Mascote, Canavieiras, Santa Luzia, Pau Brasil, Camacan, Arataca, Una, São José da Vitória, Jussari, Itaju do Colônia, Buerarema, Itapé, Firmino Alves, Ibicaraí, Santa Cruz da Vitória, Floresta Azul, Barro Preto, Lomanto Júnior, Itabuna, Almadina, Coaraci, Itajuípe, Ilhéus, Uruçuca, Itapitanga, Bicuri, Aurelino Leal, Itacaré, Ubatã, Ibirapitanga, Maraú"
 )
 
 #### 5.2 MRT-06 ####
@@ -45,7 +45,7 @@ BAMRT02_2018 <- data.frame(
   vtn_media = c(3356.70, 7816.07, 2047.23, 3498.59, 10077.39, 2047.23, 3498.59, 3858.76, 665.43, 1340.24),
   vtn_minimo = c(1659.33, 4625.92, 939.27, 3124.29, 8870.08, 939.27, 3124.29, 3263.36, 6006.06, 1176.46),
   vtn_maximo = c(4128.62, 10243.31, 2799.59, 3960.10, 12231.40, 2799.59, 3960.10, 4601.10, 722.66, 1658.42),
-  origem = "Adustina, Antas, Banzaê, Cícero Dantas, Cipó, Coronel João Sá, Fátima, Heliópolis, Itapicuru, Nova Soure, Novo Triunfo, Olindina, Paripiranga, Pedro Alexandre, Ribeira do Amparo, Ribeira do Pombal, Santa Brígida, Sátiro Dias e Sítio do Quinto."
+  origem = "Adustina, Antas, Banzaê, Cícero Dantas, Cipó, Coronel João Sá, Fátima, Heliópolis, Itapicuru, Nova Soure, Novo Triunfo, Olindina, Paripiranga, Pedro Alexandre, Ribeira do Amparo, Ribeira do Pombal, Santa Brígida, Sátiro Dias e Sítio do Quinto"
 )
 
 ###2020####
@@ -59,13 +59,13 @@ BAMRT2909 <- data.frame(
   vtn_media = c(2608.30, 2505.96, 8980.03, 1718.96, 2505.96, 8767.73, 9362.18),
   vtn_minimo = c(937.50, 921.55, 2495.04, 706.90, 921.55, 1805.56, 6710.67),
   vtn_maximo = c(3777.94, 3837.99, 14596.02, 3049.59, 3837.99, 15727.15, 11202.65),
-  origem = "Olindina, Nova Soure, Cipó, Ribeira do Amparo, Tucano, Heliópolis, Quijingue, Ribeira do Pombal, Cansanção, Banzaê, Fátima, Paripiranga, Adustina, Cícero Dantas, Antas, Novo Triunfo, Euclides da Cunha, Sítio do Quinto, Coronel João Sá, Monte Santo, Pedro Alexandre, Canudos, Jeremoabo, Santa Brígida, Paulo Afonso, Glória, Macururé, Rodelas, Chorrochó, Abaré."
+  origem = "Olindina, Nova Soure, Cipó, Ribeira do Amparo, Tucano, Heliópolis, Quijingue, Ribeira do Pombal, Cansanção, Banzaê, Fátima, Paripiranga, Adustina, Cícero Dantas, Antas, Novo Triunfo, Euclides da Cunha, Sítio do Quinto, Coronel João Sá, Monte Santo, Pedro Alexandre, Canudos, Jeremoabo, Santa Brígida, Paulo Afonso, Glória, Macururé, Rodelas, Chorrochó, Abaré"
 )
 
 ### 5.3 MRT-03####
 ###2018####
 BAMRT03_2018 <- data.frame(
-  mrt = "MRT-08: \"Antônio Gonçalves, Caém, Jacobina, Mairi, Miguel Calmon, Mirangaba, Mundo Novo, Pindobaçu, Piritiba, Ruy Barbosa, Saúde, Senhor do Bonfim e Tapiramutá.\"",
+  mrt = "MRT-08:Antônio Gonçalves, Caém, Jacobina, Mairi, Miguel Calmon, Mirangaba, Mundo Novo, Pindobaçu, Piritiba, Ruy Barbosa, Saúde, Senhor do Bonfim e Tapiramutá",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária – Região 02", "Pecuária – Região 01", "Pecuária – Região 03"),
   nivel = c(0, 1, 1, 1, 1),
   vti_media = c(2542.19, 2542.19, 3176.94, 2624.95, 1838.89),
@@ -74,7 +74,7 @@ BAMRT03_2018 <- data.frame(
   vtn_media = c(1618.17, 1618.17, 1788.18, 1767.86, 1517.96),
   vtn_minimo = c(1166.71, 1166.71, 931.5, 1328.73, 1154.13),
   vtn_maximo = c(2098.75, 2098.75, 2278.40, 2185.09, 1917.62),
-  origem = "Antônio Gonçalves, Caém, Jacobina, Mairi, Miguel Calmon, Mirangaba, Mundo Novo, Pindobaçu, Piritiba, Ruy Barbosa, Saúde, Senhor do Bonfim e Tapiramutá."
+  origem = "Antônio Gonçalves, Caém, Jacobina, Mairi, Miguel Calmon, Mirangaba, Mundo Novo, Pindobaçu, Piritiba, Ruy Barbosa, Saúde, Senhor do Bonfim e Tapiramutá"
 )
 
 ###2020####
@@ -88,7 +88,7 @@ BAMRT2908 <- data.frame(
   vtn_media = c(1156.96, 8811.45, 1781.74, 1781.74, 4899.50, 10770.66, 608.70, 1630.97, 1781.74),
   vtn_minimo = c(200.00, 4999.50, 125.00, 494.25, 4839.80, 8959.82, 79.99, 1094.95, 494.25),
   vtn_maximo = c(1500.00, 11500.00, 1152.07, 3000.00, 4994.86, 11875.00, 235.24, 2304.94, 3000.00),
-  origem = "Campo Alegre de Lourdes, Pilão Arcado, Remanso, Sento Sé, Sobradinho, Casa Nova, Juazeiro, Curaçá, Uauá, Andorinha, Jaguarari, Campo Formoso, Antônio Gonçalves, Senhor do Bonfim, Filadélfia, Itiúba, Pindobaçu, Ponto Novo."
+  origem = "Campo Alegre de Lourdes, Pilão Arcado, Remanso, Sento Sé, Sobradinho, Casa Nova, Juazeiro, Curaçá, Uauá, Andorinha, Jaguarari, Campo Formoso, Antônio Gonçalves, Senhor do Bonfim, Filadélfia, Itiúba, Pindobaçu, Ponto Novo"
 )
 
 
@@ -104,7 +104,7 @@ BAMRT04_2018 <- data.frame(
   vtn_media = c(6451.47, 6928.18, 5736.4),
   vtn_minimo = c(4100.0, 4000.0, 4560.52),
   vtn_maximo = c(8488.58, 9750.0, 7048.74),
-  origem = "Alcobaça, Caravelas, Eunápolis, Ibirapoã, Itabela, Lajedão, Mucuri, Nova Viçosa, Porto Seguro, Prado e Teixeira de Freitas."
+  origem = "Alcobaça, Caravelas, Eunápolis, Ibirapoã, Itabela, Lajedão, Mucuri, Nova Viçosa, Porto Seguro, Prado e Teixeira de Freitas"
 )
 
 ### 5.5 MRT-05####
@@ -119,7 +119,7 @@ BAMRT05_2018 <- data.frame(
   vtn_media = c(6334.21, 6393.93, 8304.79),
   vtn_minimo = c(4241.22, 5621.58, 3600.0),
   vtn_maximo = c(7912.50, 7259.82, 11538.46),
-  origem = "Guaratinga, Itamaraju, Itambé, Itanhém, Itapetinga, Itarantim, Jucuruçu, Medeiros Neto e Vereda."
+  origem = "Guaratinga, Itamaraju, Itambé, Itanhém, Itapetinga, Itarantim, Jucuruçu, Medeiros Neto e Vereda"
 )
 
 ### 5.6 MRT-06####
@@ -134,7 +134,7 @@ BAMRT06_2018 <- data.frame(
   vtn_media = c(2999.71, 2828.53, 3051.63, 8921.21, 2622.49, 2835.51, 3487.46),
   vtn_minimo = c(2391.16, 2400.0, 1942.68, 4772.3, 2107.76, 2514.09, 3228.68),
   vtn_maximo = c(3555.71, 3381.52, 3616.28, 11396.74, 2810.00, 3320.38, 3757.50),
-  origem = "Aratuípe, Cairu, Camamu, Igrapiúna, Itacaré, Ituberá, Jaguaripe, Maraú, Nilo Peçanha, Taperoá, Uruçuca e Valença."
+  origem = "Aratuípe, Cairu, Camamu, Igrapiúna, Itacaré, Ituberá, Jaguaripe, Maraú, Nilo Peçanha, Taperoá, Uruçuca e Valença"
 )
 ###2020####
 BAMRT2902_2020 <- data.frame(
@@ -147,13 +147,13 @@ BAMRT2902_2020 <- data.frame(
   vtn_media = c(3538.25, 4850.81, 2441.98, 4675.38, 2441.98),
   vtn_minimo = c(2213.34, 3609.59, 1831.52, 3044.69, 1831.52),
   vtn_maximo = c(4658.27, 6000.00, 2557.14, 6435.48, 2557.14),
-  origem = "Camamu, Igrapiúna, Ituberá, Nilo Peçanha, Taperoá, Cairu, Presidente Tancredo Neves, Valença, Mutuípe, Jiquiriçá, Ubaíra, Laje, Aratuípe, São Miguel das Matas, Muniz Ferreira, Brejões, Vera Cruz, Santo Antônio de Jesus, Jaguaripe, Amargosa, Nova Itarana, Elísio Medrado, Dom Macedo Costa, Varzedo, Nazaré, Itaparica, Salinas da Margarida, Milagres, Conceição do Almeida, São Felipe, Maragogipe, Sapeaçu, Cruz das Almas, São Félix, Muritiba, Santa Terezinha, Itatim, Castro Alves, Governador Mangabeira, Cachoeira, Cabaceiras do Paraguaçu."
+  origem = "Camamu, Igrapiúna, Ituberá, Nilo Peçanha, Taperoá, Cairu, Presidente Tancredo Neves, Valença, Mutuípe, Jiquiriçá, Ubaíra, Laje, Aratuípe, São Miguel das Matas, Muniz Ferreira, Brejões, Vera Cruz, Santo Antônio de Jesus, Jaguaripe, Amargosa, Nova Itarana, Elísio Medrado, Dom Macedo Costa, Varzedo, Nazaré, Itaparica, Salinas da Margarida, Milagres, Conceição do Almeida, São Felipe, Maragogipe, Sapeaçu, Cruz das Almas, São Félix, Muritiba, Santa Terezinha, Itatim, Castro Alves, Governador Mangabeira, Cachoeira, Cabaceiras do Paraguaçu"
 )
 
 ### 5.7 MRT-07####
 ###2018####
 BAMRT07_2018 <- data.frame(
-  mrt = "MRT-22: \"Almadina, Apuarema, Arataca, Aurelino Leal, Barra do Rocha, Barro Preto/Lomanto Junior, Camacan, Coaraci, Floresta Azul, Gandu, Gongogi, Ibicaraí, Ibirapitanga, Ibirataia, Ipiaú, Itajuípe, Itamari, Itapitanga, Jitaúna, Jussari, Mutuípe, Nova Ibiá, Pau Brasil, Piraí do Norte, Presidente Tancredo Neves, Teolândia, Ubaitaba, Ubatã e Wenceslau Guimarães.\"",
+  mrt = "MRT-22: \"Almadina, Apuarema, Arataca, Aurelino Leal, Barra do Rocha, Barro Preto/Lomanto Junior, Camacan, Coaraci, Floresta Azul, Gandu, Gongogi, Ibicaraí, Ibirapitanga, Ibirataia, Ipiaú, Itajuípe, Itamari, Itapitanga, Jitaúna, Jussari, Mutuípe, Nova Ibiá, Pau Brasil, Piraí do Norte, Presidente Tancredo Neves, Teolândia, Ubaitaba, Ubatã e Wenceslau Guimarães",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Terra Agrícola", "Pecuária", "Não Agrícola", "Exploração Mista", "Terra Agrícola Cacau em Cabruca"),
   nivel = c(0, 1, 1, 1, 1, 1),
   vti_media = c(7113.43, 5917.04, 6946.59, 10809.52, 11096.25, 6155.98),
@@ -162,7 +162,7 @@ BAMRT07_2018 <- data.frame(
   vtn_media = c(4107.7, 3102.29, 4369.86, 4842.86, 5491.21, 3222.60),
   vtn_minimo = c(2636.7, 2475.0, 2636.7, 3664.29, 4365.85, 2636.81),
   vtn_maximo = c(5600.0, 4050.0, 5600.0, 5914.29, 6870.97, 3800.0),
-  origem = "Almadina, Apuarema, Arataca, Aurelino Leal, Barra do Rocha, Barro Preto/Lomanto Junior, Camacan, Coaraci, Floresta Azul, Gandu, Gongogi, Ibicaraí, Ibirapitanga, Ibirataia, Ipiaú, Itajuípe, Itamari, Itapitanga, Jitaúna, Jussari, Mutuípe, Nova Ibiá, Pau Brasil, Piraí do Norte, Presidente Tancredo Neves, Teolândia, Ubaitaba, Ubatã e Wenceslau Guimarães."
+  origem = "Almadina, Apuarema, Arataca, Aurelino Leal, Barra do Rocha, Barro Preto, Lomanto Junior, Camacan, Coaraci, Floresta Azul, Gandu, Gongogi, Ibicaraí, Ibirapitanga, Ibirataia, Ipiaú, Itajuípe, Itamari, Itapitanga, Jitaúna, Jussari, Mutuípe, Nova Ibiá, Pau Brasil, Piraí do Norte, Presidente Tancredo Neves, Teolândia, Ubaitaba, Ubatã e Wenceslau Guimarães"
 )
 
 ###5.8 MRT-08####
