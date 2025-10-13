@@ -11,14 +11,14 @@ library(geobr)
 library(dplyr)
 library(purrr)
 library(sf)
-install.packages("fuzzyjoin")
+#install.packages("fuzzyjoin")
 library(fuzzyjoin)
 
 cat("Bibliotecas carregadas com sucesso.\n")
 
 install.packages("remotes")
 library(remotes)
-remotes::install_github("curso-r/munifacil")
+#remotes::install_github("curso-r/munifacil")
 library(munifacil)
 
 # Passo 1: Criar a tabela de conversão
@@ -132,8 +132,13 @@ resultado_final <- resultado_bruto %>%
   slice_min(order_by = distancia, n = 1, with_ties = FALSE) %>%
   
   # Desagrupa para continuar o trabalho
-  ungroup()
+  ungroup() 
 
+resultado_finael <- resultado_final |>
+  distinct(origem, .keep_all = TRUE) |> select(UF, uf_join.y ,origem, chave_suja, muni_join.y, distancia, id_municipio.y)
+
+Finde2 <- resultado_finael |> filter(!UF == uf_join.y)
+ 
 # 4. VERIFICAR O RESULTADO
 # -------------------------------------------------------------------
 cat("\n--- Amostra do Resultado Final (Melhor Match) ---\n")
