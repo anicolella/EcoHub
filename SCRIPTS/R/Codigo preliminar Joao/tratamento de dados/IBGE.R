@@ -16,7 +16,7 @@ library(fuzzyjoin)
 
 cat("Bibliotecas carregadas com sucesso.\n")
 
-install.packages("remotes")
+#install.packages("remotes")
 library(remotes)
 #remotes::install_github("curso-r/munifacil")
 library(munifacil)
@@ -52,7 +52,7 @@ df_novo2 <- df_novo2 %>%
 df_novo2 <- df_novo2 %>%
   mutate(origem = str_remove(origem, "^e "))
 
-df_novot <- df_novot %>%
+df_novo2 <- df_novo2 %>%
   mutate(estado = as.numeric(as.character(estado)))
 
 df_novo2 <- df_novo2 %>%
