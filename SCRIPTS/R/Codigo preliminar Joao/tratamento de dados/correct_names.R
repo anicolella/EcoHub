@@ -57,3 +57,6 @@ base_colunas_limpas <- corrig %>%
                  col_uf = UF.x)
 
 
+resultadob <- base_colunas_limpas %>% 
+  incluir_codigo_ibge()
+
