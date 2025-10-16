@@ -140,7 +140,7 @@ CEMRTSerraIbiapaba_2017 <- data.frame(
   vtn_media = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  origem = "Carnaubal, Croatá, Guaraciaba do Norte,Ibiapina, São Benedito, Tianguá, Ubajarae Viçosa do Ceará"
+  origem = "Carnaubal, Croatá, Guaraciaba do Norte,Ibiapina, São Benedito, Tianguá, Ubajara, Viçosa do Ceará"
 )
 ###2022####
 CEMRTIbiapaba_2022 <- data.frame(
@@ -153,7 +153,7 @@ CEMRTIbiapaba_2022 <- data.frame(
   vtn_media = c(4341.23, 7595.07, 2862.22, 7595.07, 3450.79, 716.41),
   vtn_minimo = c(3690.05, 6455.81, 2432.88, 6455.81, 2933.17, 608.94),
   vtn_maximo = c(4992.42, 8734.33, 3291.55, 8734.33, 3968.41, 823.87),
-  origem = "Carnaubal, Croatá, Guaraciaba do Norte,Ibiapina, São Benedito, Tianguá, Ubajarae Viçosa do Ceará"
+  origem = "Carnaubal, Croatá, Guaraciaba do Norte,Ibiapina, São Benedito, Tianguá, Ubajara, Viçosa do Ceará"
 )
 
 ### 6.6 MRT: Sertões Norte####

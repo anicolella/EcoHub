@@ -476,7 +476,7 @@ SCMRT_Joacaba_2018_2019 <- data.frame(
   origem = "Água Doce, Arroio Trinta, Caçador,
 Calmon, Capinzal, Catanduvas, Erval Velho, Fraiburgo, Herval d’Oeste, Ibiam, Ibicaré, Iomerê,
 Jaborá, Joaçaba, Lacerdópolis, Lebon Régis, Luzerna, Macieira, Matos Costa, Ouro, Pinheiro Preto,
-Rio das Antas, Salto Veloso, Tangará, Treze Tílias, Vargem Bonita e Videira."
+Rio das Antas, Salto Veloso, Tangará, Treze Tílias, a e Videira."
 )
 
 ## 2022  #####
@@ -525,8 +525,7 @@ SCMRT_Joacaba_2022 <- data.frame(
                  27218.18, 82644.63, 138655.46, 25200.00, 41741.27, 
                  59178.08, 82500.00, 54000.00, 31014.53, 135245.90, 
                  195000.00, 180000.00, 177464.79),
-  origem = "Água Doce, Arroio Trinta, Caçador, Calmon, Capinzal, Catanduvas, Erval Velho, Fraiburgo, Herval d'Oeste, Ibiam, Ibicaré, Iomerê, Jaborá, Joaçaba, Lacerdópolis, Lebon Régis, Luzerna, Macieira, Matos Costa, Ouro, Pinheiro Preto, Rio das Antas, Salto Veloso, Tangará, Treze Tílias, Vargem Bonita e Videira. Está localizada na mesorregião oeste do estado de Santa Catarina."
-)
+  origem = "Água Doce, Arroio Trinta, Caçador, Calmon, Capinzal, Catanduvas, Erval Velho, Fraiburgo, Herval d'Oeste, Ibiam, Ibicaré, Iomerê, Jaborá, Joaçaba, Lacerdópolis, Lebon Régis, Luzerna, Macieira, Matos Costa, Ouro, Pinheiro Preto, Rio das Antas, Salto Veloso, Tangará, Treze Tílias, Vargem Bonita e Videira.")
 
 ##24.10 MRT: Joinville ####
 ## 2022 ####
@@ -912,7 +911,7 @@ SCMRT_Xanxere_2016 <- data.frame(
   vtn_maximo = c(
     NA
   ),
-  origem = "Abelardo Luz, Bom Jesus, Coronel Martins, Entre Rios, Faxinal dos Guedes, Galvão, Ipuaçu, Jupiá, Lageado Grande, Marema, Ouro Verde, Passos Maia, Ponte Serrada, São Domingos, Vargeão, Xanxerê e Xaxim. Está localizada na mesorregião oeste do estado de Santa Catarina."
+  origem = "Abelardo Luz, Bom Jesus, Coronel Martins, Entre Rios, Faxinal dos Guedes, Galvão, Ipuaçu, Jupiá, Lageado Grande, Marema, Ouro Verde, Passos Maia, Ponte Serrada, São Domingos, Vargeão, Xanxerê e Xaxim"
 )
 
 ## 2019 ####
