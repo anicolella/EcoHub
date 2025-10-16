@@ -12,6 +12,8 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 
+BRASILTEMPORAL$origem <- tolower(BRASILTEMPORAL$origem)
+
 # 2. MAPA DE SUBSTITUIÇÕES APENAS PARA PROBLEMAS NOMINAIS
 # Este mapa contém os trechos errados e suas versões corrigidas.
 mapa_substituicoes_nominais <- c(
@@ -21,8 +23,8 @@ mapa_substituicoes_nominais <- c(
   "de alenquer" = "Alenquer",
   "tracuateua e viseu" = "Tracuateua,Viseu",
   "teresopolis e trajano de moraes" = "Teresópolis,Trajano de Moraes",
-  "saquarema e silva jardim" = "Saquarema,Silva Jardim",
-  "tremembe e redencao as serra" = "Tremembé,Redenção da Serra",
+  "saquarema e silva jardim" = "Saquarema, Silva Jardim",
+  "tremembe e redencao as serra" = "Tremembé, Redenção da Serra",
   "vera cruz aguas de santa barbara" = "Vera Cruz,Águas de Santa Bárbara",
   "embu" = "Embu das Artes",
   "palmares" = "Palmares Paulista",
@@ -31,7 +33,7 @@ mapa_substituicoes_nominais <- c(
   "tavares todos os municipios.*" = "Tavares",
   "xaxim esta localizada.*" = "Xaxim",
   "videira esta localizada.*" = "Videira",
-  "tres forquilhas e xangri-la.*" = "Três Forquilhas,Xangri-lá"
+  "tres forquilhas e xangri-la.*" = "Três Forquilhas, Xangri-lá"
 )
 
 # 3. FILTRAR E CORRIGIR
@@ -43,9 +45,7 @@ BRASILTEMPORAL <- BRASILTEMPORAL%>%
   mutate(
     origem = str_replace_all(origem, mapa_substituicoes_nominais)
   )
-# 4. EXIBIR O RESULTADO
-# Mostra apenas a lista de correções nominais que foram feitas.
-print(correcoes_nominais)
+
 
 
 #df_novo <- separate_rows(MTTEMPORAL, origem, sep = ", ")

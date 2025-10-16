@@ -1,0 +1,5 @@
+source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\juncao.r", encoding = "UTF-8")
+source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\Codigo preliminar Joao\\tratamento de dados\\filetinho.R", encoding = "UTF-8")
+source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\Codigo preliminar Joao\\tratamento de dados\\IBGE.R", encoding = "UTF-8")
+source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\Codigo preliminar Joao\\tratamento de dados\\correct_names.R", encoding = "UTF-8")
+source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\Codigo preliminar Joao\\tratamento de dados\\IBGE.R", encoding = "UTF-8")

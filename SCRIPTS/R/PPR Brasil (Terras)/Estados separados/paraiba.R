@@ -432,7 +432,7 @@ Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e 
 ## 14.4 MRT 04 - SERTÃO PARAIBANO 1 ####
 ## 2018 ####
 PBMRT4_2018 <- data.frame(
-  mrt = "SERTÃO PARAIBANO 1 (Água Branca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios, Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy, Imaculada, Itaporanga, Juru, Mãe D’água, Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, Princesa Isabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, São José de Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares. Todos os municípios estão localizados nos limites da mesorregião do Sertão e nas microrregiões de Catolé do Rocha, Sousa, Patos, Seridó Oriental, Cajazeiras e Piancó.)",
+  mrt = "SERTÃO PARAIBANO 1 (Água Branca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios, Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy, Imaculada, Itaporanga, Juru, Mãe D’água, Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, Princesa Isabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, São José de Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares" ,
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária - “P1”", "Pecuária - “P1” (Coremas)", "Pecuária - “P1” (Patos)"),
   nivel = c(0, 1, 1, 1, 1),
   vti_media = c(1201.65, 1201.65, 1201.65, 1116.09, 2038.84),
@@ -515,7 +515,7 @@ PBMRT_SERTAO_PARAIBANO_1_2022 <- data.frame(
   vtn_media = c(1243.63, 1243.63, 1243.63, 2118.03, 992.06, 1226.50, 1681.63, 1447.52, 4043.98, 1036.62, 3319.42, 1082.99, 1232.70, 4236.64, 409.34, 853.72, 1450.63, 1268.43, 3402.57),
   vtn_minimo = c(1056.23, 1056.23, 1056.23, 1800.33, 843.25, 1042.53, 1429.39, 1230.40, 3437.38, 881.12, 2821.50, 920.54, 1047.80, 3601.14, 347.94, 725.66, 1233.03, 1078.17, 2892.18),
   vtn_maximo = c(1429.02, 1429.02, 1429.02, 2435.73, 1140.86, 1410.48, 1933.88, 1664.65, 4650.57, 1192.11, 3817.33, 1245.44, 1417.61, 4872.13, 470.74, 981.77, 1688.22, 1458.70, 3912.95),
-  origem = "ÁguaBranca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios, Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy, Imaculada, Itaporanga, Juru, MãeDágua, Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, PrincesaIsabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, SãoJosédeCaiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares. Todos os municípios estãolocalizados nos limites da mesorregião do Sertão e nas microrregiões de Catolé do Rocha, Sousa, Patos, Seridó Oriental, Cajazeiras e Piancó"
+  origem = "ÁguaBranca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios, Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy, Imaculada, Itaporanga, Juru, MãeDágua, Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, PrincesaIsabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, SãoJosédeCaiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares, Catolé do Rocha, Sousa, Patos, Seridó Oriental, Cajazeiras e Piancó"
 )
 
 

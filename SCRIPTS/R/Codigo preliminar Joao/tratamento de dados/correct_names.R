@@ -6,6 +6,8 @@ library(dplyr)
 
 library(dplyr)
 
+df_novo3 <- df_novo3 %>%
+  filter(origem != " ")
 
 tabela_uf <- tibble::tribble(
   ~codigo_ibge, ~UF,
@@ -16,8 +18,10 @@ tabela_uf <- tibble::tribble(
   51, "MT", 52, "GO", 53, "DF"
 )
 
+correcoes <- c()
 
-df_novo3$origem  <- gsub(" TO", " Tocantins", df_novo2$origem)
+df_novo3$origem  <- gsub(" to", " Tocantins", df_novo3$origem)
+df_novo3$origem  <- gsub(" tocantinscantins", " Tocantins", df_novo3$origem)
 
 ## Correção nos nomes de cidades: 
 # Lembre-se de substituir "nome_da_sua_coluna_de_cidades" pelo nome real da sua coluna.
