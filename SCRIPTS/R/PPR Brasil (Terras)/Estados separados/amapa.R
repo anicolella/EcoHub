@@ -44,7 +44,7 @@ APMRT_Leste_2016 <- data.frame(
   vtn_media = c(874.70, 838.11, 1075.37, 871.16, 587.26, 784.61, 726.23, 983.54, 1012.47, 2289.95, 871.31, 605.97, 559.21, 859.92, 602.23, 716.83, 719.08, 2188.76, 1849.52, 1481.07, 1165.86, 455.11, 987.89, 990.20, 391.04, 489.21, 382.55),
   vtn_minimo = c(539.38, 595.52, 750.61, 418.33, 337.82, 549.89, 498.52, 729.93, 678.10, 1421.83, 469.68, 320.89, 361.36, 619.70, 361.37, 479.77, 522.45, 1202.72, 1627.49, 1149.75, 904.77, 283.97, 703.28, 639.52, 274.41, 368.30, 302.27),
   vtn_maximo =  c(1210.02, 1080.70, 1400.13, 1323.99, 836.70, 1019.33, 953.94, 1237.15, 1346.84, 3158.07, 1272.94, 891.05, 757.06, 1100.14, 843.09, 953.89, 915.71, 3174.80, 2071.55, 1812.39, 1426.95, 626.25, 1272.50, 1340.88, 507.67, 610.12, 462.83),
-  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santama e Tartarugalzinho"
+  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santana e Tartarugalzinho"
 )
 ###2019####
 APMRTLeste_2019 <- data.frame(
@@ -57,7 +57,7 @@ APMRTLeste_2019 <- data.frame(
   vtn_media = c(857.03, 849.05, 660.95, 955.15, 869.93, 668.16, 869.93, 5333.30, 1401.96, 649.45, 1296.43, 543.19, 681.28),
   vtn_minimo = c(586.89, 569.54, 475.19, 583.17, 640.49, 526.21, 640.49, 3352.25, 652.68, 491.96, 586.83, 428.55, 661.25),
   vtn_maximo = c(1127.17, 1128.56, 846.71, 1327.13, 1099.37, 810.11, 1099.37, 7314.35, 2151.24, 806.94, 2006.03, 657.83, 701.31),
-  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santama e Tartarugalzinho"
+  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santana e Tartarugalzinho"
 )
 ###2023####
 APMRTLeste_VTI_2023 <- data.frame(
@@ -106,7 +106,7 @@ APMRTLeste_VTI_2023 <- data.frame(
     2364.75, 2473.15, 1669.71, 3490.30, 2156.89, 3402.69, 2197.42, 4680.70,
     1272.67, 1168.09, 1323.98, 2877.55, 2266.46, 2703.91, 1322.50, 2006.31, 1571.67
   ),
-  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santama e Tartarugalzinho"
+  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santana e Tartarugalzinho"
 )
 ### 3.2 Oeste ####
 ###2016####

@@ -43,7 +43,8 @@ BRASILTEMPORAL <- BRASILTEMPORAL%>%
   
   # Aplica a substituição para limpar os nomes
   mutate(
-    origem = str_replace_all(origem, mapa_substituicoes_nominais)
+    origem = str_replace_all(origem, mapa_substituicoes_nominais),
+    original = origem
   )
 
 
@@ -57,4 +58,12 @@ df_novo2 <- separate_rows(df_novo2, origem, sep = ":")
 df_novo2 <- separate_rows(df_novo2, origem, sep = "/")
 df_novo2 <- df_novo2 %>%
   mutate(origem = str_replace_all(origem, "\\.", ""))
+
+df_novo2 <- df_novo2 %>%
+  mutate(origem = str_replace(origem, "pontes", "pontes e lacerda"))
+
+df_novo2 <- df_novo2 %>%
+  filter(!grepl("lacerda", origem)) |> filter(!grepl("lomato junior", origem)) |> filter(!grepl("lomato júnior", origem))
+
 df_novo3 <- df_novo2
+

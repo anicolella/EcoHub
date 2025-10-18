@@ -136,7 +136,7 @@ AMMRT4_2023 <- data.frame(
   vtn_media = c(1030.24, 928.19, 1547.87, 532.13, 821.63, 611.22, 2019.86, 532.13),
   vtn_minimo = c(875.70, 788.96, 1315.69, 452.31, 698.38, 519.54, 1716.88, 452.31),
   vtn_maximo = c(1184.77, 1067.42, 1780.05, 611.95, 944.87, 702.90, 2322.84, 611.95),
-  origem = "Alvarães, Amaturá, Atalaia do Norte, Benjamin Constant, Carauari, Envira, Eirunepé, Fonte Boa, Guajará, Itamarati, Ipixuna, Japurá, Juruá, Jutaí, Maraã, Pauini, Santo, Antônio do Içá, Santa Isabel do Rio Negro, São Gabriel da Cachoeira, São Paulo de Olivença, Tabatinga, Tonantins e Uarini"
+  origem = "Alvarães, Amaturá, Atalaia do Norte, Benjamin Constant, Carauari, Envira, Eirunepé, Fonte Boa, Guajará, Itamarati, Ipixuna, Japurá, Juruá, Jutaí, Maraã, Pauini, Santo Antônio do Içá, Santa Isabel do Rio Negro, São Gabriel da Cachoeira, São Paulo de Olivença, Tabatinga, Tonantins e Uarini"
 )
 #### Combinação ####
 #Combinação e setagem de ano

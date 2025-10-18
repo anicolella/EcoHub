@@ -18,7 +18,7 @@ tabela_uf <- tibble::tribble(
   51, "MT", 52, "GO", 53, "DF"
 )
 
-correcoes <- c()
+
 
 df_novo3$origem  <- gsub(" to", " Tocantins", df_novo3$origem)
 df_novo3$origem  <- gsub(" tocantinscantins", " Tocantins", df_novo3$origem)
@@ -64,3 +64,4 @@ base_colunas_limpas <- corrig %>%
 resultadob <- base_colunas_limpas %>% 
   incluir_codigo_ibge()
 
+new14 <- resultadob |> filter(is.na(resultadob$id_municipio)) |> distinct(origem, UF.x,df, original, ano) 

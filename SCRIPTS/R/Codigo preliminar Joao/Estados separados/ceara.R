@@ -86,7 +86,7 @@ CEMRTValesCuruAracatiacu_2022 <- data.frame(
   vtn_media = c(1866.97, 2515.47, 1167.16, 1361.99, 3101.58, 2010.34, 1295.98, 526.48),
   vtn_minimo = c(1586.92, 2138.15, 992.09, 1157.69, 2636.34, 1708.79, 1101.59, 447.51),
   vtn_maximo = c(2147.01, 2892.79, 1342.23, 1566.29, 3566.82, 2311.90, 1490.38, 605.45),
-  origem = "Amontada, Apuiarés, General Sampaio, Irauçuba, Itapajé, Itapipoca, Itarema,Miraíma, Paraipaba, Paracuru, Pentecoste, São Gonçalo do Amarante, São Luis do Curu,Tejuçuoca, Trairi, Tururu, Umirim e Uruburetama,"
+  origem = "Amontada, Apuiarés, General Sampaio, Irauçuba, Itapajé, Itapipoca, Itarema,Miraíma, Paraipaba, Paracuru, Pentecoste, São Gonçalo do Amarante, São Luis do Curu,Tejuçuoca, Trairi, Tururu, Umirim e Uruburetama"
 )
 
 ### 6.4 MRT: Litoral Oeste####
