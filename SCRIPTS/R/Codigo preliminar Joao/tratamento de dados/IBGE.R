@@ -144,8 +144,4 @@ Finde2 <- resultado_finael |> filter(!UF == uf_join.y)
 cat("\n--- Amostra do Resultado Final (Melhor Match) ---\n")
 print(head(resultado_final))
 
-# Verifique se ainda sobrou alguma linha que não deu match
-falhas <- resultado_final %>%
-  filter(is.na(nome_municipio)) # nome_municipio vem do gabarito
 
-cat("\nNúmero de linhas que não encontraram correspondência:", nrow(falhas), "\n")

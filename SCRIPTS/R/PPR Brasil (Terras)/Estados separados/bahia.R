@@ -30,7 +30,7 @@ BAMRT2903_2020 <- data.frame(
   vtn_media = c(7112.54, 3118.52, 5572.86, 2907.90, 3235.00, 2338.06, 2446.52, 6928.18, 2853.59),
   vtn_minimo = c(4650.86, 1950.00, 3540.21, 2337.76, 2072.85, 2088.68, 1939.21, 4000.00, 2514.09),
   vtn_maximo = c(9000.00, 3927.00, 7200.32, 3479.59, 4390.99, 2742.39, 2947.50, 9750.00, 3320.38),
-  origem = "Nova Viçosa, Mucuri, Ibirapuã, Caravelas, Lajedão, Alcobaça, Teixeira de Freitas, Medeiros Neto, Vereda, Prado, Itanhém, Itamaraju, Jucuruçu, Itabela, Porto Seguro, Guaratinga, Eunápolis, Santa Cruz Cabrália, Itagimirim, Belmonte, Itapebi, Mascote, Canavieiras, Santa Luzia, Pau Brasil, Camacan, Arataca, Una, São José da Vitória, Jussari, Itaju do Colônia, Buerarema, Itapé, Firmino Alves, Ibicaraí, Santa Cruz da Vitória, Floresta Azul, Barro Preto, Lomanto Júnior, Itabuna, Almadina, Coaraci, Itajuípe, Ilhéus, Uruçuca, Itapitanga, Bicuri, Aurelino Leal, Itacaré, Ubatã, Ibirapitanga, Maraú."
+  origem = "Nova Viçosa, Mucuri, Ibirapuã, Caravelas, Lajedão, Alcobaça, Teixeira de Freitas, Medeiros Neto, Vereda, Prado, Itanhém, Itamaraju, Jucuruçu, Itabela, Porto Seguro, Guaratinga, Eunápolis, Santa Cruz Cabrália, Itagimirim, Belmonte, Itapebi, Mascote, Canavieiras, Santa Luzia, Pau Brasil, Camacan, Arataca, Una, São José da Vitória, Jussari, Itaju do Colônia, Buerarema, Itapé, Firmino Alves, Ibicaraí, Santa Cruz da Vitória, Floresta Azul, Barro Preto, Itabuna, Almadina, Coaraci, Itajuípe, Ilhéus, Uruçuca, Itapitanga, Bicuri, Aurelino Leal, Itacaré, Ubatã, Ibirapitanga, Maraú."
 )
 
 #### 5.2 MRT-06 ####
@@ -162,7 +162,7 @@ BAMRT07_2018 <- data.frame(
   vtn_media = c(4107.7, 3102.29, 4369.86, 4842.86, 5491.21, 3222.60),
   vtn_minimo = c(2636.7, 2475.0, 2636.7, 3664.29, 4365.85, 2636.81),
   vtn_maximo = c(5600.0, 4050.0, 5600.0, 5914.29, 6870.97, 3800.0),
-  origem = "Almadina, Apuarema, Arataca, Aurelino Leal, Barra do Rocha, Barro Preto/Lomanto Junior, Camacan, Coaraci, Floresta Azul, Gandu, Gongogi, Ibicaraí, Ibirapitanga, Ibirataia, Ipiaú, Itajuípe, Itamari, Itapitanga, Jitaúna, Jussari, Mutuípe, Nova Ibiá, Pau Brasil, Piraí do Norte, Presidente Tancredo Neves, Teolândia, Ubaitaba, Ubatã e Wenceslau Guimarães."
+  origem = "Almadina, Apuarema, Arataca, Aurelino Leal, Barra do Rocha, Barro Preto, Camacan, Coaraci, Floresta Azul, Gandu, Gongogi, Ibicaraí, Ibirapitanga, Ibirataia, Ipiaú, Itajuípe, Itamari, Itapitanga, Jitaúna, Jussari, Mutuípe, Nova Ibiá, Pau Brasil, Piraí do Norte, Presidente Tancredo Neves, Teolândia, Ubaitaba, Ubatã e Wenceslau Guimarães."
 )
 
 ###5.8 MRT-08####
