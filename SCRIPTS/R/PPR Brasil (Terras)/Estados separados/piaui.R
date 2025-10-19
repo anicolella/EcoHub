@@ -12,7 +12,7 @@ MRT1_2022 <- data.frame(
   vtn_media = c(583.38, 601.13, 557.58, 601.13, 557.58),
   vtn_minimo = c(251.52, 255.00, 251.52, 255.00, 251.52),
   vtn_maximo = c(1373.63, 1373.63, 1290.00, 1373.63, 1290.00),
-  origem = " Bela Vista do Piauí, Cajazeiras do Piauí, Campinas do Piauí, Campo Alegre do Fidalgo, Capitão Gervásio Oliveira, Colônia do Piauí, Conceição do Canindé, Floresta do Piauí, Isaías Coelho, João Costa, Nova Santa Rita, Oeiras, Paes Landim, Paquetá, Pedro Laurentino, Ribeira do Piauí, Santa Cruz do Piauí, Santa Rosa do Piauí, Santo Inácio do Piauí, São Francisco de Assis do Piauí, São João da Varjota, São João do Piauí, Simplício Mendes, Socorro do Piauí, Tanque do Piauí e Wall Ferraz. "
+  origem = "Bela Vista do Piauí, Cajazeiras do Piauí, Campinas do Piauí, Campo Alegre do Fidalgo, Capitão Gervásio Oliveira, Colônia do Piauí, Conceição do Canindé, Floresta do Piauí, Isaías Coelho, João Costa, Nova Santa Rita, Oeiras, Paes Landim, Paquetá, Pedro Laurentino, Ribeira do Piauí, Santa Cruz do Piauí, Santa Rosa do Piauí, Santo Inácio do Piauí, São Francisco de Assis do Piauí, São João da Varjota, São João do Piauí, Simplício Mendes, Socorro do Piauí, Tanque do Piauí e Wall Ferraz. "
 )
 
 ###18.2 MRT02- Serra da Capivara####
@@ -27,7 +27,7 @@ MRT2_2022 <- data.frame(
   vtn_media = c(412.96, 400.60, 392.00, 571.24, 400.60, 392.00, 571.24),
   vtn_minimo = c(112.50, 185.00, 112.25, 170.00, 185.00, 112.25, 170.00),
   vtn_maximo = c(1096.56, 633.33, 1000.00, 1096.56, 633.33, 1000.00, 1096.56),
-  origem = ""
+  origem = "Rio Grande do Piauí, Flores do Piauí, Eliseu Martins, Pavussu, Pajeú do Piauí, Canto do Buriti, Brejo do Piauí, Tamboril do Piauí, São Braz do Piauí, Coronel José Dias, São Raimundo Nonato, Dom Inocêncio, Anísio de Abreu, Bonfim do Piauí, São Lourenço do Piauí, Caracol, Guaribas, Jurema, Várzea Branca, Dirceu Arcoverde e Fartura do Piauí"
 )
 ###18.3 MRT03- Serra do Quilombo###
 ### 2018 ####
@@ -103,7 +103,7 @@ MRT5_2022 <- data.frame(
   vtn_media = c(477.08, 1267.15, 412.97, 470.46, 877.36, 1267.15, 438.81, 495.57, 177.15, 877.36),
   vtn_minimo = c(116.04, 1139.58, 119.27, 100.21, 571.10, 1139.58, 119.27, 250.00, 116.04, 571.10),
   vtn_maximo = c(1091.00, 1479.10, 886.70, 1079.63, 1441.14, 1479.10, 981.39, 929.12, 212.83, 1441.14),
-  origem = ": Canavieira, Floriano, Guadalupe, Itaueira, Jerumenha, Landri Sales, Marcos Parente, Nazaré do Piauí, Porto Alegre do Piauí, São Francisco do Piauí, São José do Peixe e São Miguel do Fidalgo."
+  origem = "Canavieira, Floriano, Guadalupe, Itaueira, Jerumenha, Landri Sales, Marcos Parente, Nazaré do Piauí, Porto Alegre do Piauí, São Francisco do Piauí, São José do Peixe e São Miguel do Fidalgo."
 )
 
 ###18.6 MRT 06 - PI ####
@@ -293,7 +293,7 @@ MRT11_Entorno_Teresina_2018 <- data.frame(
   vtn_media = c(70462.84, 70462.84),
   vtn_minimo = c(59893.41, 59893.41),
   vtn_maximo = c(81032.26, 81032.26),
-  origem = "Entorno teresina"
+  origem = "teresina" #era entorno teresina
 )
 
 ## 18.12 MRT 12 - Planíces Litoraneas ####

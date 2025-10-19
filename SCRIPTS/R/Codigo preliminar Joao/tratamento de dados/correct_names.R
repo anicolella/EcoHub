@@ -20,8 +20,8 @@ tabela_uf <- tibble::tribble(
 
 
 
-df_novo3$origem  <- gsub(" to", " Tocantins", df_novo3$origem)
-df_novo3$origem  <- gsub(" tocantinscantins", " Tocantins", df_novo3$origem)
+#df_novo3$origem  <- gsub(" to", " Tocantins", df_novo3$origem)
+#df_novo3$origem  <- gsub(" tocantinscantins", " Tocantins", df_novo3$origem)
 
 
 
@@ -69,27 +69,43 @@ condicao_mg <- tolower(trimws(df_novo3$origem)) %in% cidades_para_mg_lower & df_
 df_novo3$UF[condicao_mg] <- "MG"
 
 
-# 1. Seu vetor de municípios (correto, sem acentos, minúsculo)
+# 1. Seu vetor de municípios (correto, com "gloria")
 cba <- c("abare", "chorrocho", "curaca", "gloria", "macurure", "rodelas")
 
-# 2. Crie um padrão regex (expressão regular) que significa "ou"
-# Isso vai gerar o texto: "abare|chorrocho|curaca|gloria|macurure|rodelas"
+# 2. Crie o padrão regex (correto)
 padroes_ba <- paste(cba, collapse = "|")
 
-# 3. Crie a condição lógica CORRIGIDA
-condicao_ba <- grepl(padroes_ba, tolower(df_novo3$origem_sem_acento)) & df_novo3$UF == "PE"
-#    (A)      (B)                  (C)                             (D)
 
-# 4. Faça a substituição (seu código original aqui está correto)
-df_novo3$UF[condicao_ba] <- "BA"
+condicao_base <- grepl(padroes_ba, tolower(df_novo3$origem_sem_acento)) & 
+  df_novo3$UF == "PE"
 
 
+condicao_excecao_goita <- grepl("goita", tolower(df_novo3$origem_sem_acento))
+
+
+condicao_ba_final <- condicao_base & !condicao_excecao_goita
+
+
+df_novo3$UF[condicao_ba_final] <- "BA"
 
 
 
+cma <- c("tasso fragoso", "milagres do maranhao")
+
+
+padroes_ma <- paste(cma, collapse = "|")
+
+
+condicao_ma <- grepl(padroes_ma, tolower(df_novo3$origem_sem_acento)) & 
+  df_novo3$UF == "PI"
+
+
+df_novo3$UF[condicao_ma] <- "MA"
 
 
 
+condicao_rs <- tolower(trimws(df_novo3$origem)) %in% cbpe & df_novo3$UF == "RS"
+df_novo3$origem[condicao_pe] <- "palmares"
 
 
 
@@ -111,6 +127,15 @@ df_novo3$origem[condicao_df] <- "Brasília"
 # Também adicionando trimws()
 condicao_monte_alegre <- tolower(trimws(df_novo3$origem)) == "monte alegre" & df_novo3$UF == "GO"
 df_novo3$origem[condicao_monte_alegre] <- "Monte Alegre de Goiás"
+
+
+
+df_novo3 <- df_novo3 %>%
+  mutate(origem = recode(origem,
+                         "coutocantins magalhaes" = "couto magalhães",
+                         "portocantins nacional" = "porto nacional"
+  ))
+
 
 
 

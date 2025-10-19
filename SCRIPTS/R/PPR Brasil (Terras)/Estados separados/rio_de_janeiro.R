@@ -169,7 +169,7 @@ RJMRT_Serrana_2017<- data.frame(
   vtn_maximo = c(NA),
   origem = "Bom Jardim, Cantagalo, Carmo, Cordeiro, Duas Barras, Macuco, Nova
 Friburgo, Paty do Alferes, Petrópolis, Santa Maria Madalena, São José
-do Vale do Rio Preto, São Sebastião do Alto, Sumidouro, Teresópolis e
+do Vale do Rio Preto, São Sebastião do Alto, Sumidouro, Teresópolis,
 Trajano de Moraes"
 )
 
@@ -187,7 +187,7 @@ RJMRT_Serrana_2022 <- data.frame(
   origem = "Bom Jardim, Cantagalo, Carmo, Cordeiro, Duas Barras,
 Macuco, Nova Friburgo, Paty do Alferes, Petrópolis, Santa
 Maria Madalena, São José do Vale do Rio Preto, São Sebastião
-do Alto, Sumidouro, Teresópolis e Trajano de Moraes"
+do Alto, Sumidouro, Teresópolis, Trajano de Moraes"
 )
 
 ### 19.4 MRT - Metropolitana ####
@@ -309,8 +309,7 @@ RJMRT_Lagos_2017 <- data.frame(
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA),
   origem = "Araruama, Armação de Búzios, Arraial do Cabo, Cabo Frio, Casimiro de
-Abreu, Iguaba Grande, Rio das Ostras, São Pedro da Aldeia, Saquarema
-e Silva Jardim"
+Abreu, Iguaba Grande, Rio das Ostras, São Pedro da Aldeia, Saquarema, Silva Jardim"
 )
 
 ### 2022 #####
@@ -326,7 +325,7 @@ RJMRT_Lagos_2022 <- data.frame(
   vtn_maximo = c(28291.62, 26486.52, 29152.06, 36769.02, 46039.39, 12703.87, 24189.99, 31785.11, 45934.52, 111331.69, 23754.31, 12703.87),
   origem = "Araruama, Armação de Búzios, Arraial do Cabo, Cabo Frio,
 Casimiro de Abreu, Iguaba Grande, Rio das Ostras, São Pedro
-da Aldeia, Saquarema e Silva Jardim"
+da Aldeia, Saquarema, Silva Jardim"
 )
 
 ### Consolidação dos Dados #####

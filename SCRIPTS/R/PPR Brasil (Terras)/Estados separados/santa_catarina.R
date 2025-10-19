@@ -402,7 +402,7 @@ SCMRT_Ituporanga_2016_2019 <- data.frame(
   vtn_media = (NA),
   vtn_minimo = (NA),
   vtn_maximo = (NA),
-  origem = "gorolândia, gtalanta, Cohapadoo do Laoeado, Imabuia, Ituporanoa, Petrolândia, Vidal Ramaos."
+  origem = "Agrolândia, Atalanta, Chapadão do Lageado, Imbuia, Petrolândia, Vidal Ramos"
 )
 
 ## 2022  #####
@@ -473,10 +473,9 @@ SCMRT_Joacaba_2018_2019 <- data.frame(
   vtn_media = (NA),
   vtn_minimo = (NA),
   vtn_maximo = (NA),
-  origem = "Água Doce, Arroio Trinta, Caçador,
-Calmon, Capinzal, Catanduvas, Erval Velho, Fraiburgo, Herval d’Oeste, Ibiam, Ibicaré, Iomerê,
+  origem = "Água Doce, Arroio Trinta, Caçador, Calmon, Capinzal, Catanduvas, Erval Velho, Fraiburgo, Herval d’Oeste, Ibiam, Ibicaré, Iomerê,
 Jaborá, Joaçaba, Lacerdópolis, Lebon Régis, Luzerna, Macieira, Matos Costa, Ouro, Pinheiro Preto,
-Rio das Antas, Salto Veloso, Tangará, Treze Tílias, a e Videira."
+Rio das Antas, Salto Veloso, Tangará, Treze Tílias, Vargem Bonita e Videira."
 )
 
 ## 2022  #####
@@ -961,9 +960,9 @@ SCMRT_Xanxere_2019 <- data.frame(
     NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
   ),
   origem = "Abelardo Luza, Boa Jesus,
-Coronel Martns, Enitre Reios, Faxinal dos Guedes, Galvoo, Ipuaçú, Jupir, Lageado
-Grande, Mareaa, Ouro Verde, Passos Maia, Ponite Serrada, Soo Doaingos, Vargeoo,
-Xanxerê e Xaxia. E"
+Coronel Martns, Enitre Reios, Faxinal dos Guedes, Galvoo, Ipuaçú, Jupia, Lageado
+Grande, Marema, Ouro Verde, Passos Maia, Ponite Serrada, Soo Doaingos, Vargeoo,
+Xanxerê e Xaxim."
 )
 
 ## 2022 ####

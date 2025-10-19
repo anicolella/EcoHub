@@ -26,7 +26,7 @@ SEMRTAltoSertaoSergipano_2017 <- data.frame(
   vtn_media = c(4112.31, 4799.26, 2696.39, 5144.17, 2914.73, 5341.96, 5203.29, 4760.44, 7128.10, 1404.02, 2313.92),
   vtn_minimo = c(3293.19, 4079.37, 1996.01, 4372.54, 2223.42, 4540.67, 4422.80, 4046.37, 6051.25, 1193.42, 1857.56),
   vtn_maximo = c(4931.44, 5519.15, 3396.77, 5915.79, 3606.04, 6143.25, 5983.79, 5474.50, 8204.95, 1614.62, 2770.29),
-  origem = "Canindé do São Francisco, Poço Redondo, Monte Alegre, Porto da Folha, Nossa Senhora da Glória e Gararu"
+  origem = "Canindé do São Francisco, Poço Redondo, Monte Alegre de Sergipe, Porto da Folha, Nossa Senhora da Glória e Gararu"
 )
 ## 2020 ####
 SEMRT1_2020 <- data.frame(
