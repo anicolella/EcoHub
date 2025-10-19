@@ -30,7 +30,7 @@ BAMRT2903_2020 <- data.frame(
   vtn_media = c(7112.54, 3118.52, 5572.86, 2907.90, 3235.00, 2338.06, 2446.52, 6928.18, 2853.59),
   vtn_minimo = c(4650.86, 1950.00, 3540.21, 2337.76, 2072.85, 2088.68, 1939.21, 4000.00, 2514.09),
   vtn_maximo = c(9000.00, 3927.00, 7200.32, 3479.59, 4390.99, 2742.39, 2947.50, 9750.00, 3320.38),
-  origem = "Nova Viçosa, Mucuri, Ibirapuã, Caravelas, Lajedão, Alcobaça, Teixeira de Freitas, Medeiros Neto, Vereda, Prado, Itanhém, Itamaraju, Jucuruçu, Itabela, Porto Seguro, Guaratinga, Eunápolis, Santa Cruz Cabrália, Itagimirim, Belmonte, Itapebi, Mascote, Canavieiras, Santa Luzia, Pau Brasil, Camacan, Arataca, Una, São José da Vitória, Jussari, Itaju do Colônia, Buerarema, Itapé, Firmino Alves, Ibicaraí, Santa Cruz da Vitória, Floresta Azul, Barro Preto, Itabuna, Almadina, Coaraci, Itajuípe, Ilhéus, Uruçuca, Itapitanga, Bicuri, Aurelino Leal, Itacaré, Ubatã, Ibirapitanga, Maraú."
+  origem = "Nova Viçosa, Mucuri, Ibirapuã, Caravelas, Lajedão, Alcobaça, Teixeira de Freitas, Medeiros Neto, Vereda, Prado, Itanhém, Itamaraju, Jucuruçu, Itabela, Porto Seguro, Guaratinga, Eunápolis, Santa Cruz Cabrália, Itagimirim, Belmonte, Itapebi, Mascote, Canavieiras, Santa Luzia, Pau Brasil, Camacan, Arataca, Una, São José da Vitória, Jussari, Itaju do Colônia, Buerarema, Itapé, Firmino Alves, Ibicaraí, Santa Cruz da Vitória, Floresta Azul, Barro Preto, Itabuna, Almadina, Coaraci, Itajuípe, Ilhéus, Uruçuca, Itapitanga, ibicui, Aurelino Leal, Itacaré, Ubatã, Ibirapitanga, Maraú."
 )
 
 #### 5.2 MRT-06 ####
@@ -153,7 +153,7 @@ BAMRT2902_2020 <- data.frame(
 ### 5.7 MRT-07####
 ###2018####
 BAMRT07_2018 <- data.frame(
-  mrt = "MRT-22: \"Almadina, Apuarema, Arataca, Aurelino Leal, Barra do Rocha, Barro Preto/Lomanto Junior, Camacan, Coaraci, Floresta Azul, Gandu, Gongogi, Ibicaraí, Ibirapitanga, Ibirataia, Ipiaú, Itajuípe, Itamari, Itapitanga, Jitaúna, Jussari, Mutuípe, Nova Ibiá, Pau Brasil, Piraí do Norte, Presidente Tancredo Neves, Teolândia, Ubaitaba, Ubatã e Wenceslau Guimarães.\"",
+  mrt = "MRT-22: \"Almadina, Apuarema, Arataca, Aurelino Leal, Barra do Rocha, Barro Preto/Lomanto Junior, Camacan, Coaraci, Floresta Azul, Gandu, Gongogi, Ibicaraí, Ibirapitanga, Ibirataia, Ipiaú, Itajuípe, Itamari, Itapitanga, Jitaúna, Jussari, Mutuípe, Nova Ibiá, Pau Brasil, Piraí do Norte, Presidente Tancredo Neves, Teolândia, Ubaitaba, Ubatã e Wenceslau Guimarães",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Terra Agrícola", "Pecuária", "Não Agrícola", "Exploração Mista", "Terra Agrícola Cacau em Cabruca"),
   nivel = c(0, 1, 1, 1, 1, 1),
   vti_media = c(7113.43, 5917.04, 6946.59, 10809.52, 11096.25, 6155.98),
@@ -311,8 +311,7 @@ BAMRT2904_2019 <- data.frame(
   vtn_media = c(3204.79, 3858.68, 3319.80, 3550.21, 780.03, 4958.68, 3529.61, 3593.75, 760.02, 3124.71),
   vtn_minimo = c(1010.00, 2775.00, 990.00, 2089.60, 552.34, 4266.53, 1308.55, 2039.60, 557.81, 2775.00),
   vtn_maximo = c(4937.79, 4850.00, 5201.02, 4876.00, 967.12, 5826.45, 5412.58, 4876.00, 956.16, 3475.00),
-  origem = "Rio do Pires, Abaíra, Ibicoara, Iramaia, Planaltino, Irajuba, Santa Inês, Maracás, Itaquara, Cravolândia, Jaguaquara, Itamari, Jitaúna, Jequié, Apuarema, Ibirataia, Wenceslau Guimarães, Teolândia, Piraí do Norte, Ubatã, Gongogi, Ipiaú, Dário Meira, Nova Ibiá, Barra do Rocha, Itagibá, Boa Nova, Manoel Vitorino, Mirante, Poções, Planalto, Nova Canaã, Iguaí, Ibicuí, Itororó, Itapetinga, Caatiba, Itambé, Encruzilhada, Ribeirão do Largo, Macarani, Maiquinique, Potiraguá, Itarantim, Cândido Sales, Belo Campo, Tremedal, Barra do Choça, Vitória da Conquista, Caraíbas, Anagé, Maetinga, Aracatu, Caetanos, Bom Jesus da Serra, Condeúba, Piripá, Cordeiros, Presidente Jânio Quadros, Malhada de Pedras, Brumado, Tanhaçu, Ituaçu, Contendas do Sincorá, Barra da Estiva, Jussiape, Érico Cardoso, Livramento de Nossa Senhora, Dom Basílio."
-)
+  origem = "Abaíra, Aiquara, Anagé, Apuarema, Aracatu, Barra da Estiva, Barra do Choça, Belo Campo, Boa Nova, Bom Jesus da Serra, Brumado, Caatiba, Caetanos, Cândido Sales, Caraíbas, Caturama, Condeúba, Contendas do Sincorá, Cordeiros, Cravolândia, Dario Meira, Dom Basílio, Encruzilhada, Érico Cardoso, Gongogi, Ibicoara, Ibirataia, Ipiaú, Iguaí, Iramaia, Irajuba, Itagi, Itagibá, Itamarí, Itambé, Itapetinga, Itaquara, Itarantim, Itiruçu, Itororó, Ituaçu, Jaguaquara, Jequié, Jitaúna, Jussiape, Lafaiete Coutinho, Livramento de Nossa Senhora, Maetinga, Maiquinique, Malhada de Pedras, Maracás, Manoel Vitorino, Mirante, Nova Canaã, Paramirim, Piraí do Norte, Piripá, Planalto, Planaltino, Poções, Potiraguá, Presidente Jânio Quadros, Ribeirão do Largo, Rio de Contas, Rio do Pires, Santa Inês, Tanhaçu, Teolândia, Tremedal, Ubaitaba, Ubatã, Vitória da Conquista, Wenceslau Guimarães")
 
 
 
@@ -327,7 +326,7 @@ BAMRT2907 <- data.frame(
   vtn_media = c(1268.19, 2229.33, 564.03, 825.60, 2603.12, 2310.51, 3215.32, 1446.06, 546.73, 1067.33, 615.95, 462.99),
   vtn_minimo = c(496.53, 1699.34, 450.56, 496.53, 2175.00, 2175.92, 3210.08, 1259.72, 419.05, 706.99, 480.78, 441.67),
   vtn_maximo = c(2078.37, 3067.98, 710.60, 1156.13, 3071.39, 2419.39, 3222.98, 1598.03, 665.05, 1349.75, 714.60, 496.52),
-  origem = "América Dourada, Barra, Barra do Mendes, Barro Alto, Brotas de Macaúbas, Cafarnaum, Canarana, Central, Gentio do Ouro, Ibotirama, Ipupiara, Irecê, Itaguaçu da Bahia, João Dourado, Jussara, Lapão, Morporá, Mulungu do Morro, Muquém do São Francisco, Oliveira dos Brejinhos, Presidente Dutra, São Gabriel, Uibaí e Xique-Xique."
+  origem = "América Dourada, Barra, Barra do Mendes, Barro Alto, Brotas de Macaúbas, Cafarnaum, Canarana, Central, Gentio do Ouro, Ibotirama, Ipupiara, Irecê, Itaguaçu da Bahia, João Dourado, Jussara, Lapão, Morpará, Mulungu do Morro, Muquém do São Francisco, Oliveira dos Brejinhos, Presidente Dutra, São Gabriel, Uibaí e Xique-Xique."
 )
 
 ## Consolidação dos dados ####

@@ -402,7 +402,7 @@ MTMRT7_2018 <- data.frame(
   vtn_media = c(4700.20, 14953.41, 4282.24, 5026.11, 2350.00, 14953.41, 3048.32, 6436.69),
   vtn_minimo = c(3995.17, 12710.40, 3639.91, 4272.19, 1997.50, 12710.40, 2591.07, 5471.19),
   vtn_maximo = c(5405.23, 17196.42, 4924.58, 5780.02, 2702.50, 17196.42, 3505.57, 7402.19),
-  origem = "Peixoto de Azevedo, União do Sul, Feliz Natal, Vila Rica, Santa Cruz do Xingú, Novo Santo Antônio, São José do Xingu, Serra Nova Dourada, Confresa, Luciara, Santa Teresinha, São Félix do Araguaia, Porto Alegre do Norte, Nova Nazaré, Araguaiana, Cocalinho, Ribeirãozinho, Torixoréu, Araguainha, Pontal do Araguaia, Ponte Branca."
+  origem = "Peixoto de Azevedo, União do Sul, Feliz Natal, Vila Rica, Santa Cruz do Xingú, Novo Santo Antônio, São José do Xingu, Serra Nova Dourada, Confresa, Luciara, Santa Terezinha, São Félix do Araguaia, Porto Alegre do Norte, Nova Nazaré, Araguaiana, Cocalinho, Ribeirãozinho, Torixoréu, Araguainha, Pontal do Araguaia, Ponte Branca."
 )
 
 ## 2019 ####
@@ -416,7 +416,7 @@ MTMRT7_19 <- data.frame(
   vtn_media = c(4700.20, 14953.41, 4282.24, 5026.11, 2350.00, 14953.41, 3048.32, 6436.69),
   vtn_minimo = c(3995.17, 12710.40, 3639.91, 4272.19, 1997.50, 12710.40, 2591.07, 5471.19),
   vtn_maximo = c(5405.23, 17196.42, 4924.58, 5780.02, 2702.50, 17196.42, 3505.57, 7402.19),
-  origem = "Peixoto de Azevedo, Feliz Natal, União do Sul, Canabrava do Norte, Confresa, Luciara, Novo Santo Antônio, Porto Alegre do Norte, Santa Cruz do Xingú, Santa Teresinha, São Félix do Araguaia, São José do Xingu, Serra Nova Dourada, Vila Rica, Nova Nazaré, Araguaiana, Cocalinho, Araguainha, Pontal Do Araguaia, Ponte Branca, Ribeirãozinho, Torixoréu"
+  origem = "Peixoto de Azevedo, Feliz Natal, União do Sul, Canabrava do Norte, Confresa, Luciara, Novo Santo Antônio, Porto Alegre do Norte, Santa Cruz do Xingú, Santa Terezinha, São Félix do Araguaia, São José do Xingu, Serra Nova Dourada, Vila Rica, Nova Nazaré, Araguaiana, Cocalinho, Araguainha, Pontal Do Araguaia, Ponte Branca, Ribeirãozinho, Torixoréu"
 )
 
 ## 2023 ####
@@ -547,7 +547,7 @@ MTMRT9_2023 <- data.frame(mrt = 9, tipologia_de_uso = c("MÉDIA GERAL", "Agríco
                           vtn_media = c(22164.84, 56452.38, 13584.98, 23880.95, 56452.38, 13584.98, 15853.73, 34099.02, 56452.38, 12024.98),
                           vtn_minimo = c(18840.11, 47984.52, 11547.23, 20298.81, 47984.52, 11547.23, 13475.67, 28984.17, 47984.52, 10221.23), 
                           vtn_maximo = c(25489.56, 64920.24, 15622.73, 27463.10, 64920.24, 15622.73, 18231.79, 39213.88, 64920.24, 13828.72),
-                          origem = "Rosário Oeste, Nobres,Acorizal, Jangada, Cuiabáe Várzea Grande."
+                          origem = "Rosário Oeste, Nobres,Acorizal, Jangada, Cuiabá e Várzea Grande."
 )
 
 ## 2024 ####
@@ -561,7 +561,7 @@ MTMRT9_2024 <- data.frame(
   vtn_media = c(22164.84, 56452.38, 13584.98, 23880.95, 56452.38, 13584.98, 15853.73, 34099.02, 56452.38, 12024.98),
   vtn_minimo = c(18840.11, 47984.52, 11547.23, 20298.81, 47984.52, 11547.23, 13475.67, 28984.17, 47984.52, 10221.23),
   vtn_maximo = c(25489.56, 64920.24, 15622.73, 27463.10, 64920.24, 15622.73, 18231.79, 39213.88, 64920.24, 13828.72),
-  origem = "Rosário Oeste, Nobres,Acorizal, Jangada, Cuiabáe Várzea Grande."
+  origem = "Rosário Oeste, Nobres,Acorizal, Jangada, Cuiabá e Várzea Grande."
 )
 
 ## 11.10 Região 10 ####
@@ -661,7 +661,7 @@ MTMRT11_2019 <- data.frame(
   vtn_media = c(7172.81, 13333.88, 7158.86, 3002.89, 13333.88, 3002.89, 2103.35, 8878.99),
   vtn_minimo = c(6096.89, 11333.80, 6084.60, 2552.45, 11333.80, 2552.45, 1787.84, 7547.14),
   vtn_maximo = c(8248.73, 15333.97, 8232.11, 3453.32, 15333.97, 3453.32, 2418.85, 10210.84),
-  origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
+  origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos Quatro Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
 )
 
 ## 2023 ####
@@ -674,7 +674,7 @@ MTMRT11_2023 <- data.frame(mrt = 11,
                            vtn_media = c(20125.49, 7685.75, 21129.22, 31691.69, 7685.75, 8277.98, 13624.53, 35118.59, 18015.00, 56857.06), 
                            vtn_minimo = c(17106.67, 6532.89, 17959.84, 26937.93, 6532.89, 7036.28, 11580.85, 29850.80, 15312.75, 48328.50), 
                            vtn_maximo = c(23144.32, 8838.62, 24298.60, 36445.44, 8838.62, 9519.68, 15668.21, 40386.38, 20717.25, 65385.62),
-                           origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
+                           origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos Quatro Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
 )
 
 ## 2024 ####
@@ -688,7 +688,7 @@ MTMRT11_2024 <- data.frame(
   vtn_media = c(20125.49, 7685.75, 21129.22, 31691.69, 7685.75, 8277.98, 13624.53, 35118.59, 18015.00, 56857.06),
   vtn_minimo = c(17106.67, 6532.89, 17959.84, 26937.93, 6532.89, 7036.28, 11580.85, 29850.80, 15312.75, 48328.50),
   vtn_maximo = c(23144.32, 8838.62, 24298.60, 36445.44, 8838.62, 9519.68, 15668.21, 40386.38, 20717.25, 65385.62),
-  origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos 4 Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
+  origem = "Vila Bela da S. Trindade, Pontes e Lacerda, Conquista d’ Oeste, Vale do São Domingos, Nova Lacerda, São José dos Quatro Marcos, Glória d’ Oeste, Araputanga, Reserva do Cabaçal, Indiavaí, Jauru, Figueiropólis d’ Oeste, Porto Esperidião."
 )
 
 #Definição de ano

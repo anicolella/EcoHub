@@ -881,7 +881,7 @@ ESMRT_Sul_2016 <- data.frame(
   vtn_media = c(8615.57, 8016.39, 9042.12),
   vtn_minimo = c(7323.24, 6813.93, 7685.80),
   vtn_maximo = c(9907.91, 9218.84, 10398.44),
-  origem = " Alegre, Apiacá, Atilio, Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado."
+  origem = "Alegre, Apiacá, Atílio Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado"
 )
 
 ### 2018 ####
@@ -895,7 +895,7 @@ ESMRT_Sul_2018 <- data.frame(
   vtn_media = c(10836.95, 10652.82, 10298.13, 12554.83, 12554.83, 8057.15, 13460.89),
   vtn_minimo = c(9211.41, 9054.90, 8753.41, 10671.60, 10671.60, 6848.58, 11441.76),
   vtn_maximo = c(12462.49, 12250.74, 11842.86, 14438.05, 14438.05, 9265.72, 15480.03),
-  origem = " Alegre, Apiacá, Atilio, Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado."
+  origem = "Alegre, Apiacá, Atílio Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado"
 )
 ### 2021 ####
 ESMRT_Sul_2021 <- data.frame(
@@ -908,8 +908,8 @@ ESMRT_Sul_2021 <- data.frame(
   vtn_media = c(13842.27, 15057.76, 14178.08, 11821.14, 7358.71),
   vtn_minimo = c(11765.93, 12799.09, 12051.37, 10047.97, 6254.90),
   vtn_maximo = c(15918.61, 17316.42, 16304.79, 13594.31, 8462.52),
-  origem = " Alegre, Apiacá, Atilio, Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado."
-)
+  origem = "Alegre, Apiacá, Atílio Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado"
+  )
 
 ### 2022 ####
 ESMRT_Sul_2022 <- data.frame(
@@ -922,7 +922,7 @@ ESMRT_Sul_2022 <- data.frame(
   vtn_media = c(20329.00, 21117.00, 20071.00, 21117.00, 20071.00),
   vtn_minimo = c(17280.00, 17949.00, 17060.00, 17949.00, 17060.00),
   vtn_maximo = c(23378.00, 24285.00, 23082.00, 24285.00, 23082.00),
-  origem = " Alegre, Apiacá, Atilio, Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado."
+  origem = "Alegre, Apiacá, Atílio Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado"
 )
 
 ### 2024 ####
@@ -936,8 +936,8 @@ ESMRT_Sul_2024 <- data.frame(
   vtn_media = c(24728.00, 35787.00, 22845.00, 23354.00, 35787.00, 22845.00, 23354.00),
   vtn_minimo = c(15941.00, 23542.00, 16666.00, 13097.00, 23542.00, 16666.00, 13097.00),
   vtn_maximo = c(33514.00, 48032.00, 29025.00, 33612.00, 48032.00, 29025.00, 33612.00),
-  origem = " Alegre, Apiacá, Atilio, Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado."
-)
+  origem = "Alegre, Apiacá, Atílio Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado"
+  )
 
 ###Consolidação dos Dados####
 ES16 <- rbind(

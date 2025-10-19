@@ -33,8 +33,8 @@ MAMRT1_2018 <- data.frame(
   vtn_media = c(974.76, 1029.98, 727.44, 991.58, 608.0, 919.07, 1526.75, 741.74, 955.81, NA, 1966.67, NA, 703.33, 1120.24, 995.11, 937.14),
   vtn_minimo = c(828.54, 929.03, 618.32, 842.84, 516.80, 781.21, 1297.74, 630.48, 812.44, NA, 1671.67, NA, 597.83, 952.20, 845.84, 796.57),
   vtn_maximo = c(1120.97, 1256.92, 836.55, 1140.32, 699.20, 1056.93, 1755.77, 853.01, 1099.18, NA, 2261.67, NA, 808.83, 1288.27, 1144.37, 1077.71),
-  origem = "Afonso Cunha, Aldeias Altas, Alto Alegre do Maranhão, Anapurus, Belágua, Brejo, Buriti, Buriti Bravo, Capinzal do Norte, Caxias, Chapadinha, Codó, Coelho Neto, Coroatá, Duque Bacelar, Mara Roma, Matões, Milagres do Maranhão, Parnarama, Peritoró, São Benedito do Rio Preto, São João do Sóter, Timbiras, Timon e Urbano Santos"
-)
+  origem = " Afonso Cunha, Aldeias Altas, Alto Alegre do Maranhão, Anapurus, Belágua, Brejo, Buriti, Buriti Bravo, Capinzal do Norte, Caxias, Chapadinha, Codó, Coelho Neto, Coroatá, Duque Bacelar, Mata Roma, Matões, Milagres do Maranhão, Parnarama, Peritoró, São Benedito do Rio Preto, São João do Sóter, Timbiras, Timon e Urbano Santos"
+  )
 
 #### 2021 ####
 MAMRT02_2021<- data.frame(
@@ -61,8 +61,7 @@ MAMRT02_2021<- data.frame(
   vtn_media = c(1475.00, 1020.00, 945.00, 1833.33, 1475.00, 1833.33, 1020.00, 1475.00, 1833.33, 1020.00, 945.00, NA, 1833.33),
   vtn_minimo = c(1253.75, 867.00, 803.25, 1558.33, 1253.75, 1558.33, 867.00, 1253.75, 1558.33, 867.00, 803.25, NA, 1558.33),
   vtn_maximo = c(1696.25, 1173.00, 1086.75, 2108.33, 1696.25, 2108.33, 1173.00, 1696.25, 2108.33, 1173.00, 1086.75, NA, 2108.33),
-  origem = "Afonso Cunha, Aldeias Altas, Alto Alegre do Maranhão, Anapurus, Belágua, Brejo, Buri, Buri Bravo, Capinzal do Norte, Caxias, Chapadinha, Codó, Coelho Neto, Coroatá, Duque Bacelar, Mata Roma, Matões, Milagres do Maranhão, Parnarama, Peritoró, São Benedito do Rio Preto, São João do Sóter, Timbiras, Timon e Urbano Santos"
-)
+  origem = "Afonso Cunha, Aldeias Altas, Alto Alegre do Maranhão, Anapurus, Belágua, Brejo, Buriti, Buriti Bravo, Capinzal do Norte, Caxias, Chapadinha, Codó, Coelho Neto, Coroatá, Duque Bacelar, Mata Roma, Matões, Milagres do Maranhão, Parnarama, Peritoró, São Benedito do Rio Preto, São João do Sóter, Timbiras, Timon e Urbano Santos")
 
 #### 2022 ####
 MAMRT02_2022 <- data.frame(
@@ -75,8 +74,8 @@ MAMRT02_2022 <- data.frame(
   vtn_media = c(2977.24, 15852.29, 3353.68, 2823.29, 33101.69, 2859.39, 1657.14, 3123.44, 3551.02, 3054.45, 2859.39, 1466.04, 33101.69, 17127.24, 1657.14, 3123.44, 3551.02, 3054.45, 2859.39, 1466.04),
   vtn_minimo = c(2242.84, 8247.13, 2926.99, 2190.43, 29478.82, 2182.335, 1350.00, 2810.62, 3043.13, 2500.00, 2182.33, 1133.57, 29478.82, 15107.65, 1474.89, 2810.62, 3043.13, 2732.32, 2182.33, 1133.57),
   vtn_maximo = c(3711.63, 23457.46, 3780.36, 3456.15, 36724.56, 3536.45, 1350.00, 3436.26, 4058.91, 2500.00, 3536.45, 1798.52, 36724.56, 19146.84, 1839.39, 3436.26, 4058.91, 3376.58, 3536.45, 1798.52),
-  origem = "Afonso Cunha, Aldeias Altas, Alto Alegre do Maranhão, Anapurus, Belágua, Brejo, Buriti, Buriti Bravo, Capinzal do Norte, Caxias, Chapadinha, Codó, Coelho Neto, Coroatá, Duque Bacelar, Mara Roma, Matões, Milagres do Maranhão, Parnarama, Peritoró, São Benedito do Rio Preto, São João do Sóter, Timbiras, Timon e Urbano Santos."
-)
+  origem = "Anapurus, Belágua, Brejo, Buriti, Chapadinha, Mata Roma, Milagres do Maranhão, São Benedito do Rio Preto, Urbano Santos, Alto Alegre do Maranhão, Capinzal do Norte, Codó, Coroatá, Peritoró, Timbiras, Afonso Cunha, Aldeias Altas, Coelho Neto, Duque Bacelar, Buriti Bravo, Caxias, Matões, Parnarama, São João do Sóter, Timon"
+  )
 
 #### 10.2 MRT-02 BAIXADA MARANHENSE ####
 ### 2018 ####

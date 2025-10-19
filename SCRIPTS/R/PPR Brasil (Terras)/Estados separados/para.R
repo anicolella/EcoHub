@@ -86,8 +86,7 @@ PAMRTREGIAOBRAGANTINA_2016 <- data.frame(
 Capanema, Capitão Poço, Garrafão do Norte, Nova
 Esperança do Piriá, Nova Timboteua, Peixe Boi, Ourém,
 Primavera, Quatipuru, Salinópolis, Santa Luzia do Pará,
-Santarém Novo, São João de Pirabas, Tracuateua e
-Viseu."
+Santarém Novo, São João de Pirabas, Tracuateua, Viseu"
   
 )
 ### 2019 ####
@@ -105,8 +104,7 @@ PAMRTREGIAOBRAGANTINA_2019 <- data.frame(
 Capanema, Capitão Poço, Garrafão do Norte, Nova
 Esperança do Piriá, Nova Timboteua, Peixe Boi, Ourém,
 Primavera, Quatipuru, Salinópolis, Santa Luzia do Pará,
-Santarém Novo, São João de Pirabas, Tracuateua e
-Viseu."
+Santarém Novo, São João de Pirabas, Tracuateua, Viseu."
 )
 ### 2022 ####
 PAMRT2_2022 <- data.frame(
@@ -123,8 +121,7 @@ PAMRT2_2022 <- data.frame(
             Capanema, Capitão Poço, Garrafão do Norte, Nova
             Esperança do Piriá, Nova Timboteua, Peixe Boi, Ourém,
             Primavera, Quatipuru, Salinópolis, Santa Luzia do Pará,
-            Santarém Novo, São João de Pirabas, Tracuateua e
-            Viseu."
+            Santarém Novo, São João de Pirabas, Tracuateua, Viseu."
 )
 ####16.4 MRT REGIÃO CASTANHAL 2016 ####
 ### 2016 ####
@@ -271,7 +268,7 @@ PAMRT5_2016 <- data.frame(
   vtn_media = c(729.55),
   vtn_minimo = c(620.12),
   vtn_maximo = c(838.98),
-  origem = "Óbidos, Curuá,"
+  origem = "Monte Alegre, Alenquer, Prainha, Santarém, Óbidos, Oriximiná, Curuá"
 )
 ### 16.10 MRT 6 #####
 PAMRT6_2016 <- data.frame(

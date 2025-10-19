@@ -232,8 +232,11 @@ PEMRT_Sertao_do_Sao_Francisco_BA_29004_2019 <- data.frame(
   vtn_media = c(1484.57, 628.74, 4439.62, 628.74, 3227.44, 14989.90, 476.19, 1064.59, 2313.87, 5199.20),
   vtn_minimo = c(1180.99, 498.61, 3231.63, 498.61, 2400.93, 8589.32, 359.94, 837.54, 1716.60, 3272.01),
   vtn_maximo = c(1788.15, 758.87, 5647.61, 758.87, 4053.95, 21390.48, 592.44, 1291.64, 2911.14, 7126.39),
-  origem = "Abaré, Chorrochó, Curaçá, Glória, Macururé e Rodelas."
+  origem = "abare, chorrocho, curaca, gloria, macurure, rodelas"
 )
+
+
+
 #Esse mercado é retirado posteriormente, por algum motivo deixaram essas cidades da Bahia na PPR 2017
 # O link tá aqui, não sei bem o que fazer com isso:
 # https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/ppr_ramt_UA_sertao_petrolina_2020.pdf
