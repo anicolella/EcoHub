@@ -86,7 +86,7 @@ CEMRTValesCuruAracatiacu_2022 <- data.frame(
   vtn_media = c(1866.97, 2515.47, 1167.16, 1361.99, 3101.58, 2010.34, 1295.98, 526.48),
   vtn_minimo = c(1586.92, 2138.15, 992.09, 1157.69, 2636.34, 1708.79, 1101.59, 447.51),
   vtn_maximo = c(2147.01, 2892.79, 1342.23, 1566.29, 3566.82, 2311.90, 1490.38, 605.45),
-  origem = "Amontada, Apuiarés, General Sampaio, Irauçuba, Itapajé, Itapipoca, Itarema,Miraíma, Paraipaba, Paracuru, Pentecoste, São Gonçalo do Amarante, São Luis do Curu,Tejuçuoca, Trairi, Tururu, Umirim e Uruburetama,"
+  origem = "Amontada, Apuiarés, General Sampaio, Irauçuba, Itapajé, Itapipoca, Itarema,Miraíma, Paraipaba, Paracuru, Pentecoste, São Gonçalo do Amarante, São Luis do Curu,Tejuçuoca, Trairi, Tururu, Umirim e Uruburetama"
 )
 
 ### 6.4 MRT: Litoral Oeste####
@@ -197,7 +197,7 @@ CEMRTValeJaguaribe_2017 <- data.frame(
   vtn_media = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e Jaguaribe "
+  origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e Jaguaribe"
 )
 ###2022####
 CEMRTJaguaribano_2022 <- data.frame(
@@ -210,7 +210,7 @@ CEMRTJaguaribano_2022 <- data.frame(
   vtn_media = c(3808.11, 4583.94, 4815.73, 1862.25, 9545.78, 4725.25, 3821.90, 1122.27, 3338.50, 7176.99),
   vtn_minimo = c(3236.90, 3896.35, 4093.37, 1582.91, 8113.92, 4016.46, 2535.66, 953.93, 2837.73, 6100.44),
   vtn_maximo = c(4379.33, 5271.53, 5538.09, 2141.59, 10977.65, 5434.03, 5993.38, 1290.61, 3839.28, 8253.54),
-  origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e Jaguaribe "
+  origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e Jaguaribe"
 )
 
 ### 6.8 MRT: Sertão Central #####
@@ -225,7 +225,7 @@ CEMRTSertaoCentral_2017 <- data.frame(
   vtn_media = c(NA, NA, NA, NA, NA, NA),
   vtn_minimo = c(NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA),
-  origem = "Banabuiú, Choró, Deputado Irapuan Pinheiro, Ibaretama, Ibicuitinga, Milhã,Mombaça, Pedra Branca, Piquet Carneiro, Quixadá, Quixeramobim, Senador Pompeu e Solonópole  "
+  origem = "Banabuiú, Choró, Deputado Irapuan Pinheiro, Ibaretama, Ibicuitinga, Milhã,Mombaça, Pedra Branca, Piquet Carneiro, Quixadá, Quixeramobim, Senador Pompeu e Solonópole"
 )
 ###2022####
 CEMRTSertaoCentral_2022 <- data.frame(
@@ -238,7 +238,7 @@ CEMRTSertaoCentral_2022 <- data.frame(
   vtn_media = c(1481.80, 3207.39, 1045.28, 1100.12, 515.20, 2423.10, 4182.45),
   vtn_minimo = c(1259.53, 2726.28, 888.49, 935.10, 252.39, 2059.64, 3555.08),
   vtn_maximo = c(1704.07, 3688.49, 1202.07, 1265.14, 341.48, 2786.57, 4809.82),
-  origem = "Banabuiú, Choró, Deputado Irapuan Pinheiro, Ibaretama, Ibicuitinga, Milhã,Mombaça, Pedra Branca, Piquet Carneiro, Quixadá, Quixeramobim, Senador Pompeu e Solonópole  "
+  origem = "Banabuiú, Choró, Deputado Irapuan Pinheiro, Ibaretama, Ibicuitinga, Milhã,Mombaça, Pedra Branca, Piquet Carneiro, Quixadá, Quixeramobim, Senador Pompeu e Solonópole"
 )
 
 ### 6.9 MRT: Sertões de Canindé####
@@ -281,7 +281,7 @@ CEMRTInhamuns_2017 <- data.frame(
   vtn_media = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  origem = "Aiuaba, Arneiroz, Catunda,Crateús, Hidrolândia, Independência, Ipaporanga, Ipu, Ipueiras, Monsenhor Tabosa, Nova Russas,Novo Oriente, Parambú, Pires Ferreira, Poranga, Quiterianópolis, Santa Quitéria, Tamboril e Tauá "
+  origem = "Aiuaba, Arneiroz, Catunda,Crateús, Hidrolândia, Independência, Ipaporanga, Ipu, Ipueiras, Monsenhor Tabosa, Nova Russas,Novo Oriente, Parambú, Pires Ferreira, Poranga, Quiterianópolis, Santa Quitéria, Tamboril e Tauá"
 )
 ###2022####
 CEMRTSertaoInhamuns_2022 <- data.frame(
@@ -294,7 +294,7 @@ CEMRTSertaoInhamuns_2022 <- data.frame(
   vtn_media = c(1057.65, 1016.54, 1098.60, 471.39),
   vtn_minimo = c(899.00, 864.06, 933.81, 400.68),
   vtn_maximo = c(1216.30, 1169.02, 1263.39, 542.10),
-  origem = "Aiuaba, Arneiroz, Catunda,Crateús, Hidrolândia, Independência, Ipaporanga, Ipu, Ipueiras, Monsenhor Tabosa, Nova Russas,Novo Oriente, Parambú, Pires Ferreira, Poranga, Quiterianópolis, Santa Quitéria, Tamboril e Tauá "
+  origem = "Aiuaba, Arneiroz, Catunda,Crateús, Hidrolândia, Independência, Ipaporanga, Ipu, Ipueiras, Monsenhor Tabosa, Nova Russas,Novo Oriente, Parambú, Pires Ferreira, Poranga, Quiterianópolis, Santa Quitéria, Tamboril e Tauá"
 )
 
 ### 6.11 MRT: Centro Sul####

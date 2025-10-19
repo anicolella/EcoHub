@@ -13,7 +13,7 @@ MGMRT01_2020 <- data.frame(
   vtn_media = c(11730.04, 13790.75, 13176.44, 10132.76),
   vtn_minimo = c(5481.48, 11157.02, 11418.73, 5481.48),
   vtn_maximo = c(16363.64, 16075.39, 16363.64, 10330.58),
-  origem = "Ituiutaba, Limeira D’Oeste, Santa, Vitória, União de Minas, Ipiaçu, Gurinhatã, Monte Alegre de Minas,Prata, Campina Verde, Veríssimo,  Comendador Gomes, Campo Florido "
+  origem = "Ituiutaba, Limeira D’Oeste, Santa Vitória, União de Minas, Ipiaçu, Gurinhatã, Monte Alegre de Minas,Prata, Campina Verde, Veríssimo,  Comendador Gomes, Campo Florido"
 )
 
 MGMRT02_2020 <- data.frame(
@@ -104,7 +104,7 @@ MGMRT08_2020 <- data.frame(
   vtn_media = c(2700.61, 2700.61,  2779.85, 6240.0, 1507.93),
   vtn_minimo = c(1050.0, 1530.0,  2250.0, 4560.0, 1050.0),
   vtn_maximo = c(7680.0, 3120.0,  3840.0, 7680.0, 2160.0),
-  origem = "Janaúba, Catuti, Espinosa, Gameleira, Jaíba, Mamonas, Manga, Matias Cardoso, Mato Verde, Monte Azul, Nova Porteirinha, Pai Pedro, Porteirinha, Riacho dos Machados, Serranópolis de Minas, Verdelândia, Itacarambi, Montalvânia, Miravânia, Varzelândia, Juvenília, São João das Missões"
+  origem = "Janaúba, Catuti, Espinosa, Gameleiras, Jaíba, Mamonas, Manga, Matias Cardoso, Mato Verde, Monte Azul, Nova Porteirinha, Pai Pedro, Porteirinha, Riacho dos Machados, Serranópolis de Minas, Verdelândia, Itacarambi, Montalvânia, Miravânia, Varzelândia, Juvenília, São João das Missões"
 )
 
 MGMRT09_2020 <- data.frame(
@@ -299,7 +299,7 @@ MGMRT23_2020 <- data.frame(
   vtn_media = c(11583.52, 13378.27, 7929.34),
   vtn_minimo = c(4954.58, 10721.65, 4954.58),
   vtn_maximo = c(15022.02, 15022.02, 11150.94),
-  origem = "Belo Horizonte, Betim, Brumadinho, Caeté, Capim Branco, Confins, Contagem, Esmeraldas, Florestal, Ibirité, Igarapé, Itatiaiuçu, Juatuba, Lagoa Santa, Mário Campos, Mateus Leme, Matozinhos, Nova Lima, Pedro Leopoldo, Raposos, Ribeirão das Neves, Rio Acima, Sabará, Santa Luzia, São Joaquim de Bicas, São José da Lapa, Sarzedo, Taquaraçu de Minas, Vespasiano, Fortuna de Minas, Funilândia, Inhaúma, Pará de Minas, Prudente de Morais, São José da Varginha, Sete Lagoas, Cachoeira da Prata, Pequi, Maravilha, Onça do Pitangui, Pitangui, Papagaios, Nova União."
+  origem = "Belo Horizonte, Betim, Brumadinho, Caeté, Capim Branco, Confins, Contagem, Esmeraldas, Florestal, Ibirité, Igarapé, Itatiaiuçu, Juatuba, Lagoa Santa, Mário Campos, Mateus Leme, Matozinhos, Nova Lima, Pedro Leopoldo, Raposos, Ribeirão das Neves, Rio Acima, Sabará, Santa Luzia, São Joaquim de Bicas, São José da Lapa, Sarzedo, Taquaraçu de Minas, Vespasiano, Fortuna de Minas, Funilândia, Inhaúma, Pará de Minas, Prudente de Morais, São José da Varginha, Sete Lagoas, Cachoeira da Prata, Pequi, Maravilhas, Onça do Pitangui, Pitangui, Papagaios, Nova União."
 )
 
 MG2020 <- rbind(MGMRT01_2020, 
@@ -435,8 +435,7 @@ MGMRT_Varginha_2022 <- data.frame(
   vtn_media = c(48344.93, 57043.83, 34592.74, 31273.62, 728955.50, 61199.62, 63928.44, 55113.11, 34592.74, 31273.62, 886906.65),
   vtn_minimo = c(41093.19, 48487.26, 29403.83, 26582.58, 619612.18, 52019.68, 54339.17, 46846.14, 29403.83, 26582.58, 753870.66),
   vtn_maximo = c(55596.67, 65600.41, 39781.65, 35964.67, 838298.83, 70379.56, 73517.70, 63380.08, 39781.65, 35964.67, 1019942.65),
-  origem = "Alfenas, Campo Belo, Guarupé, Lavras, Passos, Piumhi, São Sebastião do Paraíso, Três Corações,
-Três Pontas-Boa Esperança e Varginha, englobando 82 municípios: Alfenas, Alterosa, Areado, Campo Do
+  origem = "Alfenas, Alterosa, Areado, Campo Do
 Meio, Campos Gerais, Carvalhópolis, Conceição Da Aparecida, Divisa Nova, Fama, Machado, Paraguaçu,
 Poço Fundo, Serrania, Aguanil, Campo Belo, Candeias, Cristais, Santana Do Jacaré, Arceburgo, Cabo
 Verde, Guaranésia, Guaxupé, Juruaia, Monte Belo, Muzambinho, Nova Resende, São Pedro Da União,
@@ -498,7 +497,7 @@ MGMRT_Patos_de_Minas_2022 <- data.frame(
   origem = "Arapuá, Carmo Do Paranaíba,
 Guarda-Mor, João Pinheiro, Lagamar, Lagoa Formosa, Lagoa Grande, Matutina, Paracatu, Patos De
 Minas, Presidente Olegário, Rio Paranaíba, São Gonçalo Do Abaeté, São Gotardo, Tiros, Varjão De
-MinasVazanteCoromandel, Cruzeiro Da Fortaleza, Guimarânia, Patrocínio e Serra Do Salitre."
+Minas, Vazante, Coromandel, Cruzeiro Da Fortaleza, Guimarânia, Patrocínio e Serra Do Salitre."
 )
 
 

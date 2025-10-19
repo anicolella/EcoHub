@@ -69,7 +69,7 @@ DFMRT1_2021 <- data.frame(
   vtn_maximo = c(9902.37, 9698.40, 16246.53, 3429.98, 7447.21,
                  14086.06, 3500.16, 8215.16, 6808.11, 10893.67, 
                  13628.72, 10880.95),
-  origem = "Campos Belos, Monte Alegre, Nova Roma, Divinópolis de Goiás, São Domingos, Guarani de Goiás, Iaciara, Posse, Alvorada do Norte, Flores de Goiás, Vila Boa e Simolândia "
+  origem = "Campos Belos, monte alegre de goias, Nova Roma, Divinópolis de Goiás, São Domingos, Guarani de Goiás, Iaciara, Posse, Alvorada do Norte, Flores de Goiás, Vila Boa e Simolândia "
 )
 
 ##7.2 MRT - Buritis####
@@ -236,7 +236,7 @@ DFMRT5_2017 <- data.frame(
   vtn_media = c(6125.33, 5230.93, 10173.78, 10173.78),
   vtn_minimo = c(3759.06, 3134.03, 7070.66, 7070.66),
   vtn_maximo = c(8491.60, 7327.82, 13276.90, 13276.90),
-  origem = "Padre Bernardo, Cocalzinho de Goiás, e Mimoso."
+  origem = "Padre Bernardo, Cocalzinho de Goiás, e Mimoso de goias."
 )
 
 ## 2020 ####
@@ -250,7 +250,7 @@ DFMRT5_2020 <- data.frame(
   vtn_media = c(7771.29, 5384.98, 4855.51, 8792.76),
   vtn_minimo = c(6217.03, 4307.98, 3884.41, 7034.20),
   vtn_maximo = c(9325.54, 6461.98, 5826.61, 10551.31),
-  origem = "Padre Bernardo, Cocalzinho de Goiás, e Mimoso."
+  origem = "Padre Bernardo, Cocalzinho de Goiás, e Mimoso de goias"
 )
 
 ## 2021 ####
@@ -264,7 +264,7 @@ DFMRT5_2021 <- data.frame(
   vtn_media = c(11505.88, 11505.88, 10682.64, 11443.95, 11226.79, 11561.51),
   vtn_minimo = c(9780.00, 9780.00, 9008.02, 9727.36, 8981.43, 9804.42),
   vtn_maximo = c(13231.76, 13231.76, 12357.26, 13160.54, 13472.15, 13318.61),
-  origem = "Padre Bernardo, Cocalzinho de Goiás, e Mimoso."
+  origem = "Padre Bernardo, Cocalzinho de Goiás, e Mimoso de goias"
 )
 
 ##7.6 MRT 6- Formosa / São João D'Aliança ####

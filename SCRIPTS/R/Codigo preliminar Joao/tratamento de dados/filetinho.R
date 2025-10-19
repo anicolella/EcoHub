@@ -65,5 +65,10 @@ df_novo2 <- df_novo2 %>%
 df_novo2 <- df_novo2 %>%
   filter(!grepl("lacerda", origem)) |> filter(!grepl("lomato junior", origem)) |> filter(!grepl("lomato júnior", origem))
 
+df_novo2 <- df_novo2 %>%
+  mutate(origem = str_replace(origem, "abreu", "abreu e lima"))
+df_novo2 <- df_novo2 %>%
+  filter(!grepl("lima", origem))
+
 df_novo3 <- df_novo2
 
