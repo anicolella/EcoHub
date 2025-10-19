@@ -37,10 +37,11 @@ tabela_uf <- tibble::tribble(
 # Ponto de Atenção: Garanta que a coluna 'estado' seja numérica
 # Se a sua coluna 'estado' for texto ("35"), este comando a converte para número (35)
 # Se já for numérica, não tem problema rodar.
-df_novo2$origem  <- gsub(" to", " Tocantins", df_novo2$origem)
+#df_novo2$origem <- gsub("\\bto\\b", "Tocantins", df_novo2$origem, ignore.case = TRUE)
 
 ## Correção nos nomes de cidades: 
 # Lembre-se de substituir "nome_da_sua_coluna_de_cidades" pelo nome real da sua coluna.
+
 df_novo2$origem <- tolower(df_novo2$origem)
 # A sintaxe é: iconv(sua_coluna, from = "UTF-8", to = "ASCII//TRANSLIT")
 

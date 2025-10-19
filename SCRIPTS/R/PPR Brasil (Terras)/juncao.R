@@ -57,6 +57,8 @@ for (estado in estados) {
   cat("\n") 
 }
 
+TOTEMPORAL$origem <- gsub("TO", "Tocantins", TOTEMPORAL$origem, ignore.case = FALSE)
+
 print("--- Execução finalizada ---")
 
 BRASILTEMPORAL <- bind_rows(

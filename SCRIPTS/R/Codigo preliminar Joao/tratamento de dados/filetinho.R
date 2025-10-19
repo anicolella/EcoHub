@@ -26,8 +26,6 @@ mapa_substituicoes_nominais <- c(
   "saquarema e silva jardim" = "Saquarema, Silva Jardim",
   "tremembe e redencao as serra" = "Tremembé, Redenção da Serra",
   "vera cruz aguas de santa barbara" = "Vera Cruz,Águas de Santa Bárbara",
-  "embu" = "Embu das Artes",
-  "palmares" = "Palmares Paulista",
   "patrocinio" = "Patrocínio Paulista",
   # Correções que removem texto extra usando um pouco de regex (.*)
   "tavares todos os municipios.*" = "Tavares",
@@ -69,6 +67,11 @@ df_novo2 <- df_novo2 %>%
   mutate(origem = str_replace(origem, "abreu", "abreu e lima"))
 df_novo2 <- df_novo2 %>%
   filter(!grepl("lima", origem))
+
+df_novo2 <- df_novo2 %>%
+  mutate(origem = str_replace(origem, "passa", "passa e fica"))
+df_novo2 <- df_novo2 %>%
+  filter(!grepl("fica", origem))
 
 df_novo3 <- df_novo2
 

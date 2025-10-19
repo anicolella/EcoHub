@@ -311,7 +311,7 @@ PEMRT_III_Mata_Sul_2022 <- data.frame(
   vtn_media = c(11404.76, 11853.60, 14048.39, 9826.24, 13708.06, 11699.35, 9826.24, 13708.06, 12223.93, 12997.16, 11013.89, 13368.74, 8759.74, 10691.87),
   vtn_minimo = c(10467.92, 10630.53, 12572.63, 7886.43, 12014.87, 10452.07, 7886.43, 12014.87, 9380.08, 7604.19, 5194.08, 2077.33, 6603.18, 2867.47),
   vtn_maximo = c(12341.60, 13076.67, 15524.15, 11766.05, 15401.25, 12946.63, 11766.05, 15401.25, 15067.78, 18390.13, 16833.70, 24660.15, 10916.30, 18516.27),
-  origem = " Água Peta, Amaraji, Barreiros, Belém de Maria, Catende, Cortês, Escada, Gameleira, Jaqueira, Joaquim Nabuco, Maraial, Palmares, Primavera, Quipapá, Ribeirão, Rio Formoso, São Benedito do Sul, São José da Coroa Grande, Sirinhaém, Tamandaré e Xexéu "
+  origem = "Água Peta, Amaraji, Barreiros, Belém de Maria, Catende, Cortês, Escada, Gameleira, Jaqueira, Joaquim Nabuco, Maraial, Palmares, Primavera, Quipapá, Ribeirão, Rio Formoso, São Benedito do Sul, São José da Coroa Grande, Sirinhaém, Tamandaré e Xexéu "
   
 )
 

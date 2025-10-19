@@ -451,7 +451,7 @@ ROMRTValeDoJamari_2019 <- data.frame(
                  1319.32, 7790.04, 5219.96, 6423.00, 496.99, 4600.90,
                  5103.11, 4758.39, 5015.66, 3926.24, 4132.66, 4558.16, 7085.20, 
                  4913.51, 5472.91, 1759.06, 506.99, 6660.78, 496.99),
-  origem = "Ariquemes, Cacaulândia, Monte Negro, Vale do Anari, Campo Novo de Rondônia, BuriƟs, Machadinho D’Oeste, Alto Paraíso, Cujubim, e Rio Crespo"
+  origem = "Ariquemes, Cacaulândia, Monte Negro, Vale do Anari, Campo Novo de Rondônia, Buritis, Machadinho D’Oeste, Alto Paraíso, Cujubim, e Rio Crespo"
 )
 ### 2022 ####
 ROMRTValeDoJamari_2022 <- data.frame(
@@ -531,7 +531,7 @@ ROMRTRioMadeira_2019 <- data.frame(
                  5172.98, 3998.97, 3693.14, 685.57, 3856.81, 4144.02,
                  4598.38, 2758.19, 3511.81, 1181.02, 1863.46, 1211.97, 
                  1428.18, 3998.97, 5172.98, 926.37, 1942.60, 571.07),
-  origem = "Porto Velho (Ponta do Abunã, Alto Madeira e Baixo Madeira), Candeias do Jamari, e Itapuã do Oeste"
+  origem = "Porto Velho, Candeias do Jamari, Itapuã do Oeste"
 )
 ### 2022 ####
 ROMRTRioMadeira_2022 <- data.frame(
@@ -581,7 +581,7 @@ ROMRTRioMadeira_2022 <- data.frame(
                  677.32, 1708.90, 1648.23, 1330.45, 4008.34, 3975.12, 
                  3866.51, 3116.42, 3416.47, 8880.52, 10729.85, 9347.47,
                  7127.89, 7537.12),
-  origem = "Porto Velho (Alto Madeira, Baixo Madeira e Ponta do Abunã), Candeias do Jamari e Itapuã do Oeste"
+  origem = "Porto Velho , Candeias do Jamari e Itapuã do Oeste"
 )
 
 

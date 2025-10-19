@@ -120,7 +120,7 @@ RRMRT2_2018 <- data.frame(
   vtn_media = c(1348.13, 1354.78, 1068.67, 1605.08, 524.80, 1193.02, 1378.33, 1429.57, 2033.80, 1596.20, 1838.23, 1583.62, 960.16),
   vtn_minimo =  c(1151.68, 1149.42, 1023.12, 1438.84, 333.85, 672.64, 1009.98, 934.55, 1514.33, 954.20, 1054.04, 921.54, 103.53),
   vtn_maximo = c(2736.05, 2761.06, 2132.44, 3191.29, 715.76, 1713.40, 1746.69, 1924.58, 2553.27, 2238.19, 2622.42, 2245.70, 1816.79),
-  origem = "Cantá, Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São Luís, São João da Baliza"
+  origem = "Cantá, Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São Luiz, São João da Baliza"
   
 )
 
@@ -146,7 +146,7 @@ RRMRT2_2022 <- data.frame(
   
   vtn_maximo = c(4561.93, 4212.38, 6770.46, 4687.07, 
                  4212.38, 6770.46, 4687.07),
-  origem = "Cantá, Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São Luís, São João da Baliza"
+  origem = "Cantá, Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São Luiz, São João da Baliza"
 )
 
 ### 2024 ####
@@ -177,7 +177,7 @@ RRMRT2_2024 <- data.frame(
   
   vtn_maximo = c(3472.08, 3888.66, 3265.74, 3888.66, 3265.74, 2104.80,
                  4880.24, 1898.64, 3743.28, 3046.74, 5698.22),
-  origem = "Cantá, Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São Luís, São João da Baliza"
+  origem = "Cantá, Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São Luiz, São João da Baliza"
 )
 
 ### Consolidação dos dados ####

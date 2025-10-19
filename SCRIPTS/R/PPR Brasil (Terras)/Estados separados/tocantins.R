@@ -22,7 +22,7 @@ MRT1_2016 <- data.frame(
   vtn_media = c(3299.51, 3302.57, 3233.47, 2985.54, 3218.97, 3008.78),
   vtn_minimo = c(2804.58, 2807.18, 2748.45, 2537.71, 2821.12, 2557.46),
   vtn_maximo = c(3794.44, 3797.96, 3718.49, 3433.37, 3816.82, 3460.10),
-  origem = "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do TO, Babaçulândia, Buriti do TO, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Iguatins, Luzinópolis,, Maurilândia do TO, Palmeiras do TO, Nazaré, Praia Norte, Riachinho Sampaio, Santa Terezinha do TO, São Miguel do TO, São Sebastião do TO, Sítio Novo do TO, Tocantinópolis e Wanderlândia"
+  origem = "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do TO, Babaçulândia, Buriti do TO, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Itaguatins, Luzinópolis, Maurilândia do TO, Palmeiras do TO, Nazaré, Praia Norte, Riachinho Sampaio, Santa Terezinha do TO, São Miguel do TO, São Sebastião do TO, Sítio Novo do TO, Tocantinópolis e Wanderlândia"
 )
 
 ##2018 #### 
@@ -36,7 +36,7 @@ MRT_I_2018 <- data.frame(
   vtn_media = c(4630.60, 4792.04, 2905.49, 4888.67, 4588.65, 2905.49),
   vtn_minimo = c(3936.01, 4073.23, 2469.67, 4155.37, 3900.35, 2469.67),
   vtn_maximo = c(5325.18, 5510.85, 3341.31, 5621.97, 5276.94, 3341.31),
-  origem = "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do TO, Babaçulândia, Buriti do TO, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Iguatins, Luzinópolis, Maurilândia do TO, Palmeiras do TO, Nazaré, Praia Norte, Riachinho Sampaio, Santa Terezinha do TO, São Miguel do TO, São Sebastião do TO, Sítio Novo do TO, Tocantinópolis e Wanderlândia"
+  origem = "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do TO, Babaçulândia, Buriti do TO, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Itaguatins, Luzinópolis, Maurilândia do TO, Palmeiras do TO, Nazaré, Praia Norte, Riachinho Sampaio, Santa Terezinha do TO, São Miguel do TO, São Sebastião do TO, Sítio Novo do TO, Tocantinópolis e Wanderlândia"
 )
 ##2022 #### 
 MRT1_2022 <- data.frame(
@@ -49,7 +49,7 @@ MRT1_2022 <- data.frame(
   vtn_media = c(8437.10, 10200.21, 8468.84, 6975.14, 10200.21, 8468.84, 6975.14),
   vtn_minimo = c(7171.53, 8670.17, 7198.51, 5928.87, 8670.17, 7198.51, 5928.87),
   vtn_maximo = c(9702.66, 11730.24, 9739.17, 8021.41, 11730.24, 9739.17, 8021.41),
-  origem = "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do TO, Babaçulândia, Buriti do TO, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Iguatins, Luzinópolis, Maurilândia do TO, Palmeiras do TO, Nazaré, Praia Norte, Riachinho Sampaio, Santa Terezinha do TO, São Miguel do TO, São Sebastião do TO, Sítio Novo do TO, Tocantinópolis e Wanderlândia"
+  origem = "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do TO, Babaçulândia, Buriti do TO, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Itaguatins, Luzinópolis, Maurilândia do TO, Palmeiras do TO, Nazaré, Praia Norte, Riachinho Sampaio, Santa Terezinha do TO, São Miguel do TO, São Sebastião do TO, Sítio Novo do TO, Tocantinópolis e Wanderlândia"
   
 )
 

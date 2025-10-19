@@ -104,8 +104,7 @@ RNMRTJoaoCamara_2025 <- data.frame(
   vtn_media = c(5223.07, 5223.07, 3428.33, 4638.55, 7089.33, 3817.34, 3244.26, 3279.87, 4662.56, 5316.30, 4307.64, 4745.10, 4110.21, 7030.73, 8544.15, 4016.24, 4573.81, 7192.88, 8022.96),
   vtn_minimo = c(4439.61, 4439.61, 2914.08, 3942.76, 6025.93, 3244.74, 2757.62, 2787.89, 3963.17, 4518.86, 3661.49, 4033.33, 3493.67, 5976.12, 7262.52, 3413.80, 3887.74, 6113.95, 6819.52),
   vtn_maximo = c(6006.54, 6006.54, 3942.58, 5334.33, 8152.73, 4389.94, 3730.90, 3771.85, 5361.94, 6113.75, 4953.78, 5456.86, 4726.74, 8085.34, 9825.77, 4618.68, 5259.88, 8271.81, 9226.40),
-  origem = " João Câmara/RN. Abrangência: Bento Fernandes, Caiçara do Norte, Galinhos,
-Jandaíra, João Câmara, Parazinho, Pedra Grande, Poço Branco, Pureza, São Bento do Norte, São Miguel do Gostoso, Taipú e Touros."
+  origem = "Bento Fernandes, Caiçara do Norte, Galinhos,Jandaíra, João Câmara, Parazinho, Pedra Grande, Poço Branco, Pureza, São Bento do Norte, São Miguel do Gostoso, Taipú, Touros."
 )
 
 ###19.3 MRT LITORAL ORIENTAL #####
@@ -126,7 +125,7 @@ Macaíba, Rio do Fogo, Maxaranguape,
 Montanhas, Monte Alegre, Natal, Nísia
 Floresta, Parnamirim, Pedro Velho, São
 Gonçalo do Amarante, São José de Mipibu,
-Senador Georgino, velino, Tibau do Sul, Vera
+Senador Georgino avelino, Tibau do Sul, Vera
 Cruz e Vila Flor"
 )
 ### 2019 #####
@@ -140,7 +139,7 @@ RNMRT4_2019 <- data.frame(
   vtn_media = c(7677.27, 7677.27, 8276.2, 4939.3, 9628.64, 8965.39, 6119.16, 5190.0, 4699.53, 9054.4),
   vtn_minimo = c(4914.27, 4914.27, 5659.05, 3422.12, 7326.64, 7911.85, 3797.74, 3722.15, 2853.84, 6308.19),
   vtn_maximo = c(10440.27, 10440.27, 10893.34, 6456.49, 11930.63, 10018.94, 8440.59, 6657.86, 6545.21, 11800.6),
-  origem = "Arês, Baía Formosa, Canguaretama, Ceará-Mirim, Espirito Santo, Extremoz, Goianinha, Macaíba, Rio do Fogo, Maxaranguape, Montanhas, Monte Alegre, Natal, Nísia Floresta, Parnamirim, Pedro Velho, São Gonçalo do Amarante, São José de Mipibu, Senador Georgino, velino, Tibau do Sul, Vera Cruz e Vila Flor"
+  origem = "Arês, Baía Formosa, Canguaretama, Ceará-Mirim, Espirito Santo, Extremoz, Goianinha, Macaíba, Rio do Fogo, Maxaranguape, Montanhas, Monte Alegre, Natal, Nísia Floresta, Parnamirim, Pedro Velho, São Gonçalo do Amarante, São José de Mipibu, Senador Georgino avelino, Tibau do Sul, Vera Cruz e Vila Flor"
 )
 
 ### 2020 #####
@@ -854,8 +853,7 @@ RNMRT_Alto_Oeste_2017 <- data.frame(
   vtn_minimo = c(640.24, 640.24, 640.24, 524.96, 562.62, 713.99, 818.59, 763.88, 672.58),
   vtn_maximo = c(1247.53, 1247.53, 1247.53, 1136.49, 903.73, 1532.56, 1315.14, 3771.36, 1130.07),
   origem = "Água Nova, Alexandria, Almino Afonso,
-Antônio Martins, Coronel João Pessoa, Doutor
-, Severiano, Encanto, Francisco Dantas,
+Antônio Martins, Coronel João Pessoa, Doutor Severiano, Encanto, Francisco Dantas,
 Frutuoso Gomes, João Dias, José da Penha,
 Janduís, Lucrécia, Luis Gomes, Major Sales,
 Marcelino Vieira, Martins, Messias Targino,
@@ -879,7 +877,7 @@ RNMRT2_2019 <- data.frame(
   vtn_media = c(1117.17, 1117.17, 1117.17, 743.95, 579.48, 1273.68, 792.22, 933.3, 1297.1, 1366.12, 867.06, 3379.77, 2294.66, 1731.69, 953.92, 888.57, 906.72),
   vtn_minimo = c(586.36, 586.36, 586.36, 656.03, 436.93, 1136.47, 611.9, 648.52, 771.06, 532.06, 698.87, 2762.02, 1166.14, 1241.19, 653.93, 669.32, 647.81),
   vtn_maximo = c(1647.98, 1647.98, 1647.98, 831.86, 722.03, 1410.9, 972.55, 1218.09, 1823.14, 2200.18, 1035.25, 3997.52, 3423.17, 2222.2, 1253.91, 1107.83, 1165.63),
-  origem = "Água Nova, Alexandria, Almino Afonso, Antônio Martins, Coronel João Pessoa, Doutor , Severiano, Encanto, Francisco Dantas, Frutuoso Gomes, João Dias, José da Penha, Janduís, Lucrécia, Luis Gomes, Major Sales, Marcelino Vieira, Martins, Messias Targino, Olho D'água dos Borges, Paraná, Patu, Pau dos Ferros, Pilões, Portalegre, Rafael Fernandes, Rafael Godeiro, Riacho da Cruz, Riacho de Santana, São Francisco do Oeste, São Miguel , Serrinha dos Pintos, Taboleiro Grande, Tenente Ananias, Umarizal, Venha-Ver e Viçosa"
+  origem = "Água Nova, Alexandria, Almino Afonso, Antônio Martins, Coronel João Pessoa, Doutor Severiano, Encanto, Francisco Dantas, Frutuoso Gomes, João Dias, José da Penha, Janduís, Lucrécia, Luis Gomes, Major Sales, Marcelino Vieira, Martins, Messias Targino, Olho D'água dos Borges, Paraná, Patu, Pau dos Ferros, Pilões, Portalegre, Rafael Fernandes, Rafael Godeiro, Riacho da Cruz, Riacho de Santana, São Francisco do Oeste, São Miguel , Serrinha dos Pintos, Taboleiro Grande, Tenente Ananias, Umarizal, Venha-Ver e Viçosa"
 )
 
 #### MRT PAU DOS FERROS ####

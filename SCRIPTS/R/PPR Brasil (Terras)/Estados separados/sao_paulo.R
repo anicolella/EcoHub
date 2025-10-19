@@ -75,7 +75,7 @@ SPMRT_Central_2018 <- data.frame(
   
   vtn_maximo = c(42985.12, 29752.06, 37005.42, 36363.63, 24098.61
                  , 29752.06, 24793.39, 36786.78),
-  origem = "Álvaro de Carvalho, Alvinlândia, Avaí, Balbinos, Barão de Antonina, Borebi, Cabrália Paulista, Cafelândia, Duartina, Echaporã, Espírito Santo do Turvo, Fernão, Gália, Garça, Getulina, Guaiçara, Guaimbê, Guarantã, Júlio Mesquita, Lins, Lucianópolis, Lupércio, Marília, Ocauçu, Oriente, Oscar Bressane, Paulistânia, Pirajuí, Piratininga, Pompéia, Pongaí, Presidente Alves, São Pedro do Turvo e Vera Cruz. Águas de Santa Bárbara, Agudos, Arandu, Arealva, Areiópolis, Assis, Avaré, Bariri, Barra Bonita, Bauru, Bernardino de Campos, Bocaina, Boracéia, Borborema, Botucatu, Campos Novos Paulista, Cândido Mota, Canitar, Cerqueira César, Chavantes, Dois Córregos, Fartura, Iacanga, Iaras, Ibirarema, Ibitinga, Igaraçu do Tietê, Ipaussu, Itaí, Itapuí, Jaú, Lençóis Paulista, Macatuba, Manduri, Mineiros do Tietê, Novo Horizonte, Óleo, Ourinhos, Palmital, Pederneiras, Piraju, Platina, Pratânia, Reginópolis, Ribeirão do Sul, Salto Grande, Santa Cruz do Rio Pardo, São Manuel, Sarutaiá, Taguaí, Tejuçá, Timburi, Ubirajara e Uru."
+  origem = "Álvaro de Carvalho, Alvinlândia, Avaí, Balbinos, Barão de Antonina, Borebi, Cabrália Paulista, Cafelândia, Duartina, Echaporã, Espírito Santo do Turvo, Fernão, Gália, Garça, Getulina, Guaiçara, Guaimbê, Guarantã, Júlio Mesquita, Lins, Lucianópolis, Lupércio, Marília, Ocauçu, Oriente, Oscar Bressane, Paulistânia, Pirajuí, Piratininga, Pompéia, Pongaí, Presidente Alves, São Pedro do Turvo e Vera Cruz, Águas de Santa Bárbara, Agudos, Arandu, Arealva, Areiópolis, Assis, Avaré, Bariri, Barra Bonita, Bauru, Bernardino de Campos, Bocaina, Boracéia, Borborema, Botucatu, Campos Novos Paulista, Cândido Mota, Canitar, Cerqueira César, Chavantes, Dois Córregos, Fartura, Iacanga, Iaras, Ibirarema, Ibitinga, Igaraçu do Tietê, Ipaussu, Itaí, Itapuí, Jaú, Lençóis Paulista, Macatuba, Manduri, Mineiros do Tietê, Novo Horizonte, Óleo, Ourinhos, Palmital, Pederneiras, Piraju, Platina, Pratânia, Reginópolis, Ribeirão do Sul, Salto Grande, Santa Cruz do Rio Pardo, São Manuel, Sarutaiá, Taguaí, Tejuçá, Timburi, Ubirajara e Uru."
 )
 
 ## 2022 #####
@@ -93,8 +93,7 @@ SPMRTCentral_2022 <- data.frame(
 lândia, Arealva, Arandu, Areiópolis, Avaí, Avaré, Balbinos, Barão de Antonina, Bariri, Barra Bonita,
 Bauru, Bernardino de Campos, Bocaina, Boraceia, Borborema, Borebi, Botucatu, Cabrália Paulista, Ca-
 felândia, Campos Novos Paulista, Cândido Mota, Canitar, Cerqueira César, Chavantes, Dois Córregos,
-Duartina, Echaporã, Espirito Santo do Turvo, Fartura, Fernão, Gália, Garça, Getulina, Guaiçara, Gua-
-embê, Guarantã, Iacanga, Iaras, Ibirema, Ibitinga, Igaraçu do Tietê, Ipaussu, Itaju, Itapuí, Jaú, Júlio
+Duartina, Echaporã, Espirito Santo do Turvo, Fartura, Fernão, Gália, Garça, Getulina, Guaiçara, Guaimbê, Guarantã, Iacanga, Iaras, Ibirema, Ibitinga, Igaraçu do Tietê, Ipaussu, Itaju, Itapuí, Jaú, Júlio
 Mesquita, Lins, Lucianópolis, Lupércio, Macatuba, Maduri, Marília, Mineiros do Tietê, Novo Horizonte,
 Ocauçu, Óleo, Oriente, Ourinhos, Oscar Bressane, Paulistânia, Palmital, Perderneiras, Piraju, Pirajuí,
 Piratininta, Platina, Pompeia, Pongaí, Pratânia, Presidente Alves, Reginópolis, Ribeirão do Sul, Salto
@@ -131,7 +130,7 @@ SPMRT_Noroeste_2018 <- data.frame(
   vtn_maximo = c(39669.42, 29752.07, 39586.78, 36613.72, 28925.62, 
                  38636.36, 39586.78, 35330.58, 28455.62, 29752.07, 
                  36074.13, 30497.36, 33553.72),
-  origem = "Ipirá, Irapuã, Mendonça, União Paulista, Adolfo, Bady Bassitt, Cedral, Jaci, José Bonifácio, Marinópolis, Monte Aprazível, Neves Paulista, Nipoã, Nova Aliança, Planalto, Potirendaba, Sales, São José do Rio Preto, Ubarana, Urupês, Turmalina, Alto Alegre, Álvares Florence, Américo de Campos, Braúna, Brejo Alegre, Coroados, Cosmorama, Estrela d'Oeste, Floreal, Glicério, Guapiaçu, Guararapes, Guzolândia, Indiaporã, Macaubal, Macedônia, Meridiano, Mirassolândia, Nova Castilho, Nova Luzitânia, Ouroeste, Parisi, Pedranópolis, Sabino, São João das Duas Pontes, São João de Iracema, Sebastianópolis do Sul, Valentim Gentil, Zacarias, Araçatuba, Auriflama, Avanhandava, Bálsamo, Barbosa, Bilac, Birigui, Buritama, Cardoso, Fernandópolis, Gastão Vidigal, General Salgado, Guarani d'Oeste, Ibirá, Icém, Ilha Solteira, Lourdes, Magda, Mira Estrela, Mirassol, Monções, Nhandeara, Nova Granada, Onda Verde, Orindiúva, Palestina, Paulo de Faria, Penápolis, Pereira Barreto, Pontes Gestal, Promissão, Riolândia, Santo Antônio do Aracanguá, Sud Mennucci, Suzanápolis, Tanabi, Votuporanga, Aspásia, Dirce Reis, Mesópolis, Nova Canaã Paulista, Paranapuã, Rubinéia, Santa Albertina, Santa Clara d'Oeste, Santa Salete, Vitória Brasil, Aparecida d'Oeste, Dolcinópolis, Jales, Palmeira d'Oeste, Poloni, Pontalinda, Populina, Santa Fé do Sul, Santana da Ponte Pensa, Santa Rita d'Oeste, São Francisco, Três Fronteiras, Turmalina e Urânia."
+  origem = "Ibirá, Irapuã, Mendonça, União Paulista, Adolfo, Bady Bassitt, Cedral, Jaci, José Bonifácio, Marinópolis, Monte Aprazível, Neves Paulista, Nipoã, Nova Aliança, Planalto, Potirendaba, Sales, São José do Rio Preto, Ubarana, Urupês, Turmalina, Alto Alegre, Álvares Florence, Américo de Campos, Braúna, Brejo Alegre, Coroados, Cosmorama, Estrela d'Oeste, Floreal, Glicério, Guapiaçu, Guararapes, Guzolândia, Indiaporã, Macaubal, Macedônia, Meridiano, Mirassolândia, Nova Castilho, Nova Luzitânia, Ouroeste, Parisi, Pedranópolis, Sabino, São João das Duas Pontes, São João de Iracema, Sebastianópolis do Sul, Valentim Gentil, Zacarias, Araçatuba, Auriflama, Avanhandava, Bálsamo, Barbosa, Bilac, Birigui, Buritama, Cardoso, Fernandópolis, Gastão Vidigal, General Salgado, Guarani d'Oeste, Ibirá, Icém, Ilha Solteira, Lourdes, Magda, Mira Estrela, Mirassol, Monções, Nhandeara, Nova Granada, Onda Verde, Orindiúva, Palestina, Paulo de Faria, Penápolis, Pereira Barreto, Pontes Gestal, Promissão, Riolândia, Santo Antônio do Aracanguá, Sud Mennucci, Suzanápolis, Tanabi, Votuporanga, Aspásia, Dirce Reis, Mesópolis, Nova Canaã Paulista, Paranapuã, Rubinéia, Santa Albertina, Santa Clara d'Oeste, Santa Salete, Vitória Brasil, Aparecida d'Oeste, Dolcinópolis, Jales, Palmeira d'Oeste, Poloni, Pontalinda, Populina, Santa Fé do Sul, Santana da Ponte Pensa, Santa Rita d'Oeste, São Francisco, Três Fronteiras, Turmalina e Urânia."
 )
 
 ##2022 ####
@@ -148,7 +147,7 @@ SPMRTNoroeste_2022 <- data.frame(
   origem = "Adolfo, Alto Alegre, Álvares Florence, Américo De Cam-
 pos, Aparecida D’oeste, Araçatuba, Aspásia, Auriflama, Avanhandava, Bady Bassitt, Bálsamo, Barbosa,
 Bilac, Birigui, Braúna, Brejo Alegre, Buritama, Cardoso, Cedral, Coroados, Cosmorama, Dirce Reis,
-Dolcinópolis, Estrela, Fernandópolis, Floreal, Gastão Vidigal, General Salgado, Glicério, Guapiaçu, Gua-
+Dolcinópolis, estrela doeste , Fernandópolis, Floreal, Gastão Vidigal, General Salgado, Glicério, Guapiaçu, Gua-
 rani D’oeste, Guararapes, Guzolândia, Ibirá, Icêm, Ilha Solteira, Indiaporã, Ipiguá, Irapuã, Jaci, Ipiguá,
 Irapuã, Jaci, Jales, José Bonifácio, Lourdes, Macaubal, Macedônia, Magda, Marinópolis, Mendonça, Me-
 ridiano, Mesópolis, Mira Estrela, Mirassol, Mirassolândia, Monções, Monte Aprazível, Neves Paulista,
@@ -180,8 +179,7 @@ jurú, Cássia dos Coqueiros, Cajobi, Catanduva, Catiguá, Colina, Colômbia, Ca
 Paulista, Cravinhos, Dobrada, Dumont, Elisário, Embauba, Fernando Prestes , Franca, Guaira, Guaraçi,
 Guariba, Guará, Guatapará, Itajobi, Itápolis, Ipuã, Itirapuã, Ituverava, Jeriquara, Jaborandi, Jardi-
 nópolis, Marapoama, Monte Azul Paulista, Matão, Monte Alto, Motuca, Miguelópolis, Morro Agudo,
-Novais, Nova Europa, Nuporanga, Olimpia, Orlândia, Palmares Pta, Paraiso, Pindorama, Pirangi, Pa-
-trocínio Pta, Pedregulho, Pradópolis, Restinga, Ribeirão Corrente, Rifaina, Ribeirão Preto, Severínia,
+Novais, Nova Europa, Nuporanga, Olimpia, Orlândia, Palmares Paulista, Paraiso, Pindorama, Pirangi, Patrocínio Paulista, Pedregulho, Pradópolis, Restinga, Ribeirão Corrente, Rifaina, Ribeirão Preto, Severínia,
 Santa Adélia, Santa Ernestina, Santa Lúcia, Sales de Oliveira, Santo Antonio da Alegria, São Joaquim da
 Barra, São José da Bela Vista, Santa Cruz da Esperança, São Simão, Serra Azul, Serrana, Tabapuã, Terra
 Roxa, Tabatinga , Taiaçú, Taiuva, Taquaritinga, Trabijú, Taquaral, Uchoa, Viradouro, Vista Alegre do
@@ -206,7 +204,7 @@ Biritiba Mirim; Itu; Santa Izabel; Boituva; Itupeva; Santana de Parnaíba; Bom J
 dira; Santo André; Bragança Paulista; Jarinu; Santos; Cabreúva; Joanópolis; São Bernardo do Campo;
 Caieiras; Jundiaí; São Caetano do Sul; Cajamar; Juquitiba; São Lourenço da Serra; Campo Limpo Pau-
 lista; Louveira; São Paulo; Carapicuíba; Mairinque; São Roque; Cotia; Mairiporã; São Vicente; Cubatão;
-Mauá; Sorocaba; Diadema; Mogi das Cruzes; Suzano; Embu; Mongaguá; Taboão da Serra; Embu-Guaçu;
+Mauá; Sorocaba; Diadema; Mogi das Cruzes; Suzano; Embu das artes; Mongaguá; Taboão da Serra; Embu-Guaçu;
 Morungaba; Tapiraí; Ferraz de Vasconcelos; Nazaré Paulista; Tuiuti; Francisco Morato; Osasco; Valinhos;
 Franco da Rocha; Pedra Bela; Vargem; Guararema; Pedro de Toledo; Vargem Grande Paulista; Guarujá;
 Peruíbe; Várzea Paulista; Guarulhos; Piedade; Vinhedo; Ibiúna; Pinhalzinho; Votorantim; Igaratá; Pira-
@@ -226,8 +224,7 @@ SPMRTLeste_2022 <- data.frame(
   vtn_maximo = c(25317.49, 26134.04, 27505.91, 15500.10, 9060.63, NA, 26134.04, 27505.91, 15899.10, 9060.63, 32311.13, 20110.11),
   origem = "São José dos Campos, Caçapava, Igaratá, Jacareí, Jambeiro,
 Monteiro Lobato, Paraibuna e Santa Branca; Taubaté, Campos do Jordão, Lagoinha, Natividade da Serra,
-Pindamonhangaba, Santo Antônio do Pinhal, São Bento do Sapucaí, São Luiz do Paraitinga, Tremembé
-e Redenção as Serra; de Guaratinguetá, Aparecida, Cachoeira Paulista, Canas, Cunha, Lorena, Piquete,
+Pindamonhangaba, Santo Antônio do Pinhal, São Bento do Sapucaí, São Luiz do Paraitinga, Tremembé, Redenção as Serra; de Guaratinguetá, Aparecida, Cachoeira Paulista, Canas, Cunha, Lorena, Piquete,
 Potim e Roseira; Cruzeiro, Arapeí, Areias, Bananal, Lavrinhas, Queluz, São José do Barreiro, Silveiras;
 Caraguatatuba, Ilhabela, Ubatuba e São Sebastião."
 )
@@ -270,7 +267,7 @@ Dourado, Elias Fausto, Engenheiro Coelho, Espírito Santo do Pinhal, Estiva Gerb
 lândia, Ibaté, Indaiatuba, Ipeúna, Iracemápolis, Itapira, Itirapina, Itobi, Jaguariúna, Jumirim, Laranjal
 Paulista, Leme, Limeira, Lindoia, Mococa, Mogi Guaçu, Mogi Mirim, Mombuca, Monte Alegre do Sul,
 Monte Mor, Nova Odessa, Paulínia, Pedreira, Pereiras, Piracicaba, Pirassununga, Porto Ferreira, Rafard,
-Ribeirão Bonito, Rio Claro, Rio das Pedras, Saltinho, Santa Bárbara do Oeste, Santa Cruz da Conceição,
+Ribeirão Bonito, Rio Claro, Rio das Pedras, Saltinho, Santa Bárbara doeste, Santa Cruz da Conceição,
 Santa Cruz das Palmeiras, Santa Gertrudes, Santa Maria da Serra, Santa Rita do Passa Quatro, Santa
 Rosa do Viterbo, Santo Antonio da Posse, Santo Antônio do Jardim, São Carlos, São João da Boa Vista,
 São José do Rio Pardo, São Pedro, São Sebastião da Grama, Serra Negra, Socorro, Sumaré, Tambaú,

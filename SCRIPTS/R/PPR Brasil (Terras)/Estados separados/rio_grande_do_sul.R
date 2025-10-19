@@ -454,13 +454,7 @@ RSMRT05_2017 <- data.frame(
     15336.78, 26851.76, 25523.50, 20917.13, 7941.04, 8145.09, 11993.06, 11557.07,
     5293.29
   ),
-  origem = "Agudo, Cacequi, Cachoeira do Sul, Candelária, Capão do Cipó, Cerro Branco,
-Dilermando de Aguiar, Dona Francisca, Faxinal do Soturno, Formigueiro, Ibarama,
-Itaara, Ivorá, Jaguari, Jari, Lagoa Bonita do Sul, Mata, Nova Esperança do Sul, Nova
-Palma, Novo Cabrais, Paraíso do Sul, Passa Sete, , uevedos, Restinga Seca, Rio Pardo,
-Santa Margarida do Sul, Santa Maria, Santiago, São Gabriel, São João do Polesine, São
-Martinho da Serra, São Pedro do Sul, São Sepé, São , icente do Sul, Silveira Martins,
-Sobradinho, Toropi, Unistalda e Vila Nova do Sul"
+  origem = "Agudo, Cacequi, Cachoeira do Sul, Candelária, Capão do Cipó, Cerro Branco, Dilermando de Aguiar, Dona Francisca, Faxinal do Soturno, Formigueiro, Ibarama, Itaara, Ivorá, Jaguari, Jari, Lagoa Bonita do Sul, Mata, Nova Esperança do Sul, Nova Palma, Novo Cabrais, Paraíso do Sul, Passa Sete, uevedos, Restinga Seca, Rio Pardo, Santa Margarida do Sul, Santa Maria, Santiago, São Gabriel, São João do Polesine, São Martinho da Serra, São Pedro do Sul, São Sepé, São vicente do Sul, Silveira Martins, Sobradinho, Toropi, Unistalda e Vila Nova do Sul"
 )
 
 ### 2020 ####
@@ -478,7 +472,7 @@ RSMRT5_2020 <- data.frame(
 Itaara, Jaguari, Jari, Mata, Nova Esperança do
 Sul, Passa Sete, Quevedos, Santa Margarida do
 Sul, Santa Maria, São Gabriel, São Martinho da
-Serra, São Pedro do Sul, São Sepé,"
+Serra, São Pedro do Sul, São Sepé"
 )
 ### 2022 ####
 RSMRT5_2022 <- data.frame(
@@ -569,10 +563,10 @@ RSMRT06_2017 <- data.frame(
     9611.99, 9456.12, 5858.50, 7370.70
   ),
   origem = "Amaral Ferrador, Arambaré, Arroio do Padre, Arroio dos Ratos, Barão do Triunfo,
-Barra do , ibeiro, Butiá, Camaquã, Canguçu, Capão do Leão, Cerro Grande do Sul,
+Barra do ribeiro, Butiá, Camaquã, Canguçu, Capão do Leão, Cerro Grande do Sul,
 Charqueadas, Chuvisca, Cristal, Dom Feliciano, Eldorado do Sul, General Câmara,
-Guaíba, Mariana Pimentel, Minas do , eão, Morro Redondo, Pantano Grande,
-Pelotas, São Jerônimo, São Lourenço do Sul, Sentinela , o Sul, Sertão Santana, Tapes,
+Guaíba, Mariana Pimentel, Minas do leão, Morro Redondo, Pantano Grande,
+Pelotas, São Jerônimo, São Lourenço do Sul, Sentinela do Sul, Sertão Santana, Tapes,
 Turuçu e Vale Verde"
 )
 #### 23.6 Pelotas ####
@@ -940,9 +934,7 @@ RSMRT11_2020 <- data.frame(
   vtn_media = c(21803.49, 23401.06, 9430.35, 4537.03, 18816.71, 28273.64, 17883.48, 31088.85, 21314.61, 9951.34, 16730.73, 9430.35, 4537.03, 18816.71, 28273.64, 19500.00, 17236.88, 27664.63, 36901.78, 26957.30, 19620.17, 28294.30, 21153.09, 8603.92, 11837.73, 16777.78, 16719.87, 10314.57, 9737.85, 7931.14, 4339.35, 4668.82),
   vtn_minimo = c(18532.97, 19890.90, 8015.80, 3856.48, 15994.20, 24032.59, 15200.96, 26425.52, 18117.42, 8458.64, 14221.12, 8015.80, 3856.48, 15994.20, 24032.59, 16575.00, 14651.34, 23514.94, 31366.51, 22913.70, 16677.14, 24050.15, 17980.13, 7313.33, 10062.07, 14261.11, 14211.89, 8767.39, 8277.17, 6741.47, 3688.45, 3968.49),
   vtn_maximo = c(25074.02, 26911.22, 10844.90, 5217.59, 21639.21, 32514.68, 20566.00, 35752.17, 24511.81, 11444.04, 19240.34, 10844.90, 5217.59, 21639.21, 32514.68, 22425.00, 19822.41, 31814.33, 42437.04, 31000.89, 22563.19, 32538.44, 24326.06, 9894.51, 13613.39, 19294.44, 19227.86, 11861.76, 11198.53, 9120.81, 4990.26, 5369.14),
-  origem = " Santa Cruz do Sul, Agudo e Restinga
-Seca;Pantano Grande e Rio Pardo,
-Vale do Taquari. "
+  origem = "Santa Cruz do Sul, Agudo e Restinga Seca; Pantano Grande,  Rio Pardo, Anta Gorda, Arroio do Meio, Arvorezinha, Bom Retiro do Sul, Canudos do Vale, Capitão, Colinas, Coqueiro Baixo, Cruzeiro do Sul, Dois Lajeados, Doutor Ricardo, Encantado, Estrela, Fazenda Vilanova, Fontoura Xavier, Forquetinha, Gramado Xavier, Ilópolis, Itapuca, Imigrante, Lajeado, Marques de Souza, Mato Leitão, Muçum, Nova Bréscia, Paverama, Poço das Antas, Pouso Novo, Progresso, Putinga, Relvado, Roca Sales, Santa Clara do Sul, São José do Herval, Sério, Tabaí, Taquari, Teutônia, Travesseiro, Vespasiano Corrêa, Westfália"
 )
 ## 2022 ####
 RSMRT11_2022 <- data.frame(
@@ -955,9 +947,7 @@ RSMRT11_2022 <- data.frame(
   vtn_media = c(45905.72, 53911.26, 18639.80, 8367.04, 44367.28, 28167.68, 71707.48, 46359.94, 18639.80, 17638.95, 31373.97, 44367.28, 29304.07, 65885.95, 60768.02, 42101.68, 64513.08, 43447.07, 18692.87, 19119.46, 17964.86, 15372.21, 20283.49, 30373.33, 31802.81),
   vtn_minimo = c(39019.86, 45824.57, 15843.83, 7111.98, 37712.19, 23942.53, 60951.36, 39405.95, 15843.83, 14993.11, 26667.87, 37712.19, 24908.46, 56003.06, 51652.82, 35786.43, 54836.12, 36930.01, 15888.94, 16251.54, 15270.13, 13066.38, 17240.97, 25817.33, 27032.39),
   vtn_maximo = c(52791.57, 61997.95, 21435.76, 9622.09, 51022.37, 32392.83, 82463.60, 53313.94, 21435.76, 20284.80, 36080.06, 51022.37, 33699.68, 75768.84, 69883.22, 48416.94, 74190.04, 49964.14, 21496.80, 21987.38, 20659.58, 17678.04, 23326.01, 34929.33, 36573.24),
-  origem = "Santa Cruz do Sul, Agudo e Restinga
-Seca; Pantano Grande,  Rio Pardo,
-Vale do Taquari. "
+  origem = "Santa Cruz do Sul, Agudo e Restinga Seca; Pantano Grande,  Rio Pardo, Anta Gorda, Arroio do Meio, Arvorezinha, Bom Retiro do Sul, Canudos do Vale, Capitão, Colinas, Coqueiro Baixo, Cruzeiro do Sul, Dois Lajeados, Doutor Ricardo, Encantado, Estrela, Fazenda Vilanova, Fontoura Xavier, Forquetinha, Gramado Xavier, Ilópolis, Itapuca, Imigrante, Lajeado, Marques de Souza, Mato Leitão, Muçum, Nova Bréscia, Paverama, Poço das Antas, Pouso Novo, Progresso, Putinga, Relvado, Roca Sales, Santa Clara do Sul, São José do Herval, Sério, Tabaí, Taquari, Teutônia, Travesseiro, Vespasiano Corrêa, Westfália"
 )
 ### Consolidação dos dados ####
 RS17<- rbind(
