@@ -156,6 +156,20 @@ CEMRTIbiapaba_2022 <- data.frame(
   origem = "Carnaubal, Croatá, Guaraciaba do Norte,Ibiapina, São Benedito, Tianguá, Ubajara, Viçosa do Ceará"
 )
 
+##2024####
+CEMRT_ibiapaba_2024 <- data.frame(
+  mrt = "ibiapaba",
+  tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Vegetação Nativa", "Agrícola - Horticultura/Olericola/Granjeiros", "Exploração Mista - Pastagem+Fruticultura.", "Vegetação Nativa - Floresta de Transição", "Vegetação Nativa - Capoeira"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(10943.28, 21143.31, 5521.30, 16404.72, 16261.75, 8062.49, 11801.07, 17635.23),
+  vti_minimo = c(9301.79, 17971.82, 4693.11, 13944.01, 13822.49, 6853.12, 10030.91, 14989.95),
+  vti_maximo = c(12584.77, 24314.81, 6349.50, 18865.43, 18701.01, 9271.87, 13571.23, 20280.51),
+  vtn_media = c(5253.17, 9691.79, 3063.68, 15375.49, 8549.16, 4088.75, 11801.07, 16017.86),
+  vtn_minimo = c(4465.19, 8238.02, 2604.13, 13069.16, 7266.79, 3475.44, 10030.91, 13615.18),
+  vtn_maximo = c(6041.15, 11145.56, 3523.24, 17681.81, 9831.54, 4702.06, 13571.23, 182420.54),
+  origem = "Carnaubal, Croatá, Guaraciaba do Norte, Ibiapina, São Benedito, Tianguá, Ubajara e Viçosa do Ceará."
+)
+
 ### 6.6 MRT: Sertões Norte####
 ###2017####
 CEMRTSertoesNorte_2017 <- data.frame(
