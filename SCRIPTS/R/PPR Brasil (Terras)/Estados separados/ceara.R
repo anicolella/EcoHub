@@ -514,7 +514,7 @@ CE2024 <- rbind(
 CE17$ano <- 2017
 CE2022$ano <- 2022
 CE2024$ano <- 2024
-CETEMPORAL <- rbind(CE2022, CE17)
+CETEMPORAL <- rbind(CE2022, CE17, CE2024)
 CETEMPORAL$estado <- 23
 CETEMPORAL$regiao <- "nordeste"
 
