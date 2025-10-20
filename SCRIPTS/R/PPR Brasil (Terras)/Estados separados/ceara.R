@@ -157,7 +157,7 @@ CEMRTIbiapaba_2022 <- data.frame(
 )
 
 ##2024####
-CEMRT_ibiapaba_2024 <- data.frame(
+CEMRTIbiapaba_2024 <- data.frame(
   mrt = "ibiapaba",
   tipologia_de_uso = c("Geral", "Agrícola", "Exploração Mista", "Vegetação Nativa", "Agrícola - Horticultura/Olericola/Granjeiros", "Exploração Mista - Pastagem+Fruticultura.", "Vegetação Nativa - Floresta de Transição", "Vegetação Nativa - Capoeira"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
@@ -255,6 +255,19 @@ CEMRTSertaoCentral_2022 <- data.frame(
   origem = "Banabuiú, Choró, Deputado Irapuan Pinheiro, Ibaretama, Ibicuitinga, Milhã,Mombaça, Pedra Branca, Piquet Carneiro, Quixadá, Quixeramobim, Senador Pompeu e Solonópole"
 )
 
+##2024####
+CEMRTSertaoCentral_2024 <- data.frame(
+  mrt = "SERTÃO CENTRAL",
+  tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Exploração Mista - Subsistência", "Mista: Agrícola + Pastagem", "Pecuária: Pastagem Nativa", "Pecuária: Pastagem Formada", "Pecuária: Pastagem Formada"),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(2515.17, 3493.24, 2225.20, 899.50, 2534.17, 3137.85, 6659.71, nan),
+  vti_minimo = c(2137.90, 2969.25, 1891.42, 764.58, 2154.04, 2667.17, 5660.75, nan),
+  vti_maximo = c(2892.45, 4017.22, 2558.98, 1034.43, 2914.30, 3608.52, 7658.66, nan),
+  vtn_media = c(1725.71, 2539.59, 1572.13, 665.02, 1778.86, 2013.47, 4787.36, 4787.36),
+  vtn_minimo = c(1466.85, 2158.65, 1336.31, 565.27, 1512.03, 1711.45, 4069.26, 4069.26),
+  vtn_maximo = c(1984.57, 2920.53, 1807.95, 764.78, 2045.69, 2315.49, 5505.47, 5505.47)
+)
+
 ### 6.9 MRT: Sertões de Canindé####
 ###2017####
 CEMRTSertoesCaninde_2017 <- data.frame(
@@ -280,6 +293,20 @@ CEMRTSertaoCaninde_2022 <- data.frame(
   vtn_media = c(524.20, 524.20, 633.12, 433.74),
   vtn_minimo = c(445.57, 445.57, 538.15, 368.68),
   vtn_maximo = c(602.83, 602.83, 728.09, 498.81),
+  origem = "Boa Viagem, Canindé, Caridade, Itatira, Madalena e Paramoti"
+)
+
+##2024###
+CEMRT_Caninde_2024 <- data.frame(
+  mrt = "SERTÃO DE CANINDÉ",
+  tipologia_de_uso = c("Geral", "Exploração Mista", "Não Agrícola", "Exploração Mista - Agrícola + Pastagem", "Exploração Mista - Subsistência"),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(1387.85, 1267.25, 1029.22, 1268.19, 1024.22),
+  vti_minimo = c(1179.67, 1077.16, 874.84, 1077.96, 870.59),
+  vti_maximo = c(1596.03, 1457.34, 1183.60, 1458.42, 1177.86),
+  vtn_media = c(836.03, 901.98, 953.57, 905.00, 787.38),
+  vtn_minimo = c(710.63, 766.68, 810.54, 769.25, 669.27),
+  vtn_maximo = c(961.43, 1037.28, 1096.61, 1040.75, 905.49),
   origem = "Boa Viagem, Canindé, Caridade, Itatira, Madalena e Paramoti"
 )
 
@@ -309,6 +336,20 @@ CEMRTSertaoInhamuns_2022 <- data.frame(
   vtn_minimo = c(899.00, 864.06, 933.81, 400.68),
   vtn_maximo = c(1216.30, 1169.02, 1263.39, 542.10),
   origem = "Aiuaba, Arneiroz, Catunda,Crateús, Hidrolândia, Independência, Ipaporanga, Ipu, Ipueiras, Monsenhor Tabosa, Nova Russas,Novo Oriente, Parambú, Pires Ferreira, Poranga, Quiterianópolis, Santa Quitéria, Tamboril e Tauá"
+)
+
+### 2024 ####
+CEMRTSertaoInhamuns_2024 <- data.frame(
+  mrt = "Inhamus",
+  tipologia_de_uso = c("Geral", "Exploração Mista", "Pecuária", "Exploração Mista - Agrícola + Pastagem", "Pecuária - Bovino + Pastagem Nativa"),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(1689.12, 1875.31, 1232.43, 1847.11, 1232.43),
+  vti_minimo = c(1435.76, 1594.02, 1047.57, 1570.04, 1047.57),
+  vti_maximo = c(1942.49, 2156.61, 1417.30, 2124.17, 1417.30),
+  vtn_media = c(1150.34, 1297.27, 828.76, 1222.08, 828.76),
+  vtn_minimo = c(977.79, 1102.68, 704.45, 1038.77, 704.45),
+  vtn_maximo = c(1322.90, 1491.86, 953.08, 1405.39, 953.08),
+  origem = "Aiuaba, Arneiroz, Catunda, Crateús, Hidrolândia, Independência, Ipaporanga, Ipu, Ipueiras, Monsenhor Tabosa, Nova Russas, Novo Oriente, Parambú, Pires Ferreira, Poranga, Quiterianópolis, Santa Quitéria, Tamboril e Tauá"
 )
 
 ### 6.11 MRT: Centro Sul####
