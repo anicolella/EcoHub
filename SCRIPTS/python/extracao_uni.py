@@ -42,11 +42,12 @@ def atribuir_nivel_por_padrao(tipologia):
         return 0
         
     # REGRA PARA NÍVEL 2 (Subcategorias)
-    if " - " in texto_limpo or "(" in texto_limpo:
+    if " - " in texto_limpo or "(" or ":" in texto_limpo:
         return 2
         
+
     # REGRA PARA NÍVEL 1 (Categorias Principais)
-    if texto_limpo in ["Agrícola", "Exploração Mista", "Vegetação Nativa"]:
+    if texto_limpo in ["Agrícola", "Exploração Mista", "Vegetação Nativa", "Pecuária", "Não Agrícola"]:
         return 1
         
     # Se não for nada disso, provavelmente é lixo ou cabeçalho
@@ -98,9 +99,9 @@ def gerar_script_r_from_df(df, nome_mrt, ano, uf="RN"):
 
 # --- 1. Configurações Gerais ---
 caminho_pdf = r"C:\Users\jodom\OneDrive\Área de Trabalho\CE_RAMT_2024.pdf"  # Coloque o caminho do PDF
-paginas_para_ler = '59'
-nome_do_mrt = "ibiapaba"
-ano_dos_dados = 2021
+paginas_para_ler = '62'
+nome_do_mrt = "sertao central"
+ano_dos_dados = 2024
 uf_dos_dados = "CE"
 
 # --- 2. Configurações de Extração ---
