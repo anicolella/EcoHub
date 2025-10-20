@@ -227,6 +227,20 @@ CEMRTJaguaribano_2022 <- data.frame(
   origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e Jaguaribe"
 )
 
+###2024####
+CEMRTJaguaribano_2024 <- data.frame(
+  mrt = "JAGUARIBANO",
+  tipologia_de_uso = c("Geral","Agrícola", "Exploração Mista", "Pecuária", "Agrícola - Fruticultura (irrigada)", "Agrícola - Fruticultura (sequeiro)", "Agrícola - Fruticultura (caju)", "Exploração Mista - Agrícola + Pastagem", "Exploração Mista - Pastagem + Fruticultura", "Exploração Mista - Subsistência", "Pecuária - Pastagem Nativa", "Pecuária - Pastagem Formada", "Agrícola - Fruticultura (irrigada) - Perímetro irrigado", "Agrícola - Fruticultura (irrigada) - Chapada do Apodi", "Agrícola - Fruticultura Caju - Sertão", "Mista (agrícola + pastagem) - Aluvião", "Mista (agrícola + pastagem) - Sertão", "Mista (pastagem + fruticultura) - Aluvião", "Mista (pastagem + fruticultura) - Sertão", "Mista (subsistência) - Sertão", "Pecuária (pastagem nativa) - Sertão", "Pecuária (pastagem formada) - Aluvião", "Pecuária (pastagem formada) - Sertão"),
+  nivel = c(0, rep(1,3),rep(2, 8), rep(3, 11)),
+  vti_media = c(8024.75, 11279.74, 5753.61, 5854.99, 17912.97, 4950.00, 3508.86, 6366.37, 7313.93, 3233.16, 4168.98, 7099.15, 26745.19, 10531.50, 3508.86, 12790.69, 3844.70, 12212.05, 7511.33, 3233.16, 3607.09, 7889.94, 5458.72),
+  vti_minimo = c(6821.04, 9587.78, 4890.57, 4976.74, 15226.03, 4207.50, 2982.53, 5411.41, 6216.84, 2748.19, 3543.63, 6034.28, 22733.41, 8951.78, 2982.53, 10872.08, 3267.99, 10380.24, 6384.63, 2748.19, 3066.03, 6706.45, 4639.91),
+  vti_maximo = c(9228.46, 12971.70, 6616.65, 6733.23, 20599.92, 5692.50, 4035.19, 7321.32, 8411.02, 3718.14, 4794.33, 8164.02, 30756.97, 12111.23, 4035.19, 14709.29, 4421.40, 14043.86, 8638.03, 3718.14, 4148.15, 9073.43, 6277.52),
+  vtn_media = c(4938.60, 8801.84, 3647.94, 3750.86, 15727.68, 3580.80, 2386.24, 3850.99, 4856.63, 2063.43, 2831.64, 4668.18, 26745.19, 5293.88, 2386.24, 7887.85, 2386.23, 8430.22, 4296.08, 2253.78, 2423.14, 5923.27, 3398.39),
+  vtn_minimo = c(4197.81, 7481.56, 3100.75, 3188.23, 13368.53, 3043.68, 2028.31, 3273.34, 4128.13, 1753.92, 2406.89, 3967.95, 22733.41, 4499.80, 2028.31, 6704.68, 2028.30, 7165.69, 3651.67, 1915.71, 2059.67, 5034.78, 2888.63),
+  vtn_maximo = c(5679.39, 10122.12, 4195.14, 4313.49, 18086.83, 4117.92, 2744.18, 4428.63, 5585.12, 2372.95, 3256.38, 5368.41, 30756.97, 6087.96, 2744.18, 9071.03, 2744.17, 9694.75, 4940.49, 2591.84, 2786.61, 6811.76, 3908.15),
+  origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e Jaguaribe"
+)
+
 ### 6.8 MRT: Sertão Central #####
 ###2017####
 CEMRTSertaoCentral_2017 <- data.frame(
@@ -260,12 +274,13 @@ CEMRTSertaoCentral_2024 <- data.frame(
   mrt = "SERTÃO CENTRAL",
   tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Exploração Mista - Subsistência", "Mista: Agrícola + Pastagem", "Pecuária: Pastagem Nativa", "Pecuária: Pastagem Formada", "Pecuária: Pastagem Formada"),
   nivel = c(0, 1, 1, 2, 2, 2, 2, 2),
-  vti_media = c(2515.17, 3493.24, 2225.20, 899.50, 2534.17, 3137.85, 6659.71, nan),
-  vti_minimo = c(2137.90, 2969.25, 1891.42, 764.58, 2154.04, 2667.17, 5660.75, nan),
-  vti_maximo = c(2892.45, 4017.22, 2558.98, 1034.43, 2914.30, 3608.52, 7658.66, nan),
+  vti_media = c(2515.17, 3493.24, 2225.20, 899.50, 2534.17, 3137.85, 6659.71, NA),
+  vti_minimo = c(2137.90, 2969.25, 1891.42, 764.58, 2154.04, 2667.17, 5660.75, NA),
+  vti_maximo = c(2892.45, 4017.22, 2558.98, 1034.43, 2914.30, 3608.52, 7658.66, NA),
   vtn_media = c(1725.71, 2539.59, 1572.13, 665.02, 1778.86, 2013.47, 4787.36, 4787.36),
   vtn_minimo = c(1466.85, 2158.65, 1336.31, 565.27, 1512.03, 1711.45, 4069.26, 4069.26),
-  vtn_maximo = c(1984.57, 2920.53, 1807.95, 764.78, 2045.69, 2315.49, 5505.47, 5505.47)
+  vtn_maximo = c(1984.57, 2920.53, 1807.95, 764.78, 2045.69, 2315.49, 5505.47, 5505.47),
+  origem = "Banabuiú, Choró, Deputado Irapuan Pinheiro, Ibaretama, Ibicuitinga, Milhã, Mombaça, Pedra Branca, Piquet Carneiro, Quixadá, Quixeramobim, Senador Pompeu e Solonópole"
 )
 
 ### 6.9 MRT: Sertões de Canindé####
@@ -296,8 +311,8 @@ CEMRTSertaoCaninde_2022 <- data.frame(
   origem = "Boa Viagem, Canindé, Caridade, Itatira, Madalena e Paramoti"
 )
 
-##2024###
-CEMRT_Caninde_2024 <- data.frame(
+##2024####
+CEMRTSertaoCaninde_2024<- data.frame(
   mrt = "SERTÃO DE CANINDÉ",
   tipologia_de_uso = c("Geral", "Exploração Mista", "Não Agrícola", "Exploração Mista - Agrícola + Pastagem", "Exploração Mista - Subsistência"),
   nivel = c(0, 1, 1, 2, 2),
@@ -381,6 +396,22 @@ CEMRTCentroSul_2022 <- data.frame(
   origem = "Acopiara, Baixio, Catarina, Cedro, Icó, Iguatu, Ipaumirim, jucás, Lavras da Mangabeira, Orós, Saboeiro, Umari e Quixelô "
 )
 
+
+###2024####
+CEMRTCentroSul_2024 <- data.frame(
+  mrt = "CENTRO SUL",
+  tipologia_de_uso = c("Geral","Agrícola", "Pecuária", "Exploração Mista", "Não Agrícola", "Exploração Mista - Subsistência", "Mista: Agrícola + Pastagem", "Pecuária: Pastagem Nativa", "Pecuária: Pastagem Formada", "Pecuária: Pastagem Formada irrigada"),
+  nivel = c(0, rep(1,4 ), rep(2, 5)),
+  vti_media =c(4016.26, 26646.67, 3957.54, 1425.07, 269045.36, 802.78, 2068.03, 3133.21, 4448.53, 15105.27) ,
+  vti_minimo = c(3413.82, 22649.67, 3363.91, 1211.31, 228688.55, 682.36, 1757.83, 2663.23, 3781.25, 12839.48),
+  vti_maximo = c(4618.70, 30643.67, 4551.17, 1638.83, 309402.16, 923.19, 2378.24, 3603.19, 5115.80, 17371.06),
+  vtn_media = c(2321.89, 15235.33, 2672.62, 1053.08, NA, 688.49, 1440.31, 2120.71, 3062.75, 9954.57),
+  vtn_minimo = c(1973.61, 12950.03, 2271.72, 895.11, NA ,585.22, 1224.26, 1802.61, 2603.34, 8461.38),
+  vtn_maximo = c(2670.18, 17520.63, 3073.51, 1211.04,NA ,791.76, 1656.35, 2438.82, 3522.16, 11447.76),
+  origem = "Acopiara, Baixio, Catarina, Cedro, Icó, Iguatu, Ipaumirim, jucás, Lavras da Mangabeira, Orós, Saboeiro, Umari e Quixelô "
+)
+
+
 ### MRT: Cariri ####
 ### 2017 #####
 CEMRTCariri_2017 <- data.frame(
@@ -407,6 +438,20 @@ CEMRTCariri_2022 <- data.frame(
   vtn_media = c(3324.51, 2737.28, 3481.43, 3955.68, 2120.26, 1926.45, 4978.90, 1125.72, 12752.64, 2496.69, 6294.98),
   vtn_minimo = c(2825.83, 2326.69, 2959.22, 3362.33, 1802.22, 1637.48, 4232.06, 956.86, 10839.75, 2122.19, 5350.73),
   vtn_maximo = c(3823.18, 3147.87, 4003.65, 4549.03, 2438.30, 2215.42, 5725.73, 1294.58, 14665.54, 2871.19, 7239.23),
+  origem = "Abaiara, Altaneira, Antonina do Norte,  Araripe, Assaré, Aurora, Barbalha, Barro,  Brejo Santo, Campos Sales, Caririaçu,  Crato, Farias Brito, Granjeiro, Jardim, Jati,  Juazeiro do Norte, Mauriti, Milagres,  Missão Velha, Nova Olinda, Penaforte,  Porteiras, Potangi, Santana do Cariri, Salitre, Tarrafas, Várzea Alegre."
+)
+
+### 6.12 2024 #####
+CEMRTCariri_2024 <- data.frame(
+  mrt = "CARIRI",
+  tipologia_de_uso = c("Geral","Agrícola", "Pecuária", "Exploração Mista", "Não Agrícola", "Olericultura - Mandioca", "Agrícola - Grãos Sequeiro", "Exploração Mista Diversificada", "Exploração Mista - Subsistência", "Mista: Agrícola + Pastagem", "Pecuária: Pastagem Nativa", "Pecuária: Pastagem Formada"),
+  nivel = c(0, rep(1, 4), rep(3, 7)),
+  vti_media = c(5135.02, 6872.68, 3750.32, 4458.18, 60944.15, 3911.36, 4138.29, 19078.20, 2071.45, 2004.36, 2965.40, 3562.54),
+  vti_minimo = c(4364.77, 5841.78, 3187.77, 3789.46, 51802.53, 3324.66, 3517.55, 16216.47, 1760.73, 1703.70, 2520.59, 3028.16),
+  vti_maximo = c(5905.28, 7903.58, 4312.87, 5126.91, 70085.78, 4498.06, 4759.03, 21939.93, 2382.17, 2305.01, 3410.21, 4096.92),
+  vtn_media =c(3370.37, 3225.99, 2694.13, 2713.88, NA ,2576.44, 2755.62, 13253.91, 1521.01, 1486.88, 2293.17, 2024.62),
+  vtn_minimo =c(2864.82, 2742.09, 2290.01, 2306.80, NA ,2189.97, 2342.27, 11265.82, 1292.86, 1263.84, 1949.19, 1720.93),
+  vtn_maximo =c(3875.93, 3709.89, 3098.25, 3120.96, NA ,2962.90, 3168.96, 15242.00, 1749.16, 1709.91, 2637.14, 2328.32),
   origem = "Abaiara, Altaneira, Antonina do Norte,  Araripe, Assaré, Aurora, Barbalha, Barro,  Brejo Santo, Campos Sales, Caririaçu,  Crato, Farias Brito, Granjeiro, Jardim, Jati,  Juazeiro do Norte, Mauriti, Milagres,  Missão Velha, Nova Olinda, Penaforte,  Porteiras, Potangi, Santana do Cariri, Salitre, Tarrafas, Várzea Alegre."
 )
 
@@ -456,8 +501,19 @@ CE2022 <- rbind(
   CEMRTCariri_2022
 )
 
+CE2024 <- rbind(
+  CEMRTIbiapaba_2024,
+  CEMRTJaguaribano_2024,
+  CEMRTSertaoCentral_2024,
+  CEMRTSertaoCaninde_2024,
+  CEMRTSertaoInhamuns_2024,
+  CEMRTCentroSul_2024
+)
+
+
 CE17$ano <- 2017
 CE2022$ano <- 2022
+CE2024$ano <- 2024
 CETEMPORAL <- rbind(CE2022, CE17)
 CETEMPORAL$estado <- 23
 CETEMPORAL$regiao <- "nordeste"

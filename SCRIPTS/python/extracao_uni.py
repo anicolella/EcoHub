@@ -99,7 +99,7 @@ def gerar_script_r_from_df(df, nome_mrt, ano, uf="RN"):
 
 # --- 1. Configurações Gerais ---
 caminho_pdf = r"C:\Users\jodom\OneDrive\Área de Trabalho\CE_RAMT_2024.pdf"  # Coloque o caminho do PDF
-paginas_para_ler = '62'
+paginas_para_ler = '65'
 nome_do_mrt = "sertao central"
 ano_dos_dados = 2024
 uf_dos_dados = "CE"

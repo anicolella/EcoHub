@@ -2,6 +2,10 @@
 """
 Extrator Genérico de MRTs com tabelas VTI e VTN separadas.
 """
+"""
+Extrator Genérico de MRTs com tabelas VTI e VTN separadas.
+(Modificado para incluir tipologias sem match usando 'outer join')
+"""
 import camelot
 import re
 import numpy as np
@@ -38,8 +42,8 @@ def atribuir_nivel_por_padrao(tipologia):
     # Se não for nenhuma das anteriores, é uma categoria principal (ex: "Agrícola").
     # Vamos assumir que é nível 1 se não for 0 ou 2 e não for lixo
     if len(texto_limpo) > 0: # Evita linhas vazias
-      return 1
-      
+        return 1
+        
     return np.nan # Retorna nulo para linhas vazias ou não reconhecidas
 
 
@@ -58,24 +62,28 @@ def gerar_script_r_from_df(df, nome_mrt, ano, uf="RN"):
     tipologia_str = 'c("' + '", "'.join(df["tipologia_de_uso"]) + '")'
     nivel_str = 'c(' + ', '.join(df["nivel"].astype(int).astype(str)) + ')'
     
-    # Formata os números com 2 casas decimais para um output limpo no R
-    vti_media_str = 'c(' + ', '.join(df["vti_media"].map('{:.2f}'.format)) + ')'
-    vti_minimo_str = 'c(' + ', '.join(df["vti_minimo"].map('{:.2f}'.format)) + ')'
-    vti_maximo_str = 'c(' + ', '.join(df["vti_maximo"].map('{:.2f}'.format)) + ')'
-    vtn_media_str = 'c(' + ', '.join(df["vtn_media"].map('{:.2f}'.format)) + ')'
-    vtn_minimo_str = 'c(' + ', '.join(df["vtn_minimo"].map('{:.2f}'.format)) + ')'
-    vtn_maximo_str = 'c(' + ', '.join(df["vtn_maximo"].map('{:.2f}'.format)) + ')'
+    # --- ALTERAÇÃO 1 ---
+    # Função lambda para formatar: lida com NaNs (missing values) e os converte para "NA" do R
+    formatar_r = lambda x: "NA" if pd.isna(x) else '{:.2f}'.format(x)
+
+    # Formata os números com 2 casas decimais, convertendo NaNs para NA
+    vti_media_str = 'c(' + ', '.join(df["vti_media"].apply(formatar_r)) + ')'
+    vti_minimo_str = 'c(' + ', '.join(df["vti_minimo"].apply(formatar_r)) + ')'
+    vti_maximo_str = 'c(' + ', '.join(df["vti_maximo"].apply(formatar_r)) + ')'
+    vtn_media_str = 'c(' + ', '.join(df["vtn_media"].apply(formatar_r)) + ')'
+    vtn_minimo_str = 'c(' + ', '.join(df["vtn_minimo"].apply(formatar_r)) + ')'
+    vtn_maximo_str = 'c(' + ', '.join(df["vtn_maximo"].apply(formatar_r)) + ')'
     
     script_r_template = """{var_name} <- data.frame(
-  mrt = {mrt},
-  tipologia_de_uso = {tipologia},
-  nivel = {nivel},
-  vti_media = {vti_media},
-  vti_minimo = {vti_minimo},
-  vti_maximo = {vti_maximo},
-  vtn_media = {vtn_media},
-  vtn_minimo = {vtn_minimo},
-  vtn_maximo = {vtn_maximo}
+    mrt = {mrt},
+    tipologia_de_uso = {tipologia},
+    nivel = {nivel},
+    vti_media = {vti_media},
+    vti_minimo = {vti_minimo},
+    vti_maximo = {vti_maximo},
+    vtn_media = {vtn_media},
+    vtn_minimo = {vtn_minimo},
+    vtn_maximo = {vtn_maximo}
 )"""
     
     script_r = script_r_template.format(
@@ -93,7 +101,7 @@ def gerar_script_r_from_df(df, nome_mrt, ano, uf="RN"):
 # --- 1. Configurações Gerais ---
 # IMPORTANTE: Converta sua imagem PNG para PDF e coloque o caminho aqui
 caminho_pdf = r"C:\Users\jodom\OneDrive\Área de Trabalho\CE_RAMT_2024.pdf" 
-paginas_para_ler = '61,62' # Páginas que contêm as tabelas VTI e VTN
+paginas_para_ler = '60,61' # Páginas que contêm as tabelas VTI e VTN
 nome_do_mrt = "nome_do_seu_mrt"
 ano_dos_dados = 2024
 uf_dos_dados = "UF" # Ex: "RN", "CE"
@@ -193,9 +201,11 @@ if tables and len(tables) >= 2:
     df_vti['tipologia_de_uso'] = df_vti['tipologia_de_uso'].str.replace('\n', ' ', regex=False).str.strip()
     df_vtn['tipologia_de_uso'] = df_vtn['tipologia_de_uso'].str.replace('\n', ' ', regex=False).str.strip()
 
-    # Junta as duas tabelas usando a tipologia como chave
-    df_limpo = pd.merge(df_vti, df_vtn, on='tipologia_de_uso', how='inner')
-    print("Tabelas VTI e VTN unidas com base na 'tipologia_de_uso'.")
+    # --- ALTERAÇÃO 2 ---
+    # Junta as duas tabelas usando a tipologia como chave (junção EXTERNA)
+    # how='outer' garante que tipologias sem match em uma das tabelas sejam mantidas
+    df_limpo = pd.merge(df_vti, df_vtn, on='tipologia_de_uso', how='outer')
+    print("Tabelas VTI e VTN unidas (how='outer') com base na 'tipologia_de_uso'.")
 
     # Remove linhas de cabeçalho indesejadas
     if LINHAS_DE_CABECALHO_PARA_REMOVER:
@@ -214,6 +224,10 @@ if tables and len(tables) >= 2:
                 df_limpo[coluna].astype(str).str.replace('.', '', regex=False).str.replace(',', '.', regex=False),
                 errors='coerce'
             )
+    
+    # ATENÇÃO: Esta linha dropna(how='all') agora funciona a seu favor.
+    # Ela só removerá linhas que forem COMPLETAMENTE NULAS em todas as colunas numéricas.
+    # Se uma tipologia tiver dados VTI mas não VTN (ou vice-versa), ela NÃO será removida.
     df_limpo.dropna(subset=colunas_numericas, inplace=True, how='all')
     print("Limpeza de valores numéricos concluída.")
 
