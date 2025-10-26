@@ -1,24 +1,16 @@
 library(geobr)
 library(tidyverse)
 
-resultado_igpm_espaço <- resultado_igpm %>%
-  mutate(
-    esp = ifelse(ano == 2023, 2022, ano)
-  )
 
-mteste <- resultado_igpm |> filter(UF.x == "MT") 
+mteste <- resultado_igpm |> filter(UF.x == "MT") |> filter(ano == 2019)
 
 lista_de_argumentos <- list(
   code_muni = mteste$id_municipio,
-  esp = mteste$ano
+  year = mteste$ano  # CORRIGIDO
 )
-
-
-
 
 malha_final <- pmap_dfr(
   lista_de_argumentos,
-  read_municipality
+  geobr::read_municipality # É uma boa prática ser explícito
 )
 
-geobr::list_geobr()

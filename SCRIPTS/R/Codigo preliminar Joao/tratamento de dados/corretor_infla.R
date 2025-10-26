@@ -4,6 +4,7 @@ library(ipeadatar)
 library(lubridate)
 
 #correlçao por igpm
+a <- available_territories(language = c("en", "br"))
 IGPM <- ipeadata(code = "IGP_IGPMG", language = "br")
 
 # --- 3. Preparar a Tabela de Índice (IGPM) ---
