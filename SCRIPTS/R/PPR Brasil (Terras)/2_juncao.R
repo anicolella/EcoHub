@@ -1,5 +1,6 @@
 ### CÓGO CORRIGIDO PARA OS SEUS ARQUIVOS ###
 library(tidyverse)
+library(dplyr)
 # 1. Lista com os nomes dos estados (deve ser idêntica aos nomes dos arquivos)
 # ==============================================================================
 estados <- c(
@@ -14,8 +15,8 @@ estados <- c(
 # ==============================================================================
 
 # Configuração de caminhos para diferentes usuários
-path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\Estados separados\\"
-path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\Estados separados\\"
+path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\1.Estados separados\\"
+path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\1.Estados separados\\"
 
 # Detecção automática do usuário atual
 if (Sys.getenv("USERNAME") == "jodom") {
