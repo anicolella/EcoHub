@@ -162,10 +162,10 @@ resultadob <- base_colunas_limpas %>%
 new14 <- resultadob |> filter(is.na(resultadob$id_municipio)) |> distinct(origem, UF.x,df, original, ano) 
 
 
-resltpareado <- resultadob |> select(-c( UF.y, df, original, uf_join, chave_suja, distancia, id_municipio.y, manual, atencao, existia_1991, existia_2010, existia_2010, uf_join.y,
-                                        origem_sem_acento, existia_2000, origem))
+resltpareado <- resultadob |> select(-c( UF.y, uf_join, chave_suja, distancia, id_municipio.y, manual, atencao, existia_1991, existia_2010, existia_2010, uf_join.y,
+                                        origem_sem_acento, existia_2000))
 
 
-resultadof <- resltpareado |> select(muni_join, id_municipio, tipologia_de_uso ,UF.x, ano, vti_media, vti_minimo, vti_maximo, vtn_media, vtn_minimo, vtn_minimo, original, df)  
+resultadof <- resltpareado |> select(muni_join, id_municipio, tipologia_de_uso ,UF.x, ano, vti_media, vti_minimo, vti_maximo, vtn_media, vtn_minimo, vtn_minimo, df)  
   
   
