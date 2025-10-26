@@ -34,7 +34,7 @@ for (script in scripts) {
   } else {
     
     # Se não existir, emite um aviso claro
-    print(paste("!!! AVISO: Arquivo não encontrado para o estado:", script))
+    print(paste("!!! AVISO: Arquivo não encontrado ", script))
     
   }
   
