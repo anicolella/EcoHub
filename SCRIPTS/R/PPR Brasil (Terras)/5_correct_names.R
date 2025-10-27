@@ -166,6 +166,6 @@ resltpareado <- resultadob |> select(-c( UF.y, original, uf_join, chave_suja, di
                                         origem_sem_acento, existia_2000, origem))
 
 
-resultadof <- resltpareado |> select(muni_join, id_municipio, tipologia_de_uso ,UF.x, ano, vti_media, vti_minimo, vti_maximo, vtn_media, vtn_minimo, vtn_minimo, vtn_maximo,  df)  
+resultadof <- resltpareado |> select(muni_join, id_municipio, tipologia_de_uso ,UF.x, ano, vti_media, vti_minimo, vti_maximo, vtn_media, vtn_minimo, vtn_minimo, vtn_maximo,df, nivel)  
   
   
