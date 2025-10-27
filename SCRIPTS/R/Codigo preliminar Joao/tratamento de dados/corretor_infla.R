@@ -29,14 +29,15 @@ df_igpm_limpo <- IGPM %>%
 # --- 4. Definir Parâmetros da Correção ---
 
 # O ano-base que você escolheu
-ano_base <- 2016
+ano_base <- tail(df_igpm_limpo$ano_indice, 1)
+
 
 # O nome das colunas que você quer corrigir
 colunas_para_corrigir <- c("vti_media", "vti_minimo", "vti_maximo", 
                            "vtn_media", "vtn_minimo", "vtn_maximo")
 
 # Pegar o valor do índice de 2016 para usar na fórmula
-indice_base_2016 <- df_igpm_limpo %>%
+indice_base_final <- df_igpm_limpo %>%
   filter(ano_indice == ano_base) %>%
   pull(value) # Puxa o valor único: 640.751
 
@@ -60,7 +61,7 @@ resultado_igpm <- resultadof %>%
   mutate(
     across(
       all_of(colunas_para_corrigir), 
-      ~ .x * (indice_base_2016 / value), 
+      ~ .x * (indice_base_final / value), 
       .names = "c_{.col}" 
     )
   ) %>%
@@ -75,5 +76,6 @@ select(
 )
 
 # --- 6. Ver o Resultado ---
-print("--- Base Final com Valores Corrigidos para 2016 ---")
-print(resultado_final)
+
+cat("Valores corrigidos para o ano de", ano_base_final, "\n")
+
