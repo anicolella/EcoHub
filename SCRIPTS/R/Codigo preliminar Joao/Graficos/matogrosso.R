@@ -40,8 +40,5 @@ mteste2 <- mteste |>
   theme_minimal()
 print(mteste2)
 
-malha_final <- pmap_dfr(
-  lista_de_argumentos,
-  geobr::read_municipality # É uma boa prática ser explícito
-)
+
 
