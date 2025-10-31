@@ -1,0 +1,29 @@
+=========================================
+======= SITE PROJETO BD AMBIENTAL =======
+=========================================
+
+[v0.5 - 30092025]
+(x) Quarto, Github e Github-Pages configurados.
+(x) Página inicial criada com HTML e CSS funcionais.
+(x) Estrutura básica do site estabelecida.
+(x) Temas e visual definidos.
+
+[v0.6 - 31102025]
+***Ajustes***
+( ) Correção de bugs menores.
+( ) Otimização do código HTML e CSS.
+( ) Melhoria na responsividade do site.
+***Novidades***
+( ) Conteúdo página inicial: Explicação do projeto e banners
+( ) Seção Projeto:
+    - Descrição detalhada do projeto.
+    - Objetivos e metas.
+( ) Seção Suporte:
+    - Informações sobre como contribuir.
+    - Links para documentação e recursos.
+( ) Seção Equipe:
+    - Perfis dos membros da equipe.
+    - Fotos e descrições curtas.
+( ) Seção Sobre:
+    - Formulário de contato funcional.
+    - Informações de redes sociais.
