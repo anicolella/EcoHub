@@ -29,6 +29,9 @@ SITE/_site/
 SITE/.quarto/
 SITE/_freeze/
 SITE/site_libs/
+/.quarto/
+**/*.quarto_ipynb
+
 
 # ---- SO / editor
 .DS_Store
