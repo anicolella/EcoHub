@@ -133,13 +133,39 @@ Até aqui:
 -- 
 
 ******************************************************
-------Ajustes------
+[v0.6 - 31102025]
+***Ajustes***
 * ( ) Modo dark menos escuro
 * ( ) Verificar site em celular
 * ( ) Links redes sociais abrir em nova aba
 * ( ) Escrever nos menus o que cada um deve conter para inserir depois
 * ( ) Publicar no Github Pages
-------Novidades----
+***Novidades***
+* ( ) Conteúdo página inicial: Explicação do projeto e banners
+* ( ) Seção Projeto:
+    - (x) RENOMEAR para 'Gestão'
+    - Remover visão geral do projeto.
+    - Tracker de progresso.
+        - Login com GitHub para colaboradores.
+        - Interação com os forms.
+    - Visualização dos commits de forma gráfica.
+    - Link para wiki do projeto.
+* ( ) Seção Suporte:
+    - (x) RENOMEAR para 'documentação'
+    - Remover 'documentação', 'GitHub' e 'Google Drive'.
+* ( ) Seção Equipe:
+    - Criar caixa com GitHub, Lattes, E-mail e foto dos membros.
+* ( ) Seção Sobre:
+    - Descrição detalhada do projeto.
+---
+Até aqui:
+[v. 0.x, de xx/10/2025]
+--
+
+
+******************************************************
+------Ideias----
+* ( ) Configurar OAuth para ativar formulário tracker completamente
 * ( ) Estrutura menus e páginas "Cursos" (estilo quarto.org)
 * ( ) Estrutura menus e páginas "Geral"
 * ( ) Integração com commits do GitHub
@@ -148,10 +174,7 @@ Até aqui:
 * ( ) Dropdown menu no estilo collapse
 * ( ) Página inicial no estilo Paralax Scrolling
 * ( ) Editor/Gerenciador/Publisher markdown p/ html integrado ao site
----
-Até aqui:
-[v. 0.x, de xx/10/2025]
---
+
 
 ......................................................................................................................
 
