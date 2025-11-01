@@ -16,18 +16,16 @@ website:
     left:
       - text: Início
         href: index.qmd
-      - text: "Projeto"
+      - text: "Gestão"
         menu:
-          - text: "Visão Geral"
-            href: projeto.qmd
           - text: "Tracker"
             href: tracker.qmd
           - text: "Commits"
             href: '#'
           - text: "Wiki"
             href: '#'
-      - text: Suporte
-        href: suporte.qmd
+      - text: Documentação
+        href: documentacao.qmd
       - text: Equipe
         href: equipe.qmd
       - text: Sobre
