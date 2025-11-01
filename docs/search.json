@@ -14,6 +14,41 @@
     "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EcoHub — Início",
+    "section": "",
+    "text": "AVISOS TEMPORÁRIOS — VERSÃO ALPHA DO SITE\nO conteúdo abaixo é uma página inicial de rascunho com a estrutura prevista para o projeto.\nVersão atual: 30/09/2025\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
+  },
+  {
+    "objectID": "documentacao.html",
+    "href": "documentacao.html",
+    "title": "Suporte",
+    "section": "",
+    "text": "Para documentação do projeto"
+  },
+  {
+    "objectID": "components/hero.html",
+    "href": "components/hero.html",
+    "title": "Hero section",
+    "section": "",
+    "text": "Hero section"
+  },
+  {
+    "objectID": "components/footer-links.html",
+    "href": "components/footer-links.html",
+    "title": "EcoHub",
+    "section": "",
+    "text": "Rodap� com links"
+  },
+  {
+    "objectID": "equipe.html",
+    "href": "equipe.html",
+    "title": "Equipe",
+    "section": "",
+    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
+  },
+  {
     "objectID": "sobre.html",
     "href": "sobre.html",
     "title": "Sobre",
@@ -33,48 +68,6 @@
     "title": "Sobre",
     "section": "Cronograma (Roadmap)",
     "text": "Cronograma (Roadmap)\n\nFase 1 — Levantamento & Documentação (metadados, licenças, fontes)\n\nFase 2 — ETL & Padronização (tabelas, séries, shapefiles/rasters)\n\nFase 3 — Análises & Visualizações (exploratórias, econométricas)\n\nFase 4 — Pacotes & Automação (R/Python, pipelines reprodutíveis)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "EcoHub — Início",
-    "section": "",
-    "text": "AVISOS TEMPORÁRIOS — VERSÃO ALPHA DO SITE\nO conteúdo abaixo é uma página inicial de rascunho com a estrutura prevista para o projeto.\nVersão atual: 30/09/2025\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
-  },
-  {
-    "objectID": "components/footer-links.html",
-    "href": "components/footer-links.html",
-    "title": "EcoHub",
-    "section": "",
-    "text": "Rodap� com links"
-  },
-  {
-    "objectID": "components/hero.html",
-    "href": "components/hero.html",
-    "title": "Hero section",
-    "section": "",
-    "text": "Hero section"
-  },
-  {
-    "objectID": "equipe.html",
-    "href": "equipe.html",
-    "title": "Equipe",
-    "section": "",
-    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
-  },
-  {
-    "objectID": "projeto.html",
-    "href": "projeto.html",
-    "title": "Projeto",
-    "section": "",
-    "text": "Olá, Projeto"
-  },
-  {
-    "objectID": "suporte.html",
-    "href": "suporte.html",
-    "title": "Suporte",
-    "section": "",
-    "text": "Documentação\nBancos consolidados, metadados e guias de uso (fonte, licença, cobertura, granularidade).\nVer documentação\n\n\nGitHub\nRepositório, issues, versionamento e trilha de auditoria.\nIr para o GitHub\n\n\nGoogle Drive\nMateriais complementares e dados brutos (quando aplicável).\nAbrir Drive"
   },
   {
     "objectID": "tracker.html",

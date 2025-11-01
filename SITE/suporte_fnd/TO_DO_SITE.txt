@@ -133,6 +133,15 @@ Até aqui:
 -- 
 
 ******************************************************
+------Ajustes------
+* (x) RENOMEAR para 'Gestão'
+* (x) RENOMEAR para 'documentação'
+---
+Até aqui:
+[v. 0.71, de 01/11/2025]
+-- 
+
+******************************************************
 [v0.6 - 31102025]
 ***Ajustes***
 * ( ) Modo dark menos escuro
@@ -143,7 +152,6 @@ Até aqui:
 ***Novidades***
 * ( ) Conteúdo página inicial: Explicação do projeto e banners
 * ( ) Seção Projeto:
-    - (x) RENOMEAR para 'Gestão'
     - Remover visão geral do projeto.
     - Tracker de progresso.
         - Login com GitHub para colaboradores.
@@ -151,7 +159,6 @@ Até aqui:
     - Visualização dos commits de forma gráfica.
     - Link para wiki do projeto.
 * ( ) Seção Suporte:
-    - (x) RENOMEAR para 'documentação'
     - Remover 'documentação', 'GitHub' e 'Google Drive'.
 * ( ) Seção Equipe:
     - Criar caixa com GitHub, Lattes, E-mail e foto dos membros.
