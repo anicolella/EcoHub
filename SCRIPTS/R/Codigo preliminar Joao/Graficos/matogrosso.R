@@ -1,6 +1,5 @@
 library(geobr)
 library(tidyverse)
-
 library(sf)
 
 # Caminho completo do arquivo shapefile

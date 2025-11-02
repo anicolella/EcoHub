@@ -2,11 +2,11 @@
 library(tidyverse)
 # Supondo que seu dataframe se chame 'meus_dados'
 
-pivot <- resltpareado %>%
+pivot <- resultado_igpm %>%
   pivot_wider(
     id_cols = c(id_municipio, muni_join, tipologia_de_uso),
     names_from = ano, # ano VIRA COLUNAS
-    values_from =c( vti_media,vti_minimo, vti_maximo, vtn_media, vtn_minimo, vtn_maximo),
+    values_from =c( c_vti_media,c_vti_minimo, c_vti_maximo, c_vtn_media, c_vtn_minimo, c_vtn_maximo),
     
   )
 
@@ -14,6 +14,9 @@ ab <-resltpareado %>%
   count(id_municipio, muni_join, tipologia_de_uso, ano) %>%
   filter(n > 1)
 
+ab2 <-pivot %>%
+  count(id_municipio, muni_join, tipologia_de_uso, ano) %>%
+  filter(n > 1)
 
 resltpareado2 <- resltpareado |> unique()
 
