@@ -4,8 +4,8 @@ library(ipeadatar)
 library(lubridate)
 
 #correlçao por igpm
-a <- available_territories(language = c("en", "br"))
-IGPM <- ipeadata(code = "IGP_IGPMG", language = "br")
+#a <- available_territories(language = c("en", "br"))
+#IGPM <- ipeadata(code = "IGP_IGPMG", language = "br")
 
 # --- 3. Preparar a Tabela de Índice (IGPM) ---
 # Vamos extrair o ano da coluna 'date' para poder fazer o join
