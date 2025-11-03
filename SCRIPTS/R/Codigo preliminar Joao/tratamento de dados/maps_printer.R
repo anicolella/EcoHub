@@ -20,7 +20,28 @@ library(janitor)
 # --- CONFIGURAÇÃO ---
 regex_pattern <- "(.+)_(\\d{4})$"
 
-# --- EXECUÇÃO (USANDO O 'pivot_limpo') ---
+cols_juncao <- c("muni_join", "tipologia_de_uso", "id_municipio")
+
+# Colunas de dados (terminam em _YYYY)
+regex_cols_dados <- "_\\d{4}$"
+cols_dados <- grep(regex_cols_dados, names(pivot), value = TRUE)
+
+# 2. Achatar as colunas-lista (List -> Character)
+# Usamos map_chr() que é feito para isso.
+# A função ~.x[1] %||% NA_character_ significa:
+#   "Pegue o primeiro item da lista (.x[1])"
+#   "Se a lista for NULA ou vazia (%||%), use NA"
+pivot_limpo <- pivot %>%
+  mutate(
+    # Achata as colunas de junção
+    across(all_of(cols_juncao), 
+           ~ map_chr(.x, ~ .x[1] %||% NA_character_)),
+    
+    # Achata as colunas de dados
+    across(all_of(cols_dados), 
+           ~ map_chr(.x, ~ .x[1] %||% NA_character_))
+  )
+
 
 # 1. Pivotar os dados
 observacoes_longas <- pivot_limpo %>% 
@@ -78,13 +99,14 @@ df_final <- pivot %>%
     by = c( "muni_join", "tipologia_de_uso", "id_municipio")
   )
 
-df_finale <- df_final |> select(id_municipio, muni_join, tipologia_de_uso, ano_info_recente, uvti_maximo, uvti_media, uvti_minimo, uvtn_media, uvtn_maximo, uvtn_minimo)
+df_finale <- df_final |> select(id_municipio, muni_join, nivel ,tipologia_de_uso, ano_info_recente, uc_vti_maximo, uc_vti_media, uc_vti_minimo, uc_vtn_media, uc_vtn_maximo, uc_vtn_minimo)
 
-codigos_para_buscar <- df_final$id_municipio
+d <-df_finale |> filter(nivel == 0 | nivel == 1 )
+d2 <-df_finale |> filter(nivel == 0 )
 
 mapas_municipios <- read_municipality(
   code_muni = "all",
-  year = 2010,
+  year = 2022,
   simplified = TRUE,
   showProgress = TRUE,
   cache = TRUE,
@@ -92,14 +114,31 @@ mapas_municipios <- read_municipality(
 )
 
 mapas_municipios <- mapas_municipios |> as.character(mapas_municipios$code_muni)
+d3 <- d2 |> distinct(d2$muni_join, .keep_all = TRUE)
 
-df_
+  
+d4 <- d3 |> left_join(
+  muni,
+  by = c("id_municipio" = "CD_MUN")
+)
 
-df_finalspace <- df_finale %>%
-  left_join(
-    mapas_municipios,
-    by = c("id_municipio" = "code_muni")
-  )
+d4map <- d4|> 
+  filter(nivel == 0 ) |> 
+  
+  # --- AQUI ESTÁ A CORREÇÃO ---
+  # Transforme seus dados em um objeto 'sf' antes de plotar
+  # (Troque "geometry" se o nome da sua coluna for outro)
+  st_as_sf(sf_column_name = "geometry") |> 
+  
+  ggplot() +
+  # Agora o geom_sf() vai achar a geometria automaticamente
+  geom_sf(aes(fill = uc_vti_media), color = "gray40", linewidth = 0.2) +
+  
+  scale_fill_distiller(palette = "YlOrRd", direction = 1) +
+  labs(
+    title = "Valor da terra com imóvel - Mato Grosso",
+    fill = "R$/ha"
+  ) +
+  theme_minimal()
 
-
-?read_municipality
+plot(d4map)
