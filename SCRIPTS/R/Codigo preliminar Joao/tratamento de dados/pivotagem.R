@@ -2,9 +2,12 @@
 library(tidyverse)
 # Supondo que seu dataframe se chame 'meus_dados'
 
+rigpm2  <- resultado_igpm %>%
+  unique(id_municipio, muni_join, tipologia_de_uso, UF.x, nivel)
+
 pivot <- resultado_igpm %>%
   pivot_wider(
-    id_cols = c(id_municipio, muni_join, tipologia_de_uso),
+    id_cols = c(id_municipio, muni_join, tipologia_de_uso, UF.x, nivel),
     names_from = ano, # ano VIRA COLUNAS
     values_from =c( c_vti_media,c_vti_minimo, c_vti_maximo, c_vtn_media, c_vtn_minimo, c_vtn_maximo),
     
