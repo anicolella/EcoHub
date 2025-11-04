@@ -4,6 +4,8 @@ project:
   resources:
     - "admin/**"
     - "tracker/_media/**"
+    - "assets/amazon_rainforest.mp4"
+    - "assets/projeto_bd.png"
 
 website:
   title: "EcoHub"
