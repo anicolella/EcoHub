@@ -691,3 +691,87 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   text-align: center !important;
   box-sizing: border-box !important;
 }
+
+/* =========================
+   SEÇÕES HOME - Início
+   ========================= */
+
+/* Reset e responsividade */
+.home-section {
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+.section-content {
+  max-width: 1000px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.section-content.reverse {
+  flex-direction: row-reverse;
+}
+.section-text {
+  flex: 1.2;
+  min-width: 260px;
+}
+.section-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-media img, .section-media video {
+  max-width: 240px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+/* Cores de fundo - Tema Claro */
+.home-section-blue {
+  background: linear-gradient(90deg, #ffffff 0%, #e8eff8 100%);
+}
+.home-section-green {
+  background: #FFFFFF;
+}
+.home-section-orange {
+  background: linear-gradient(90deg, #fffefd 0%, #d5fff7 100%);
+}
+
+/* Cores de fundo - Tema Escuro (Bootstrap) */
+html[data-bs-theme="dark"] .home-section-blue {
+  background: linear-gradient(90deg, #193046 0%, #26405c 100%) !important;
+}
+html[data-bs-theme="dark"] .home-section-green {
+  background: #EBEEF3 !important;
+}
+html[data-bs-theme="dark"] .home-section-orange {
+  background: linear-gradient(90deg, #483018 0%, #684312 100%) !important;
+}
+html[data-bs-theme="dark"] .section-text h2,
+html[data-bs-theme="dark"] .section-text p {
+  color: #fafafc !important;
+}
+
+/* Mobile - Responsividade */
+@media (max-width: 800px) {
+  .section-content,
+  .section-content.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .section-media img, .section-media video {
+    max-width: 90vw;
+  }
+}
+
+/* =========================
+   FIM - SEÇÕES HOME
+   ========================= */

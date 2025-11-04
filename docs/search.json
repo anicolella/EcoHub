@@ -16,9 +16,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "EcoHub — Início",
+    "title": "EcoHub",
     "section": "",
-    "text": "AVISOS TEMPORÁRIOS — VERSÃO ALPHA DO SITE\nO conteúdo abaixo é uma página inicial de rascunho com a estrutura prevista para o projeto.\nVersão atual: 30/09/2025\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
+    "text": "Dados Geoespaciais\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n    \n    \n      \n    \n  \n\n\n\n\n  \n    \n      Automação e ETL\n      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\n    \n    \n      \n    \n  \n\n\n\n\n  \n    \n      Ferramentas Reprodutíveis\n      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
   },
   {
     "objectID": "documentacao.html",
@@ -82,5 +82,19 @@
     "title": "Tracker",
     "section": "Instruções para Colaboradores",
     "text": "Instruções para Colaboradores\n\nClique em “Nova Entrada” acima\nFaça login com sua conta GitHub\nPreencha o formulário com os dados da entrada\nPublique - o site será atualizado automaticamente"
+  },
+  {
+    "objectID": "index.html#uma-plataforma-aberta-para-dados-ambientais",
+    "href": "index.html#uma-plataforma-aberta-para-dados-ambientais",
+    "title": "EcoHub — Início",
+    "section": "",
+    "text": "Integração, análises e reprodutibilidade para pesquisa e políticas públicas.\nComece Agora Saiba Mais"
+  },
+  {
+    "objectID": "index.html#colabore-e-compartilhe-pesquisas-ambientais",
+    "href": "index.html#colabore-e-compartilhe-pesquisas-ambientais",
+    "title": "EcoHub — Início",
+    "section": "",
+    "text": "Junte-se à comunidade, envie conjuntos de dados ou desenvolva integrações para necessidades específicas.\nComo contribuir"
   }
 ]

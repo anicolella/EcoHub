@@ -1,43 +1,47 @@
 ---
-title: "EcoHub — Início"
 format:
   html:
     toc: false
     css: assets/styles.css
 ---
 
-**AVISOS TEMPORÁRIOS — VERSÃO ALPHA DO SITE**
+```{=html}
+<!-- Seção 1: Mídia à DIREITA | Fundo AZUL -->
+<section class="home-section home-section-blue">
+  <div class="section-content">
+    <div class="section-text">
+      <h2>Dados Geoespaciais</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+    <div class="section-media">
+      <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="GIF mapa animado"/>
+    </div>
+  </div>
+</section>
 
-O conteúdo abaixo é uma página inicial de rascunho com a estrutura prevista para o projeto.
+<!-- Seção 2: Mídia à ESQUERDA | Fundo VERDE -->
+<section class="home-section home-section-green">
+  <div class="section-content reverse">
+    <div class="section-text">
+      <h2>Automação e ETL</h2>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+    <div class="section-media">
+      <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay loop muted></video>
+    </div>
+  </div>
+</section>
 
-*Versão atual: 30/09/2025*
-
-# Projeto BD Ambiental
-
-Repositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.
-
-::: {.grid .cols-3}
-:::{.card}
-### Visão geral dos objetivos
-- Coletar e documentar (metadados, fontes, licenças)  
-- Padronizar e integrar (tabelas, séries, geodados)  
-- Análises, modelagem e visualizações  
-- Reprodutibilidade e trilhas de auditoria  
-- Pacotes R/Python  
-:::
-
-:::{.card}
-### Estágio atual (Cronograma)
-1. Levantamento e documentação  
-2. ETL geoespacial e séries  
-3. Análises e dashboards  
-4. Pacotes e automações  
-:::
-
-:::{.card}
-### Avisos
-- Metadados: semana 38  
-- Datasets climáticos em validação  
-- `bdambientalR` (alpha)  
-:::
-:::
+<!-- Seção 3: Mídia à DIREITA | Fundo LARANJA -->
+<section class="home-section home-section-orange">
+  <div class="section-content">
+    <div class="section-text">
+      <h2>Ferramentas Reprodutíveis</h2>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    </div>
+    <div class="section-media">
+      <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" alt="GIF código animado"/>
+    </div>
+  </div>
+</section>
+```
