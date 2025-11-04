@@ -1,52 +1,10 @@
 [
   {
-    "objectID": "tracker/configuracao-inicial.html",
-    "href": "tracker/configuracao-inicial.html",
-    "title": "Configuração inicial do site",
-    "section": "",
-    "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
-  },
-  {
-    "objectID": "tracker/configuracao-inicial.html#configuração-inicial",
-    "href": "tracker/configuracao-inicial.html#configuração-inicial",
-    "title": "Configuração inicial do site",
-    "section": "",
-    "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "EcoHub",
-    "section": "",
-    "text": "Dados Geoespaciais\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n    \n    \n      \n    \n  \n\n\n\n\n  \n    \n      Automação e ETL\n      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\n    \n    \n      \n    \n  \n\n\n\n\n  \n    \n      Ferramentas Reprodutíveis\n      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
-  },
-  {
     "objectID": "documentacao.html",
     "href": "documentacao.html",
     "title": "Suporte",
     "section": "",
     "text": "Para documentação do projeto"
-  },
-  {
-    "objectID": "components/hero.html",
-    "href": "components/hero.html",
-    "title": "Hero section",
-    "section": "",
-    "text": "Hero section"
-  },
-  {
-    "objectID": "components/footer-links.html",
-    "href": "components/footer-links.html",
-    "title": "EcoHub",
-    "section": "",
-    "text": "Rodap� com links"
-  },
-  {
-    "objectID": "equipe.html",
-    "href": "equipe.html",
-    "title": "Equipe",
-    "section": "",
-    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
   },
   {
     "objectID": "sobre.html",
@@ -70,6 +28,34 @@
     "text": "Cronograma (Roadmap)\n\nFase 1 — Levantamento & Documentação (metadados, licenças, fontes)\n\nFase 2 — ETL & Padronização (tabelas, séries, shapefiles/rasters)\n\nFase 3 — Análises & Visualizações (exploratórias, econométricas)\n\nFase 4 — Pacotes & Automação (R/Python, pipelines reprodutíveis)"
   },
   {
+    "objectID": "tracker/configuracao-inicial.html",
+    "href": "tracker/configuracao-inicial.html",
+    "title": "Configuração inicial do site",
+    "section": "",
+    "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
+  },
+  {
+    "objectID": "tracker/configuracao-inicial.html#configuração-inicial",
+    "href": "tracker/configuracao-inicial.html#configuração-inicial",
+    "title": "Configuração inicial do site",
+    "section": "",
+    "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
+  },
+  {
+    "objectID": "components/footer-links.html",
+    "href": "components/footer-links.html",
+    "title": "EcoHub",
+    "section": "",
+    "text": "Rodap� com links"
+  },
+  {
+    "objectID": "components/hero.html",
+    "href": "components/hero.html",
+    "title": "Hero section",
+    "section": "",
+    "text": "Hero section"
+  },
+  {
     "objectID": "tracker.html",
     "href": "tracker.html",
     "title": "Tracker",
@@ -84,17 +70,17 @@
     "text": "Instruções para Colaboradores\n\nClique em “Nova Entrada” acima\nFaça login com sua conta GitHub\nPreencha o formulário com os dados da entrada\nPublique - o site será atualizado automaticamente"
   },
   {
-    "objectID": "index.html#uma-plataforma-aberta-para-dados-ambientais",
-    "href": "index.html#uma-plataforma-aberta-para-dados-ambientais",
-    "title": "EcoHub — Início",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EcoHub",
     "section": "",
-    "text": "Integração, análises e reprodutibilidade para pesquisa e políticas públicas.\nComece Agora Saiba Mais"
+    "text": "Dados Ambientais\n      O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.\n\n\n    \n    \n      \n    \n  \n\n\n\n\n  \n    \n      Planejamento\n      O projeto está estruturado em quatro fases integradas.\n\n\n  Fase 1: levantamento e documentação das bases de dados, coleta de metadados, licenças e fontes originais.\n  Fase 2: Análise preliminar (descritiva) de cada base e disponibilização à comunidade (csv, xlsx ou rdata).\n  Fase 3: desenvolvimento de pacotes e automações em R e Python — pipelines reprodutíveis que garantem transparência e eficiência.\n\n    \n    \n      \n    \n  \n\n\n\n\n  \n    \n      Bases Analisadas\n      A etapa 1 do porjero"
   },
   {
-    "objectID": "index.html#colabore-e-compartilhe-pesquisas-ambientais",
-    "href": "index.html#colabore-e-compartilhe-pesquisas-ambientais",
-    "title": "EcoHub — Início",
+    "objectID": "equipe.html",
+    "href": "equipe.html",
+    "title": "Equipe",
     "section": "",
-    "text": "Junte-se à comunidade, envie conjuntos de dados ou desenvolva integrações para necessidades específicas.\nComo contribuir"
+    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
   }
 ]

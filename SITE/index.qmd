@@ -10,11 +10,13 @@ format:
 <section class="home-section home-section-blue">
   <div class="section-content">
     <div class="section-text">
-      <h2>Dados Geoespaciais</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <h2>Dados Ambientais</h2>
+      <p>O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.
+
+</p>
     </div>
     <div class="section-media">
-      <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="GIF mapa animado"/>
+      <video src="assets/amazon_rainforest.mp4" autoplay loop muted></video>
     </div>
   </div>
 </section>
@@ -23,11 +25,17 @@ format:
 <section class="home-section home-section-green">
   <div class="section-content reverse">
     <div class="section-text">
-      <h2>Automação e ETL</h2>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <h2>Planejamento</h2>
+      <p>O projeto está estruturado em quatro fases integradas.
+</p>
+<ul>
+  <li>Fase 1: levantamento e documentação das bases de dados, coleta de metadados, licenças e fontes originais.</li>
+  <li>Fase 2: Análise preliminar (descritiva) de cada base e disponibilização à comunidade (csv, xlsx ou rdata).</li>
+  <li>Fase 3: desenvolvimento de pacotes e automações em R e Python — pipelines reprodutíveis que garantem transparência e eficiência.</li>
+</ul>
     </div>
     <div class="section-media">
-      <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay loop muted></video>
+      <img src="assets/projeto_bd.png" alt="Projeto BD" />
     </div>
   </div>
 </section>
@@ -36,8 +44,8 @@ format:
 <section class="home-section home-section-orange">
   <div class="section-content">
     <div class="section-text">
-      <h2>Ferramentas Reprodutíveis</h2>
-      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+      <h2>Bases Analisadas</h2>
+      <p>A etapa 1 do porjero</p>
     </div>
     <div class="section-media">
       <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" alt="GIF código animado"/>
