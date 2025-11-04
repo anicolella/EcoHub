@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EcoHub — Início – EcoHub</title>
+<title>EcoHub</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b74dda78c46dd9833a883d74f0f79f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,113 +71,59 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <!-- Header include (EcoHub) -->
-
 <!-- Menu dropdown nativo do Quarto - sem JavaScript customizado necessário -->
 
-
-
 <!-- Google Fonts - Source Sans Pro -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;display=swap" rel="stylesheet">
 
-
-
 <script>
-
 // Dark mode toggle functionality
-
 (function() {
-
   function initDarkModeToggle() {
-
     // Encontra o botão de dark mode
-
     const darkModeBtn = document.querySelector('a[aria-label="Toggle dark mode"]');
-
     if (!darkModeBtn) return;
-
     
-
     // Verifica preferência salva ou do sistema
-
     const savedTheme = localStorage.getItem('ecohub-theme');
-
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
     const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-
     
-
     // Aplica tema inicial
-
     if (isDark) {
-
       document.documentElement.setAttribute('data-bs-theme', 'dark');
-
       updateIcon(darkModeBtn, true);
-
     }
-
     
-
     // Adiciona evento de clique
-
     darkModeBtn.addEventListener('click', function(e) {
-
       e.preventDefault();
-
       const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
       
-
       document.documentElement.setAttribute('data-bs-theme', newTheme);
-
       localStorage.setItem('ecohub-theme', newTheme);
-
       updateIcon(darkModeBtn, newTheme === 'dark');
-
     });
-
   }
-
   
-
   function updateIcon(btn, isDark) {
-
     const icon = btn.querySelector('i');
-
     if (icon) {
-
       icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon';
-
     }
-
   }
-
   
-
   // Inicializa quando DOM estiver pronto
-
   if (document.readyState === 'loading') {
-
     document.addEventListener('DOMContentLoaded', initDarkModeToggle);
-
   } else {
-
     initDarkModeToggle();
-
   }
-
 })();
-
 </script>
-
 
 
 <link rel="stylesheet" href="assets/styles.css">
@@ -320,252 +266,139 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 <!-- Drawer removido - usando menu dropdown nativo do Quarto -->
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">EcoHub — Início</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
+<!-- Seção 1: Mídia à DIREITA | Fundo AZUL -->
+<section class="home-section home-section-blue">
+  <div class="section-content">
+    <div class="section-text">
+      <h2 class="anchored">Dados Geoespaciais</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+    <div class="section-media">
+      <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="GIF mapa animado">
+    </div>
   </div>
-  
-
-
-</header>
-
-
-<p><strong>AVISOS TEMPORÁRIOS — VERSÃO ALPHA DO SITE</strong></p>
-<p>O conteúdo abaixo é uma página inicial de rascunho com a estrutura prevista para o projeto.</p>
-<p><em>Versão atual: 30/09/2025</em></p>
-<section id="projeto-bd-ambiental" class="level1">
-<h1>Projeto BD Ambiental</h1>
-<p>Repositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.</p>
-<div class="grid cols-3">
-<section id="visão-geral-dos-objetivos" class="level3 card">
-<h3 class="anchored" data-anchor-id="visão-geral-dos-objetivos">Visão geral dos objetivos</h3>
-<ul>
-<li>Coletar e documentar (metadados, fontes, licenças)<br>
-</li>
-<li>Padronizar e integrar (tabelas, séries, geodados)<br>
-</li>
-<li>Análises, modelagem e visualizações<br>
-</li>
-<li>Reprodutibilidade e trilhas de auditoria<br>
-</li>
-<li>Pacotes R/Python<br>
-</li>
-</ul>
 </section>
-<section id="estágio-atual-cronograma" class="level3 card">
-<h3 class="anchored" data-anchor-id="estágio-atual-cronograma">Estágio atual (Cronograma)</h3>
-<ol type="1">
-<li>Levantamento e documentação<br>
-</li>
-<li>ETL geoespacial e séries<br>
-</li>
-<li>Análises e dashboards<br>
-</li>
-<li>Pacotes e automações<br>
-</li>
-</ol>
+
+<!-- Seção 2: Mídia à ESQUERDA | Fundo VERDE -->
+<section class="home-section home-section-green">
+  <div class="section-content reverse">
+    <div class="section-text">
+      <h2 class="anchored">Automação e ETL</h2>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+    <div class="section-media">
+      <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay="" loop="" muted=""></video>
+    </div>
+  </div>
 </section>
-<section id="avisos" class="level3 card">
-<h3 class="anchored" data-anchor-id="avisos">Avisos</h3>
-<ul>
-<li>Metadados: semana 38<br>
-</li>
-<li>Datasets climáticos em validação<br>
-</li>
-<li><code>bdambientalR</code> (alpha)<br>
-</li>
-</ul>
+
+<!-- Seção 3: Mídia à DIREITA | Fundo LARANJA -->
+<section class="home-section home-section-orange">
+  <div class="section-content">
+    <div class="section-text">
+      <h2 class="anchored">Ferramentas Reprodutíveis</h2>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    </div>
+    <div class="section-media">
+      <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" alt="GIF código animado">
+    </div>
+  </div>
 </section>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script>
-
 (function () {
-
   const drawer   = document.getElementById('drawer');
-
   const overlay  = document.getElementById('drawer-overlay');
-
   const closeBtn = document.getElementById('drawer-close');
-
-
 
   if (!drawer || !overlay) return;
 
-
-
   function openDrawer() {
-
     drawer.classList.add('open');
-
     drawer.setAttribute('aria-hidden', 'false');
-
     overlay.classList.add('show');
-
     overlay.setAttribute('aria-hidden', 'false');
-
   }
-
-
 
   function closeDrawer() {
-
     drawer.classList.remove('open');
-
     drawer.setAttribute('aria-hidden', 'true');
-
     overlay.classList.remove('show');
-
     overlay.setAttribute('aria-hidden', 'true');
-
   }
-
-
 
   // Fecha: overlay, botão X, tecla Esc
-
   overlay.addEventListener('click', closeDrawer);
-
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
 
-
-
   // Liga o gatilho (ícone do sanduíche) e neutraliza navegação
-
   function bindTrigger(root = document) {
-
     // <a aria-label="Menu"> é o botão gerado pelo Quarto
-
     let trigger = root.querySelector('.quarto-navbar-tools a[aria-label="Menu"]');
-
     if (!trigger) {
-
       const icon = root.querySelector('.quarto-navbar-tools i.bi.bi-list');
-
       if (icon && icon.closest('a')) trigger = icon.closest('a');
-
     }
-
     if (!trigger) return;
 
-
-
     if (trigger.dataset.drawerBound === '1') return;
-
     trigger.dataset.drawerBound = '1';
 
-
-
     // impedir /# e afins
-
     trigger.setAttribute('href', 'javascript:void(0)');
-
     trigger.setAttribute('role', 'button');
-
     trigger.style.cursor = 'pointer';
 
-
-
     trigger.addEventListener('click', (e) => {
-
       e.preventDefault();
-
       e.stopPropagation();
-
       openDrawer();
-
     });
-
-
 
     trigger.addEventListener('keydown', (e) => {
-
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDrawer(); }
-
     });
-
   }
-
-
 
   // Primeira ligação
-
   if (document.readyState === 'loading') {
-
     document.addEventListener('DOMContentLoaded', () => bindTrigger());
-
   } else {
-
     bindTrigger();
-
   }
-
-
 
   // Se a topbar for recriada (headroom/bootstrap), re-liga
-
   const header = document.getElementById('quarto-header') || document.body;
-
   if ('MutationObserver' in window) {
-
     const mo = new MutationObserver(() => bindTrigger(header));
-
     mo.observe(header, { childList: true, subtree: true });
-
   }
 
-
-
   // util p/ teste manual no console
-
   window.__eco_openDrawer  = openDrawer;
-
   window.__eco_closeDrawer = closeDrawer;
-
 })();
-
 </script>
-
-
-
 
 
 <script>console.debug("[EcoHub] scripts.html carregado (stub)");</script>
 
-
-
 <script>
-
   (function () {
-
     var y = document.getElementById('eco-year');
-
     if (y) y.textContent = new Date().getFullYear();
-
   })();
-
 </script>
-
-
 
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
