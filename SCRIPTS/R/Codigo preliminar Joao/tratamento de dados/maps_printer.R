@@ -6,7 +6,7 @@ library(stringr)
 library(purrr) # Fundamental para lidar com listas
 library(janitor)
 
-
+muni <- st_read("C:/Users/jodom/Downloads/br_municipios_20200807/BR_Municipios_2019.shp")
 # 1. Verifique duplicatas na sua tabela da ESQUERDA (a que vem antes do pipe)
 # Substitua 'sua_tabela_da_esquerda' pelo nome real dela
   ep <- pivot %>% 
@@ -136,9 +136,10 @@ d4map <- d4|>
   
   scale_fill_distiller(palette = "YlOrRd", direction = 1) +
   labs(
-    title = "Valor da terra com imóvel - Mato Grosso",
+    title = "Valor da terra com imóvel - Brasil | Municípios",
     fill = "R$/ha"
   ) +
   theme_minimal()
 
 plot(d4map)
+
