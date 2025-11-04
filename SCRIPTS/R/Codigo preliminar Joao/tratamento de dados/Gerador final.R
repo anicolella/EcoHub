@@ -42,6 +42,7 @@ for (script in scripts) {
   cat("\n") 
 }
 
+#oitenta e cinco
 #source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\2.juncao.r", encoding = "UTF-8")
 #source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\3.filetinho.R", encoding = "UTF-8")
 #source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\4.IBGE.R", encoding = "UTF-8")
