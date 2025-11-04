@@ -674,11 +674,277 @@ PAMRT7_2020 <- data.frame(
   origem = "Conceição do Araguaia e Floresta do Araguaia"
 )
 #Não houve observação no ano de 2023
+
+#### Atlas de Terras Pará#####
+####2023####
+MRT_101 <- data.frame(
+  mrt = "mrt_101_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Agrícola - Subsistência (não-comercial)"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(1806.02, 1806.02, 1806.02),
+  vti_minimo = c(1535.11, 1535.11, 1535.11),
+  vti_maximo = c(2076.92, 2076.92, 2076.92),
+  vtn_media = c(1806.02, 1806.02, 1806.02),
+  vtn_minimo = c(1535.11, 1535.11, 1535.11),
+  vtn_maximo = c(2076.92, 2076.92, 2076.92),
+  origem = "Gurupá, Melgaço, Portel, Afuá, Breves, Chaves, Bagre, Anajás, Curralinho, Oeiras do Pará,
+São Sebastião da Boa Vista, Limoeiro do Ajuru, Muaná, Ponta de Pedras, Santa Cruz do Arari,
+Cachoeira do Arari, Soure e Salvaterra"
+)
+
+MRT_102 <- data.frame(
+  mrt = "mrt_102_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola - Fruticultura",
+    "Agrícola - Produção Diversificada",
+    "Agrícola - Subsistência - Não Comercial",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Exploração Mista - Diversificada"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(8234.53, 7027.47, 11843.39, 11400.31, 7555.29, 7921.88, 4666.25, 11843.39, 11400.31),
+  vti_minimo = c(3966.31, 5973.35, 10066.88, 9690.26, 6422.00, 6733.59, 3966.31, 10066.88, 9690.26),
+  vti_maximo = c(13619.90, 8081.59, 13619.90, 13110.35, 8688.58, 9110.16, 5366.19, 13619.90, 13110.35),
+  vtn_media = c(7164.48, 6600.82, 9426.09, 8120.64, 6432.91, 7453.13, 4579.26, 9426.09, 8120.64),
+  vtn_minimo = c(3892.37, 5610.70, 8012.18, 6902.54, 5467.97, 6335.16, 3892.37, 8012.18, 6902.54),
+  vtn_maximo = c(10840.00, 7590.95, 10840.00, 9338.73, 7397.85, 8571.09, 5266.15, 10840.00, 9338.73),
+  origem = "Ananindeua, Belém, Benevides, Castanhal, Colares, Curuçá, Igarapé-Açu, Inhangapi,
+Magalhães Barata, Maracanã, Marapanim, Marituba, Santa Bárbara do Pará, Santa Izabel
+do Pará, Santa Maria do Pará, Santo Antônio do Tauá, São Caetano de Odivelas, São
+Francisco do Pará, São João da Ponta, Terra Alta e Vigia."
+)
+
+MRT_103 <- data.frame(
+  mrt = "mrt_103_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Subsistência (não-comercial)",
+    "Agrícola - Fruticultura",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(5739.55, 4724.52, 6796.88, 3522.22, 8285.50, 6796.88),
+  vti_minimo = c(2993.89, 4015.84, 5777.35, 2993.89, 7042.68, 5777.35),
+  vti_maximo = c(9528.33, 5433.20, 7816.41, 4050.55, 9528.33, 7816.41),
+  vtn_media = c(4781.84, 4152.41, 5437.50, 3335.54, 6783.97, 5437.50),
+  vtn_minimo = c(2835.21, 3529.55, 4621.88, 2835.21, 5766.37, 4621.88),
+  vtn_maximo = c(7801.57, 4775.27, 6253.13, 3835.87, 7801.57, 6253.13),
+  origem = "Augusto Corrêa, Bonito, Bragança, Cachoeira do Piriá, Capanema, Capitão Poço, Garrafão
+do Norte, Nova Esperança do Piriá, Nova Timboteua, Ourém, Peixe-Boi, Primavera,
+Quatipuru, Salinópolis, Santa Luzia do Pará, Santarém Novo, São João de Pirabas,
+Tracuateua, Viseu"
+)
+
+MRT_104 <- data.frame(
+  mrt = "mrt_104_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Produção Diversificada",
+    "Agrícola - Subsistência (não-comercial)",
+    "Pecuária - Bovino-Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(8862.28, 9154.10, 6847.43, 10660.14, 3457.35, 6847.43),
+  vti_minimo = c(2938.75, 7780.99, 5820.31, 9061.12, 2938.75, 5820.31),
+  vti_maximo = c(12259.16, 10527.22, 7874.54, 12259.16, 3975.95, 7874.54),
+  vtn_media = c(7338.06, 7643.91, 5477.94, 8528.11, 3457.35, 5477.94),
+  vtn_minimo = c(2938.75, 6497.33, 4656.25, 7248.90, 2938.75, 4656.25),
+  vtn_maximo = c(9807.33, 8790.50, 6299.63, 9807.33, 3975.95, 6299.63),
+  origem = "Aurora do Pará, Dom Eliseu, Ipixuna do Pará, Irituia, Mãe do Rio, Paragominas, São
+Domingos do Capim, São Miguel do Guamá e Ulianópolis."
+)
+
+MRT_105 <- data.frame(
+  mrt = "mrt_105_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Produção Diversificada",
+    "Agrícola - Subsistência (não-comercial)",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(2635.70, 2619.96, 2714.40, 2605.17, 2257.52, 2714.40),
+  vti_minimo = c(1918.89, 2226.97, 2307.24, 2214.39, 1918.89, 2307.24),
+  vti_maximo = c(3121.56, 3012.96, 3121.56, 2995.95, 2596.15, 3121.56),
+  vtn_media = c(2226.81, 2237.87, 2171.52, 2084.14, 2257.52, 2171.52),
+  vtn_minimo = c(1845.79, 1902.19, 1845.79, 1771.52, 1918.89, 1845.79),
+  vtn_maximo = c(2596.15, 2573.55, 2497.25, 2396.76, 2596.15, 2497.25),
+  origem = "Abaetetuba, Acará, Baião, Bujaru, Barcarena, Cametá, Concórdia do Pará, Igarapé Miri,
+Mocajuba, Moju, Tailândia e Tomé-Açu"
+)
+
+MRT_2701 <- data.frame(
+  mrt = "mrt_2701_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(13872.49, 13872.49, 13872.49),
+  vti_minimo = c(11791.62, 11791.62, 11791.62),
+  vti_maximo = c(15953.36, 15953.36, 15953.36),
+  vtn_media = c(12065.91, 12065.91, 12065.91),
+  vtn_minimo = c(10256.02, 10256.02, 10256.02),
+  vtn_maximo = c(13875.80, 13875.80, 13875.80),
+  origem = "Marabá, Eldorado dos Carajás, Xinguara, Sapucaia, Água Azul do Norte, Tucumã e São Félix do Xingu"
+)
+
+MRT_2702 <- data.frame(
+  mrt = "mrt_2702_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(15578.51, 15578.51, 15578.51),
+  vti_minimo = c(13241.74, 13241.74, 13241.74),
+  vti_maximo = c(17915.29, 17915.29, 17915.29),
+  vtn_media = c(13313.53, 13313.53, 13313.53),
+  vtn_minimo = c(11316.50, 11316.50, 11316.50),
+  vtn_maximo = c(15310.56, 15310.56, 15310.56),
+  origem = "Redenção, Cumaru do Norte, Bannach, Pau d’Arco e Rio Maria."
+)
+
+
+MRT_2703 <- data.frame(
+  mrt = "mrt_2703_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(10774.60, 10774.60, 10774.60),
+  vti_minimo = c(9158.41, 9158.41, 9158.41),
+  vti_maximo = c(12390.79, 12390.79, 12390.79),
+  vtn_media = c(9069.24, 9069.24, 9069.24),
+  vtn_minimo = c(7708.85, 7708.85, 7708.85),
+  vtn_maximo = c(10429.63, 10429.63, 10429.63),
+  origem = "Tucuruí, Jacundá, Nova Ipixuna, Itupiranga, Goianésia do Pará, Bom Jesus do Tocantins,
+Abel Figueiredo, Curionópolis, São João do Araguaia, Brejo Grande do Araguaia, Palestina
+do Pará, São Geraldo do Araguaia, Piçarra, São Domingos do Araguaia, Novo Repartimento e
+Breu Branco."
+)
+
+
+MRT_2704 <- data.frame(
+  mrt = "mrt_2704_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agrícola",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Agrícola - Grãos - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(22820.66, 13985.14, 35583.08, 13985.14, 35583.08),
+  vti_minimo = c(11887.37, 11887.37, 30245.62, 11887.37, 30245.62),
+  vti_maximo = c(40920.54, 40920.54, 40920.54, 16082.91, 40920.54),
+  vtn_media = c(18178.61, 12391.27, 26538.09, 12391.27, 26538.09),
+  vtn_minimo = c(10532.58, 10532.58, 22557.37, 10532.58, 22557.37),
+  vtn_maximo = c(30518.80, 30518.80, 30518.80, 30518.80, 30518.80),
+  origem = "Santana do Araguaia, Rondon do Pará e Santa Maria das Barreiras."
+)
+
+MRT_2705 <- data.frame(
+  mrt = "mrt_2705_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(18607.77, 18607.77, 18607.77),
+  vti_minimo = c(15816.60, 15816.60, 15816.60),
+  vti_maximo = c(21398.93, 21398.93, 21398.93),
+  vtn_media = c(15882.34, 15882.34, 15882.34),
+  vtn_minimo = c(13499.99, 13499.99, 13499.99),
+  vtn_maximo = c(18264.69, 18264.69, 18264.69),
+  origem = "Parauapebas,Canaã dos Carajás e Ourilândia do Norte."
+)
+
+MRT_2706 <- data.frame(
+  mrt = "mrt_2706_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(13711.70, 13711.70, 13711.70),
+  vti_minimo = c(11654.95, 11654.95, 11654.95),
+  vti_maximo = c(15768.46, 15768.46, 15768.46),
+  vtn_media = c(11555.28, 11555.28, 11555.28),
+  vtn_minimo = c(9821.99, 9821.99, 9821.99),
+  vtn_maximo = c(13288.58, 13288.58, 13288.58),
+  origem = " Conceição do Araguaia e Floresta do Araguaia."
+)
+
+MRT_3001 <- data.frame(
+  mrt = "mrt_3001_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Pecuária - Bovinocultura - Pastagem Nativa",
+    "Exploração Mista - Diversificada"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(3006.46, 3236.51, 2661.39, 3236.51, 2661.39),
+  vti_minimo = c(1034.10, 2751.03, 2262.18, 2751.03, 2262.18),
+  vti_maximo = c(5166.43, 3721.99, 3060.60, 3721.99, 3060.60),
+  vtn_media = c(2566.00, 2858.30, 2127.53, 2858.30, 2127.53),
+  vtn_minimo = c(834.90, 2429.56, 1808.40, 2429.56, 1808.40),
+  vtn_maximo = c(4442.01, 3287.05, 2446.66, 3287.05, 2446.66),
+  origem = "Alenquer, Almeirim, Curuá, Faro, Monte Alegre, Óbidos, Oriximiná, Prainha, Terra Santa"
+)
+
+MRT_3002 <- data.frame(
+  mrt = "mrt_3002_nome",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Pecuária - Bovinocultura - Pastagem Plantada",
+    "Exploração Mista - Agricultura + Pecuária"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(7516.82, 4961.75, 13182.40, 4961.75, 13182.40),
+  vti_minimo = c(2940.81, 4217.49, 11205.04, 4217.49, 11205.04),
+  vti_maximo = c(17804.84, 5706.01, 15159.77, 5706.01, 15159.77),
+  vtn_media = c(6591.19, 4648.74, 10898.38, 4648.74, 10898.38),
+  vtn_minimo = c(2848.38, 4013.69, 4013.69, 4013.69, 4013.69),
+  vtn_maximo = c(15482.78, 5430.29, 5430.29, 5430.29, 5430.29),
+  origem = "Altamira, Anapu, Aveiro, Brasil Novo, Itaituba, Jacareacanga, Medicilândia, Novo Progresso,
+Pacajá, Placas, Rurópolis, Santarém, Senador José Porfírio, Senador José Porfírio, Trairão,
+Uruará, Vitória do Xingu
+"
+)
+
+
 ### Consolidação dos dados ####
 Marabá2017 <- rbind(PAMRT1_2017, PAMRT2_2017, PAMRT3_2017, PAMRT4_2017, 
                     PAMRT5_2017, PAMRT6_2017, PAMRT7_2017)
 
-
+atlas23 <- rbind(MRT_101, MRT_102, MRT_103, MRT_104, MRT_105,
+                 MRT_2701, MRT_2702, MRT_2703, MRT_2704, MRT_2705, MRT_2706,
+                 MRT_3001, MRT_3002)
 
 Marabá2020 <- rbind(PAMRT1_2020, PAMRT2_2020, PAMRT3_2020, 
                     PAMRT4_2020, PAMRT5_2020, PAMRT6_2020, PAMRT7_2020)
@@ -688,6 +954,7 @@ MARABÁ_2023 <- rbind(PAMRT1_2023, PAMRT2_2023, PAMRT3_2023, PAMRT4_2023, PAMRT5
 Marabá2020$ano <- 2020
 Marabá2017$ano <- 2017
 MARABÁ_2023$ano <- 2023
+atlas23$ano <- 2023
 
 PATEMPORAL <- rbind(
   Santarém2016,
@@ -696,7 +963,8 @@ PATEMPORAL <- rbind(
   Marabá2017,
   PANordeste_2016,
   PANordeste_2019,
-  PANordeste_2022
+  PANordeste_2022,
+  atlas23
 )
 
 PATEMPORAL$estado <- 15
