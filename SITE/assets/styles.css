@@ -753,7 +753,8 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   width: 100%;
   height: 100%;
   /* Sem overlay no tema claro para não “lavar” o vídeo */
-  background: transparent;
+  /* Adiciona overlay suave para aumentar contraste do texto sobre o vídeo */
+  background: rgba(0,0,0,0.35);
   /* Overlay acima do vídeo e abaixo do conteúdo */
   z-index: 1;
 }
@@ -788,10 +789,20 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
 }
 
 /* Sem override de tamanho do h2 (usa padrão do site) */
-.home-section.video-bg .section-text h2 { line-height: inherit; font-size: inherit; }
+.home-section.video-bg .section-text h2 { line-height: 1.1; font-size: 2.0rem; font-weight: 700; margin-bottom: .6rem; }
 
-/* Sem override de tamanho do parágrafo (usa padrão do site) */
-.home-section.video-bg .section-text p { line-height: inherit; font-size: inherit; }
+/* Ajuste de contraste: criar um painel semântico atrás do texto para legibilidade */
+.home-section.video-bg .section-text {
+  position: relative; /* garante stacking */
+  z-index: 3; /* acima do overlay */
+  display: inline-block;
+  padding: 1.1rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.28); /* painel semi-transparente que melhora contraste */
+}
+
+/* Parágrafos dentro do painel herdam tamanho/linha e cor */
+.home-section.video-bg .section-text p { line-height: 1.45; font-size: 1.02rem; color: #fff !important; }
 
 @media (max-width: 800px) {
   .home-section.video-bg {
@@ -838,6 +849,57 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
   width: 100%;
   border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+/* Layout específico: imagem "entremeada" no texto (sem colunas) */
+.wrap-media-text {
+  display: block; /* garante fluxo natural do bloco */
+}
+.wrap-media-text::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* Override: evita que o container continue como flex (o tema define .section-content como flex) */
+.wrap-media-text.section-content,
+.wrap-media-text {
+  display: block !important;
+  width: 100% !important;
+}
+.wrap-media-text .section-media {
+  float: right; /* imagem flutua sobre o texto */
+  width: 45%; /* ocupa parte da largura do container, maior que antes */
+  max-width: calc(560px + 4rem); /* aumentado em 4rem conforme solicitado */
+  margin: 5.5rem 0 1rem 1.25rem; /* deslocada para baixo conforme pedido */
+  display: block;
+}
+.wrap-media-text .section-media img,
+.wrap-media-text .section-media video {
+  width: 100%; /* preenche o contêiner .section-media */
+  height: auto;
+  max-width: 100%; /* garante responsividade em telas pequenas */
+  border-radius: 1rem;
+  display: block;
+}
+.wrap-media-text .section-text {
+  display: block;
+  width: 100%;
+  margin: 0; /* permite que o texto flua à esquerda da imagem e depois ocupe a largura completa abaixo dela */
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  /* Mobile: remove float e empilha imagem acima do texto */
+  .wrap-media-text .section-media {
+    float: none !important;
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto 1rem auto;
+  }
+  .wrap-media-text .section-text {
+    margin: 0 !important;
+    text-align: left;
+  }
 }
 
 /* Cores de fundo - Tema Claro (usa fundo padrão) */

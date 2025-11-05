@@ -23,10 +23,14 @@ format:
 
 <!-- Seção 2: Mídia à ESQUERDA -->
 <section class="home-section">
-  <div class="section-content reverse">
+  <!-- layout especial: imagem maior com texto fluindo ao redor -->
+  <div class="section-content reverse wrap-media-text">
+    <div class="section-media">
+      <img src="assets/projeto_bd.png" alt="Projeto BD" />
+    </div>
     <div class="section-text">
       <h2>Planejamento</h2>
-       <p>Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto empodera pesquisadores, gestores e a sociedade civil a responder perguntas urgentes: onde, quando e por que estamos desmatando; quais políticas funcionam; como financiar a restauração; que riscos e oportunidades existem nas cadeias produtivas. É uma infraestrutura comum, feita para durar e evoluir com a comunidade.</p>
+       <p>Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto empodera pesquisadores, gestores e a sociedade civil a responder perguntas urgentes: onde, quando e por que estamos desmatando? Quais políticas funcionam? Que riscos e oportunidades existem nas cadeias produtivas?</p>
 
       <p>O projeto está estruturado em três fases:
 </p>
@@ -35,9 +39,9 @@ format:
   <li><b>Fase 2</b>: Análise preliminar (descritiva) de cada base e disponibilização à comunidade dos dados tratados e tabulados (csv, xlsx ou rdata), juntamente com a documentação de criação do dataframe e o dicionário de dados.</li>
   <li><b>Fase 3</b>: Desenvolvimento de pacotes (biliotecas) em R e Python com os dados auferidos.</li>
 </ul>
-    </div>
-    <div class="section-media">
-      <img src="assets/projeto_bd.png" alt="Projeto BD" />
+
+<p> A intenção é apoiar a pesquisa, o planejamento e a formulação de políticas baseadas em evidências, fortalecendo a gestão sustentável do território.</p>
+
     </div>
   </div>
 </section>
@@ -46,11 +50,11 @@ format:
 <!-- CABEÇALHO DA SEÇÃO DE DADOS -->
 <div class="section-data">
   <div class="section-text-data">
-    <h2>Bases Tratadas</h2>
+    <h2>Bases Tratadas (Dados)</h2>
     <p>As bases de dados a seguir estão no escopo do projeto. O estágio atual de cada uma delas pode ser acompanhado adiante.</p>
   </div>
   <div class="section-media-data">
-    <video src="assets/amazon_rainforest.mp4" autoplay loop muted></video>
+    <video src="assets/wetlands.mp4" autoplay loop muted></video>
   </div>
 </div>
 
