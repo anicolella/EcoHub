@@ -1,10 +1,66 @@
 [
   {
-    "objectID": "documentacao.html",
-    "href": "documentacao.html",
-    "title": "Suporte",
+    "objectID": "equipe.html",
+    "href": "equipe.html",
+    "title": "Equipe",
     "section": "",
-    "text": "Para documentação do projeto"
+    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EcoHub",
+    "section": "",
+    "text": "Dados Ambientais\n     \n     O Brasil já produz uma imensidão de dados ambientais — fundiários, florestais, hídricos, econômicos — mas eles estão espalhados em fontes distintas, com formatos, licenças e documentações heterogêneas. Essa fragmentação eleva o custo de pesquisa, atrasa diagnósticos e enfraquece o planejamento público e privado. \n      \n      \n      O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.\n    \n  \n\n\n\n\n  \n    \n      Planejamento\n       Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto empodera pesquisadores, gestores e a sociedade civil a responder perguntas urgentes: onde, quando e por que estamos desmatando; quais políticas funcionam; como financiar a restauração; que riscos e oportunidades existem nas cadeias produtivas. É uma infraestrutura comum, feita para durar e evoluir com a comunidade.\n\n      O projeto está estruturado em três fases:\n\n\n  Fase 1: Levantamento e documentação das bases de dados, coleta de metadados, licenças e fontes originais.\n  Fase 2: Análise preliminar (descritiva) de cada base e disponibilização à comunidade dos dados tratados e tabulados (csv, xlsx ou rdata), juntamente com a documentação de criação do dataframe e o dicionário de dados.\n  Fase 3: Desenvolvimento de pacotes (biliotecas) em R e Python com os dados auferidos.\n\n    \n    \n      \n    \n  \n\n\n\n\n\n  \n    Bases Tratadas\n    As bases de dados a seguir estão no escopo do projeto. O estágio atual de cada uma delas pode ser acompanhado adiante.\n  \n  \n    \n  \n\n\n\n\n  Fase 1 Levantamento & Documentação\n  \n  Fase 2 Análise & Disponibilização\n  \n  Fase 3 Pacotes & Automação\n\n\n\n\n\n  \n  \n    \n      INCRA\n      Fase 1\n    \n    Cadastro fundiário, regularização e georreferenciamento (SIGEF/RAMT/PPR).\n    \n       Em análise\n    \n  \n\n  \n  \n    \n      RAMT / PPR (INCRA)\n      Fase 1\n    \n    Relação de áreas em malha/terras e procedimentos de regularização.\n    \n       Em fila\n    \n  \n\n  \n  \n    \n      CAR\n      Fase 2\n    \n    Cadastro Ambiental Rural: APP, RL e polígonos declarados.\n    \n       Em análise\n    \n  \n\n  \n  \n    \n      MapBiomas\n      Fase 2\n    \n    Séries de uso e cobertura da terra (coleções anuais).\n    \n       Concluído (versão inicial)\n    \n  \n\n  \n  \n    \n      SEMA-MT\n      Fase 2\n    \n    Licenciamento, monitoramento e autorizações ambientais estaduais.\n    \n       Em análise\n    \n  \n\n  \n  \n    \n      IBGE (SIDRA)\n      Fase 1\n    \n    Estatísticas territoriais e socioeconômicas municipais.\n    \n       Concluído (metadados)\n    \n  \n\n  \n  \n    \n      IPEADATA\n      Fase 2\n    \n    Indicadores macro, fiscais e ambientais agregados.\n    \n       Em fila\n    \n  \n\n  \n  \n    \n      Bacen\n      Fase 1\n    \n    Séries financeiras, crédito rural e indicadores bancários.\n    \n       Em fila\n    \n  \n\n  \n  \n    \n      DOF / SINAFLOR\n      Fase 3\n    \n    Origem florestal, transporte e cadeia madeireira.\n    \n       Em análise (pipeline)"
+  },
+  {
+    "objectID": "tracker.html",
+    "href": "tracker.html",
+    "title": "Tracker",
+    "section": "",
+    "text": "Registro rápido dos fatos do projeto. Colaboradores do repositório podem adicionar novas entradas através do formulário web."
+  },
+  {
+    "objectID": "tracker.html#instruções-para-colaboradores",
+    "href": "tracker.html#instruções-para-colaboradores",
+    "title": "Tracker",
+    "section": "Instruções para Colaboradores",
+    "text": "Instruções para Colaboradores\n\nClique em “Nova Entrada” acima\nFaça login com sua conta GitHub\nPreencha o formulário com os dados da entrada\nPublique - o site será atualizado automaticamente"
+  },
+  {
+    "objectID": "fontes.html",
+    "href": "fontes.html",
+    "title": "Fontes",
+    "section": "",
+    "text": "Fontes e referências do projeto"
+  },
+  {
+    "objectID": "components/footer-links.html",
+    "href": "components/footer-links.html",
+    "title": "EcoHub",
+    "section": "",
+    "text": "Rodap� com links"
+  },
+  {
+    "objectID": "components/hero.html",
+    "href": "components/hero.html",
+    "title": "Hero section",
+    "section": "",
+    "text": "Hero section"
+  },
+  {
+    "objectID": "tracker/configuracao-inicial.html",
+    "href": "tracker/configuracao-inicial.html",
+    "title": "Configuração inicial do site",
+    "section": "",
+    "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
+  },
+  {
+    "objectID": "tracker/configuracao-inicial.html#configuração-inicial",
+    "href": "tracker/configuracao-inicial.html#configuração-inicial",
+    "title": "Configuração inicial do site",
+    "section": "",
+    "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
   },
   {
     "objectID": "sobre.html",
@@ -26,61 +82,5 @@
     "title": "Sobre",
     "section": "Cronograma (Roadmap)",
     "text": "Cronograma (Roadmap)\n\nFase 1 — Levantamento & Documentação (metadados, licenças, fontes)\n\nFase 2 — ETL & Padronização (tabelas, séries, shapefiles/rasters)\n\nFase 3 — Análises & Visualizações (exploratórias, econométricas)\n\nFase 4 — Pacotes & Automação (R/Python, pipelines reprodutíveis)"
-  },
-  {
-    "objectID": "tracker/configuracao-inicial.html",
-    "href": "tracker/configuracao-inicial.html",
-    "title": "Configuração inicial do site",
-    "section": "",
-    "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
-  },
-  {
-    "objectID": "tracker/configuracao-inicial.html#configuração-inicial",
-    "href": "tracker/configuracao-inicial.html#configuração-inicial",
-    "title": "Configuração inicial do site",
-    "section": "",
-    "text": "Hoje foram realizadas as configurações iniciais do site EcoHub.\n\n\n\n✅ Configuração da estrutura base do Quarto\n✅ Implementação da navbar personalizada\n✅ Configuração dos temas claro/escuro\n✅ Criação das páginas principais\n\n\n\n\n\nQuarto: Framework principal para geração do site\nBootstrap: Sistema de CSS para layout responsivo\nJavaScript: Funcionalidades interativas\n\n\n\n\n\nImplementação do sistema de autenticação\nIntegração com base de dados\nTestes de responsividade\n\n\nConfiguração realizada pela equipe de desenvolvimento."
-  },
-  {
-    "objectID": "components/footer-links.html",
-    "href": "components/footer-links.html",
-    "title": "EcoHub",
-    "section": "",
-    "text": "Rodap� com links"
-  },
-  {
-    "objectID": "components/hero.html",
-    "href": "components/hero.html",
-    "title": "Hero section",
-    "section": "",
-    "text": "Hero section"
-  },
-  {
-    "objectID": "tracker.html",
-    "href": "tracker.html",
-    "title": "Tracker",
-    "section": "",
-    "text": "Registro rápido dos fatos do projeto. Colaboradores do repositório podem adicionar novas entradas através do formulário web."
-  },
-  {
-    "objectID": "tracker.html#instruções-para-colaboradores",
-    "href": "tracker.html#instruções-para-colaboradores",
-    "title": "Tracker",
-    "section": "Instruções para Colaboradores",
-    "text": "Instruções para Colaboradores\n\nClique em “Nova Entrada” acima\nFaça login com sua conta GitHub\nPreencha o formulário com os dados da entrada\nPublique - o site será atualizado automaticamente"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "EcoHub",
-    "section": "",
-    "text": "Dados Ambientais\n      O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.\n\n\n    \n    \n      \n    \n  \n\n\n\n\n  \n    \n      Planejamento\n      O projeto está estruturado em quatro fases integradas.\n\n\n  Fase 1: levantamento e documentação das bases de dados, coleta de metadados, licenças e fontes originais.\n  Fase 2: Análise preliminar (descritiva) de cada base e disponibilização à comunidade (csv, xlsx ou rdata).\n  Fase 3: desenvolvimento de pacotes e automações em R e Python — pipelines reprodutíveis que garantem transparência e eficiência.\n\n    \n    \n      \n    \n  \n\n\n\n\n  \n    \n      Bases Analisadas\n      A etapa 1 do porjero"
-  },
-  {
-    "objectID": "equipe.html",
-    "href": "equipe.html",
-    "title": "Equipe",
-    "section": "",
-    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
   }
 ]
