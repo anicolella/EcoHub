@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, li, td, th {
 
 /* Fundo e texto principal do modo escuro */
 html[data-bs-theme="dark"] body {
-  background-color: #383A3D !important;
+  background-color: #4a4d52 !important;
   color: #e9ecef !important;
 }
 
@@ -61,8 +61,8 @@ html[data-bs-theme="dark"] span:not(.navbar *):not(.dropdown *):not(.nav-footer 
 
 /* Cards no modo escuro */
 html[data-bs-theme="dark"] .card {
-  background-color: #495057 !important;
-  border-color: #6c757d !important;
+  background-color: #5a5e63 !important;
+  border-color: #7a7f85 !important;
   color: #f8f9fa !important;
 }
 
@@ -70,13 +70,23 @@ html[data-bs-theme="dark"] .card {
 html[data-bs-theme="dark"] main,
 html[data-bs-theme="dark"] .content,
 html[data-bs-theme="dark"] #quarto-document-content {
-  background-color: #383A3D !important;
+  background-color: #4a4d52 !important;
   color: #e9ecef !important;
+}
+
+/* IMPORTANTE: Main precisa ser transparente para vídeo aparecer */
+html[data-bs-theme="dark"] main.content {
+  background: transparent !important;
+}
+
+/* Aplica background apenas no container, não no main */
+html[data-bs-theme="dark"] #quarto-content {
+  background-color: #4a4d52 !important;
 }
 
 /* Container principal no modo escuro */
 html[data-bs-theme="dark"] .quarto-container {
-  background-color: #383A3D !important;
+  background-color: #4a4d52 !important;
 }
 
 /* Links no modo escuro */
@@ -704,6 +714,96 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   justify-content: center;
   align-items: center;
   transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+  /* Garante um novo stacking context para que filhos com z-index negativo não
+     fiquem atrás de ancestrais (ex.: main/content no tema escuro) */
+  z-index: 0;
+  isolation: isolate;
+}
+
+/* Vídeo de fundo */
+.home-section.video-bg {
+  min-height: 360px;
+  height: clamp(320px, 34vh, 460px);
+  padding: 3.5rem 0;
+}
+
+.home-section.video-bg .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Fica atrás do conteúdo mas dentro da seção */
+  z-index: 0;
+  /* Tema claro: vídeo mais vivo */
+  opacity: 0.9;
+  filter: saturate(1.08) contrast(1.05);
+  pointer-events: none;
+}
+
+/* Overlay leve - tema claro */
+.home-section.video-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Sem overlay no tema claro para não “lavar” o vídeo */
+  background: transparent;
+  /* Overlay acima do vídeo e abaixo do conteúdo */
+  z-index: 1;
+}
+
+/* SEM overlay no tema escuro - deixar vídeo aparecer */
+html[data-bs-theme="dark"] .home-section.video-bg::before {
+  background: transparent;
+}
+
+/* Vídeo MUITO VISÍVEL no tema escuro */
+html[data-bs-theme="dark"] .home-section.video-bg .bg-video {
+  opacity: 0.9;
+  filter: brightness(1.2);
+}
+
+/* Texto mais legível sobre vídeo */
+.home-section.video-bg .section-text h2,
+.home-section.video-bg .section-text p {
+  color: #ffffff !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+}
+
+html[data-bs-theme="dark"] .home-section.video-bg .section-text h2,
+html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
+  color: #ffffff !important;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+}
+
+/* Texto da seção com vídeo herda tipografia padrão (como as outras seções) */
+.home-section.video-bg .section-text {
+  background: transparent; /* sem chip */
+}
+
+/* Sem override de tamanho do h2 (usa padrão do site) */
+.home-section.video-bg .section-text h2 { line-height: inherit; font-size: inherit; }
+
+/* Sem override de tamanho do parágrafo (usa padrão do site) */
+.home-section.video-bg .section-text p { line-height: inherit; font-size: inherit; }
+
+@media (max-width: 800px) {
+  .home-section.video-bg {
+    height: clamp(280px, 48vh, 420px);
+    padding: 2.5rem 0;
+  }
+}
+
+/* Conteúdo da seção acima do overlay e do vídeo */
+.home-section.video-bg .section-content {
+  position: relative;
+  z-index: 2;
 }
 .section-content {
   max-width: 1200px; /* antes: 1000px */
@@ -740,30 +840,15 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
 }
 
-/* Cores de fundo - Tema Claro */
-.home-section-blue {
-  background: linear-gradient(90deg, #ffffff 0%, #e8eff8 100%);
-}
-.home-section-green {
-  background: #FFFFFF;
-}
-.home-section-orange {
-  background: linear-gradient(90deg, #fffefd 0%, #d5fff7 100%);
+/* Cores de fundo - Tema Claro (usa fundo padrão) */
+.home-section {
+  background: transparent;
 }
 
-/* Cores de fundo - Tema Escuro (Bootstrap) */
-html[data-bs-theme="dark"] .home-section-blue {
-  background: linear-gradient(90deg, #193046 0%, #26405c 100%) !important;
-}
-html[data-bs-theme="dark"] .home-section-green {
-  background: #EBEEF3 !important;
-}
-html[data-bs-theme="dark"] .home-section-orange {
-  background: linear-gradient(90deg, #483018 0%, #684312 100%) !important;
-}
+/* Tema Escuro - mantém texto visível */
 html[data-bs-theme="dark"] .section-text h2,
 html[data-bs-theme="dark"] .section-text p {
-  color: #fafafc !important;
+  color: #e9ecef !important;
 }
 
 /* Mobile - Responsividade */
@@ -775,6 +860,226 @@ html[data-bs-theme="dark"] .section-text p {
     gap: 1.5rem;
   }
   .section-media img, .section-media video {
+    max-width: 90vw;
+  }
+}
+
+
+/* ====== Painel de Bases (cards + badges) ====== */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .9rem;
+  margin: .5rem 0 1rem 0;
+  font-size: .95rem;
+  max-width: 1200px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1400px) {
+  .legend {
+    max-width: 1280px;
+  }
+}
+
+.legend-gap {
+  width: 10px;
+  height: 1px;
+  display: inline-block;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: .5rem;
+  max-width: 1200px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1400px) {
+  .data-grid {
+    max-width: 1280px;
+  }
+}
+
+.data-card {
+  text-decoration: none !important;
+  color: inherit !important;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.data-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+  border-color: rgba(2, 132, 199, .35);
+  /* brand-blue sutil */
+}
+
+.data-card .card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: .35rem;
+}
+
+.data-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--brand-green);
+}
+
+.data-card p {
+  margin: .25rem 0 .75rem 0;
+  font-size: .92rem;
+  color: #555;
+}
+
+.data-card .meta {
+  font-size: .85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* Badge de Fase aproveitando sua paleta */
+.badge {
+  display: inline-block;
+  padding: .25em .6em;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.fase1 {
+  background: var(--brand-blue);
+}
+
+/* Azul */
+.fase2 {
+  background: var(--brand-green);
+}
+
+/* Verde */
+.fase3 {
+  background: #f57c00;
+}
+
+/* Laranja do seu esquema "orange" */
+
+/* Status dot */
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.status-fila {
+  background: #9aa1a9;
+}
+
+/* cinza */
+.status-analise {
+  background: var(--brand-yellow);
+}
+
+/* amarelo */
+.status-concluido {
+  background: #22c55e;
+}
+
+/* verde/ok */
+
+/* Dark mode harmonizado */
+html[data-bs-theme="dark"] .data-card {
+  background: #5a5e63 !important;
+  border-color: #7a7f85 !important;
+  color: #f8f9fa !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+
+html[data-bs-theme="dark"] .data-card p {
+  color: #e9ecef !important;
+}
+
+html[data-bs-theme="dark"] .data-card:hover {
+  border-color: rgba(110, 168, 254, .6) !important;
+  /* sua cor de link dark */
+}
+
+html[data-bs-theme="dark"] .legend {
+  color: #f8f9fa !important;
+}
+
+/* =========================
+   SEÇÃO DE DADOS COM MÍDIA
+   ========================= */
+
+.section-data {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (min-width: 1400px) {
+  .section-data {
+    max-width: 1280px;
+  }
+}
+
+.section-text-data {
+  flex: 1.2;
+  min-width: 260px;
+}
+
+.section-media-data {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+
+.section-media-data video {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+/* Mobile - Responsividade */
+@media (max-width: 800px) {
+  .section-data {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .section-media-data {
+    align-items: center;
+    padding-top: 0;
+  }
+  .section-media-data video {
     max-width: 90vw;
   }
 }

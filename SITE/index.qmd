@@ -6,32 +6,34 @@ format:
 ---
 
 ```{=html}
-<!-- Seção 1: Mídia à DIREITA | Fundo AZUL -->
-<section class="home-section home-section-blue">
+<!-- Seção 1: Vídeo de FUNDO -->
+<section class="home-section video-bg">
+  <video class="bg-video" src="assets/amazon_rainforest.mp4" autoplay loop muted playsinline></video>
   <div class="section-content">
     <div class="section-text">
       <h2>Dados Ambientais</h2>
-      <p>O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.
-
-</p>
-    </div>
-    <div class="section-media">
-      <video src="assets/amazon_rainforest.mp4" autoplay loop muted></video>
+     
+     <p>O Brasil já produz uma imensidão de dados ambientais — fundiários, florestais, hídricos, econômicos — mas eles estão espalhados em fontes distintas, com formatos, licenças e documentações heterogêneas. Essa fragmentação eleva o custo de pesquisa, atrasa diagnósticos e enfraquece o planejamento público e privado.</p> 
+      
+      
+      <p>O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.</p>
     </div>
   </div>
 </section>
 
-<!-- Seção 2: Mídia à ESQUERDA | Fundo VERDE -->
-<section class="home-section home-section-green">
+<!-- Seção 2: Mídia à ESQUERDA -->
+<section class="home-section">
   <div class="section-content reverse">
     <div class="section-text">
       <h2>Planejamento</h2>
-      <p>O projeto está estruturado em quatro fases integradas.
+       <p>Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto empodera pesquisadores, gestores e a sociedade civil a responder perguntas urgentes: onde, quando e por que estamos desmatando; quais políticas funcionam; como financiar a restauração; que riscos e oportunidades existem nas cadeias produtivas. É uma infraestrutura comum, feita para durar e evoluir com a comunidade.</p>
+
+      <p>O projeto está estruturado em três fases:
 </p>
 <ul>
-  <li>Fase 1: levantamento e documentação das bases de dados, coleta de metadados, licenças e fontes originais.</li>
-  <li>Fase 2: Análise preliminar (descritiva) de cada base e disponibilização à comunidade (csv, xlsx ou rdata).</li>
-  <li>Fase 3: desenvolvimento de pacotes e automações em R e Python — pipelines reprodutíveis que garantem transparência e eficiência.</li>
+  <li><b>Fase 1</b>: Levantamento e documentação das bases de dados, coleta de metadados, licenças e fontes originais.</li>
+  <li><b>Fase 2</b>: Análise preliminar (descritiva) de cada base e disponibilização à comunidade dos dados tratados e tabulados (csv, xlsx ou rdata), juntamente com a documentação de criação do dataframe e o dicionário de dados.</li>
+  <li><b>Fase 3</b>: Desenvolvimento de pacotes (biliotecas) em R e Python com os dados auferidos.</li>
 </ul>
     </div>
     <div class="section-media">
@@ -41,15 +43,137 @@ format:
 </section>
 
 <!-- Seção 3: Mídia à DIREITA | Fundo LARANJA -->
-<section class="home-section home-section-orange">
-  <div class="section-content">
-    <div class="section-text">
-      <h2>Bases Analisadas</h2>
-      <p>A etapa 1 do porjero</p>
-    </div>
-    <div class="section-media">
-      <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" alt="GIF código animado"/>
-    </div>
+<!-- CABEÇALHO DA SEÇÃO DE DADOS -->
+<div class="section-data">
+  <div class="section-text-data">
+    <h2>Bases Tratadas</h2>
+    <p>As bases de dados a seguir estão no escopo do projeto. O estágio atual de cada uma delas pode ser acompanhado adiante.</p>
   </div>
-</section>
+  <div class="section-media-data">
+    <video src="assets/amazon_rainforest.mp4" autoplay loop muted></video>
+  </div>
+</div>
+
+<!-- LEGENDA -->
+<div class="legend">
+  <span class="badge fase1">Fase 1</span> Levantamento & Documentação
+  <span class="legend-gap"></span>
+  <span class="badge fase2">Fase 2</span> Análise & Disponibilização
+  <span class="legend-gap"></span>
+  <span class="badge fase3">Fase 3</span> Pacotes & Automação
+</div>
+
+<!-- GRADE DE BASES -->
+<div class="data-grid">
+
+  <!-- INCRA -->
+  <a class="data-card" href="#" data-fase="1" data-status="analise">
+    <div class="card-head">
+      <h3>INCRA</h3>
+      <span class="badge fase1">Fase 1</span>
+    </div>
+    <p>Cadastro fundiário, regularização e georreferenciamento (SIGEF/RAMT/PPR).</p>
+    <div class="meta">
+      <span class="status-dot status-analise"></span> Em análise
+    </div>
+  </a>
+
+  <!-- RAMT / PPR (INCRA) -->
+  <a class="data-card" href="#" data-fase="1" data-status="fila">
+    <div class="card-head">
+      <h3>RAMT / PPR (INCRA)</h3>
+      <span class="badge fase1">Fase 1</span>
+    </div>
+    <p>Relação de áreas em malha/terras e procedimentos de regularização.</p>
+    <div class="meta">
+      <span class="status-dot status-fila"></span> Em fila
+    </div>
+  </a>
+
+  <!-- CAR -->
+  <a class="data-card" href="#" data-fase="2" data-status="analise">
+    <div class="card-head">
+      <h3>CAR</h3>
+      <span class="badge fase2">Fase 2</span>
+    </div>
+    <p>Cadastro Ambiental Rural: APP, RL e polígonos declarados.</p>
+    <div class="meta">
+      <span class="status-dot status-analise"></span> Em análise
+    </div>
+  </a>
+
+  <!-- MapBiomas -->
+  <a class="data-card" href="#" data-fase="2" data-status="concluido">
+    <div class="card-head">
+      <h3>MapBiomas</h3>
+      <span class="badge fase2">Fase 2</span>
+    </div>
+    <p>Séries de uso e cobertura da terra (coleções anuais).</p>
+    <div class="meta">
+      <span class="status-dot status-concluido"></span> Concluído (versão inicial)
+    </div>
+  </a>
+
+  <!-- SEMA-MT -->
+  <a class="data-card" href="#" data-fase="2" data-status="analise">
+    <div class="card-head">
+      <h3>SEMA-MT</h3>
+      <span class="badge fase2">Fase 2</span>
+    </div>
+    <p>Licenciamento, monitoramento e autorizações ambientais estaduais.</p>
+    <div class="meta">
+      <span class="status-dot status-analise"></span> Em análise
+    </div>
+  </a>
+
+  <!-- IBGE (SIDRA) -->
+  <a class="data-card" href="#" data-fase="1" data-status="concluido">
+    <div class="card-head">
+      <h3>IBGE (SIDRA)</h3>
+      <span class="badge fase1">Fase 1</span>
+    </div>
+    <p>Estatísticas territoriais e socioeconômicas municipais.</p>
+    <div class="meta">
+      <span class="status-dot status-concluido"></span> Concluído (metadados)
+    </div>
+  </a>
+
+  <!-- IPEADATA -->
+  <a class="data-card" href="#" data-fase="2" data-status="fila">
+    <div class="card-head">
+      <h3>IPEADATA</h3>
+      <span class="badge fase2">Fase 2</span>
+    </div>
+    <p>Indicadores macro, fiscais e ambientais agregados.</p>
+    <div class="meta">
+      <span class="status-dot status-fila"></span> Em fila
+    </div>
+  </a>
+
+  <!-- Bacen -->
+  <a class="data-card" href="#" data-fase="1" data-status="fila">
+    <div class="card-head">
+      <h3>Bacen</h3>
+      <span class="badge fase1">Fase 1</span>
+    </div>
+    <p>Séries financeiras, crédito rural e indicadores bancários.</p>
+    <div class="meta">
+      <span class="status-dot status-fila"></span> Em fila
+    </div>
+  </a>
+
+  <!-- DOF -->
+  <a class="data-card" href="#" data-fase="3" data-status="analise">
+    <div class="card-head">
+      <h3>DOF / SINAFLOR</h3>
+      <span class="badge fase3">Fase 3</span>
+    </div>
+    <p>Origem florestal, transporte e cadeia madeireira.</p>
+    <div class="meta">
+      <span class="status-dot status-analise"></span> Em análise (pipeline)
+    </div>
+  </a>
+
+</div>
+
 ```
