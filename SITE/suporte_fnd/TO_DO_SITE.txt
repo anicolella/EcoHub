@@ -143,14 +143,14 @@ Até aqui:
 
 ******************************************************
 ------Ajustes------
-* (x) Página inicial com três seções
+* (x) Página inicial (index.qmd) com três seções
 ---
 Até aqui:
 [v. 0.72, de 04/11/2025]
 [v. 0.72a, de 04/11/2025] - mp4 e png página inicial
 [v. 0.72b, de 04/11/2025] - Config sections estilizadas index.qmd
 [v. 0.72c, de 04/11/2025] - Contraste seção 1, texto e figura invertidos seção 2 e vídeo novo seção 3
--- 
+[v. 0.72d, de 06/11/2025] - Texto seções 2 e 3 ajustados + novos badges e correção textos boxes 
 
 ******************************************************
 [v0.6 - 31102025]

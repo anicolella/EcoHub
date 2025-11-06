@@ -26,8 +26,8 @@ website:
             href: '#'
           - text: "Wiki"
             href: '#'
-      - text: Fontes
-        href: fontes.qmd
+      - text: Dados
+        href: dados.qmd
       - text: Equipe
         href: equipe.qmd
       - text: Sobre

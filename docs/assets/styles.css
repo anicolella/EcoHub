@@ -867,10 +867,20 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
   width: 100% !important;
 }
 .wrap-media-text .section-media {
-  float: right; /* imagem flutua sobre o texto */
+  float: right; /* imagem/vídeo flutua à direita por padrão */
   width: 45%; /* ocupa parte da largura do container, maior que antes */
   max-width: calc(560px + 4rem); /* aumentado em 4rem conforme solicitado */
   margin: 5.5rem 0 1rem 1.25rem; /* deslocada para baixo conforme pedido */
+  display: block;
+}
+/* Variante: mídia à ESQUERDA (para seção 3) */
+.wrap-media-text.left .section-media {
+  float: left;
+  margin: 5.5rem 1.25rem 1rem 0; /* espelho do margin quando está à direita */
+}
+
+/* Garante que o texto não sobreponha a mídia quando à esquerda */
+.wrap-media-text.left .section-text {
   display: block;
 }
 .wrap-media-text .section-media img,
@@ -1027,6 +1037,10 @@ html[data-bs-theme="dark"] .section-text p {
   white-space: nowrap;
 }
 
+.fase0 {
+  background: #9aa1a9;
+}
+
 .fase1 {
   background: var(--brand-blue);
 }
@@ -1124,10 +1138,19 @@ html[data-bs-theme="dark"] .legend {
 }
 
 .section-media-data video {
-  max-width: 300px;
+  /* Match appearance/size with .section-media in section 2 */
+  max-width: 240px;
   width: 100%;
   border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+/* Ensure paragraph typography in section-data matches section-content (.section-text) */
+.section-text-data p {
+  margin: 0 0 1rem 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 /* Mobile - Responsividade */
