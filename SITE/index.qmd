@@ -1,43 +1,252 @@
 ---
-title: "EcoHub — Início"
 format:
   html:
     toc: false
     css: assets/styles.css
 ---
 
-**AVISOS TEMPORÁRIOS — VERSÃO ALPHA DO SITE**
+```{=html}
+<!-- Seção 1: Vídeo de FUNDO -->
+<section class="home-section video-bg">
+  <video class="bg-video" src="assets/amazon_rainforest.mp4" autoplay loop muted playsinline></video>
+  <div class="section-content">
+    <div class="section-text">
+      <h2>Dados Ambientais</h2>
+     
+     <p>O Brasil já produz uma imensidão de dados ambientais — fundiários, florestais, hídricos, econômicos — mas eles estão espalhados em fontes distintas, com formatos, licenças e documentações heterogêneas. Essa fragmentação eleva o custo de pesquisa, atrasa diagnósticos e enfraquece o planejamento público e privado.</p> 
+      
+      
+      <p>O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.</p>
+    </div>
+  </div>
+</section>
 
-O conteúdo abaixo é uma página inicial de rascunho com a estrutura prevista para o projeto.
+<!-- Seção 2: Mídia à ESQUERDA -->
+<section class="home-section">
+  <!-- layout especial: imagem maior com texto fluindo ao redor -->
+  <div class="section-content reverse wrap-media-text">
+    <div class="section-media">
+      <img src="assets/projeto_bd.png" alt="Projeto BD" />
+    </div>
+    <div class="section-text">
+      <h2>Objetivos</h2>
+       <p>Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto buscar propiciar a pesquisadores, gestores e a sociedade civil a busca de proposições de problemas urgentes: onde, quando e por que estamos desmatando? Quais políticas ambientais funcionam -- ou não -- e por quais motivos? Que riscos e oportunidades existem nas cadeias produtivas?</p>
 
-*Versão atual: 30/09/2025*
+      <p>O projeto está estruturado em três fases:
+</p>
+<ul>
+  <li><b>Fase 1</b>: Levantamento e documentação das bases de dados primárias, coleta de metadados, licenças e documentação.</li>
+  <li><b>Fase 2</b>: Análise preliminar (descritiva) de cada base e disponibilização à comunidade dos dados tratados e tabulados (csv, xlsx ou rdata), juntamente com a documentação de criação do dataframe e o dicionário dos dados.</li>
+  <li><b>Fase 3</b>: Desenvolvimento de pacotes (biliotecas) em R e Python com os dados auferidos, automatizando e otimizando o processo.</li>
+</ul>
 
-# Projeto BD Ambiental
+<p> O principal objetivo é apoiar a pesquisa, o planejamento, a formulação de políticas e o desenho de mecanismos baseado em evidências, fortalecendo, assim, a gestão sustentável dos biomas ao tempo em que possibilita um desenvolvimento mais sustentável.</p>
 
-Repositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.
+    </div>
+  </div>
+</section>
 
-::: {.grid .cols-3}
-:::{.card}
-### Visão geral dos objetivos
-- Coletar e documentar (metadados, fontes, licenças)  
-- Padronizar e integrar (tabelas, séries, geodados)  
-- Análises, modelagem e visualizações  
-- Reprodutibilidade e trilhas de auditoria  
-- Pacotes R/Python  
-:::
+<!-- Seção 3: Mídia à DIREITA | Fundo LARANJA -->
+<!-- CABEÇALHO DA SEÇÃO DE DADOS -->
 
-:::{.card}
-### Estágio atual (Cronograma)
-1. Levantamento e documentação  
-2. ETL geoespacial e séries  
-3. Análises e dashboards  
-4. Pacotes e automações  
-:::
+<!-- Seção 3: Mídia com mesma formatação da Seção 2 -->
+<section class="home-section">
+  <!-- layout com vídeo à esquerda e texto à direita -->
+  <div class="section-content wrap-media-text left">
+    <div class="section-media">
+      <video src="assets/wetlands.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="section-text">
+      <h2>Bases Tratadas</h2>
 
-:::{.card}
-### Avisos
-- Metadados: semana 38  
-- Datasets climáticos em validação  
-- `bdambientalR` (alpha)  
-:::
-:::
+      <p>A seleção das bases prioriza fontes públicas, atualizadas e de relevância nacional, capazes de descrever o território brasileiro sob múltiplas dimensões: fundiária, ambiental, econômica e social. Foram incluídas bases com estrutura consolidada e potencial de interoperabilidade — desde registros de imóveis rurais e cadastros ambientais até séries econômicas e financeiras —, compondo um núcleo de dados que permite compreender como fatores produtivos, ecológicos e institucionais interagem no espaço.</p>
+
+      <p>As bases de dados que estão no escopo do projeto e o estágio atual de cada uma delas pode ser acompanhado adiante.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- LEGENDA -->
+<div class="legend">
+  <span class="legend-title">FASE:</span>
+  <span class="badge fase0">Pendente</span> A Iniciar
+  <span class="legend-gap"></span>
+  <span class="badge fase1">Fase 1</span> Levantamento
+  <span class="legend-gap"></span>
+  <span class="badge fase2">Fase 2</span> Análise
+  <span class="legend-gap"></span>
+  <span class="badge fase3">Fase 3</span> Automação
+</div>
+
+
+<!-- GRADE DE BASES -->
+<div class="data-grid">
+
+    <!-- RAMT / PPR (INCRA) -->
+  <a class="data-card" href="#" data-fase="1" data-status="fila">
+    <div class="card-head">
+      <h3>RAMT / PPR (INCRA)</h3>
+      <span class="badge fase1">Fase 1</span>
+    </div>
+    <p>Relação de áreas em malha/terras e procedimentos de regularização.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- CAR -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>CAR (MMA)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Cadastro Ambiental Rural: APP, RL e polígonos declarados.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- MapBiomas -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>MapBiomas (ONG)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Séries de uso e cobertura da terra (coleções anuais).</p>
+    <span class="badge-origem origem-terceiro">Terceiro Setor</span>
+  </a>
+
+  <!-- INPE - PRODES / DETER -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>INPE (PRODES / DETER)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Monitoramento anual e em tempo real do desmatamento na Amazônia e Cerrado.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- ANA - Hidroweb / SNIRH -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>ANA (Hidroweb / SNIRH)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Dados hidrológicos e de qualidade da água em bacias e estações de monitoramento.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- ICMBio - UCs -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>ICMBio (Unidades de Conservação)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Limites, categorias e atributos das unidades de conservação federais.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- RAIS / CAGED -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>RAIS / CAGED</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Emprego formal e estrutura produtiva municipal, para análises socioeconômicas.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- SEEG -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>SEEG (Observatório do Clima)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Emissões de gases de efeito estufa por setor e município, desde 1970.</p>
+    <span class="badge-origem origem-terceiro">Terceiro Setor</span>
+  </a>
+
+  <!-- INMET / BDMEP -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>INMET / BDMEP</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Dados meteorológicos diários e séries históricas de temperatura e precipitação.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- SICONFI / FINBRA -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>SICONFI / FINBRA (Tesouro Nacional)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Finanças públicas municipais, com foco em receitas, despesas e gastos ambientais.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- SIDRA (IBGE) -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>IBGE (SIDRA)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Estatísticas territoriais e socioeconômicas municipais.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- IPEADATA (IPEA) -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>IPEADATA</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Indicadores macro, fiscais e ambientais agregados.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- Bacen -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>Bacen</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Séries financeiras, crédito rural e indicadores bancários.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- DOF -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>DOF/SINAFLOR (Ibama)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Origem florestal, transporte e cadeia madeireira.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- SEMA-MT -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>SEMA-MT</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>CAR estadual, licenciamentos ambientais, multas, monitoramentos e autorizações ambientais estaduais.</p>
+    <span class="badge-origem origem-regional">Regional</span>
+  </a>
+
+</div>
+
+<!-- LEGENDA DE ORIGEM -->
+<div class="legend">
+  <span class="legend-title">ORIGEM:</span>
+  <span class="badge-origem origem-brasil">Brasil</span> Governo Federal
+  <span class="legend-gap"></span>
+  <span class="badge-origem origem-regional">Regional</span> Estados e Municípios
+  <span class="legend-gap"></span>
+  <span class="badge-origem origem-terceiro">Terceiro Setor</span> ONGs
+  <span class="legend-gap"></span>
+  <span class="badge-origem origem-privada">Iniciativa Privada</span> Empresas
+  <span class="legend-gap"></span>
+  <span class="badge-origem origem-internacional">Internacional</span> Órgãos globais
+</div>
+
+```

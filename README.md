@@ -67,4 +67,4 @@ Essa pasta é o espaço de **trabalho ativo** (prototipagem, testes, ETL, análi
 
 Já os resultados validados (relatórios, análises, documentação) são integrados ao **site Quarto**, gerado a partir dos arquivos `.qmd` na pasta `SITE/`.
 
-☢️IMPORTANTE: Poderão ser manipulados apenas as astas e arquivos em MAIÚSCULAS constantes na raiz, ou seja, todo o conteúdo das pastas `SCRIPTS/`, `SITE/` e do arquivo `README.md/`. Os outros arquivos e pastas não são passíveis de sair da raiz por exigências de configuração do github, logo, devem ser ignorados.
+☢️IMPORTANTE: Poderão ser manipulados apenas as pastas e arquivos em MAIÚSCULAS constantes na raiz, ou seja, todo o conteúdo das pastas `SCRIPTS/`, `SITE/` e do arquivo `README.md/`. Os outros arquivos e pastas não são passíveis de sair da raiz por exigências de configuração do Github e do Quarto, logo, devem ser ignorados.
