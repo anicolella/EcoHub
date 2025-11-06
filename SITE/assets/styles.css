@@ -957,6 +957,15 @@ html[data-bs-theme="dark"] .section-text p {
   }
 }
 
+.legend-title {
+  font-weight: 700;
+  font-size: .95rem;
+  color: inherit;
+  margin-right: .5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
 .legend-gap {
   width: 10px;
   height: 1px;
@@ -989,6 +998,7 @@ html[data-bs-theme="dark"] .section-text p {
   padding: 14px 16px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  position: relative; /* Para posicionar o badge de origem */
 }
 
 .data-card:hover {
@@ -1056,6 +1066,86 @@ html[data-bs-theme="dark"] .section-text p {
 }
 
 /* Laranja do seu esquema "orange" */
+
+/* Badges de Origem (Bandeiras) */
+.badge-origem {
+  padding: .2em .5em;
+  border-radius: 4px;
+  font-size: .65rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Quando dentro de um card, posiciona no canto inferior direito */
+.data-card .badge-origem {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+/* Ícone de bandeira antes do texto */
+.badge-origem::before {
+  content: "🏴";
+  font-size: 1em;
+}
+
+/* Brasil - Verde e Amarelo (tons pastel) */
+.origem-brasil {
+  background: linear-gradient(135deg, #66c57a 0%, #66c57a 50%, #ffd52b 50%, #edc421 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.origem-brasil::before {
+  content: "🇧🇷";
+}
+
+/* Governos Regionais - Azul (tom pastel) */
+.origem-regional {
+  background: linear-gradient(135deg, #7eb8dd 0%, #5a9dc9 100%);
+  color: #fff;
+}
+
+.origem-regional::before {
+  content: "🏛️";
+}
+
+/* Terceiro Setor - Laranja/Verde (tons pastel) */
+.origem-terceiro {
+  background: linear-gradient(135deg, #f8883d 0%, #fa724c 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.origem-terceiro::before {
+  content: "🌱";
+}
+
+/* Internacional - Azul ONU (tom pastel) */
+.origem-internacional {
+  background: linear-gradient(135deg, #7d5cff 0%, #0b46eb 100%);
+  color: #fff;
+}
+
+.origem-internacional::before {
+  content: "🌐";
+}
+
+/* Iniciativa Privada - Roxo/Vinho (tom pastel) */
+.origem-privada {
+  background: linear-gradient(135deg, #eb001b 0%, #d14b4b 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.origem-privada::before {
+  content: "🏢";
+}
 
 /* Status dot */
 .status-dot {
