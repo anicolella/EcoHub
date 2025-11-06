@@ -1,5 +1,54 @@
 [
   {
+    "objectID": "equipe.html",
+    "href": "equipe.html",
+    "title": "Equipe",
+    "section": "",
+    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EcoHub",
+    "section": "",
+    "text": "Dados Ambientais\n     \n     O Brasil já produz uma imensidão de dados ambientais — fundiários, florestais, hídricos, econômicos — mas eles estão espalhados em fontes distintas, com formatos, licenças e documentações heterogêneas. Essa fragmentação eleva o custo de pesquisa, atrasa diagnósticos e enfraquece o planejamento público e privado. \n      \n      \n      O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.\n    \n  \n\n\n\n\n  \n  \n    \n      \n    \n    \n      Objetivos\n       Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto buscar propiciar a pesquisadores, gestores e a sociedade civil a busca de proposições de problemas urgentes: onde, quando e por que estamos desmatando? Quais políticas ambientais funcionam -- ou não -- e por quais motivos? Que riscos e oportunidades existem nas cadeias produtivas?\n\n      O projeto está estruturado em três fases:\n\n\n  Fase 1: Levantamento e documentação das bases de dados primárias, coleta de metadados, licenças e documentação.\n  Fase 2: Análise preliminar (descritiva) de cada base e disponibilização à comunidade dos dados tratados e tabulados (csv, xlsx ou rdata), juntamente com a documentação de criação do dataframe e o dicionário dos dados.\n  Fase 3: Desenvolvimento de pacotes (biliotecas) em R e Python com os dados auferidos, automatizando e otimizando o processo.\n\n\n O principal objetivo é apoiar a pesquisa, o planejamento, a formulação de políticas e o desenho de mecanismos baseado em evidências, fortalecendo, assim, a gestão sustentável dos biomas ao tempo em que possibilita um desenvolvimento mais sustentável.\n\n    \n  \n\n\n\n\n\n\n\n  \n  \n    \n      \n    \n    \n      Bases Tratadas\n\n      A seleção das bases prioriza fontes públicas, atualizadas e de relevância nacional, capazes de descrever o território brasileiro sob múltiplas dimensões: fundiária, ambiental, econômica e social. Foram incluídas bases com estrutura consolidada e potencial de interoperabilidade — desde registros de imóveis rurais e cadastros ambientais até séries econômicas e financeiras —, compondo um núcleo de dados que permite compreender como fatores produtivos, ecológicos e institucionais interagem no espaço.\n\n      As bases de dados que estão no escopo do projeto e o estágio atual de cada uma delas pode ser acompanhado adiante.\n\n    \n  \n\n\n\n\n  FASE:\n  Pendente A Iniciar\n  \n  Fase 1 Levantamento\n  \n  Fase 2 Análise\n  \n  Fase 3 Automação\n\n\n\n\n\n\n    \n  \n    \n      RAMT / PPR (INCRA)\n      Fase 1\n    \n    Relação de áreas em malha/terras e procedimentos de regularização.\n    Brasil\n  \n\n  \n  \n    \n      CAR (MMA)\n      Pendente\n    \n    Cadastro Ambiental Rural: APP, RL e polígonos declarados.\n    Brasil\n  \n\n  \n  \n    \n      MapBiomas (ONG)\n      Pendente\n    \n    Séries de uso e cobertura da terra (coleções anuais).\n    Terceiro Setor\n  \n\n  \n  \n    \n      INPE (PRODES / DETER)\n      Pendente\n    \n    Monitoramento anual e em tempo real do desmatamento na Amazônia e Cerrado.\n    Brasil\n  \n\n  \n  \n    \n      ANA (Hidroweb / SNIRH)\n      Pendente\n    \n    Dados hidrológicos e de qualidade da água em bacias e estações de monitoramento.\n    Brasil\n  \n\n  \n  \n    \n      ICMBio (Unidades de Conservação)\n      Pendente\n    \n    Limites, categorias e atributos das unidades de conservação federais.\n    Brasil\n  \n\n  \n  \n    \n      RAIS / CAGED\n      Pendente\n    \n    Emprego formal e estrutura produtiva municipal, para análises socioeconômicas.\n    Brasil\n  \n\n  \n  \n    \n      SEEG (Observatório do Clima)\n      Pendente\n    \n    Emissões de gases de efeito estufa por setor e município, desde 1970.\n    Terceiro Setor\n  \n\n  \n  \n    \n      INMET / BDMEP\n      Pendente\n    \n    Dados meteorológicos diários e séries históricas de temperatura e precipitação.\n    Brasil\n  \n\n  \n  \n    \n      SICONFI / FINBRA (Tesouro Nacional)\n      Pendente\n    \n    Finanças públicas municipais, com foco em receitas, despesas e gastos ambientais.\n    Brasil\n  \n\n  \n  \n    \n      IBGE (SIDRA)\n      Pendente\n    \n    Estatísticas territoriais e socioeconômicas municipais.\n    Brasil\n  \n\n  \n  \n    \n      IPEADATA\n      Pendente\n    \n    Indicadores macro, fiscais e ambientais agregados.\n    Brasil\n  \n\n  \n  \n    \n      Bacen\n      Pendente\n    \n    Séries financeiras, crédito rural e indicadores bancários.\n    Brasil\n  \n\n  \n  \n    \n      DOF/SINAFLOR (Ibama)\n      Pendente\n    \n    Origem florestal, transporte e cadeia madeireira.\n    Brasil\n  \n\n  \n  \n    \n      SEMA-MT\n      Pendente\n    \n    CAR estadual, licenciamentos ambientais, multas, monitoramentos e autorizações ambientais estaduais.\n    Regional\n  \n\n\n\n\n\n  ORIGEM:\n  Brasil Governo Federal\n  \n  Regional Estados e Municípios\n  \n  Terceiro Setor ONGs\n  \n  Iniciativa Privada Empresas\n  \n  Internacional Órgãos globais"
+  },
+  {
+    "objectID": "tracker.html",
+    "href": "tracker.html",
+    "title": "Tracker",
+    "section": "",
+    "text": "Registro rápido dos fatos do projeto. Colaboradores do repositório podem adicionar novas entradas através do formulário web."
+  },
+  {
+    "objectID": "tracker.html#instruções-para-colaboradores",
+    "href": "tracker.html#instruções-para-colaboradores",
+    "title": "Tracker",
+    "section": "Instruções para Colaboradores",
+    "text": "Instruções para Colaboradores\n\nClique em “Nova Entrada” acima\nFaça login com sua conta GitHub\nPreencha o formulário com os dados da entrada\nPublique - o site será atualizado automaticamente"
+  },
+  {
+    "objectID": "dados.html",
+    "href": "dados.html",
+    "title": "Dados",
+    "section": "",
+    "text": "Fontes e referências do projeto"
+  },
+  {
+    "objectID": "components/footer-links.html",
+    "href": "components/footer-links.html",
+    "title": "EcoHub",
+    "section": "",
+    "text": "Rodap� com links"
+  },
+  {
+    "objectID": "components/hero.html",
+    "href": "components/hero.html",
+    "title": "Hero section",
+    "section": "",
+    "text": "Hero section"
+  },
+  {
     "objectID": "tracker/configuracao-inicial.html",
     "href": "tracker/configuracao-inicial.html",
     "title": "Configuração inicial do site",
@@ -33,61 +82,5 @@
     "title": "Sobre",
     "section": "Cronograma (Roadmap)",
     "text": "Cronograma (Roadmap)\n\nFase 1 — Levantamento & Documentação (metadados, licenças, fontes)\n\nFase 2 — ETL & Padronização (tabelas, séries, shapefiles/rasters)\n\nFase 3 — Análises & Visualizações (exploratórias, econométricas)\n\nFase 4 — Pacotes & Automação (R/Python, pipelines reprodutíveis)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "EcoHub — Início",
-    "section": "",
-    "text": "AVISOS TEMPORÁRIOS — VERSÃO ALPHA DO SITE\nO conteúdo abaixo é uma página inicial de rascunho com a estrutura prevista para o projeto.\nVersão atual: 30/09/2025\n\nProjeto BD Ambiental\nRepositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.\n\n\nVisão geral dos objetivos\n\nColetar e documentar (metadados, fontes, licenças)\n\nPadronizar e integrar (tabelas, séries, geodados)\n\nAnálises, modelagem e visualizações\n\nReprodutibilidade e trilhas de auditoria\n\nPacotes R/Python\n\n\n\n\nEstágio atual (Cronograma)\n\nLevantamento e documentação\n\nETL geoespacial e séries\n\nAnálises e dashboards\n\nPacotes e automações\n\n\n\n\nAvisos\n\nMetadados: semana 38\n\nDatasets climáticos em validação\n\nbdambientalR (alpha)"
-  },
-  {
-    "objectID": "components/footer-links.html",
-    "href": "components/footer-links.html",
-    "title": "EcoHub",
-    "section": "",
-    "text": "Rodap� com links"
-  },
-  {
-    "objectID": "components/hero.html",
-    "href": "components/hero.html",
-    "title": "Hero section",
-    "section": "",
-    "text": "Hero section"
-  },
-  {
-    "objectID": "equipe.html",
-    "href": "equipe.html",
-    "title": "Equipe",
-    "section": "",
-    "text": "Lattes\nLinks para currículos dos pesquisadores (CNPq).\nVer Lattes\n\n\nGitHub\nPerfis e principais contribuições no repositório.\nVer perfis\n\n\nE-mail\nContatos institucionais e formulário de comunicação.\nEntrar em contato"
-  },
-  {
-    "objectID": "projeto.html",
-    "href": "projeto.html",
-    "title": "Projeto",
-    "section": "",
-    "text": "Olá, Projeto"
-  },
-  {
-    "objectID": "suporte.html",
-    "href": "suporte.html",
-    "title": "Suporte",
-    "section": "",
-    "text": "Documentação\nBancos consolidados, metadados e guias de uso (fonte, licença, cobertura, granularidade).\nVer documentação\n\n\nGitHub\nRepositório, issues, versionamento e trilha de auditoria.\nIr para o GitHub\n\n\nGoogle Drive\nMateriais complementares e dados brutos (quando aplicável).\nAbrir Drive"
-  },
-  {
-    "objectID": "tracker.html",
-    "href": "tracker.html",
-    "title": "Tracker",
-    "section": "",
-    "text": "Registro rápido dos fatos do projeto. Colaboradores do repositório podem adicionar novas entradas através do formulário web."
-  },
-  {
-    "objectID": "tracker.html#instruções-para-colaboradores",
-    "href": "tracker.html#instruções-para-colaboradores",
-    "title": "Tracker",
-    "section": "Instruções para Colaboradores",
-    "text": "Instruções para Colaboradores\n\nClique em “Nova Entrada” acima\nFaça login com sua conta GitHub\nPreencha o formulário com os dados da entrada\nPublique - o site será atualizado automaticamente"
   }
 ]

@@ -4,6 +4,8 @@ project:
   resources:
     - "admin/**"
     - "tracker/_media/**"
+    - "assets/amazon_rainforest.mp4"
+    - "assets/projeto_bd.png"
 
 website:
   title: "EcoHub"
@@ -16,18 +18,16 @@ website:
     left:
       - text: Início
         href: index.qmd
-      - text: "Projeto"
+      - text: "Gestão"
         menu:
-          - text: "Visão Geral"
-            href: projeto.qmd
           - text: "Tracker"
             href: tracker.qmd
           - text: "Commits"
             href: '#'
           - text: "Wiki"
             href: '#'
-      - text: Suporte
-        href: suporte.qmd
+      - text: Dados
+        href: dados.qmd
       - text: Equipe
         href: equipe.qmd
       - text: Sobre

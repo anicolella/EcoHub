@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, li, td, th {
 
 /* Fundo e texto principal do modo escuro */
 html[data-bs-theme="dark"] body {
-  background-color: #383A3D !important;
+  background-color: #4a4d52 !important;
   color: #e9ecef !important;
 }
 
@@ -61,8 +61,8 @@ html[data-bs-theme="dark"] span:not(.navbar *):not(.dropdown *):not(.nav-footer 
 
 /* Cards no modo escuro */
 html[data-bs-theme="dark"] .card {
-  background-color: #495057 !important;
-  border-color: #6c757d !important;
+  background-color: #5a5e63 !important;
+  border-color: #7a7f85 !important;
   color: #f8f9fa !important;
 }
 
@@ -70,13 +70,23 @@ html[data-bs-theme="dark"] .card {
 html[data-bs-theme="dark"] main,
 html[data-bs-theme="dark"] .content,
 html[data-bs-theme="dark"] #quarto-document-content {
-  background-color: #383A3D !important;
+  background-color: #4a4d52 !important;
   color: #e9ecef !important;
+}
+
+/* IMPORTANTE: Main precisa ser transparente para vídeo aparecer */
+html[data-bs-theme="dark"] main.content {
+  background: transparent !important;
+}
+
+/* Aplica background apenas no container, não no main */
+html[data-bs-theme="dark"] #quarto-content {
+  background-color: #4a4d52 !important;
 }
 
 /* Container principal no modo escuro */
 html[data-bs-theme="dark"] .quarto-container {
-  background-color: #383A3D !important;
+  background-color: #4a4d52 !important;
 }
 
 /* Links no modo escuro */
@@ -691,3 +701,564 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
   text-align: center !important;
   box-sizing: border-box !important;
 }
+
+/* =========================
+   SEÇÕES HOME - Início
+   ========================= */
+
+/* Reset e responsividade */
+.home-section {
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+  /* Garante um novo stacking context para que filhos com z-index negativo não
+     fiquem atrás de ancestrais (ex.: main/content no tema escuro) */
+  z-index: 0;
+  isolation: isolate;
+}
+
+/* Vídeo de fundo */
+.home-section.video-bg {
+  min-height: 360px;
+  height: clamp(320px, 34vh, 460px);
+  padding: 3.5rem 0;
+}
+
+.home-section.video-bg .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Fica atrás do conteúdo mas dentro da seção */
+  z-index: 0;
+  /* Tema claro: vídeo mais vivo */
+  opacity: 0.9;
+  filter: saturate(1.08) contrast(1.05);
+  pointer-events: none;
+}
+
+/* Overlay leve - tema claro */
+.home-section.video-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Sem overlay no tema claro para não “lavar” o vídeo */
+  /* Adiciona overlay suave para aumentar contraste do texto sobre o vídeo */
+  background: rgba(0,0,0,0.35);
+  /* Overlay acima do vídeo e abaixo do conteúdo */
+  z-index: 1;
+}
+
+/* SEM overlay no tema escuro - deixar vídeo aparecer */
+html[data-bs-theme="dark"] .home-section.video-bg::before {
+  background: transparent;
+}
+
+/* Vídeo MUITO VISÍVEL no tema escuro */
+html[data-bs-theme="dark"] .home-section.video-bg .bg-video {
+  opacity: 0.9;
+  filter: brightness(1.2);
+}
+
+/* Texto mais legível sobre vídeo */
+.home-section.video-bg .section-text h2,
+.home-section.video-bg .section-text p {
+  color: #ffffff !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+}
+
+html[data-bs-theme="dark"] .home-section.video-bg .section-text h2,
+html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
+  color: #ffffff !important;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+}
+
+/* Texto da seção com vídeo herda tipografia padrão (como as outras seções) */
+.home-section.video-bg .section-text {
+  background: transparent; /* sem chip */
+}
+
+/* Sem override de tamanho do h2 (usa padrão do site) */
+.home-section.video-bg .section-text h2 { line-height: 1.1; font-size: 2.0rem; font-weight: 700; margin-bottom: .6rem; }
+
+/* Ajuste de contraste: criar um painel semântico atrás do texto para legibilidade */
+.home-section.video-bg .section-text {
+  position: relative; /* garante stacking */
+  z-index: 3; /* acima do overlay */
+  display: inline-block;
+  padding: 1.1rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.28); /* painel semi-transparente que melhora contraste */
+}
+
+/* Parágrafos dentro do painel herdam tamanho/linha e cor */
+.home-section.video-bg .section-text p { line-height: 1.45; font-size: 1.02rem; color: #fff !important; }
+
+@media (max-width: 800px) {
+  .home-section.video-bg {
+    height: clamp(280px, 48vh, 420px);
+    padding: 2.5rem 0;
+  }
+}
+
+/* Conteúdo da seção acima do overlay e do vídeo */
+.home-section.video-bg .section-content {
+  position: relative;
+  z-index: 2;
+}
+.section-content {
+  max-width: 1200px; /* antes: 1000px */
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Expandir um pouco mais em telas muito largas */
+@media (min-width: 1400px) {
+  .section-content {
+    max-width: 1280px;
+  }
+}
+.section-content.reverse {
+  flex-direction: row-reverse;
+}
+.section-text {
+  flex: 1.2;
+  min-width: 260px;
+}
+.section-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-media img, .section-media video {
+  max-width: 240px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+/* Layout específico: imagem "entremeada" no texto (sem colunas) */
+.wrap-media-text {
+  display: block; /* garante fluxo natural do bloco */
+}
+.wrap-media-text::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* Override: evita que o container continue como flex (o tema define .section-content como flex) */
+.wrap-media-text.section-content,
+.wrap-media-text {
+  display: block !important;
+  width: 100% !important;
+}
+.wrap-media-text .section-media {
+  float: right; /* imagem/vídeo flutua à direita por padrão */
+  width: 45%; /* ocupa parte da largura do container, maior que antes */
+  max-width: calc(560px + 4rem); /* aumentado em 4rem conforme solicitado */
+  margin: 5.5rem 0 1rem 1.25rem; /* deslocada para baixo conforme pedido */
+  display: block;
+}
+/* Variante: mídia à ESQUERDA (para seção 3) */
+.wrap-media-text.left .section-media {
+  float: left;
+  margin: 5.5rem 1.25rem 1rem 0; /* espelho do margin quando está à direita */
+}
+
+/* Garante que o texto não sobreponha a mídia quando à esquerda */
+.wrap-media-text.left .section-text {
+  display: block;
+}
+.wrap-media-text .section-media img,
+.wrap-media-text .section-media video {
+  width: 100%; /* preenche o contêiner .section-media */
+  height: auto;
+  max-width: 100%; /* garante responsividade em telas pequenas */
+  border-radius: 1rem;
+  display: block;
+}
+.wrap-media-text .section-text {
+  display: block;
+  width: 100%;
+  margin: 0; /* permite que o texto flua à esquerda da imagem e depois ocupe a largura completa abaixo dela */
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  /* Mobile: remove float e empilha imagem acima do texto */
+  .wrap-media-text .section-media {
+    float: none !important;
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto 1rem auto;
+  }
+  .wrap-media-text .section-text {
+    margin: 0 !important;
+    text-align: left;
+  }
+}
+
+/* Cores de fundo - Tema Claro (usa fundo padrão) */
+.home-section {
+  background: transparent;
+}
+
+/* Tema Escuro - mantém texto visível */
+html[data-bs-theme="dark"] .section-text h2,
+html[data-bs-theme="dark"] .section-text p {
+  color: #e9ecef !important;
+}
+
+/* Mobile - Responsividade */
+@media (max-width: 800px) {
+  .section-content,
+  .section-content.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .section-media img, .section-media video {
+    max-width: 90vw;
+  }
+}
+
+
+/* ====== Painel de Bases (cards + badges) ====== */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .9rem;
+  margin: .5rem 0 1rem 0;
+  font-size: .95rem;
+  max-width: 1200px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1400px) {
+  .legend {
+    max-width: 1280px;
+  }
+}
+
+.legend-title {
+  font-weight: 700;
+  font-size: .95rem;
+  color: inherit;
+  margin-right: .5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.legend-gap {
+  width: 10px;
+  height: 1px;
+  display: inline-block;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: .5rem;
+  max-width: 1200px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1400px) {
+  .data-grid {
+    max-width: 1280px;
+  }
+}
+
+.data-card {
+  text-decoration: none !important;
+  color: inherit !important;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  position: relative; /* Para posicionar o badge de origem */
+}
+
+.data-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+  border-color: rgba(2, 132, 199, .35);
+  /* brand-blue sutil */
+}
+
+.data-card .card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: .35rem;
+}
+
+.data-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--brand-green);
+}
+
+.data-card p {
+  margin: .25rem 0 .75rem 0;
+  font-size: .92rem;
+  color: #555;
+}
+
+.data-card .meta {
+  font-size: .85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* Badge de Fase aproveitando sua paleta */
+.badge {
+  display: inline-block;
+  padding: .25em .6em;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.fase0 {
+  background: #9aa1a9;
+}
+
+.fase1 {
+  background: var(--brand-blue);
+}
+
+/* Azul */
+.fase2 {
+  background: var(--brand-green);
+}
+
+/* Verde */
+.fase3 {
+  background: #f57c00;
+}
+
+/* Laranja do seu esquema "orange" */
+
+/* Badges de Origem (Bandeiras) */
+.badge-origem {
+  padding: .2em .5em;
+  border-radius: 4px;
+  font-size: .65rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Quando dentro de um card, posiciona no canto inferior direito */
+.data-card .badge-origem {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+/* Ícone de bandeira antes do texto */
+.badge-origem::before {
+  content: "🏴";
+  font-size: 1em;
+}
+
+/* Brasil - Verde e Amarelo (tons pastel) */
+.origem-brasil {
+  background: linear-gradient(135deg, #66c57a 0%, #66c57a 50%, #ffd52b 50%, #edc421 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.origem-brasil::before {
+  content: "🇧🇷";
+}
+
+/* Governos Regionais - Azul (tom pastel) */
+.origem-regional {
+  background: linear-gradient(135deg, #7eb8dd 0%, #5a9dc9 100%);
+  color: #fff;
+}
+
+.origem-regional::before {
+  content: "🏛️";
+}
+
+/* Terceiro Setor - Laranja/Verde (tons pastel) */
+.origem-terceiro {
+  background: linear-gradient(135deg, #f8883d 0%, #fa724c 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.origem-terceiro::before {
+  content: "🌱";
+}
+
+/* Internacional - Azul ONU (tom pastel) */
+.origem-internacional {
+  background: linear-gradient(135deg, #7d5cff 0%, #0b46eb 100%);
+  color: #fff;
+}
+
+.origem-internacional::before {
+  content: "🌐";
+}
+
+/* Iniciativa Privada - Roxo/Vinho (tom pastel) */
+.origem-privada {
+  background: linear-gradient(135deg, #eb001b 0%, #d14b4b 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.origem-privada::before {
+  content: "🏢";
+}
+
+/* Status dot */
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.status-fila {
+  background: #9aa1a9;
+}
+
+/* cinza */
+.status-analise {
+  background: var(--brand-yellow);
+}
+
+/* amarelo */
+.status-concluido {
+  background: #22c55e;
+}
+
+/* verde/ok */
+
+/* Dark mode harmonizado */
+html[data-bs-theme="dark"] .data-card {
+  background: #5a5e63 !important;
+  border-color: #7a7f85 !important;
+  color: #f8f9fa !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+
+html[data-bs-theme="dark"] .data-card p {
+  color: #e9ecef !important;
+}
+
+html[data-bs-theme="dark"] .data-card:hover {
+  border-color: rgba(110, 168, 254, .6) !important;
+  /* sua cor de link dark */
+}
+
+html[data-bs-theme="dark"] .legend {
+  color: #f8f9fa !important;
+}
+
+/* =========================
+   SEÇÃO DE DADOS COM MÍDIA
+   ========================= */
+
+.section-data {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (min-width: 1400px) {
+  .section-data {
+    max-width: 1280px;
+  }
+}
+
+.section-text-data {
+  flex: 1.2;
+  min-width: 260px;
+}
+
+.section-media-data {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+
+.section-media-data video {
+  /* Match appearance/size with .section-media in section 2 */
+  max-width: 240px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+/* Ensure paragraph typography in section-data matches section-content (.section-text) */
+.section-text-data p {
+  margin: 0 0 1rem 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Mobile - Responsividade */
+@media (max-width: 800px) {
+  .section-data {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .section-media-data {
+    align-items: center;
+    padding-top: 0;
+  }
+  .section-media-data video {
+    max-width: 90vw;
+  }
+}
+
+/* =========================
+   FIM - SEÇÕES HOME
+   ========================= */

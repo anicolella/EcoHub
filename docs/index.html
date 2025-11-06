@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EcoHub — Início – EcoHub</title>
+<title>EcoHub</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b74dda78c46dd9833a883d74f0f79f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,113 +71,59 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <!-- Header include (EcoHub) -->
-
 <!-- Menu dropdown nativo do Quarto - sem JavaScript customizado necessário -->
 
-
-
 <!-- Google Fonts - Source Sans Pro -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;display=swap" rel="stylesheet">
 
-
-
 <script>
-
 // Dark mode toggle functionality
-
 (function() {
-
   function initDarkModeToggle() {
-
     // Encontra o botão de dark mode
-
     const darkModeBtn = document.querySelector('a[aria-label="Toggle dark mode"]');
-
     if (!darkModeBtn) return;
-
     
-
     // Verifica preferência salva ou do sistema
-
     const savedTheme = localStorage.getItem('ecohub-theme');
-
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
     const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-
     
-
     // Aplica tema inicial
-
     if (isDark) {
-
       document.documentElement.setAttribute('data-bs-theme', 'dark');
-
       updateIcon(darkModeBtn, true);
-
     }
-
     
-
     // Adiciona evento de clique
-
     darkModeBtn.addEventListener('click', function(e) {
-
       e.preventDefault();
-
       const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
       
-
       document.documentElement.setAttribute('data-bs-theme', newTheme);
-
       localStorage.setItem('ecohub-theme', newTheme);
-
       updateIcon(darkModeBtn, newTheme === 'dark');
-
     });
-
   }
-
   
-
   function updateIcon(btn, isDark) {
-
     const icon = btn.querySelector('i');
-
     if (icon) {
-
       icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon';
-
     }
-
   }
-
   
-
   // Inicializa quando DOM estiver pronto
-
   if (document.readyState === 'loading') {
-
     document.addEventListener('DOMContentLoaded', initDarkModeToggle);
-
   } else {
-
     initDarkModeToggle();
-
   }
-
 })();
-
 </script>
-
 
 
 <link rel="stylesheet" href="assets/styles.css">
@@ -209,14 +155,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projeto" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Projeto</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-gestão" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Gestão</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-projeto">    
-        <li>
-    <a class="dropdown-item" href="./projeto.html">
- <span class="dropdown-text">Visão Geral</span></a>
-  </li>  
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-gestão">    
         <li>
     <a class="dropdown-item" href="./tracker.html">
  <span class="dropdown-text">Tracker</span></a>
@@ -232,8 +174,8 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./suporte.html"> 
-<span class="menu-text">Suporte</span></a>
+    <a class="nav-link" href="./dados.html"> 
+<span class="menu-text">Dados</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./equipe.html"> 
@@ -324,252 +266,344 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 <!-- Drawer removido - usando menu dropdown nativo do Quarto -->
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">EcoHub — Início</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
+<!-- Seção 1: Vídeo de FUNDO -->
+<section class="home-section video-bg">
+  <video class="bg-video" src="assets/amazon_rainforest.mp4" autoplay="" loop="" muted="" playsinline=""></video>
+  <div class="section-content">
+    <div class="section-text">
+      <h2 class="anchored">Dados Ambientais</h2>
+     
+     <p>O Brasil já produz uma imensidão de dados ambientais — fundiários, florestais, hídricos, econômicos — mas eles estão espalhados em fontes distintas, com formatos, licenças e documentações heterogêneas. Essa fragmentação eleva o custo de pesquisa, atrasa diagnósticos e enfraquece o planejamento público e privado.</p> 
+      
+      
+      <p>O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.</p>
+    </div>
   </div>
-  
+</section>
 
+<!-- Seção 2: Mídia à ESQUERDA -->
+<section class="home-section">
+  <!-- layout especial: imagem maior com texto fluindo ao redor -->
+  <div class="section-content reverse wrap-media-text">
+    <div class="section-media">
+      <img src="assets/projeto_bd.png" alt="Projeto BD">
+    </div>
+    <div class="section-text">
+      <h2 class="anchored">Objetivos</h2>
+       <p>Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto buscar propiciar a pesquisadores, gestores e a sociedade civil a busca de proposições de problemas urgentes: onde, quando e por que estamos desmatando? Quais políticas ambientais funcionam -- ou não -- e por quais motivos? Que riscos e oportunidades existem nas cadeias produtivas?</p>
 
-</header>
-
-
-<p><strong>AVISOS TEMPORÁRIOS — VERSÃO ALPHA DO SITE</strong></p>
-<p>O conteúdo abaixo é uma página inicial de rascunho com a estrutura prevista para o projeto.</p>
-<p><em>Versão atual: 30/09/2025</em></p>
-<section id="projeto-bd-ambiental" class="level1">
-<h1>Projeto BD Ambiental</h1>
-<p>Repositório e plataforma de dados ambientais: coleta, documentação, tratamento, integração e análises com foco em pesquisa e políticas públicas.</p>
-<div class="grid cols-3">
-<section id="visão-geral-dos-objetivos" class="level3 card">
-<h3 class="anchored" data-anchor-id="visão-geral-dos-objetivos">Visão geral dos objetivos</h3>
+      <p>O projeto está estruturado em três fases:
+</p>
 <ul>
-<li>Coletar e documentar (metadados, fontes, licenças)<br>
-</li>
-<li>Padronizar e integrar (tabelas, séries, geodados)<br>
-</li>
-<li>Análises, modelagem e visualizações<br>
-</li>
-<li>Reprodutibilidade e trilhas de auditoria<br>
-</li>
-<li>Pacotes R/Python<br>
-</li>
+  <li><b>Fase 1</b>: Levantamento e documentação das bases de dados primárias, coleta de metadados, licenças e documentação.</li>
+  <li><b>Fase 2</b>: Análise preliminar (descritiva) de cada base e disponibilização à comunidade dos dados tratados e tabulados (csv, xlsx ou rdata), juntamente com a documentação de criação do dataframe e o dicionário dos dados.</li>
+  <li><b>Fase 3</b>: Desenvolvimento de pacotes (biliotecas) em R e Python com os dados auferidos, automatizando e otimizando o processo.</li>
 </ul>
+
+<p> O principal objetivo é apoiar a pesquisa, o planejamento, a formulação de políticas e o desenho de mecanismos baseado em evidências, fortalecendo, assim, a gestão sustentável dos biomas ao tempo em que possibilita um desenvolvimento mais sustentável.</p>
+
+    </div>
+  </div>
 </section>
-<section id="estágio-atual-cronograma" class="level3 card">
-<h3 class="anchored" data-anchor-id="estágio-atual-cronograma">Estágio atual (Cronograma)</h3>
-<ol type="1">
-<li>Levantamento e documentação<br>
-</li>
-<li>ETL geoespacial e séries<br>
-</li>
-<li>Análises e dashboards<br>
-</li>
-<li>Pacotes e automações<br>
-</li>
-</ol>
+
+<!-- Seção 3: Mídia à DIREITA | Fundo LARANJA -->
+<!-- CABEÇALHO DA SEÇÃO DE DADOS -->
+
+<!-- Seção 3: Mídia com mesma formatação da Seção 2 -->
+<section class="home-section">
+  <!-- layout com vídeo à esquerda e texto à direita -->
+  <div class="section-content wrap-media-text left">
+    <div class="section-media">
+      <video src="assets/wetlands.mp4" autoplay="" loop="" muted="" playsinline=""></video>
+    </div>
+    <div class="section-text">
+      <h2 class="anchored">Bases Tratadas</h2>
+
+      <p>A seleção das bases prioriza fontes públicas, atualizadas e de relevância nacional, capazes de descrever o território brasileiro sob múltiplas dimensões: fundiária, ambiental, econômica e social. Foram incluídas bases com estrutura consolidada e potencial de interoperabilidade — desde registros de imóveis rurais e cadastros ambientais até séries econômicas e financeiras —, compondo um núcleo de dados que permite compreender como fatores produtivos, ecológicos e institucionais interagem no espaço.</p>
+
+      <p>As bases de dados que estão no escopo do projeto e o estágio atual de cada uma delas pode ser acompanhado adiante.</p>
+
+    </div>
+  </div>
 </section>
-<section id="avisos" class="level3 card">
-<h3 class="anchored" data-anchor-id="avisos">Avisos</h3>
-<ul>
-<li>Metadados: semana 38<br>
-</li>
-<li>Datasets climáticos em validação<br>
-</li>
-<li><code>bdambientalR</code> (alpha)<br>
-</li>
-</ul>
-</section>
+
+<!-- LEGENDA -->
+<div class="legend">
+  <span class="legend-title">FASE:</span>
+  <span class="badge fase0">Pendente</span> A Iniciar
+  <span class="legend-gap"></span>
+  <span class="badge fase1">Fase 1</span> Levantamento
+  <span class="legend-gap"></span>
+  <span class="badge fase2">Fase 2</span> Análise
+  <span class="legend-gap"></span>
+  <span class="badge fase3">Fase 3</span> Automação
 </div>
 
 
-</section>
+<!-- GRADE DE BASES -->
+<div class="data-grid">
+
+    <!-- RAMT / PPR (INCRA) -->
+  <a class="data-card" href="#" data-fase="1" data-status="fila">
+    <div class="card-head">
+      <h3 class="anchored">RAMT / PPR (INCRA)</h3>
+      <span class="badge fase1">Fase 1</span>
+    </div>
+    <p>Relação de áreas em malha/terras e procedimentos de regularização.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- CAR -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">CAR (MMA)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Cadastro Ambiental Rural: APP, RL e polígonos declarados.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- MapBiomas -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">MapBiomas (ONG)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Séries de uso e cobertura da terra (coleções anuais).</p>
+    <span class="badge-origem origem-terceiro">Terceiro Setor</span>
+  </a>
+
+  <!-- INPE - PRODES / DETER -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">INPE (PRODES / DETER)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Monitoramento anual e em tempo real do desmatamento na Amazônia e Cerrado.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- ANA - Hidroweb / SNIRH -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">ANA (Hidroweb / SNIRH)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Dados hidrológicos e de qualidade da água em bacias e estações de monitoramento.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- ICMBio - UCs -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">ICMBio (Unidades de Conservação)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Limites, categorias e atributos das unidades de conservação federais.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- RAIS / CAGED -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">RAIS / CAGED</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Emprego formal e estrutura produtiva municipal, para análises socioeconômicas.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- SEEG -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">SEEG (Observatório do Clima)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Emissões de gases de efeito estufa por setor e município, desde 1970.</p>
+    <span class="badge-origem origem-terceiro">Terceiro Setor</span>
+  </a>
+
+  <!-- INMET / BDMEP -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">INMET / BDMEP</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Dados meteorológicos diários e séries históricas de temperatura e precipitação.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- SICONFI / FINBRA -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">SICONFI / FINBRA (Tesouro Nacional)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Finanças públicas municipais, com foco em receitas, despesas e gastos ambientais.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- SIDRA (IBGE) -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">IBGE (SIDRA)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Estatísticas territoriais e socioeconômicas municipais.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- IPEADATA (IPEA) -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">IPEADATA</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Indicadores macro, fiscais e ambientais agregados.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- Bacen -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">Bacen</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Séries financeiras, crédito rural e indicadores bancários.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- DOF -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">DOF/SINAFLOR (Ibama)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Origem florestal, transporte e cadeia madeireira.</p>
+    <span class="badge-origem origem-brasil">Brasil</span>
+  </a>
+
+  <!-- SEMA-MT -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3 class="anchored">SEMA-MT</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>CAR estadual, licenciamentos ambientais, multas, monitoramentos e autorizações ambientais estaduais.</p>
+    <span class="badge-origem origem-regional">Regional</span>
+  </a>
+
+</div>
+
+<!-- LEGENDA DE ORIGEM -->
+<div class="legend">
+  <span class="legend-title">ORIGEM:</span>
+  <span class="badge-origem origem-brasil">Brasil</span> Governo Federal
+  <span class="legend-gap"></span>
+  <span class="badge-origem origem-regional">Regional</span> Estados e Municípios
+  <span class="legend-gap"></span>
+  <span class="badge-origem origem-terceiro">Terceiro Setor</span> ONGs
+  <span class="legend-gap"></span>
+  <span class="badge-origem origem-privada">Iniciativa Privada</span> Empresas
+  <span class="legend-gap"></span>
+  <span class="badge-origem origem-internacional">Internacional</span> Órgãos globais
+</div>
+
+
+
 
 </main> <!-- /main -->
 <script>
-
 (function () {
-
   const drawer   = document.getElementById('drawer');
-
   const overlay  = document.getElementById('drawer-overlay');
-
   const closeBtn = document.getElementById('drawer-close');
-
-
 
   if (!drawer || !overlay) return;
 
-
-
   function openDrawer() {
-
     drawer.classList.add('open');
-
     drawer.setAttribute('aria-hidden', 'false');
-
     overlay.classList.add('show');
-
     overlay.setAttribute('aria-hidden', 'false');
-
   }
-
-
 
   function closeDrawer() {
-
     drawer.classList.remove('open');
-
     drawer.setAttribute('aria-hidden', 'true');
-
     overlay.classList.remove('show');
-
     overlay.setAttribute('aria-hidden', 'true');
-
   }
-
-
 
   // Fecha: overlay, botão X, tecla Esc
-
   overlay.addEventListener('click', closeDrawer);
-
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
 
-
-
   // Liga o gatilho (ícone do sanduíche) e neutraliza navegação
-
   function bindTrigger(root = document) {
-
     // <a aria-label="Menu"> é o botão gerado pelo Quarto
-
     let trigger = root.querySelector('.quarto-navbar-tools a[aria-label="Menu"]');
-
     if (!trigger) {
-
       const icon = root.querySelector('.quarto-navbar-tools i.bi.bi-list');
-
       if (icon && icon.closest('a')) trigger = icon.closest('a');
-
     }
-
     if (!trigger) return;
 
-
-
     if (trigger.dataset.drawerBound === '1') return;
-
     trigger.dataset.drawerBound = '1';
 
-
-
     // impedir /# e afins
-
     trigger.setAttribute('href', 'javascript:void(0)');
-
     trigger.setAttribute('role', 'button');
-
     trigger.style.cursor = 'pointer';
 
-
-
     trigger.addEventListener('click', (e) => {
-
       e.preventDefault();
-
       e.stopPropagation();
-
       openDrawer();
-
     });
-
-
 
     trigger.addEventListener('keydown', (e) => {
-
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDrawer(); }
-
     });
-
   }
-
-
 
   // Primeira ligação
-
   if (document.readyState === 'loading') {
-
     document.addEventListener('DOMContentLoaded', () => bindTrigger());
-
   } else {
-
     bindTrigger();
-
   }
-
-
 
   // Se a topbar for recriada (headroom/bootstrap), re-liga
-
   const header = document.getElementById('quarto-header') || document.body;
-
   if ('MutationObserver' in window) {
-
     const mo = new MutationObserver(() => bindTrigger(header));
-
     mo.observe(header, { childList: true, subtree: true });
-
   }
 
-
-
   // util p/ teste manual no console
-
   window.__eco_openDrawer  = openDrawer;
-
   window.__eco_closeDrawer = closeDrawer;
-
 })();
-
 </script>
-
-
-
 
 
 <script>console.debug("[EcoHub] scripts.html carregado (stub)");</script>
 
-
-
 <script>
-
   (function () {
-
     var y = document.getElementById('eco-year');
-
     if (y) y.textContent = new Date().getFullYear();
-
   })();
-
 </script>
-
-
 
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

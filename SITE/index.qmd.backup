@@ -1,0 +1,54 @@
+---
+title: "EcoHub — Início"
+format:
+  html:
+    toc: false
+    css: assets/styles.css
+---
+
+# EcoHub — Início
+
+<section class="hero-section">
+  <h1>Bem-vindo ao EcoHub</h1>
+  <p>Dados ambientais para pesquisa, integração e inovação.</p>
+  <img src="https://media.giphy.com/media/l0HlQXlQ3nHyLMvte/giphy.gif" alt="Animação tema meio ambiente" style="width:250px;"/>
+  <div>
+    <a href="docs/" class="btn btn-primary btn-lg">Comece Agora</a>
+    <a href="sobre/" class="btn btn-default btn-lg">Saiba Mais</a>
+  </div>
+</section>
+
+<section class="features-section">
+  <h2>Explore o Projeto</h2>
+  <div class="features-cards">
+
+    <div class="feature-card">
+      <h3>Dados Geoespaciais</h3>
+      <p>Base de dados com mapas, séries temporais e metadados validados.</p>
+      <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="GIF mapa animado" style="width:100px;" />
+    </div>
+
+    <div class="feature-card">
+      <h3>Automação</h3>
+      <p>Rotinas de ETL, integração de dados e dashboards automatizados.</p>
+      <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay loop muted style="width:100px;border-radius:8px;"></video>
+    </div>
+
+    <div class="feature-card">
+      <h3>Ferramentas Reprodutíveis</h3>
+      <p>Notebooks e pacotes para análise de dados em R e Python.</p>
+      <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" alt="GIF código animado" style="width:100px;" />
+    </div>
+
+  </div>
+</section>
+
+<section class="community-section">
+  <h2>Junte-se à Comunidade</h2>
+  <p>Envie seus datasets, participe de eventos ou integre novas ferramentas!</p>
+  <a href="contribua/" class="btn btn-primary">Como contribuir</a>
+</section>
+
+<footer class="homepage-footer">
+  © 2025 EcoHub &middot; Inspirado em <a href="https://quarto.org/">quarto.org</a>
+</footer>
