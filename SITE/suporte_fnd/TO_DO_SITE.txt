@@ -152,6 +152,10 @@ Até aqui:
 [v. 0.72c, de 04/11/2025] - Contraste seção 1, texto e figura invertidos seção 2 e vídeo novo seção 3
 [v. 0.72d, de 06/11/2025] - Texto seções 2 e 3 ajustados + novos badges e correção textos boxes 
 [v. 0.72e, de 06/11/2025] - Badges/Ícones e textos da grid/boxes com as fases do projeto e a origem dos dados 
+[v. 0.72f, de 06/11/2025] - Tentativa (frustrada) de diminuir espaçamento entre seções 3 e 2 + gerenciamento de github + 
+arquivo styles.css em /styles
+
+ARRUMAR: FIGURA SEÇÃO 2; VÍDEO SEÇÃO 3; TÍTULO À ESQUERDA SEÇÃO 3
 ---
 
 ******************************************************

@@ -1,3 +1,4 @@
+/* (Removido ajuste específico da seção 3) */
 /* =========================
    Paleta e base - Updated 2025-10-01 15:30 GMT-3
    ========================= */
@@ -709,7 +710,7 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
 /* Reset e responsividade */
 .home-section {
   width: 100%;
-  padding: 3rem 0;
+  padding: 1.25rem 0 1.75rem 0; /* menos espaço no topo, mantém respiro embaixo */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -726,7 +727,7 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
 .home-section.video-bg {
   min-height: 360px;
   height: clamp(320px, 34vh, 460px);
-  padding: 3.5rem 0;
+  padding: 2.5rem 0;
 }
 
 .home-section.video-bg .bg-video {
@@ -845,11 +846,14 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
   align-items: center;
 }
 .section-media img, .section-media video {
-  max-width: 240px;
+  max-width: 300px; /* ligeiramente maior para balancear com texto */
   width: 100%;
   border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
 }
+
+/* ===== Seção 3 (Bases Tratadas) usando layout flex ===== */
+/* Removido layout específico antigo da seção 3 para usar apenas .section-content padrão */
 
 /* Layout específico: imagem "entremeada" no texto (sem colunas) */
 .wrap-media-text {
@@ -866,17 +870,19 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
   display: block !important;
   width: 100% !important;
 }
+/* Ajuste: reduz margens excessivas da mídia flutuante e unifica espaçamento */
 .wrap-media-text .section-media {
-  float: right; /* imagem/vídeo flutua à direita por padrão */
-  width: 45%; /* ocupa parte da largura do container, maior que antes */
-  max-width: calc(560px + 4rem); /* aumentado em 4rem conforme solicitado */
-  margin: 5.5rem 0 1rem 1.25rem; /* deslocada para baixo conforme pedido */
+  float: right;
+  width: 48%;
+  max-width: 640px;
+  margin: 1rem 0 .75rem 1.25rem; /* reduz deslocamento vertical */
   display: block;
+  clear: both;
 }
-/* Variante: mídia à ESQUERDA (para seção 3) */
+/* Variante esquerda (usada somente na seção 2 se necessário) */
 .wrap-media-text.left .section-media {
   float: left;
-  margin: 5.5rem 1.25rem 1rem 0; /* espelho do margin quando está à direita */
+  margin: .25rem 1.25rem .75rem 0; /* aproxima vídeo do título acima */
 }
 
 /* Garante que o texto não sobreponha a mídia quando à esquerda */
@@ -898,6 +904,15 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
   text-align: left;
 }
 
+/* Remove sobra de espaço após último parágrafo de uma seção com wrap-media-text */
+/* Último parágrafo dentro de layout com media flutuante: espaço padrão para coerência */
+.wrap-media-text .section-text p:last-of-type { margin-bottom: .75rem; }
+
+/* Garante que títulos de seções subsequentes não adicionem espaço extra no topo */
+.home-section + .home-section .section-text h2 {
+  margin-top: 0 !important;
+}
+
 @media (max-width: 800px) {
   /* Mobile: remove float e empilha imagem acima do texto */
   .wrap-media-text .section-media {
@@ -912,15 +927,57 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
   }
 }
 
+/* Seção padrão após outra seção: encurta topo para evitar grandes vãos */
+.home-section + .home-section { padding-top: .75rem; }
+
+/* Último parágrafo dentro do bloco de texto: espaço menor para transição mais compacta */
+.home-section .section-content .section-text > p:last-of-type { margin-bottom: .5rem; }
+
 /* Cores de fundo - Tema Claro (usa fundo padrão) */
 .home-section {
   background: transparent;
 }
 
+/* Heading de seção com linha divisória, alinhado à esquerda e largura do conteúdo */
+.section-title-row {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto .6rem auto;
+  clear: both; /* garante isolamento de floats */
+  overflow: hidden; /* cria BFC e impede que floats seguintes invadam o título */
+}
+
+@media (min-width: 1400px) {
+  .section-title-row { max-width: 1280px; }
+}
+
+.section-title-row h2 {
+  margin: 0;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Dark mode: linha mais clara para contraste */
+html[data-bs-theme="dark"] .section-title-row h2 {
+  border-bottom-color: #7a7f85 !important;
+}
+
+/* (Removido bloco .section-title-row - seção 3 padronizada ao formato da seção 2) */
+
 /* Tema Escuro - mantém texto visível */
 html[data-bs-theme="dark"] .section-text h2,
 html[data-bs-theme="dark"] .section-text p {
   color: #e9ecef !important;
+}
+
+/* Linha divisória diretamente no título quando usado dentro da coluna de texto */
+.section-text h2.with-rule {
+  margin: 0 0 .6rem 0;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+html[data-bs-theme="dark"] .section-text h2.with-rule {
+  border-bottom-color: #7a7f85 !important;
 }
 
 /* Mobile - Responsividade */

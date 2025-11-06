@@ -2,7 +2,7 @@
 format:
   html:
     toc: false
-    css: assets/styles.css
+    css: styles/styles.css
 ---
 
 ```{=html}
@@ -41,28 +41,22 @@ format:
 </ul>
 
 <p> O principal objetivo é apoiar a pesquisa, o planejamento, a formulação de políticas e o desenho de mecanismos baseado em evidências, fortalecendo, assim, a gestão sustentável dos biomas ao tempo em que possibilita um desenvolvimento mais sustentável.</p>
-
-    </div>
   </div>
 </section>
 
 <!-- Seção 3: Mídia à DIREITA | Fundo LARANJA -->
 <!-- CABEÇALHO DA SEÇÃO DE DADOS -->
 
-<!-- Seção 3: Mídia com mesma formatação da Seção 2 -->
+<!-- Seção 3: Bases Tratadas (mesmo formato da seção 2) -->
 <section class="home-section">
-  <!-- layout com vídeo à esquerda e texto à direita -->
-  <div class="section-content wrap-media-text left">
+  <div class="section-content reverse wrap-media-text">
     <div class="section-media">
       <video src="assets/wetlands.mp4" autoplay loop muted playsinline></video>
     </div>
     <div class="section-text">
       <h2>Bases Tratadas</h2>
-
       <p>A seleção das bases prioriza fontes públicas, atualizadas e de relevância nacional, capazes de descrever o território brasileiro sob múltiplas dimensões: fundiária, ambiental, econômica e social. Foram incluídas bases com estrutura consolidada e potencial de interoperabilidade — desde registros de imóveis rurais e cadastros ambientais até séries econômicas e financeiras —, compondo um núcleo de dados que permite compreender como fatores produtivos, ecológicos e institucionais interagem no espaço.</p>
-
       <p>As bases de dados que estão no escopo do projeto e o estágio atual de cada uma delas pode ser acompanhado adiante.</p>
-
     </div>
   </div>
 </section>

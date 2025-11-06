@@ -73,8 +73,8 @@ website:
 
 format:
   html:
-    theme: [default]                  
-    css: assets/styles.css           
+    theme: [default]
+    css: styles/styles.css
     toc: false
     smooth-scroll: true
     include-in-header: _includes/header.html

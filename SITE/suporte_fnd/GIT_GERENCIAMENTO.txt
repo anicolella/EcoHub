@@ -1,0 +1,21 @@
+# 1. Certifique-se de que está na branch site e tudo está commitado
+git status
+git add .
+git commit -m "Finaliza alterações do site ([v. XXX, de DD/MM/YYYY])"
+
+# 2. Mude para a branch main e atualize
+git checkout main
+git pull origin main
+
+# 3. Faça merge da branch site
+git merge site
+
+# 4. Se houver conflitos, resolva mantendo:
+#    - Suas alterações do site (index.qmd, assets/styles.css, etc.)
+#    - As alterações de outros na pasta SCRIPTS
+#    Depois:
+git add .
+git commit -m "Alterações do site [v. XXX, de DD/MM/YYYY]""
+
+# 5. Envie para o GitHub
+git push origin main
