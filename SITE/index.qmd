@@ -29,18 +29,18 @@ format:
       <img src="assets/projeto_bd.png" alt="Projeto BD" />
     </div>
     <div class="section-text">
-      <h2>Planejamento</h2>
-       <p>Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto empodera pesquisadores, gestores e a sociedade civil a responder perguntas urgentes: onde, quando e por que estamos desmatando? Quais políticas funcionam? Que riscos e oportunidades existem nas cadeias produtivas?</p>
+      <h2>Objetivos</h2>
+       <p>Ao reunir séries temporais, geometrias e indicadores em um arcabouço padronizado, aberto e reprodutível, o projeto buscar propiciar a pesquisadores, gestores e a sociedade civil a busca de proposições de problemas urgentes: onde, quando e por que estamos desmatando? Quais políticas ambientais funcionam -- ou não -- e por quais motivos? Que riscos e oportunidades existem nas cadeias produtivas?</p>
 
       <p>O projeto está estruturado em três fases:
 </p>
 <ul>
-  <li><b>Fase 1</b>: Levantamento e documentação das bases de dados, coleta de metadados, licenças e fontes originais.</li>
-  <li><b>Fase 2</b>: Análise preliminar (descritiva) de cada base e disponibilização à comunidade dos dados tratados e tabulados (csv, xlsx ou rdata), juntamente com a documentação de criação do dataframe e o dicionário de dados.</li>
-  <li><b>Fase 3</b>: Desenvolvimento de pacotes (biliotecas) em R e Python com os dados auferidos.</li>
+  <li><b>Fase 1</b>: Levantamento e documentação das bases de dados primárias, coleta de metadados, licenças e documentação.</li>
+  <li><b>Fase 2</b>: Análise preliminar (descritiva) de cada base e disponibilização à comunidade dos dados tratados e tabulados (csv, xlsx ou rdata), juntamente com a documentação de criação do dataframe e o dicionário dos dados.</li>
+  <li><b>Fase 3</b>: Desenvolvimento de pacotes (biliotecas) em R e Python com os dados auferidos, automatizando e otimizando o processo.</li>
 </ul>
 
-<p> A intenção é apoiar a pesquisa, o planejamento e a formulação de políticas baseadas em evidências, fortalecendo a gestão sustentável do território.</p>
+<p> O principal objetivo é apoiar a pesquisa, o planejamento, a formulação de políticas e o desenho de mecanismos baseado em evidências, fortalecendo, assim, a gestão sustentável dos biomas ao tempo em que possibilita um desenvolvimento mais sustentável.</p>
 
     </div>
   </div>
@@ -48,134 +48,173 @@ format:
 
 <!-- Seção 3: Mídia à DIREITA | Fundo LARANJA -->
 <!-- CABEÇALHO DA SEÇÃO DE DADOS -->
-<div class="section-data">
-  <div class="section-text-data">
-    <h2>Bases Tratadas (Dados)</h2>
-    <p>As bases de dados a seguir estão no escopo do projeto. O estágio atual de cada uma delas pode ser acompanhado adiante.</p>
+
+<!-- Seção 3: Mídia com mesma formatação da Seção 2 -->
+<section class="home-section">
+  <!-- layout com vídeo à esquerda e texto à direita -->
+  <div class="section-content wrap-media-text left">
+    <div class="section-media">
+      <video src="assets/wetlands.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="section-text">
+      <h2>Bases Tratadas</h2>
+
+      <p>A seleção das bases prioriza fontes públicas, atualizadas e de relevância nacional, capazes de descrever o território brasileiro sob múltiplas dimensões: fundiária, ambiental, econômica e social. Foram incluídas bases com estrutura consolidada e potencial de interoperabilidade — desde registros de imóveis rurais e cadastros ambientais até séries econômicas e financeiras —, compondo um núcleo de dados que permite compreender como fatores produtivos, ecológicos e institucionais interagem no espaço.</p>
+
+      <p>As bases de dados que estão no escopo do projeto e o estágio atual de cada uma delas pode ser acompanhado adiante.</p>
+
+    </div>
   </div>
-  <div class="section-media-data">
-    <video src="assets/wetlands.mp4" autoplay loop muted></video>
-  </div>
-</div>
+</section>
 
 <!-- LEGENDA -->
 <div class="legend">
-  <span class="badge fase1">Fase 1</span> Levantamento & Documentação
+  <span class="badge fase0">Pendente</span> A Iniciar
   <span class="legend-gap"></span>
-  <span class="badge fase2">Fase 2</span> Análise & Disponibilização
+  <span class="badge fase1">Fase 1</span> Levantamento
   <span class="legend-gap"></span>
-  <span class="badge fase3">Fase 3</span> Pacotes & Automação
+  <span class="badge fase2">Fase 2</span> Análise
+  <span class="legend-gap"></span>
+  <span class="badge fase3">Fase 3</span> Automação
 </div>
+
 
 <!-- GRADE DE BASES -->
 <div class="data-grid">
 
-  <!-- INCRA -->
-  <a class="data-card" href="#" data-fase="1" data-status="analise">
-    <div class="card-head">
-      <h3>INCRA</h3>
-      <span class="badge fase1">Fase 1</span>
-    </div>
-    <p>Cadastro fundiário, regularização e georreferenciamento (SIGEF/RAMT/PPR).</p>
-    <div class="meta">
-      <span class="status-dot status-analise"></span> Em análise
-    </div>
-  </a>
-
-  <!-- RAMT / PPR (INCRA) -->
+    <!-- RAMT / PPR (INCRA) -->
   <a class="data-card" href="#" data-fase="1" data-status="fila">
     <div class="card-head">
       <h3>RAMT / PPR (INCRA)</h3>
       <span class="badge fase1">Fase 1</span>
     </div>
     <p>Relação de áreas em malha/terras e procedimentos de regularização.</p>
-    <div class="meta">
-      <span class="status-dot status-fila"></span> Em fila
-    </div>
   </a>
 
   <!-- CAR -->
-  <a class="data-card" href="#" data-fase="2" data-status="analise">
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
     <div class="card-head">
-      <h3>CAR</h3>
-      <span class="badge fase2">Fase 2</span>
+      <h3>CAR (MMA)</h3>
+      <span class="badge fase0">Pendente</span>
     </div>
     <p>Cadastro Ambiental Rural: APP, RL e polígonos declarados.</p>
-    <div class="meta">
-      <span class="status-dot status-analise"></span> Em análise
-    </div>
   </a>
 
   <!-- MapBiomas -->
-  <a class="data-card" href="#" data-fase="2" data-status="concluido">
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
     <div class="card-head">
-      <h3>MapBiomas</h3>
-      <span class="badge fase2">Fase 2</span>
+      <h3>MapBiomas (ONG)</h3>
+      <span class="badge fase0">Pendente</span>
     </div>
     <p>Séries de uso e cobertura da terra (coleções anuais).</p>
-    <div class="meta">
-      <span class="status-dot status-concluido"></span> Concluído (versão inicial)
-    </div>
   </a>
 
-  <!-- SEMA-MT -->
-  <a class="data-card" href="#" data-fase="2" data-status="analise">
+  <!-- INPE - PRODES / DETER -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
     <div class="card-head">
-      <h3>SEMA-MT</h3>
-      <span class="badge fase2">Fase 2</span>
+      <h3>INPE (PRODES / DETER)</h3>
+      <span class="badge fase0">Pendente</span>
     </div>
-    <p>Licenciamento, monitoramento e autorizações ambientais estaduais.</p>
-    <div class="meta">
-      <span class="status-dot status-analise"></span> Em análise
-    </div>
+    <p>Monitoramento anual e em tempo real do desmatamento na Amazônia e Cerrado.</p>
   </a>
 
-  <!-- IBGE (SIDRA) -->
-  <a class="data-card" href="#" data-fase="1" data-status="concluido">
+  <!-- ANA - Hidroweb / SNIRH -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>ANA (Hidroweb / SNIRH)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Dados hidrológicos e de qualidade da água em bacias e estações de monitoramento.</p>
+  </a>
+
+  <!-- ICMBio - UCs -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>ICMBio (Unidades de Conservação)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Limites, categorias e atributos das unidades de conservação federais.</p>
+  </a>
+
+  <!-- RAIS / CAGED -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>RAIS / CAGED</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Emprego formal e estrutura produtiva municipal, para análises socioeconômicas.</p>
+  </a>
+
+  <!-- SEEG -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>SEEG (Observatório do Clima)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Emissões de gases de efeito estufa por setor e município, desde 1970.</p>
+  </a>
+
+  <!-- INMET / BDMEP -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>INMET / BDMEP</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Dados meteorológicos diários e séries históricas de temperatura e precipitação.</p>
+  </a>
+
+  <!-- SICONFI / FINBRA -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>SICONFI / FINBRA (Tesouro Nacional)</h3>
+      <span class="badge fase0">Pendente</span>
+    </div>
+    <p>Finanças públicas municipais, com foco em receitas, despesas e gastos ambientais.</p>
+  </a>
+
+  <!-- SIDRA (IBGE) -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
     <div class="card-head">
       <h3>IBGE (SIDRA)</h3>
-      <span class="badge fase1">Fase 1</span>
+      <span class="badge fase0">Pendente</span>
     </div>
     <p>Estatísticas territoriais e socioeconômicas municipais.</p>
-    <div class="meta">
-      <span class="status-dot status-concluido"></span> Concluído (metadados)
-    </div>
   </a>
 
-  <!-- IPEADATA -->
-  <a class="data-card" href="#" data-fase="2" data-status="fila">
+  <!-- IPEADATA (IPEA) -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
     <div class="card-head">
       <h3>IPEADATA</h3>
-      <span class="badge fase2">Fase 2</span>
+      <span class="badge fase0">Pendente</span>
     </div>
     <p>Indicadores macro, fiscais e ambientais agregados.</p>
-    <div class="meta">
-      <span class="status-dot status-fila"></span> Em fila
-    </div>
   </a>
 
   <!-- Bacen -->
-  <a class="data-card" href="#" data-fase="1" data-status="fila">
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
     <div class="card-head">
       <h3>Bacen</h3>
-      <span class="badge fase1">Fase 1</span>
+      <span class="badge fase0">Pendente</span>
     </div>
     <p>Séries financeiras, crédito rural e indicadores bancários.</p>
-    <div class="meta">
-      <span class="status-dot status-fila"></span> Em fila
-    </div>
   </a>
 
   <!-- DOF -->
-  <a class="data-card" href="#" data-fase="3" data-status="analise">
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
     <div class="card-head">
-      <h3>DOF / SINAFLOR</h3>
-      <span class="badge fase3">Fase 3</span>
+      <h3>DOF/SINAFLOR (Ibama)</h3>
+      <span class="badge fase0">Pendente</span>
     </div>
     <p>Origem florestal, transporte e cadeia madeireira.</p>
-    <div class="meta">
-      <span class="status-dot status-analise"></span> Em análise (pipeline)
+  </a>
+
+  <!-- SEMA-MT -->
+  <a class="data-card" href="#" data-fase="0" data-status="pendente">
+    <div class="card-head">
+      <h3>SEMA-MT</h3>
+      <span class="badge fase0">Pendente</span>
     </div>
+    <p>CAR estadual, licenciamentos ambientais, multas, monitoramentos e autorizações ambientais estaduais.</p>
   </a>
 
 </div>
