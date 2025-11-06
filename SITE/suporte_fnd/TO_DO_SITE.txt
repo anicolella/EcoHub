@@ -151,6 +151,8 @@ Até aqui:
 [v. 0.72b, de 04/11/2025] - Config sections estilizadas index.qmd
 [v. 0.72c, de 04/11/2025] - Contraste seção 1, texto e figura invertidos seção 2 e vídeo novo seção 3
 [v. 0.72d, de 06/11/2025] - Texto seções 2 e 3 ajustados + novos badges e correção textos boxes 
+[v. 0.72e, de 06/11/2025] - Badges/Ícones e textos da grid/boxes com as fases do projeto e a origem dos dados 
+---
 
 ******************************************************
 [v0.6 - 31102025]
