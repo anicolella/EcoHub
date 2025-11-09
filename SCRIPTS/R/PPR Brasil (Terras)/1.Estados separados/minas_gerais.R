@@ -500,20 +500,40 @@ Minas, Presidente Olegário, Rio Paranaíba, São Gonçalo Do Abaeté, São Gota
 Minas, Vazante, Coromandel, Cruzeiro Da Fortaleza, Guimarânia, Patrocínio e Serra Do Salitre."
 )
 #### Atlas 23 MG #####
-pouso_alegre <- data.frame(mrt = c("Pouso Algre", "Pouso Algre", "Pouso Algre", 
-                                   "Pouso Algre", "Pouso Algre", "Pouso Algre", "Pouso Algre"), 
-                           tipologia_de_uso = c("Geral", "Agrícola", "Pecuária", "Exploração Mista", 
-                                                "Agrícola  -  Grãos Diversos", "Pecuária  -  Bovino - Pastagem Formada", 
-                                                "Exploração Mista  -  Agrícola + Pastagem"), nivel = c(0, 
-                                                                                                       1, 1, 1, 2, 2, 2), vti_media = c(12312.07, 22318.32, 3482.83, 
-                                                                                                                                        8576.97, 23381.77, 4062.27, 10383.52), vti_minimo = c(364.72, 
-                                                                                                                                                                                              939.43, 330, 440.86, 939.43, 364.72, 3294.2), vti_maximo = c(64315.15, 
-                                                                                                                                                                                                                                                           64315.15, 6611.57, 21115.71, 64315.15, 7863.65, 21115.71), 
-                           vtn_media = c(10624.46, 19372.31, 3395.58, 7294.41, 19372.31, 
-                                         3395.58, 8908.82), vtn_minimo = c(346.48, 704.57, 346.48, 
-                                                                           440.86, 704.57, 346.48, 2310.04), vtn_maximo = c(61099.39, 
-                                                                                                                            61099.39, 7486.8, 21115.71, 61099.39, 7486.8, 21115.71),
-                           origem = "Aiuruoca, Alagoa, Albertina, Andradas, Baependi, Bandeira do Sul, Bom Repouso, Borda
+pouso_alegre_a <- data.frame(
+  mrt = c(
+    "Pouso Algre", "Pouso Algre", "Pouso Algre", "Pouso Algre", "Pouso Algre",
+    "Pouso Algre", "Pouso Algre"
+  ),
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola  -   Grãos Diversos",
+    "Pecuária  -   Bovino - Pastagem Formada",
+    "Exploração Mista  -   Agrícola + Pastagem"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    12312.07, 22318.32, 3482.83, 8576.97, 23381.77, 4062.27,
+    10383.52
+  ),
+  vti_minimo = c(364.72, 939.43, 330, 440.86, 939.43, 364.72, 3294.2),
+  vti_maximo = c(
+    64315.15, 64315.15, 6611.57, 21115.71, 64315.15, 7863.65,
+    21115.71
+  ),
+  vtn_media = c(
+    10624.46, 19372.31, 3395.58, 7294.41, 19372.31, 3395.58,
+    8908.82
+  ),
+  vtn_minimo = c(346.48, 704.57, 346.48, 440.86, 704.57, 346.48, 2310.04),
+  vtn_maximo = c(
+    61099.39, 61099.39, 7486.8, 21115.71, 61099.39, 7486.8,
+    21115.71
+  ),
+  origem = "Aiuruoca, Alagoa, Albertina, Andradas, Baependi, Bandeira do Sul, Bom Repouso, Borda
 da Mata, Botelhos, Brazópolis, Bueno Brandão, Cachoeira de Minas, Caldas,
 Camanducaia, Cambuí, Campestre, Careaçu, Carmo de Minas, Carvalhos, Caxambu,
 Conceição das Pedras, Conceição do Rio Verde, Conceição dos Ouros, Congonhal,
@@ -526,11 +546,115 @@ Poços de Caldas, Pouso Alegre, Pouso Alto, Santa Rita de Caldas, Santa Rita do 
 São João da Mata, São José do Alegre, São Lourenço, São Sebastião da Bela Vista, São
 Sebastião do Rio Verde, Sapucaí - Mirim, Senador Amaral, Senador José Bento,
 Seritinga, Serranos, Silvianópolis, Soledade de Minas, Tocos do Moji, Toledo,
-Turvolândia, Virgínia e Wenceslau Braz.
-")
+Turvolândia, Virgínia e Wenceslau Braz" )
 
-pouso_alegre <- data.frame()
+barbacena_a <- data.frame(
+  mrt = c(
+    "barbacena", "barbacena", "barbacena", "barbacena", "barbacena",
+    "barbacena", "barbacena", "barbacena"
+  ),
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola  -  Grãos Diversos",
+    "Pecuária  -  Bovino  -  Pastagem Formada",
+    "Exploração Mista  -  Pastagem+Floresta Plantada.",
+    "Exploração Mista  -  Agrícola + Pastagem"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    27165.47, 48357.73, 18552.17, 27627.55, 48357.73, 18552.17,
+    14944.52, 42248.07
+  ),
+  vti_minimo = c(
+    3319.5, 3319.5, 6122.45, 3319.5, 3319.5, 6122.45, 4379.56,
+    14250
+  ),
+  vti_maximo = c(
+    93750, 93750, 59523.81, 8181818, 9375, 5952381, 2483629,
+    8181818
+  ),
+  vtn_media = c(
+    2512373, 4800832, 1575083, 2530532, 4800832, 1575083,
+    1435901, 382022
+  ),
+  vtn_minimo = c(
+    26556, 26556, 612245, 26556, 26556, 612245, 416058,
+    867347
+  ),
+  vtn_maximo = c(
+    9375, 9375, 4761905, 8181818, 9375, 4761905, 2483629,
+    8181818
+  ),
+  origem = " Alfredo Vasconcelos, Alto Rio Doce, Antônio Carlos, Barbacena, Barroso, Belo Vale,
+Capela Nova, Caranaíba, Carandaí, Casa Grande, Conceição da Barra de Minas, Catas
+Altas da Noruega, Cipotânea, Congonhas, Conselheiro Lafaiete, Coronel Xavier Chaves,
+Cristiano Otoni, Desterro de Entre Rios, Desterro do Melo, Dores de Campos, Entre Rios
+de Minas, Ibertioga, Itaverava, Jeceaba, Lagoa Dourada, Lamim, Madre de Deus de
+Minas, Nazareno, Ouro Branco, Piedade do Rio Grande, Piranga, Prados, Queluzito,
+Resende Costa, Ressaquinha, Rio Espera, Ritápolis, Santa Bárbara do Tugúrio, Santa
+Cruz de Minas, Santana do Garambéu, Santana dos Montes, Santa Rita de Ibitipoca, São
+Brás do Suaçuí, São João del Rei, São Tiago, São Vicente de Minas, Senhora de Oliveira,
+Senhora dos Remédios e Tiradentes"
+)
 
+jf_a <- data.frame(
+  mrt = c(
+    "juiz de fora", "juiz de fora", "juiz de fora", "juiz de fora",
+    "juiz de fora", "juiz de fora", "juiz de fora", "juiz de fora",
+    "juiz de fora", "juiz de fora", "juiz de fora"
+  ),
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Agrícola – Café",
+    "Pecuária – Bovino – Pastagem Formada",
+    "Vegetação Nativa – Capoeira",
+    "Exploração Mista – Agrícola + Pastagem",
+    "Não Agrícola – Outros"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    6070899, 9612157, 2586399, 3541225, 4542769, 10639147,
+    9589706, 2586399, 3541225, 5024226, 10639147
+  ),
+  vti_minimo = c(
+    75, 2566603, 75, 1377953, 1742627, 5165289, 2566603,
+    75, 1377953, 1911765, 5165289
+  ),
+  vti_maximo = c(
+    36666667, 36666667, 5165289, 695122, 8953168, 16671298,
+    36666667, 5165289, 695122, 8953168, 16671298
+  ),
+  vtn_media = c(
+    4161171, 5593135, 1985882, 3499558, 3233372, 10639147,
+    5541939, 1985882, 3499558, 3632464, 10639147
+  ),
+  vtn_minimo = c(
+    522788, 178783, 6000, 1377953, 522788, 5165289, 178783,
+    6000, 1377953, 1338235, 5165289
+  ),
+  vtn_maximo = c(
+    16671298, 14666667, 5165289, 695122, 6887052, 16671298,
+    14666667, 5165289, 695122, 6887052, 16671298
+  ),
+  origem = "Abadia Dos Dourados, Abre Campo, Alto Caparaó, Alto Jequitibá, Bocaiúva, Botumirim,
+Brasília De Minas, Campo Azul, Caparaó, Capitão Enéas, Caputira, Central De Minas,
+Chalé, Conceição De Ipanema, Douradoquara, Durandé, Estrela Do Sul, Grupiara,
+Ipanema, Iraí De Minas, Itabirinha, Lajinha, Luisburgo, Manhuaçu, Manhumirim,
+Mantena, Martins Soares, Matipó, Mendes Pimentel, Monte Carmelo, Mutum, Nova
+Belém, Pocrane, Reduto, Romaria, Santa Margarida, Santana Do Manhuaçu, São Félix
+De Minas, São João Do Manhuaçu, São João Do Manteninha, São José Do Mantimento,
+Simonésia e Taparuba"
+)
+
+tres_marias_a <- 
                                                                                                                                                                                                                             
 
 # Consolidação final dos data.frames
