@@ -499,7 +499,39 @@ Guarda-Mor, João Pinheiro, Lagamar, Lagoa Formosa, Lagoa Grande, Matutina, Para
 Minas, Presidente Olegário, Rio Paranaíba, São Gonçalo Do Abaeté, São Gotardo, Tiros, Varjão De
 Minas, Vazante, Coromandel, Cruzeiro Da Fortaleza, Guimarânia, Patrocínio e Serra Do Salitre."
 )
+#### Atlas 23 MG #####
+pouso_alegre <- data.frame(mrt = c("Pouso Algre", "Pouso Algre", "Pouso Algre", 
+                                   "Pouso Algre", "Pouso Algre", "Pouso Algre", "Pouso Algre"), 
+                           tipologia_de_uso = c("Geral", "Agrícola", "Pecuária", "Exploração Mista", 
+                                                "Agrícola  -  Grãos Diversos", "Pecuária  -  Bovino - Pastagem Formada", 
+                                                "Exploração Mista  -  Agrícola + Pastagem"), nivel = c(0, 
+                                                                                                       1, 1, 1, 2, 2, 2), vti_media = c(12312.07, 22318.32, 3482.83, 
+                                                                                                                                        8576.97, 23381.77, 4062.27, 10383.52), vti_minimo = c(364.72, 
+                                                                                                                                                                                              939.43, 330, 440.86, 939.43, 364.72, 3294.2), vti_maximo = c(64315.15, 
+                                                                                                                                                                                                                                                           64315.15, 6611.57, 21115.71, 64315.15, 7863.65, 21115.71), 
+                           vtn_media = c(10624.46, 19372.31, 3395.58, 7294.41, 19372.31, 
+                                         3395.58, 8908.82), vtn_minimo = c(346.48, 704.57, 346.48, 
+                                                                           440.86, 704.57, 346.48, 2310.04), vtn_maximo = c(61099.39, 
+                                                                                                                            61099.39, 7486.8, 21115.71, 61099.39, 7486.8, 21115.71),
+                           origem = "Aiuruoca, Alagoa, Albertina, Andradas, Baependi, Bandeira do Sul, Bom Repouso, Borda
+da Mata, Botelhos, Brazópolis, Bueno Brandão, Cachoeira de Minas, Caldas,
+Camanducaia, Cambuí, Campestre, Careaçu, Carmo de Minas, Carvalhos, Caxambu,
+Conceição das Pedras, Conceição do Rio Verde, Conceição dos Ouros, Congonhal,
+Consolação, Córrego do Bom Jesus, Cristina, Cruzília, Delfim Moreira, Dom Viçoso,
+Espírito Santo do Dourado, Estiva, Extrema, Gonçalves, Heliodora, Ibitiúra de Minas,
+Inconfidentes, Ipuiúna, Itajubá, Itamonte, Itanhandu, Itapeva, Jacutinga, Jesuânia,
+Lambari, Maria da Fé, Marmelópolis, Minduri, Monte Sião, Munhoz, Natércia, Olímpio
+Noronha, Ouro Fino, Paraisópolis, Passa Quatro, Pedralva, Piranguçu, Piranguinho,
+Poços de Caldas, Pouso Alegre, Pouso Alto, Santa Rita de Caldas, Santa Rita do Sapucaí,
+São João da Mata, São José do Alegre, São Lourenço, São Sebastião da Bela Vista, São
+Sebastião do Rio Verde, Sapucaí - Mirim, Senador Amaral, Senador José Bento,
+Seritinga, Serranos, Silvianópolis, Soledade de Minas, Tocos do Moji, Toledo,
+Turvolândia, Virgínia e Wenceslau Braz.
+")
 
+pouso_alegre <- data.frame()
+
+                                                                                                                                                                                                                            
 
 # Consolidação final dos data.frames
 MG22 <- rbind(
