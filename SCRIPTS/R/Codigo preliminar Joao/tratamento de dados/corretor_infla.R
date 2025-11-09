@@ -6,7 +6,10 @@ library(lubridate)
 #correlçao por igpm
 #a <- available_territories(language = c("en", "br"))
 IGPM <- ipeadata(code = "IGP_IGPMG", language = "br")
+series <- available_series()
 
+
+IGPM <-  IGPM |>  mutate ( value = IGPM$value/100 + 1 )
 # --- 3. Preparar a Tabela de Índice (IGPM) ---
 # Vamos extrair o ano da coluna 'date' para poder fazer o join
 
@@ -39,8 +42,9 @@ colunas_para_corrigir <- c("vti_media", "vti_minimo", "vti_maximo",
 # Pegar o valor do índice de 2016 para usar na fórmula
 indice_base_final <- df_igpm_limpo %>%
   filter(ano_indice == ano_base) %>%
-  pull(value) # Puxa o valor único: 640.751
+  pull(value) 
 
+indice_base_final <- indice_base_final
 # print(paste("Índice base (2016):", indice_base_2016))
 
 
