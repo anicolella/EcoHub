@@ -9,12 +9,12 @@ library(janitor)
 muni <- st_read("C:/Users/jodom/Downloads/br_municipios_20200807/BR_Municipios_2019.shp")
 # 1. Verifique duplicatas na sua tabela da ESQUERDA (a que vem antes do pipe)
 # Substitua 'sua_tabela_da_esquerda' pelo nome real dela
-  ep <- pivot %>% 
-  janitor::get_dupes(muni_join)
+ # ep <- pivot %>% 
+  #janitor::get_dupes(muni_join)
 
 # 2. Verifique duplicatas na sua tabela da DIREITA
- ep2 <- dados_pivotados_largos %>% 
-  janitor::get_dupes(muni_join)
+ #ep2 <- dados_pivotados_largos %>% 
+  #janitor::get_dupes(muni_join)
 
 
 # --- CONFIGURAÇÃO ---
