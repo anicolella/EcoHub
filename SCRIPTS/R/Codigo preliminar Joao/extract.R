@@ -5,7 +5,7 @@ library(dplyr)
 # --- Configuração ---
 # -----------------------------------------------------------------
 caminho_pdf <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\ATLAS_MERCADO_TERRAS_2023.pdf"
-pagina_alvo <- 41
+pagina_alvo <- 38
 nome_mrt <- "tres marias"
 
 # -----------------------------------------------------------------
@@ -64,36 +64,13 @@ names(df_tabela_1) <- c(
   'vtn_minimo', 'vtn_maximo'
 )
 
-# --- INÍCIO DA MODIFICAÇÃO ---
-# Pipeline de limpeza e transformação final
-# Removemos a função 'limpa_numero' e a criação de 'df_tudo_string'
-# e colocamos toda a lógica aqui.
+# Com dplyr
+colunas_para_multiplicar <- c("vti_media", "vti_minimo", "vti_maximo", 
+                              "vtn_media", "vtn_minimo", "vtn_maximo")
 
-df_final <- df_tabela_1 %>%
-  mutate(
-    # 1. Aplica o pipeline completo nas colunas de valor
-    across(
-      .cols = starts_with("vti_") | starts_with("vtn_"),
-      .fns = ~ as.numeric(            # PASSO 4: Converte para numérico
-        gsub(                        # PASSO 2: Remove o ponto
-          pattern = "\\.",
-          replacement = "",
-          x = as.character(.)        # PASSO 1: Converte para string
-        )
-      ) / 100                        # PASSO 5: Divide por 100
-    ),
-    
-    # 2. Garante que 'nivel' é numérico (como no seu script original)
-    nivel = as.numeric(nivel),
-    
-    # 3. Adiciona a coluna 'mrt' (como no seu script original)
-    mrt = nome_mrt
-  ) %>%
-  # Reordena para o formato final
-  select(mrt, tipologia_de_uso, nivel, everything())
+# Multiplica todas as colunas especificadas por 1000
+df_nov <- df_tabela_1 %>%
+  mutate(across(all_of(colunas_para_multiplicar), ~ . * 1000))
 
-# --- FIM DA MODIFICAÇÃO ---
-
-# 4. Imprime o resultado final para conferência
 print("--- DADOS FINAIS (dput) ---")
-dput(df_final)
+dput(df_nov)

@@ -549,12 +549,8 @@ Seritinga, Serranos, Silvianópolis, Soledade de Minas, Tocos do Moji, Toledo,
 Turvolândia, Virgínia e Wenceslau Braz" )
 
 barbacena_a <- data.frame(
-  mrt = c(
-    "barbacena", "barbacena", "barbacena", "barbacena", "barbacena",
-    "barbacena", "barbacena", "barbacena"
-  ),
+  mrt = "barbacena",
   tipologia_de_uso = c(
-    "Geral",
     "Agrícola",
     "Pecuária",
     "Exploração Mista",
@@ -563,30 +559,30 @@ barbacena_a <- data.frame(
     "Exploração Mista  -  Pastagem+Floresta Plantada.",
     "Exploração Mista  -  Agrícola + Pastagem"
   ),
-  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(1, 1, 1, 2, 2, 2, 2),
   vti_media = c(
-    27165.47, 48357.73, 18552.17, 27627.55, 48357.73, 18552.17,
+    48357.73, 18552.17, 27627.55, 48357.73, 18552.17,
     14944.52, 42248.07
   ),
   vti_minimo = c(
-    3319.5, 3319.5, 6122.45, 3319.5, 3319.5, 6122.45, 4379.56,
+    3319.5, 6122.45, 3319.5, 3319.5, 6122.45, 4379.56,
     14250
   ),
   vti_maximo = c(
-    93750, 93750, 59523.81, 8181818, 9375, 5952381, 2483629,
-    8181818
+    93750, 59523.81, 81818.18, 93750, 59523.81, 24836.29,
+    81818.18
   ),
   vtn_media = c(
-    2512373, 4800832, 1575083, 2530532, 4800832, 1575083,
-    1435901, 382022
+    48008.32, 15750.83, 25305.32, 48008.32, 15750.83,
+    14359.01, 38202.2
   ),
   vtn_minimo = c(
-    26556, 26556, 612245, 26556, 26556, 612245, 416058,
-    867347
+    2655.6, 6122.45, 2655.6, 2655.6, 6122.45, 4160.58,
+    8673.47
   ),
   vtn_maximo = c(
-    9375, 9375, 4761905, 8181818, 9375, 4761905, 2483629,
-    8181818
+    93750, 47619.05, 81818.18, 93750, 47619.05, 24836.29,
+    81818.18
   ),
   origem = " Alfredo Vasconcelos, Alto Rio Doce, Antônio Carlos, Barbacena, Barroso, Belo Vale,
 Capela Nova, Caranaíba, Carandaí, Casa Grande, Conceição da Barra de Minas, Catas
@@ -621,28 +617,32 @@ jf_a <- data.frame(
   ),
   nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2),
   vti_media = c(
-    6070899, 9612157, 2586399, 3541225, 4542769, 10639147,
-    9589706, 2586399, 3541225, 5024226, 10639147
+    60708.99, 96121.57, 25863.99, 35412.25, 45427.69,
+    106391.47, 95897.06, 25863.99, 35412.25, 50242.26,
+    106391.47
   ),
   vti_minimo = c(
-    75, 2566603, 75, 1377953, 1742627, 5165289, 2566603,
-    75, 1377953, 1911765, 5165289
+    7500, 25666.03, 7500, 13779.53, 17426.27, 51652.89,
+    25666.03, 7500, 13779.53, 19117.65, 51652.89
   ),
   vti_maximo = c(
-    36666667, 36666667, 5165289, 695122, 8953168, 16671298,
-    36666667, 5165289, 695122, 8953168, 16671298
+    366666.67, 366666.67, 51652.89, 69512.2, 89531.68,
+    166712.98, 366666.67, 51652.89, 69512.2, 89531.68,
+    166712.98
   ),
   vtn_media = c(
-    4161171, 5593135, 1985882, 3499558, 3233372, 10639147,
-    5541939, 1985882, 3499558, 3632464, 10639147
+    41611.71, 55931.35, 19858.82, 34995.58, 32333.72,
+    106391.47, 55419.39, 19858.82, 34995.58, 36324.64,
+    106391.47
   ),
   vtn_minimo = c(
-    522788, 178783, 6000, 1377953, 522788, 5165289, 178783,
-    6000, 1377953, 1338235, 5165289
+    5227.88, 17878.3, 6000, 13779.53, 5227.88, 51652.89,
+    17878.3, 6000, 13779.53, 13382.35, 51652.89
   ),
   vtn_maximo = c(
-    16671298, 14666667, 5165289, 695122, 6887052, 16671298,
-    14666667, 5165289, 695122, 6887052, 16671298
+    166712.98, 146666.67, 51652.89, 69512.2, 68870.52,
+    166712.98, 146666.67, 51652.89, 69512.2, 68870.52,
+    166712.98
   ),
   origem = "Abadia Dos Dourados, Abre Campo, Alto Caparaó, Alto Jequitibá, Bocaiúva, Botumirim,
 Brasília De Minas, Campo Azul, Caparaó, Capitão Enéas, Caputira, Central De Minas,
@@ -654,8 +654,520 @@ De Minas, São João Do Manhuaçu, São João Do Manteninha, São José Do Manti
 Simonésia e Taparuba"
 )
 
-tres_marias_a <- 
-                                                                                                                                                                                                                            
+tres_marias_a <- data.frame(mrt = "tres marias", 
+                            tipologia_de_uso = c(
+                              "Geral",
+                              "Pecuária",
+                              "Pecuária  -  Bovino Pastagem Plantada"
+                            ),
+                            nivel = c(0, 1, 2),
+                            vti_media = c(9181.88, 9181.88, 9181.88),
+                            vti_minimo = c(7804.6, 7804.6, 7804.6),
+                            vti_maximo = c(10559.16, 10559.16, 10559.16),
+                            vtn_media = c(7285.26, 7285.26, 7285.26),
+                            vtn_minimo = c(6192.47, 6192.47, 6192.47),
+                            vtn_maximo = c(8378.05, 8378.05, 8378.05),
+                            origem = "Araçaí, Augusto de Lima, Baldim, Barão de Cocais, Belo Horizonte, Betim, Bom Jesus do
+Amparo, Brumadinho, Buenópolis, Cachoeira da Prata, Caetanópolis, Caeté, Capim
+Branco, Carmésia, Catas Altas, Conceição do Mato Dentro, Confins, Congonhas do
+Norte, Contagem, Cordisburgo, Corinto, Curvelo, Esmeraldas, Felixlândia, Ferros,
+Florestal, Fortuna de Minas, Funilândia, Ibirité, Igarapé, Inhaúma, Inimutaba, Itabira,
+Itabirito, Itambé do Mato Dentro, Jaboticatubas, Jequitibá, Nova União, Juatuba, Lagoa
+Santa, Mariana, Mário Campos, Mateus Leme, Matozinhos, Moeda, Monjolos, Morro da
+Garça, Morro do Pilar, Nova Lima, Ouro Preto, Paraopeba, Passabém, Pedro Leopoldo,
+Presidente Juscelino, Prudente de Morais, Raposos, Ribeirão das Neves, Rio Acima,
+Sabará, Santa Bárbara, Santa Luzia, Santa Maria de Itabira, Santana de Pirapama,
+Santana do Riacho, Santo Antônio do Rio Abaixo, Santo Hipólito, São Joaquim de Bicas,
+São José da Lapa, São Sebastião do Rio Preto, Sarzedo, Sete Lagoas, Taquaraçu de
+Minas, Três Marias, Vespasiano
+")
+   
+timoteo_a <- data.frame(
+  mrt = "timoteo",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária  -  Bovino Pastagem Plantada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(14138.44, 14138.44, 14138.44),
+  vti_minimo = c(12017.67, 12017.67, 12017.67),
+  vti_maximo = c(16259.2, 16259.2, 16259.2),
+  vtn_media = c(11424.67, 11424.67, 11424.67),
+  vtn_minimo = c(9710.97, 9710.97, 9710.97),
+  vtn_maximo = c(13138.37, 13138.37, 13138.37),
+  origem = "Açucena, Alvarenga, Antônio Dias, Bela Vista de Minas, Belo Oriente, Bom Jesus do
+Galho, Braúnas, Bugre, Caratinga, Coronel Fabriciano, Córrego Novo, Dionísio, Dom
+Cavati, Entre Folhas, Iapu, Imbé de Minas, Inhapim, Ipaba, Ipatinga, Jaguaraçu,
+Joanésia, João Monlevade, Marliéria, Mesquita, Naque, Nova Era, Periquito, Piedade
+de Caratinga, Pingo - d'Água, Raul Soares, Rio Piracicaba, Santa Bárbara do Leste,
+Santana do Paraíso, Santa Rita de Minas, São Domingos das Dores, São Domingos do
+Prata, São Gonçalo do Rio Abaixo, São João do Oriente, São José do Goiabal, São
+Sebastião do Anta, Timóteo, Ubaporanga, Vargem Alegre, Vermelho Novo"
+)
+
+gov_valdares_a <- data.frame(mrt= "gov valdares",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária  -  Bovino Pastagem Plantada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(12508.11, 12508.11, 12508.11),
+  vti_minimo = c(10631.89, 10631.89, 10631.89),
+  vti_maximo = c(14384.32, 14384.32, 14384.32),
+  vtn_media = c(9482.99, 9482.99, 9482.99),
+  vtn_minimo = c(8060.54, 8060.54, 8060.54),
+  vtn_maximo = c(10905.44, 10905.44, 10905.44),
+  origem = "Aimorés, Alpercata, Cantagalo, Capitão Andrade, Central de Minas, Coluna,
+Conselheiro Pena, Coroaci, Cuparaque, Divino das Laranjeiras, Divinolândia de Minas,
+Dom Joaquim, Dores de Guanhães, Engenheiro Caldas, Fernandes Tourinho, Frei
+Inocêncio, Frei Lagonegro, Galiléia, Goiabeira, Gonzaga, Governador Valadares,
+Guanhães, Itabirinha, Itanhomi, Itueta, Jampruca, José Raydan, Mantena, Marilac,
+Materlândia, Mendes Pimentel, Nacip Raydan, Nova Belém, Paulistas, Peçanha,
+Resplendor, Rio Vermelho, Sabinópolis, Santa Efigênia de Minas, Santa Maria do Suaçuí,
+Santa Rita do Itueto, São Félix de Minas, São Geraldo da Piedade, São Geraldo do Baixio,
+São João do Manteninha, São João Evangelista, São José da Safira, São José do Jacuri,
+São Pedro do Suaçuí, São Sebastião do Maranhão, Sardoá, Senhora do Porto, Sobrália,
+Tarumirim, Tumiritinga, Mathias Lobato, Virginópolis, Virgolândia"
+)
+
+gov_valdares_a2 <- data.frame(mrt = "gov valdares",
+                                tipologia_de_uso = c(
+                                  "Geral",
+                                  "Agrícola",
+                                  "Pecuária",
+                                  "Exploração Mista",
+                                  "Agrícola  -  Diversificada",
+                                  "Pecuária  -  Bovino Pastagem Plantada",
+                                  "Exploração Mista  -  Agrícola + Pecuária"
+                                ),
+                                nivel = c(0, 1, 1, 1, 2, 2, 2),
+                                vti_media = c(
+                                  9694.83, 30782.33, 6058.17, 25807.37, 30782.33,
+                                  6058.17, 25807.37
+                                ),
+                                vti_minimo = c(
+                                  8240.6, 26164.98, 5149.44, 21936.26, 26164.98,
+                                  5149.44, 21936.26
+                                ),
+                                vti_maximo = c(
+                                  35399.67, 35399.67, 6966.89, 29678.48, 35399.67,
+                                  6966.89, 29678.48
+                                ),
+                                vtn_media = c(
+                                  7972.95, 26164.98, 4830.67, 21936.26, 26164.98,
+                                  4830.67, 21936.26
+                                ),
+                                vtn_minimo = c(
+                                  4106.07, 22240.23, 4106.07, 18645.82, 22240.23,
+                                  4106.07, 18645.82
+                                ),
+                                vtn_maximo = c(
+                                  30089.72, 30089.72, 5555.27, 25226.7, 30089.72,
+                                  5555.27, 25226.7
+                                ),
+                             origem = " Água Boa, Águas Formosas, Águas Vermelhas, Almenara, Alvorada de Minas, Cachoeira
+de Pajeú, Angelândia, Araçuaí, Aricanduva, Ataléia, Bandeira, Berilo, Bertópolis,
+Campanário, Capelinha, Caraí, Carbonita, Carlos Chagas, Catuji, Chapada do Norte,
+Comercinho, Coronel Murta, Couto de Magalhães de Minas, Crisólita, Datas,
+Diamantina, Divisa Alegre, Divisópolis, Felício dos Santos, São Gonçalo do Rio Preto,
+Felisburgo, Francisco Badaró, Franciscópolis, Frei Gaspar, Fronteira dos Vales, Gouveia,
+Itaipé, Itamarandiba, Itambacuri, Itaobim, Itinga, Jacinto, Jenipapo de Minas,
+Jequitinhonha, Joaíma, Jordânia, José Gonçalves de Minas, Ladainha, Leme do Prado,
+Machacalis, Malacacheta, Mata Verde, Medina, Minas Novas, Monte Formoso,
+Nanuque, Nova Módica, Novo Cruzeiro, Novo Oriente de Minas, Ouro Verde de Minas,
+Padre Paraíso, Palmópolis, Pavão, Pedra Azul, Pescador, Ponto dos Volantes, Poté,
+Presidente Kubitschek, Rio do Prado, Rubim, Salto da Divisa, Santa Helena de Minas,
+Santa Maria do Salto, Santo Antônio do Itambé, Santo Antônio do Jacinto, São José do
+Divino, Setubinha, Senador Modestino Gonçalves, Serra Azul de Minas, Serra dos
+Aimorés, Serro, Teófilo Otoni, Turmalina, Umburatiba, Veredinha, Virgem da Lapa")
+
+formoso_a <- data.frame(mrt = "formoso",
+                        tipologia_de_uso = c(
+                          "Geral",
+                          "Pecuária",
+                          "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+                          "Pecuária - Bovino - Pastagem Plantada - Média Capacidade",
+                          "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+                        ),
+                        nivel = c(0, 1, 2, 2, 2),
+                        vti_media = c(8181.03, 8249.11, 5871.27, 8473.71, 12331),
+                        vti_minimo = c(4990.58, 6599.29, 4990.58, 6980.72, 10481.35),
+                        vti_maximo = c(14180.65, 9898.93, 6751.96, 9966.69, 14180.65),
+                        vtn_media = c(7179.36, 7143.6, 5082.67, 7296.67, 10806.24),
+                        vtn_minimo = c(4320.27, 5714.88, 4320.27, 6202.17, 9185.3),
+                        vtn_maximo = c(12427.17, 8572.31, 5845.07, 8391.17, 12427.17),
+                        origem = "Formoso"
+                        )                                                                                                                                                                                                          
+unai_a <- data.frame(mrt = "unai",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agrícola",
+    "Pecuária - Pastagem Plantada - Alta Capacidade",
+    "Agrícola - Grãos Diversos"
+  ),
+  nivel = c(0, 1, 2, 2, 2),
+  vti_media = c(17838.17, 12418.02, 26869.58, 13729.67, 30765.13),
+  vti_minimo = c(9934.42, 9934.42, 21495.67, 11670.22, 24612.1),
+  vti_maximo = c(36918.15, 14901.63, 32243.5, 15789.12, 36918.15),
+  vtn_media = c(15726.18, 10655.39, 24642.74, 11871.88, 28818.36),
+  vtn_minimo = c(8524.31, 8524.31, 19714.19, 9820.33, 23054.69),
+  vtn_maximo = c(34582.03, 12786.47, 29571.29, 13923.43, 34582.03),
+  origem = "Buritis, Cabeceira Grande e Unaí"
+)
+
+arinos_a <- data.frame(mrt = "arinos",tipologia_de_uso = c(
+  "Geral",
+  "Mata",
+  "Pecuária",
+  "Agrícola",
+  "Vegetação Nativa - Mata",
+  "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+  "Pecuária - Bovino - Pastagem Plantada - Média Capacidade",
+  "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade",
+  "Agrícola - Grãos Diversos"
+),
+nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 1),
+vti_media = c(
+  6455.22, 2383, 6946.84, 15066.67, 2383, 4540.07, 9543.26,
+  12183.33, 15066.67
+),
+vti_minimo = c(
+  1906.4, 1906.4, 5557.47, 12053.33, 1906.4, 3632.06,
+  8111.77, 10355.83, 12053.33
+),
+vti_maximo = c(
+  18080, 2859.61, 8336.21, 18080, 2859.61, 5448.08, 10974.75,
+  14010.83, 18080
+),
+vtn_media = c(
+  5635.47, 2256.09, 5964.81, 13358.51, 2256.09, 4108.1,
+  7943.58, 10053.01, 13358.51
+),
+vtn_minimo = c(
+  1804.88, 1804.88, 4771.85, 10686.81, 1804.88, 3286.48,
+  6752.04, 8545.06, 10686.81
+),
+vtn_maximo = c(
+  16030.21, 2707.31, 7157.77, 16030.21, 2707.31, 4929.71,
+  9135.12, 11560.96, 16030.21),
+origem = "Arinos, Chapada Gaúcha, Pintópolis, Riachinho, Urucuia, Uruana de Minas"
+                       )
+
+arinos_a <- data.frame(mrt = "Bonfinópolis",tipologia_de_uso = c(
+  "Geral",
+  "Pecuária",
+  "Agrícola",
+  "Pecuária - Bovino - Pastagem Plantada - Média Capacidade",
+  "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade",
+  "Agrícola - Grãos Diversos"
+),
+nivel = c(0, 1, 1, 2, 2, 1),
+vti_media = c(6885.27, 6645.68, 36379.64, 6794.21, 8500, 36379.64),
+vti_minimo = c(5316.54, 5316.54, 29103.71, 5606.2, 7225, 29103.71),
+vti_maximo = c(43655.57, 7974.81, 43655.57, 7982.21, 9775, 43655.57),
+vtn_media = c(5549.21, 5221.03, 30003.75, 5172.77, 7165.86, 30003.75),
+vtn_minimo = c(4138.22, 4176.82, 24003, 4138.22, 6090.99, 24003),
+vtn_maximo = c(36004.5, 6265.23, 36004.5, 6207.33, 8240.74, 36004.5),
+origem = "Bonfinópolis de Minas, Brasilândia de Minas, Dom Bosco e Natalândia"
+)
+
+
+
+divinopolis_a <- data.frame(mrt = "divinopolis",
+                            tipologia_de_uso = c(
+                              "Geral",
+                              "Pecuária",
+                              "Exploração Mista",
+                              "Pecuária  -  Bovino  -  Pastagem Formada",
+                              "Exploração Mista  -  Agrícola + Pastagem",
+                              "Exploração Mista  -  Pastagem+Floresta Plantada."
+                            ),
+                            nivel = c(0, 1, 1, 2, 2, 2),
+                            vti_media = c(
+                              26842.71, 22401.92, 30070.53, 22401.92, 32894.02,
+                              20894.18
+                            ),
+                            vti_minimo = c(3226.07, 17349.8, 3845, 17349.8, 3845, 11397.44),
+                            vti_maximo = c(
+                              48901.5, 29568.95, 48901.5, 29568.95, 48901.5,
+                              31677
+                            ),
+                            vtn_media = c(
+                              25572.58, 19551.36, 26799.26, 19551.36, 30948.77,
+                              13313.34
+                            ),
+                            vtn_minimo = c(
+                              3226.07, 14808.26, 3652.75, 14808.26, 3652.75,
+                              10400.16
+                            ),
+                            vtn_maximo = c(43468, 25572.58, 43468, 25572.58, 43468, 15838.5),
+                            origem = "Abaeté, Araújos, Arcos, Bambuí, Biquinhas, Bom Despacho, Bonfim, Camacho, Carmo da
+Mata, Carmo do Cajuru, Carmópolis de Minas, Cedro do Abaeté, Cláudio, Conceição do
+Pará, Córrego Danta, Córrego Fundo, Crucilândia, Divinópolis, Dores do Indaiá, Estrela
+do Indaiá, Formiga, Igaratinga, Iguatama, Itaguara, Itapecerica, Itatiaiuçu, Itaúna,
+Japaraíba, Lagoa da Prata, Leandro Ferreira, Luz, Maravilhas, Martinho Campos,
+Medeiros, Moema, Morada Nova de Minas, Nova Serrana, Oliveira, Onça de Pitangui,
+Paineiras, Pains, Papagaios, Pará de Minas, Passa Tempo, Pedra do Indaiá, Pequi,
+Perdigão, Piedade dos Gerais, Pimenta, Piracema, Pitangui, Pompéu, Quartel Geral, Rio
+Manso, Santo Antônio do Monte, São Francisco de Paula, São Gonçalo do Pará, São José
+da Varginha, São Sebastião do Oeste, Serra da Saudade e Tapiraí"
+)
+
+varginha_a <- data.frame(mrt = "varginha",
+                           tipologia_de_uso = c(
+                             "Geral",
+                             "Agrícola",
+                             "Pecuária",
+                             "Exploração Mista",
+                             "Não Agrícola",
+                             "Agrícola - Café",
+                             "Agrícola - Cana",
+                             "Agrícola - Grãos Diversificados",
+                             "Pecuária - Bovino - Pastagem Nativa",
+                             "Exploração Mista - Agrícola + Pecuária",
+                             "Não Agrícola - Periurbano"
+                           ),
+                           nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+                           vti_media = c(
+                             60540.46, 73280.20, 40991.52, 42511.67, 750690.26, 88588.68, 78154.46,
+                             59557.90, 40991.52, 42511.67, 898879.53
+                           ),
+                           vti_minimo = c(
+                             10042.75, 23148.15, 11702.20, 26859.49, 148760.33, 38739.67, 37241.38,
+                             23148.15, 11702.20, 26859.49, 148760.33
+                           ),
+                           vti_maximo = c(
+                             158931.98, 125000.00, 113522.84, 58337.38, 1562500.00, 157621.20, 107131.93,
+                             103040.54, 113522.84, 58337.38, 1562500.00
+                           ),
+                           vtn_media = c(
+                             48344.93, 57043.83, 34592.74, 31273.62, 728955.50, 61199.62, 63928.44,
+                             55113.11, 34592.74, 31273.62, 886906.65
+                           ),
+                           vtn_minimo = c(
+                             10042.75, 23148.15, 11172.33, 12891.32, 119834.71, 23684.21, 25172.41,
+                             23148.15, 11172.33, 12891.32, 119834.71
+                           ),
+                           vtn_maximo = c(
+                             153369.36, 90118.52, 113522.84, 53475.94, 1562500.00, 123540.94, 90090.09,
+                             90000.00, 113522.84, 53475.94, 1562500.00
+                           ),
+                         origem = "Aguanil, Alfenas, Alpinópolis, Alterosa, Arceburgo, Areado, Boa Esperança, Bom Jesus
+da Penha, Bom Sucesso, Cabo Verde, Cambuquira, Campanha, Campo Belo, Campo do
+Meio, Campos Gerais, Cana Verde, Candeias, Capetinga, Capitólio, Carmo da
+Cachoeira, Carmo do Rio Claro, Carrancas, Carvalhopolis, Cássia, Claraval, Conceição
+da Aparecida, Coqueiral, Cordislândia, Cristais, Delfinópolis, Divisa Nova, Doresópolis,
+Eloi Mendes, Fama, Fortaleza de Minas, Guapé, Guaranésia, Guaxupé, Ibiraci,
+Ibituruna, Ijaci, Ilicínea, Ingaí, Itamogi, Itaú de Minas, Itumirim, Itutinga, Jacui, Juruaia,
+Lavras, Luminarias, Machado, Monsehor Paulo, Monte Belo, Monte Santo de Minas,
+Muzambinho, Nepomuceno, Nova Resende, Paraguaçu, Passos, Perdões, Piumhi, Poço
+Fundo, Pratápolis, Ribeirão Vermelho, Santana da Vargem, Santana do Jacaré, Santo
+Antonio do Amparo, Santo Antonio do Amparo, São Gonçalo do Sapucai, São João Batista da
+Glória, São José da Barra, São Pedro da União, São Roque de Minas, São Sebastião do
+Paraíso, São Thomé das Letras, São Tomás de Aquino, Serrania, Três Corações, Três
+Pontas, Vargem Bonita, Varginha."
+                         )
+
+uberlandia_a <- data.frame(mrt= "Uberlandia",
+                           data.frame(
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Agricola  -  Café",
+    "Agrícola  -  Grãos Diversos",
+    "Pecuária  -  Bovino  -  Pastagem Plantada",
+    "Exploração Mista  -  Agricultura + Pecuária"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    52606.55, 65457.4, 35663.16, 37011.44, 102237.74, 65792.92,
+    35663.16, 37011.44
+  ),
+  vti_minimo = c(
+    30313.69, 55638.79, 30313.69, 31459.72, 86902.08,
+    55923.98, 30313.69, 31459.72
+  ),
+  vti_maximo = c(
+    117573.41, 75276.01, 41012.64, 42563.16, 117573.41,
+    75661.86, 41012.64, 42563.16
+  ),
+  vtn_media = c(
+    42964.16, 53444.5, 28924.07, 30887.64, 80331.76,
+    50992.71, 28924.07, 30887.64
+  ),
+  vtn_minimo = c(
+    36519.54, 45427.82, 24585.46, 26254.49, 68282, 43343.81,
+    24585.46, 26254.49
+  ),
+  vtn_maximo = c(
+    92381.53, 61461.17, 33262.68, 35520.78, 92381.53,
+    58641.62, 33262.68, 35520.78
+  ),
+  origem = "Abadia dos Dourados, Araguari, Araporã, Cachoeira Dourada, Campina Verde,
+Canápolis, Capinópolis, Cascalho Rico, Centralina, Douradoquara, Estrela do Sul,
+Grupiara, Gurinhatã, Indianópolis, Ipiaçu, Iraí de Minas, Ituiutaba, Monte Alegre de
+Minas, Monte Carmelo, Prata, Romaria, Santa Vitória, Tupaciguara, Uberlândia
+"
+)
+)
+
+uberaba_a <- data.frame(mrt= "Uberaba",tipologia_de_uso = c(
+  "Geral",
+  "Agrícola",
+  "Pecuária",
+  "Exploração Mista",
+  "Agricola  -  Café",
+  "Agrícola  -  Grãos Diversos",
+  "Pecuária  -  Bovino Pastagem Plantada",
+  "Exploração Mista  -  Agricultura + Pecuária"
+),
+nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+vti_media = c(
+  47851.62, 68030.94, 32846.87, 40766.68, 93437.81,
+  69943.96, 32846.87, 40766.68
+),
+vti_minimo = c(
+  27919.84, 57826.3, 27919.84, 34651.67, 79422.14,
+  59452.37, 27919.84, 34651.67
+),
+vti_maximo = c(
+  107453.48, 78235.58, 37773.9, 46881.68, 107453.48,
+  80435.55, 37773.9, 46881.68
+),
+vtn_media = c(
+  41552.09, 59611.61, 27526.11, 35670.97, 72809.09,
+  63302.35, 27526.11, 35670.97
+),
+vtn_minimo = c(
+  23397.2, 50669.87, 23397.2, 30320.33, 61887.73,
+  53807, 23397.2, 30320.33
+),
+vtn_maximo = c(
+  83730.45, 68553.35, 31655.03, 41021.62, 83730.45,
+  72797.7, 31655.03, 41021.62
+),
+origem = "Água Comprida, Araxá, Campo Florido, Campos Altos, Carneirinho, Comendador Gomes,
+Conceição das Alagoas, Conquista, Delta, Fronteira, Frutal, Ibiá, Itapagipe, Iturama,
+Limeira do Oeste, Nova Ponte, Pedrinópolis, Perdizes, Pirajuba, Planura, Pratinha,
+Sacramento, Santa Juliana, Santa Rosa da Serra, São Francisco de Sales, Tapira,
+Uberaba, União de Minas, Veríssimo
+"
+)
+
+montes_claros_a <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS MONTES CLAROS (MRT - 601)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Vegetação nativa",
+    "Floresta Plantada",
+    "Pecuária - Bovino Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Vegetação nativa - Cerrado",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Floresta Plantada - Silvicultura"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    4494.38, 4471.47, 5119.64, 2317.88, 4830.79, 4010.54, 7520.59, 2317.88,
+    5119.64, 4830.79
+  ),
+  vti_minimo = c(
+    1004.43, 1498.27, 2347.62, 1004.43, 2986.89, 1498.27, 4210.53, 1004.43,
+    2347.62, 2986.89
+  ),
+  vti_maximo = c(
+    11428.57, 9846.60, 20000.00, 3347.98, 7398.45, 6400.00, 12000.00, 3347.98,
+    20000.00, 7398.45
+  ),
+  vtn_media = c(
+    3410.35, 3416.35, 5119.64, 2017.10, 3611.81, 3023.61, 5509.17, 2017.10,
+    5119.64, 3611.81
+  ),
+  vtn_minimo = c(
+    1004.43, 1315.55, 2239.28, 1004.43, 2881.84, 1315.55, 3368.42, 1004.43,
+    2239.28, 2881.84
+  ),
+  vtn_maximo = c(
+    8000.00, 6892.62, 8000.00, 3347.98, 4013.54, 4480.00, 8401.59, 3347.98,
+    8000.00, 4013.54
+  ),
+  origem = "Berizal, Bocaiúva, Bonito De Minas, Botumirim, Brasília De Minas, Buritizeiro, Campo
+Azul, Capitão Enéas, Catuti, Claro Dos Poções, Cônego Marinho, Coração De Jesus,
+Cristália, Curral De Dentro, Engenheiro Navarro, Espinosa, Francisco Dumont, Francisco
+Sá, Fruta De Leite, Gameleiras, Glaucilândia, Grão Mogol, Guaraciama, Ibiaí, Ibiracatu,
+Icaraí De Minas, Indaiabira, Itacambira, Itacarambi, Jaíba, Janaúba, Januária,
+Japonvar, Jequitaí, Joaquim Felício, Josenópolis, Juramento, Juvenília, Lagoa Dos
+Patos, Lassance, Lontra, Luislândia, Mamonas, Manga, Matias Cardoso, Mato Verde,
+Mirabela, Miravânia, Montalvânia, Monte Azul, Montes Claros, Montezuma, Ninheira,
+Nova Porteirinha, Novorizonte, Olhos - d'Água, Padre Carvalho, Pai Pedro, Patis, Pedras
+De Maria Da Cruz, Pirapora, Ponto Chique, Porteirinha, Riacho Dos Machados, Rio Pardo
+De Minas, Rubelita, Salinas, Santa Cruz De Salinas, Santa Fé De Minas, Santo Antônio Do
+Retiro, São Francisco, São João Da Lagoa, São João Da Ponte, São João Das Missões, São
+João Do Pacuí, São João Do Paraíso, São Romão, Serranópolis De Minas, Taiobeiras,
+Ubaí, Vargem Grande Do Rio Pardo, Várzea Da Palma, Varzelândia e Verdelândia"
+)
+
+patos_a <- data.frame(
+  mrt = "Patos",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola - Café",
+    "Agrícola - Grãos Diversos"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2),
+  vti_media = c(
+    30279.72, 75156.92, 16115.51, 45296.70, 85261.33, 68486.65
+  ),
+  vti_minimo = c(
+    2830.19, 31557.69, 2830.19, 19672.13, 31557.69, 40909.09
+  ),
+  vti_maximo = c(
+    80000.00, 120000.00, 34042.55, 64748.20, 120000.00, 108000.00
+  ),
+  vtn_media = c(
+    27211.38, 68204.29, 13742.28, 38713.12, 71310.40, 66133.55
+  ),
+  vtn_minimo = c(
+    2295.60, 31557.69, 2295.60, 8743.17, 31557.69, 39745.45
+  ),
+  vtn_maximo = c(
+    79166.67, 107449.54, 29361.70, 62158.27, 93000.00, 107449.54
+  ),
+  origem = "Arapuá, Carmo do Paranaíba, Coromandel, Cruzeiro da Fortaleza, Guarda - Mor,
+Guimarânia, João Pinheiro, Lagamar, Lagoa Formosa, Lagoa Grande, Matutina,
+Paracatu, Patos de Minas, Patrocínio, Presidente Olegário, Rio Paranaíba, São Gonçalo
+do Abaeté, São Gotardo, Serra do Salitre, Tiros, Varjão de Minas, Vazante. "
+)
+
+atlas23 <- rbind(
+  pouso_alegre_a,
+  barbacena_a,
+  jf_a,
+  tres_marias_a,
+  timoteo_a,
+  gov_valdares_a,
+  gov_valdares_a2,
+  formoso_a,
+  unai_a,
+  arinos_a,
+  divinopolis_a,
+  varginha_a,
+  uberlandia_a,
+  uberaba_a,
+  montes_claros_a,
+  patos_a
+)
+  atlas23$ano <- 2023
 
 # Consolidação final dos data.frames
 MG22 <- rbind(
@@ -671,7 +1183,7 @@ MG22 <- rbind(
 MG2020$ano <- 2020
 MG22$ano <- 2022
 
-MGTEMPORAL <- rbind(MG2020, MG22)
+MGTEMPORAL <- rbind(MG2020, MG22, atlas23)
 MGTEMPORAL$estado <- 31 
 MGTEMPORAL$regiao <- "sudeste" 
 

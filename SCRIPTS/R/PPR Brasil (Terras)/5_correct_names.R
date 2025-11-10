@@ -47,7 +47,11 @@ df_novo3 <-df_novo3 %>%
 
 #dep <- df_novo2 |> filter(is.na(df_novo2$UF))
 
+condicao_dfi <- which(tolower(trimws(df_novo3$origem)) == "sao bento do sapucai" & 
+                        (df_novo3$UF == "MG" | is.na(df_novo3$UF)))
 
+# 2. A Correção
+df_novo3$UF[condicao_dfi] <- "SP"
 
 
 
@@ -128,15 +132,11 @@ df_novo3$origem[condicao_df] <- "Brasília"
 condicao_monte_alegre <- tolower(trimws(df_novo3$origem)) == "monte alegre" & df_novo3$UF == "GO"
 df_novo3$origem[condicao_monte_alegre] <- "Monte Alegre de Goiás"
 
-
-
 df_novo3 <- df_novo3 %>%
   mutate(origem = recode(origem,
                          "coutocantins magalhaes" = "couto magalhães",
                          "portocantins nacional" = "porto nacional"
   ))
-
-
 
 
 
@@ -159,11 +159,12 @@ base_colunas_limpas <- corrig %>%
 resultadob <- base_colunas_limpas %>% 
   incluir_codigo_ibge()
 
-new14 <- resultadob |> filter(is.na(resultadob$id_municipio)) |> distinct(origem, UF.x,df, original, ano) 
+new14 <- resultadob |> filter(is.na(resultadob$id_municipio)) |> distinct(origem, uf_join, UF.x,df, original, ano) 
 
 
 resltpareado <- resultadob |> select(-c( UF.y, original, uf_join, chave_suja, distancia, id_municipio.y, manual, atencao, existia_1991, existia_2010, existia_2010, uf_join.y,
                                         origem_sem_acento, existia_2000, origem))
+
 
 
 resultadof <- resltpareado |> select(muni_join, id_municipio, tipologia_de_uso ,UF.x, ano, vti_media, vti_minimo, vti_maximo, vtn_media, vtn_minimo, vtn_minimo, vtn_maximo,df, nivel)  
