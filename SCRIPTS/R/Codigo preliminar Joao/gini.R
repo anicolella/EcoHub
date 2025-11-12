@@ -28,6 +28,15 @@ ginis <- df_limpo |>
     gini_calculado = gini(uc_vti_media)
   )
 
+gines <- df_limpo |>
+  # 1. Agrupe pelas UFs (sem o df_limpo$)
+  group_by(SIGLA_UF) |> 
+  
+  # 2. Use summarise() para "resumir" cada grupo em um único valor
+  #    Aqui nós damos um nome para a nova coluna (ex: gini_uf)
+  summarise(
+    gini_calculado = gini(uc_vtin_media)
+  )
 
 # --- PASSO 2: Baixar o mapa dos estados ---
 # Vamos usar o geobr para pegar as formas de todos os estados (ano 2020)
@@ -42,6 +51,10 @@ mapa_brasil <- read_state(code_state = "all", year = 2020)
 
 mapa_com_dados <- left_join(mapa_brasil, 
                             ginis, 
+                            by = c("abbrev_state" = "SIGLA_UF"))
+
+mapa_com_dados2 <- left_join(mapa_brasil, 
+                            gines, 
                             by = c("abbrev_state" = "SIGLA_UF"))
 
 # Dê uma olhada no resultado:
@@ -68,4 +81,25 @@ ggplot(data = mapa_com_dados) +
        fill = "Gini") +
   theme_minimal()
     
-?gini()    
+ggplot(data = mapa_com_dados2) +
+  
+  # geom_sf desenha o mapa.
+  # Usamos 'aes(fill = ...)' para dizer qual coluna deve definir a cor
+  geom_sf(aes(fill = gini_calculado)) +
+  
+  # (Opcional) Define um esquema de cores mais bonito
+  # scale_fill_viridis_c(option = "plasma", direction = -1)
+  
+  # (Opcional) Um esquema de cores azul simples
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  
+  # (Opcional) Adiciona títulos e remove o fundo cinza
+  labs(title = "Índice de Gini por Estado",
+       fill = "Gini") +
+  theme_minimal()
+
+ggplot(ginis, aes(x = SIGLA_UF, y = gini_calculado)) +
+  geom_point()  # plota os pontos de dispersão
+
+ggplot(gines, aes(x = SIGLA_UF, y = gini_calculado)) +
+  geom_point()  # plota os pontos de dispersão
