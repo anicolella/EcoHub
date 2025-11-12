@@ -143,3 +143,4 @@ d4map <- d4|>
 
 plot(d4map)
 
+write.csv(d4)

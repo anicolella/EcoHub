@@ -724,6 +724,172 @@ Braz"
 #Esse mercado também não foi observado no ano de 2024. 
 #Link: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/PPRs_SR09PR_2024.pdf
 
+### Atlas 2023 #####
+MRT901_2023 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS LITORAL/METROPOLITANO (MRT - 901)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agricultura",
+    "Silvicultura",
+    "Vegetação Nativa",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade",
+    "Agricultura - Perene",
+    "Vegetação Nativa - Mata"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    12354.14, 14042.63, 44787.13, 10338.18, 5765.74, 14042.63, 120971.07,
+    43280.50, 10583.72, 5765.74
+  ),
+  vti_minimo = c(
+    4900.88, 11936.24, 38069.06, 8787.46, 4900.88, 11936.24, 102825.41,
+    36788.42, 8996.17, 4900.88
+  ),
+  vti_maximo = c(
+    139116.74, 16149.03, 51505.20, 11888.91, 6630.60, 16149.03, 139116.74,
+    49772.57, 12171.28, 6630.60
+  ),
+  vtn_media = c(
+    11150.98, 13088.56, 35078.39, 10032.21, 4543.72, 13088.56, 115971.07,
+    35977.53, 9470.56, 5292.79
+  ),
+  vtn_minimo = c(
+    4498.88, 11125.28, 29816.64, 8527.38, 3862.16, 11125.28, 98575.41,
+    30580.90, 8049.98, 4498.88
+  ),
+  vtn_maximo = c(
+    133366.74, 15051.85, 40340.15, 11537.04, 5225.27, 15051.85, 133366.74,
+    41374.16, 10891.14, 6086.71
+  ),
+  origem = "Adrianópolis, Almirante Tamandaré, Antonina, Bocaiuva do Sul, Campina Grande do Sul,
+Campo Largo, Campo Magro, Cerro Azul, Colombo, Curitiba, Doutor Ulysses,
+Guaraqueçaba, Guaratuba, Itaperuçu, Matinhos, Morretes, Paranaguá, Pinhais,
+Piraquara, Pontal do Paraná, Quatro Barras, Rio Branco do Sul, São José dos Pinhais,
+Tijucas do Sul e Tunas do Paraná.
+"
+)
+
+MRT902_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ... DE BAIXO (MRT - 902)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Agricultura",
+    "Floresta Plantada",
+    "Vegetação Nativa",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Baixa Capacidade",
+    "Exploração Mista - Agricultura + Pecuária - Média Capacidade",
+    "Exploração Mista - Agricultura + Silvicultura - Média Capacidade",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade",
+    "Agricultura - Grãos Diversos - Baixa Capacidade",
+    "Agricultura - Perene",
+    "Vegetação Nativa - Mata"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    51212.24, 39426.35, 56561.57, 70777.55, 19433.80, 13643.78, 46349.94,
+    35192.48, 57212.47, 62899.11, 118671.03, 77376.02, 38875.91,
+    23729.80, 13643.78
+  ),
+  vti_minimo = c(
+    11597.21, 33512.40, 48077.33, 60160.92, 16518.73, 11597.21, 39397.45,
+    29913.61, 48630.60, 53464.25, 100870.38, 65769.61, 33044.53,
+    20170.33, 11597.21
+  ),
+  vti_maximo = c(
+    136471.69, 45340.30, 65045.80, 81394.18, 22348.87, 15690.34, 53302.43,
+    40471.35, 65794.34, 72333.98, 136471.69, 88982.42, 44707.30,
+    27289.27, 15690.34
+  ),
+  vtn_media = c(
+    42661.62, 32092.48, 47689.00, 65673.59, 18710.24, 13496.20, 33847.56,
+    29459.85, 47689.29, 47015.01, 115227.51, 71147.00, 33790.75,
+    20424.02, 13496.20
+  ),
+  vtn_minimo = c(
+    11471.77, 27278.61, 40464.25, 55822.55, 15903.71, 11471.77, 28770.43,
+    25040.88, 40535.90, 39962.76, 97943.38, 60474.95, 28722.14,
+    17360.41, 11471.77
+  ),
+  vtn_maximo = c(
+    132511.63, 36906.35, 54745.76, 75524.63, 21516.78, 15520.63, 38924.70,
+    33878.83, 54842.68, 54067.26, 132511.63, 81819.05, 38859.37,
+    23487.62, 15520.63
+  ),
+  origem = "Agudos do Sul, Antônio Olinto, Araucária, Balsa Nova, Campo do Tenente, Carambeí,
+Castro, Contenda, Fazenda Rio Grande, Fernandes Pinheiro, Guamiranga, Imbaú,
+Imbituva, Ipiranga, Irati, Ivaí, Lapa, Mallet, Mandirituba, Palmeira, Paula Freitas, Paulo
+Frontin, Piên, Piraí do Sul, Ponta Grossa, Porto Amazonas, Quitandinha, Rebouças, Rio
+Azul, Rio Negro, São João do Triunfo, São Mateus do Sul, Teixeira Soares, Tibagi"
+)
+
+MRT903_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CENTRO SUL (MRT - 903)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Agricultura",
+    "Floresta Plantada",
+    "Vegetação Nativa",
+    "Pecuária - Bovino Pastagem Plantada - Alta Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Baixa",
+    "Exploração Mista - Agricultura + Pecuária - Média Capacidade",
+    "Exploração Mista - Agricultura + Silvicultura - Média Capacidade",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade",
+    "Agricultura - Grãos Diversos - Baixa Capacidade",
+    "Vegetação Nativa - Mata",
+    "Floresta Plantada - Silvicultura"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    33388.91, 25267.67, 43610.71, 70009.54, 15567.22, 6972.36, 36815.53,
+    27631.17, 22886.33, 47700.14, 29726.94, 104773.15, 68317.65,
+    54132.48, 5466.44, 15567.22
+  ),
+  vti_minimo = c(
+    4646.47, 21477.52, 37069.10, 59508.11, 13232.14, 5926.50, 31293.20,
+    23486.50, 19453.38, 40545.12, 25267.90, 89057.17, 58070.00,
+    46012.61, 4646.47, 13232.14
+  ),
+  vti_maximo = c(
+    120489.12, 29057.82, 50152.31, 80510.97, 17902.30, 8018.21, 42337.85,
+    31775.85, 26319.28, 54855.17, 34185.98, 120489.12, 78565.29,
+    62252.35, 6286.41, 17902.30
+  ),
+  vtn_media = c(
+    28468.68, 22385.99, 36243.10, 66925.78, 14681.81, 5604.18, 29444.45,
+    22814.89, 20085.60, 41415.03, 26691.67, 104773.15, 63206.99,
+    52829.76, 5466.44, 14681.81
+  ),
+  vtn_minimo = c(
+    4440.39, 19028.09, 30806.63, 56886.91, 12479.53, 4763.55, 25027.78,
+    19392.66, 17072.76, 35202.78, 22687.92, 89057.17, 53725.94,
+    44905.29, 4646.47, 12479.53
+  ),
+  vtn_maximo = c(
+    120489.12, 25743.89, 41679.56, 76964.65, 16884.08, 6444.81, 33861.12,
+    26237.12, 23098.44, 47627.29, 30695.42, 120489.12, 72688.04,
+    60754.22, 6286.41, 16884.08
+  ),
+  origem = "Arapoti, Bituruna, Cândido de Abreu, Coronel Domingos Soares, Cruz Machado, Curiúva,
+General Carneiro, Inácio Martins, Jaguariaíva, Ortigueira, Palmas, Pinhão, Porto Vitória,
+Prudentópolis, Reserva, Reserva do Iguaçu, Rosário do Ivaí, Sapopema, Sengés, Telêmaco
+Borba, Turvo, União da Vitória e Ventania."
+)
+
+
+
+
+
 ### Consolidação dos dados ####
 PR17 <- rbind(
   PRmrt_noroeste,
