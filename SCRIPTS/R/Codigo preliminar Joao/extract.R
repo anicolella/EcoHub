@@ -5,7 +5,7 @@ library(dplyr)
 # --- Configuração ---
 # -----------------------------------------------------------------
 caminho_pdf <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\ATLAS_MERCADO_TERRAS_2023.pdf"
-pagina_alvo <- 38
+pagina_alvo <- 15
 nome_mrt <- "tres marias"
 
 # -----------------------------------------------------------------
@@ -57,19 +57,28 @@ if (num_areas >= 1) {
   print(head(df_tabela_1))
 }
 
-# Renomeia as colunas
+
+
+#names(df_tabela_1) <- c(
+ # 'tipologia_de_uso','abacate' ,'nivel', 'vti_media',
+  #'vti_minimo', 'vti_maximo', 'vtn_media',
+  #'vtn_minimo', 'vtn_maximo'
+#-)
+
 names(df_tabela_1) <- c(
-  'tipologia_de_uso', 'nivel', 'vti_media',
+  'tipologia_de_uso','nivel', 'vti_media',
   'vti_minimo', 'vti_maximo', 'vtn_media',
   'vtn_minimo', 'vtn_maximo'
 )
+
+
 
 # Com dplyr
 colunas_para_multiplicar <- c("vti_media", "vti_minimo", "vti_maximo", 
                               "vtn_media", "vtn_minimo", "vtn_maximo")
 
 # Multiplica todas as colunas especificadas por 1000
-df_nov <- df_tabela_1 %>%
+df_nov <- df_tabela_2%>%
   mutate(across(all_of(colunas_para_multiplicar), ~ . * 1000))
 
 print("--- DADOS FINAIS (dput) ---")
