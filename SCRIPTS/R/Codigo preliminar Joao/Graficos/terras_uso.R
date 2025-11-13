@@ -2,8 +2,6 @@ library(tidyverse)
 library(geobr)
 library(ipeadatar)
 
-read.csv()
-
 read_typ <- d |> 
   filter(nivel == 1) |> 
  # pull(tipologia_de_uso) |> 
