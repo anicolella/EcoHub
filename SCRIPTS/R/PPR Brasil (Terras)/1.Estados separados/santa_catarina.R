@@ -1585,8 +1585,230 @@ MRT1012_2024 <- data.frame(
   vtn_maximo = c(
     272727.27, 272727.27, 54000.00, 150000.00, 150000.00, 272727.27,
     16666.67, 79268.29, 48611.11, 56338.03, 150000.00
-  )
+  ),
+  origem = "Agrolândia, Atlanta, Chapada do Lageado, Imbuia, ituporanga, Petrolândia, Vidal Ramos"
 )
+
+MRT1013_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS RIO DO SUL (MRT - 1013)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Silvicultura",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Agrícola - Arroz - Irrigado",
+    "Agrícola - Fumo",
+    "Agrícola - Diversificada",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Alta Capacidade",
+    "Exploração Mista - Agrícola + Silvicultura + Pecuária",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Exploração Mista - Agrícola + Silvicultura",
+    "Exploração Mista - Pecuária + Silvicultura",
+    "Silvicultura - Floresta Plantada - Pinus",
+    "Vegetação Nativa - Mata Atlântica",
+    "Não Agrícola - Uso recreativo/lazer"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    44041.89, 51107.78, 52067.00, 31980.88, 21966.46, 5197.17, 54780.62,
+    61607.14, 43691.30, 35593.64, 48674.68, 62243.94, 24150.64,
+    39729.74, 24047.76, 31451.76, 21966.46, 5197.17, 54780.62
+  ),
+  vti_minimo = c(
+    2576.77, 3857.14, 7280.00, 4000.00, 6666.67, 2576.77, 23333.33,
+    31645.57, 4054.05, 3857.14, 7345.95, 7280.00, 14678.50, 11363.64,
+    4000.00, 7469.88, 6666.67, 2576.77, 23333.33
+  ),
+  vti_maximo = c(
+    166666.67, 166666.67, 150000.00, 100000.00, 50000.00, 10000.00,
+    90000.00, 109756.10, 90000.00, 135000.00, 126562.50, 150000.00,
+    50000.00, 100000.00, 53600.00, 100000.00, 50000.00, 10000.00,
+    90000.00
+  ),
+  vtn_media = c(
+    42791.65, 49935.15, 50187.64, 31351.89, 20867.50, 5197.17, 52494.91,
+    61607.14, 42215.20, 34036.29, 48595.32, 54964.60, 24150.64,
+    38302.71, 23929.81, 31451.76, 20867.50, 5197.17, 52494.91
+  ),
+  vtn_minimo = c(
+    2576.77, 3857.14, 7280.00, 4000.00, 6666.67, 2576.77, 23333.33,
+    31645.57, 4054.05, 3857.14, 7345.95, 7280.00, 14678.50, 11363.64,
+    4000.00, 7469.88, 6666.67, 2576.77, 23333.33
+  ),
+  vtn_maximo = c(
+    166666.67, 166666.67, 150000.00, 100000.00, 50000.00, 10000.00,
+    90000.00, 109756.10, 90000.00, 135000.00, 126562.50, 150000.00,
+    50000.00, 100000.00, 53600.00, 100000.00, 50000.00, 10000.00,
+    90000.00
+  ),
+  origem = "Agronômica, Aurora, Braço do Trombudo, Dona Emma, Ibirama, José Boiteux, Laurentino,
+Lontras, Mirim Doce, Pouso Redondo, Presidente Getúlio, Presidente Nereu, Rio do
+Campo, Rio do Oeste, Rio do Sul, Salete, Taió, Trombudo Central, Vitor Meireles e
+Witmarsum."
+)
+
+MRT1014_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS BLUMENAU (MRT - 1014)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Silvicultura",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Agrícola - Arroz - Irrigado",
+    "Pecuária - Bovino Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Alta Capacidade",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Exploração Mista - Agrícola + Silvicultura",
+    "Silvicultura - Floresta Plantada - Pinus",
+    "Vegetação Nativa - Mata Atlântica",
+    "Não Agrícola - Uso recreativo/lazer"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    71071.87, 67010.98, 74208.96, 57192.76, 26039.68, 5783.57, 107028.08,
+    34272.43, 24762.58, 98932.15, 46466.23, 66331.40, 26039.68,
+    5783.57, 107028.08
+  ),
+  vti_minimo = c(
+    878.05, 10000.00, 16875.00, 7192.90, 10305.76, 878.05, 10000.00,
+    19280.21, 16875.00, 22000.00, 8333.33, 33928.57, 10305.76, 878.05,
+    10000.00
+  ),
+  vti_maximo = c(
+    394736.84, 260869.57, 179856.12, 130000.00, 45000.00, 11111.11,
+    394736.84, 70000.00, 28841.30, 179856.12, 113333.33, 100000.00,
+    45000.00, 11111.11, 394736.84
+  ),
+  vtn_media = c(
+    54367.51, 55727.62, 61949.83, 54930.39, 24789.68, 5783.57, 70000.58,
+    34272.43, 23929.24, 80960.13, 45674.89, 62668.40, 24789.68,
+    5783.57, 70000.58
+  ),
+  vtn_minimo = c(
+    878.05, 10000.00, 14000.00, 5381.82, 10305.76, 878.05, 10000.00,
+    19280.21, 14375.00, 14000.00, 5381.82, 33928.57, 10305.76, 878.05,
+    10000.00
+  ),
+  vtn_maximo = c(
+    210350.25, 152173.91, 136690.65, 130000.00, 45000.00, 11111.11,
+    118000.00, 70000.00, 28841.30, 136690.65, 113333.33, 100000.00,
+    45000.00, 11111.11, 118000.00
+  ),
+  origem = "Apiúna, Ascurra, Benedito Novo, Blumenau, Botuverá, Brusque, Doutor Pedrinho, Gaspar,
+Guabiruba, Indaial, Luiz Alves, Pomerode, Rio dos Cedros, Rodeio e Timbó."
+)
+
+MRT1015_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS JOINVILLE (MRT - 1015)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Pecuária",
+    "Silvicultura",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Agrícola - Arroz - Irrigado",
+    "Agrícola - Fruticultura Banana",
+    "Pecuária - Bovino Pastagem Plantada - Alta Capacidade",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Silvicultura - Floresta Plantada - Eucalipto",
+    "Vegetação Nativa - Mata Atlântica",
+    "Não Agrícola - Uso recreativo/lazer"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    182794.98, 84363.06, 164622.63, 102163.90, 100955.30, 38370.04,
+    294426.82, 91786.40, 61613.43, 164622.63, 112930.40, 100955.30,
+    38370.04, 297190.99
+  ),
+  vti_minimo = c(
+    1567.89, 15308.42, 40003.13, 69864.41, 5668.54, 1567.89, 12631.58,
+    17889.08, 15308.42, 40003.13, 70000.00, 5668.54, 1567.89, 12631.58
+  ),
+  vti_maximo = c(
+    786407.77, 196678.32, 497368.42, 160000.00, 200000.00, 91875.00,
+    782608.70, 196678.32, 106228.17, 497368.42, 160000.00, 200000.00,
+    91875.00, 782608.70
+  ),
+  vtn_media = c(
+    174001.61, 79927.70, 156217.17, 95902.13, 96491.01, 38370.04,
+    267976.19, 85475.25, 61613.43, 156217.17, 105523.00, 96491.01,
+    38370.04, 269087.19
+  ),
+  vtn_minimo = c(
+    1567.89, 15308.42, 38379.23, 67039.23, 5668.54, 1567.89, 12201.47,
+    17889.08, 15308.42, 38379.23, 70000.00, 5668.54, 1567.89, 12201.47
+  ),
+  vtn_maximo = c(
+    786407.77, 196678.32, 418421.05, 137777.78, 200000.00, 91875.00,
+    637681.16, 196678.32, 106228.17, 418421.05, 137777.78, 200000.00,
+    91875.00, 637681.16
+  ),
+  origem = " Araquari, Balneário Camboriú, Balneário Barra do Sul, Barra Velha, Bombinhas, Camboriú,
+Corupá, Garuva, Guaramirim, Ilhota, Itajaí, Itapema, Itapoá, Jaraguá do Sul, Joinville,
+Massaranduba, Navegantes, Penha, Balneário Piçarras, Porto Belo, São Francisco do Sul,
+São João do Itaperiú e Schroeder."
+)
+
+MRT1016_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CANOINHAS (MRT - 1016)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Silvicultura",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Agrícola - Grãos Diversos",
+    "Pecuária - Bovino Pastagem Plantada - Baixa Capacidade",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Exploração Mista - Pecuária + Silvicultura",
+    "Silvicultura - Floresta Plantada - Pinus",
+    "Vegetação Nativa - Mata Atlântica",
+    "Não Agrícola - Uso recreativo/lazer"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    44257.36, 69628.35, 34314.93, 42417.14, 20924.45, 24249.50, 66310.82,
+    69628.35, 34314.93, 42756.68, 41143.86, 20924.45, 24249.50, 66310.82
+  ),
+  vti_minimo = c(
+    3719.01, 17727.27, 3719.01, 14480.20, 11157.02, 9677.42, 29325.51,
+    17727.27, 3719.01, 20454.55, 14480.20, 11157.02, 9677.42, 29325.51
+  ),
+  vti_maximo = c(
+    151515.15, 144871.79, 63243.24, 87603.31, 37190.08, 33471.07,
+    151515.15, 144871.79, 63243.24, 87603.31, 81196.58, 37190.08,
+    33471.07, 151515.15
+  ),
+  vtn_media = c(
+    43369.29, 69038.03, 34314.93, 42417.14, 19511.22, 24249.50, 66310.82,
+    69038.03, 34314.93, 42756.68, 41143.86, 19511.22, 24249.50, 66310.82
+  ),
+  vtn_minimo = c(
+    3719.01, 17727.27, 3719.01, 14480.20, 8518.52, 9677.42, 29325.51,
+    17727.27, 3719.01, 20454.55, 14480.20, 8518.52, 9677.42, 29325.51
+  ),
+  vtn_maximo = c(
+    151515.15, 144871.79, 63243.24, 87603.31, 32000.00, 33471.07,
+    151515.15, 144871.79, 63243.24, 87603.31, 81196.58, 32000.00,
+    33471.07, 151515.15
+  ),
+  origem = "Bela Vista do Toldo, Campo Alegre, Canoinhas, Irineópolis, Itaiópolis, Mafra, Major Vieira,
+Monte Castelo, Papanduva, Porto União, Rio Negrinho, Santa Terezinha, São Bento do Sul,
+Timbó Grande e Três Barras."
+)
+
+
 
 ### Consolidação dos dados #####
 SC2017 <- rbind(
@@ -1615,6 +1837,27 @@ SC22 <- rbind(
 )
 SC22$ano <- 2022
 
+SC23 <- rbind(
+  MRT1001_2024,
+  MRT1002_2024,
+  MRT1003_2024,
+  MRT1004_2024,
+  MRT1005_2024,
+  MRT1006_2024,
+  MRT1007_2024,
+  MRT1008_2024,
+  MRT1009_2024,
+  MRT1010_2024,
+  MRT1011_2024,
+  MRT1012_2024,
+  MRT1013_2024,
+  MRT1014_2024,
+  MRT1015_2024,
+  MRT1016_2024
+)
+
+SC23$ano <- 2023
+
 SC2019<- rbind(
   SCMRT_Planalto_Serrano_2016_2019,
   SCMRT_Xanxere_2016,
@@ -1632,7 +1875,8 @@ SC22$ano <- 2022
 SCTEMPORAL <- rbind(
   SC2019,
   SC2017,
-  SC22
+  SC22,
+  SC23
 )
 SCTEMPORAL$estado <-  42
 SCTEMPORAL$regiao <- "sul"
