@@ -939,6 +939,105 @@ ESMRT_Sul_2024 <- data.frame(
   origem = "Alegre, Apiacá, Atílio Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha, Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado"
   )
 
+####Atlas 23####
+MRT2001_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NORTE (MRT-2001)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Pecuária Diversos - Alta Capacidade",
+    "Pecuária Diversos - Baixa Capacidade",
+    "Exploração Mista - Diversificada"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    24657.00, 23282.00, 33363.00, 26118.00, 14143.00, 33363.00
+  ),
+  vti_minimo = c(
+    12021.55, 19789.70, 28358.55, 22200.30, 12021.55, 28358.55
+  ),
+  vti_maximo = c(
+    38367.45, 26774.30, 38367.45, 30035.70, 16264.45, 38367.45
+  ),
+  vtn_media = c(
+    21033.00, 20557.00, 24044.00, 23286.00, 11765.00, 24044.00
+  ),
+  vtn_minimo = c(
+    10000.25, 17473.45, 20437.40, 19793.10, 10000.25, 20437.40
+  ),
+  vtn_maximo = c(
+    27650.60, 23640.55, 27650.60, 26778.90, 13529.75, 27650.60
+  ),
+  origem = "Conceição da Barra, Ecoporanga, Montanha, Mucurici, Pedro Canário e Ponto Belo"
+)
+
+MRT2002_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NOROESTE (MRT-2002)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola - Produção Diversificada",
+    "Pecuária - Diversos",
+    "Exploração Mista - Diversificada"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    38167.00, 81220.00, 29453.00, 46117.00, 81220.00, 29453.00, 46117.00
+  ),
+  vti_minimo = c(
+    25035.05, 69037.00, 25035.05, 39199.45, 69037.00, 25035.05, 39199.45
+  ),
+  vti_maximo = c(
+    53034.55, 93403.00, 33870.95, 53034.55, 93403.00, 33870.95, 53034.55
+  ),
+  vtn_media = c(
+    29041.00, 42779.00, 26334.00, 31284.00, 42779.00, 26334.00, 31284.00
+  ),
+  vtn_minimo = c(
+    22383.90, 36362.15, 22383.90, 26591.40, 36362.15, 22383.90, 26591.40
+  ),
+  vtn_maximo = c(
+    49195.85, 49195.85, 30284.10, 35976.60, 49195.85, 30284.10, 35976.60
+  ),
+  origem = "Boa Esperança, Linhares, Pinheiros e São Mateus."
+)
+
+MRT2003_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CENTRO-NORTE II (MRT-2003)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Produção Diversificada",
+    "Pecuária - Diversos"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    80414.00, 87993.00, 28115.00, 87993.00, 28115.00
+  ),
+  vti_minimo = c(
+    23897.75, 74794.05, 23897.75, 74794.05, 23897.75
+  ),
+  vti_maximo = c(
+    92476.10, 101192.00, 32332.25, 101192.00, 32332.25
+  ),
+  vtn_media = c(
+    54588.00, 45869.00, 26447.00, 45869.00, 26447.00
+  ),
+  vtn_minimo = c(
+    22479.95, 38988.65, 22479.95, 38988.65, 22479.95
+  ),
+  vtn_maximo = c(
+    52749.35, 52749.35, 30414.05, 52749.35, 30414.05
+  ),
+  origem = "Jaguaré, Governador Lindenberg, Marilândia, Rio Bananal, Sooretama e Vila Valério."
+)
+
+
+
 ###Consolidação dos Dados####
 ES16 <- rbind(
   ESMRT_Norte_2016,
