@@ -1289,6 +1289,98 @@ MRT2010_2024 <- data.frame(
   origem = "Divino de São Lourenço, Dores do Rio Preto, Guaçuí, Ibitirama e Muniz Freire"
 )
 
+MRT2011_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SUL (MRT-2011)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Produção Diversificada",
+    "Pecuária Diversos"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    24603.00, 36650.00, 23020.00, 36650.00, 23020.00
+  ),
+  vti_minimo = c(
+    19567.00, 31152.50, 19567.00, 31152.50, 19567.00
+  ),
+  vti_maximo = c(
+    42147.50, 42147.50, 26473.00, 42147.50, 26473.00
+  ),
+  vtn_media = c(
+    20329.00, 21117.00, 20071.00, 21117.00, 20071.00
+  ),
+  vtn_minimo = c(
+    17060.35, 17949.45, 17060.35, 17949.45, 17060.35
+  ),
+  vtn_maximo = c(
+    24284.55, 24284.55, 23081.65, 24284.55, 23081.65
+  ),
+  origem = "Alegre, Apiacá, Atilio Vivacqua, Bom Jesus do Norte, Cachoeiro de Itapemirim, Iconha,
+Jerônimo Monteiro, Mimoso do Sul, Muqui, Rio Novo do Sul e São José do Calçado"
+)
+
+MRT2012_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS LITORAL SUL (MRT-2012)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária Diversos"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    28291.00, 28590.00, 28590.00
+  ),
+  vti_minimo = c(
+    24047.35, 24301.50, 24301.50
+  ),
+  vti_maximo = c(
+    32878.50, 32878.50, 32878.50
+  ),
+  vtn_media = c(
+    25268.00, 25449.00, 25449.00
+  ),
+  vtn_minimo = c(
+    21477.80, 21631.65, 21631.65
+  ),
+  vtn_maximo = c(
+    29266.35, 29266.35, 29266.35
+  ),
+  origem = "Anchieta, Guarapari, Itapemirim, Marataízes, Piúma e Presidente Kennedy."
+)
+
+MRT2013_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS VITORIA E ENTORNO (MRT-2013)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária Diversos"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    33908.00, 32509.00, 32509.00
+  ),
+  vti_minimo = c(
+    27632.65, 27632.65, 27632.65
+  ),
+  vti_maximo = c(
+    38994.20, 37385.35, 37385.35
+  ),
+  vtn_media = c(
+    29163.00, 28488.00, 28488.00
+  ),
+  vtn_minimo = c(
+    24214.80, 24214.80, 24214.80
+  ),
+  vtn_maximo = c(
+    33537.45, 32761.20, 32761.20
+  ),
+  origem = "Cariacica, Serra, Viana, Vila Velha e Vitória"
+)
+
+
+
 ###Consolidação dos Dados####
 ES16 <- rbind(
   ESMRT_Norte_2016,
@@ -1352,6 +1444,22 @@ ES22 <- rbind(
   ESMRT_Sudoeste_II_2022,
   ESMRT_Litoral_Sul_2022,
   ESMRT_Sul_2022
+)
+
+ES23 <- rbind(
+  MRT2001_2024,
+  MRT2002_2024, 
+  MRT2003_2024,
+  MRT2004_2024,
+  MRT2005_2024,
+  MRT2006_2024,
+  MRT2007_2024,
+  MRT2008_2024,
+  MRT2009_2024,
+  MRT2010_2024, 
+  MRT2011_2024,
+  MRT2012_2024,
+  MRT2013_2024  
 )
 
 ES24 <- rbind(
