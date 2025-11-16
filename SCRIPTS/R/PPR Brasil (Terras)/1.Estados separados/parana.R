@@ -886,9 +886,238 @@ Prudentópolis, Reserva, Reserva do Iguaçu, Rosário do Ivaí, Sapopema, Sengé
 Borba, Turvo, União da Vitória e Ventania."
 )
 
+MRT904_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NORTE PIONEIRO (MRT - 904)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Agricultura",
+    "Pecuária - Bovino Pastagem Plantada - Alta Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Baixa Capacidade",
+    "Exploração Mista - Agricultura + Pecuária - Média Capacidade",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    62204.40, 56805.79, 68411.02, 65106.76, 57723.73, 61515.71, 33084.89,
+    68411.02, 122551.50, 56654.49
+  ),
+  vti_minimo = c(
+    28122.16, 48284.93, 58149.37, 55340.75, 49065.17, 52288.36, 28122.16,
+    58149.37, 104168.78, 48156.32
+  ),
+  vti_maximo = c(
+    140934.23, 65326.66, 78672.67, 74872.78, 66382.29, 70743.07, 38047.63,
+    78672.67, 140934.23, 65152.66
+  ),
+  vtn_media = c(
+    55000.95, 50284.31, 57200.49, 58167.55, 48778.99, 50750.13, 32031.72,
+    57200.49, 113753.13, 56168.50
+  ),
+  vtn_minimo = c(
+    27226.97, 42741.66, 48620.41, 49442.42, 41462.14, 43137.61, 27226.97,
+    48620.41, 96690.16, 47743.22
+  ),
+  vtn_maximo = c(
+    130816.10, 57826.96, 65780.56, 66892.69, 56095.84, 58362.65, 36836.48,
+    65780.56, 130816.10, 64593.77
+  ),
+  origem = "Carlópolis, Congonhinhas, Conselheiro Mairinck, Figueira, Guapirama, Ibaiti, Jaboti,
+Jacarezinho, Japira, Joaquim Távora, Jundiaí do Sul, Pinhalão, Quatiguá, Ribeirão Claro,
+Ribeirão do Pinhal, Salto do Itararé, Santana do Itararé, Santo Antônio da Platina, São José
+da Boa Vista, Siqueira Campos,Tomazina e Wenceslau Braz."
+)
 
+MRT905_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CENTRO (MRT - 905)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Agricultura",
+    "Silvicultura",
+    "Vegetação Nativa",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Baixa Capacidade",
+    "Exploração Mista - Agricultura + Pecuária - Média Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade",
+    "Vegetação Nativa - Mata"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    53172.54, 35185.59, 59172.08, 114661.98, 56907.24, 63016.53, 36453.21,
+    28962.76, 59172.08, 114860.58, 63016.53
+  ),
+  vti_minimo = c(
+    24618.34, 29907.75, 50296.27, 97462.68, 48371.15, 53564.05, 30985.23,
+    24618.34, 50296.27, 97631.49, 53564.05
+  ),
+  vti_maximo = c(
+    132089.66, 40463.43, 68047.89, 131861.27, 65443.32, 72469.01, 41921.19,
+    33307.17, 68047.89, 132089.66, 72469.01
+  ),
+  vtn_media = c(
+    43021.83, 33728.97, 58862.89, 112518.86, 29601.53, 63016.53, 33567.98,
+    23136.16, 58862.89, 113871.12, 63016.53
+  ),
+  vtn_minimo = c(
+    19665.74, 28669.62, 50033.46, 95641.03, 25161.30, 53564.05, 28532.78,
+    19665.74, 50033.46, 96790.45, 53564.05
+  ),
+  vtn_maximo = c(
+    130951.79, 38788.31, 67692.32, 129396.69, 34041.76, 72469.01, 38603.18,
+    26606.58, 67692.32, 130951.79, 72469.01
+  )
+  origem = "Alta Capacidademira do Paraná, Arapuã, Ariranha do Ivaí, Boa Ventura de São Roque,
+Campina do Simão, Candói, Cantagalo, Diamante do Sul, Goioxim, Grandes Rios,
+Guaraniaçu, Guarapuava, Espigão Alto do Iguaçu, Foz do Jordão, Ivaiporã, Jardim Alegre,
+Laranjal, Laranjeiras do Sul, Manoel Ribas, Marquinho, Mato Rico, Nova Laranjeiras, Nova
+Tebas, Palmital, Pitanga, Porto Barreiro, Quedas do Iguaçu, Rio Bonito do Iguaçu, Rio
+Branco do Ivaí, Santa Maria do Oeste e Virmond"
+)
 
+MRT906_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NORTE (MRT - 906)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Agricultura",
+    "Pecuária - Bovino Pastagem Plantada - Alta Capacidade",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Exploração Mista - Agricultura + Pecuária - Média Capacidade",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade",
+    "Agricultura - Perene"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    89554.81, 73768.01, 80566.68, 109201.54, 80901.26, 62127.46, 87172.43,
+    139269.55, 79562.63, 49135.09
+  ),
+  vti_minimo = c(
+    41764.83, 62702.81, 68481.68, 92821.31, 68766.07, 52808.34, 74096.57,
+    118379.12, 67628.24, 41764.83
+  ),
+  vti_maximo = c(
+    160159.99, 84833.21, 92651.68, 125581.77, 93036.45, 71446.58, 100248.29,
+    160159.99, 91497.03, 56505.36
+  ),
+  vtn_media = c(
+    83066.48, 66932.15, 71067.75, 106697.31, 74255.57, 59342.75, 75829.50,
+    138007.26, 76110.61, 49135.09
+  ),
+  vtn_minimo = c(
+    41764.83, 56892.33, 60407.59, 90692.71, 63117.24, 50441.34, 64455.07,
+    117306.17, 64694.02, 41764.83
+  ),
+  vtn_maximo = c(
+    158708.35, 76971.98, 81727.91, 122701.90, 85393.91, 68244.16, 87203.92,
+    158708.35, 87527.20, 56505.36
+  ),
+  origem = "Abatiá, Alvorada do Sul, Andirá, Ângulo, Apucarana, Arapongas, Assaí, Astorga,
+Bandeirantes, Barbosa Ferraz, Barra do Jacaré, Bela Vista do Paraíso, Boa Esperança, Bom
+Sucesso, Borrazópolis, Cafeara, Califórnia, Cambará, Cambé, Cambira, Campina da Lagoa,
+Campo Mourão, Centenário do Sul, Cornélio Procópio, Corumbataí do Sul, Cruzmaltina,
+Doutor Camargo, Engenheiro Beltrão, Faxinal, Fênix, Floraí, Floresta, Florestópolis, Godoy
+Moreira, Goioerê, Guaraci, Ibiporã, Iguaraçu, Iretama, Itambaracá, Itambé, Ivatuba,
+Jaguapitã, Jandaia do Sul, Jataizinho, Juranda, Kaloré, Leópolis, Lidianópolis, Londrina,
+Luiziana, Lunardelli, Lupionópolis, Mamborê, Mandaguaçu, Mandaguari, Marialva,
+Marilândia do Sul, Maringá, Marumbi, Mauá da Serra, Miraselva, Munhoz de Mello, Nossa
+Senhora das Graças, Nova América da Colina, Nova Cantu, Nova Fátima, Nova Santa
+Bárbara, Novo Itacolomi, Ourizona, Paiçandu, Peabiru, Pitangueiras, Porecatu, Prado
+Ferreira, Presidente Castelo Branco, Primeiro de Maio, Quarto Centenário, Quinta do Sol,
+Rancho Alegre, Rancho Alegre D'Oeste, Rio Bom, Rolândia, Roncador, Sabáudia, Santa
+Amélia, Santa Cecília do Pavão, Santa Fé, Santa Mariana, Santo Antônio do Paraíso, São
+Jerônimo da Serra, São João do Ivaí, São Jorge do Ivaí, São Pedro do Ivaí, São Sebastião da
+Amoreira, Sarandi, Sertaneja, Sertanópolis, Tamarana, Ubiratã e Uraí."
+)
 
+MRT907_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NOROESTE (MRT - 907)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agricultura",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade",
+    "Agricultura - Perene"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    57825.32, 58244.48, 59695.06, 58560.29, 140869.88, 73072.10, 55764.93
+  ),
+  vti_minimo = c(
+    47400.19, 49507.81, 50740.80, 49776.24, 119738.88, 62111.28, 47400.19
+  ),
+  vti_maximo = c(
+    161999.66, 66981.15, 68649.32, 67344.33, 161999.66, 84032.91, 64129.67
+  ),
+  vtn_media = c(
+    56173.64, 55348.68, 59361.68, 55678.45, 140128.84, 72473.56, 55446.45
+  ),
+  vtn_minimo = c(
+    47129.49, 47046.38, 50457.43, 47326.68, 119109.51, 61602.53, 47129.49
+  ),
+  vtn_maximo = c(
+    161148.16, 63650.99, 68265.94, 64030.21, 161148.16, 83344.60, 63763.42
+  ),
+  origem = "Alto Paraíso, Alto Paraná, Alto Piquiri, Altônia, Amaporã, Araruna, Atalaia, Brasilândia do
+Sul, Cafezal do Sul, Cianorte, Cidade Gaúcha, Colorado, Cruzeiro do Oeste, Cruzeiro do Sul,
+Diamante do Norte, Douradina, Esperança Nova, Farol, Flórida, Francisco Alves, Guairaçá,
+Guaporema, Icaraíma, Inajá, Indianópolis, Iporã, Itaguajé, Itapejara D´Oeste, Itaúna do
+Sul, Ivaté, Janiópolis, Japurá, Jardim Olinda, Jussara, Loanda, Lobato, Maria Helena,
+Marilena, Mariluz, Mirador, Moreira Sales, Nova Aliança do Ivaí, Nova Esperança, Nova
+Londrina, Nova Olímpia, Paraíso do Norte, Paranacity, Paranapoema, Paranavaí, Perobal,
+Pérola, Planaltina do Paraná, Porto Rico, Querência do Norte, Rondon, Santa Cruz de
+Monte Castelo, Santa Inês, Santa Isabel do Ivaí, Santa Mônica, Santo Antônio do Caiuá,
+Santo Inácio, São Carlos do Ivaí, São João do Caiuá, São Jorge do Patrocínio, São Manoel do
+Paraná, São Pedro do Paraná, São Tomé, Tamboara, Tapejara, Tapira, Terra Boa, Terra
+Rica, Tuneiras do Oeste, Umuarama, Uniflor e Xambrê"
+)
+
+MRT908_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS OESTE/SUDESTE (MRT - 908)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Agricultura",
+    "Pecuária - Bovino Pastagem Plantada - Média Capacidade",
+    "Exploração Mista - Agricultura + Pecuária - Média Capacidade",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    125665.85, 51932.09, 72218.30, 151435.15, 51932.09, 72218.30,
+    194337.03, 108643.10
+  ),
+  vti_minimo = c(
+    44142.28, 44142.28, 61385.55, 128719.88, 44142.28, 61385.55,
+    165186.47, 92346.63
+  ),
+  vti_maximo = c(
+    223487.58, 59721.91, 83051.04, 174150.42, 59721.91, 83051.04,
+    223487.58, 124939.56
+  ),
+  vtn_media = c(
+    121692.08, 49170.72, 69145.56, 147193.08, 49170.72, 69145.56,
+    191531.22, 104951.85
+  ),
+  vtn_minimo = c(
+    41795.11, 41795.11, 58773.73, 125114.12, 41795.11, 58773.73,
+    162801.54, 89209.07
+  ),
+  vtn_maximo = c(
+    220260.90, 56546.33, 79517.40, 169272.04, 56546.33, 79517.40,
+    220260.90, 120694.63
+  )
+)
 
 ### Consolidação dos dados ####
 PR17 <- rbind(
