@@ -970,7 +970,7 @@ MRT905_2024 <- data.frame(
   vtn_maximo = c(
     130951.79, 38788.31, 67692.32, 129396.69, 34041.76, 72469.01, 38603.18,
     26606.58, 67692.32, 130951.79, 72469.01
-  )
+  ),
   origem = "Alta Capacidademira do Paraná, Arapuã, Ariranha do Ivaí, Boa Ventura de São Roque,
 Campina do Simão, Candói, Cantagalo, Diamante do Sul, Goioxim, Grandes Rios,
 Guaraniaçu, Guarapuava, Espigão Alto do Iguaçu, Foz do Jordão, Ivaiporã, Jardim Alegre,
@@ -1116,7 +1116,23 @@ MRT908_2024 <- data.frame(
   vtn_maximo = c(
     220260.90, 56546.33, 79517.40, 169272.04, 56546.33, 79517.40,
     220260.90, 120694.63
-  )
+  ), 
+  origem = "Ampére, Anahy, Assis Chateaubriand, Barracão, Bela Vista da Caroba, Boa Esperança do
+Iguaçu, Boa Vista da Aparecida, Bom Jesus do Sul, Bom Sucesso do Sul, Braganey,
+Cafelândia, Campo Bonito, Capanema, Capitão Leônidas Marques, Cascavel, Catanduvas,
+Céu Azul, Chopinzinho, Clevelândia, Corbélia, Coronel Vivida, Cruzeiro do Iguaçu,
+Diamante d`Oeste, Dois Vizinhos, Enéas Marques, Entre Rios do Oeste, Flor da Serra do Sul,
+Formosa do Oeste, Foz do Iguaçu, Francisco Beltrão, Guaíra, Honório Serpa, Ibema, Iguatu,
+Iracema do Oeste, Itaipulândia, Jesuítas, Lindoeste, Manfrinópolis, Mangueirinha,
+Marechal Cândido Rondon, Mariópolis, Maripá, Marmeleiro, Matelândia, Medianeira,
+Mercedes, Missal, Nova Aurora, Nova Esperança do Sudoeste, Nova Prata do Iguaçu, Nova
+Santa Rosa, Ouro Verde do Oeste, Palotina, Pato Bragado, Pato Branco, Pérola d`Oeste,
+Pinhal de São Bento, Planalto, Pranchita, Quatro Pontes, Ramilândia, Realeza,
+Renascença, Salgado Filho, Salto do Lontra, Santa Helena, Santa Izabel do Oeste, Santa
+Lúcia, Santa Tereza do Oeste, Santa Terezinha de Itaipu, Santo Antônio do Sudoeste, São
+João, São Jorge d`Oeste, São José das Palmeiras, São Miguel do Iguaçu, São Pedro do
+Iguaçu, Saudade do Iguaçu, Serranópolis do Iguaçu, Sulina, Terra Roxa, Toledo, Três Barras
+do Paraná, Tupãssi, Vera Cruz do Oeste, Verê e Vitorino."
 )
 
 ### Consolidação dos dados ####
@@ -1166,6 +1182,17 @@ PR22 <- rbind(
   PRMRT8_2022
 )
 
+PR23 <- rbind(
+  MRT901_2023,
+  MRT902_2024,
+  MRT903_2024,
+  MRT904_2024,
+  MRT905_2024,
+  MRT906_2024,
+  MRT907_2024,
+  MRT908_2024
+)
+
 PR24 <- rbind(
   PRMRT1_2024,
   PRMRT2_2024,
@@ -1179,10 +1206,11 @@ PR24 <- rbind(
 PR17$ano <- 2017
 PR19$ano <- 2019
 PR21$ano <- 2021
+PR23$ano <- 2023
 PR22$ano <- 2022
 PR24$ano <- 2024
 
-PRTEMPORAL <- rbind(PR24, PR22, PR19, PR17, PR21)
+PRTEMPORAL <- rbind(PR24, PR22, PR19, PR17, PR21, PR23)
 PRTEMPORAL$estado <- 41
 PRTEMPORAL$regiao <- "sul"
 
