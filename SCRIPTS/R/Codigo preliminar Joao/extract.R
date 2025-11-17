@@ -78,7 +78,7 @@ colunas_para_multiplicar <- c("vti_media", "vti_minimo", "vti_maximo",
                               "vtn_media", "vtn_minimo", "vtn_maximo")
 
 # Multiplica todas as colunas especificadas por 1000
-df_nov <- df_tabela_2%>%
+df_nov <- df_tabela_2 |>
   mutate(across(all_of(colunas_para_multiplicar), ~ . * 1000))
 
 print("--- DADOS FINAIS (dput) ---")

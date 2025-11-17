@@ -132,7 +132,7 @@ d4map <- d4|>
   
   ggplot() +
   # Agora o geom_sf() vai achar a geometria automaticamente
-  geom_sf(aes(fill = uc_vti_media), color = "gray40", linewidth = 0.2) +
+  geom_sf(aes(fill = uc_vti_media), color = NA, linewidth = 0.2) +
   
   scale_fill_distiller(palette = "YlOrRd", direction = 1) +
   labs(
@@ -142,5 +142,3 @@ d4map <- d4|>
   theme_minimal()
 
 plot(d4map)
-
-write.csv(d4)
