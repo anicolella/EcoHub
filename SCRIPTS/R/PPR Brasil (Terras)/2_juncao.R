@@ -18,7 +18,7 @@ estados <- c(
 path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\1.Estados separados\\"
 path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\1.Estados separados\\"
 path_fernando2 <- "~/Documentos/dev/EcoHub_R/SCRIPTS/R/PPR Brasil (Terras)/1.Estados separados/"
-
+ 
 # Detecção automática do usuário atual
 if (Sys.info()["sysname"] == "Linux") {
   caminho_base <- path_fernando2
