@@ -7,18 +7,18 @@
 # Certifique-se de que os pacotes estão instalados:
 # install.packages(c("geobr", "dplyr", "purrr", "sf"))
 
-library(geobr)
+# library(geobr)
 library(dplyr)
 library(purrr)
 library(sf)
-#install.packages("fuzzyjoin")
+# install.packages("fuzzyjoin")
 library(fuzzyjoin)
 
 cat("Bibliotecas carregadas com sucesso.\n")
 
 #install.packages("remotes")
 library(remotes)
-#remotes::install_github("curso-r/munifacil")
+# remotes::install_github("curso-r/munifacil")
 library(munifacil)
 
 # Passo 1: Criar a tabela de conversão
@@ -144,5 +144,5 @@ Finde2 <- resultado_finael |> filter(!UF == uf_join.y)
 # -------------------------------------------------------------------
 cat("\n--- Amostra do Resultado Final (Melhor Match) ---\n")
 print(head(resultado_final))
-
+# 
 
