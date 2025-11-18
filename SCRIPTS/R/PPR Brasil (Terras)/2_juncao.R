@@ -17,14 +17,19 @@ estados <- c(
 # Configuração de caminhos para diferentes usuários
 path_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\1.Estados separados\\"
 path_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\1.Estados separados\\"
-
+path_fernando2 <- "~/Documentos/dev/EcoHub_R/SCRIPTS/R/PPR Brasil (Terras)/1.Estados separados/"
+ 
 # Detecção automática do usuário atual
-if (Sys.getenv("USERNAME") == "jodom") {
-  caminho_base <- path_joao
-} else if (Sys.getenv("USERNAME") == "ferna") {
-  caminho_base <- path_fernando
+if (Sys.info()["sysname"] == "Linux") {
+  caminho_base <- path_fernando2
 } else {
-  caminho_base <- path_fernando  # padrão
+  if (Sys.getenv("USERNAME") == "jodom") {
+    caminho_base <- path_joao
+  } else if (Sys.getenv("USERNAME") == "ferna") {
+    caminho_base <- path_fernando
+  } else {
+    caminho_base <- path_fernando  # padrão
+  }
 }
 
 # 3. Loop principal - Modificado para funcionar com seus nomes de arquivo
@@ -95,4 +100,4 @@ BRASILTEMPORAL <- bind_rows(
 
 SETEMPORAL <- SETEMPORAL |> unique()
 
-#BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGTEMPORAL, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)
+# BRASILTEMPORAL <- rbind(ACTEMPORAL, ALTEMPORAL, AMTEMPORAL, APTEMPORAL, BATEMPORAL, CETEMPORAL, DFTEMPORAL, ESTEMPORAL, GOTEMPORAL, MATEMPORAL, MGTEMPORAL, MSTEMPORAL, MTTEMPORAL, PATEMPORAL, PBTEMPORAL, PETEMPORAL, PITEMPORAL, PRTEMPORAL, RJTEMPORAL, RNTEMPORAL, ROTEMPORAL, RRTEMPORAL, RSTEMPORAL, SCTEMPORAL, SETEMPORAL, SPTEMPORAL, TOTEMPORAL)

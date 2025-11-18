@@ -2,10 +2,6 @@
 # install.packages("dplyr")
 library(dplyr)
 
-# Mãos à obra!
-
-library(dplyr)
-
 df_novo3 <- df_novo3 %>%
   filter(origem != " ")
 

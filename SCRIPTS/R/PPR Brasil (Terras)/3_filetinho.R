@@ -1,12 +1,3 @@
-library(tidyr)
-library(dplyr) 
-library(stringr)
-# Geralmente útil para manipulação de dados
-# Carregar os pacotes necessários
-library(dplyr)
-library(tidyr)
-library(stringr)
-
 # Carregar os pacotes necessários
 library(dplyr)
 library(stringr)

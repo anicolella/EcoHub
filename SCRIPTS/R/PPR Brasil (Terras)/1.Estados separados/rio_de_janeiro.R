@@ -52,11 +52,11 @@ RJMRT_ValeDoParaiba_2017 <- data.frame(
   vtn_media = c(NA),
   vtn_minimo = c(NA),
   vtn_maximo = c(NA),
-  origem = "Angra dos Reis, Areal, Barra do Piraí, Barra Mansa, Comendador
+  origem = ("Angra dos Reis, Areal, Barra do Piraí, Barra Mansa, Comendador
 Levy Gasparian, Engenheiro Paulo de Frontin, Itatiaia,
 Mangaratiba, Mendes, Miguel Pereira, Paraíba do Sul, Paraty,
 Pinheiral, Piraí, Porto Real, Quatis, Resende, Rio Claro, Rio das
-Flores, Sapucaia, Três Rios, Valença, Vassouras, Volta Redonda"
+Flores, Sapucaia, Três Rios, Valença, Vassouras, Volta Redonda")
 )
 
 ### 2022 ####
@@ -70,12 +70,12 @@ RJMRT_Vale_do_Paraiba_2022 <- data.frame(
   vtn_media = c(18274.82, 19019.23, 12884.43, 11935.77, 22911.42, 17593.13, 18133.86, 48752.06, 12884.43, 14662.65, 13124.10, 10173.20, 22911.42),
   vtn_minimo = c(10254.10, 11024.84, 9018.05, 9427.87, 8638.53, 10257.24, 14517.63, 13517.08, 9018.05, 9844.98, 11365.05, 5765.27, 8638.53),
   vtn_maximo = c(23015.86, 24015.17, 15899.86, 14749.66, 28325.02, 22015.36, 19404.87, 82531.17, 15899.86, 16949.57, 14133.15, 13332.59, 28325.02),
-  origem = "Angra dos Reis, Areal, Barra do Piraí, Barra Mansa,
+  origem = ("Angra dos Reis, Areal, Barra do Piraí, Barra Mansa,
 Comendador Levy Gasparian, Engenheiro Paulo de Frontin,
 Itatiaia, Mangaratiba, Mendes, Miguel Pereira, Paraíba do Sul,
 Paraty, Pinheiral, Piraí, Porto Real, Quatis, Resende, Rio Claro,
 Rio das Flores, Sapucaia, Três Rios, Valença, Vassouras e Volta
-Redonda"
+Redonda")
 )
 
 
@@ -102,9 +102,8 @@ RJMRT_LesteFluminense_2017 <- data.frame(
   vtn_media = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  origem = "Campos dos Goytacazes, Carapebus, Conceição do Macabu,
-Macaé, Quissamã, São Francisco de Itabapoana, São João da
-Barra"
+  origem = ("Campos dos Goytacazes, Carapebus, Conceição do Macabu,
+Macaé, Quissamã, São Francisco de Itabapoana, São João da Barra")
 )
 
 ### 2022 ####
@@ -508,6 +507,7 @@ RJ22 <- rbind(
   RJMRT_Vale_do_Paraiba_2022,
   RJMRT_Metropolitana_2022
 )
+
 
 RJ17$ano <- 2017 
 RJ22$ano <- 2022 
