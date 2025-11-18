@@ -327,6 +327,168 @@ RJMRT_Lagos_2022 <- data.frame(
 Casimiro de Abreu, Iguaba Grande, Rio das Ostras, São Pedro
 da Aldeia, Saquarema, Silva Jardim"
 )
+### Atlas 2023 #####
+MRT701_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS VALE DO PARAÍBA (MRT-701)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Floresta Plantada",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Diversos",
+    "Floresta Plantada - Silvicultura",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Exploração Mista - Pastagem + Floresta Plantada",
+    "Vegetação Nativa - Mata Atlântica"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    23544.82, 24175.85, 18406.33, 22818.50, 24700.00, 21999.32, 23186.64,
+    62088.18, 18406.33, 25067.63, 39259.90, 17777.93, 24700.00
+  ),
+  vti_minimo = c(
+    15111.24, 20549.47, 15645.38, 19395.73, 20995.00, 18699.42, 19708.64,
+    52774.95, 15645.38, 21307.49, 33370.92, 15111.24, 20995.00
+  ),
+  vti_maximo = c(
+    71401.41, 27802.23, 21167.28, 26241.28, 28405.00, 25299.22, 26664.64,
+    71401.41, 21167.28, 28827.77, 45148.89, 20444.62, 28405.00
+  ),
+  vtn_media = c(
+    18274.82, 19019.23, 12884.43, 11935.77, 22911.42, 17593.13, 18133.86,
+    48752.06, 12884.43, 14662.65, 13124.10, 10173.20, 22911.42
+  ),
+  vtn_minimo = c(
+    8647.22, 16166.35, 10951.77, 10145.40, 19474.71, 14954.16, 15413.78,
+    41439.25, 10951.77, 12462.46, 11155.49, 8647.22, 19474.71
+  ),
+  vtn_maximo = c(
+    56064.87, 21872.11, 14817.09, 13726.14, 26348.13, 20232.10, 20853.94,
+    56064.87, 14817.09, 16862.05, 15092.72, 11699.18, 26348.13
+  ),
+  origem = "Angra dos Reis, Areal, Barra do Piraí, Barra Mansa, Comendador Levy Gasparian,
+Engenheiro Paulo de Frontin, Itatiaia, Mangaratiba, Mendes, Miguel Pereira, Paraíba do
+Sul, Paraty, Pinheiral, Piraí, Porto Real, Quatis, Resende, Rio Claro, Rio das Flores,
+Sapucaia, Três Rios, Valença, Vassouras, Volta Redonda"
+)
+
+MRT702_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS METROPOLITANA (MRT-702)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agrícola",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Agrícola - Produção Diversificada",
+    "Pecuária - Diversos",
+    "Vegetação Nativa - Mata Atlântica",
+    "Não Agrícola - Exploração turística",
+    "Não Agrícola - Outros"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    49733.07, 48216.60, 58331.45, 46072.25, 29751.56, 58090.54, 45123.78,
+    57959.72, 49975.26, 90799.14, 29751.56, 55662.38, 59376.78
+  ),
+  vti_minimo = c(
+    25288.83, 40984.11, 49581.73, 39161.41, 25288.83, 49376.96, 38355.21,
+    49265.76, 42478.97, 77179.27, 25288.83, 47313.02, 50470.26
+  ),
+  vti_maximo = c(
+    104419.01, 55449.09, 67081.17, 52983.09, 34214.29, 66804.12, 51892.35,
+    66653.68, 57471.55, 104419.01, 34214.29, 64011.74, 68283.30
+  ),
+  vtn_media = c(
+    42883.65, 40328.09, 46665.16, 32287.59, 28263.98, 51153.76, 38355.21,
+    46367.77, 39980.21, 72639.32, 28263.98, 38963.67, 53439.10
+  ),
+  vtn_minimo = c(
+    24024.39, 34278.88, 39665.39, 27444.45, 24024.38, 43480.70, 32601.93,
+    39412.60, 33983.18, 61743.42, 24024.38, 33119.12, 45423.24
+  ),
+  vtn_maximo = c(
+    83535.22, 46377.30, 53664.93, 37130.73, 32503.58, 58826.82, 44108.49,
+    53322.94, 45977.24, 83535.22, 32503.58, 44808.22, 61454.97
+  ),
+  origem = "Belford Roxo, Cachoeiras de Macacu, Duque de Caxias, Guapimirim, Itaboraí, Itaguaí,
+Japeri, Magé, Maricá, Mesquita, Nilópolis, Niteroi, Nova Iguaçu, Paracambi, Queimados,
+Rio Bonito, Rio de Janeiro, São Gançalo, São João de Meriti, Seropédica, Tanguá"
+)
+
+MRT703_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SERRANA (MRT-703)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agrícola",
+    "Floresta Plantada",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Diversos",
+    "Agrícola - Horticultura/Olerícola/Granjeiros",
+    "Floresta Plantada - Silvicultura",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agrícola + Floresta plantada",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Exploração Mista - Pastagem+Fruticultura.",
+    "Exploração Mista - Pastagem+Floresta Plantada.",
+    "Vegetação Nativa - Mata Atlântica",
+    "Não Agrícola - Exploração turística",
+    "Não Agrícola - Periurbanas (predominância entorno rural)",
+    "Não Agrícola - Outros"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    30724.01, 29446.29, 43529.71, 32656.77, 25237.35, 26317.70, 41681.53,
+    26462.46, 40578.42, 63288.71, 39056.30, 32656.77, 25580.03,
+    39877.52, 25544.37, 25648.64, 26996.52, 26317.70, 70287.17,
+    41681.53, 14801.79
+  ),
+  vti_minimo = c(
+    21451.74, 25029.35, 37000.25, 27758.25, 21451.75, 22370.05, 35429.30,
+    22493.09, 34491.66, 53795.40, 33197.86, 27758.25, 21743.03,
+    33895.89, 21712.71, 21801.34, 22947.04, 22370.05, 59744.09,
+    34355.12, 12581.45
+  ),
+  vti_maximo = c(
+    80830.25, 33863.23, 50059.17, 37555.29, 29022.95, 30265.36, 47933.76,
+    30431.83, 46665.18, 72782.02, 44914.75, 37555.29, 29417.03,
+    45915.20, 29376.03, 29495.94, 31046.00, 30265.36, 80830.25,
+    46480.46, 17021.97
+  ),
+  vtn_media = c(
+    25058.25, 23840.18, 31326.15, 23218.57, 18958.27, 25013.64, 37905.47,
+    21565.80, 33231.82, 27097.36, 23218.57, 18572.56, 25580.03,
+    20711.76, 19207.41, 18897.56, 48096.53, 25013.64, 48055.47,
+    29115.23, 13514.23
+  ),
+  vtn_minimo = c(
+    11487.10, 20264.15, 26627.23, 19735.78, 16114.53, 21261.59, 32219.65,
+    18330.93, 28247.05, 23032.76, 19735.78, 15786.68, 21902.01,
+    17605.00, 16326.30, 16062.93, 40882.05, 21261.59, 40847.15,
+    24747.95, 11487.10
+  ),
+  vtn_maximo = c(
+    55311.01, 27416.07, 36025.07, 26701.36, 21802.01, 28765.69, 43591.29,
+    24800.67, 38216.59, 31161.96, 26701.36, 21687.31, 27116.71,
+    23818.52, 22088.52, 21732.19, 55311.01, 28765.69, 55263.79,
+    33482.51, 15541.36
+  ),
+  origem = "Bom Jardim, Cantagalo, Carmo, Cordeiro, Duas Barras, Macuco, Nova Friburgo, Paty do
+Alferes, Petrópolis, Santa Maria Madalena, São José do Vale do Rio Preto, São Sebastião
+do Alto, Sumidouro, Teresópolis e Trajano de Moraes"
+)
 
 ### Consolidação dos Dados #####
 RJ17 <- rbind(
