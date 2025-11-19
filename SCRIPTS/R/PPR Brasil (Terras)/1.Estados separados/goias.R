@@ -535,6 +535,645 @@ GOMRT10_2024 <- data.frame(
   origem = "Aparecida do Rio Doce, Aporé, Cachoeira Alta, Caçu, Itajá, Itarumã, Lagoa Santa, Paranaiguara, São Simão, Serranópolis."
   
 )
+#### Atlas 23 #####
+MRT401_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ALTO PARANAÍBA (MRT-401)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino -Pastagem Formada -Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    29659.91, 31126.25, 31126.25
+  ),
+  vti_minimo = c(
+    25210.92, 26457.32, 26457.32
+  ),
+  vti_maximo = c(
+    35795.19, 35795.19, 35795.19
+  ),
+  vtn_media = c(
+    26817.45, 28117.76, 28117.76
+  ),
+  vtn_minimo = c(
+    22794.83, 23900.10, 23900.10
+  ),
+  vtn_maximo = c(
+    32335.42, 32335.42, 32335.42
+  ),
+  origem = "Aparecida do Rio Doce, Aporé, Cachoeira Alta, Caçu, Itajá, Itarumã, Lagoa Santa,
+Paranaiguara, São Simão, Serranópolis"
+)
+
+MRT402_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS RIO VERDÃO (MRT-402)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Pecuária",
+    "Agricultura-Grãos Diversos-Alta Capacidade",
+    "Agricultura-Grãos Diversos-Baixa Capacidade",
+    "Pecuária-Bovino-Pastagem Formada-Alta Capacidade",
+    "Pecuária-Bovino-Pastagem Formada-Médio Suporte"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    42034.44, 69097.20, 25628.18, 82862.93, 44318.89, 31156.35, 24212.08
+  ),
+  vti_minimo = c(
+    20580.27, 58732.62, 21783.95, 70433.49, 37671.05, 26482.89, 20580.27
+  ),
+  vti_maximo = c(
+    95292.37, 79461.78, 29472.41, 95292.37, 50966.72, 35829.80, 27843.89
+  ),
+  vtn_media = c(
+    38161.86, 62622.19, 23280.41, 75145.20, 40080.78, 28170.26, 22098.41
+  ),
+  vtn_minimo = c(
+    18783.71, 53228.86, 19788.36, 63873.42, 37671.05, 23944.72, 18783.71
+  ),
+  vtn_maximo = c(
+    86416.98, 72015.52, 26772.49, 86416.98, 50966.72, 32395.80, 25413.26
+  ),
+  origem = "Acreúna, Bom Jesus de Goiás, Castelândia, Chapadão do Céu, Edéia, Goiatuba,
+Gouvelândia, Jataí, Maurilândia, Mineiros, Montividiu, Perolândia, Porteirão,
+Portelândia, Quirinópolis, Rio Verde, Santa Helena de Goiás, Santa Rita do Araguaia,
+Santo Antônio da Barra, Turvelândia"
+)
+
+MRT403_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS BAIXO PARANAÍBA (MRT-403)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Pecuária",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    48201.39, 67923.55, 39462.81, 71625.34, 56611.57, 29597.10, 27892.56
+  ),
+  vti_minimo = c(
+    23708.67, 57735.02, 33543.39, 60881.54, 48119.83, 25157.54, 23708.67
+  ),
+  vti_maximo = c(
+    82369.14, 78112.08, 45382.23, 82369.14, 65103.30, 34036.67, 32076.44
+  ),
+  vtn_media = c(
+    44230.33, 62337.29, 35894.62, 66019.28, 51570.25, 27027.37, 25167.35
+  ),
+  vtn_minimo = c(
+    21392.25, 52986.70, 30510.43, 56116.39, 48119.83, 22973.27, 21392.25
+  ),
+  vtn_maximo = c(
+    75922.17, 71687.88, 41278.82, 75922.17, 65103.30, 31081.48, 28942.46
+  ),
+  origem = "Água Limpa, Anhanguera, Buriti Alegre, Cachoeira Dourada, Caldas Novas, Campo
+Alegre de Goiás, Catalão, Corumbaíba, Cumari, Davinópolis, Gameleira de Goiás,
+Goiandira, Inaciolândia, Ipameri, Itumbiara, Marzagão, Nova Aurora, Orizona,
+Ouvidor, Panamá, Silvânia, Três Ranchos, Vianópolis"
+)
+
+MRT404_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS RIO DOS BOIS (MRT-404)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Pecuária",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Agricultura - Grãos Diversos - Média Capacidade",
+    "Exploração Mista - Agrícola + Pastagem - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    51827.01, 51735.19, 61818.18, 37095.72, 66804.41, 40433.27, 64772.73,
+    48239.03, 31625.66
+  ),
+  vti_minimo = c(
+    26881.81, 43974.91, 52545.45, 31531.36, 56783.75, 34368.28, 55056.82,
+    41003.18, 26881.81
+  ),
+  vti_maximo = c(
+    76825.07, 59495.47, 71090.91, 42660.08, 76825.07, 46498.27, 74488.64,
+    55474.88, 36369.50
+  ),
+  vtn_media = c(
+    46795.67, 48756.61, 54004.13, 33389.83, 63312.67, 37839.55, 56380.17,
+    41740.20, 29158.24
+  ),
+  vtn_minimo = c(
+    24784.50, 41443.11, 45903.51, 28381.36, 53815.77, 32163.62, 47923.14,
+    35479.17, 24784.50
+  ),
+  vtn_maximo = c(
+    72809.57, 56070.10, 62104.75, 38398.31, 72809.57, 43515.49, 64837.19,
+    48001.22, 33531.97
+  ),
+  origem = "Aloândia, Campestre de Goiás, Cezarina, Cristianópolis, Cromínia, Edealina, Indiara,
+Jandaia, Joviânia, Mairipotaba, Morrinhos, Palmeiras de Goiás, Palminópolis,
+Piracanjuba, Pires do Rio, Pontalina, Professor Jamil, Rio Quente, Santa Cruz de
+Goiás, São Miguel do Passa Quatro, Urutaí, Varjão, Vicentinópolis"
+)
+
+MRT405_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CAIAPÓ (MRT-405)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Pecuária",
+    "Exploração Mista - Agrícola + Pastagem - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2),
+  vti_media = c(
+    76823.69, 79201.10, 77727.27, 73542.70, 77727.27, 73542.70
+  ),
+  vti_minimo = c(
+    62511.29, 67320.94, 66068.17, 62511.29, 66068.17, 62511.29
+  ),
+  vti_maximo = c(
+    91081.27, 91081.27, 89386.34, 84574.10, 89386.34, 84574.10
+  ),
+  vtn_media = c(
+    67471.52, 71831.96, 67308.04, 63274.56, 67308.04, 63274.56
+  ),
+  vtn_minimo = c(
+    53783.38, 61057.16, 57211.84, 53783.38, 57211.84, 53783.38
+  ),
+  vtn_maximo = c(
+    82606.75, 82606.75, 77404.25, 72765.75, 77404.25, 72765.75
+  ),
+  origem = "Caiapônia, Doverlândia, Palestina de Goiás, Paraúna, São João da Paraúna"
+)
+
+MRT406_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CINTURÃO VERDE (MRT-406)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Pecuária - Diversos - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2),
+  vti_media = c(
+    47215.82, 51973.44, 46305.36, 37356.84, 45476.82, 38633.21
+  ),
+  vti_minimo = c(
+    31753.31, 44177.43, 39359.56, 31753.31, 38655.30, 32838.23
+  ),
+  vti_maximo = c(
+    59769.46, 59769.46, 53251.17, 42960.37, 52298.34, 44428.20
+  ),
+  vtn_media = c(
+    41372.84, 47156.34, 39826.83, 33085.79, 38956.48, 33875.60
+  ),
+  vtn_minimo = c(
+    28122.92, 40082.89, 39359.56, 28122.92, 33113.00, 28794.26
+  ),
+  vtn_maximo = c(
+    54229.79, 54229.79, 53251.17, 38048.66, 44799.95, 38956.94
+  ),
+  origem = "Abadia de Goiás, Abadiânia, Anápolis, Anicuns, Aparecida de Goiânia, Araçu,
+Aragoiânia, Avelinópolis, Bela Vista de Goiás, Bonfinópolis, Brazabrantes,
+Caldazinha, Campo Limpo de Goiás, Caturaí, Goianápolis, Goiânia, Goianira, Guapó,
+Hidrolândia, Inhumas, Leopoldo de Bulhões, Nazário, Nerópolis, Nova Veneza, Ouro
+Verde de Goiás, Santa Bárbara de Goiás, Santo Antônio de Goiás, Senador Canedo,
+Terezópolis de Goiás, Trindade"
+)
+
+MRT407_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SERRA DOURADA (MRT-407)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Pecuária",
+    "Agricultura-Grãos Diversos - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Médio Suporte"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    56560.19, 71493.29, 46377.48, 75791.95, 52655.93, 34628.10
+  ),
+  vti_minimo = c(
+    29433.88, 60769.30, 39420.86, 64423.16, 44757.54, 29433.88
+  ),
+  vti_maximo = c(
+    87160.74, 82217.28, 53334.10, 87160.74, 60554.32, 39822.31
+  ),
+  vtn_media = c(
+    50475.69, 65792.06, 40401.28, 69550.48, 46015.23, 28856.31
+  ),
+  vtn_minimo = c(
+    24527.86, 55923.25, 34341.09, 59117.91, 39112.94, 24527.86
+  ),
+  vtn_maximo = c(
+    79983.05, 75660.87, 46461.48, 79983.05, 52917.51, 33184.76
+  ),
+  origem = "Adelândia, Americano do Brasil, Amorinópolis, Aurilândia, Buriti de Goiás, Cachoeira
+de Goiás, Córrego do Ouro, Damolândia, Fazenda Nova, Firminópolis, Guaraíta,
+Heitoraí, Iporá, Israelândia, Itaberaí, Itaguari, Itaguaru, Itapuranga, Itauçu,
+Ivolândia, Jaraguá, Jaupaci, Jesúpolis, Moiporá, Mossâmedes, Novo Brasil, Petrolina
+de Goiás, Pirenópolis, Sanclerlândia, Santa Rosa de Goiás, São Francisco de Goiás,
+São Luís de Montes Belos, Taquaral de Goiás, Turvânia, Uruana"
+)
+
+MRT408_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SÃO PATRÍCIO (MRT-408)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Pecuária",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Médio Suporte",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    35129.69, 51250.00, 31086.67, 29288.02, 52000.00, 42680.05, 25750.00, 16200.03
+  ),
+  vti_minimo = c(
+    13770.02, 43562.50, 26423.67, 24894.82, 44200.00, 36278.04, 21887.50, 13770.02
+  ),
+  vti_maximo = c(
+    59800.00, 58937.50, 35749.67, 33681.23, 59800.00, 49082.05, 29612.50, 18630.03
+  ),
+  vtn_media = c(
+    30928.57, 46123.04, 27872.05, 25309.26, 46998.40, 37699.45, 21381.41, 14247.53
+  ),
+  vtn_minimo = c(
+    12110.40, 39204.58, 23691.24, 21512.87, 39948.64, 32044.53, 18174.20, 12110.40
+  ),
+  vtn_maximo = c(
+    54048.16, 53041.49, 32052.85, 29105.64, 54048.16, 43354.37, 24588.62, 16384.66
+  ),
+  origem = "Barro Alto, Carmo do Rio Verde, Ceres, Goianésia, Guarinos, Hidrolina, Ipiranga de
+Goiás, Itapaci, Morro Agudo de Goiás, Nova América, Nova Glória, Pilar de Goiás,
+Rialma, Rianápolis, Rubiataba, Santa Isabel, Santa Rita do Novo Destino, São Luíz do
+Norte, São Patrício, Vila Propício.")
+
+MRT409_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS VALE DO ARAGUAIA (MRT-409)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Pecuária",
+    "Agricultura - Grãos Diversos - Média Capacidade",
+    "Agricultura - Grãos Diversos - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Médio Suporte",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    32961.80, 49454.55, 35778.22, 24383.95, 36000.00, 57142.86, 19011.20, 21202.88, 31857.14
+  ),
+  vti_minimo = c(
+    16159.52, 42036.36, 30411.48, 20726.36, 30600.00, 48571.43, 16159.52, 18022.44, 27078.57
+  ),
+  vti_maximo = c(
+    65714.29, 56872.73, 41144.95, 28041.54, 41400.00, 65714.29, 21862.88, 24383.31, 36635.71
+  ),
+  vtn_media = c(
+    29047.85, 43767.27, 30969.27, 21555.33, 31860.00, 50571.43, 16630.69, 18720.41, 28312.86
+  ),
+  vtn_minimo = c(
+    14136.08, 37202.18, 26323.88, 18322.03, 27081.00, 42985.71, 14136.08, 15912.34, 24065.93
+  ),
+  vtn_maximo = c(
+    58157.14, 50332.36, 35614.65, 24788.63, 36639.00, 58157.14, 19125.29, 21528.47, 32559.79
+  ),
+  origem = "Aragarças, Araguapaz, Arenópolis, Aruanã, Baliza, Bom Jardim de Goiás, Britânia,
+Crixás, Diorama, Faina, Goiás, Itapirapuã, Jussara, Matrinchã, Montes Claros de
+Goiás, Mozarlândia, Mundo Novo, Nova Crixás, Novo Planalto, Piranhas, Santa Fé de
+Goiás, São Miguel do Araguaia, Uirapuru"
+)
+
+MRT410_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS RIO MARANHÃO (MRT-410)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Pecuária",
+    "Exploração Mista - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    17781.10, 28828.73, 25323.06, 15269.00, 20620.42, 21903.75, 17308.47,
+    10933.72
+  ),
+  vti_minimo = c(
+    9293.66, 24504.42, 21524.60, 12978.65, 17527.36, 18618.19, 14712.20,
+    9293.66
+  ),
+  vti_maximo = c(
+    33153.04, 33153.04, 29121.52, 17559.35, 23713.48, 25189.32, 19904.75,
+    12573.78
+  ),
+  vtn_media = c(
+    16176.91, 26870.40, 22764.81, 13841.59, 18558.38, 19662.82, 14157.05,
+    9917.18
+  ),
+  vtn_minimo = c(
+    9293.66, 22839.84, 21524.60, 11765.35, 15774.62, 16713.40, 12033.49,
+    9293.66
+  ),
+  vtn_maximo = c(
+    30900.96, 30900.96, 29121.52, 15917.82, 21342.13, 22612.24, 16280.61,
+    12573.78
+  ),
+  origem = "Alto Horizonte, Amaralina, Bonópolis, Campinaçu, Campinorte, Campos Verdes,
+Estrela do Norte, Formoso, Mara Rosa, Minaçu, Montividiu do Norte, Mutunópolis,
+Niquelândia, Nova Iguaçu de Goiás, Porangatu, Santa Tereza de Goiás, Santa
+Terezinha de Goiás, Trombas e Uruaçu"
+)
+
+MRT2801_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS VÃO DO PARANÃ (MRT-2801)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Pecuária - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Pastagem Plantada - Média Capacidade",
+    "Pecuária - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    9539.06, 9298.38, 15572.76, 3369.71, 7244.90, 13474.76
+  ),
+  vti_minimo = c(
+    2800.20, 7438.70, 12458.21, 2800.20, 5795.92, 11365.35
+  ),
+  vti_maximo = c(
+    18687.31, 11158.05, 18687.31, 3939.22, 8693.88, 15584.17
+  ),
+  vtn_media = c(
+    8251.97, 8082.00, 13538.77, 2858.32, 6206.01, 11791.16
+  ),
+  vtn_minimo = c(
+    2858.32, 6465.60, 10831.02, 2286.65, 4964.81, 9496.26
+  ),
+  vtn_maximo = c(
+    16246.53, 9698.40, 16246.53, 3429.98, 7447.21, 14086.06
+  ),
+  origem = "Campos Belos, Monte Alegre, Divinópolis de Goiás, São Domingos, Nova Roma,
+Guarani de Goiás, Iaciara, Posse, Simolândia, Alvorada do Norte, Flores de Goiás e
+Vila Boa"
+)
+
+MRT2802_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS VÃO DO MAMBAÍ/FORMOSO (MRT-2802)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Pastagem Plantada - Média Capacidade",
+    "Pecuária - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 2, 2, 2),
+  vti_media = c(
+    8181.03, 8249.11, 5871.27, 8473.71, 12331.00
+  ),
+  vti_minimo = c(
+    4990.58, 6599.29, 4990.58, 6980.72, 10481.39
+  ),
+  vti_maximo = c(
+    14180.65, 9898.93, 6751.96, 9966.69, 14180.65
+  ),
+  vtn_media = c(
+    7179.36, 7143.60, 5082.67, 7296.67, 10806.24
+  ),
+  vtn_minimo = c(
+    4320.27, 5714.88, 4320.27, 6202.17, 9185.30
+  ),
+  vtn_maximo = c(
+    12427.17, 8572.31, 5845.07, 8391.17, 12427.17
+  ),
+  origem = "Buritinópolis, Mambaí, Damianópolis, Sítio D' Abadia e Formoso"
+)
+
+MRT2803_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS UNAÍ/CRISTALINA (MRT-2803)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agrícola",
+    "Pecuária - Pastagem Plantada - Alta Capacidade",
+    "Agrícola - Grãos Diversos - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 2, 2, 2),
+  vti_media = c(
+    17838.17, 12418.02, 26869.58, 13729.67, 30765.13
+  ),
+  vti_minimo = c(
+    9934.42, 9934.42, 21495.67, 11670.22, 24612.10
+  ),
+  vti_maximo = c(
+    36918.15, 14901.63, 32243.50, 15789.12, 36918.15
+  ),
+  vtn_media = c(
+    15726.18, 10655.39, 24642.74, 11871.88, 28818.36
+  ),
+  vtn_minimo = c(
+    8524.31, 8524.31, 19714.19, 9820.33, 23054.69
+  ),
+  vtn_maximo = c(
+    34582.03, 12786.47, 29571.29, 13923.43, 34582.03
+  ),
+  origem = "Unaí, Cabeceira Grande, Cristalina, Luziânia, Cidade Ocidental e Buritis"
+)
+
+MRT2804_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ALEXÂNIA (MRT-2804)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Pecuária - Pastagem Plantada - Média Capacidade",
+    "Pecuária - Pastagem Plantada - Alta Capacidade",
+    "Exploração Mista - Agricultura + Pecuária"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    18986.09, 17331.02, 23399.59, 15158.35, 19503.69, 23399.59
+  ),
+  vti_minimo = c(
+    12884.60, 14042.36, 19005.96, 12884.60, 16528.09, 19005.96
+  ),
+  vti_maximo = c(
+    28474.34, 20619.68, 27793.22, 17432.11, 22479.29, 27793.22
+  ),
+  vtn_media = c(
+    16630.02, 15499.13, 19645.70, 14124.48, 16873.79, 19645.70
+  ),
+  vtn_minimo = c(
+    12005.80, 12861.02, 16240.50, 12005.80, 14002.48, 16240.50
+  ),
+  vtn_maximo = c(
+    25093.26, 18137.24, 23050.90, 16243.15, 19745.10, 23050.90
+  ),
+  origem = "Alexânia, Corumbá de Goiás e Santo Antônio do Descoberto"
+)
+
+MRT2805_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS PADRE BERNARDO (MRT-2805)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Pastagem Plantada - Média Capacidade",
+    "Pecuária - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 2, 2),
+  vti_media = c(
+    13011.52, 13011.52, 12103.16, 13022.45
+  ),
+  vti_minimo = c(
+    10287.69, 11059.79, 10287.69, 11069.08
+  ),
+  vti_maximo = c(
+    15867.65, 14963.25, 13918.64, 14975.81
+  ),
+  vtn_media = c(
+    11505.88, 11505.88, 10682.64, 11443.95
+  ),
+  vtn_minimo = c(
+    8981.43, 9780.00, 9008.02, 9727.36
+  ),
+  vtn_maximo = c(
+    13472.15, 13231.76, 12357.26, 13160.54
+  ),
+  origem = "Padre Bernardo, Cocalzinho de Goiás e Mimoso de Goiás"
+)
+
+MRT2806_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS FORMOSA/SÃO JOÃO DA ALIANÇA (MRT-2806)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola - Grãos Diversos",
+    "Pecuária - Pastagem Plantada - Média Capacidade",
+    "Pecuária - Pastagem Plantada - Alta Capacidade",
+    "Exploração Mista - Agricultura + Pecuária"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    10791.02, 10462.40, 12159.98, 41459.18, 9818.52, 18185.80, 12159.98
+  ),
+  vti_minimo = c(
+    6906.07, 8369.92, 9727.98, 33167.35, 7978.44, 14633.59, 9727.98
+  ),
+  vti_maximo = c(
+    49751.02, 12554.89, 14591.97, 49751.02, 11658.61, 21738.00, 14591.97
+  ),
+  vtn_media = c(
+    9284.90, 8974.61, 9773.62, 40410.86, 8239.81, 16418.12, 9773.62
+  ),
+  vtn_minimo = c(
+    4878.81, 7179.69, 7818.90, 32328.68, 6591.85, 13290.59, 7818.90
+  ),
+  vtn_maximo = c(
+    48493.03, 10769.53, 11728.35, 48493.03, 9887.77, 19545.65, 11728.35
+  ),
+  origem = "São João D'Aliança, Formosa, Água Fria de Goiás, Planaltina e Cabeceiras"
+)
+
+MRT2807_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CHAPADA DOS VEADEIROS (MRT-2807)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Mata",
+    "Pecuária",
+    "Mata Nativa",
+    "Pecuária - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Pastagem Plantada - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    4111.86, 1984.08, 4852.84, 1984.08, 2737.59, 5381.66
+  ),
+  vti_minimo = c(
+    1686.47, 1686.47, 3882.27, 1686.47, 2190.08, 4305.32
+  ),
+  vti_maximo = c(
+    6518.90, 2281.69, 5823.41, 2281.69, 3285.11, 6457.99
+  ),
+  vtn_media = c(
+    3378.10, 1950.75, 3892.46, 1950.75, 2496.55, 4241.44
+  ),
+  vtn_minimo = c(
+    1658.14, 1658.14, 3113.97, 1658.14, 1997.24, 3393.15
+  ),
+  vtn_maximo = c(
+    5164.38, 2243.36, 4670.95, 2243.36, 2995.86, 5089.73
+  ),
+  origem = "Alto Paraíso de Goiás, Cavalcante, Colinas do Sul e Teresina de Goiás"
+)
+
+MRT2808_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS DISTRITO FEDERAL (MRT-2808)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola - Grãos Diversos",
+    "Hortifrutigranjeiro",
+    "Pecuária - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Pastagem Plantada - Alta Capacidade",
+    "Exploração Mista - Agricultura + Pecuária",
+    "Agrícola - Grãos Diversos - Média Capacidade",
+    "Agrícola - Grãos Diversos - Alta Capacidade",
+    "Hortifrutigranjeiro - Exploração Mista"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    41777.18, 35789.21, 42511.36, 49056.46, 118941.18, 16347.62, 47214.98,
+    46681.82, 35634.52, 66952.38, 118941.18
+  ),
+  vti_minimo = c(
+    13895.47, 28631.37, 34009.09, 39245.17, 101100.00, 13895.47, 40132.74,
+    39509.64, 30000.66, 55363.92, 101100.00
+  ),
+  vti_maximo = c(
+    136782.35, 42947.05, 51013.64, 58867.75, 136782.35, 18799.76, 54297.23,
+    53853.99, 41268.38, 78540.85, 136782.35
+  ),
+  vtn_media = c(
+    33949.60, 26632.93, 33155.69, 43810.42, 86729.25, 12720.49, 33995.71,
+    39048.86, 29993.41, 62233.10, 86729.25
+  ),
+  vtn_minimo = c(
+    10745.93, 21306.34, 26524.55, 35048.33, 69383.40, 10745.93, 28896.36,
+    31509.44, 23994.73, 52898.13, 69383.40
+  ),
+  vtn_maximo = c(
+    104075.10, 31959.51, 39786.83, 52572.50, 104075.10, 14695.06, 39095.07,
+    46588.28, 35992.09, 71568.06, 104075.10
+  ),
+  origem = "Distrito Federal, Novo Gama, Valparaíso de Goiás e Águas Lindas de Goiás"
+)
+
+
+
+
 ### Consolidação dos Dados #### 
 
 GO17 <- rbind(GOMRT1_2017,
