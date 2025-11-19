@@ -452,7 +452,7 @@ MRT703_2024 <- data.frame(
     30724.01, 29446.29, 43529.71, 32656.77, 25237.35, 26317.70, 41681.53,
     26462.46, 40578.42, 63288.71, 39056.30, 32656.77, 25580.03,
     39877.52, 25544.37, 25648.64, 26996.52, 26317.70, 70287.17,
-    41681.53, 14801.79
+    41417.79, 14801.71
   ),
   vti_minimo = c(
     21451.74, 25029.35, 37000.25, 27758.25, 21451.75, 22370.05, 35429.30,
@@ -468,19 +468,19 @@ MRT703_2024 <- data.frame(
   ),
   vtn_media = c(
     25058.25, 23840.18, 31326.15, 23218.57, 18958.27, 25013.64, 37905.47,
-    21565.80, 33231.82, 27097.36, 23218.57, 18572.56, 25580.03,
+    21565.80, 33231.82, 27097.36, 23218.57, 18572.56, 31902.01,
     20711.76, 19207.41, 18897.56, 48096.53, 25013.64, 48055.47,
     29115.23, 13514.23
   ),
   vtn_minimo = c(
     11487.10, 20264.15, 26627.23, 19735.78, 16114.53, 21261.59, 32219.65,
-    18330.93, 28247.05, 23032.76, 19735.78, 15786.68, 21902.01,
+    18330.93, 28247.05, 23032.76, 19735.78, 15786.68, 27116.71,
     17605.00, 16326.30, 16062.93, 40882.05, 21261.59, 40847.15,
     24747.95, 11487.10
   ),
   vtn_maximo = c(
     55311.01, 27416.07, 36025.07, 26701.36, 21802.01, 28765.69, 43591.29,
-    24800.67, 38216.59, 31161.96, 26701.36, 21687.31, 27116.71,
+    24800.67, 38216.59, 31161.96, 26701.36, 21358.44, 36687.31,
     23818.52, 22088.52, 21732.19, 55311.01, 28765.69, 55263.79,
     33482.51, 15541.36
   ),
@@ -488,6 +488,132 @@ MRT703_2024 <- data.frame(
 Alferes, Petrópolis, Santa Maria Madalena, São José do Vale do Rio Preto, São Sebastião
 do Alto, Sumidouro, Teresópolis e Trajano de Moraes"
 )
+
+MRT704_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS LAGOS (MRT-704)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agrícola",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Exploração Mista - Diversificada",
+    "Não Agrícola - Exploração turística",
+    "Não Agrícola - Outros",
+    "Vegetação Nativa - Mata Atlântica"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    29255.41, 27119.21, 31687.02, 38400.17, 44826.81, 11559.71, 24746.79,
+    32645.06, 46546.54, 138300.23, 24295.56, 11559.71
+  ),
+  vti_minimo = c(
+    9825.75, 23051.33, 26933.97, 32640.14, 38102.79, 9825.75, 21034.77,
+    27748.30, 39564.56, 117555.20, 20651.23, 9825.75
+  ),
+  vti_maximo = c(
+    159045.26, 31187.09, 36440.07, 44160.20, 51550.83, 13293.67, 28458.81,
+    37541.82, 53528.52, 159045.26, 27939.89, 13293.67
+  ),
+  vtn_media = c(
+    24601.41, 23031.75, 25349.62, 31973.06, 40034.25, 11046.84, 21034.77,
+    27639.23, 39943.06, 96810.16, 20655.92, 11046.84
+  ),
+  vtn_minimo = c(
+    9389.81, 19576.99, 21547.18, 27177.10, 34029.11, 9389.81, 17879.55,
+    23493.35, 33951.60, 82288.64, 17557.53, 9389.81
+  ),
+  vtn_maximo = c(
+    111331.68, 26486.51, 29152.06, 36769.02, 46039.39, 12703.87, 24189.99,
+    31785.11, 45934.52, 111331.68, 23754.31, 12703.87
+  ),
+  origem = "Araruama, Armação de Búzios, Arraial do Cabo, Cabo Frio, Casimiro de Abreu, Iguaba
+Grande, Rio das Ostras, São Pedro da Aldeia, Saquarema e Silva Jardim"
+)
+
+
+MRT705_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS LESTE FLUMINENSE (MRT-705)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Exploração Mista - Diversificada"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    21070.23, 19108.35, 24939.62, 54353.50, 17444.55, 31864.04, 38041.63
+  ),
+  vti_minimo = c(
+    14827.87, 16242.10, 21198.68, 46200.48, 14827.87, 27084.49, 32335.39
+  ),
+  vti_maximo = c(
+    62506.53, 21974.60, 28680.56, 62506.53, 20061.23, 36643.72, 43747.87
+  ),
+  vtn_media = c(
+    16445.74, 15939.30, 17445.18, 44551.84, 14376.16, 27923.34, 26440.02
+  ),
+  vtn_minimo = c(
+    12219.74, 13548.41, 14828.40, 37869.06, 12219.74, 23734.84, 22474.02
+  ),
+  vtn_maximo = c(
+    51234.62, 18330.20, 20061.96, 51234.62, 16532.58, 32111.84, 30406.02
+  ),
+  origem = "Campos dos Goytacazes, Carapebus, Conceição do Macabu, Macaé, Quissamã, São
+Francisco de Itabapoana, São João da Barra"
+)
+
+MRT706_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NORDESTE FLUMINENSE (MRT-706)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Vegetação Nativa - Mata Atlântica"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    20249.84, 21408.34, 17321.34, 4944.71, 43197.80, 19522.72, 35693.04,
+    4944.71
+  ),
+  vti_minimo = c(
+    4203.00, 18197.09, 14723.14, 4203.00, 36718.13, 16594.31, 30339.08,
+    4203.00
+  ),
+  vti_maximo = c(
+    49677.47, 24619.59, 19919.54, 5686.42, 49677.47, 22451.13, 41047.00,
+    5686.42
+  ),
+  vtn_media = c(
+    17097.63, 17477.63, 14393.76, 4944.71, 24609.71, 16074.21, 28143.62,
+    4944.71
+  ),
+  vtn_minimo = c(
+    4203.00, 14855.99, 12234.70, 4203.00, 20918.25, 13663.08, 23922.08,
+    4203.00
+  ),
+  vtn_maximo = c(
+    32365.16, 20099.27, 16552.82, 5686.42, 28301.17, 18485.34, 32365.16,
+    5686.42
+  ),
+  origem = "Aperibé, Bom Jesus do Itabapoana, Cambuci, Cardoso Moreira, Italva, Itaocara,
+Itaperuna, Laje do Muriaé, Miracema, Natividade, Porciúncula, Santo Antônio de Pádua,
+São Fidélis, São José de Ubá e Varre-Sai"
+)
+
+
+
+
 
 ### Consolidação dos Dados #####
 RJ17 <- rbind(
@@ -508,9 +634,18 @@ RJ22 <- rbind(
   RJMRT_Metropolitana_2022
 )
 
+RJ23 <- rbind(
+  MRT701_2024,
+  MRT702_2024,
+  MRT703_2024,
+  MRT704_2024,
+  MRT705_2024,
+  MRT706_2024
+)
 
 RJ17$ano <- 2017 
 RJ22$ano <- 2022 
-RJTEMPORAL <- rbind(RJ17, RJ22)
+RJ23$ano <- 2023
+RJTEMPORAL <- rbind(RJ17, RJ22, RJ23)
 RJTEMPORAL$estado <- 33
 RJTEMPORAL$regiao <- "sudeste"
