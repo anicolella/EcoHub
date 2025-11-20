@@ -649,6 +649,328 @@ MSMRT15_2020 <- data.frame(
   origem = "Coronel Sapucaia, Eldorado, Iguatemi, Itaquiraí, Japorã, Mundo Novo, Paranhos, Sete Quedas e Tacuru."
 )
 
+##### Atlas 23 #####
+
+MRT1601_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CORUMBÁ (MRT-1601)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade",
+    "Pecuária no Pantanal"
+  ),
+  nivel = c(0, 1, 2, 2),
+  vti_media = c(
+    11710.00, 12238.00, 12737.00, 2246.00
+  ),
+  vti_minimo = c(
+    1909.10, 10402.30, 10826.45, 1909.10
+  ),
+  vti_maximo = c(
+    14647.55, 14073.70, 14647.55, 2582.90
+  ),
+  vtn_media = c(
+    10295.00, 10700.00, 11068.00, 2176.00
+  ),
+  vtn_minimo = c(
+    1849.60, 9095.00, 9407.80, 1849.60
+  ),
+  vtn_maximo = c(
+    12728.20, 12305.00, 12728.20, 2502.40
+  ),
+  origem = "Corumbá, Caracol, Ladário e Porto Murtinho"
+)
+
+
+MRT1602_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS COXIM (MRT-1602)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 2, 2, 2),
+  vti_media = c(
+    17898.00, 17898.00, 24982.00, 19267.00, 12975.00
+  ),
+  vti_minimo = c(
+    13603.35, 15213.30, 21234.70, 16376.95, 11028.75
+  ),
+  vti_maximo = c(
+    28729.30, 20582.70, 28729.30, 22157.05, 14921.25
+  ),
+  vtn_media = c(
+    16168.00, 16168.00, 22067.00, 17464.00, 11829.00
+  ),
+  vtn_minimo = c(
+    10054.65, 13742.80, 18756.95, 14844.40, 10054.65
+  ),
+  vtn_maximo = c(
+    25377.05, 18593.20, 25377.05, 20083.60, 13603.35
+  ),
+  origem = "Coxim, Alcinópolis, Camapuã, Figueirão, Pedro Gomes, Rio Verde de Mato Grosso e Sonora"
+)
+
+MRT1603_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS AQUIDAUANA (MRT-1603)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade",
+    "Pecuária no Pantanal"
+  ),
+  nivel = c(0, 1, 2, 2, 2),
+  vti_media = c(
+    8333.00, 7452.00, 23456.00, 8483.00, 5816.00
+  ),
+  vti_minimo = c(
+    4943.60, 6334.20, 19937.60, 7210.55, 4943.60
+  ),
+  vti_maximo = c(
+    26974.40, 8569.80, 26974.40, 9755.45, 6688.40
+  ),
+  vtn_media = c(
+    7815.00, 7026.00, 21727.00, 8056.00, 5481.00
+  ),
+  vtn_minimo = c(
+    4658.85, 5972.10, 18467.95, 6847.67, 4658.85
+  ),
+  vtn_maximo = c(
+    24986.05, 8079.90, 24986.05, 9264.40, 6303.15
+  ),
+  origem = "Aquidauana e Miranda"
+)
+
+MRT1604_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS JARDIM (MRT-1604)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    31951.00, 43752.00, 32398.00, 29661.00, 43752.00, 32398.00, 29661.00
+  ),
+  vti_minimo = c(
+    25211.85, 37189.20, 27538.30, 25211.85, 37189.20, 27538.30, 25211.85
+  ),
+  vti_maximo = c(
+    50314.80, 50314.80, 37257.70, 34110.15, 50314.80, 37257.70, 34110.15
+  ),
+  vtn_media = c(
+    26509.00, 36644.00, 26280.00, 24656.00, 36644.00, 26280.00, 24656.00
+  ),
+  vtn_minimo = c(
+    20957.60, 31147.40, 22338.00, 20957.60, 31147.40, 22338.00, 20957.60
+  ),
+  vtn_maximo = c(
+    42140.60, 42140.60, 30222.00, 28354.40, 42140.60, 30222.00, 28354.40
+  ),
+  origem = "Jardim, Anastácio, Antônio João, Bela Vista, Bodoquena, Bonito, Guia Lopes da Laguna e
+Nioaque"
+)
+
+MRT1605_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CAMPO GRANDE (MRT-1605)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Grãos Diversos de Alta Capacidade",
+    "Agrícola - Grãos Diversos de Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    30219.00, 45588.00, 25384.00, 96748.00, 44421.00, 36204.00, 23879.00, 13444.00
+  ),
+  vti_minimo = c(
+    11427.40, 38749.80, 21576.40, 82235.80, 37757.51, 30773.40, 20297.15, 11427.40
+  ),
+  vti_maximo = c(
+    111260.20, 52426.20, 29191.60, 111260.20, 51084.15, 41634.60, 27460.85, 15460.60
+  ),
+  vtn_media = c(
+    25575.00, 41463.00, 22943.00, 92398.00, 40010.00, 33002.00, 21410.00, 12146.00
+  ),
+  vtn_minimo = c(
+    10324.10, 35243.55, 19501.55, 78538.30, 34008.50, 28051.07, 18198.50, 10324.10
+  ),
+  vtn_maximo = c(
+    106257.70, 47682.45, 26384.45, 106257.70, 46011.50, 37952.30, 24621.50, 13967.90
+  ),
+  origem = "Campo Grande, Bandeirantes, Corguinho, Dois Irmãos do Buriti, Jaraguari, Rio Negro,
+Rochedo, São Gabriel do Oeste e Terenos"
+)
+
+MRT1606_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CHAPADÃO DO SUL (MRT-1606)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Agrícola - Grãos Diversos",
+    "Agrícola - Cana-de-Açúcar",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade"
+  ),
+  nivel = c(0, 1, 2, 2, 1, 2),
+  vti_media = c(
+    29964.00, 95606.00, 158821.00, 32391.00, 26222.00, 28508.00
+  ),
+  vti_minimo = c(
+    22288.70, 27532.35, 134997.90, 27532.35, 22288.70, 24231.80
+  ),
+  vti_maximo = c(
+    182644.20, 182644.20, 182644.20, 37249.65, 30155.30, 32784.20
+  ),
+  vtn_media = c(
+    27885.00, 90994.50, 151217.00, 30772.00, 24136.00, 26153.00
+  ),
+  vtn_minimo = c(
+    20515.60, 26156.20, 128534.50, 26156.20, 20515.60, 22230.95
+  ),
+  vtn_maximo = c(
+    173899.60, 173899.60, 173899.60, 35387.80, 27756.40, 30075.95
+  ),
+  origem = "Chapadão do Sul, Costa Rica e Paraíso das Águas"
+)
+
+MRT1607_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS PARNAÍBA (MRT-1607)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade"
+  ),
+  nivel = c(0, 1, 2, 2),
+  vti_media = c(
+    27103.00, 27073.00, 24982.00, 23941.00
+  ),
+  vti_minimo = c(
+    20349.85, 23012.05, 21234.70, 20349.85
+  ),
+  vti_maximo = c(
+    31133.95, 31133.95, 28729.30, 27532.15
+  ),
+  vtn_media = c(
+    24319.00, 24179.00, 22067.00, 21832.00
+  ),
+  vtn_minimo = c(
+    18557.20, 20552.15, 18756.95, 18557.20
+  ),
+  vtn_maximo = c(
+    27805.85, 27805.85, 25377.05, 25106.80
+  ),
+  origem = "Paranaíba, Aparecida do Taboado, Cassilândia, Inocência e Selvíria"
+)
+
+MRT1608_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS TRÊS LAGOAS (MRT-1608)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Floresta Plantada",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    24371.00, 32386.00, 23521.00, 36005.00, 25617.00, 20895.00
+  ),
+  vti_minimo = c(
+    17760.75, 27528.10, 19992.85, 30604.25, 21774.45, 17760.75
+  ),
+  vti_maximo = c(
+    41405.75, 37243.90, 27049.15, 41405.75, 29459.55, 24029.25
+  ),
+  vtn_media = c(
+    23145.00, 32273.00, 21991.00, 31841.00, 23644.00, 19667.00
+  ),
+  vtn_minimo = c(
+    16716.95, 27432.05, 18692.35, 27064.85, 20097.40, 16716.95
+  ),
+  vtn_maximo = c(
+    36617.15, 37113.95, 25289.65, 36617.15, 27190.60, 22617.05
+  )
+)MRT1608_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS TRÊS LAGOAS (MRT-1608)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Floresta Plantada",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    24371.00, 32386.00, 23521.00, 36005.00, 25617.00, 20895.00
+  ),
+  vti_minimo = c(
+    17760.75, 27528.10, 19992.85, 30604.25, 21774.45, 17760.75
+  ),
+  vti_maximo = c(
+    41405.75, 37243.90, 27049.15, 41405.75, 29459.55, 24029.25
+  ),
+  vtn_media = c(
+    23145.00, 32273.00, 21991.00, 31841.00, 23644.00, 19667.00
+  ),
+  vtn_minimo = c(
+    16716.95, 27432.05, 18692.35, 27064.85, 20097.40, 16716.95
+  ),
+  vtn_maximo = c(
+    36617.15, 37113.95, 25289.65, 36617.15, 27190.60, 22617.05
+  ),
+  origem = "Três Lagoas, Água Clara, Brasilândia, Ribas do Rio Pardo e Santa Rita do Pardo"
+)
+
+MRT1609_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NOVA ANDRADINA (MRT-1609)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    38938.00, 54043.00, 52728.00, 34465.00, 54043.00, 52728.00, 46740.00, 32573.00
+  ),
+  vti_minimo = c(
+    24887.15, 45936.55, 44818.80, 29295.25, 45936.55, 44818.80, 39729.00, 27687.05
+  ),
+  vti_maximo = c(
+    62149.45, 62149.45, 60637.20, 39634.75, 62149.45, 60637.20, 53751.00, 37458.95
+  ),
+  vtn_media = c(
+    35896.00, 52770.00, 42248.00, 31660.00, 52770.00, 42248.00, 41896.00, 29837.00
+  ),
+  vtn_minimo = c(
+    23528.00, 44854.50, 35910.80, 26911.00, 44854.50, 35910.80, 35611.60, 25361.45
+  ),
+  vtn_maximo = c(
+    60685.50, 60685.50, 48585.20, 36409.00, 60685.50, 48585.20, 48180.40, 34312.55
+  ),
+  origem = "Nova Andradina, Anaurilândia, Batayporã, Bataguassu e Taquarussu"
+)
+
+
 ### Consolidacao dos dados####
 MS2017 <- rbind(
   MSMRT1_2017, MSMRT2_2017, MSMRT3_2017, MSMRT4_2017, MSMRT5_2017, MSMRT6_2017,
