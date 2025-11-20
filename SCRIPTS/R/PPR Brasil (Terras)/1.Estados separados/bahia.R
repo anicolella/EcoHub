@@ -329,6 +329,168 @@ BAMRT2907 <- data.frame(
   origem = "América Dourada, Barra, Barra do Mendes, Barro Alto, Brotas de Macaúbas, Cafarnaum, Canarana, Central, Gentio do Ouro, Ibotirama, Ipupiara, Irecê, Itaguaçu da Bahia, João Dourado, Jussara, Lapão, Morpará, Mulungu do Morro, Muquém do São Francisco, Oliveira dos Brejinhos, Presidente Dutra, São Gabriel, Uibaí e Xique-Xique."
 )
 
+####Atlas 2023#####
+
+MRT501_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS BARREIRAS (MRT-501)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Agrícola - Diversos",
+    "Pecuária - Bovinocultura Pastagem Nativa",
+    "Exploração Mista - Diversos",
+    "Vegetação Nativa - Mata",
+    "Não Agrícola - Periurbanos"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    12975.06, 44385.29, 6928.80, 21582.65, 2700.00, 84477.84, 44385.29,
+    6928.80, 21582.65, 2700.00, 84477.84
+  ),
+  vti_minimo = c(
+    2295.00, 37727.49, 5889.48, 18345.26, 2295.00, 71806.17, 37727.49,
+    5889.48, 18345.26, 2295.00, 71806.17
+  ),
+  vti_maximo = c(
+    97149.52, 51043.08, 7968.12, 24820.05, 3105.00, 97149.52, 51043.08,
+    7968.12, 24820.05, 3105.00, 97149.52
+  ),
+  vtn_media = c(
+    8043.52, 27462.43, 5227.95, 15298.50, 2700.00, 50686.70, 27462.43,
+    5227.95, 15298.50, 2700.00, 50686.70
+  ),
+  vtn_minimo = c(
+    2295.00, 23343.07, 4443.75, 13003.73, 2295.00, 43083.70, 23343.07,
+    4443.75, 13003.73, 2295.00, 43083.70
+  ),
+  vtn_maximo = c(
+    58289.71, 31581.79, 6012.14, 17593.28, 3105.00, 58289.71, 31581.79,
+    6012.14, 17593.28, 3105.00, 58289.71
+  ),
+  origem = "Angical, Baianópolis, Barreiras, Brejolândia, Canápolis, Catolândia, Cocos, Coribe,
+Correntina, Cotegipe, Cristópolis, Formosa do Rio Preto, Jaborandi, Luís Eduardo
+Magalhães, Mansidão, Riachão das Neves, Santa Maria da Vitória, Santa Rita de
+Cássia, Santana, São Desidério, São Félix do Coribe, Serra Dourada, Tabocas do Brejo
+Velho, Wanderley"
+)
+
+MRT502_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS IRECÊ (MRT-502)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Agrícola - Diversos",
+    "Pecuária - Bovinocultura Pastagem Nativa",
+    "Exploração Mista - Diversos",
+    "Não Agrícola - Periurbanos"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    6860.72, 12719.39, 2212.45, 2711.68, 27456.56, 12719.39, 2212.45,
+    2711.68, 27456.56
+  ),
+  vti_minimo = c(
+    1880.50, 10811.48, 1880.50, 2304.93, 23338.08, 10811.48, 1880.50,
+    2304.93, 23338.08
+  ),
+  vti_maximo = c(
+    31575.04, 14627.30, 2544.32, 3118.43, 31575.04, 14627.30, 2544.32,
+    3118.43, 31575.04
+  ),
+  vtn_media = c(
+    4577.79, 8208.34, 1929.28, 1897.39, 19221.06, 8208.34, 1929.28,
+    1897.39, 19221.06
+  ),
+  vtn_minimo = c(
+    1612.78, 6977.09, 1639.89, 1612.78, 16337.90, 6977.09, 1639.89,
+    1612.78, 16337.90
+  ),
+  vtn_maximo = c(
+    22104.22, 9439.59, 2218.67, 2182.00, 22104.22, 9439.59, 2218.67,
+    2182.00, 22104.22
+  ),
+  origem = "América Dourada, Barra, Barra do Mendes, Barro Alto, Brotas de Macaúbas,
+Cafarnaum, Canarana, Central, Gentio do Ouro, Ibotirama, Ibipeba, Ibititá, Ipupiara,
+Irecê, Itaguaçu da Bahia, João Dourado, Jussara, Lapão, Moporá, Mulungu do Morro,
+Muquém do São Francisco, Oliveira dos Brejinhos, Presidente Dutra, São Gabriel, Uibaí
+e Xique-Xique"
+)
+
+MRT503_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS GUANAMBI (MRT-503)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovinocultura Pastagem Nativa"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    8205.16, 6450.70, 6450.70
+  ),
+  vti_minimo = c(
+    5483.10, 5483.10, 5483.10
+  ),
+  vti_maximo = c(
+    9435.93, 7418.31, 7418.31
+  ),
+  vtn_media = c(
+    5378.30, 4815.89, 4815.89
+  ),
+  vtn_minimo = c(
+    4093.51, 4093.51, 4093.51
+  ),
+  vtn_maximo = c(
+    6185.05, 5538.27, 5538.27
+  ),
+  origem = "Caculé, Jacaraci, Carinhanha, Iuiu, Caetité, Malhada, Guajeru, Guanambi, Bom Jesus
+da Lapa, Paratinga, Riacho de Santana, Igaporã, Tanque Novo, Botuporã, Sítio do Mato,
+Boquira, Ibipitanga e Macaúbas"
+)
+
+MRT504_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS JUAZEIRO (MRT-504)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Não Agrícola",
+    "Agrícola - Diversos",
+    "Pecuária - Bovinocultura Pastagem Nativa",
+    "Não Agrícola - Periurbanos"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    21766.09, 30095.52, 3260.47, 32840.46, 30095.52, 3260.47, 32840.46
+  ),
+  vti_minimo = c(
+    2771.40, 25581.19, 2771.40, 27914.39, 25581.19, 2771.40, 27914.39
+  ),
+  vti_maximo = c(
+    37766.53, 34609.85, 3749.54, 37766.53, 34609.85, 3749.54, 37766.53
+  ),
+  vtn_media = c(
+    11692.24, 11959.67, 2298.15, 17841.59, 11959.67, 2298.15, 17841.59
+  ),
+  vtn_minimo = c(
+    1953.43, 10165.72, 1953.43, 15165.35, 10165.72, 1953.43, 15165.35
+  ),
+  vtn_maximo = c(
+    20517.83, 13753.62, 2642.87, 20517.83, 13753.62, 2642.87, 20517.83
+  ),
+  origem = "Campo Alegre de Lourdes, Pilão Arcado, Remanso, Sento Sé, Sobradinho, Casa Nova,
+Juazeiro, Curaçá, Uauá, Andorinha, Jaguarari, Campo Formoso,
+Antônio Gonçalves, Senhor do Bonfim, Filadélfia, Itiúba, Pindobaçu e Ponto Novo"
+)
+
+
+
 ## Consolidação dos dados ####
 BA18 <- rbind(
   BAMRT01_2018,
