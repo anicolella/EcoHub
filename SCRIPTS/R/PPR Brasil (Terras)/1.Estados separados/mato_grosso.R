@@ -1006,7 +1006,81 @@ MRT1309_2024 <- data.frame(
   ),
   vtn_maximo = c(
     72190.42, 64508.41, 23704.60, 72190.42, 27123.00, 28891.80, 11514.78
-  )
+  ),
+  origem = "São José do Rio Claro, Lucas do Rio Verde, Nova Mutum, Nova Ubiratã, Sorriso, Tapurah,
+Ipiranga do Norte, Santa Rita do Trivelato, Sinop, Vera"
+)
+
+MRT1310_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS OESTE (MRT-1310)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Exploração Mista",
+    "Agricultura - Grão Diversos - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Exploração Mista - Pastagem + Agricultura"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    8861.84, 16100.39, 10204.37, 2029.88, 11133.67, 16100.39, 11706.75, 8701.99,
+    14833.40
+  ),
+  vti_minimo = c(
+    1725.40, 13685.34, 8673.71, 1725.40, 9463.62, 13685.34, 9950.73, 7396.69,
+    12608.39
+  ),
+  vti_maximo = c(
+    18515.45, 18515.45, 11735.02, 2334.36, 12803.72, 18515.45, 13462.76,
+    10007.28, 17058.41
+  ),
+  vtn_media = c(
+    7990.35, 13685.34, 9230.27, 1949.48, 10020.30, 13685.34, 10604.55, 7856.00,
+    13350.06
+  ),
+  vtn_minimo = c(
+    1657.06, 11632.54, 7845.73, 1657.06, 8517.26, 11632.54, 9013.87, 6677.60,
+    11347.55
+  ),
+  vtn_maximo = c(
+    15738.14, 15738.14, 10614.81, 2241.90, 11523.35, 15738.14, 12195.23, 9034.39,
+    15352.57
+  ),
+  origem = "Juina, Castanheira, Comodoro, Juara, Novo Horizonte do Norte, Porto dos Gaúchos, Itanhangá"
+)
+
+MRT1311_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NOROESTE (MRT-1311)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    9555.78, 8929.54, 3620.73, 5587.17, 11402.92
+  ),
+  vti_minimo = c(
+    3077.62, 7590.11, 3077.62, 4749.10, 9692.48
+  ),
+  vti_maximo = c(
+    13113.36, 10268.97, 4163.84, 6425.24, 13113.36
+  ),
+  vtn_media = c(
+    8685.81, 7973.51, 3550.05, 5043.62, 10159.27
+  ),
+  vtn_minimo = c(
+    3017.54, 6777.48, 3017.54, 4287.07, 8635.39
+  ),
+  vtn_maximo = c(
+    11683.16, 9169.54, 4082.56, 5800.16, 11683.16
+  ),
+  origem = "Aripuanã, Colniza, Rondolândia, Cotriguaçu, Juruena, Nova Monte Verde, Nova Bandeirante, Apiacás"
 )
 
 
@@ -1045,7 +1119,20 @@ MRTMT23 <- rbind(
 )
 MRTMT23$ano <- 2023
 
-
+atlas23 <- rbind(
+  MRT1301_2024,
+  MRT1302_2024,
+  MRT1303_2024,
+  MRT1304_2024,
+  MRT1305_2024,
+  MRT1306_2024,
+  MRT1307_2024,
+  MRT1308_2024,
+  MRT1309_2024,
+  MRT1310_2024,
+  MRT1311_2024
+)
+atlas23$ano <- 2023
 
 MRTMT19 <- rbind(
   MTMRT1_19, MTMRT2_19, MTMRT3_19, MTMRT4_19, MTMRT5_19, 
@@ -1070,7 +1157,7 @@ MRTMT18$ano <- 2018
 
 
 #Junção de tudo
-MTTEMPORAL <- rbind( MRTMT23, MRTMT18, MRTMT19, MRTMT24)
+MTTEMPORAL <- rbind( MRTMT23, MRTMT18, MRTMT19, MRTMT24, atlas23)
 MTTEMPORAL$estado <- 51
 MTTEMPORAL$regiao <- "Centro Oeste"
 #Associação cidades mercados (O formato adotado aqui é distinto dos outros df montados)
