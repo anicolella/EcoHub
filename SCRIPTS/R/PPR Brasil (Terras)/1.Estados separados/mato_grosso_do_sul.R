@@ -903,35 +903,6 @@ MRT1608_2024 <- data.frame(
   ),
   vtn_maximo = c(
     36617.15, 37113.95, 25289.65, 36617.15, 27190.60, 22617.05
-  )
-)MRT1608_2024 <- data.frame(
-  mrt = "MERCADO REGIONAL DE TERRAS TRÊS LAGOAS (MRT-1608)",
-  tipologia_de_uso = c(
-    "Geral",
-    "Floresta Plantada",
-    "Pecuária",
-    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
-    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
-    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
-  ),
-  nivel = c(0, 1, 1, 2, 2, 2),
-  vti_media = c(
-    24371.00, 32386.00, 23521.00, 36005.00, 25617.00, 20895.00
-  ),
-  vti_minimo = c(
-    17760.75, 27528.10, 19992.85, 30604.25, 21774.45, 17760.75
-  ),
-  vti_maximo = c(
-    41405.75, 37243.90, 27049.15, 41405.75, 29459.55, 24029.25
-  ),
-  vtn_media = c(
-    23145.00, 32273.00, 21991.00, 31841.00, 23644.00, 19667.00
-  ),
-  vtn_minimo = c(
-    16716.95, 27432.05, 18692.35, 27064.85, 20097.40, 16716.95
-  ),
-  vtn_maximo = c(
-    36617.15, 37113.95, 25289.65, 36617.15, 27190.60, 22617.05
   ),
   origem = "Três Lagoas, Água Clara, Brasilândia, Ribas do Rio Pardo e Santa Rita do Pardo"
 )
@@ -970,6 +941,196 @@ MRT1609_2024 <- data.frame(
   origem = "Nova Andradina, Anaurilândia, Batayporã, Bataguassu e Taquarussu"
 )
 
+MRT1610_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SIDROLÂNDIA (MRT-1610)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Grãos Diversos",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    58065.00, 78333.00, 34036.00, 78333.00, 55379.00, 40130.00, 22465.00
+  ),
+  vti_minimo = c(
+    19095.25, 66583.05, 28930.60, 66583.05, 47072.15, 34110.50, 19095.25
+  ),
+  vti_maximo = c(
+    90082.95, 90082.95, 39141.40, 90082.95, 63685.85, 46149.50, 25834.75
+  ),
+  vtn_media = c(
+    53813.00, 76488.00, 30187.00, 76488.00, 49541.00, 34805.00, 20685.00
+  ),
+  vtn_minimo = c(
+    17582.25, 65014.80, 25658.95, 65014.80, 42109.85, 29584.55, 17582.25
+  ),
+  vtn_maximo = c(
+    87961.20, 87961.20, 34715.05, 87961.20, 56972.15, 40025.75, 23787.75
+  ),
+  origem = "Sidrolândia, Angélica e Nova Alvorada do Sul"
+)
+
+MRT1611_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS MARACAJU (MRT-1611)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Pecuária - Pastagem Formada",
+    "Agrícola - Grãos Diversos - Alta Capacidade",
+    "Agrícola - Grãos Diversos - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    82875.00, 88743.00, 49359.00, 49359.00, 111981.00, 66076.00
+  ),
+  vti_minimo = c(
+    41955.15, 75431.55, 41955.15, 41955.15, 95183.85, 56164.60
+  ),
+  vti_maximo = c(
+    128778.20, 102054.50, 56762.85, 56762.85, 128778.20, 75987.40
+  ),
+  vtn_media = c(
+    80521.00, 86588.00, 44787.00, 44787.00, 109357.00, 64335.00
+  ),
+  vtn_minimo = c(
+    38068.95, 73599.80, 38068.95, 38068.95, 92953.45, 54684.75
+  ),
+  vtn_maximo = c(
+    125760.60, 99576.20, 51505.05, 51505.05, 125760.60, 73985.25
+  ),
+  origem = "Maracaju, Ponta Porã e Rio Brilhante"
+)
+
+MRT1612_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS DOURADOS (MRT-1612)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Agrícola - Grãos Diversos"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    92710.00, 92710.00, 92710.00
+  ),
+  vti_minimo = c(
+    78803.50, 78803.50, 78803.50
+  ),
+  vti_maximo = c(
+    106616.50, 106616.50, 106616.50
+  ),
+  vtn_media = c(
+    89635.00, 89635.00, 89635.00
+  ),
+  vtn_minimo = c(
+    76189.75, 76189.75, 76189.75
+  ),
+  vtn_maximo = c(
+    103080.30, 103080.30, 103080.30
+  ),
+  origem = "Dourados, Douradina e Itaporã"
+)
+
+MRT1613_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS IVINHEMA (MRT-1613)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Pecuária - Pastagem Formada",
+    "Agrícola - Grãos Diversos de Alta Capacidade",
+    "Agrícola - Grãos Diversos de Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    41476.00, 41594.00, 42338.00, 42338.00, 79731.00, 38479.00
+  ),
+  vti_minimo = c(
+    32707.15, 35354.90, 35987.30, 35987.30, 67771.35, 32707.15
+  ),
+  vti_maximo = c(
+    91690.65, 47833.10, 48688.70, 48688.70, 91690.65, 44250.85
+  ),
+  vtn_media = c(
+    39383.00, 40872.00, 40000.00, 40000.00, 79731.00, 37606.00
+  ),
+  vtn_minimo = c(
+    31965.10, 34741.20, 34000.00, 34000.00, 67771.35, 31965.10
+  ),
+  vtn_maximo = c(
+    91690.65, 47002.80, 46000.00, 46000.00, 91690.65, 43246.90
+  ),
+  origem = "Ivinhema, Deodápolis, Fátima do Sul, Glória de Dourados, Jateí, Novo Horizonte do Sul e
+Vicentina"
+)
+
+MRT1614_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NAVIRAÍ (MRT-1614)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Agrícola - Grãos Diversos de Alta Capacidade",
+    "Agrícola - Grãos Diversos de Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    52403.00, 88949.00, 23232.00, 23232.00, 105940.00, 37757.00
+  ),
+  vti_minimo = c(
+    19747.20, 75606.65, 19747.20, 19747.20, 90049.00, 32093.45
+  ),
+  vti_maximo = c(
+    121831.00, 102291.40, 26716.80, 26716.80, 121831.00, 43420.55
+  ),
+  vtn_media = c(
+    50561.00, 86601.00, 20781.00, 20781.00, 103768.00, 36289.00
+  ),
+  vtn_minimo = c(
+    17663.85, 73610.85, 17663.85, 17663.85, 88202.80, 30845.65
+  ),
+  vtn_maximo = c(
+    119333.00, 99591.15, 23898.15, 23898.15, 119333.00, 41732.35
+  ),
+  origem = "Naviraí, Amambaí, Aral Moreira, Caarapó, Juti e Laguna Carapã"
+)
+
+MRT1615_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS IGUATEMI (MRT-1615)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Grãos Diversos",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    48333.00, 53166.00, 42642.00, 53166.00, 42642.00
+  ),
+  vti_minimo = c(
+    36245.70, 45191.10, 36245.70, 45191.10, 36245.70
+  ),
+  vti_maximo = c(
+    61140.90, 61140.90, 49038.30, 61140.90, 49038.30
+  ),
+  vtn_media = c(
+    45580.00, 51298.00, 37531.00, 51298.00, 37531.00
+  ),
+  vtn_minimo = c(
+    31901.35, 43603.30, 31901.35, 43603.30, 31901.35
+  ),
+  vtn_maximo = c(
+    58992.70, 58992.70, 43160.65, 58992.70, 43160.65
+  ),
+  origem = "Iguatemi, Coronel Sapucaia, Eldorado, Itaquiraí, Japorã, Mundo Novo, Paranhos, Sete
+Quedas e Tacuru"
+)
 
 ### Consolidacao dos dados####
 MS2017 <- rbind(
@@ -988,11 +1149,30 @@ MS2020 <- rbind(
   MSMRT13_2020, MSMRT14_2020, MSMRT15_2020
 )
 
+Atlas23 <- rbind(
+  MRT1601_2024,
+  MRT1602_2024,
+  MRT1603_2024,
+  MRT1604_2024,
+  MRT1605_2024,
+  MRT1606_2024,
+  MRT1607_2024,
+  MRT1608_2024,
+  MRT1609_2024,
+  MRT1610_2024,
+  MRT1611_2024,
+  MRT1612_2024,
+  MRT1613_2024,
+  MRT1614_2024,
+  MRT1615_2024
+)
+
+Atlas23$ano <- 2023
 MS2020$ano <- 2020
 MS2018$ano <- 2018
 MS2017$ano <- 2017
 
-MSTEMPORAL <- rbind(MS2020, MS2018, MS2017)
+MSTEMPORAL <- rbind(MS2020, MS2018, MS2017, Atlas23)
 MSTEMPORAL$estado <- 50
 MSTEMPORAL$regiao <- "Centro-Oeste"
 
