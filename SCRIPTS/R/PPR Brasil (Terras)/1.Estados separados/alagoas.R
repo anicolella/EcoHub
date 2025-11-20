@@ -193,15 +193,165 @@ ALMRT4_2024 <- data.frame(
   vtn_maximo = c(52506.83),
   origem = "Coqueiro Seco, Maceió, Marechal Deodoro, Paripueira, Santa Luzia do Norte e Satuba"
 )
+#### Atlas 23 ####
+MRT2201_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS MACEIÓ/ENTORNO (MRT-2201)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade",
+    "Agricultura - Diversificada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    26240.91, 33300.00, 22711.36, 15689.39, 33300.00
+  ),
+  vti_minimo = c(
+    13335.98, 28305.00, 19304.66, 13335.98, 28305.00
+  ),
+  vti_maximo = c(
+    38295.00, 38295.00, 26618.07, 18042.80, 38295.00
+  ),
+  vtn_media = c(
+    23684.63, 29993.00, 20530.53, 14491.89, 29993.00
+  ),
+  vtn_minimo = c(
+    12318.11, 25494.05, 17450.88, 12318.11, 25494.05
+  ),
+  vtn_maximo = c(
+    34491.95, 34491.95, 23610.01, 16665.68, 34491.95
+  ),
+  origem = "Coqueiro Seco, Maceió, Marechal Deodoro, Paripueira, Santa Luzia do Norte e Satuba"
+)
 
+MRT2202_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS MATA ALAGOANA (MRT-2202)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Pecuária",
+    "Agricultura - Diversificada - Alta Capacidade",
+    "Agricultura - Diversificada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    22014.86, 24283.50, 18409.58, 28086.60, 22880.07, 29955.85, 16857.45,
+    17556.27
+  ),
+  vti_minimo = c(
+    14328.83, 20640.97, 15648.14, 23873.61, 19448.06, 25462.47, 14328.83,
+    14922.83
+  ),
+  vti_maximo = c(
+    32299.59, 27926.02, 21171.02, 32299.59, 26312.09, 34449.23, 19386.06,
+    20189.71
+  ),
+  vtn_media = c(
+    19657.64, 21617.88, 16506.61, 24873.39, 20466.47, 26719.81, 15117.45,
+    15730.30
+  ),
+  vtn_minimo = c(
+    12849.83, 18375.20, 14030.62, 21142.38, 17396.50, 22711.84, 12849.83,
+    13370.75
+  ),
+  vtn_maximo = c(
+    28604.39, 24860.57, 18982.60, 28604.39, 23536.44, 30727.78, 17385.06,
+    18089.84
+  ),
+  origem = "Anadia, Atalaia, Barra de Santo Antônio, Barra de São Miguel, Boca da Mata, Branquinha,
+Cajueiro, Capela, Campestre, Campo Alegre, Colônia Leopoldina, Coruripe, Feliz Deserto,
+Flexeiras, Ibateguara, Jacuípe, Japaratinga, Jequiá da Praia, Joaquim Gomes, Jundiá,
+Junqueiro, Matriz do Camaragibe, Maragogi, Messias, Murici, Novo Lino, Passo de
+Camaragibe, Penedo, Piaçabuçu, Pilar, Porto Calvo, Porto de Pedras, Rio Largo, Roteiro,
+São José da Lage, São Miguel do Campos, São Miguel dos Milagres, São Luiz do Quitunde,
+Santana do Mundaú, Teotônio Vilela e União dos Palmares"
+)
+
+MRT2203_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS AGRESTE ALAGOANO (MRT-2203)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Pecuária",
+    "Agricultura - Diversificada - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    24053.28, 26910.16, 19619.02, 26910.16, 20375.57, 23084.66
+  ),
+  vti_minimo = c(
+    16326.84, 22873.63, 16676.16, 22873.63, 17319.23, 19621.96
+  ),
+  vti_maximo = c(
+    30946.68, 30946.68, 22561.87, 30946.68, 23431.90, 26547.36
+  ),
+  vtn_media = c(
+    21239.27, 19208.04, 19178.74, 19208.04, 17963.91, 20538.52
+  ),
+  vtn_minimo = c(
+    18053.38, 16326.84, 16301.93, 16326.84, 15269.33, 17457.74
+  ),
+  vtn_maximo = c(
+    24425.16, 22089.25, 22055.55, 22089.25, 20658.50, 23619.30
+  ),
+  origem = "Arapiraca, Belém, Campo Grande, Chã Preta, Coité do Noia, Craíbas, Feira Grande, Girau
+do Ponciano, Igaci, Igreja Nova, Lagoa da Canoa, Limoeiro de Anadia, Maribondo, Mar
+Vermelho, Olho d'Água Grande, Palmeira dos Índios, Paulo Jacinto, Pindoba, Porto Real
+do Colégio, Quebrangulo, São Brás, São Sebastião, Tanque d'Arca, Taquarana e Viçosa"
+)
+
+MRT2204_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SERTÃO ALAGOANO (MRT-2204)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Leite",
+    "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade",
+    "Pecuária - Bovino - Leite - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    6573.70, 5860.32, 6856.04, 4518.25, 6766.18
+  ),
+  vti_minimo = c(
+    3320.15, 4981.27, 5345.29, 3320.15, 4152.84
+  ),
+  vti_maximo = c(
+    7559.75, 6739.37, 7231.86, 4491.97, 5618.55
+  ),
+  vtn_media = c(
+    5523.52, 4857.26, 6288.58, 3906.06, 4885.70
+  ),
+  vtn_minimo = c(
+    3320.15, 4128.68, 5345.29, 3320.15, 4152.00
+  ),
+  vtn_maximo = c(
+    7231.86, 5585.85, 7231.86, 4491.97, 5618.55
+  ),
+  origem = "Água Branca, Batalha, Belo Monte, Cacimbinhas, Canapi, Carneiros, Delmiro Gouveia,
+Dois Riachos, Estrela de Alagoas, Inhapi, Jacaré dos Homens, Jaramataia, Major Isidoro,
+Maravilha, Mata Grande, Minador do Negrão, Monteirópolis, Olivença, Olho d'Água do
+Casado, Olho d'Água das Flores, Ouro Branco, Palestina, Pão de Açúcar, Pariconha,
+Piranhas, Poço das Trincheiras, São José da Tapera, Santana do Ipanema, Senador Rui
+Palmeira e Traipu"
+)
 
 #### Consolidação dos dados ####
+
+AL23 <- rbind(MRT2204_2024, MRT2203_2024, MRT2202_2024, MRT2201_2024)
+AL23$ano <- 2023
 AL18 <- rbind(ALMRT1_2018, ALMRT2_2018, ALMRT3_2018, ALMRT4_2018)
 AL18$ano <- 2018
 AL22 <- rbind(ALMRT1_2022, ALMRT2_2022, ALMRT3_2022, ALMRT4_2022)
 AL22$ano <- 2022
 AL24 <- rbind(ALMRT1_2024, ALMRT2_2024, ALMRT3_2024, ALMRT4_2024)
 AL24$ano <- 2024
-ALTEMPORAL <- rbind(AL24, AL22, AL18)
+ALTEMPORAL <- rbind(AL24, AL22, AL18, AL23)
 ALTEMPORAL$estado <- 27
 ALTEMPORAL$regiao <- "nordeste"
