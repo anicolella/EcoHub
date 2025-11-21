@@ -579,6 +579,370 @@ MRT203_2024 <- data.frame(
   origem = "Caucaia, Chorozinho, Guaiúba, Horizonte, Itaitinga, Maranguape, Pacajus e Pacatuba"
 )
 
+MRT204_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS LITORAL LESTE (MRT-204)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Agrícola - Fruticultura Caju",
+    "Exploração Mista - Diversificada",
+    "Não Agrícola - Carcinicultura"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    4550.80, 4662.69, 4177.82, 14997.90, 4662.69, 4177.82, 14997.90
+  ),
+  vti_minimo = c(
+    3551.15, 3963.29, 3551.15, 12748.22, 3963.29, 3551.15, 12748.22
+  ),
+  vti_maximo = c(
+    17247.59, 5362.09, 4804.50, 17247.59, 5362.09, 4804.50, 17247.59
+  ),
+  vtn_media = c(
+    2254.73, 1746.52, 3551.15, 14997.90, 1746.52, 3551.15, 14997.90
+  ),
+  vtn_minimo = c(
+    1484.55, 1484.55, 1409.30, 12748.22, 1484.55, 1409.30, 12748.22
+  ),
+  vtn_maximo = c(
+    17247.59, 2008.50, 4804.50, 17247.59, 2008.50, 4804.50, 17247.59
+  ),
+  origem = "Aracati, Beberibe, Cascavel, Fortim, Icapuí, Itaiçaba, Jaguaruana e Pindoretama"
+)
+
+MRT205_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS BATURITÉ (MRT-205)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Agrícola - Fruticultura Banana",
+    "Agrícola - Fruticultura Caju",
+    "Exploração Mista - Pastagem + Fruticultura",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Não Agrícola - Periurbanas"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    10403.57, 17209.49, 4170.45, 18558.98, 16019.13, 11174.10, 6900.78, 1688.33,
+    18558.98
+  ),
+  vti_minimo = c(
+    1435.08, 14628.07, 3544.88, 15775.13, 13616.26, 9497.98, 5865.66, 1435.08,
+    15775.13
+  ),
+  vti_maximo = c(
+    21342.83, 19790.92, 4796.02, 21342.83, 18422.00, 12850.21, 7935.89, 1941.58,
+    21342.83
+  ),
+  vtn_media = c(
+    5318.03, 8700.75, 2378.04, 18558.98, 8123.81, 5009.35, 3651.26, 1048.50,
+    18558.98
+  ),
+  vtn_minimo = c(
+    891.21, 7395.64, 2021.33, 15775.13, 6905.24, 4257.95, 3103.57, 891.21,
+    15775.13
+  ),
+  vtn_maximo = c(
+    10005.86, 10005.86, 2734.74, 21342.83, 9342.39, 5760.75, 4198.95, 1205.78,
+    21342.83
+  ),
+  origem = "Acaparé, Aracoiaba, Aratuba, Barreira, Baturité, Capistrano, Guaramiranga, Itapiúna,
+Mulungu, Ocara, Pacoti, Palmácia, Redenção"
+)
+
+MRT206_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SERTÕES DO CANINDÉ (MRT-206)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Exploração Mista - Subsistência"
+  ),
+  nivel = c(0, 1, 2, 2),
+  vti_media = c(
+    730.43, 730.43, 960.71, 521.58
+  ),
+  vti_minimo = c(
+    443.35, 620.87, 816.60, 443.35
+  ),
+  vti_maximo = c(
+    1104.81, 840.00, 1104.81, 599.82
+  ),
+  vtn_media = c(
+    524.20, 524.20, 633.12, 433.74
+  ),
+  vtn_minimo = c(
+    368.68, 445.57, 538.15, 368.68
+  ),
+  vtn_maximo = c(
+    728.09, 602.83, 728.09, 498.81
+  ),
+  origem = "Boa Viagem, Canindé, Caridade, Itatira, Madalena e Paramoti"
+)
+
+MRT207_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SERTÕES NORTE (MRT-207)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Exploração Mista - Agricultura e Pecuária",
+    "Exploração Mista - Subsistência",
+    "Não Agrícola - Turismo"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    2058.09, 1775.51, 60599.42, 2046.74, 588.91, 60599.42
+  ),
+  vti_minimo = c(
+    500.57, 1509.19, 51509.51, 1739.73, 500.57, 51509.51
+  ),
+  vti_maximo = c(
+    69689.33, 2041.84, 69689.33, 2353.75, 677.24, 69689.33
+  ),
+  vtn_media = c(
+    1366.76, 1599.15, 60599.42, 1348.83, 463.42, 60599.42
+  ),
+  vtn_minimo = c(
+    393.91, 1359.27, 51509.51, 1146.50, 393.91, 51509.51
+  ),
+  vtn_maximo = c(
+    69689.33, 1839.02, 69689.33, 1551.15, 532.94, 69689.33
+  ),
+  origem = "Alcântaras, Cariré, Coreaú, Forquilha, Frecheirinha, Graça, Groaíras, Massapê, Meruoca,
+Moraújo, Mucambo, Pacujá, Reriutaba, Santana do Acaraú, Senador Sá, Sobral e Varjota"
+)
+
+
+MRT208_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SERRADA IBIAPABA (MRT-208)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Agrícola - Horticultura/Olericultura/Granjeiros",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Subsistência"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    8376.77, 14976.51, 5376.88, 14976.51, 6652.20, 1040.81
+  ),
+  vti_minimo = c(
+    884.69, 12730.03, 4570.50, 12730.03, 5654.37, 884.69
+  ),
+  vti_maximo = c(
+    17222.99, 17222.99, 6183.42, 17222.99, 7650.03, 1196.93
+  ),
+  vtn_media = c(
+    4341.23, 7595.07, 2862.22, 7595.07, 3450.79, 716.41
+  ),
+  vtn_minimo = c(
+    608.94, 6455.81, 2432.88, 6455.81, 2933.17, 608.94
+  ),
+  vtn_maximo = c(
+    8734.33, 8734.33, 3291.55, 8734.33, 3968.41, 823.87
+  ),
+  origem = "Carnaubal, Croatá, Guaraciaba do Norte, Ibiapina, São Benedito, Tianguá, Ubajara e
+Viçosa do Ceará"
+)
+
+MRT209_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS INHAMUNS (MRT-209)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Exploração Mista - Subsistência"
+  ),
+  nivel = c(0, 1, 2, 2),
+  vti_media = c(
+    1567.65, 1503.00, 1617.21, 572.48
+  ),
+  vti_minimo = c(
+    486.61, 1277.55, 1374.63, 486.61
+  ),
+  vti_maximo = c(
+    1859.79, 1728.45, 1859.79, 658.36
+  ),
+  vtn_media = c(
+    1057.65, 1016.54, 1098.60, 471.39
+  ),
+  vtn_minimo = c(
+    400.68, 864.06, 933.81, 400.68
+  ),
+  vtn_maximo = c(
+    1263.39, 1169.02, 1263.39, 542.10
+  ),
+  origem = "Aiuaba, Arneiroz, Catunda, Crateús, Hidrolândia, Independência, Ipaporanga, Ipu,
+Ipueiras, Monsenhor Tabosa, Nova Russas, Novo Oriente, Parambú, Pires Ferreira,
+Poranga, Quiterianópolis, Santa Quitéria, Tamboril e Tauá"
+)
+
+MRT210_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE SERTÃO CENTRAL (MRT-210)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Exploração Mista - Subsistência",
+    "Pecuária - Pastagem Nativa",
+    "Pecuária - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    2226.63, 4912.83, 1545.80, 1640.74, 628.03, 3709.09, 6411.30
+  ),
+  vti_minimo = c(
+    533.72, 4175.91, 1313.93, 1394.63, 533.82, 3152.72, 5449.60
+  ),
+  vti_maximo = c(
+    7372.99, 5649.76, 1777.67, 1886.86, 722.23, 4265.45, 7372.99
+  ),
+  vtn_media = c(
+    1481.80, 3207.39, 1045.28, 1100.12, 515.20, 2423.10, 4182.45
+  ),
+  vtn_minimo = c(
+    252.39, 2726.28, 888.49, 935.10, 437.92, 2059.64, 3555.08
+  ),
+  vtn_maximo = c(
+    4809.82, 3688.49, 1202.07, 1265.14, 592.48, 2786.57, 4809.82
+  ),
+  origem = "Banabuiú, Choró, Deputado Irapuan Pinheiro, Ibaretama, Ibicuitinga, Milhã, Mombaça,
+Pedra Branca, Piquet Carneiro, Quixadá, Quixeramobim, Senador Pompeu e Solonópole"
+)
+
+MRT211_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS VALE DO JAGUARIBE (MRT-211)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Agrícola - Grãos",
+    "Exploração Mista - Pastagem + Fruticultura",
+    "Exploração Mista - Diversificada",
+    "Pecuária - Pastagem Nativa",
+    "Pecuária - Pastagem Formada",
+    "Não Agrícola - Carcinicultura"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1),
+  vti_media = c(
+    5787.61, 6615.82, 7344.21, 3171.00, 9545.78, 6315.79, 7536.30, 1580.91,
+    5053.86, 11001.65, 9545.78
+  ),
+  vti_minimo = c(
+    1343.78, 5623.45, 6242.57, 2695.35, 8113.92, 5368.42, 6405.86, 1343.78,
+    4295.78, 9351.40, 8113.92
+  ),
+  vti_maximo = c(
+    12651.90, 7608.20, 8445.84, 3646.65, 10977.65, 7263.16, 8666.75, 1818.05,
+    5811.94, 12651.90, 10977.65
+  ),
+  vtn_media = c(
+    3808.11, 4583.94, 4815.73, 1862.25, 9545.78, 4725.25, 3821.90, 1122.27,
+    3338.50, 7176.99, 9545.78
+  ),
+  vtn_minimo = c(
+    953.93, 3896.35, 4093.37, 1582.91, 8113.92, 4016.46, 3248.61, 953.93,
+    2837.37, 6100.44, 8113.92
+  ),
+  vtn_maximo = c(
+    10977.65, 5271.53, 5538.09, 2141.59, 10977.65, 5434.03, 4395.18, 1290.61,
+    3839.28, 8253.54, 10977.65
+  ),
+  origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João
+do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e
+Jaguaribe"
+)
+
+MRT212_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CENTRO SUL (MRT-212)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Exploração Mista - Pastagem + Fruticultura",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Pecuária - Pastagem Nativa",
+    "Pecuária - Bovino - Confinamento"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    3423.31, 3963.12, 1955.64, 6917.75, 1524.20, 3840.26, 20900.06
+  ),
+  vti_minimo = c(
+    1295.57, 3368.65, 1662.29, 5880.08, 1295.57, 3264.22, 17765.05
+  ),
+  vti_maximo = c(
+    24035.06, 4557.59, 2248.98, 7955.41, 1752.83, 4416.30, 24035.06
+  ),
+  vtn_media = c(
+    1770.71, 2585.37, 1247.16, 3508.21, 1062.78, 2505.22, 13634.28
+  ),
+  vtn_minimo = c(
+    903.37, 2197.56, 1060.08, 2981.98, 903.37, 2129.43, 11589.14
+  ),
+  vtn_maximo = c(
+    15679.42, 2973.17, 1434.23, 4034.44, 1222.20, 2881.00, 15679.42
+  ),
+  origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João
+do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e
+Jaguaribe"
+)
+
+MRT213_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CARIRI (MRT-213)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola - Grãos Diversos",
+    "Agrícola - Mandioca",
+    "Agrícola - Grãos Milho",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Exploração Mista - Diversificada",
+    "Pecuária - Pastagem Nativa",
+    "Pecuária - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    4729.96, 4202.59, 5069.27, 5904.54, 3116.93, 2829.02, 7632.18, 1567.75,
+    19351.12, 3685.97, 9021.54
+  ),
+  vti_minimo = c(
+    1332.58, 3572.20, 4308.88, 5018.86, 2649.39, 2404.67, 6487.35, 1332.58,
+    16448.45, 3133.07, 7668.31
+  ),
+  vti_maximo = c(
+    22253.79, 4832.98, 5829.66, 6790.22, 3584.47, 3253.38, 8777.00, 1802.91,
+    22253.79, 4238.86, 10374.77
+  ),
+  vtn_media = c(
+    3324.51, 2737.28, 3481.43, 3955.68, 2120.26, 1926.45, 4978.90, 1125.72,
+    12752.64, 2496.69, 6294.98
+  ),
+  vtn_minimo = c(
+    956.86, 2326.59, 2959.22, 3362.33, 1802.22, 1637.38, 4232.06, 956.86,
+    10839.75, 2122.19, 5350.73
+  ),
+  vtn_maximo = c(
+    14665.54, 3147.87, 4003.65, 4549.03, 2438.30, 2215.42, 5725.73, 1294.58,
+    14665.54, 2871.19, 7239.23
+  ),
+  origem = "Abaiara, Altaneira, Antonina do Norte, Araripe, Assaré, Aurora, Barbalha, Barro, Brejo
+Santo, Campos Sales, Caririaçu, Crato, Farias Brito, Granjeiro, Jardim, Jati, Juazeiro do
+Norte, Mauriti, Milagres, Missão Velha, Nova Olinda, Penaforte, Porteiras, Potangi,
+Santana do Cariri, Salitre, Tarrafas, Várzea Alegre."
+)
+
 ### Consolidação dos dados#####
 # Consolidação dos dados
 CE17 <- rbind(
@@ -611,6 +975,23 @@ CE2022 <- rbind(
   CEMRTCariri_2022
 )
 
+CE2023 <- rbind(
+ MRT201_2024,
+ MRT202_2024,
+ MRT203_2024,
+ MRT204_2024,
+ MRT205_2024,
+ MRT206_2024,
+ MRT207_2024,
+ MRT208_2024,
+ MRT209_2024,
+ MRT210_2024,
+ MRT211_2024,
+ MRT212_2024,
+ MRT213_2024
+)
+
+
 CE2024 <- rbind(
   CEMRTIbiapaba_2024,
   CEMRTJaguaribano_2024,
@@ -622,9 +1003,10 @@ CE2024 <- rbind(
 
 
 CE17$ano <- 2017
+CE2023$ano <- 2023
 CE2022$ano <- 2022
 CE2024$ano <- 2024
-CETEMPORAL <- rbind(CE2022, CE17, CE2024)
+CETEMPORAL <- rbind(CE2022, CE17, CE2024, CE2023)
 CETEMPORAL$estado <- 23
 CETEMPORAL$regiao <- "nordeste"
 
