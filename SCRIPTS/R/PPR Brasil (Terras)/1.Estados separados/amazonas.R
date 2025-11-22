@@ -138,6 +138,159 @@ AMMRT4_2023 <- data.frame(
   vtn_maximo = c(1184.77, 1067.42, 1780.05, 611.95, 944.87, 702.90, 2322.84, 611.95),
   origem = "Alvarães, Amaturá, Atalaia do Norte, Benjamin Constant, Carauari, Envira, Eirunepé, Fonte Boa, Guajará, Itamarati, Ipixuna, Japurá, Juruá, Jutaí, Maraã, Pauini, Santo Antônio do Içá, Santa Isabel do Rio Negro, São Gabriel da Cachoeira, São Paulo de Olivença, Tabatinga, Tonantins e Uarini"
 )
+
+##### Atlas 23 #####
+MRT1501_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SUL AMAZONENSE (MRT-1501)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Floresta Amazônica"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    6585.14, 6646.99, 1863.80, 6646.99, 1230.90
+  ),
+  vti_minimo = c(
+    1046.26, 5649.94, 1584.23, 5649.94, 952.07
+  ),
+  vti_maximo = c(
+    7644.04, 7644.04, 2143.37, 7644.04, 1415.53
+  ),
+  vtn_media = c(
+    5697.59, 5768.64, 1819.16, 5768.64, 1218.62
+  ),
+  vtn_minimo = c(
+    1035.83, 4903.35, 1546.29, 4903.35, 1035.83
+  ),
+  vtn_maximo = c(
+    6633.94, 6633.94, 2092.04, 6633.94, 1401.42
+  ),
+  origem = "Apuí, Beruri, Boca do Acre, Canutama, Careiro, Humaitá, Lábrea, Manicoré, Novo Aripuanã
+e Tapauá"
+)
+
+MRT1502_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS OESTE AMAZONENSE (MRT-1502)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Nativa - Baixa Capacidade",
+    "Agricultura de Subsistência",
+    "Agricultura - Fruticultura",
+    "Vegetação Nativa - Floresta"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    1188.56, 928.19, 1547.87, 532.13, 928.19, 672.34, 2435.77, 532.13
+  ),
+  vti_minimo = c(
+    452.31, 788.96, 1315.69, 452.31, 788.96, 571.49, 2070.40, 452.31
+  ),
+  vti_maximo = c(
+    2801.13, 1067.42, 1780.05, 611.95, 1067.42, 773.19, 2801.13, 611.95
+  ),
+  vtn_media = c(
+    1030.24, 928.19, 1547.87, 532.13, 821.63, 611.22, 2019.86, 532.13
+  ),
+  vtn_minimo = c(
+    452.31, 788.96, 1315.69, 452.31, 698.38, 519.54, 1716.88, 452.31
+  ),
+  vtn_maximo = c(
+    2322.84, 1067.42, 1780.05, 611.95, 944.87, 702.90, 2322.84, 611.95
+  ),
+  origem = "Alvarães, Amaturá, Atalaia do Norte, Benjamin Constant, Carauari, Eirunepé, Envira, Fonte
+Boa, Guajará, Ipixuna, Itamarati, Japurá, Juruá, Jutaí, Maraã, Pauini, Santa Isabel do Rio
+Negro, Santo Antônio do Içá, São Gabriel da Cachoeira, São Paulo de Olivença, Tabatinga,
+Tonantins e Uarini"
+)
+
+MRT1503_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CENTRO LESTE AMAZONENSE (MRT-1503)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Agrícola - Fruticultura Diversos",
+    "Pecuária - Bovino Pastagem Formada",
+    "Vegetação Nativa - Capoeira"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    4812.66, 9537.11, 4026.19, 6265.73, 5913.51, 9537.11, 2210.32, 5465.69
+  ),
+  vti_minimo = c(
+    1878.77, 8106.55, 3422.26, 5325.87, 5026.48, 8106.55, 1878.77, 4645.83
+  ),
+  vti_maximo = c(
+    10967.68, 10967.68, 4630.12, 7205.59, 6800.54, 10967.68, 2541.86, 6285.54
+  ),
+  vtn_media = c(
+    4539.32, 9052.35, 3258.33, 5333.61, 5796.07, 9052.35, 1830.56, 5412.98
+  ),
+  vtn_minimo = c(
+    1555.97, 7694.50, 2769.58, 4533.53, 5026.48, 7694.50, 1555.97, 4601.03
+  ),
+  vtn_maximo = c(
+    10410.20, 10410.20, 3747.08, 6133.65, 6800.54, 10410.20, 2105.14, 6224.92
+  ),
+  origem = "Anamã, Anori, Autazes, Barcelos, Barreirinha, Boa Vista dos Ramos, Borba, Caapiranga,
+Careiro da Várzea, Coari, Codajás, Itapiranga, Manaquiri, Manués, Nhamundá, Nova
+Olinda do Norte, Novo Airão, Parintíns, São Sebastião do Uatumã,Tefé, Urucará e
+Urucurituba"
+)
+
+MRT1504_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS MANAUS E ENTORNO (MRT-1504)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Não Agrícola",
+    "Agrícola - Fruticultura Diversos",
+    "Exploração Mista - Diversificada",
+    "Pecuária - Diversificada",
+    "Pecuária - Bovino Pastagem Formada",
+    "Vegetação Nativa - Floresta Amazônica",
+    "Vegetação Nativa - Capoeira",
+    "Não Agrícola - Periurbanas"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    6398.77, 6532.20, 9091.46, 2952.66, 7018.76, 325272.98, 6468.16, 3942.33,
+    10411.48, 7441.43, 7212.14, 8387.15, 325272.98
+  ),
+  vti_minimo = c(
+    2509.76, 5552.37, 7727.74, 2509.76, 5965.94, 276482.04, 11611.90, 3350.83,
+    8849.76, 6325.21, 6130.32, 7129.08, 276482.04
+  ),
+  vti_maximo = c(
+    374063.93, 7512.03, 10455.18, 3395.55, 8071.57, 374063.93, 15710.22, 4533.47,
+    11973.20, 8557.64, 8293.96, 9645.22, 374063.93
+  ),
+  vtn_media = c(
+    5385.34, 5624.71, 6822.56, 2186.86, 6907.24, 303207.29, 5602.25, 2838.25,
+    7803.65, 5596.20, 7212.14, 8253.33, 303207.29
+  ),
+  vtn_minimo = c(
+    1858.83, 4781.01, 5799.17, 1858.83, 5871.15, 257726.20, 4761.92, 2412.52,
+    6633.10, 4756.77, 6130.32, 7015.33, 257726.20
+  ),
+  vtn_maximo = c(
+    348688.39, 6468.42, 7845.94, 2514.89, 7943.32, 348688.39, 6442.59, 3263.99,
+    8974.19, 6435.63, 8293.96, 9491.33, 348688.39
+  ),
+  origem = "Iranduba, Itacoatiara, Manacapuru, Manaus, Presidente Figueiredo e Rio Preto da Eva"
+)
+
 #### Combinação ####
 #Combinação e setagem de ano
 AM16 <- rbind(
@@ -147,9 +300,12 @@ AM16 <- rbind(
   AMMRTCentro_Leste_Amazonense_2016
 )
 AM23 <- rbind(AMMRT1_2023, AMMRT2_2023, AMMRT3_2023, AMMRT4_2023)
+atlas23 <- rbind(MRT1504_2024, MRT1503_2024, MRT1502_2024, MRT1501_2024)
+
 
 AM23$ano <- 2023
+atlas23$ano <-2023
 AM16$ano <- 2016
-AMTEMPORAL <- rbind(AM23, AM16)
+AMTEMPORAL <- rbind(AM23, AM16, atlas23)
 AMTEMPORAL$estado <- 13
 AMTEMPORAL$regiao <- "Norte"
