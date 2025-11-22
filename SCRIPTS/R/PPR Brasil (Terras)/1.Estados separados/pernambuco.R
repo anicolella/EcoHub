@@ -474,6 +474,155 @@ PEMRT_IX_Triunfo_2019 <- data.frame(
   origem = "Santa Cruz da Baixa Verde e Triunfo "
 )
 
+#### Atlas ####
+
+MRT301_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS METROPOLITANA RURAL (MRT-301)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Exploração Mista - Diversos"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    11240.73, 11240.73, 11240.73
+  ),
+  vti_minimo = c(
+    9402.57, 9402.57, 9402.57
+  ),
+  vti_maximo = c(
+    13078.89, 13078.89, 13078.89
+  ),
+  vtn_media = c(
+    8285.06, 8285.06, 8285.06
+  ),
+  vtn_minimo = c(
+    5624.00, 5624.00, 5624.00
+  ),
+  vtn_maximo = c(
+    10946.13, 10946.13, 10946.13
+  ),
+  origem = "Abreu e Lima, Cabo de Santo Agostinho, Camaragibe, Goiana, Igarassu, Ilha de
+Itamaracá, Ipojuca, Itapissuma, Jaboatão dos Guararapes, Moreno, Olinda, Paulista,
+Recife e São Lourenço da Mata"
+)
+
+MRT302_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS MATA NORTE (MRT-302)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agrícola",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Agrícola - Cana",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Pecuária - Diversos",
+    "Exploração Mista - Diversificada"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    21737.39, 25827.61, 15674.66, 36174.42, 85289.47, 13840.08, 23566.82,
+    30349.18, 20409.30
+  ),
+  vti_minimo = c(
+    11764.07, 21953.47, 13323.46, 30748.26, 72496.05, 11764.07, 20031.80,
+    25796.80, 17347.91
+  ),
+  vti_maximo = c(
+    98082.89, 29701.75, 18025.86, 41600.58, 98082.89, 15916.09, 27101.84,
+    34901.56, 23470.70
+  ),
+  vtn_media = c(
+    14764.03, 15239.77, 13067.03, 20853.89, 29350.32, 13012.63, 14140.09,
+    17439.12, 13524.66
+  ),
+  vtn_minimo = c(
+    11060.74, 12953.80, 11106.98, 17725.81, 24947.77, 11060.74, 12019.08,
+    14823.25, 11495.96
+  ),
+  vtn_maximo = c(
+    33752.87, 17525.74, 15027.08, 23981.97, 33752.87, 14964.52, 16261.10,
+    20054.99, 15553.36
+  ),
+  origem = "Aliança, Araçoiaba, Buenos Aires, Camutanga, Carpina, Chã de Alegria, Condado,
+Ferreiros, Glória do Goitá, Itambé, Itaquitinga, Lagoa do Carro, Lagoa do Itaenga,
+Macaparana, Machados, Nazaré da Mata, Paudalho, Pombos, São Vicente Férrer,
+Timbaúba, Tracunhaém, Vicência e Vitória de Santo Antão"
+)
+
+MRT303_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS BONITO (MRT-303)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Pecuária - Diversos",
+    "Exploração Mista - Diversificada"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    24852.36, 24454.20, 30170.82, 23002.95, 35193.44, 30170.82
+  ),
+  vti_minimo = c(
+    19552.51, 20786.07, 25645.20, 19552.51, 29914.42, 25645.20
+  ),
+  vti_maximo = c(
+    40472.46, 28122.33, 34696.44, 26453.39, 40472.46, 34696.44
+  ),
+  vtn_media = c(
+    15338.55, 15231.94, 22505.01, 14386.11, 17900.38, 22505.01
+  ),
+  vtn_minimo = c(
+    12228.19, 12947.15, 19129.26, 12228.19, 15215.32, 19129.26
+  ),
+  vtn_maximo = c(
+    25880.76, 17516.73, 25880.76, 16544.03, 20585.44, 25880.76
+  ),
+  origem = "Barra de Guabiraba, Bonito, Camocim de São Félix, Sairê e São Joaquim do Monte"
+)
+
+
+MRT304_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS MATA SUL (MRT-304)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agrícola",
+    "Exploração Mista",
+    "Agrícola - Cana",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Exploração Mista - Diversificada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    15835.31, 17507.95, 15119.83, 12980.79, 14488.02, 17311.52, 12980.79
+  ),
+  vti_minimo = c(
+    11033.67, 14881.76, 12851.86, 11033.67, 12314.82, 14714.79, 11033.67
+  ),
+  vti_maximo = c(
+    20134.14, 20134.14, 17387.80, 14927.91, 16661.22, 19908.25, 14927.91
+  ),
+  vtn_media = c(
+    11404.76, 11853.50, 14048.39, 9826.24, 13708.06, 11699.35, 9826.24
+  ),
+  vtn_minimo = c(
+    8352.30, 10075.56, 11941.13, 8352.30, 11651.85, 9944.45, 8352.30
+  ),
+  vtn_maximo = c(
+    16155.65, 13631.64, 16155.65, 11300.18, 15764.27, 13454.25, 11300.18
+  ),
+  origem = "Água Preta, Amaraji, Barreiros, Belém de Maria, Catende, Cortês, Escada, Gameleira,
+Jaqueira, Joaquim Nabuco, Maraial, Palmares, Primavera, Quipapá, Ribeirão, Rio
+Formoso, São Benedito do Sul, São José da Coroa Grande, Sirinhaém, Tamandaré e
+Xexéu"
+)
+
+
+
+
 ## Consolidação dos dados ####
 PE2017 <- rbind(
   PEMRT_SERTAO_PERNAMBUCANO_2017,
