@@ -480,6 +480,342 @@ Nova do Maranhão, Fortaleza dos Nogueiras, Jatobá, Lagoa do Mato, Loreto, Mira
 Porto Franco, Riachão, Sambaíba, São Domingos do Azeitão, São Félix de Balsas, São Francisco do Maranhão, São João Do Paraíso, São João dos Patos, São Pedro
 dos Crentes, São Raimundo das Mangabeiras, Sucupira do Norte, Sucupira do Riachão e Tasso Fragoso"
 )
+#### Atlas 2023 #####
+MRT1201_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SUL MARANHENSE (MRT-1201)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Agrícola - Grãos Diversos - Alta Capacidade",
+    "Agrícola - Grãos Diversos - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Nativa/Formada - Baixa Capacidade",
+    "Vegetação Nativa - Cerrado - Alta Capacidade",
+    "Vegetação Nativa - Cerrado - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    5083.31, 10967.87, 3549.09, 1774.31, 13994.19, 7664.11, 4669.60, 2739.83,
+    3478.60, 1033.49
+  ),
+  vti_minimo = c(
+    770.69, 9322.69, 3016.73, 1508.17, 11895.06, 6514.49, 3969.16, 2328.86,
+    2956.81, 878.47
+  ),
+  vti_maximo = c(
+    23248.81, 12613.05, 4081.45, 2040.46, 16093.32, 8813.72, 5370.04, 3150.81,
+    4000.39, 1188.52
+  ),
+  vtn_media = c(
+    4686.01, 10173.52, 3264.57, 1664.11, 13327.83, 6743.80, 4244.55, 2556.81,
+    3218.94, 1006.81
+  ),
+  vtn_minimo = c(
+    770.61, 8647.49, 2774.89, 1414.49, 11328.66, 5732.23, 3607.87, 2173.29,
+    2736.10, 855.79
+  ),
+  vtn_maximo = c(
+    21878.60, 11699.55, 3754.26, 1913.72, 15327.01, 7755.37, 4881.23, 2940.33,
+    3701.79, 1157.83
+  ),
+  origem = "Campestre do Maranhão, Porto Franco, Lageado Novo (parte), Carolina, Feira Nova do
+Maranhão, Fortaleza dos Nogueiras, São Pedro dos Crentes, Estreito, Formosa da Serra
+Negra, Tasso Fragoso, Balsas, Sambaíba (parte), Riachão, São Raimundo das
+Mangabeiras, Loreto, Benedito Leite, São João dos Patos, Mirador, Colinas, Pastos
+Bons, Nova Iorque, Parnarama (parte), Sucupira do Riachão, Passagem Franca, Jatobá e
+São Félix de Balsas."
+)
+
+MRT1202_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS TRANSIÇÃO (MRT-1202)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Agrícola - Grãos - Média Capacidade",
+    "Agrícola - Subsistência",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Pecuária - Bovino - Pastagem Nativa",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    6664.84, 6919.71, 7454.73, 4385.94, 10671.79, 6053.85, 7739.72, 5323.35,
+    4385.94
+  ),
+  vti_minimo = c(
+    3728.05, 5881.75, 6336.52, 3728.05, 9071.02, 5145.77, 6578.76, 4524.85,
+    3728.05
+  ),
+  vti_maximo = c(
+    12272.56, 7957.67, 8572.94, 5043.83, 12272.56, 6961.92, 8900.67, 6121.86,
+    5043.83
+  ),
+  vtn_media = c(
+    5739.02, 6525.23, 5964.31, 4375.52, 8843.90, 5990.15, 6020.74, 5029.37,
+    4375.52
+  ),
+  vtn_minimo = c(
+    3719.19, 5546.45, 5069.66, 3719.19, 7517.32, 5091.63, 6578.76, 4274.97,
+    3719.19
+  ),
+  vtn_maximo = c(
+    10170.49, 7504.02, 6858.95, 5031.85, 10170.49, 6888.68, 8900.67, 5783.78,
+    5031.85
+  ),
+  origem = "Altamira do Maranhão, Arame, Bacabal, Barra do Corda, Bernardo do Mearim, Bom
+Lugar, Brejo de Areia, Dom Pedro, Esperantinópolis, Fernando Falcão, Formosa da Serra
+Negra, Fortuna, Gonçalves Dias, Governador Archer, Governador Eugênio Barros,
+Governador Luiz Rocha, Graça Aranha, Grajaú, Igarapé Grande, Itaipava do Grajaú,
+Jenipapo dos Vieiras, Joselândia, Lago da Pedra, Lago do Junco, Lago Verde, Lago dos
+Rodrigues, Lagoa Grande do Maranhão, Lima Campos, Marajá do Sena, Olho D'água das
+Cunhas, Paulo Ramos, Pedreiras, Pindaré-Mirim, Pio XII, Porção de Pedras, Presidente
+Dutra, Santa Filomena do Maranhão, Santa Inês, Santo Antônio dos Lopes, São
+Domingos do Maranhão, São José dos Basílios, São Luís Gonzaga do Maranhão, São
+Mateus do Maranhão, São Raimundo do Doca Bezerra, São Roberto, Satubinha,
+Senador Alexandre Costa, Sítio Novo, Trizidela do Vale, Tuntum e Vitorino Freire"
+)
+
+MRT1203_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS COCAIS (MRT-1203)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Agrícola - Grãos Diversos - Alta Capacidade",
+    "Agrícola - Grãos Diversos - Média Capacidade",
+    "Agrícola - Subsistência",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Nativa - Baixa Capacidade",
+    "Vegetação Nativa - Cerrado com aptidão para grãos",
+    "Vegetação Nativa - Mata",
+    "Vegetação Nativa - Capoeira"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    3153.20, 15992.25, 4551.71, 2826.30, 33331.69, 17476.97, 1657.14,
+    5505.74, 3733.98, 3054.45, 2859.39, 1466.04
+  ),
+  vti_minimo = c(
+    1246.14, 13593.41, 3868.96, 2399.79, 28331.94, 14855.42, 1408.57,
+    4679.87, 3173.88, 2596.28, 2430.48, 1246.14
+  ),
+  vti_maximo = c(
+    38331.45, 18391.09, 5234.47, 3246.78, 38331.45, 20098.52, 1905.71,
+    6331.60, 4294.08, 3512.62, 3288.30, 1685.95
+  ),
+  vtn_media = c(
+    2977.24, 15852.25, 3353.68, 2823.29, 33101.69, 17127.24, 1657.14,
+    3123.44, 3551.02, 3054.45, 2859.39, 1466.04
+  ),
+  vtn_minimo = c(
+    1147.50, 13474.45, 2850.62, 2399.79, 28136.44, 14558.16, 1147.50,
+    2654.93, 3018.37, 2125.00, 2430.48, 1246.14
+  ),
+  vtn_maximo = c(
+    38066.95, 18230.14, 3856.73, 3246.78, 38066.95, 19696.33, 1552.50,
+    3591.96, 4083.67, 2875.00, 3288.30, 1685.95
+  ),
+  origem = "Anapurus, Belágua, Brejo, Buriti, Chapadinha, Mata Roma, Milagres do Maranhão, São
+Benedito do Rio Preto, Urbano Santos, Alto Alegre do Maranhão, Capinzal do Norte,
+Codó, Coroatá, Peritoró, Timbiras, Afonso Cunha, Aldeias Altas, Coelho Neto, Duque
+Bacelar, Buriti Bravo, Caxias, Matões, Parnarama, São João do Sóter e Timon"
+)
+
+
+MRT1204_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS LITORAL ORIENTAL (MRT-1204)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Agrícola - Subsistência",
+    "Pecuária - Bovino - Pastagem Nativa/Formada - Baixa Capacidade",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    2188.10, 2919.09, 2446.25, 1593.62, 2919.09, 2446.25, 1593.62
+  ),
+  vti_minimo = c(
+    1354.57, 2481.23, 2079.31, 1354.57, 2481.23, 2079.31, 1354.57
+  ),
+  vti_maximo = c(
+    3356.95, 3356.95, 2813.19, 1832.66, 3356.95, 2813.19, 1832.66
+  ),
+  vtn_media = c(
+    2129.83, 2919.09, 2050.65, 1593.62, 2919.09, 2050.65, 1593.62
+  ),
+  vtn_minimo = c(
+    1354.57, 2481.23, 1743.05, 1354.57, 2481.23, 1743.05, 1354.57
+  ),
+  vtn_maximo = c(
+    3356.95, 3356.95, 2358.25, 1832.66, 3356.95, 2358.25, 1832.66
+  ),
+  origem = "Água Doce do Maranhão, Araioses, Axixá, Barreirinhas, Cachoeira Grande, Humberto
+de Campos, Icatu, Magalhães de Almeida, Morros, Paulino Neves, Presidente
+Juscelino, Primeira Cruz, Santa Quitéria do Maranhão, Santana do Maranhão, Santo
+Amaro do Maranhão, São Bernardo e Tutóia"
+)
+
+MRT1205_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS METROPOLITANO (MRT-1205)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Não Agrícola",
+    "Agrícola - Horticultura/Olericultura/Granjeiros",
+    "Não Agrícola - Periurbano"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    233158.75, 94915.39, 316022.27, 94915.39, 316022.27
+  ),
+  vti_minimo = c(
+    80678.08, 80678.08, 268618.93, 80678.08, 268618.93
+  ),
+  vti_maximo = c(
+    363425.61, 109152.70, 363425.61, 109152.70, 363425.61
+  ),
+  vtn_media = c(
+    198076.88, 73698.91, 281181.40, 73698.91, 281181.40
+  ),
+  vtn_minimo = c(
+    62644.08, 62644.08, 239004.19, 62644.08, 239004.19
+  ),
+  vtn_maximo = c(
+    323358.61, 84753.75, 323358.61, 84753.75, 323358.61
+  ),
+  origem = "Paço do Lumiar, Raposa, São José de Ribamar e a capital São Luís"
+)
+
+MRT1206_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS BAIXADA MARANHENSE (MRT-1206)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Diversos - Baixa capacidade",
+    "Pecuária - Bovino - Pastagem Nativa - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Média Capacidade"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    4886.84, 1574.00, 5203.32, 1574.00, 4321.41, 13890.37
+  ),
+  vti_minimo = c(
+    1337.90, 1337.90, 4422.83, 1337.90, 3673.20, 11806.81
+  ),
+  vti_maximo = c(
+    15973.93, 1810.10, 5983.82, 1810.10, 4969.62, 15973.93
+  ),
+  vtn_media = c(
+    3369.51, 1354.16, 3449.01, 1354.16, 3158.47, 4926.45
+  ),
+  vtn_minimo = c(
+    1151.04, 1151.04, 2931.66, 1337.90, 2684.70, 4187.49
+  ),
+  vtn_maximo = c(
+    5665.42, 1557.28, 3966.36, 1810.10, 3632.24, 5665.42
+  ),
+  origem = "Anajatuba, Arari, Bela Vista do Maranhão, Cajari, Conceição do Lago Açu, Igarapé do
+Meio, Matinha, Monção, Nova Olinda do Maranhão, Palmeirândia, Pedro do Rosário,
+Penalva, Peri-Mirim, Pinheiro, Presidente Sarney, Santa Helena, São Bento, São João
+Batista, São Vicente de Férrer, Viana, Vitória do Mearim, Alcântara, Apicum-Açu,
+Bacuri, Bacurituba, Bequimão, Cajapió, Cedral, Central do Maranhão, Cururupu,
+Guimarães, Mirinzal, Porto Rico do Maranhão, Serrano do Maranhão, Amapá do
+Maranhão, Cândido Mendes, Carutapera, Godofredo Viana, Luís Domingues, Turiaçu e
+Turilândia"
+)
+
+MRT1207_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS PRÉ-AMAZÔNICO (MRT-1207)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação nativa",
+    "Agrícola - Grãos Diversos - Alta Capacidade",
+    "Agrícola - Grãos Diversos - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Nativa/Formada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    11360.09, 20690.21, 10512.85, 3019.09, 42391.85, 20003.44, 14742.57,
+    6955.03
+  ),
+  vti_minimo = c(
+    1827.50, 17586.68, 8935.92, 2566.15, 36033.07, 17002.93, 12531.19,
+    5911.78
+  ),
+  vti_maximo = c(
+    48750.62, 23793.74, 12089.78, 3471.85, 48750.62, 23003.96, 16953.96,
+    7998.28
+  ),
+  vtn_media = c(
+    10190.25, 19032.00, 9400.85, 2549.07, 42264.06, 18234.72, 13249.00,
+    2549.07
+  ),
+  vtn_minimo = c(
+    1772.93, 16177.23, 7990.72, 2166.71, 35924.45, 15499.51, 11261.65,
+    2166.71
+  ),
+  vtn_maximo = c(
+    48603.67, 21886.84, 10810.81, 2931.42, 48603.67, 20969.93, 15236.35,
+    2931.42
+  ),
+  origem = "Açailândia, Alto Alegre do Pindaré, Amarante do Maranhão, Araguanã, Boa Vista do
+Gurupi, Bom Jardim, Bom Jesus das Selvas, Buriticupu, Buritirana, Centro do
+Guilherme, Centro Novo do Maranhão, Cidelândia, Davinópolis, Governador Edson
+Lobão, Governador Newton Bello, Governador Nunes Freire, Imperatriz, Itinga do
+Maranhão, João Lisboa, Junco do Maranhão, Lageado Novo, Maracaçumé,
+Maranhãozinho, Montes Altos, Nova Olinda do Maranhão, Presidente Médice, Ribamar
+Fiquene, Santa Luzia, Santa Luzia do Paruá, São Francisco do Brejão, São João do Carú,
+São Pedro da Água Branca, Senador La Rocque, Tufilândia, Vila Nova dos Martírios e Zé
+Doca"
+)
+
+MRT1208_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ITAPECURU-MIRIM (MRT-1208)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Exploração Mista",
+    "Pecuária - Bovino - Pastagem Formada - Margem da BR ou MA",
+    "Pecuária - Bovino - Pastagem Formada - Até 30 km da BR ou MA",
+    "Vegetação Nativa - Capoeira - Margem da BR ou MA",
+    "Vegetação Nativa - Capoeira - Até 30 km da BR ou MA"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    2719.84, 2554.23, 1318.73, 4240.74, 6381.34, 2582.17, 3500.00, 4616.74
+  ),
+  vti_minimo = c(
+    1120.92, 2171.10, 1120.92, 3604.63, 5424.14, 2194.85, 2975.00, 3924.23
+  ),
+  vti_maximo = c(
+    7338.54, 2937.36, 1516.54, 4876.85, 7338.54, 2969.50, 4025.00, 5309.25
+  ),
+  vtn_media = c(
+    1934.99, 1732.08, 1318.73, 2118.52, 4466.94, 1736.74, 2550.00, 1371.86
+  ),
+  vtn_minimo = c(
+    1120.92, 1472.27, 1120.92, 1800.74, 3796.90, 1476.23, 2167.50, 1166.08
+  ),
+  vtn_maximo = c(
+    5136.98, 1991.90, 1516.54, 2436.30, 5136.98, 1997.25, 2932.50, 1577.63
+  ),
+  origem = "Bacabeira, Cantanhede, Itapecuru-Mirim, Matões do Norte, Miranda do Norte, Nina
+Rodrigues, Pirapemas, Presidente Vargas, Rosário, Santa Rita e Vargem Grande"
+)
+
 
 ### Consolidação dos dados #####
 
@@ -513,9 +849,21 @@ MA22 <- rbind(
   MAMRT08_2022
 )
 
+MA23 <- rbind(
+            MRT1201_2024,
+            MRT1202_2024,
+            MRT1203_2024,
+            MRT1204_2024,
+            MRT1205_2024,
+            MRT1206_2024,
+            MRT1207_2024,
+            MRT1208_2024)
+
+
+MA23$ano <- 2023
 MA2018$ano <- 2018
 MA2021$ano <- 2021
 MA22$ano <- 2022
-MATEMPORAL <- rbind(MA22, MA2018, MA2021)
+MATEMPORAL <- rbind(MA22, MA2018, MA2021, MA23)
 MATEMPORAL$estado <- 21
 MATEMPORAL$regiao <- "nordeste"
