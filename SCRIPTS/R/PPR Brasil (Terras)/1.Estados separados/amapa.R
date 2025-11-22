@@ -180,6 +180,81 @@ APMRTOeste_VTI_2023 <- data.frame(
   ), 
   origem = "Laranjal do Jarí, Mazagão, Oiapoque, Pedra Branca do Amapari, Serra do Navio, e Vitória do Jarí "
 )
+
+MRT2101_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS OESTE (MRT-2101)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Agricultura - Fruticultura",
+    "Agricultura Diversificada"
+  ),
+  nivel = c(0, 1, 2, 2),
+  vti_media = c(
+    2043.69, 2105.04, 2413.83, 2212.59
+  ),
+  vti_minimo = c(
+    1737.14, 1789.28, 2051.75, 1880.70
+  ),
+  vti_maximo = c(
+    2775.90, 2420.79, 2775.90, 2544.48
+  ),
+  vtn_media = c(
+    1605.99, 1664.53, 1564.27, 1760.36
+  ),
+  vtn_minimo = c(
+    1329.63, 1414.85, 1329.63, 1496.31
+  ),
+  vtn_maximo = c(
+    2024.42, 1914.21, 1798.91, 2024.42
+  ),
+  origem = "Laranjal do Jarí, Mazagão, Oiapoque, Pedra Branca do Amapari, Serra do Navio, e Vitória do
+Jarí"
+)
+
+MRT2102_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS LESTE (MRT-2102)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Vegetação Nativa",
+    "Pecuária",
+    "Agricultura - Fruticultura",
+    "Agricultura - Grãos",
+    "Agricultura - Diversificada",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 1),
+  vti_media = c(
+    2235.02, 2342.40, 1582.80, 3254.42, 2042.22, 3039.07, 2132.55, 3254.42
+  ),
+  vti_minimo = c(
+    1345.38, 1991.04, 1345.38, 2766.26, 1735.89, 2583.21, 1812.66, 2766.26
+  ),
+  vti_maximo = c(
+    3742.58, 2693.76, 1820.22, 3742.58, 2348.56, 3494.93, 2452.43, 3742.58
+  ),
+  vtn_media = c(
+    2056.30, 2150.56, 1451.93, 3035.04, 1875.56, 2958.86, 1910.80, 3035.04
+  ),
+  vtn_minimo = c(
+    1234.14, 1827.98, 1234.14, 2579.79, 1594.22, 2515.03, 1624.18, 2579.79
+  ),
+  vtn_maximo = c(
+    3490.30, 2473.15, 1669.71, 3490.30, 2156.89, 3402.69, 2197.42, 3490.30
+  ),
+  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santama
+e Tartarugalzinho"
+)
+
+atlas23 <- rbind(
+  MRT2102_2024,
+  MRT2101_2024
+)
+
+atlas$ano <- 2023
+
+
 #### Consolidação dos Dados###
 AP16 <- rbind(APMRT_Leste_2016, APMRT_Oeste_2016)
 
@@ -188,6 +263,6 @@ AP19 <- rbind(APMRTLeste_2019, APMRTOeste_2019)
 AP19$ano <- 2019
 AP23 <- rbind(APMRTLeste_VTI_2023, APMRTOeste_VTI_2023)
 AP23$ano <- 2023
-APTEMPORAL <- rbind(AP23, AP19, AP16)
+APTEMPORAL <- rbind(AP23, AP19, AP16, atlas23)
 APTEMPORAL$estado <- 16
 APTEMPORAL$regiao <- "Norte"
