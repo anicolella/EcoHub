@@ -687,6 +687,218 @@ Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe,
 Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo,
 Uiraúna, Várzea, Vieirópolis e Vista Serrana." )
 
+####Atlas 2023####
+MRT1801_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ZONA DA MATA PARAIBA (MRT-1801)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Não Agrícola",
+    "Pecuária",
+    "Agrícola - Cana",
+    "Agrícola - Produção Diversificada",
+    "Exploração Mista - Produção Diversificada",
+    "Não Agrícola - Periurbanas",
+    "Pecuária - Bovino - Pastagem formada"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    41181.85, 18951.51, 37357.12, 120005.28, 23687.64, 15683.37, 48531.09,
+    30428.54, 120005.28, 23687.64
+  ),
+  vti_minimo = c(
+    13330.86, 16108.78, 31753.55, 102004.49, 20134.50, 13330.86, 41251.43,
+    25864.26, 102004.49, 20134.50
+  ),
+  vti_maximo = c(
+    138006.08, 21794.23, 42960.68, 138006.08, 27240.79, 18035.87, 55810.76,
+    34992.82, 138006.08, 27240.79
+  ),
+  vtn_media = c(
+    38654.72, 17743.83, 34913.18, 120005.28, 20995.72, 15650.99, 40280.81,
+    29511.81, 120005.28, 20995.72
+  ),
+  vtn_minimo = c(
+    15082.25, 15082.25, 29676.20, 102004.49, 17846.36, 13303.34, 34238.69,
+    25085.04, 102004.49, 17846.36
+  ),
+  vtn_maximo = c(
+    138006.08, 20405.40, 40150.15, 138006.08, 24145.08, 17998.64, 46322.93,
+    33938.58, 138006.08, 24145.08
+  ),
+  origem = "Alhandra, Baía da Traição, Bayeux, Caaporã, Cabedelo, Capim, Conde, Cruz do Espírito
+Santo, João Pessoa, Juripiranga, Lucena, Mamanguape, Marcação, Mataraca, Pedras
+de Fogo, Pitimbu, Rio Tinto, Santa Rita, São Miguel de Taipu, Sapé e Sobrado"
+)
+
+MRT1802_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS AGRESTE E BREJO PARAIBA (MRT-1802)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Cana",
+    "Agrícola - Fruticultura",
+    "Agrícola - Hortícola/Olerícola/Granjeiros",
+    "Agrícola - Produção Diversificada",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Exploração Mista - Produção Diversificada",
+    "Exploração Mista - Subsistência (não Comercial)",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Pecuária - Bovino - Pastagem Nativa"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    9172.90, 15267.30, 7288.49, 9988.81, 12912.96, 9172.67, 9936.56, 26404.70,
+    7858.45, 7595.20, 5220.78, 11275.54, 8560.18
+  ),
+  vti_minimo = c(
+    4437.66, 12977.21, 6195.22, 8490.48, 10976.01, 7796.77, 8446.08, 22444.00,
+    6679.69, 6455.92, 4437.66, 9584.21, 7276.15
+  ),
+  vti_maximo = c(
+    30365.41, 17557.40, 8381.71, 11487.13, 14849.90, 10548.57, 11427.05, 30365.41,
+    9037.22, 8734.48, 6003.90, 12966.88, 9844.21
+  ),
+  vtn_media = c(
+    8405.67, 14080.94, 6722.29, 9038.83, 12745.34, 9172.67, 8810.88, 24246.57,
+    7217.07, 7058.29, 4845.97, 11275.54, 8361.77
+  ),
+  vtn_minimo = c(
+    4119.08, 11968.80, 5713.95, 7683.01, 10833.54, 7796.77, 7489.25, 20609.58,
+    6134.51, 5999.55, 4119.08, 8491.09, 7107.51
+  ),
+  vtn_maximo = c(
+    27883.55, 16193.08, 7730.64, 10394.66, 14657.15, 10548.57, 10132.51, 27883.55,
+    8299.63, 8117.04, 5572.87, 11489.09, 9616.04
+  ),
+  origem = "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna,
+Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara,
+Caldas Brandão, Campina Grande, Campo de Santana, Casserengue, Cuité de
+Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes,
+Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú,
+Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba,
+Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões,
+Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do
+Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos,
+São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho,
+Solânea, Umbuzeiro"
+)
+
+MRT1803_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CARIRI E CURIMATAÚ PARAIBA (MRT-1803)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Exploração Mista",
+    "Exploração Mista - Subsistência (Não Comercial)",
+    "Pecuária - Caprino/Ovino - Pastagem Nativa",
+    "Pecuária - Diversos"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    1078.29, 3959.46, 1072.50, 3959.46, 1106.25, 1054.46
+  ),
+  vti_minimo = c(
+    896.29, 3365.54, 911.63, 3365.54, 940.31, 896.29
+  ),
+  vti_maximo = c(
+    4553.38, 4553.38, 1233.38, 4553.38, 1272.18, 1212.63
+  ),
+  vtn_media = c(
+    1003.11, 3567.78, 998.52, 3567.78, 1010.81, 997.10
+  ),
+  vtn_minimo = c(
+    848.74, 3032.61, 848.74, 859.19, 847.53, 859.19
+  ),
+  vtn_maximo = c(
+    4102.95, 4102.95, 1148.30, 4102.95, 1162.43, 1146.66
+  ),
+  origem = "Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de
+Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia,
+Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião,
+Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro,
+Nova Floresta, Nova Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada,
+Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São
+Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José
+dos Cordeiros, São Sebastião do Umbuzeiro, Seridó, Serra Branca, Soledade, Sossego,
+Sumé, Taperoá, Teixeira, Tenório e Zabelê"
+)
+
+MRT1804_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SERTÃO PARAIBAΝΟ 1 (MRT-1804)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Pecuária - Bovino - Pastagem Nativa"
+  ),
+  nivel = c(0, 1, 2, 2),
+  vti_media = c(
+    1741.64, 1682.19, 2238.31, 1398.12
+  ),
+  vti_minimo = c(
+    1188.41, 1429.86, 1902.57, 1188.41
+  ),
+  vti_maximo = c(
+    2574.06, 1934.52, 2574.06, 1607.84
+  ),
+  vtn_media = c(
+    1640.78, 1576.69, 2066.62, 1370.10
+  ),
+  vtn_minimo = c(
+    1164.59, 1340.18, 1756.63, 1164.59
+  ),
+  vtn_maximo = c(
+    2376.61, 1813.19, 2376.61, 1575.62
+  ),
+  origem = "Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz,
+Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó,
+Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço
+José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa
+Luzia, Santa Teresinha, Santarém, São Bentinho, São Bento, São Domingos, São
+Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas,
+São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista
+Serrana"
+)
+
+MRT1805_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SERTÃO PARAIBAΝΟ 2 (MRT-1805)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Nativa"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    1283.30, 1283.30, 1283.30
+  ),
+  vti_minimo = c(
+    1090.81, 1099.81, 1090.81
+  ),
+  vti_maximo = c(
+    1475.80, 1475.80, 1475.80
+  ),
+  vtn_media = c(
+    1243.63, 1243.63, 1243.63
+  ),
+  vtn_minimo = c(
+    1056.23, 1056.23, 1056.23
+  ),
+  vtn_maximo = c(
+    1429.02, 1429.02, 1429.02
+  ),
+  origem = "Água Branca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios,
+Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy,
+Imaculada, Itaporanga, Juru, Mãe D’água, Manaíra, Matureia, Monte Horebe,
+Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, Princesa Isabel, Santa
+Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, São José
+de Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares"
+)
+
+
 ## Consolidação dos dados####
 PB2018 <- rbind(
   PBMRT1_2018, 
@@ -720,6 +932,12 @@ PB2022 <- rbind(
   PBMRT_SERTAO_PARAIBANO_2_2022
 )
 
+PB2023 <- rbind(MRT1801_2024,
+         MRT1802_2024,
+         MRT1803_2024,
+         MRT1804_2024,
+         MRT1805_2024  )
+
 PB2024 <- rbind(
   PBMRT_ZONA_DA_MATA_PARAIBANA_2024,
   PBMRT_AGRESTE_E_BREJO_PARAIBANO_2024,
@@ -732,6 +950,7 @@ PB2024 <- rbind(
 PB2018$ano <- 2018
 PB2020$ano <- 2020
 PB2021$ano <- 2021
+PB2023$ano <- 2023
 PB2024$ano <- 2024
 PB2022$ano <- 2022
 
