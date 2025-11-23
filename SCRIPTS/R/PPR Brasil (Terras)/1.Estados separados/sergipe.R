@@ -912,8 +912,467 @@ MRT2308_2024 <- data.frame(
 Estância, Arauá, Santa Luzia do Itanhy, Indiaroba, Umbaúba e Cristinápolis"
 )
 
+#### ATLAS 23 ####
+MRT2601_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ARAGUATINS (MRT-2601)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Agrícola - Grãos Soja",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    10299.20, 13912.53, 10775.50, 7518.87, 13912.53, 10775.50, 7518.87
+  ),
+  vti_minimo = c(
+    6391.04, 11825.65, 9159.18, 6391.04, 11825.65, 9159.18, 6391.04
+  ),
+  vti_maximo = c(
+    15999.41, 15999.41, 12391.83, 8646.70, 15999.41, 12391.83, 8646.70
+  ),
+  vtn_media = c(
+    8437.10, 10200.21, 8468.84, 6975.14, 10200.21, 8468.84, 6975.14
+  ),
+  vtn_minimo = c(
+    5928.87, 8670.17, 7198.51, 5928.87, 8670.17, 7198.51, 5928.87
+  ),
+  vtn_maximo = c(
+    11730.24, 11730.24, 9739.17, 8021.41, 11730.24, 9739.17, 8021.41
+  ),
+  origem = "Aguiarnópolis, Ananás, Angico, Araguatins, Augustinópolis, Axixá do TO, Babaçulândia,
+Buriti do TO, Cachoeirinha, Carrasco Bonito, Darcinópolis, Esperantina, Itaguatins,
+Luzinópolis, Maurilândia do TO, Palmeiras do TO, Nazaré, Praia Norte, Riachinho,
+Sampaio, Santa Terezinha do TO, São Bento do TO, São Miguel do TO, São Sebastião do TO,
+Sítio Novo do TO, Tocantinópolis, Wanderlândia"
+)
+
+MRT2602_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ARAGUAÍNA (MRT-2602)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    15683.31, 17042.88, 17042.88
+  ),
+  vti_minimo = c(
+    13331.28, 14486.45, 14486.45
+  ),
+  vti_maximo = c(
+    19599.31, 19599.31, 19599.31
+  ),
+  vtn_media = c(
+    11856.18, 12796.48, 12796.48
+  ),
+  vtn_minimo = c(
+    10077.76, 10877.01, 10877.01
+  ),
+  vtn_maximo = c(
+    14715.95, 14715.95, 14715.95
+  ),
+  origem = "Aragominas, Araguaína, Araguanã, Arapoema, Bandeirantes do TO, Carmolândia,
+Muricilândia, Pau D’Arco, Piraquê, Santa Fé do Araguaia, Xambioá"
+)
+
+MRT2603_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS COLINAS DO TOCANTINS (MRT-2603)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    8885.07, 10183.39, 4438.03, 10183.39, 4438.03
+  ),
+  vti_minimo = c(
+    3772.33, 8655.89, 3772.33, 8655.89, 3772.33
+  ),
+  vti_maximo = c(
+    11710.70, 11710.90, 5103.74, 11710.90, 5103.74
+  ),
+  vtn_media = c(
+    7024.39, 7966.29, 4275.39, 7966.29, 4275.39
+  ),
+  vtn_minimo = c(
+    3634.08, 6771.34, 3634.08, 6771.34, 3634.08
+  ),
+  vtn_maximo = c(
+    9161.23, 9161.23, 4916.70, 9161.23, 4916.70
+  ),
+  origem = "Brasilândia do Tocantins, Colinas do Tocantins, Filadélfia, Nova Olinda, Palmeirante,
+Presidente Kennedy, Tupiratins"
+)
 
 
+MRT2604_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS GOIATINS (MRT-2604)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    6050.95, 6518.99, 4802.86, 6518.99, 4802.86
+  ),
+  vti_minimo = c(
+    4082.43, 5541.14, 4082.43, 5541.14, 4082.43
+  ),
+  vti_maximo = c(
+    7496.84, 7496.84, 5523.29, 7496.84, 5523.29
+  ),
+  vtn_media = c(
+    5010.16, 5107.26, 4751.20, 5107.26, 4751.20
+  ),
+  vtn_minimo = c(
+    4038.52, 4341.17, 4038.52, 4341.17, 4038.52
+  ),
+  vtn_maximo = c(
+    5873.35, 5873.35, 5463.88, 5873.35, 5463.88
+  ),
+  origem = " Barra do Ouro, Campos Lindos, Goiatins, Itacajá, Itapiratins"
+)
+
+MRT2605_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS COMÉIA (MRT-2605)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Agrícola - Grãos Soja",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    14527.57, 25943.38, 15028.30, 11535.81, 25943.38, 15028.30, 11535.81
+  ),
+  vti_minimo = c(
+    9805.44, 22051.87, 12774.05, 9805.44, 22051.87, 12774.05, 9805.44
+  ),
+  vti_maximo = c(
+    29834.88, 29834.88, 17282.54, 13266.18, 29834.88, 17282.54, 13266.18
+  ),
+  vtn_media = c(
+    10604.71, 16827.03, 10467.48, 11124.31, 16827.03, 10467.48, 11124.31
+  ),
+  vtn_minimo = c(
+    8897.36, 14302.98, 8897.36, 9455.66, 14302.98, 8897.36, 9455.66
+  ),
+  vtn_maximo = c(
+    19351.09, 19351.09, 12037.60, 12792.96, 19351.09, 12037.60, 12792.96
+  ),
+  origem = "Araguacema, Bernardo Sayão, Caseara, Couto Magalhães, Dois Irmãos do TO, Goianorte,
+Itaporã do TO, Juarina, Pequizeiro, Colméia"
+)
+
+MRT2606_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS GUARAÍ (MRT-2606)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    15316.14, 17330.91, 17330.91
+  ),
+  vti_minimo = c(
+    13018.72, 14731.27, 14731.27
+  ),
+  vti_maximo = c(
+    19930.55, 19930.55, 19930.55
+  ),
+  vtn_media = c(
+    10372.89, 12209.12, 12209.12
+  ),
+  vtn_minimo = c(
+    8816.96, 10377.75, 10377.75
+  ),
+  vtn_maximo = c(
+    14040.48, 14040.48, 14040.48
+  ),
+  origem = "Tabocão, Guaraí, Miranorte, Rio dos Bois"
+)
+
+MRT2607_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS PEDRO AFONSO (MRT-2607)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Agrícola - Grãos Soja",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    5595.25, 11725.18, 5756.24, 4574.01, 11725.18, 5756.24, 4574.01
+  ),
+  vti_minimo = c(
+    3887.91, 9966.40, 4892.80, 3887.91, 9966.40, 4892.80, 3887.91
+  ),
+  vti_maximo = c(
+    13483.95, 13483.95, 6619.68, 5260.11, 13483.95, 6619.68, 5260.11
+  ),
+  vtn_media = c(
+    4345.06, 4880.18, 3706.67, 4566.16, 4880.18, 3706.67, 4566.16
+  ),
+  vtn_minimo = c(
+    3150.67, 4148.15, 3150.67, 3881.23, 4148.15, 3150.67, 3881.23
+  ),
+  vtn_maximo = c(
+    5612.21, 5612.21, 4262.67, 5251.08, 5612.21, 4262.67, 5251.08
+  ),
+  origem = "Tupirama, Bom Jesus do Tocantins, Centenário, Lagoa do Tocantins, Lizarda, Novo Acordo,
+Pedro Afonso, Recursolândia, Rio Sono, Santa Maria do Tocantins, Santa Tereza do
+Tocantins, Tocantínia"
+)
+
+MRT2608_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS PALMAS (MRT-2608)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2),
+  vti_media = c(
+    14923.61, 21751.91, 14825.02, 8717.24, 14825.02, 8717.24
+  ),
+  vti_minimo = c(
+    7409.65, 18489.13, 12601.27, 7409.65, 12601.27, 7409.65
+  ),
+  vti_maximo = c(
+    25014.70, 25014.70, 17048.78, 10024.82, 17048.78, 10024.82
+  ),
+  vtn_media = c(
+    8416.27, 9953.86, 7857.74, 7789.31, 7857.74, 7789.31
+  ),
+  vtn_minimo = c(
+    6620.91, 8460.79, 6679.08, 6620.91, 6679.08, 6620.91
+  ),
+  vtn_maximo = c(
+    11446.94, 11446.94, 9036.41, 8957.71, 9036.41, 8957.71
+  ),
+  origem = "Brejinho de Nazaré, Miracema do TO, Aparecida do Rio Negro, Lajeado, Monte do Carmo,
+Porto Nacional, Palmas"
+)
+
+MRT2609_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS PARAÍSO DO TOCANTINS (MRT-2609)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Agrícola - Grãos Soja",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    17573.62, 24004.68, 16916.43, 24004.68, 16916.43
+  ),
+  vti_minimo = c(
+    14378.96, 20403.98, 14378.96, 20403.98, 14378.96
+  ),
+  vti_maximo = c(
+    27605.38, 27605.38, 19453.89, 27605.38, 19453.89
+  ),
+  vtn_media = c(
+    11990.08, 16385.07, 11332.74, 16385.07, 11332.74
+  ),
+  vtn_minimo = c(
+    9632.82, 13927.31, 9632.82, 13927.31, 9632.82
+  ),
+  vtn_maximo = c(
+    18842.83, 18842.83, 13032.65, 18842.83, 13032.65
+  ),
+  origem = "Abreulândia, Barrolândia, Chapada da Areia, Divinópolis do Tocantins, Fátima,
+Marianópolis do Tocantins, Monte Santo do Tocantins, Nova Rosalândia, Oliveira de
+Fátima, Paraíso do Tocantins, Pugmil"
+)
+
+MRT2610_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS GURUPI (MRT-2610)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    11462.08, 12908.56, 12908.56
+  ),
+  vti_minimo = c(
+    9742.77, 10972.28, 10972.28
+  ),
+  vti_maximo = c(
+    14844.85, 14844.85, 14844.85
+  ),
+  vtn_media = c(
+    7346.42, 7574.03, 7574.03
+  ),
+  vtn_minimo = c(
+    6244.46, 6437.92, 6437.92
+  ),
+  vtn_maximo = c(
+    8710.13, 8710.13, 8710.13
+  ),
+  origem = "Aliança do Tocantins, Cristalândia, Crixás do Tocantins, Dueré, Formoso do Araguaia,
+Gurupi, Lagoa da Confusão, Pium, Sandolândia, Santa Rita do Tocantins"
+)
+
+MRT2611_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS PEIXE (MRT-2611)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Pecuária",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Pecuária - Bovino - Pastagem Formada"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    12071.24, 13339.37, 12688.37, 14260.33, 13049.88
+  ),
+  vti_minimo = c(
+    10260.55, 11338.46, 10785.11, 12121.28, 11092.39
+  ),
+  vti_maximo = c(
+    16399.38, 15340.27, 14591.91, 16399.38, 15007.36
+  ),
+  vtn_media = c(
+    7767.42, 7341.45, 8187.43, 7421.20, 8163.23
+  ),
+  vtn_minimo = c(
+    6240.23, 6240.23, 6959.31, 6308.02, 6938.75
+  ),
+  vtn_maximo = c(
+    9415.54, 8442.67, 9415.54, 8534.38, 9387.72
+  ),
+  origem = "Alvorada, Araguaçu, Cariri do Tocantins, Figueirópolis, Jaú do Tocantins, Palmeirópolis,
+Peixe, São Salvador do Tocantins, Sucupira, Talismã"
+)
+
+MRT2612_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS NATIVIDADE (MRT-2612)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Agrícola - Grãos Soja",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    7621.34, 14523.22, 7121.23, 2634.97, 14523.22, 7121.23, 2634.97
+  ),
+  vti_minimo = c(
+    2239.72, 12344.74, 6053.05, 2239.72, 12344.74, 3806.65, 2239.72
+  ),
+  vti_maximo = c(
+    16701.70, 16701.70, 8189.42, 3030.21, 16701.70, 5150.17, 3030.21
+  ),
+  vtn_media = c(
+    5158.08, 8102.04, 4478.41, 2634.97, 8102.04, 4478.41, 2634.97
+  ),
+  vtn_minimo = c(
+    2239.72, 6886.73, 3806.65, 2239.72, 6886.73, 3806.65, 2239.72
+  ),
+  vtn_maximo = c(
+    9317.34, 9317.34, 5150.17, 3030.21, 9317.34, 5150.17, 3030.21
+  ),
+  origem = " Almas, Chapada da Natividade, Ipueiras, Mateiros, Natividade, Pindorama do Tocantins,
+Ponte Alta do Tocantins, Santa Rosa do Tocantins, São Félix do Tocantins, São Valério,
+Silvanópolis"
+)
+
+MRT2613_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS DIANÓPOLIS (MRT-2613)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Exploração Mista - Agrícola + Pastagem",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Pecuária - Bovino - Pastagem Nativa",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    3530.14, 19272.83, 3713.39, 2704.21, 19272.83, 4263.69, 2691.40, 2704.21
+  ),
+  vti_minimo = c(
+    2287.69, 16381.90, 3156.38, 2298.58, 16381.90, 3624.14, 2287.69, 2298.58
+  ),
+  vti_maximo = c(
+    22163.75, 22163.75, 4270.40, 3109.84, 22163.75, 4903.24, 3095.11, 3109.84
+  ),
+  vtn_media = c(
+    2650.80, 12856.62, 2640.16, 2704.21, 12856.62, 2778.79, 2382.71, 2704.21
+  ),
+  vtn_minimo = c(
+    2025.30, 10928.13, 2244.13, 2298.58, 10928.13, 2361.97, 2025.30, 2298.58
+  ),
+  vtn_maximo = c(
+    14785.11, 14785.11, 3036.18, 3109.84, 14785.11, 3195.60, 2740.11, 3109.84
+  ),
+  origem = "Arraias, Aurora do Tocantins, Combinado, Conceição do Tocantins, Dianópolis,
+Lavandeira, Novo Alegre, Novo Jardim, Paranã, Ponte Alta do Bom Jesus, Porto Alegre do
+Tocantins, Rio da Conceição, Taguatinga, Taipas do Tocantins"
+)
+
+
+MRT2603_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS COLINAS DO TOCANTINS (MRT-2603)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Formada",
+    "Vegetação Nativa - Cerrado"
+  ),
+  nivel = c(0, 1, 1, 2, 2),
+  vti_media = c(
+    8885.07, 10183.39, 4438.03, 10183.39, 4438.03
+  ),
+  vti_minimo = c(
+    3772.33, 8655.89, 3772.33, 8655.89, 3772.33
+  ),
+  vti_maximo = c(
+    11710.70, 11710.90, 5103.74, 11710.90, 5103.74
+  ),
+  vtn_media = c(
+    7024.39, 7966.29, 4275.39, 7966.29, 4275.39
+  ),
+  vtn_minimo = c(
+    3634.08, 6771.34, 3634.08, 6771.34, 3634.08
+  ),
+  vtn_maximo = c(
+    9161.23, 9161.23, 4916.70, 9161.23, 4916.70
+  ),
+  origem = "Brasilândia do Tocantins, Colinas do Tocantins, Filadélfia, Nova Olinda, Palmeirante,
+Presidente Kennedy, Tupiratins"
+)
 
 
 ## Consolidação dos dados #####
@@ -957,12 +1416,27 @@ SE23 <- rbind(
   MRT2301_2024         
 )
 
+atlas234<- rbind(
+  MRT2601_2024,
+  MRT2602_2024,
+  MRT2603_2024,
+  MRT2604_2024,
+  MRT2606_2024,
+  MRT2607_2024,
+  MRT2608_2024,
+  MRT2609_2024,
+  MRT2610_2024,
+  MRT2611_2024,
+  MRT2612_2024,
+  MRT2613_2024
+)
 
+atlas234$ano <- 2023
 SE20$ano <- 2020
 SE23$ano <- 2023
 SE2022$ano <- 2022
 SE2017$ano <- 2017
-SETEMPORAL <- rbind(SE2022, SE20, SE2017, SE23)
+SETEMPORAL <- rbind(SE2022, SE20, SE2017, SE23, atlas234)
 
 SETEMPORAL$estado <- 28
 SETEMPORAL$regiao <- "nordeste"
