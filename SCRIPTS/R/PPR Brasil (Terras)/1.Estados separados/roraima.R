@@ -180,16 +180,86 @@ RRMRT2_2024 <- data.frame(
   origem = "Cantá, Caracaraí, Caroebe, Iracema, Mucajaí, Rorainópolis, São Luiz, São João da Baliza"
 )
 
+###Atlas #####
+MRT2501_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS BOA VISTA (MRT-2501)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Pecuária",
+    "Exploração Mista",
+    "Agrícola - Grãos Soja",
+    "Pecuária - Bovino - Pastagem Nativa",
+    "Exploração Mista - Agrícola + Pastagem"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    4626.20, 5527.64, 3130.22, 5264.22, 5527.64, 3130.22, 5264.22
+  ),
+  vti_minimo = c(
+    2660.69, 4698.50, 2660.69, 4231.39, 4698.50, 2660.69, 4231.39
+  ),
+  vti_maximo = c(
+    6356.79, 6356.79, 3599.75, 5724.83, 6356.79, 3599.75, 5724.83
+  ),
+  vtn_media = c(
+    4353.37, 5527.64, 2989.12, 4978.11, 5527.64, 2989.12, 4978.11
+  ),
+  vtn_minimo = c(
+    2540.76, 4698.50, 2540.76, 4231.39, 4698.50, 2540.76, 4231.39
+  ),
+  vtn_maximo = c(
+    6356.79, 6356.79, 3437.49, 5724.83, 6356.79, 3437.49, 5724.83
+  ),
+  origem = "Alto Alegre, Amajari, Boa Vista, Bonfim, Normandia, Pacaraima, Uiramutá"
+)
+
+MRT2502_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CARACARAÍ (MRT-2502)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Exploração Mista",
+    "Pecuária - Bovino - Pastagem Formada - Alta Capacidade",
+    "Vegetação Nativa - Floresta Amazônica",
+    "Exploração Mista - Agrícola + Pastagem"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  vti_media = c(
+    4804.56, 4641.56, 6276.83, 4752.30, 4641.56, 6276.83, 4752.30
+  ),
+  vti_minimo = c(
+    3945.33, 3945.33, 5335.31, 4039.45, 3945.33, 5335.31, 4039.45
+  ),
+  vti_maximo = c(
+    7218.36, 5337.80, 7218.36, 5465.14, 5337.80, 7218.36, 5465.14
+  ),
+  vtn_media = c(
+    3966.90, 3662.94, 5887.36, 4075.71, 3662.94, 5887.36, 4075.71
+  ),
+  vtn_minimo = c(
+    3113.50, 3113.50, 5004.26, 3464.36, 3113.50, 5004.26, 3464.36
+  ),
+  vtn_maximo = c(
+    6770.46, 4212.38, 6770.46, 4687.07, 4212.38, 6770.46, 4687.07
+  ),
+  origem = "Alto Alegre, Amajari, Boa Vista, Bonfim, Normandia, Pacaraima, Uiramutá"
+)
+
+
 ### Consolidação dos dados ####
 
+atlas2023 <- rbind(MRT2502_2024 , MRT2501_2024 )
 RR2018 <- rbind(RRMRT1_2018, RRMRT2_2018)
 RR2022 <- rbind(RRMRT1_2022, RRMRT2_2022)
 RR2024 <- rbind(RRMRT1_2024, RRMRT2_2024)
 
+atlas2023$ano <- 2023
 RR2024$ano <- 2024
 RR2022$ano <- 2022
 RR2018$ano <- 2018
 
-RRTEMPORAL  <- rbind(RR2024, RR2022, RR2018)
+RRTEMPORAL  <- rbind(RR2024, RR2022, RR2018, atlas2023)
 RRTEMPORAL$estado <-  14
 RRTEMPORAL$regiao <- "Norte"

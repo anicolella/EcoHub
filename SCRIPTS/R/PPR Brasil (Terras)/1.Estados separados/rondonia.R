@@ -583,6 +583,318 @@ ROMRTRioMadeira_2022 <- data.frame(
                  7127.89, 7537.12),
   origem = "Porto Velho , Candeias do Jamari e Itapuã do Oeste"
 )
+#### atlas 2023 ####
+
+MRT1701_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CONE SUL (MRT-1701)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Pecuária",
+    "Agrícola - Diversificada",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agricultura + Pecuária",
+    "Vegetação Nativa - Mata",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    13720.01, 45257.71, 28790.99, 1353.38, 12595.13, 43571.03, 46319.70,
+    30273.20, 29434.86, 1375.71, 5514.51, 16205.61
+  ),
+  vti_minimo = c(
+    1169.36, 38469.06, 24472.34, 1169.36, 10705.86, 37035.37, 39371.75,
+    25732.22, 25019.63, 1169.36, 4687.33, 13774.78
+  ),
+  vti_maximo = c(
+    53267.66, 52046.37, 33109.64, 1582.07, 14484.40, 50106.68, 53267.66,
+    34814.18, 33850.09, 1582.07, 6341.68, 18636.45
+  ),
+  vtn_media = c(
+    9604.01, 31680.40, 20153.69, 963.00, 8816.59, 30499.72, 32423.79,
+    21191.24, 20604.40, 963.00, 3860.15, 11343.93
+  ),
+  vtn_minimo = c(
+    818.55, 26928.34, 17130.64, 818.55, 7494.11, 25924.76, 27560.22,
+    18012.55, 17513.74, 818.55, 3281.13, 9642.34
+  ),
+  vtn_maximo = c(
+    37287.36, 36432.46, 23176.75, 1107.45, 10139.08, 35074.68, 37287.36,
+    24369.92, 23695.06, 1107.45, 4439.18, 13045.52
+  ),
+  origem = "Vilhena, Pimenta Bueno, Colorado do Oeste, Cabixi, Cerejeiras, Pimenteiras do Oeste,
+Corumbiara, Chupinguaia, Primavera de Rondônia e Parecis"
+)
+
+MRT1702_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ZONA DA MATA (MRT-1702)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Diversificada",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agricultura + Pecuária",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    22584.14, 40460.22, 32618.78, 18036.76, 42868.09, 37989.81, 34914.35,
+    29713.91, 7170.98, 18928.73
+  ),
+  vti_minimo = c(
+    6095.33, 34391.19, 27725.96, 15331.25, 36437.87, 32291.34, 29677.19,
+    25256.82, 6095.33, 16089.42
+  ),
+  vti_maximo = c(
+    49298.30, 46529.88, 37511.60, 20742.28, 49298.30, 43688.28, 40151.50,
+    34171.00, 8246.62, 21768.04
+  ),
+  vtn_media = c(
+    15808.89, 28322.15, 22833.15, 12625.73, 30007.66, 26592.87, 24440.04,
+    20799.74, 5019.68, 13250.11
+  ),
+  vtn_minimo = c(
+    4266.73, 24073.83, 19408.18, 10731.87, 25506.51, 22603.94, 20774.04,
+    17679.78, 4266.73, 11262.59
+  ),
+  vtn_maximo = c(
+    34508.81, 32570.48, 26258.12, 14519.59, 34508.81, 30581.80, 28106.05,
+    23919.70, 5772.64, 15237.63
+  ),
+  origem = "Rolim de Moura, Novo Horizonte do Oeste, Castanheiras, Nova Brasilândia D’Oeste, Santa
+Luzia D’Oeste, São Felipe D’Oeste, Alta Floresta D’Oeste, e Alto Alegre dos Parecis"
+)
+
+MRT1703_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS REGIÃO CENTRAL (MRT-1703)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Produção Diversificada",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agricultura + Pecuária",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    24745.63, 46487.60, 38651.52, 21300.77, 47578.91, 47847.74, 40475.22,
+    32221.57, 8054.81, 22005.44
+  ),
+  vti_minimo = c(
+    6846.59, 39514.46, 32853.80, 18105.65, 40442.07, 40670.58, 34403.94,
+    27388.33, 6846.59, 18704.63
+  ),
+  vti_maximo = c(
+    55024.90, 53460.74, 44449.25, 24495.88, 54715.74, 55024.90, 46546.50,
+    37054.81, 9263.03, 25306.26
+  ),
+  vtn_media = c(
+    17321.94, 32541.32, 27056.07, 14910.54, 33305.24, 33493.42, 28332.65,
+    22555.10, 5638.37, 15403.81
+  ),
+  vtn_minimo = c(
+    4792.61, 27660.12, 22997.66, 12673.96, 28309.45, 28469.41, 24082.76,
+    19171.83, 4792.61, 13093.24
+  ),
+  vtn_maximo = c(
+    38517.43, 37422.52, 31114.48, 17147.12, 38301.02, 38517.43, 32582.55,
+    25938.36, 6484.12, 17714.38
+  ),
+  origem = "Ji-Paraná, Presidente Médici, Cacoal, Espigão D’Oeste, Urupá, Ministro Andreazza, Vale do
+Paraíso, Ouro Preto do Oeste, Teixeirópolis, Governador Jorge Teixeira, Nova União, Jaru,
+Mirante da Serra, e Theobroma"
+)
+
+MRT1704_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS BR-429 (MRT-1704)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Pecuária",
+    "Agrícola - Produção Diversificada",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agricultura + Pecuária",
+    "Vegetação Nativa - Mata",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    14421.22, 29067.97, 21223.73, 2637.39, 12632.45, 27526.98, 29508.25,
+    24791.40, 21009.31, 3192.34, 6267.25, 13984.35
+  ),
+  vti_minimo = c(
+    2241.78, 24707.33, 18040.17, 2241.78, 10737.58, 23397.93, 25082.01,
+    21072.69, 17857.92, 2713.49, 5327.16, 11886.70
+  ),
+  vti_maximo = c(
+    33934.49, 33428.16, 24407.29, 3033.00, 14527.31, 31656.03, 33934.49,
+    28510.10, 24160.71, 3671.19, 7207.34, 16082.00
+  ),
+  vtn_media = c(
+    10094.85, 20347.58, 14856.61, 1846.18, 8842.71, 19268.89, 20655.78,
+    17353.98, 14706.52, 2234.64, 4387.07, 9789.04
+  ),
+  vtn_minimo = c(
+    1569.25, 17295.44, 12628.12, 1569.25, 7516.31, 16378.55, 17557.41,
+    14750.88, 12500.54, 1899.44, 3729.01, 8320.69
+  ),
+  vtn_maximo = c(
+    23754.14, 23399.71, 17085.10, 2123.10, 10169.12, 22159.22, 23754.14,
+    19957.07, 16912.50, 2569.83, 5045.13, 11257.40
+  ),
+  origem = "Alvorada do Oeste, São Miguel do Guaporé, Seringueiras, São Francisco do Guaporé, e
+Costa Marques"
+)
+
+MRT1705_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS VALE DO MAMORÉ (MRT-1705)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Pecuária",
+    "Agrícola - Produção Diversificada",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agricultura + Pecuária",
+    "Vegetação Nativa - Mata",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    10689.33, 21531.39, 17509.22, 1668.27, 9591.41, 24448.46, 20234.58,
+    15396.69, 18776.74, 1449.36, 4868.86, 11343.32
+  ),
+  vti_minimo = c(
+    1231.96, 18301.68, 14882.84, 1418.03, 8152.69, 20781.13, 17199.39,
+    13087.18, 15960.23, 1231.96, 4138.53, 9641.82
+  ),
+  vti_maximo = c(
+    28115.73, 24761.10, 20135.61, 1918.51, 11030.12, 28115.73, 23269.77,
+    17706.19, 21593.26, 1666.77, 5599.18, 13044.82
+  ),
+  vtn_media = c(
+    7482.53, 15071.97, 12256.46, 1167.79, 6713.98, 17113.92, 14164.21,
+    10777.68, 13143.72, 1014.55, 3408.20, 7940.32
+  ),
+  vtn_minimo = c(
+    862.37, 12811.18, 10417.99, 992.62, 5706.89, 14546.44, 12039.58, 9161.03,
+    11172.16, 862.37, 2896.97, 6749.27
+  ),
+  vtn_maximo = c(
+    19681.01, 17332.77, 14094.92, 1342.96, 7721.08, 19681.01, 16288.84,
+    12394.33, 15115.28, 1166.74, 3919.43, 9131.37
+  ),
+  origem = "Guajará-Mirim e Nova Mamoré"
+)
+
+MRT1706_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS VALE DO JAMARÍ (MRT-1706)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Agricultura",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Pecuária - Bovinocultura - Pastagem Nativa",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agricultura + Pecuária",
+    "Agrícola - Diversificada",
+    "Vegetação Nativa - Mata"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    14008.52, 13663.45, 37407.64, 24051.78, 1973.47, 14421.57, 7289.47,
+    30661.16, 23945.24, 23317.59, 42871.90, 1804.85
+  ),
+  vti_minimo = c(
+    1534.12, 11613.93, 31796.50, 20444.01, 1677.47, 12258.33, 6196.05,
+    26061.99, 20353.45, 19819.95, 36441.12, 1534.12
+  ),
+  vti_maximo = c(
+    49302.69, 15712.96, 43018.79, 27659.54, 2269.49, 16584.80, 8382.89,
+    35260.33, 27537.03, 26815.23, 49302.69, 2075.57
+  ),
+  vtn_media = c(
+    9805.96, 9564.41, 26185.35, 16836.24, 1381.43, 10095.10, 5102.63,
+    21462.81, 16761.67, 16322.31, 30010.33, 1263.39
+  ),
+  vtn_minimo = c(
+    1073.88, 8129.75, 22257.55, 14310.81, 1174.22, 8580.83, 4337.24,
+    18243.39, 14247.42, 13873.97, 25508.78, 1073.88
+  ),
+  vtn_maximo = c(
+    34511.88, 10999.08, 30113.15, 19361.68, 1588.64, 11609.36, 5868.02,
+    24682.23, 19275.92, 18770.66, 34511.88, 1452.90
+  ),
+  origem = "Ariquemes, Cacaulândia, Monte Negro, Vale do Anari, Campo Novo de Rondônia, Buri􀆟s,
+Machadinho D’Oeste, lto Paraíso, Cujubim, e Rio Crespo"
+)
+
+MRT1707_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS RIO MADEIRA (MRT-1707)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agricultura",
+    "Exploração Mista",
+    "Vegetação Nativa",
+    "Pecuária",
+    "Agrícola - Produção Diversificada",
+    "Agrícola - Grãos Diversos",
+    "Exploração Mista - Diversificada",
+    "Exploração Mista - Agricultura + Pecuária",
+    "Vegetação Nativa - Mata",
+    "Vegetação Nativa - Floresta",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    8587.83, 26914.02, 18764.08, 1238.94, 8958.72, 33998.87, 28292.18,
+    19166.43, 18654.35, 1024.94, 1930.33, 4400.17, 11086.04
+  ),
+  vti_minimo = c(
+    871.20, 22876.91, 15949.47, 1053.10, 7614.91, 28899.04, 24048.35,
+    16291.46, 15856.20, 871.20, 1640.78, 3740.14, 9423.13
+  ),
+  vti_maximo = c(
+    39098.70, 30951.12, 21578.69, 1424.78, 10302.52, 39098.70, 32536.01,
+    22041.39, 21452.50, 1178.68, 2219.88, 5060.19, 12748.94
+  ),
+  vtn_media = c(
+    6011.48, 18839.81, 13134.86, 867.26, 6271.10, 23799.23, 19804.53,
+    13416.50, 13058.04, 717.46, 1351.23, 3080.12, 7760.23
+  ),
+  vtn_minimo = c(
+    609.84, 16013.84, 11164.63, 737.91, 5330.34, 20229.33, 16833.85,
+    11404.02, 11099.34, 609.84, 1148.55, 2618.10, 6596.19
+  ),
+  vtn_maximo = c(
+    27369.09, 21665.78, 15105.08, 997.35, 7211.77, 27369.09, 22775.21,
+    15428.97, 15016.75, 825.07, 1553.92, 3542.13, 8924.26
+  ),
+  origem = "Candeias do Jamari, e Itapuã do Oeste, Porto Velho"
+)
 
 
 ### Consolidação dos dados ####
@@ -606,10 +918,22 @@ RO22 <- rbind(
   ROMRTRioMadeira_2022
 )
 
+
+atlas2023 <- rbind(
+  MRT1707_2024,
+  MRT1706_2024,
+  MRT1705_2024,
+  MRT1704_2024,
+  MRT1703_2024,
+  MRT1702_2024,
+  MRT1701_2024
+)
+
+atlas2023$ano <- 2023
 RO19$ano <- 2019
 RO22$ano <- 2022
 
-ROTEMPORAL <- rbind(RO22, RO19)
+ROTEMPORAL <- rbind(RO22, RO19, atlas2023)
 ROTEMPORAL$estado <- 11
 ROTEMPORAL$regiao <- "norte"  
 
