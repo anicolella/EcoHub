@@ -252,7 +252,7 @@ atlas23 <- rbind(
   MRT2101_2024
 )
 
-atlas$ano <- 2023
+atlas23$ano <- 2023
 
 
 #### Consolidação dos Dados###
