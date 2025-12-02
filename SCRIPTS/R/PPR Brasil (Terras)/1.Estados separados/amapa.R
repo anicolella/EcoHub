@@ -243,8 +243,7 @@ MRT2102_2024 <- data.frame(
   vtn_maximo = c(
     3490.30, 2473.15, 1669.71, 3490.30, 2156.89, 3402.69, 2197.42, 3490.30
   ),
-  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santama
-e Tartarugalzinho"
+  origem = "Amapá, Calçoene, Cutias, Ferreira Gomes, Itaubal, Macapá, Porto Grande, Pracuuba, Santana, Tartarugalzinho"
 )
 
 atlas23 <- rbind(
