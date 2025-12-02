@@ -418,7 +418,7 @@ MRT502_2024 <- data.frame(
   ),
   origem = "América Dourada, Barra, Barra do Mendes, Barro Alto, Brotas de Macaúbas,
 Cafarnaum, Canarana, Central, Gentio do Ouro, Ibotirama, Ibipeba, Ibititá, Ipupiara,
-Irecê, Itaguaçu da Bahia, João Dourado, Jussara, Lapão, Moporá, Mulungu do Morro,
+Irecê, Itaguaçu da Bahia, João Dourado, Jussara, Lapão, Morpará, Mulungu do Morro,
 Muquém do São Francisco, Oliveira dos Brejinhos, Presidente Dutra, São Gabriel, Uibaí
 e Xique-Xique"
 )
