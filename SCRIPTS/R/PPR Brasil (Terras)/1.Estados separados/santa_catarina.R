@@ -1279,10 +1279,10 @@ MRT1006_2024 <- data.frame(
     207000.00, 207000.00, 123966.94, 35090.91, 57915.06, 165000.00,
     207000.00, 123966.94, 35090.91
   ),
-  origem = "Abdon Batista, Brunópolis, Campos Novos, Curitibanos, Frei Rogério, Monte Carlo, Ponte
-Alta Capacidade, Ponte Alta Capacidade do Norte, Santa Cecília, São Cristovão do Sul,
-Vargem e Zortéa"
+  origem = "Abdon Batista, Brunópolis, Campos Novos, Curitibanos, Frei Rogério, Monte Carlo, Santa Cecília, São Cristovão do Sul, Vargem e Zortéa"
 )
+
+# Estava ali em cima, nsei oq é exatamente: Ponte Alta Capacidade, Ponte Alta Capacidade do Norte,
 
 MRT1007_2024 <- data.frame(
   mrt = "MERCADO REGIONAL DE TERRAS PLANALTO SERRANO (MRT - 1007)",
