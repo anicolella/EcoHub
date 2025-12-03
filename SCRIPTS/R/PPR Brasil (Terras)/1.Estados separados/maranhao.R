@@ -524,8 +524,7 @@ MRT1201_2024 <- data.frame(
 Maranhão, Fortaleza dos Nogueiras, São Pedro dos Crentes, Estreito, Formosa da Serra
 Negra, Tasso Fragoso, Balsas, Sambaíba (parte), Riachão, São Raimundo das
 Mangabeiras, Loreto, Benedito Leite, São João dos Patos, Mirador, Colinas, Pastos
-Bons, Nova Iorque, Parnarama (parte), Sucupira do Riachão, Passagem Franca, Jatobá e
-São Félix de Balsas."
+Bons, Nova Iorque, Parnarama (parte), Sucupira do Riachão, Passagem Franca, Jatobá e São Félix de Balsas."
 )
 
 MRT1202_2024 <- data.frame(
@@ -691,7 +690,7 @@ MRT1205_2024 <- data.frame(
   vtn_maximo = c(
     323358.61, 84753.75, 323358.61, 84753.75, 323358.61
   ),
-  origem = "Paço do Lumiar, Raposa, São José de Ribamar e a capital São Luís"
+  origem = "Paço do Lumiar, Raposa, São José de Ribamar, São Luís"
 )
 
 MRT1206_2024 <- data.frame(
@@ -729,8 +728,7 @@ Penalva, Peri-Mirim, Pinheiro, Presidente Sarney, Santa Helena, São Bento, São
 Batista, São Vicente de Férrer, Viana, Vitória do Mearim, Alcântara, Apicum-Açu,
 Bacuri, Bacurituba, Bequimão, Cajapió, Cedral, Central do Maranhão, Cururupu,
 Guimarães, Mirinzal, Porto Rico do Maranhão, Serrano do Maranhão, Amapá do
-Maranhão, Cândido Mendes, Carutapera, Godofredo Viana, Luís Domingues, Turiaçu e
-Turilândia"
+Maranhão, Cândido Mendes, Carutapera, Godofredo Viana, Luís Domingues, Turiaçu e Turilândia"
 )
 
 MRT1207_2024 <- data.frame(
