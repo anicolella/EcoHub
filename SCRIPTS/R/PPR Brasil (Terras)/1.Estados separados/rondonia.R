@@ -847,7 +847,7 @@ MRT1706_2024 <- data.frame(
     34511.88, 10999.08, 30113.15, 19361.68, 1588.64, 11609.36, 5868.02,
     24682.23, 19275.92, 18770.66, 34511.88, 1452.90
   ),
-  origem = "Ariquemes, Cacaulândia, Monte Negro, Vale do Anari, Campo Novo de Rondônia, Buri􀆟s,
+  origem = "Ariquemes, Cacaulândia, Monte Negro, Vale do Anari, Campo Novo de Rondônia, Buritis,
 Machadinho D’Oeste, lto Paraíso, Cujubim, e Rio Crespo"
 )
 

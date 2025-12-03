@@ -937,7 +937,7 @@ MRT1307_2024 <- data.frame(
     80648.97, 80648.97, 16205.57, 27829.86, 80648.97, 18625.67, 17312.58, 5252.34
   ),
   origem = "Peixoto de Azevedo, União do Sul, Feliz Natal, Vila Rica, Santa Cruz do Xingú, Novo Santo
-Antônio, São José do Xingu, Serra Nova Dourada, Confresa, Luciara, Santa Teresinha, São Félix
+Antônio, São José do Xingu, Serra Nova Dourada, Confresa, Luciara, Santa Terezinha, São Félix
 do Araguaia, Porto Alegre do Norte, Nova Nazaré, Araguaiana, Cocalinho, Ribeirãozinho,
 Torixoréu, Araguainha, Pontal do Araguaia, Ponte Branca"
 )

@@ -1349,10 +1349,10 @@ MRT1108_2024 <- data.frame(
     45128.32, 36825.45, 16056.83, 25668.45, 45128.32, 30859.41, 39563.13,
     18301.44, 12612.26, 25668.45
   ),
-  origem = "Aceguá, Bagé, Caçapava do Sul, Candiota, Dom Pedrito, Encruzilhada do Sul, Herval, Hulha
-Negra, Lavras do Sul, Pedras Alta Capacidades, Pinheiro Machado, Piratini e Santana da
-Boa Vista"
+  origem = "Aceguá, Bagé, Caçapava do Sul, Candiota, Dom Pedrito, Encruzilhada do Sul, Herval, Hulha Negra, Lavras do Sul, Pinheiro Machado, Piratini e Santana da Boa Vista"
 )
+
+# Pedras Alta Capacidades, tava no de cima, mas parece um erro de digitação
 
 MRT1109_2024 <- data.frame(
   mrt = "MERCADO REGIONAL DE TERRAS SANTA MARIA (MRT - 1109)",
