@@ -1586,7 +1586,7 @@ MRT1012_2024 <- data.frame(
     272727.27, 272727.27, 54000.00, 150000.00, 150000.00, 272727.27,
     16666.67, 79268.29, 48611.11, 56338.03, 150000.00
   ),
-  origem = "Agrolândia, Atlanta, Chapada do Lageado, Imbuia, ituporanga, Petrolândia, Vidal Ramos"
+  origem = "Agrolândia, Atalanta, Chapada do Lageado, Imbuia, ituporanga, Petrolândia, Vidal Ramos"
 )
 
 MRT1013_2024 <- data.frame(
