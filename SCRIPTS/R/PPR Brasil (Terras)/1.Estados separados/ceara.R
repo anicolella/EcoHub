@@ -747,8 +747,7 @@ MRT208_2024 <- data.frame(
   vtn_maximo = c(
     8734.33, 8734.33, 3291.55, 8734.33, 3968.41, 823.87
   ),
-  origem = "Carnaubal, Croatá, Guaraciaba do Norte, Ibiapina, São Benedito, Tianguá, Ubajara e
-Viçosa do Ceará"
+  origem = "Carnaubal, Croatá, Guaraciaba do Norte, Ibiapina, São Benedito, Tianguá, Ubajara e Viçosa do Ceará"
 )
 
 MRT209_2024 <- data.frame(
@@ -858,8 +857,7 @@ MRT211_2024 <- data.frame(
     3839.28, 8253.54, 10977.65
   ),
   origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João
-do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e
-Jaguaribe"
+do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e Jaguaribe"
 )
 
 MRT212_2024 <- data.frame(
@@ -893,8 +891,7 @@ MRT212_2024 <- data.frame(
     15679.42, 2973.17, 1434.23, 4034.44, 1222.20, 2881.00, 15679.42
   ),
   origem = "Palhano, Russas, Quixeré, Morada Nova, Limoeiro do Norte, Tabuleiro do Norte, São João
-do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e
-Jaguaribe"
+do Jaguaribe, Jaguaretama, Jaguaribara, Alto Santo, Potiretama, Iracema, Ererê, Pereiro e Jaguaribe"
 )
 
 MRT213_2024 <- data.frame(
