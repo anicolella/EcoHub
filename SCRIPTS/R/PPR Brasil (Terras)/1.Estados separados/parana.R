@@ -971,12 +971,7 @@ MRT905_2024 <- data.frame(
     130951.79, 38788.31, 67692.32, 129396.69, 34041.76, 72469.01, 38603.18,
     26606.58, 67692.32, 130951.79, 72469.01
   ),
-  origem = "Alta Capacidademira do Paraná, Arapuã, Ariranha do Ivaí, Boa Ventura de São Roque,
-Campina do Simão, Candói, Cantagalo, Diamante do Sul, Goioxim, Grandes Rios,
-Guaraniaçu, Guarapuava, Espigão Alto do Iguaçu, Foz do Jordão, Ivaiporã, Jardim Alegre,
-Laranjal, Laranjeiras do Sul, Manoel Ribas, Marquinho, Mato Rico, Nova Laranjeiras, Nova
-Tebas, Palmital, Pitanga, Porto Barreiro, Quedas do Iguaçu, Rio Bonito do Iguaçu, Rio
-Branco do Ivaí, Santa Maria do Oeste e Virmond"
+  origem = "Alta Capacidademira do Paraná, Arapuã, Ariranha do Ivaí, Boa Ventura de São Roque, Campina do Simão, Candói, Cantagalo, Diamante do Sul, Goioxim, Grandes Rios, Guaraniaçu, Guarapuava, Espigão Alto do Iguaçu, Foz do Jordão, Ivaiporã, Jardim Alegre, Laranjal, Laranjeiras do Sul, Manoel Ribas, Marquinho, Mato Rico, Nova Laranjeiras, Nova Tebas, Palmital, Pitanga, Porto Barreiro, Quedas do Iguaçu, Rio Bonito do Iguaçu, Rio Branco do Ivaí, Santa Maria do Oeste e Virmond"
 )
 
 MRT906_2024 <- data.frame(
