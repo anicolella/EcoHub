@@ -316,7 +316,7 @@ MRT801_2024 <- data.frame(
   origem = "São José dos Campos, Caçapava, Igaratá, Jacareí, Jambeiro, Monteiro Lobato, Paraibuna e Santa
 Branca, Taubaté, Campos do Jordão, Lagoinha, Natividade da Serra, Pindamonhangaba, Santo
 Antônio do Pinhal, São Bento do Sapucaí, São Luiz do Paraitinga, Tremembé, Redenção das Serra,
-Guaratinguetá, Aparecida, Cachoeira, Paulista, Canas, Cunha, Lorena, Piquete, Potim e Roseira,
+Guaratinguetá, Aparecida, Cachoeira Paulista, Canas, Cunha, Lorena, Piquete, Potim e Roseira,
 Arapeí, Areias, Bananal, Lavrinhas, Queluz, São José do Barreiro, Silveiras, Caraguatatuba, Ilhabela,
 Ubatuba e São Sebastião"
 )
@@ -445,7 +445,7 @@ Engenheiro Coelho, Espírito Santo do Pinhal, Estiva Gerbi, Holambra, Hortolând
 Indaiatuba, Ipeúna, Iracemápolis, Itapira, Itirapina, Itobi, Jaguariúna, Jumirim, Laranjal Paulista,
 Leme, Limeira, Lindoia, Mococa, Mogi Guaçu, Mogi Mirim, Mombuca, Monte Alegre do Sul, Monte
 Mor, Nova Odessa, Paulínia, Pedreira, Pereiras, Piracicaba, Pirassununga, Porto Ferreira, Rafard,
-Ribeirão Bonito, Rio Claro, Rio das Pedras, Saltinho, Santa Bárbara do Oeste, Santa Cruz da
+Ribeirão Bonito, Rio Claro, Rio das Pedras, Saltinho, Santa Bárbara dOeste, Santa Cruz da
 Conceição, Santa Cruz das Palmeiras, Santa Gertrudes, Santa Maria da Serra, Santa Rita do Passa
 Quatro, Santa Rosa do Viterbo, Santo Antonio da Posse, Santo Antônio do Jardim, São Carlos, São
 João da Boa Vista, São José do Rio Pardo, São Pedro, São Sebastião da Grama, Serra Negra, Socorro,
@@ -599,8 +599,8 @@ Cajobi, Catanduva, Catiguá, Colina, Colômbia, Candido Rodrigues, Cristais Paul
 Dobrada, Dumont, Elisário, Embauba, Fernando Prestes , Franca, Guaira, Guaraçi, Guariba, Guará,
 Guatapará, Itajobi, Itápolis, Ipuã, Itirapuã, Ituverava, Jeriquara, Jaborandi, Jardinópolis,
 Marapoama, Monte Azul Paulista, Matão, Monte Alto, Motuca, Miguelópolis, Morro Agudo, Novais,
-Nova Europa, Nuporanga, Olimpia, Orlândia, Palmares Pta, Paraiso, Pindorama, Pirangi, Patrocínio
-Pta, Pedregulho, Pradópolis, Restinga, Ribeirão Corrente, Rifaina, Ribeirão Preto, Severínia, Santa
+Nova Europa, Nuporanga, Olimpia, Orlândia, Palmares Paulista, Paraiso, Pindorama, Pirangi, Patrocínio
+Paulista, Pedregulho, Pradópolis, Restinga, Ribeirão Corrente, Rifaina, Ribeirão Preto, Severínia, Santa
 Adélia, Santa Ernestina, Santa Lúcia, Sales de Oliveira, Santo Antonio da Alegria, São Joaquim da
 Barra, São José da Bela Vista, Santa Cruz da Esperança, São Simão, Serra Azul, Serrana, Tabapuã,
 Terra Roxa, Tabatinga , Taiaçú, Taiuva, Taquaritinga, Trabijú, Taquaral, Uchoa, Viradouro, Vista
@@ -638,7 +638,7 @@ MRT807_2024 <- data.frame(
   ),
   origem = "Adolfo, Alto Alegre, Álvares Florence, Américo De Campos, Aparecida D’oeste, Araçatuba, Aspásia,
 Auriflama, Avanhandava, Bady Bassitt, Bálsamo, Barbosa, Bilac, Birigui, Braúna, Brejo Alegre,
-Buritama, Cardoso, Cedral, Coroados, Cosmorama, Dirce Reis, Dolcinópolis, Estrela, Fernandópolis,
+Buritama, Cardoso, Cedral, Coroados, Cosmorama, Dirce Reis, Dolcinópolis,Estrela doeste, Fernandópolis,
 Floreal, Gastão Vidigal, General Salgado, Glicério, Guapiaçu, Guarani D’oeste, Guararapes,
 Guzolândia, Ibirá, Icêm, Ilha Solteira, Indiaporã, Ipiguá, Irapuã, Jaci, Ipiguá, Irapuã, Jaci, Jales, José
 Bonifácio, Lourdes, Macaubal, Macedônia, Magda, Marinópolis, Mendonça, Meridiano, Mesópolis,
@@ -653,6 +653,7 @@ Sebastianópolis Do Sul, Sud Mennucci, Suzanápolis, Tanabi, Três Fronteiras, T
 Ubarana, União Paulista, Urânia, Urupês,Valentim Gentil, Vitória Brasil, Votuporanga, Zacarias."
 )
 
+#estrela doeste, estava apenas estrela, mas presumivelmente é essa. dado que existem 3, mira estrela esta aqui e estrela do norte em baixo...
 MRT808_2024 <- data.frame(
   mrt = "MERCADO REGIONAL DE TERRAS OESTE (MRT-808)",
   tipologia_de_uso = c(
