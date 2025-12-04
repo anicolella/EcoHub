@@ -913,8 +913,291 @@ Estância, Arauá, Santa Luzia do Itanhy, Indiaroba, Umbaúba e Cristinápolis"
 )
 
 #### ATLAS 23 ####
+MRT2301_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS LITORAL NORTE E BAIXO SÃO FRANCISCO (MRT-2301)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Cana",
+    "Agrícola - Grãos",
+    "Exploração Mista - Agrícola + Cana + Pecuária",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    12065.83, 7138.10, 13077.45, 12272.69, 7111.05, 10304.44, 13090.92, 11032.93,
+    12069.39
+  ),
+  vti_minimo = c(
+    6044.39, 6067.57, 10719.26, 10121.91, 6044.39, 7418.35, 10634.83, 9377.99,
+    9930.23
+  ),
+  vti_maximo = c(
+    25653.62, 8208.81, 15435.65, 14423.47, 8177.71, 13190.54, 15547.02, 12687.87,
+    14208.54
+  ),
+  vtn_media = c(
+    10685.20, 6576.90, 11599.75, 11083.75, 6645.30, 9252.09, 11768.62, 9171.41,
+    10903.36
+  ),
+  vtn_minimo = c(
+    5590.37, 5590.37, 9316.96, 9332.67, 5648.50, 6651.55, 9489.22, 7795.70,
+    9171.15
+  ),
+  vtn_maximo = c(
+    20853.58, 7563.44, 13882.54, 12834.84, 7642.09, 11852.63, 14048.02, 10547.12,
+    12635.57
+  ),
+  origem = "Ilha das Flores, Canhoba, Telha, Propriá, Santana do São Francisco, Muribeca,
+Neópolis, Brejo Grande, Cedro de São João, Nossa Senhora de Lourdes, Amparo do São
+Francisco, Malhada dos Bois, Japoatã, Pacatuba e São Francisco"
+)
+
+MRT2302_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS ALTO SERTÃO SERGIPANO (MRT-2302)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Grãos - Irrigada",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    10355.38, 55592.74, 14469.67, 4081.30, 55592.74, 14469.67, 12833.13, 3802.42
+  ),
+  vti_minimo = c(
+    2247.93, 47253.83, 10565.88, 3169.17, 47253.83, 10565.88, 10271.42, 3055.36
+  ),
+  vti_maximo = c(
+    63931.65, 63931.65, 18373.47, 4993.42, 63931.65, 18373.47, 15394.84, 4549.47
+  ),
+  vtn_media = c(
+    8677.64, 46865.01, 12676.15, 3268.89, 46865.01, 12676.15, 11371.58, 3268.89
+  ),
+  vtn_minimo = c(
+    2207.64, 39835.26, 9308.33, 2741.53, 39835.26, 9308.33, 9348.17, 2741.53
+  ),
+  vtn_maximo = c(
+    53894.76, 53894.76, 16043.97, 3796.25, 53894.76, 16043.97, 13394.99, 3796.25
+  ),
+  origem = " Canindé do São Francisco, Poço Redondo, Monte Alegre de Sergipe, Porto da Folha, Nossa Senhora da Glória"
+)
 
 
+MRT2303_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS MÉDIO SERGIPANO (MRT-2303)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Exploração Mista - Agrícola + Pecuária"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    22588.20, 22588.20, 22588.20
+  ),
+  vti_minimo = c(
+    12324.42, 18365.11, 18365.11
+  ),
+  vti_maximo = c(
+    54459.31, 26811.28, 26811.28
+  ),
+  vtn_media = c(
+    20498.86, 20498.86, 20498.86
+  ),
+  vtn_minimo = c(
+    11825.98, 16815.13, 16815.13
+  ),
+  vtn_maximo = c(
+    48139.63, 24182.58, 24182.58
+  ),
+  origem = " Nossa Senhora Aparecida, Feira Nova, Itabi, Aquidabã, Graccho Cardoso, São
+Miguel do Aleixo, Cumbe, Nossa Senhora das Dores e Ribeirópolis"
+)
+
+MRT2304_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS COTINGUIBA (MRT-2304)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Terra com mata",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Cana",
+    "Exploração Mista - Pecuária + Fruticultura",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Baixa Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2),
+  vti_media = c(
+    17292.00, 19619.30, 3652.06, 13106.66, 26129.49, 19619.30, 14863.32,
+    11241.99, 31913.62, 12404.03
+  ),
+  vti_minimo = c(
+    1667.70, 16676.40, 2470.72, 10862.21, 19309.92, 16676.40, 12594.52,
+    8928.68, 24964.15, 10105.93
+  ),
+  vti_maximo = c(
+    61443.54, 22562.19, 4833.40, 15355.11, 32949.05, 22562.19, 17132.13,
+    13555.29, 38863.09, 14702.13
+  ),
+  vtn_media = c(
+    18198.51, 19619.30, 3645.74, 11023.05, 23876.71, 19619.30, 12413.80,
+    9349.08, 27932.53, 10357.30
+  ),
+  vtn_minimo = c(
+    1656.95, 16676.40, 2460.95, 9169.46, 17812.28, 16676.40, 10397.47,
+    7650.30, 22558.45, 8666.85
+  ),
+  vtn_maximo = c(
+    51068.40, 22562.19, 4830.53, 12876.64, 29941.14, 22562.19, 14430.13,
+    11047.85, 33306.62, 12047.75
+  ),
+  origem = "Divina Pastora, General Maynard, Capela, Japaratuba, Pirambu, Siriri, Laranjeiras,
+Riachuelo, Maruim, Carmópolis, Santa Rosa de Lima, Rosário do Catete e Santo Amaro
+das Brotas"
+)
+
+MRT2305_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS METROPOLITANO (MRT-2305)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Exploração Mista",
+    "Exploração Mista - Diversificada"
+  ),
+  nivel = c(0, 1, 2),
+  vti_media = c(
+    17292.00, 17292.00, 17292.00
+  ),
+  vti_minimo = c(
+    1667.70, 1667.70, 1667.70
+  ),
+  vti_maximo = c(
+    61443.54, 61443.54, 61443.54
+  ),
+  vtn_media = c(
+    18198.51, 18198.51, 18198.51
+  ),
+  vtn_minimo = c(
+    1656.95, 1656.95, 1656.95
+  ),
+  vtn_maximo = c(
+    51068.40, 51068.40, 51068.40
+  ),
+  origem = "Aracajú, Barra dos Coqueiros, Nossa Senhora do Socorro e São Cristóvão"
+)
+
+MRT2306_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS AGRESTE ITABAIANA (MRT-2306)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Exploração Mista",
+    "Pecuária",
+    "Agrícola - Grãos - Irrigada",
+    "Agrícola - Grãos",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    55485.66, 67091.06, 30776.03, 29712.07, 89067.90, 40993.58, 30776.03, 29712.07
+  ),
+  vti_minimo = c(
+    21282.96, 48407.99, 25385.14, 23705.91, 72746.43, 29290.44, 25385.14, 23705.91
+  ),
+  vti_maximo = c(
+    120832.14, 85774.14, 36166.92, 35718.24, 105389.36, 52696.71, 36166.92, 35718.24
+  ),
+  vtn_media = c(
+    37834.52, 44361.76, 23594.81, 18508.79, 54894.65, 31853.94, 23594.81, 18508.79
+  ),
+  vtn_minimo = c(
+    15566.19, 32499.88, 19577.56, 15732.47, 43802.82, 22135.70, 19577.56, 15732.47
+  ),
+  vtn_maximo = c(
+    75408.94, 56223.63, 27612.06, 21285.11, 65986.48, 41572.19, 27612.06, 21285.11
+  ),
+  origem = "Carira, Frei Paulo, Pinhão, Pedra Mole, Macambira, Campo do Brito, São Domingos, Areia Branca, Itabaiana, Malhador e Moita Bonita"
+)
+
+MRT2307_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS CENTRO SUL SERGIPANO (MRT-2307)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Terra de exploração mista",
+    "Pecuária",
+    "Agrícola - Grãos",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Exploração Mista - Pecuária + Fruticultura",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    17460.72, 28872.89, 21190.42, 14874.60, 28872.89, 19470.08, 26446.28, 17492.95
+  ),
+  vti_minimo = c(
+    5642.44, 24541.95, 15539.11, 10481.75, 24541.95, 12336.79, 22479.34, 12647.12
+  ),
+  vti_maximo = c(
+    38016.53, 33203.82, 26841.74, 19267.46, 33203.82, 26603.36, 30413.22, 22338.78
+  ),
+  vtn_media = c(
+    15138.49, 23870.94, 18769.55, 12273.54, 23870.94, 17747.81, 19961.58, 15061.40
+  ),
+  vtn_minimo = c(
+    4661.98, 20252.74, 13613.01, 8833.23, 20252.74, 11097.44, 16807.04, 10899.07
+  ),
+  vtn_maximo = c(
+    30033.06, 27489.14, 23926.10, 15713.86, 27489.14, 24398.19, 23116.13, 19223.72
+  ),
+  origem = "Riachão do Dantas, Tobias Barreto, Poço Verde, Simão Dias e Lagarto"
+)
+
+MRT2308_2024 <- data.frame(
+  mrt = "MERCADO REGIONAL DE TERRAS SUL SERGIPANO (MRT-2308)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Agrícola",
+    "Terra com mata",
+    "Terra de exploração mista",
+    "Pecuária",
+    "Agrícola - Fruticultura",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Exploração Mista - Pecuária + Fruticultura",
+    "Exploração Mista - Agrícola + Pecuária",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Plantada - Alta Capacidade"
+  ),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  vti_media = c(
+    24800.71, 38756.97, 7207.31, 26356.32, 21835.32, 40460.76, 24936.93, 30332.82, 23245.54, 28347.21, 17757.88
+  ),
+  vti_minimo = c(
+    5831.07, 32824.95, 5831.07, 20626.40, 17661.76, 34391.65, 21196.39, 22053.71, 18685.69, 23736.19, 14594.06
+  ),
+  vti_maximo = c(
+    52851.44, 44688.99, 8583.55, 32086.25, 26008.88, 46529.88, 28677.46, 38611.93, 27805.39, 32958.23, 20921.71
+  ),
+  vtn_media = c(
+    21530.46, 32670.40, 6984.67, 21155.90, 18993.35, 32670.40, 21087.50, 24845.69, 20114.41, 24466.04, 15672.85
+  ),
+  vtn_minimo = c(
+    5742.49, 27769.84, 5742.49, 17102.52, 15430.53, 27769.84, 17924.37, 18961.38, 16416.92, 20093.32, 12969.58
+  ),
+  vtn_maximo = c(
+    48865.80, 37570.96, 8226.85, 25209.27, 22556.17, 37570.96, 24250.62, 30730.01, 23811.89, 28838.75, 18376.12
+  ),
+  origem = "Tomar do Geru, Itabaianinha, Pedrinhas, Boquim, Salgado, Itaporanga d’Ajuda, Estância, Arauá, Santa Luzia do Itanhy, Indiaroba, Umbaúba e Cristinápolis"
+)
 
 ## Consolidação dos dados #####
 SE2017 <- rbind(
