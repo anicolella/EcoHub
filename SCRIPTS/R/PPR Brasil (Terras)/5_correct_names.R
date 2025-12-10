@@ -135,7 +135,6 @@ df_novo3 <- df_novo3 %>%
   ))
 
 
-
 corrig <- df_novo3 %>%
   # 1. Junta os data frames
   left_join(resultado_finael, by = "origem") %>%
@@ -152,8 +151,8 @@ base_colunas_limpas <- corrig %>%
                  col_uf = UF.x)
 
 
-resultadob <- base_colunas_limpas %>% 
-  incluir_codigo_ibge()
+resultadob <- base_colunas_limpas %>% incluir_codigo_ibge()
+
 
 new14 <- resultadob |> filter(is.na(resultadob$id_municipio)) |> distinct(origem, uf_join, UF.x,df, original, ano) 
 
@@ -165,4 +164,6 @@ resltpareado <- resultadob |> select(-c( UF.y, original, uf_join, chave_suja, di
 
 resultadof <- resltpareado |> select(muni_join, id_municipio, tipologia_de_uso ,UF.x, ano, vti_media, vti_minimo, vti_maximo, vtn_media, vtn_minimo, vtn_minimo, vtn_maximo,df, nivel)  
   
-  
+
+
+
