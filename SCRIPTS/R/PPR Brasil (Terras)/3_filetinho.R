@@ -64,19 +64,7 @@ df_novo2 <- df_novo2 %>%
 df_novo2 <- df_novo2 %>%
   filter(!grepl("fica", origem))
 
-df_novo2 <- as_tibble(df_novo2)
-
-df_novo2 <- df_novo2 %>%
-  type_convert() # O R analisa cada coluna e converte automaticamente
-
-glimpse(df_novo2)
-
-
-
 df_novo3 <- df_novo2
 
-df_novo3 <- df_novo3 %>%
-  type_convert() # O R analisa cada coluna e converte automaticamente
 
-glimpse(df_novo3)
 
