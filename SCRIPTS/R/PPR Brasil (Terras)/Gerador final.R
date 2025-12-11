@@ -1,3 +1,15 @@
+#pacotes_necessarios <- c("tidyverse", "ggplot2", "readr", 
+                        #"stringr", "GeoBr", "sf", 
+                        #"purr", "lubridate")
+
+#for (p in pacotes_necessarios) {
+  #if (!require(p, character.only = TRUE)) {
+   # install.packages(p)
+    #library(p, character.only = TRUE)
+  #}
+#}
+
+
 path1_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\"
 path1_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\"
 
