@@ -57,6 +57,7 @@ base_colunas_limpasnuke <- df_nuclear %>%
   limpar_colunas(col_muni = origem,
                  col_uf = UF.x)
 
+base_colunas_limpasnuke <- base_colunas_limpasnuke  |> incluir_codigo_ibge()
 
 resultado_t <- base_colunas_limpasnuke %>% 
   left_join(
