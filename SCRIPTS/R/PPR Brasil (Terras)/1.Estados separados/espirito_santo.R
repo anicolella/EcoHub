@@ -1476,13 +1476,13 @@ ES24 <- rbind(
   ESMRT_Sul_2024
 )
 
-atlas23$ano <- 2023
+
 ES16$ano <- 2016
 ES18$ano <- 2018
 ES21$ano <- 2021
 ES22$ano <- 2022
 ES24$ano <- 2024
 
-ESTEMPORAL <- rbind(ES16, ES18, ES21, ES22, ES24, atlas23)
+ESTEMPORAL <- rbind(ES16, ES18, ES21, ES22, ES24)
 ESTEMPORAL$estado <- 32
 ESTEMPORAL$regiao <- "Sudeste"
