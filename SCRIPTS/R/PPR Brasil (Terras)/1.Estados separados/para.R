@@ -970,3 +970,4 @@ PATEMPORAL <- rbind(
 PATEMPORAL$estado <- 15
 PATEMPORAL$regiao <- "nordeste"
 
+# os dados de 23 sao compativeis
