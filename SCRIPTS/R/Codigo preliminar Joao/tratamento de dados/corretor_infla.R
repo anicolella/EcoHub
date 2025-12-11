@@ -6,7 +6,7 @@ library(lubridate)
 #correlçao por igpm
 #a <- available_territories(language = c("en", "br"))
 IGPM <- ipeadata(code = "IGP_IGPMG", language = "br")
-series <- available_series()
+#series <- available_series()
 
 
 IGPM <-  IGPM |>  mutate ( value = IGPM$value/100 + 1 )
@@ -79,7 +79,5 @@ select(
   starts_with("c_")
 )
 
-# --- 6. Ver o Resultado ---
 
-cat("Valores corrigidos para o ano de", ano_base_final, "\n")
-
+resultado_igpm <- as.data.frame(resultado_igpm)
