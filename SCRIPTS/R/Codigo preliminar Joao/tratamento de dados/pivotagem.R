@@ -2,6 +2,8 @@
 library(tidyverse)
 # Supondo que seu dataframe se chame 'meus_dados'
 
+resultado_igpm <- resultado_igpm |> unique()
+
 rigpm2  <- resultado_igpm %>%
   unique(id_municipio, muni_join, tipologia_de_uso, UF.x, nivel)
 
@@ -13,6 +15,7 @@ pivot <- resultado_igpm %>%
     
   )
 
+#Isso aqui ta dando problema por conta dos conflitos advindos de diferentes valores médios
 ab <-resltpareado %>%
   count(id_municipio, muni_join, tipologia_de_uso, ano) %>%
   filter(n > 1)
