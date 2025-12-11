@@ -305,3 +305,5 @@ AM16$ano <- 2016
 AMTEMPORAL <- rbind(AM23, AM16, atlas23)
 AMTEMPORAL$estado <- 13
 AMTEMPORAL$regiao <- "Norte"
+
+#Os dados são discrepantes, os do atlas aparentemente são muito mais consistentes.
