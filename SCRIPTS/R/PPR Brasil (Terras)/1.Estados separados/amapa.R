@@ -265,3 +265,5 @@ AP23$ano <- 2023
 APTEMPORAL <- rbind(AP23, AP19, AP16, atlas23)
 APTEMPORAL$estado <- 16
 APTEMPORAL$regiao <- "Norte"
+
+#2023 bate perfeitamente com 23 do RAMT
