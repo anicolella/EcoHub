@@ -1,13 +1,8 @@
 # ===================================================================
 # SCRIPT COMPLETO PARA BAIXAR TODOS OS DADOS MUNICIPAIS DO GEOBR
 # ===================================================================
-
-# 1. CARREGAR BIBLIOTECAS
-# -------------------------------------------------------------------
 # Certifique-se de que os pacotes estão instalados:
 # install.packages(c("geobr", "dplyr", "purrr", "sf"))
-
-
 #source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\2.juncao.r", encoding = "UTF-8")
 #source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\3.filetinho.R", encoding = "UTF-8")
 # library(geobr)
