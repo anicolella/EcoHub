@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>análise descritivas RAMT</title>
+<title>Análise descritivas RAMT</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -75,7 +110,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">análise descritivas RAMT</h1>
+<h1 class="title">Análise descritivas RAMT</h1>
 </div>
 
 
@@ -92,16 +127,42 @@ window.Quarto = {
 </header>
 
 
-<section id="análise-descritiva-dos-dados-ramt" class="level1">
-<h1>Análise descritiva dos dados RAMT</h1>
 <section id="sobre-os-dados" class="level2">
 <h2 class="anchored" data-anchor-id="sobre-os-dados">1.Sobre os dados</h2>
-<p>Os dados dos RAMT (Relatórios de Análise do Mercado de Terras) são elaborados pelo INCRA a partir da análise de diferentes mercados de terras em todo o território nacional, sendo essas terras tratadas como zonas homogêneas. Estas zonas são <em>clusters</em> (agrupamentos homogêneos com características semelhantes) que, a partir de então, têm seu valor analisado tendo em vista o uso da terra e as dinâmicas desses diferentes mercados. Os <em>clusters</em> são formados com base em um conjunto de variáveis: vocação produtiva da terra, gestão econômica e atividades agrícolas, nível tecnológico e a concentração fundiária (tendo em vista o índice de Gini fundiário). A metodologia de clusterização adotada é a de Ward. O tratamento estatístico pressupõe uma distribuição aproximadamente normal dentro da zona homogênea.</p>
+<p>Os dados dos RAMT (Relatórios de Análise do Mercado de Terras) são elaborados pelo INCRA a partir da análise de diferentes mercados de terras em todo o território nacional, sendo essas terras tratadas como zonas homogêneas. Estas zonas são <em>clusters</em> (agrupamentos homogêneos com características semelhantes) que, a partir de então, têm seu valor analisado tendo em vista o uso da terra e as dinâmicas desses diferentes mercados. Os <em>clusters</em> são formados com base em um conjunto de variáveis: vocação produtiva da terra, gestão econômica e atividades agrícolas, nível tecnológico e a concentração fundiária (tendo em vista o índice de Gini fundiário). A metodologia de clusterização adotada é a de Ward, criando uma árvore de clusters inicialmente que depois é diferenciada por meio de algoritmos de K-means. O tratamento estatístico pressupõe uma distribuição aproximadamente normal dentro da zona homogênea. Os índices de inflação são corrigidos segundo o IGP-DI. Esse procedimento de clusterização é feito dentro de uma superintendência regional do INCRA.</p>
 <p>A metodologia de Ward baseia-se na criação de partições que minimizem a Soma dos Quadrados dos Erros (SQE), ou seja, a soma das distâncias euclidianas quadráticas de cada amostra em relação ao centroide (média) do cluster, conforme a fórmula:</p>
 <p><span class="math display">\[
 ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 \]</span></p>
+<p>A otimização do procedimento de cluster é feito por meio do processo de “K-means”. Esse algoritmo forma K grupos diversos de municípios que posteriormente serão modificados movendo cidades de um local ao outro de modo a maximizar ou minimizar a função, aumentando a qualidade do cluster.</p>
 </section>
+<section id="distribuições-histogramas-e-plots." class="level2">
+<h2 class="anchored" data-anchor-id="distribuições-histogramas-e-plots.">2.Distribuições, histogramas e Plots.</h2>
+<p>Box Plot, distribuição VTN por Estado no ano de 2023.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_todos_estados, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(UF.x, vtn_media, <span class="at">FUN =</span> median), <span class="at">y =</span> vtn_media)) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span> <span class="co"># Formata eixo Y para não ficar notação científica</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribuição do Valor da Terra Nua por Estado (2023)"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"MÉDIA GERAL"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Estados (Ordenados por Mediana)"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"VTN Médio (R$)"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Box Plot, distribuição VTI por Estado no ano de 2023.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_todos_estados, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(UF.x, vti_media, <span class="at">FUN =</span> median), <span class="at">y =</span> vti_media)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribuição do Valor da Terra Nua por Estado (2023)"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"MÉDIA GERAL"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Estados (Ordenados por Mediana)"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"VTI Médio (R$)"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 </main>
