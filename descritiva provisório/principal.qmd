@@ -1,0 +1,18 @@
+---
+title: "Análise descritivas RAMT"
+format: html
+---
+
+## 1.Sobre os dados
+
+Os dados dos RAMT (Relatórios de Análise do Mercado de Terras) são elaborados pelo INCRA a partir da análise de diferentes mercados de terras em todo o território nacional, sendo essas terras tratadas como zonas homogêneas. Estas zonas são *clusters* (agrupamentos homogêneos com características semelhantes) que, a partir de então, têm seu valor analisado tendo em vista o uso da terra e as dinâmicas desses diferentes mercados. Os *clusters* são formados com base em um conjunto de variáveis: vocação produtiva da terra, gestão econômica e atividades agrícolas, nível tecnológico e a concentração fundiária (tendo em vista o índice de Gini fundiário). A metodologia de clusterização adotada é a de Ward, criando uma árvore de clusters inicialmente que depois é diferenciada por meio de algoritmos de K-means. O tratamento estatístico pressupõe uma distribuição aproximadamente normal dentro da zona homogênea. Os índices de inflação são corrigidos segundo o IGP-DI. Esse procedimento de clusterização é feito dentro de uma superintendência regional do INCRA.
+
+A metodologia de Ward baseia-se na criação de partições que minimizem a Soma dos Quadrados dos Erros (SQE), ou seja, a soma das distâncias euclidianas quadráticas de cada amostra em relação ao centroide (média) do cluster, conforme a fórmula:
+
+$$
+ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
+$$
+
+A otimização do procedimento de cluster é feito por meio do processo de "K-means". Esse algoritmo forma K grupos diversos de municípios que posteriormente serão modificados movendo cidades de um local ao outro de modo a maximizar ou minimizar a função, aumentando a qualidade do cluster.
+
+## 2.Distribuições, histogramas e Plots.

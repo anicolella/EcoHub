@@ -15,7 +15,7 @@ pivot <- resultado_igpm %>%
     
   )
 
-#Isso aqui ta dando problema por conta dos conflitos advindos de diferentes valores médios
+#Isso aqui ta dando problema por conta dos conflitos advindos de diferentes valores médios 
 ab <-resltpareado %>%
   count(id_municipio, muni_join, tipologia_de_uso, ano) %>%
   filter(n > 1)
