@@ -1157,12 +1157,12 @@ MRTMT18$ano <- 2018
 
 
 #Junção de tudo
-MTTEMPORAL <- rbind( MRTMT23, MRTMT18, MRTMT19, MRTMT24, atlas23)
+MTTEMPORAL <- rbind( MRTMT23, MRTMT18, MRTMT19, MRTMT24)
 MTTEMPORAL$estado <- 51
 MTTEMPORAL$regiao <- "Centro Oeste"
 #Associação cidades mercados (O formato adotado aqui é distinto dos outros df montados)
 #padronização para índice do atlas do mercado de terras.
-
+#atlas 2023 foi removido para manter o padrão da RAMT, essas infos do atlas se sobrepõe com o relatório de 2024
 MTTEMPORAL$mrt[MTTEMPORAL$mrt == 1] <- "Terras Noroeste"
 MTTEMPORAL$mrt[MTTEMPORAL$mrt == 2] <- "Terras Centro"
 MTTEMPORAL$mrt[MTTEMPORAL$mrt == 3] <- "Terras Parecis"

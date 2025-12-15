@@ -262,7 +262,7 @@ AP19 <- rbind(APMRTLeste_2019, APMRTOeste_2019)
 AP19$ano <- 2019
 AP23 <- rbind(APMRTLeste_VTI_2023, APMRTOeste_VTI_2023)
 AP23$ano <- 2023
-APTEMPORAL <- rbind(AP23, AP19, AP16, atlas23)
+APTEMPORAL <- rbind(AP23, AP19, AP16)
 APTEMPORAL$estado <- 16
 APTEMPORAL$regiao <- "Norte"
 

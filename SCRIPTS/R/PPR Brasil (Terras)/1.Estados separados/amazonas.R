@@ -302,8 +302,9 @@ atlas23 <- rbind(MRT1504_2024, MRT1503_2024, MRT1502_2024, MRT1501_2024)
 AM23$ano <- 2023
 atlas23$ano <-2023
 AM16$ano <- 2016
-AMTEMPORAL <- rbind(AM23, AM16, atlas23)
+AMTEMPORAL <- rbind(AM23, AM16)
 AMTEMPORAL$estado <- 13
 AMTEMPORAL$regiao <- "Norte"
 
-#Os dados são discrepantes, os do atlas aparentemente são muito mais consistentes.
+#Os dados são discrepantes, os do atlas aparentemente são muito mais consistentes, foram removidos para priorizar as tabelas da RAMT
+
