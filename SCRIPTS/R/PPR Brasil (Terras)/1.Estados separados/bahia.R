@@ -282,7 +282,7 @@ BAMRT2901 <- data.frame(
   vtn_media = c(4284.98, 3829.19, 4320.15, 4047.01, 3428.14, 1241.90, 3858.76),
   vtn_minimo = c(2800.28, 3212.15, 2794.75, 3435.11, 2681.77, 961.50, 3263.36),
   vtn_maximo = c(4888.07, 4338.62, 5005.59, 4675.57, 3957.92, 1659.33, 4601.10),
-  origem = "Amargosa, Candeal, da Silva, Alagoinhas, Lauro de Freitas, Salvador, Madre de Deus, Saubara, Simões Filho, Candeias, São Francisco do Conde, Dias D’Ávila, Camaçari, São Sebastião do Passé, Mata de São João, Santo Amaro, Terra Nova, Pojuca, Catu, Itanagra, Teodoro Sampaio, Pedrão, Araçás, Entre Rios, Esplanada, Conde, Acajutiba, Jandaíra, Salinas da Margarida, Crisópolis, Rio Real, Itapicuru."
+  origem = "Amargosa, Candeal da Silva, Alagoinhas, Lauro de Freitas, Salvador, Madre de Deus, Saubara, Simões Filho, Candeias, São Francisco do Conde, Dias D’Ávila, Camaçari, São Sebastião do Passé, Mata de São João, Santo Amaro, Terra Nova, Pojuca, Catu, Itanagra, Teodoro Sampaio, Pedrão, Araçás, Entre Rios, Esplanada, Conde, Acajutiba, Jandaíra, Salinas da Margarida, Crisópolis, Rio Real, Itapicuru."
 )
 
 
