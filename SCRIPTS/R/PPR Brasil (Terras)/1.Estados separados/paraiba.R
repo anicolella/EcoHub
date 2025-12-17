@@ -57,7 +57,7 @@ PBMRT_ZONA_DA_MATA_PARAIBANA_2022 <- data.frame(
   vtn_media = c(38654.72, 17743.83, 34913.18, 120005.28, 20995.72, 15650.99, 40280.81, 29511.81, 120005.28, 20995.72, 14078.48, 9067.48, 57861.42, 22700.20, 46358.35, 120005.28, 47272.18),
   vtn_minimo = c(32856.51, 15082.25, 29676.20, 102004.49, 17846.36, 13303.34, 34238.69, 25085.04, 102004.49, 17846.36, 11966.71, 7707.36, 49182.21, 19295.17, 39404.60, 102004.49, 40181.35),
   vtn_maximo = c(44452.93, 20405.40, 40150.15, 138006.08, 24145.08, 17998.64, 46322.93, 33938.58, 138006.08, 24145.08, 16190.25, 10427.60, 66540.63, 26105.22, 53312.10, 138006.08, 54363.01),
-  origem = "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, CampodeSantana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachãodo Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São SebastiãodeLagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro"
+  origem = "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Tacima, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachãodo Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São SebastiãodeLagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro"
 )
 
 
@@ -103,7 +103,7 @@ PBMRT_ZONA_DA_MATA_PARAIBANA_2024 <- data.frame(
 ##14.2 MRT 02 - AGRESTE####
 ## 2018 ####
 PBMRT2_2018 <- data.frame(
-  mrt = "AGRESTE E BREJO PARAIBANO (Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Campo de Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro.)",
+  mrt = "AGRESTE E BREJO PARAIBANO (Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Tacima, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro.)",
   tipologia_de_uso = c( "Uso indefinido média geral","Agricultura", "Pecuária", "Exploração Mista", "Agricultura Lavoura Temporária “A”", "Agricultura Lavoura Temporária “B”", "Agricultura Lavoura Permanente Cana de açúcar", "Pecuária - “P1”", "Exploração Mista - (“LA + P1”)", "Agricultura Lavoura Temporária ‘A” (Duas Estradas)", "Agricultura Lavoura Temporária ‘B” (Itapororoca)", "Agricultura Lavoura Temporária ‘B” (Alagoa Nova)", "Agricultura Lavoura Temporária ‘B” (Mari)", "Agricultura Lavoura Permanente Cana-de-açúcar (Alagoa Grande)", "Agricultura Lavoura Permanente Cana-de-açúcar (Pirpirituba)", "Pecuária “P1” (Solânea)", "Exploração mista (“LA” + “P1”) (Esperança)"),
   nivel = c(1, 1, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2),
   vti_media = c(11463.85,13427.11, 2372.43, 5818.0, 10819.75, 12039.38, 17226.59, 2372.43, 5818.0, 10680.33, 9632.87, 13365.67, 9341.03, 16284.75, 16089.35, 1904.56, 5094.81),
@@ -112,16 +112,7 @@ PBMRT2_2018 <- data.frame(
   vtn_media = c(10140.03,11059.33, 1978.31, 5058.15, 9723.1, 10688.66, 15283.27, 1978.57, 5058.15, 9148.23, 8044.26, 12899.0, 8406.93, 13962.23, 13354.44, 1700.86, 4678.31),
   vtn_minimo = c(9055.64,9400.43, 1681.57, 4299.42, 8264.64, 9085.36, 12990.78, 1681.57, 4299.42, 7775.99, 6837.62, 10964.15, 7145.89, 11867.9, 11351.28, 1445.73, 3976.56),
   vtn_maximo = c(13872.06,12718.23, 2275.06, 5816.87, 11181.57, 12291.96, 17575.76, 2275.06, 5816.87, 10520.46, 9250.9, 14833.85, 9667.96, 16056.57, 15357.61, 1955.98, 5380.06),
-  origem = "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia,
-            Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão,
-            Campina Grande, Campo de Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de
-            Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá,
-            Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca,
-            Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis,
-            Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do
-            Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São
-            Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea,
-            Umbuzeiro"  
+  origem = "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Tacima, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro"  
 )
 
 ## 2020 ####
@@ -137,7 +128,7 @@ PBMRT_AGRESTE_E_BREJO_PARAIBANO_2020 <- data.frame(
   vtn_maximo = c(1919.29, 6526.68, 1184.68, 2223.58, 6794.73, 1022.55, 2850.32, NA, 2830.67, 2081.43, 1933.76, 776.27, 10042.84, 14201.25, 7657.23, 12935.07, 1016.95, 5795.08, 2457.08, 17311.07, NA),
   origem = "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia,
             Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão,
-            Campina Grande, Campo de Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de
+            Campina Grande, Tacima, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de
             Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém,
             Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca,
             Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis,
@@ -158,15 +149,7 @@ PBMRT02_2021 <- data.frame(
   vtn_media = c(3093.99, 5638.43, 3613.50, 8022.30, 8153.67, 1711.80, 4010.98, 754.93, 9236.82, 7965.24, 14547.25, 9964.49, 2477.38, 15328.84, 19206.21, 7965.24, 11890.02, 2659.56, 711.23, 2703.24, 486.46, 5977.80, 4261.01, 1881.74, 5416.39, 3077.79, 5007.72, 8915.01, 4291.42),
   vtn_minimo = c(2629.89, 4792.67, 3071.48, 6818.96, 6930.62, 1455.03, 3409.33, 641.69, 7851.30, 6770.45, 12365.16, 8469.82, 2105.77, 13029.51, 16325.28, 6770.45, 10160.52, 3058.49, 604.55, 2297.75, 413.49, 5081.13, 3621.86, 1559.48, 4603.93, 2616.12, 4256.56, 7577.76, 3647.71),
   vtn_maximo = c(3558.09, 6484.19, 4155.53, 9225.65, 9376.72, 1968.57, 4612.63, 868.17, 10622.34, 9160.03, 16729.34, 11459.16, 2848.99, 17628.17, 22087.14, 9160.03, 13673.52, 3058.49, 817.91, 3108.73, 559.43, 6874.47, 4900.16, 2164.00, 6228.85, 3539.46, 5758.83, 10252.26, 4935.13),
-  origem = "alagoa
-            Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras,
-            Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Campo de
-            Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança,
-            Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora,
-            Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu,
-            Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão
-            do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de
-            Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro" 
+  origem = "alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Tacima, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro" 
 )
 
 ## 2022 ####
@@ -228,15 +211,7 @@ PBMRT_AGRESTE_E_BREJO_PARAIBANO_2022 <- data.frame(
   vtn_media = c(8405.67, 14080.94, 6722.29, 9038.83, 12745.34, 9172.67, 8810.88, 24246.57, 7217.07, 7058.29, 4845.97, 11275.54, 8361.77, 8824.99, 6096.08, 15122.06, 7043.30, 10494.49, 8134.43, 9030.94, 23320.18, 2017.86, 9195.41, 6456.00, 11870.50, 6288.34, 10190.09, 14418.59, 14345.83, 3352.14, 29196.88, 5180.72, 2081.40, 5218.89, 31358.19, 8426.55, 7699.32, 13609.62, 7355.68, 1800.02, 10601.11, 15528.72, 7598.68, 5907.75, 18650.45, 3918.98, 4570.74),
   vtn_minimo = c(7144.82, 11968.80, 5713.95, 7683.01, 10833.54, 7796.77, 7489.25, 20609.58, 6134.51, 5999.55, 4119.08, 8491.94, 7107.51, 7501.24, 5181.67, 12853.75, 5986.80, 8920.32, 6914.26, 7676.30, 19822.15, 1715.18, 7816.10, 5487.60, 10089.92, 5345.09, 8661.57, 12255.80, 12193.95, 2849.32, 24817.35, 4403.61, 1769.19, 4436.06, 26654.46, 7162.57, 6544.43, 11568.17, 6252.33, 1530.02, 9010.95, 13199.41, 6458.88, 5021.58, 15852.88, 3331.14, 3885.13),
   vtn_maximo = c(9666.53, 16193.08, 7730.64, 10394.66, 14657.15, 10548.57, 10132.51, 27883.55, 8299.63, 8117.04, 5572.87, 11489.09, 9616.04, 10148.74, 7010.49, 17390.37, 8099.79, 12068.67, 9354.59, 10385.58, 26818.20, 2320.54, 10574.72, 7424.40, 13651.07, 7231.60, 11718.60, 16581.38, 16497.70, 3854.96, 33576.41, 5957.82, 2393.61, 6001.72, 36061.92, 9690.54, 8854.22, 15651.06, 8459.04, 2070.03, 12191.28, 17858.03, 8738.49, 6793.91, 21448.02, 4506.83, 5256.36),
-  origem = "Alagoa
-            Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras,
-            Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Campo de
-            Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança,
-            Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora,
-            Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu,
-            Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão
-            do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de
-            Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro" 
+  origem = "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Tacima, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro" 
 )
 
 ## 2024 ####
@@ -264,21 +239,13 @@ PBMRT_AGRESTE_E_BREJO_PARAIBANO_2024 <- data.frame(
   vtn_media = c(22438.74, 12015.03, 22592.92, 27523.54, 12015.03, 23865.70, 37748.44, 8797.47, 10550.75, 7199.27, 18024.49, 47117.89, 9729.86),
   vtn_minimo = c(19072.93, 10210.78, 19203.98, 23395.01, 10212.78, 20285.85, 32086.18, 7477.85, 8968.11, 6119.38, 15320.82, 40050.21, 8270.38),
   vtn_maximo = c(25804.55, 13817.28, 25981.86, 31652.07, 13817.28, 27445.56, 43410.71, 10117.10, 12133.32, 8279.16, 20728.16, 54185.57, 11189.34),
-  origem = " Alagoa
-            Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras,
-            Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Campo de
-            Santana, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança,
-            Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora,
-            Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu,
-            Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão
-            do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de
-            Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro" 
+  origem = " Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Tacima, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro" 
 )
 
 ##14.3 MRT 03 - CARIRI E CURIMATAÚ PARAIBANO####
 ## 2018 ####
 PBMRT3_2018 <- data.frame(
-  mrt = "CARIRI E CURIMATAÚ PARAIBANO (Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê.)",
+  mrt = "CARIRI E CURIMATAÚ PARAIBANO (Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê.)",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária - Pastagem de Baixo Suporte"),
   nivel = c(0, 1, 1),
   vti_media = c(1199.2, 1199.2, 1199.2),
@@ -287,14 +254,7 @@ PBMRT3_2018 <- data.frame(
   vtn_media = c(855.96, 855.96, 855.96),
   vtn_minimo = c(727.56, 727.56, 727.56),
   vtn_maximo = c(984.35, 984.35, 984.35),
-  origem = " Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra
-de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia,
-Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei
-Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova
-Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho
-de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São
-João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro,
-Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê. "
+  origem = " Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê. "
 )
 
 ## 2020 ####
@@ -325,7 +285,7 @@ Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nov
 Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata,
 Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri,
 São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro,
-Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê."
+São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê."
   
 )
 
@@ -347,7 +307,7 @@ Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nov
 Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata,
 Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri,
 São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro,
-Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê."
+São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê."
   
 )
 
@@ -392,7 +352,7 @@ PBMRT_CARIRI_E_CURIMATAU_PARAIBANO_2022 <- data.frame(
   Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata,
   Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri,
   São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro,
-  Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê."
+  São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê."
 )
 
 
@@ -425,7 +385,7 @@ Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nov
 Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata,
 Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri,
 São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro,
-Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê."
+São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê."
   
 )
 
@@ -515,7 +475,7 @@ PBMRT_SERTAO_PARAIBANO_1_2022 <- data.frame(
   vtn_media = c(1243.63, 1243.63, 1243.63, 2118.03, 992.06, 1226.50, 1681.63, 1447.52, 4043.98, 1036.62, 3319.42, 1082.99, 1232.70, 4236.64, 409.34, 853.72, 1450.63, 1268.43, 3402.57),
   vtn_minimo = c(1056.23, 1056.23, 1056.23, 1800.33, 843.25, 1042.53, 1429.39, 1230.40, 3437.38, 881.12, 2821.50, 920.54, 1047.80, 3601.14, 347.94, 725.66, 1233.03, 1078.17, 2892.18),
   vtn_maximo = c(1429.02, 1429.02, 1429.02, 2435.73, 1140.86, 1410.48, 1933.88, 1664.65, 4650.57, 1192.11, 3817.33, 1245.44, 1417.61, 4872.13, 470.74, 981.77, 1688.22, 1458.70, 3912.95),
-  origem = "Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro Velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê"
+  origem = "Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro Velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê"
 )
 
 
@@ -554,7 +514,7 @@ Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares."
 ## 14.5 MRT 05 - SERTÃO PARAIBANO 2 ####
 ## 2018 ####
 PBMRT5_2018 <- data.frame(
-  mrt = "SERTÃO PARAIBANO 2 (Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana.)",
+  mrt = "SERTÃO PARAIBANO 2 (Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Joca Claudino, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana.)",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Exploração Mista", "Pecuária - “P1”", "Exploração Mista - (“LA + P1”)", "Exploração Mista - (“LA + P2”)"),
   nivel = c(0, 1, 1, 1, 1, 1),
   vti_media = c(1663.22, 1079.1, 2337.7, 1079.1, 1676.47, 3080.83),
@@ -563,14 +523,7 @@ PBMRT5_2018 <- data.frame(
   vtn_media = c(1496.9, 829.27, 1751.19, 829.27, 1508.82, 2772.75),
   vtn_minimo = c(1272.36, 704.88, 1488.51, 704.88, 1282.5, 2356.83),
   vtn_maximo = c(1721.43, 953.66, 2013.87, 953.66, 1735.15, 3188.66),
-  origem = "Aparecida,
-Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos,
-Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta,
-Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba,
-Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São
-Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do
-Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo,
-Uiraúna, Várzea, Vieirópolis e Vista Serrana."
+  origem = "Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Joca Claudino, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana."
 )
 
 ## 2020 ####
@@ -584,14 +537,7 @@ PBMRT_SERTAO_PARAIBANO_2_2020 <- data.frame(
   vtn_media = c(781.47, 864.32, 803.00, 626.54, 973.25, 830.81, 595.13, 1440.24, 664.84, 1142.32),
   vtn_minimo = c(664.25, 734.67, 682.55, 532.56, 827.26, 706.19, 505.86, 1224.20, 565.11, 970.97),
   vtn_maximo = c(898.69, 993.97, 923.45, 720.52, 1119.24, 955.43, 684.40, 1656.28, 764.57, 1313.67),
-  origem = "Aparecida,
-Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos,
-Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta,
-Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba,
-Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São
-Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do
-Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo,
-Uiraúna, Várzea, Vieirópolis e Vista Serrana.")
+  origem = "Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, João Claudino, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana.")
 
 ## 2021 ####
 PBMRT05_2021 <- data.frame(
@@ -605,13 +551,7 @@ PBMRT05_2021 <- data.frame(
   vtn_minimo = c(1169.60, 1214.65, 1440.35, 627.03, 872.52, 1971.56, 1332.76, 1575.39, 901.12, 398.98, 1769.92, 1117.40, 627.70, 557.86),
   vtn_maximo = c(1582.40, 1643.35, 1948.71, 848.33, 1180.46, 2667.40, 1803.14, 2131.41, 1219.16, 539.80, 2394.60, 1511.78, 849.24, 754.76),
   origem = "Aparecida,
-Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos,
-Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta,
-Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba,
-Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São
-Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do
-Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo,
-Uiraúna, Várzea, Vieirópolis e Vista Serrana.")
+Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, João Claudino, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana.")
 
 ## 2022 ####
 PBMRT_SERTAO_PARAIBANO_2_2022 <- data.frame(
@@ -642,13 +582,7 @@ PBMRT_SERTAO_PARAIBANO_2_2022 <- data.frame(
   vtn_minimo = c(1394.66, 1340.18, 1756.63, 1164.59, 3207.07, 1764.17, 599.03, 1173.04, 850.95, 3087.71, 3422.62, 3994.35, 724.12, 428.10, 1198.87, 1945.41),
   vtn_maximo = c(1886.89, 1813.19, 2376.61, 1575.62, 4338.97, 1651.23, 810.45, 1587.05, 1151.28, 4177.49, 4630.61, 5404.12, 979.70, 579.19, 1622.00, 2632.02),
   origem = "Aparecida,
-Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos,
-Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta,
-Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba,
-Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São
-Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do
-Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo,
-Uiraúna, Várzea, Vieirópolis e Vista Serrana.")
+Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, João Claudino, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana.")
 ## 2024 ####
 PBMRT_SERTAO_PARAIBANO_2_2024 <- data.frame(
   mrt = "SERTÃO PARAIBANO 2",
@@ -678,14 +612,7 @@ PBMRT_SERTAO_PARAIBANO_2_2024 <- data.frame(
   vtn_media = c(6215.46, 7217.66, 3907.45, 28652.89, 6932.42, 19018.58, 2404.77, 5264.71, 28652.89, 6620.25, 8029.65, 4021.58, 30804.69, 7232.46, 4804.36, 8029.84, 1745.77),
   vtn_minimo = c(5283.14, 6135.01, 3321.33, 24354.96, 5892.56, 16165.79, 2044.06, 4475.00, 24354.96, 5627.21, 6825.21, 3418.35, 26183.99, 6147.59, 4083.70, 6825.36, 1483.90),
   vtn_maximo = c(7147.78, 8300.31, 4493.56, 32950.82, 7972.28, 21871.36, 2765.49, 6054.41, 32950.82, 7613.29, 9234.10, 4624.82, 35425.40, 8317.33, 5525.01, 9234.31, 2007.63),
-  origem = "Aparecida,
-Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos,
-Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta,
-Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba,
-Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Santarém, São
-Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do
-Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo,
-Uiraúna, Várzea, Vieirópolis e Vista Serrana." )
+  origem = "Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, João Claudino, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana." )
 
 ####Atlas 2023####
 MRT1801_2024 <- data.frame(
@@ -776,7 +703,7 @@ MRT1802_2024 <- data.frame(
   ),
   origem = "Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna,
 Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara,
-Caldas Brandão, Campina Grande, Campo de Santana, Casserengue, Cuité de
+Caldas Brandão, Campina Grande,Tacima, Casserengue, Cuité de
 Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes,
 Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú,
 Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba,
@@ -823,7 +750,7 @@ Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Mon
 Nova Floresta, Nova Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada,
 Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São
 Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José
-dos Cordeiros, São Sebastião do Umbuzeiro, Seridó, Serra Branca, Soledade, Sossego,
+dos Cordeiros, São Sebastião do Umbuzeiro, São Vicente do Seridó, Serra Branca, Soledade, Sossego,
 Sumé, Taperoá, Teixeira, Tenório e Zabelê"
 )
 
@@ -858,7 +785,7 @@ MRT1804_2024 <- data.frame(
 Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó,
 Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço
 José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa
-Luzia, Santa Teresinha, Santarém, São Bentinho, São Bento, São Domingos, São
+Luzia, Santa Teresinha, João Claudino, São Bentinho, São Bento, São Domingos, São
 Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas,
 São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista
 Serrana"

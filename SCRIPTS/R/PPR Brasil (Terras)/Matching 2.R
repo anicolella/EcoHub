@@ -228,6 +228,8 @@ df_joined <- corrig %>%
   left_join(mun_data, by = c("origem" = "name_muni",  "UF" = "abbrev_state" ))
 
 miss_match3 <- df_joined %>% 
-  filter(is.na(code_muni)) %>% distinct(origem, df, ano, original)
+  filter(is.na(code_muni)) %>% distinct(origem, df, ano, original, uf)
+#Santarém PB -> Claudio Joca.
+#Seridó PB -> São Vicente do Seridó
 
 

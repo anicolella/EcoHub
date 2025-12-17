@@ -198,7 +198,7 @@ MRT5_2016 <- data.frame(
   vtn_media = c(4395.36, 4727.62, 4839.99),
   vtn_minimo = c(3736.06, 4018.48, 4113.99),
   vtn_maximo = c(5054.66, 5436.76, 5565.99),
-  origem = "Fortaleza do Tabocão, Guaraí, Miranorte e Rio dos Bois"
+  origem = "Tabocão, Guaraí, Miranorte e Rio dos Bois"
 )
 ##2018 #####
 MRT_V_2018 <- data.frame(
@@ -211,7 +211,7 @@ MRT_V_2018 <- data.frame(
   vtn_media = c(2495.00),
   vtn_minimo = c(2121.00),
   vtn_maximo = c(2869.00),
-  origem = "Fortaleza do Tabocão, Guaraí, Miranorte e Rio dos Bois"
+  origem = "Tabocão, Guaraí, Miranorte e Rio dos Bois"
 )
 
 ##2022 #####
@@ -225,7 +225,7 @@ MRT5_2022 <- data.frame(
   vtn_media = c(10372.89, 12209.12, 12209.12),
   vtn_minimo = c(8816.96, 10377.75, 10377.75),
   vtn_maximo = c(11928.82, 14040.48, 14040.48),
-  origem = "Fortaleza do Tabocão, Guaraí, Miranorte e Rio dos Bois"
+  origem = "Tabocão, Guaraí, Miranorte e Rio dos Bois"
   
 )
 

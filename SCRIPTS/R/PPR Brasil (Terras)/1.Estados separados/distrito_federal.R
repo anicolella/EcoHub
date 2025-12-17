@@ -279,7 +279,7 @@ DFMRT6_2017 <- data.frame(
   vtn_media = c(4667.84, 4255.72, 4847.71, 14936.10, 1895.14, 3731.52, 7057.79, 2904.87, 19268.83, 4097.98, 22230.63),
   vtn_minimo = c(2171.52, 2208.41, 1878.81, 5097.93, 1084.45, 2993.46, 5999.12, 2469.14, 9989.08, 3284.74, 13482.05),
   vtn_maximo = c(7164.16, 6303.03, 7816.62, 24774.28, 2705.84, 4469.57, 8116.46, 3340.60, 28548.59, 4911.23, 30979.20),
-  origem = "São João D'Aliança, Formosa, Água Fria, Planaltina, Cabeceiras. "
+  origem = "São João D'Aliança, Formosa, Água Fria de Goiás, Planaltina, Cabeceiras. "
 )
 ## 2020 ####
 DFMRT6_2020 <- data.frame(

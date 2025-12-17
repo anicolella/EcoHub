@@ -463,7 +463,7 @@ MTMRT8_2018 <- data.frame(
   vtn_media = c(6284.61, 7895.76, 5547.5, 7621.93, 9440.37, 5836.27, 7640.61, 5348.81, 1010.12, 7621.93, 7116.1, 2164.75, 1010.12, 5421.87),
   vtn_minimo = c(5341.92, 6711.39, 4715.37, 6478.64, 8024.32, 4960.83, 6494.52, 4546.49, 858.61, 6478.64, 6048.69, 1840.03, 858.61, 4608.59),
   vtn_maximo = c(7227.31, 9080.12, 6379.62, 8765.22, 10856.43, 6711.71, 8786.7, 6151.13, 1161.64, 8765.22, 8183.52, 2489.46, 1161.64, 6235.15),
-  origem = "Nobres, Denise, Nova Olímpia, Porto Estrela, Barra do Bugres, Mirassol d´ Oeste, Curvelândia, Rio Branco, Salto do Céu, Lambari d’ Oeste, Nortelândia, Arenápolis, Alto Paraguai, Santo Afonso, Nova Marilândia, Rosário Oeste, Jangada, N. Senhora do Livramento, Cáceres, Poconé, Barão de Melgaço."
+  origem = "Nobres, Denise, Nova Olímpia, Porto Estrela, Barra do Bugres, Mirassol d´ Oeste, Curvelândia, Rio Branco, Salto do Céu, Lambari d’ Oeste, Nortelândia, Arenápolis, Alto Paraguai, Santo Afonso, Nova Marilândia, Rosário Oeste, Jangada, Nossa Senhora do Livramento, Cáceres, Poconé, Barão de Melgaço."
 )
 
 ## 2019 ####
@@ -489,7 +489,7 @@ MTMRT8_2023 <- data.frame(mrt = 8, tipologia_de_uso = c("MÉDIA GERAL", "Pecuár
                           vtn_media = c(16303.26, 16556.08, 10037.19, 1878.50, 6246.98, 10801.61, 23789.87, 10037.19), 
                           vtn_minimo = c(13857.77, 14072.67, 8531.61, 1596.73, 5309.93, 9181.37, 20221.39, 8531.61), 
                           vtn_maximo = c(18748.75, 19039.49, 11542.76, 2160.27, 7184.02, 12421.86, 27358.35, 11542.76),
-                          origem ="Alto Paraguai, Denise, Nova Olímpia, Barra do Bugres, Porto Estrela,Santo Antônio de Leverger,Barão de Melgaço, NossaSenhora do Livramento, Poconé, Cáceres, Curvelândia, Lambari d'Oeste, Rio Branco, Salto do Céu, Mirassol d'Oeste."
+                          origem ="Alto Paraguai, Denise, Nova Olímpia, Barra do Bugres, Porto Estrela,Santo Antônio de Leverger,Barão de Melgaço, Nossa Senhora do Livramento, Poconé, Cáceres, Curvelândia, Lambari d'Oeste, Rio Branco, Salto do Céu, Mirassol d'Oeste."
 )
 
 

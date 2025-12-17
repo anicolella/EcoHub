@@ -662,7 +662,7 @@ Castro Alves, Conceição do Almeida, Cruz das Almas, Dom Macedo Costa, Elísio
 Medrado, Governador Mangabeira, Igrapiúna, Itaparica, Itatim, Ituberá, Jaguaripe,
 Jiquiriçá, Laje, Maragogipe, Milagres, Muniz Ferreira, Muritiba, Mutuípe, Nazaré, Nilo
 Peçanha, Nova Itarana, Presidente Tancredo Neves, Salinas da Margarida, Santa
-Teresinha, Santo Antônio de Jesus, São Felipe, São Félix, São Miguel das Matas,
+Terezinha, Santo Antônio de Jesus, São Felipe, São Félix, São Miguel das Matas,
 Sapeaçu, Taperoá, Ubaíra, Valença, Varzedo, Vera Cruz"
 )
 
