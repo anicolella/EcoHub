@@ -232,4 +232,5 @@ miss_match3 <- df_joined %>%
 #Santarém PB -> Claudio Joca.
 #Seridó PB -> São Vicente do Seridó
 
-
+df_fim <- df_joined %>% filter(nivel == 0 | nivel == 1)
+df_tipologias <- df_fim %>% distinct(tipologia_de_uso)
