@@ -245,7 +245,7 @@ df_tipologias_1 <- tibble(tipologia_de_uso = unique(lista_bruta)) %>%
       str_detect(tipologia_de_uso, "(?i)(vegeta|ve.eta|floresta|mata|cerrado|caatinga|regenera|reserva|preserva|lavrado)") ~ "Vegetação Nativa",
 
       # --- Sobras ---
-      TRUE ~ "Verificar Manualmente"
+      TRUE ~ "verificar manualmente"
     )
   )
 
