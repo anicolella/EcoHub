@@ -264,7 +264,7 @@ Santa Cruz, São José do Campestre, Tangará,
 Sitio Novo, Lagoa D Ánta, Várzea, Santo
 Antônio, Passagem, Brejinho, Serrinha, Lagoa
 de Pedras, Lagoa Salgada, Januário Cicco,
-Presidente Juscelino, Senador Elói de Souza,
+Serra Caiada, Senador Elói de Souza,
 Bom Jesus, Lagoa de Velhos, Barcelona, São
 Paulo do Potengi, São Pedro, Jundiá, Ielmo
 Marinho, Santa Maria, Riachuelo, Monte das
@@ -283,7 +283,7 @@ RNMRT1_2019 <- data.frame(
   vtn_media = c(2452.81, 2452.81, 691.2, 3937.53, 1025.0, 1360.67, 956.47, 879.99, 658.13, 7084.77, 4630.43, 3002.93, 3155.7, 5224.88, 2317.87, 3374.8, 1739.06, 4338.77),
   vtn_minimo = c(538.8, 538.8, 566.41, 2069.55, 826.57, 910.5, 541.43, 561.58, 605.09, 2702.87, 3779.44, 2524.14, 2624.83, 4656.78, 2085.2, 2333.57, 1271.22, 1967.22),
   vtn_maximo = c(4366.82, 4366.82, 816.0, 5805.51, 1223.43, 1810.83, 1371.52, 1198.41, 711.17, 11466.66, 5481.42, 3481.73, 3686.57, 5792.98, 2550.54, 4416.02, 2206.89, 6710.32),
-  origem = "Nova Cruz, Passa e Fica, Serra de São Bento, Japi, São Bento do Trairí, Jaçanã, Coronél Ezequiel, Campo Redondo, Lajes Pintada, Santa Cruz, São José do Campestre, Tangará, Sitio Novo, Lagoa D Ánta, Várzea, Santo Antônio, Passagem, Brejinho, Serrinha, Lagoa de Pedras, Lagoa Salgada, Januário Cicco, Presidente Juscelino, Senador Elói de Souza, Bom Jesus, Lagoa de Velhos, Barcelona, São Paulo do Potengi, São Pedro, Jundiá, Ielmo Marinho, Santa Maria, Riachuelo, Monte das Gameleiras, Ruy Barbosa, Caiçara do Rio do Vento e Bento Fernandes"
+  origem = "Nova Cruz, Passa e Fica, Serra de São Bento, Japi, São Bento do Trairí, Jaçanã, Coronél Ezequiel, Campo Redondo, Lajes Pintada, Santa Cruz, São José do Campestre, Tangará, Sitio Novo, Lagoa D Ánta, Várzea, Santo Antônio, Passagem, Brejinho, Serrinha, Lagoa de Pedras, Lagoa Salgada, Januário Cicco, Serra Caiada, Senador Elói de Souza, Bom Jesus, Lagoa de Velhos, Barcelona, São Paulo do Potengi, São Pedro, Jundiá, Ielmo Marinho, Santa Maria, Riachuelo, Monte das Gameleiras, Ruy Barbosa, Caiçara do Rio do Vento e Bento Fernandes"
 )
 
 
@@ -399,7 +399,7 @@ RNMRTNovaCruzSaoPauloDoPotengi_2020 <- data.frame(
   vtn_media = c(5188.93, 5188.93, 2602.97, 5580.82, 4730.30, 6591.67, 10124.62, 7368.47, 7132.97, 5310.41, 6265.96, 2602.97, 3736.38, 4172.37, 2334.26, 4928.55, 2054.65, 4760.45, 4565.70),
   vtn_minimo = c(2424.18, 2424.18, 1295.57, 2411.51, 2349.58, 4442.69, 5206.18, 6718.99, 6652.87, 2978.62, 4335.41, 1295.57, 1635.74, 3030.09, 1940.18, 3650.43, 1623.41, 1759.50, 2168.28),
   vtn_maximo = c(7953.69, 7953.69, 3910.38, 8750.13, 7111.02, 8740.66, 15043.06, 8017.95, 7613.06, 7642.19, 8196.50, 3910.38, 5837.02, 5314.65, 2728.33, 6206.67, 2485.89, 7761.40, 6963.11),
-  origem = " Boa Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa
+  origem = " januario cicco, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa
 d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz, Passa e Fica, Passagem, Riachuelo, Santa Maria, Santo Antônio, São Paulo do Potengi, São Pedro,
 Senador Elói de Souza, Serra Caiada, Serrinha e Várzea."
 )
@@ -439,7 +439,7 @@ RNMRTNovaCruzSaoPauloDoPotengi_2021  <- data.frame(
                  8873.28, 19642.22, 17541.19, 3285.34, 4194.77, 9786.63,
                  6841.10, 7764.99, 8548.17, 7488.48, 9507.93),
   
-  origem = "Boa Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa
+  origem = "januario cicco , Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa
 d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz, Passa e Fica, Passagem, Riachuelo, Santa Maria, Santo Antônio, São Paulo do Potengi, São Pedro,
 Senador Elói de Souza, Serra Caiada, Serrinha e Várzea."
 )
@@ -470,7 +470,7 @@ capacidade (Serra Caiada)", "Pecuária Bovino - Pastagem Plantada (Serrinha)", "
   vtn_media = c(6171.03, 6025.64, 7118.85, 3161.05, 5633.58, 14551.14, 9038.17, 6127.72, 3198.43, 7470.45, 6196.29, 14360.46, 5800.64, 9762.43, 6619.05, 11351.19, 6801.22, 16765.84, 3161.05, 3047.66, 10844.93, 4658.20, 3756.08, 6078.59, 6263.11, 5807.45, 6184.72, 5646.33),
   vtn_minimo = c(5245.38, 5121.79, 6051.02, 2686.89, 4788.54, 12368.47, 7682.44, 5208.56, 2718.67, 6349.88, 5266.85, 12206.39, 4930.54, 8298.07, 5626.19, 9648.51, 5781.03, 14250.96, 2686.89, 2590.51, 9218.19, 3959.47, 3192.67, 5166.80, 5323.64, 4936.33, 5257.01, 4799.38),
   vtn_maximo = c(7096.69, 6929.48, 8186.68, 3635.21, 6478.62, 16733.81, 10393.89, 7046.88, 3678.19, 8591.02, 7125.73, 16514.53, 6670.74, 11226.80, 7611.90, 13053.87, 7821.40, 19280.71, 3635.21, 3504.81, 12471.67, 5356.93, 4319.49, 6990.38, 7202.57, 6678.57, 7112.43, 6493.27),
-  origem = "Boa Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz,
+  origem = "januario cicco, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de Pedras, Lagoa Salgada, Nova Cruz,
 Passa e Fica, Passagem, Riachuelo, Santa Maria, Santo Antônio, São Paulo do Potengi, São Pedro, Senador Elói de Souza, Serra
 Caiada, Serrinha e Várzea."
 )
@@ -685,7 +685,7 @@ RNMRT_Medio_Oeste_2017 <- data.frame(
   vtn_maximo = c(
     2552.94, 2552.94, 1883.31, 2305.51, 3296.40, 1855.78, 523.45, 2754.56, 2119.47, 9028.05
   ),
-  origem = "Augusto Severo, Açú, Alto do Rodrigues,
+  origem = "Campo Grande, Açú, Alto do Rodrigues,
 Apodi, Areia Branca, Baraúna, Caraúbas,
 Carnaúbais, Felipe Guerra, Governador Dix-
 Sept Rosado, Grossos, Guamaré, Ipanguaçú,
@@ -707,7 +707,7 @@ RNMRT5_2019 <- data.frame(
   vtn_media = c(1617.06, 1617.06, 640.93, 1435.28, 2292.65, 2288.29, 907.11, 9973.74, 525.86),
   vtn_minimo = c(607.42, 607.42, 449.76, 1019.74, 2118.52, 2093.98, 394.39, 6783.38, 385.69),
   vtn_maximo = c(2626.7, 2626.7, 832.09, 1850.81, 2466.78, 2482.61, 1419.83, 13164.09, 666.04),
-  origem = "Augusto Severo, Açú, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas, Carnaúbais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçú, Itajá, Itaú, Macau, Mossoró, Paraú, Pendências, Porto do Mangue, Rodolfo Fernandes, São Rafael, Serra do Mél, Severiano Melo, Tibau , Triunfo Potiguar e Upanema"
+  origem = "Campo Grande, Açú, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas, Carnaúbais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçú, Itajá, Itaú, Macau, Mossoró, Paraú, Pendências, Porto do Mangue, Rodolfo Fernandes, São Rafael, Serra do Mél, Severiano Melo, Tibau , Triunfo Potiguar e Upanema"
 )
 
 ####19.10 MRT MOSSORO #####
@@ -722,7 +722,7 @@ RNMRTMossoroAssu_2020 <- data.frame(
   vtn_media = c(2098.12, 2098.12, 1142.23, 1722.69, 2720.54, 9845.17, 1573.15, 2884.43, 1933.02, 2576.21, 2121.35, 1003.39, 1350.00, 2182.27, 760.39, 1219.05, 2361.69, 4851.40, 1131.46, 2483.33, 1006.06, 1671.43),
   vtn_minimo = c(898.88, 898.88, 662.27, 819.56, 1499.63, 7776.72, 761.20, 2429.96, 550.77, 2098.10, 1870.36, 697.19, 1050.00, 1091.14, 605.05, 843.85, 1128.16, 2910.84, 1003.19, 1433.73, 995.56, 762.89),
   vtn_maximo = c(3297.35, 3297.35, 1622.19, 2625.82, 3941.44, 11913.62, 2385.09, 3338.90, 3315.27, 3054.31, 2372.34, 1309.60, 1650.00, 3273.41, 915.73, 1594.24, 3595.21, 6791.96, 1259.73, 3532.94, 1016.56, 2579.96),
-  origem = "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas,
+  origem = "Açu, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas,
 Carnaubais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçu, Macau, Mossoró, Pendências, Porto do Mangue, Tibau, Serra
 do Mel e Upanema."
 )
@@ -786,7 +786,7 @@ RNMRTMossoroAssu_2021 <- data.frame(
     16016.38, 7611.66, 3797.83, 5969.17, 18092.53
   ),
   
-  origem = "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas,
+  origem = "Açu, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas,
 Carnaubais, Felipe Guerra, Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçu, Macau, Mossoró, Pendências, Porto do Mangue, Tibau, Serra
 do Mel e Upanema."
 )
@@ -819,7 +819,7 @@ Guerra)", "Expl. Mista - Agrícola + pastagem de baixa capacidade
   vtn_media = c(2512.69, 2298.13, 5797.18, 1371.34, 2561.96, 2049.45, 3940.03, 7094.16, 10953.85, 1015.04, 2912.04, 3428.63, 4843.80, 1172.40, 2728.93, 1114.60, 1860.92, 6377.43, 2772.18, 1324.56, 1973.92, 2709.40, 3792.96, 15095.29, 3429.49, 6665.20, 3940.03, 1218.40, 3250.89, 1240.57),
   vtn_minimo = c(2135.78, 1953.41, 4927.60, 1165.64, 2177.67, 1742.03, 3349.02, 6030.04, 9310.77, 862.79, 2475.23, 2914.33, 4117.23, 996.54, 2319.59, 947.41, 1581.78, 5420.82, 2356.36, 1125.88, 1677.84, 2302.99, 3224.02, 12830.99, 2915.07, 5665.42, 3349.02, 1035.64, 2763.26, 1054.48),
   vtn_maximo = c(2889.59, 2642.85, 6666.76, 1577.04, 2946.26, 2356.87, 4531.03, 8158.29, 12596.92, 1167.30, 3348.84, 3942.92, 5570.37, 1348.26, 3138.27, 1281.79, 2140.06, 7334.05, 3188.01, 1523.25, 2270.01, 3115.81, 4361.91, 17359.58, 3943.92, 7664.98, 4531.03, 1401.16, 3738.52, 1426.65),
-  origem = "Assú, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas, Carnaubais, Felipe Guerra,
+  origem = "Açu, Afonso Bezerra, Alto do Rodrigues, Apodi, Areia Branca, Baraúna, Caraúbas, Carnaubais, Felipe Guerra,
 Governador Dix-Sept Rosado, Grossos, Guamaré, Ipanguaçu, Macau, Mossoró, Pendências, Porto do Mangue, Tibau, Serra do
 Mel e Upanema"
 )
@@ -1251,7 +1251,7 @@ MRT1905_2024 <- data.frame(
   vtn_maximo = c(
     16733.81, 6929.48, 8186.68, 3635.21, 6478.62, 16733.81, 10393.89, 7046.88
   ),
-  origem = "Boa Saúde, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de
+  origem = "januario cicco, Bom Jesus, Brejinho, Ielmo Marinho, Jundiá, Lagoa d'Anta, Lagoa de
 Pedras, Lagoa Salgada, Nova Cruz, Passa e Fica, Passagem, Riachuelo, Santa Maria,
 Santo Antônio, São Paulo do Potengi, São Pedro, Senador Elói de Souza, Serra Caiada,
 Serrinha e Várzea"
