@@ -245,7 +245,7 @@ SCMRT_Concordia_2022 <- data.frame(
   
   vtn_maximo = c(153937.21, 82500.00, 146511.63, 153837.21,
                  91836.73, 60000.00, 91747.57, 146511.63, 153837.21, 91836.73, 146511.63),
-  origem = "Alto Bela Vista, Arabutã, Arvoredo, Concórdia, Ipira, Ipumirim, Irani, Itá, Lindoia do Sul, Paial, Peritiba, Piratuba, Presidente Castelo Branco, Seara e Xavantina."
+  origem = "Alto Bela Vista, Arabutã, Arvoredo, Concórdia, Ipira, Ipumirim, Irani, Itá, Lindoia do Sul, Paial, Peritiba, Piratuba, Presidente Castello Branco, Seara e Xavantina."
 ) 
 
 ###24.6 Curitibanos #####
@@ -1188,7 +1188,7 @@ MRT1004_2024 <- data.frame(
     91747.57, 146511.63, 153837.21, 91836.73
   ),
   origem = "Alto Bela Vista, Arabutã, Arvoredo, Concórdia, Ipira, Ipumirim, Irani, Itá, Lindoia do Sul,
-Paial, Peritiba, Piratuba, Presidente Castelo Branco, Seara e Xavantina."
+Paial, Peritiba, Piratuba, Presidente Castello Branco, Seara e Xavantina."
 )
 
 MRT1005_2024 <- data.frame(
