@@ -194,8 +194,11 @@ df_novo3$origem[condicao_mimoso] <- "mimoso de goias"
 
 # Distrito Federal (GO) -> Brasília / DF
 condicao_df <- df_novo3$origem == "distrito federal" & df_novo3$UF == "GO"
+condicao_df2 <- df_novo3$origem == "brasilia" & df_novo3$UF == "GO"
 df_novo3$UF[condicao_df] <- "DF"
 df_novo3$origem[condicao_df] <- "brasilia"
+df_novo3$UF[condicao_df2] <- "DF"
+df_novo3$origem[condicao_df2] <- "brasilia"
 
 # Monte Alegre (GO) -> Monte Alegre de Goiás
 condicao_monte <- df_novo3$origem == "monte alegre" & df_novo3$UF == "GO"
@@ -227,10 +230,39 @@ corrig <- df_novo3 %>%
 df_joined <- corrig %>%
   left_join(mun_data, by = c("origem" = "name_muni",  "UF" = "abbrev_state" ))
 
+
+df_joined <- df_joined %>%
+  select(
+    # 1. Identificadores principais (O que você pediu primeiro)
+    df,
+    mrt,
+    origem,
+    code_muni,
+    ano,
+    cluster = original, 
+
+    # 2. Localização (Mantendo apenas o essencial e removendo redundâncias)
+    UF,           # Geralmente prefere-se a sigla a 'estado' ou 'name_state'
+    regiao = name_region, # Renomeando 'name_region' para 'regiao' (mais curto)
+
+    # 3. Categorias da análise
+    tipologia_de_uso,
+    nivel,
+    mrt,
+
+    # 4. Métricas (Usando helper functions para pegar todas de uma vez)
+    starts_with("vti_"), # Pega vti_media, vti_minimo, vti_maximo
+    starts_with("vtn_"), # Pega vtn_media, vtn_minimo, vtn_maximo
+
+    # 5. Geometria (Geralmente fica por último)
+    geom
+  )
+
+
 miss_match3 <- df_joined %>% 
-  filter(is.na(code_muni)) %>% distinct(origem, df, ano, original, uf)
+  filter(is.na(code_muni)) %>% distinct(origem, df, ano, cluster, UF)
 #Santarém PB -> Claudio Joca.
 #Seridó PB -> São Vicente do Seridó
 
-df_fim <- df_joined %>% filter(nivel == 0 | nivel == 1)
-df_tipologias <- df_fim %>% distinct(tipologia_de_uso)
+print(miss_match3)
+
