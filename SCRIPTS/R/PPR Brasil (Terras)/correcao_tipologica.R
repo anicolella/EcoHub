@@ -218,7 +218,7 @@ df_tipologias_1 <- tibble(tipologia_de_uso = unique(lista_bruta)) %>%
   mutate(
     sub = case_when(
       # --- 1. Médias / Gerais / Indefinidos (Para filtrar depois) ---
-      str_detect(tipologia_de_uso, "(?i)(indefinido|amostra|metropolitana)") ~ "Média/Outros",
+      str_detect(tipologia_de_uso, "(?i)(indefinido|amostra|metropolitana)") ~ "Outros",
       
       # --- 2. Não Agrícola / Urbano / Água / Imobiliário ---
       str_detect(tipologia_de_uso, "(?i)(n.o agr.cola|lazer|s.tios|ch.caras|imobili.ria|urbano|terra nua)") ~ "Não Agrícola/Outros",
