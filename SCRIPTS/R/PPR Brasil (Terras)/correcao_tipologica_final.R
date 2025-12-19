@@ -16,8 +16,10 @@ df_fim <- df_joined %>%
       # --- REGRAS DE TEXTO (NÍVEL 1) ---
       
       # Não Agrícola / Urbano
-      str_detect(tipologia_de_uso, "(?i)(n.o agr.cola|lazer|s.tios|ch.caras|imobili.ria|urbano|terra nua)") ~ "Não Agrícola/Outros",
-      
+      str_detect(tipologia_de_uso, "(?i)(n.o agr.cola|lazer|s.tios|ch.caras|imobili.ria|urbano|terra nua)") ~ "Não Agrícola/urbano",
+
+      str_detect(tipologia_de_uso, "(?i)(terra nua)") ~ "terra nua",
+
       # Aquicultura
       str_detect(tipologia_de_uso, "(?i)(carcinicultura|aquicultura|tanque)") ~ "Aquicultura",
 
