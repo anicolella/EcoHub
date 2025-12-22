@@ -67,6 +67,41 @@ ACMRT01_2022 <- data.frame(
   origem = "Marechal Thaumaturgo, Porto Walter, Cruzeiro do Sul, Rodrigues Alves e Mâncio Lima"
 )
 
+##2023####
+MRT1403_2024 <- data.frame(
+  mrt = "MRT-01 (JURUÁ)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Nativa - Alta Capacidade",
+    "Pecuária - Bovino - Pastagem Nativa - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Nativa - Baixo Capacidade",
+    "Vegetação Nativa - Floresta"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2),
+  vti_media = c(
+    6296.21, 7282.27, 1126.67, 17896.89, 8094.52, 4217.80, 1126.67
+  ),
+  vti_minimo = c(
+    957.67, 6189.93, 957.67, 15212.36, 6880.34, 3585.13, 957.67
+  ),
+  vti_maximo = c(
+    20581.43, 8374.61, 1295.67, 20581.43, 9308.70, 4850.47, 1295.67
+  ),
+  vtn_media = c(
+    5631.76, 6427.97, 1126.67, 15212.36, 7123.18, 3838.19, 1126.67
+  ),
+  vtn_minimo = c(
+    957.67, 5463.78, 957.67, 12930.51, 6054.70, 3262.47, 957.67
+  ),
+  vtn_maximo = c(
+    17494.21, 7392.17, 1295.67, 17494.21, 8191.65, 4413.92, 1295.67
+  ),
+  origem = "Cruzeiro do Sul, Marechal Thaumaturgo, Porto Walter, Rodrigues Alves e Mâncio Lima"
+)
+
+
 ##2025####
 ACMRT01_2025 <- data.frame(
   mrt = "MRT-01 (JURUÁ)",
@@ -145,8 +180,43 @@ ACMRT02_2022 <- data.frame(
   vtn_media = c(1591.90, 3187.17, 839.48, 5798.17, 2711.13),
   vtn_minimo = c(1353.12, 2709.09, 713.55, 4928.45, 2304.46),
   vtn_maximo = c(1830.69, 3665.24, 965.40, 6667.90, 3117.80),
-  origem = "Manoel Urbano, Feijó, Tarauacá, Santa Rosa do Purus e Jordão"
+  orige
+  m = "Manoel Urbano, Feijó, Tarauacá, Santa Rosa do Purus e Jordão"
 )
+##2023####
+MRT1402_2024 <- data.frame(
+  mrt = "MRT-02 (TARAUACA-ENVIRA)",
+  tipologia_de_uso = c(
+    "Geral",
+    "Pecuária",
+    "Vegetação Nativa",
+    "Pecuária - Bovino - Pastagem Nativa - Média Capacidade",
+    "Pecuária - Bovino - Pastagem Nativa - Baixo Capacidade",
+    "Vegetação Nativa - Floresta"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2),
+  vti_media = c(
+    1706.78, 3521.22, 841.21, 6523.46, 2979.27, 841.21
+  ),
+  vti_minimo = c(
+    715.03, 2993.04, 715.03, 5544.95, 2532.38, 715.03
+  ),
+  vti_maximo = c(
+    7501.98, 4049.40, 967.40, 7501.98, 3426.15, 967.40
+  ),
+  vtn_media = c(
+    1591.90, 3187.17, 839.48, 5798.17, 2711.13, 839.48
+  ),
+  vtn_minimo = c(
+    713.55, 2709.09, 713.55, 4928.45, 2304.46, 713.55
+  ),
+  vtn_maximo = c(
+    6667.90, 3665.24, 965.40, 6667.90, 3117.80, 965.40
+  ),
+  origem = "Jordão, Manoel Urbano, Feijó, Tarauacá e Santa Rosa do Purus"
+)
+
+
 ##2025####
 ACMRT02_2025 <- data.frame(
   mrt = "MRT-02 (TARAUACA-ENVIRA)",
@@ -241,9 +311,8 @@ ACMRT03_2025 <- data.frame(
 )
 
 #### Atlas 2023 #####
-
 MRT1401_2024 <- data.frame(
-  mrt = "MERCADO REGIONAL DE TERRAS ZH-3 (MRT-1401)",
+  mrt = "MRT-03 (RIO ACRE)",
   tipologia_de_uso = c(
     "Geral",
     "Agricultura",
@@ -284,71 +353,6 @@ MRT1401_2024 <- data.frame(
 Placido de Castro, Porto Acre, Xapuri, Sena Madureira e Rio Branco"
 )
 
-
-MRT1402_2024 <- data.frame(
-  mrt = "MERCADO REGIONAL DE TERRAS ZH-2 (MRT-1402)",
-  tipologia_de_uso = c(
-    "Geral",
-    "Pecuária",
-    "Vegetação Nativa",
-    "Pecuária - Bovino - Pastagem Nativa - Média Capacidade",
-    "Pecuária - Bovino - Pastagem Nativa - Baixo Capacidade",
-    "Vegetação Nativa - Floresta"
-  ),
-  nivel = c(0, 1, 1, 2, 2, 2),
-  vti_media = c(
-    1706.78, 3521.22, 841.21, 6523.46, 2979.27, 841.21
-  ),
-  vti_minimo = c(
-    715.03, 2993.04, 715.03, 5544.95, 2532.38, 715.03
-  ),
-  vti_maximo = c(
-    7501.98, 4049.40, 967.40, 7501.98, 3426.15, 967.40
-  ),
-  vtn_media = c(
-    1591.90, 3187.17, 839.48, 5798.17, 2711.13, 839.48
-  ),
-  vtn_minimo = c(
-    713.55, 2709.09, 713.55, 4928.45, 2304.46, 713.55
-  ),
-  vtn_maximo = c(
-    6667.90, 3665.24, 965.40, 6667.90, 3117.80, 965.40
-  ),
-  origem = "Jordão, Manoel Urbano, Feijó, Tarauacá e Santa Rosa do Purus"
-)
-
-MRT1403_2024 <- data.frame(
-  mrt = "MERCADO REGIONAL DE TERRAS ZH-1 (MRT-1403)",
-  tipologia_de_uso = c(
-    "Geral",
-    "Pecuária",
-    "Vegetação Nativa",
-    "Pecuária - Bovino - Pastagem Nativa - Alta Capacidade",
-    "Pecuária - Bovino - Pastagem Nativa - Média Capacidade",
-    "Pecuária - Bovino - Pastagem Nativa - Baixo Capacidade",
-    "Vegetação Nativa - Floresta"
-  ),
-  nivel = c(0, 1, 1, 2, 2, 2, 2),
-  vti_media = c(
-    6296.21, 7282.27, 1126.67, 17896.89, 8094.52, 4217.80, 1126.67
-  ),
-  vti_minimo = c(
-    957.67, 6189.93, 957.67, 15212.36, 6880.34, 3585.13, 957.67
-  ),
-  vti_maximo = c(
-    20581.43, 8374.61, 1295.67, 20581.43, 9308.70, 4850.47, 1295.67
-  ),
-  vtn_media = c(
-    5631.76, 6427.97, 1126.67, 15212.36, 7123.18, 3838.19, 1126.67
-  ),
-  vtn_minimo = c(
-    957.67, 5463.78, 957.67, 12930.51, 6054.70, 3262.47, 957.67
-  ),
-  vtn_maximo = c(
-    17494.21, 7392.17, 1295.67, 17494.21, 8191.65, 4413.92, 1295.67
-  ),
-  origem = "Cruzeiro do Sul, Marechal Thaumaturgo, Porto Walter, Rodrigues Alves e Mâncio Lima"
-)
 
 
 ##Junção dos DF e inclusão do ano####
