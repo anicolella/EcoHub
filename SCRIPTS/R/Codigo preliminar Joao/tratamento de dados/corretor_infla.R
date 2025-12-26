@@ -36,7 +36,7 @@ ano_base <- tail(df_igpm_limpo$ano_indice, 1)
 
 
 # O nome das colunas que você quer corrigir
-colunas_para_corrigir <- c("vti_media", "vti_minimo", "vti_maximo", 
+olunas_para_corrigir <- c("vti_media", "vti_minimo", "vti_maximo", 
                            "vtn_media", "vtn_minimo", "vtn_maximo")
 
 # Pegar o valor do índice de 2016 para usar na fórmula
@@ -81,3 +81,4 @@ select(
 
 
 resultado_igpm <- as.data.frame(resultado_igpm)
+c
