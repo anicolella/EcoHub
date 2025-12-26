@@ -266,3 +266,4 @@ miss_match3 <- df_joined %>%
 
 print(miss_match3)
 
+df_joined <- st_as_sf(df_joined)
