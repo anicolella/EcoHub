@@ -180,8 +180,7 @@ ACMRT02_2022 <- data.frame(
   vtn_media = c(1591.90, 3187.17, 839.48, 5798.17, 2711.13),
   vtn_minimo = c(1353.12, 2709.09, 713.55, 4928.45, 2304.46),
   vtn_maximo = c(1830.69, 3665.24, 965.40, 6667.90, 3117.80),
-  orige
-  m = "Manoel Urbano, Feijó, Tarauacá, Santa Rosa do Purus e Jordão"
+  origem = "Manoel Urbano, Feijó, Tarauacá, Santa Rosa do Purus e Jordão"
 )
 ##2023####
 MRT1402_2024 <- data.frame(
