@@ -1,7 +1,7 @@
 library(dplyr)
 library(stringr)
 
-df_fim <- df_joined %>% 
+df_fim <- resultado_igpdi %>% 
   # 1. Filtra apenas o que interessa
   filter(nivel == 0 | nivel == 1) %>%
   
