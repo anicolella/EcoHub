@@ -1,56 +1,376 @@
 library(dplyr)
 library(stringr)
 
-df_fim <- resultado_igpdi %>% 
-  # 1. Filtra apenas o que interessa
-  filter(nivel == 0 | nivel == 1) %>%
-  
+
+resultado_igpdi_limpo <- resultado_igpdi %>%
   mutate(
-    # 2. Aplica as regras diretamente na coluna
-    tipologia_de_uso = case_when(
+    # 1. Converte para minúsculas
+    tipologia_de_uso = tolower(tipologia_de_uso), 
+    
+    # 2. Remove acentos (sobrescrevendo a coluna origem para manter limpo)
+    tipologia_de_uso = iconv(tipologia_de_uso, from = "UTF-8", to = "ASCII//TRANSLIT"),
+    
+    # 3. Remove o "e " do início
+    tipologia_de_uso = str_remove(tipologia_de_uso, "^e "),
+    
+  ) 
+
+resultado_igpdi_limpo <- resultado_igpdi_limpo  |> filter(nivel == 0 | nivel == 1)
+
+
+df_final <- df_original %>%
+  mutate(
+    # 1. Higienização indispensável para bater com as strings abaixo
+    desc_chave = stri_trans_general(descricao_original, "Latin-ASCII"),
+    desc_chave = str_to_lower(str_trim(desc_chave)),
+    
+    # 2. Classificação Linear (Linha a Linha)
+    categoria_final = case_when(
       
-      # --- REGRA SOBERANA (NÍVEL 0) ---
-      # Se for nível 0, não importa o texto original: vira "média geral"
-      nivel == 0 ~ "média geral",
-      
-      # --- REGRAS DE TEXTO (NÍVEL 1) ---
-      
-      # Não Agrícola / Urbano
-      str_detect(tipologia_de_uso, "(?i)(n.o agr.cola|lazer|s.tios|ch.caras|imobili.ria|urbano|terra nua)") ~ "Não Agrícola/urbano",
+      # --- GRUPO: AGRICULTURA (Lavoura, Culturas, Grãos) ---
+      desc_chave == "agricultura graos soja e milho" ~ "Agricultura",
+      desc_chave == "agricultura - graos diversos" ~ "Agricultura",
+      desc_chave == "agricultura" ~ "Agricultura",
+      desc_chave == "agricultura- graos diversos" ~ "Agricultura",
+      desc_chave == "agricultura-graos diversos" ~ "Agricultura",
+      desc_chave == "agricola - fruticultura laranja" ~ "Agricultura",
+      desc_chave == "agricola - graos diversos" ~ "Agricultura",
+      desc_chave == "agricola/culturas de subsistencia/fruticultura" ~ "Agricultura",
+      desc_chave == "agricultura de subsistencia" ~ "Agricultura",
+      desc_chave == "agricultura moderna/intensiva" ~ "Agricultura",
+      desc_chave == "agricultura moderna" ~ "Agricultura",
+      desc_chave == "culturas anuais" ~ "Agricultura",
+      desc_chave == "cultura anual" ~ "Agricultura",
+      desc_chave == "cafe" ~ "Agricultura",
+      desc_chave == "agricultura anual" ~ "Agricultura",
+      desc_chave == "cafeicultura" ~ "Agricultura",
+      desc_chave == "medias propriedades em terras de cultura" ~ "Agricultura",
+      desc_chave == "terras de cultura com disponibilidade de agua para irrigacao" ~ "Agricultura",
+      desc_chave == "agricultura em altitude" ~ "Agricultura",
+      desc_chave == "agricultura no vao" ~ "Agricultura",
+      desc_chave == "terras de cafe" ~ "Agricultura",
+      desc_chave == "agricola-graos soja" ~ "Agricultura",
+      desc_chave == "agricultura lavoura permanente cana de acucar" ~ "Agricultura",
+      desc_chave == "agricultura lavoura permanente cana-de-acucar (pirpirituba)" ~ "Agricultura",
+      desc_chave == "terra de agricultura" ~ "Agricultura",
+      desc_chave == "terra de agricultura com cana-de-aa?aocar em relevo movimentado" ~ "Agricultura", # Erro OCR
+      desc_chave == "agricola" ~ "Agricultura",
+      desc_chave == "agricultura subsistencia" ~ "Agricultura",
+      desc_chave == "agricultura subsistencia (humaita)" ~ "Agricultura",
+      desc_chave == "agricultura (olericultura)" ~ "Agricultura",
+      desc_chave == "agricultura fruticultura" ~ "Agricultura",
+      desc_chave == "agricultura fruticultura (autazes)" ~ "Agricultura",
+      desc_chave == "terra agricola" ~ "Agricultura",
+      desc_chave == "terra agricola perene de sequeiro" ~ "Agricultura",
+      desc_chave == "terra agricola cacau em cabruca" ~ "Agricultura",
+      desc_chave == "terra agricola temporaria de sequeiro" ~ "Agricultura",
+      desc_chave == "terra agricola temporaria irrigada" ~ "Agricultura",
+      desc_chave == "terra agricola sistemas agroflorestais" ~ "Agricultura",
+      desc_chave == "agricultural" ~ "Agricultura",
+      desc_chave == "lavoura" ~ "Agricultura",
+      desc_chave == "hortifrutigranjeiro" ~ "Agricultura",
+      desc_chave == "cafe (arabica e conilon)" ~ "Agricultura",
+      desc_chave == "cafe conilon" ~ "Agricultura",
+      desc_chave == "cafe arabica" ~ "Agricultura",
+      desc_chave == "agricola (serra de santana)" ~ "Agricultura",
+      desc_chave == "agricultura familiar" ~ "Agricultura",
+      desc_chave == "fruticultura" ~ "Agricultura",
+      desc_chave == "exploracao granjeira" ~ "Agricultura",
+      desc_chave == "terra de exploracao agricola" ~ "Agricultura",
+      desc_chave == "terras de agricultura" ~ "Agricultura",
+      desc_chave == "agricola - fruticultura diversa" ~ "Agricultura",
+      desc_chave == "agricultura de baixo rendimento (caraubas)" ~ "agricultura de baixo rendimento (caraubas)" ,
+      desc_chave == "agricultura de alto rendimento (ipanguacu)" ~ "agricultura de alto rendimento (ipanguacu)",
+      desc_chave == "agricultura de baixo rendimento (sao rafael)" ~ "agricultura de baixo rendimento (sao rafael)",
+      desc_chave == "1- agricola" ~ "Agricultura",
+      # Regionais classificados como Agricultura por terem descritivo explícito
+      desc_chave == "agricultura e/ou pecuaria de baixo rendimento (barcelona)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de baixo rendimento (bento fernandes)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de baixo rendimento (lajes pintadas)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de baixo rendimento (ruy barbosa)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de baixo rendimento (tangara)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (bom jesus)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (nova cruz)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (riachuelo)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (santa maria)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (santo antonio)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (sao paulo do potengi)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (sao pedro)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (serra caiada)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de medio rendimento (serrinha)" ~ "Agricultura",
+      desc_chave == "agricultura e/ou pecuaria de alto rendimento (apodi)" ~ "Agricultura",
 
-      str_detect(tipologia_de_uso, "(?i)(terra nua)") ~ "terra nua",
+      # --- GRUPO: PECUÁRIA (Pasto, Gado, Bovino) ---
+      desc_chave == "pecuaria bovino-pastagem formada" ~ "Pecuária",
+      desc_chave == "pecuaria-bovino-pastagem formada" ~ "Pecuária",
+      desc_chave == "pecuaria" ~ "Pecuária",
+      desc_chave == "pecuaria/leite" ~ "Pecuária",
+      desc_chave == "terras de pecuaria" ~ "Pecuária",
+      desc_chave == "terras de pecuaria com pastagem plantada" ~ "Pecuária",
+      desc_chave == "terras de pecuaria com pastagem nativa" ~ "Pecuária",
+      desc_chave == "terras de pecuaria com pastagem plantada em batalha" ~ "Pecuária",
+      desc_chave == "terras de pecuaria com pastagem plantada em quebrangulo" ~ "Pecuária",
+      desc_chave == "pecuaria - bovino - leite" ~ "Pecuária",
+      desc_chave == "pecuaria (pastagem de baixo suporte)" ~ "Pecuária",
+      desc_chave == "pecuaria (pastagem de baixo suporte | boca do acre" ~ "Pecuária",
+      desc_chave == "pecuaria (pastagem de baixo suporte | careiro" ~ "Pecuária",
+      desc_chave == "pecuaria (pastagem de baixo suporte | parintins" ~ "Pecuária",
+      desc_chave == "pecuaria (pastagem de baixo suporte | autazes" ~ "Pecuária",
+      desc_chave == "pecuaria pastagem plantada abaixo de 01ua/ha/ano" ~ "Pecuária",
+      desc_chave == "pecuaria pastagem plantada abaixo de 01ua/ha/ano regiao de raso" ~ "Pecuária",
+      desc_chave == "pecuaria pastagem plantada abaixo de 01ua/ha/ano regiao de tabuleiro ou cerrado" ~ "Pecuária",
+      desc_chave == "pecuaria - regiao 02" ~ "Pecuária",
+      desc_chave == "pecuaria - regiao 01" ~ "Pecuária",
+      desc_chave == "pecuaria - regiao 03" ~ "Pecuária",
+      desc_chave == "pecuaria pastagem plantada acima de 01ua/ha/ano" ~ "Pecuária",
+      desc_chave == "pecuaria pastagem nativa" ~ "Pecuária",
+      desc_chave == "pecuaria na regiao noroeste" ~ "Pecuária",
+      desc_chave == "pecuaria (excelo noroeste)" ~ "Pecuária",
+      desc_chave == "pecuaria a oeste do mercado" ~ "Pecuária",
+      desc_chave == "pecuaria a leste do mercado" ~ "Pecuária",
+      desc_chave == "pecuana" ~ "Pecuária", # Erro OCR
+      desc_chave == "pecuaria - bovino-pastagem formada" ~ "Pecuária",
+      desc_chave == "pecuaria-bovino-pastagem formada." ~ "Pecuária",
+      desc_chave == "pecuaria - bovino -pastagem formada" ~ "Pecuária",
+      desc_chave == "pecuaria-diversos" ~ "Pecuária",
+      desc_chave == "pecuaria-bovino -pastagem formada" ~ "Pecuária",
+      desc_chave == "pecuaria baixa (<1ua/ha)" ~ "Pecuária",
+      desc_chave == "pecuaria media (1 a 1,5 ua/ha)" ~ "Pecuária",
+      desc_chave == "pecuaria alta (> 1,5 1ua/ha)" ~ "Pecuária",
+      desc_chave == "pecuaria - bovino - pastagem formada" ~ "Pecuária",
+      desc_chave == "pecuaria/pasto plantado/pasto nativo (bovinocultura)" ~ "Pecuária",
+      desc_chave == "pecuaria - bovino - pastagem nativa/formada" ~ "Pecuária",
+      desc_chave == "pastagem" ~ "Pecuária",
+      desc_chave == "pecuaria com possibilidade de irrigacao" ~ "Pecuária",
+      desc_chave == "terras para pastejo" ~ "Pecuária",
+      desc_chave == "terras com pastagem" ~ "Pecuária",
+      desc_chave == "solos com pastagens e potencial para culturas" ~ "Pecuária",
+      desc_chave == "pecuaria com potencial agricultura" ~ "Pecuária",
+      desc_chave == "pecuaria com potencial agricultura irrigada" ~ "Pecuária",
+      desc_chave == "terras de pastagem de baixa produtividade" ~ "Pecuária",
+      desc_chave == "terras de pastagem de nivel medio de produtividade" ~ "Pecuária",
+      desc_chave == "terras de pastagem geral" ~ "Pecuária",
+      desc_chave == "terras de pastagem de baixa produtividade (encapoeiradas)" ~ "Pecuária",
+      desc_chave == "terras de pastagem de nivel medio de produtividade (suporte)" ~ "Pecuária",
+      desc_chave == "terras de pastagem de nivel alto de produtividade (suporte)" ~ "Pecuária",
+      desc_chave == "pecuaria 1" ~ "Pecuária",
+      desc_chave == "pecuaria." ~ "Pecuária",
+      desc_chave == "terra para pecuaria" ~ "Pecuária",
+      desc_chave == "pecuaria de alta a baixa representatividade" ~ "Pecuária",
+      desc_chave == "pecuaria de baixa representatividade" ~ "Pecuária",
+      desc_chave == "pecuaria de alta representatividade." ~ "Pecuária",
+      desc_chave == "pecuaria de baixa representatividade." ~ "Pecuária",
+      desc_chave == "pecuaria - \"p1\"" ~ "Pecuária",
+      desc_chave == "pecuaria \"p1\" (solanea)" ~ "Pecuária",
+      desc_chave == "pecuaria - pastagem de baixo suporte" ~ "Pecuária",
+      desc_chave == "pecuaria - \"p1\" (coremas)" ~ "Pecuária",
+      desc_chave == "pecuaria - \"p1\" (patos)" ~ "Pecuária",
+      desc_chave == "terra de pecuaria" ~ "Pecuária",
+      desc_chave == "terra de pecua!ria" ~ "Pecuária", # Erro OCR
+      desc_chave == "pecuaria/pastagem formada" ~ "Pecuária",
+      desc_chave == "terra de exploracao pecuaria" ~ "Pecuária",
+      desc_chave == "pecuaria (bovinos e pastagem plant)" ~ "Pecuária",
+      desc_chave == "2- pecuaria" ~ "Pecuária",
+      desc_chave == "3- pecuaria" ~ "Pecuária",
+      desc_chave == "pecuaria diversos - baixa capacidade" ~ "Pecuária",
 
-      # Aquicultura
-      str_detect(tipologia_de_uso, "(?i)(carcinicultura|aquicultura|tanque)") ~ "Aquicultura",
+      # --- GRUPO: EXPLORAÇÃO MISTA (Agropecuária, Mosaico) ---
+      desc_chave == "fazenda" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (fazenda)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista" ~ "Exploração Mista",
+      desc_chave == "terras de exploracao mista" ~ "Exploração Mista",
+      desc_chave == "exploracao mista agropecuaria" ~ "Exploração Mista",
+      desc_chave == "exploracao mista sistemas agroflorestais" ~ "Exploração Mista",
+      desc_chave == "explotacao mista" ~ "Exploração Mista",
+      desc_chave == "mista" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (lavoura e pecuaria)" ~ "Exploração Mista",
+      desc_chave == "atividade mista" ~ "Exploração Mista",
+      desc_chave == "exploracao mista - agricola + pastagem" ~ "Exploração Mista",
+      desc_chave == "exploracao mista agricola + pastagem" ~ "Exploração Mista",
+      desc_chave == "exploracao mista agricola pastagem" ~ "Exploração Mista",
+      desc_chave == "exploracao mista - agricola + pastagem+ diversificada" ~ "Exploração Mista",
+      desc_chave == "exploracao mista agricola + pastagem + floresta plantada" ~ "Exploração Mista",
+      desc_chave == "exploracao mista agricola + pastagem + diversificada" ~ "Exploração Mista",
+      desc_chave == "mosaico de pastagens, florestas abertas e vegetacao degradada com babacu/babacual" ~ "Exploração Mista",
+      desc_chave == "mosaico de vegetacao (pastagens degradadas, florestas nativas abertas e vegetacao com babacu)" ~ "Exploração Mista",
+      desc_chave == "mosaico de pastagens, florestas abertas e vegetacao degradada com babacu" ~ "Exploração Mista",
+      desc_chave == "mosaico de vegetacao" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (pastagens e culturas)" ~ "Exploração Mista",
+      desc_chave == "uso misto (pecuaria/agricultura)" ~ "Exploração Mista",
+      desc_chave == "terras de cultura de 1a com pastagem de medio suporte" ~ "Exploração Mista",
+      desc_chave == "terras de cultura de 2a com pastagem de baixo suporte" ~ "Exploração Mista",
+      desc_chave == "uso misto (pecuaria/agricultura/reflorestamento)" ~ "Exploração Mista",
+      desc_chave == "agropecuario" ~ "Exploração Mista",
+      desc_chave == "agropecuaria" ~ "Exploração Mista",
+      desc_chave == "exploracao mista-agricola + pecuaria" ~ "Exploração Mista",
+      desc_chave == "exploracao mista - (\"la + p1\")" ~ "Exploração Mista",
+      desc_chave == "exploracao mista - (\"la + p2\")" ~ "Exploração Mista",
+      desc_chave == "terra de exploracao mista" ~ "Exploração Mista",
+      desc_chave == "terra de exploraa?a?o mista" ~ "Exploração Mista", # Erro OCR
+      desc_chave == "exploracao mista (aquicultura/agricultura irrigada)" ~ "Exploração Mista",
+      desc_chave == "1- exploracao mista" ~ "Exploração Mista",
+      desc_chave == "2- exploracao mista" ~ "Exploração Mista",
+      desc_chave == "exploradio mista" ~ "Exploração Mista", # Erro OCR
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de baixo rendimento)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de medio rendimento)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (alexandria)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (antonio martins)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (encanto)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (janduis)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (marcelino vieira)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (olho d`agua dos borges)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (patu)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (piloes)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (riacho de santana)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (sao francisco do oeste)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (sao miguel)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (taboleiro grande)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (umarizal)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (venha ver)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de alto rendimento)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (angicos)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de medio rendimento (joao camara)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rendimento (pedro avelino)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de alto rendimento (pureza)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de alto rendimento (touros)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de alto rendimento (ceara-mirim)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de alto rendimento (goianinha)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de alto rendimento (macaiba)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de alto rendimento (maxaranguape)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de medio rendimento (monte alegre)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de alto rendimento (monte alegre)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rend imento)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baix.rend (jucurutu)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rend (s. tome)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista(agricultura e/ou pecuaria de baixo rend (s.matos)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista - agricola + pastagem baixa capacida-\nde" ~ "Exploração Mista",
+      desc_chave == "exploracao mista - agricola + pastagem - baixa capacidade" ~ "Exploração Mista",
+      desc_chave == "exploracao mista - agricola + pastagem alta capacidade" ~ "Exploração Mista",
+      desc_chave == "serra de santana (agricultura e/ou pecuaria \nde medio rendimento)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - acari)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - caico)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - carnauba dos dantas)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - cerro cora)" ~ "Exploração Mista",
+      desc_chave == "serra de santana (agricultura e/ou pecuaria \nde medio rendimento - cerro cora)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - cruzeta)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - currais novos)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - equador)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - florania)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - ipueira)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - jardim de piranhas)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria \nde baixo rendimento - jardim do serido)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de alto rendimento - vale do acu)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de medio rendimento - acu)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de baixo rendimento - apodi)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de alto rendimento - apodi)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de baixo rendimento - carnaubais)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de medio rendimento - carnaubais)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de alto rendimento vale do acu - carnaubais)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de medio rendimento - felipe guerra)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de alto rendimento - felipe guerra)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de baixo rendimento - grossos)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de alto rendimento vale do acu - ipanguacu)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de medio rendimento - mossoro)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de baixo rendimento - serra do mel)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de medio rendimento - serra do mel)" ~ "Exploração Mista",
+      desc_chave == "exploracao mista (agricultura e/ou pecuaria de alto rendimento - upanema)" ~ "Exploração Mista",
+      desc_chave == "agricultura e pecuaria" ~ "Exploração Mista",
 
-      # Exploração Mista (Alta prioridade para não cair em agric/pecuaria separado)
-      str_detect(tipologia_de_uso, "(?i)(mista|agrope|mosaico|lavoura.*pecu.ria|integra|agri.*pecu)") ~ "Exploração Mista",
+      # --- GRUPO: VEGETAÇÃO NATIVA (Mata, Cerrado, Caatinga) ---
+      desc_chave == "floresta mata nativa" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa floresta amazonica" ~ "Vegetação Nativa",
+      desc_chave == "floresta" ~ "Vegetação Nativa",
+      desc_chave == "terras de vegetacao nativa (caatinga)" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa" ~ "Vegetação Nativa",
+      desc_chave == "floresta em estagio inicial de regeneracao" ~ "Vegetação Nativa",
+      desc_chave == "floresta (estagio inicial de regeneracao)" ~ "Vegetação Nativa",
+      desc_chave == "cerrado" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa cerrado" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa mata atlantica" ~ "Vegetação Nativa",
+      desc_chave == "mata" ~ "Vegetação Nativa",
+      desc_chave == "cerrado-vegetacao nativa" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa - cerrado" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa- cerrado" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa (mata/babacual/cerrado pouco denso)" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao de cerrado" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa*" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa *" ~ "Vegetação Nativa",
+      desc_chave == "terras de cerrado arenosas" ~ "Vegetação Nativa",
+      desc_chave == "terras de uso diversificado de cultura/mata" ~ "Vegetação Nativa",
+      desc_chave == "terras de uso diversificado em campo/cerrado" ~ "Vegetação Nativa",
+      desc_chave == "regeneracao/mata" ~ "Vegetação Nativa",
+      desc_chave == "lavrado" ~ "Vegetação Nativa",
+      desc_chave == "floresta natural (mata)" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa (mata)" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa - mata atlantica" ~ "Vegetação Nativa",
+      desc_chave == "vegetacao nativa (mata atlantica)" ~ "Vegetação Nativa",
+      desc_chave == "terra com mata" ~ "Vegetação Nativa",
+      desc_chave == "2- vetetacao nativa" ~ "Vegetação Nativa",
+      desc_chave == "4- vegetacao nativa" ~ "Vegetação Nativa",
+      desc_chave == "3- vegetacao nativa" ~ "Vegetação Nativa",
+      desc_chave == "vetetacao nativa" ~ "Vegetação Nativa",
 
-      # Silvicultura
-      str_detect(tipologia_de_uso, "(?i)(silvicultura|reflorestamento|floresta.*plantada|si.vicultura|eucalipto|pinus)") ~ "Silvicultura",
+      # --- GRUPO: SILVICULTURA (Reflorestamento, Eucalipto) ---
+      desc_chave == "seringal" ~ "Silvicultura",
+      desc_chave == "silvicultura" ~ "Silvicultura",
+      desc_chave == "floresta plantada" ~ "Silvicultura",
+      desc_chave == "terras para reflorestamento" ~ "Silvicultura",
+      desc_chave == "floresta plantadasilvicultura" ~ "Silvicultura",
+      desc_chave == "vegetacao nativa/silvicultura" ~ "Silvicultura",
+      desc_chave == "vegetacao nativa/sivicultura" ~ "Silvicultura",
+      desc_chave == "reflorestamento" ~ "Silvicultura",
 
-      # Agricultura
-      str_detect(tipologia_de_uso, "(?i)(agric|agr.cola|lavoura|cultura|gr.os|soja|milho|cana|caf.|horti|fruti|ar.bica|conilon|tempor.ria|perene|granjeira|familiar)") ~ "Agricultura",
+      # --- GRUPO: AQUICULTURA (Peixes, Camarão) ---
+      desc_chave == "nao agricola (carcinicultura)" ~ "Aquicultura",
+      desc_chave == "nao agricola (carcinicltura)" ~ "Aquicultura",
+      desc_chave == "carcinicultura" ~ "Aquicultura",
+      desc_chave == "nao agricola - carcinicultura" ~ "Aquicultura",
+      desc_chave == "aquicultura" ~ "Aquicultura",
+      desc_chave == "tanque" ~ "Aquicultura",
 
-      # Pecuária
-      str_detect(tipologia_de_uso, "(?i)(pecu|pastagem|pasto|bovino|leite|corte|bubalino|pastejo)") ~ "Pecuária",
+      # --- GRUPO: NÃO AGRÍCOLA / URBANO ---
+      desc_chave == "nao agricola" ~ "Não Agrícola",
+      desc_chave == "sitios e chacaras" ~ "Não Agrícola",
+      desc_chave == "especulacao imobiliaria" ~ "Não Agrícola",
+      desc_chave == "lazer (sitios/chacaras)" ~ "Não Agrícola",
+      desc_chave == "urbano" ~ "Não Agrícola",
+      desc_chave == "chacara" ~ "Não Agrícola",
+      desc_chave == "sitio" ~ "Não Agrícola",
 
-      # Vegetação Nativa
-      str_detect(tipologia_de_uso, "(?i)(vegeta|ve.eta|floresta|mata|cerrado|caatinga|regenera|reserva|preserva|lavrado)") ~ "Vegetação Nativa",
+      # --- GRUPO: TERRA NUA ---
+      desc_chave == "terra nua" ~ "Terra Nua",
 
-      # Limpeza de termos genéricos que sobraram no Nível 1 (ex: "Metropolitana" solto)
-      str_detect(tipologia_de_uso, "(?i)(indefinido|amostra|metropolitana|m.dia geral)") ~ "Outros",
+      # --- GRUPO: OUTROS / REGIONAL / LIXO (Exclusão) ---
+      desc_chave == "geral" ~ "Outros",
+      desc_chave == "uso indefinido (media geral do mrt)" ~ "Outros",
+      desc_chave == "media geral (uso indefinido)" ~ "Outros",
+      desc_chave == "1 - sertao alagoano" ~ "Outros",
+      desc_chave == "2 - agreste alagoano" ~ "Outros",
+      desc_chave == "media geral" ~ "Outros",
+      desc_chave == "uso indefinido (media geral)" ~ "Outros",
+      desc_chave == "usa indefinido (media geral)" ~ "Outros",
+      desc_chave == "uso indefinido" ~ "Outros",
+      desc_chave == "terras de cultura de 1a com possibilidade de irrigacao" ~ "Outros", # Potencial, não uso
+      desc_chave == "todas as tipologias (media geral)" ~ "Outros",
+      desc_chave == "uso indefinido media geral" ~ "Outros",
+      desc_chave == "uso indefinido (macdia geral do mrt)" ~ "Outros", # Erro OCR
+      desc_chave == "todas as tipologias" ~ "Outros",
+      desc_chave == "amostra geral" ~ "Outros",
+      desc_chave == "geral (todas as tipologias)" ~ "Outros",
+      desc_chave == "media geral mrt1" ~ "Outros",
+      desc_chave == "media geral mrt2" ~ "Outros",
+      desc_chave == "media geral mrt3" ~ "Outros",
+      desc_chave == "media geral mrt4" ~ "Outros",
+      desc_chave == "media geral mrt7" ~ "Outros",
+      desc_chave == "media geral mrt8" ~ "Outros",
+      desc_chave == "media geral mrt9" ~ "Outros",
+      desc_chave == "media geral mrt10" ~ "Outros",
+      desc_chave == "uso indef nido (media geral do mrt)" ~ "Outros",
+      desc_chave == "uso indef hido (media geral do mrt)" ~ "Outros",
+      desc_chave == "todas as tipologias do mrt" ~ "Outros",
 
-      # --- CASO CONTRÁRIO ---
-      # Se não caiu em nenhuma regra acima, mantém o nome original
-      TRUE ~ tipologia_de_uso
+      # Safety Net
+      TRUE ~ "Revisar Manualmente"
     )
   )
-
-# Verificação final
-df_fim %>% 
-  count(nivel, tipologia_de_uso) %>% 
-  arrange(nivel, desc(n))
-
-condicao_fim <- df_fim$tipologia_de_uso == "verificar manualmente" & df_fim$nivel == 0
-df_fim$tipologia_de_uso[condicao_fim] <- "média geral"

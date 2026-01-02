@@ -29,7 +29,7 @@ Miguel do Gostoso, Taipú e Touros"
 RNMRT3_2019 <- data.frame(
   mrt = "LITORAL NORTE E REGIÃO CENTRAL",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Angicos)", "Exploração Mista(Agricultura e/ou Pecuária de médio rendimento (Joâo Câmara)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Pedro Avelino)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Pureza)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Touros)", "Uso Indefinido (Média Geral)"),
-  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3),
   vti_media = c(4278.25, 4278.25, 1955.23, 4233.67, 6312.35, 2761.97, 3104.36, 1254.63, 5504.99, 6903.13, 4278.25),
   vti_minimo = c(1752.95, 1752.95, 998.66, 2447.16, 4339.99, 2008.49, 1992.38, 802.16, 3522.95, 4325.79, 1752.95),
   vti_maximo = c(6803.56, 6803.56, 2911.79, 6020.17, 8284.7, 3515.45, 4216.35, 1707.1, 7487.04, 9480.47, 6803.56),
@@ -83,7 +83,7 @@ ra)", "Agrícola - Fruticultura diversa- Alta capacidade (Jandaira)", "Exploraç
 (São Miguel do Gostoso)", "Exploração mista - agrícola + pastagem - Média capacidade
 (Taipu)", "Agrícola  - Horticultura/Olericultura/Granjeiros - Touros", "Exploração mista - agrícola + pastagem - Média capacidade
 (Touros)"),
-  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(0, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(4954.88, 5774.86, 4455.92, 9202.40, 9234.06, 4095.13, 5000.00, 2940.00, 6360.29, 5853.94, 3222.29, 4095.13, 5000.00, 4420.82, 11986.35, 3995.27, 5138.58, 9234.06, 6847.62, 7777.65, 5998.88, 9202.40, 6056.09),
   vti_minimo = c(4211.65, 4908.64, 3787.53, 7822.04, 7848.95, 3480.86, 4250.00, 2499.00, 5406.25, 4975.85, 2738.95, 3480.86, 4250.00, 3757.69, 10188.40, 3395.98, 4367.79, 7848.95, 5820.47, 6611.00, 5099.05, 7822.04, 5147.67),
   vti_maximo = c(5698.11, 6641.09, 5124.30, 10582.76, 10619.16, 4709.40, 5750.00, 3380.99, 7314.33, 6732.03, 3705.64, 4709.40, 5750.00, 5083.94, 13784.31, 4594.56, 5909.37, 10619.16, 7874.76, 8944.29, 6898.71, 10582.76, 6964.50),
@@ -194,7 +194,7 @@ gre)", "Exploração mista – Agrícola + Pastagem alta capacidade
 mento (São Gonçalo do Amarante)", "Agrícola – Horticultura/Olericultura/Granjeiros (São José 
 do Mipibu)", "Não Agrícola – Exploração turística (Tibau do Sul)", "Agrícola – Horticultura/Olericultura/Granjeiros (Vera Cruz)", "Exploração mista – Agrícola + Pastagem alta capacidade 
 (Vera Cruz)"),
-  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(15024.66, 13265.01, 23833.58, 103245.68, 15156.08, 7388.50, 20037.53, 32127.08, 103245.68, 22435.16, 24222.22, 14677.99, 14980.07, 14895.04, 18879.09, 13976.62, 7027.94, 9088.72, 8736.84, 13369.41, 27184.83, 16868.22, 12433.33, 7921.90, 13468.39, 27562.19, 33631.51, 103245.68, 46590.91, 15662.34),
   vti_minimo = c(12770.96, 11275.26, 20258.54, 87758.82, 12882.67, 6280.22, 17031.90, 27308.02, 87758.82, 19069.89, 20588.89, 12476.29, 12733.06, 12660.78, 16047.23, 11880.13, 5647.74, 7725.41, 7426.31, 11364.00, 23107.10, 14337.99, 10568.33, 6733.61, 11448.13, 23427.86, 28586.78, 87758.82, 39602.27, 13312.99),
   vti_maximo = c(17278.36, 15254.77, 27408.62, 118732.53, 17429.49, 8496.77, 23043.16, 36946.14, 118732.53, 25800.44, 27855.56, 16879.68, 17227.09, 17129.29, 21710.96, 16073.12, 8408.13, 10452.03, 10047.37, 15374.82, 31262.55, 19398.45, 14298.33, 9110.18, 15488.64, 31696.51, 38676.24, 118732.53, 53579.55, 18011.69),
@@ -276,7 +276,7 @@ Vento e Bento Fernandes"
 RNMRT1_2019 <- data.frame(
   mrt = "AGRESTE, POTENGI E TRAIRÍ",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Médio Rendimento)", "Agricultura e/ou pecuária de baixo rendimento (Barcelona)", "Agricultura e/ou pecuária de baixo rendimento (Bento Fernandes)", "Agricultura e/ou pecuária de baixo rendimento (Lajes Pintadas)", "Agricultura e/ou pecuária de baixo rendimento (Ruy Barbosa)", "Agricultura e/ou pecuária de baixo rendimento (Tangará)", "Agricultura e/ou pecuária de médio rendimento (Bom Jesus)", "Agricultura e/ou pecuária de médio rendimento (Nova Cruz)", "Agricultura e/ou pecuária de médio rendimento (Riachuelo)", "Agricultura e/ou pecuária de médio rendimento (Santa Maria)", "Agricultura e/ou pecuária de médio rendimento (Santo Antônio)", "Agricultura e/ou pecuária de médio rendimento (São Paulo do Potengi)", "Agricultura e/ou pecuária de médio rendimento (São Pedro)", "Agricultura e/ou pecuária de médio rendimento (Serra Caiada)", "Agricultura e/ou pecuária de médio rendimento (Serrinha)"),
-  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(2887.26, 2887.26, 819.52, 4758.47, 2388.89, 1540.1, 1102.16, 988.53, 800.0, 8638.54, 6503.21, 3249.35, 3590.06, 5439.72, 2618.05, 3983.82, 2160.8, 5815.46),
   vti_minimo = c(790.88, 790.88, 690.2, 2280.51, 770.13, 956.64, 537.01, 633.18, 800.0, 1850.35, 3382.25, 2717.24, 2886.59, 4928.93, 2352.05, 2692.37, 1336.99, 3377.09),
   vti_maximo = c(4983.63, 4983.63, 948.83, 7236.42, 4007.65, 2123.57, 1667.32, 1343.87, 800.0, 15426.73, 9624.17, 3781.45, 4293.53, 5950.5, 2884.05, 5275.28, 2984.61, 8253.83),
@@ -359,7 +359,7 @@ capacidade (São Bento do Trairí)", "Pecuária diversos – média capacidade (
 Campestre)", "Pecuária Bovino – Pastagem Nativa (São Tomé)", "Não Agrícola – Exploração turística (Serra de São 
 Bento)", "Exploração mista – Agrícola + Pastagem – média 
 capacidade (Sitio Novo)", "Pecuária diversos – média capacidade (Tangará)"),
-  nivel = c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(1789.81, 13661.38, 1145.54, 1987.38, 10860.12, 13661.38, 3597.78, 845.74, 1987.38, 10860.12, 2014.81, 6784.53, 12547.88, 2051.14, 25999.11, 1463.77, 2297.15, 1751.64, 3670.03, 2843.27, 3778.10, 845.74, 11832.15, 2084.74, 4132.42),
   vti_minimo = c(1521.34, 11612.17, 973.71, 1689.27, 9231.11, 11612.17, 3058.11, 718.88, 1689.27, 9231.11, 1712.59, 5766.85, 10665.70, 1743.47, 22099.24, 1244.20, 1952.58, 1488.90, 3119.53, 2416.78, 3211.38, 718.88, 10057.33, 1772.03, 3512.56),
   vti_maximo = c(2058.28, 15710.59, 1317.37, 2285.48, 12489.14, 15710.59, 4137.45, 972.60, 2285.48, 12489.14, 2317.04, 7802.21, 14430.06, 2358.81, 29898.98, 1683.33, 2641.72, 2014.39, 4220.54, 3269.76, 4344.81, 972.60, 13606.97, 2397.45, 4752.28),
