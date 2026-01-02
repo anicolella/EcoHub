@@ -5,7 +5,7 @@
 #2022:https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/RAMT_PPR_MG_2022.pdf
 MGMRT01_2020 <- data.frame(
   mrt = "Ituiutaba - Ituiutaba, Limeira D’Oeste, Santa",
-  tipologia_de_uso = c("Triângulo/Ituiutaba/Geral", "Ituiutaba – Culturas Anuais", "Ituiutaba – Exploração Mista (pastagens e culturas)", "Ituiutaba – Pecuária"),
+  tipologia_de_uso = c("Média geral", "Culturas Anuais", "Exploração Mista (pastagens e culturas)", "Pecuária"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(13338.19, 15645.49, 14750.59, 11675.82),
   vti_minimo = c(6158.96, 12396.69, 13016.53, 6158.96),
@@ -18,7 +18,7 @@ MGMRT01_2020 <- data.frame(
 
 MGMRT02_2020 <- data.frame(
   mrt = "Uberlândia - Uberlândia, Araguari, Indianópolis,",
-  tipologia_de_uso = c("Triângulo/Uberlândia/Geral", "Uberlândia – Agricultura", "Uberlândia – Uso misto (pecuária/agricultura)", "Uberlândia – Pecuária"),
+  tipologia_de_uso = c("media geral", "Agricultura", "Uso misto (pecuária/agricultura)", "Pecuária"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(19568.84, 22359.96, 16884.15, 15302.33),
   vti_minimo = c(12779.55, 16528.93, 13049.15, 12779.55),
@@ -31,7 +31,7 @@ MGMRT02_2020 <- data.frame(
 
 MGMRT03_2020 <- data.frame(
   mrt = "Uberaba - Uberaba, Perdizes, Santa Juliana,",
-  tipologia_de_uso = c("Triângulo/Uberaba/Geral", "Uberaba – Cultura anual", "Uberaba – Uso misto (pecuária/agricultura)", "Uberaba – Pastagem"),
+  tipologia_de_uso = c("media geral", "Cultura anual", "Uso misto (pecuária/agricultura)", "Pastagem"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(21846.65, 30043.0, 24220.04, 16298.95),
   vti_minimo = c(14462.81, 23760.33, 20640.5, 14462.81),
@@ -44,7 +44,7 @@ MGMRT03_2020 <- data.frame(
 
 MGMRT04_2020 <- data.frame(
   mrt = "Araxá - Araxá, Sacramento, Tapira, Pratinha,",
-  tipologia_de_uso = c("Araxá/Geral", "Araxá – Café", "Araxá – Uso misto (pecuária/agricultura)"),
+  tipologia_de_uso = c("media geral", "Café", "Uso misto (pecuária/agricultura)"),
   nivel = c(0, 1, 1),
   vti_media = c(21610.22, 31246.13, 15903.08),
   vti_minimo = c(14000.0, 26530.61, 14000.0),
@@ -57,7 +57,7 @@ MGMRT04_2020 <- data.frame(
 
 MGMRT05_2020 <- data.frame(
   mrt = "Patos de Minas - Abadia dos Dourados, Arapuá, Carmo do",
-  tipologia_de_uso = c("Patos de Minas/Geral", "Patos de Minas – Agricultura anual", "Patos de Minas – Cafeicultura", "Patos de Minas – Pecuária"),
+  tipologia_de_uso = c("media geral", "Agricultura anual", "Cafeicultura", "Pecuária"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(13551.08, 22185.39, 43315.47, 5015.45),
   vti_minimo = c(3464.16, 20187.5, 34000.0, 3464.16),
@@ -70,7 +70,7 @@ MGMRT05_2020 <- data.frame(
 
 MGMRT06_2020 <- data.frame(
   mrt = "São Romão - São Romão e Santa Fé de Minas",
-  tipologia_de_uso = c("São Romão/Geral", "São Romão – Pecuária", "São Romão – Pecuária com possibilidade de irrigação", "São Romão – Terras para reflorestamento"),
+  tipologia_de_uso = c("media geral", "Pecuária", "Pecuária com possibilidade de irrigação", "Terras para reflorestamento"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(2106.82, 2300.0, 3136.53, 1225.98),
   vti_minimo = c(1000.0, 1500.0, 2727.27, 1000.0),
@@ -83,7 +83,7 @@ MGMRT06_2020 <- data.frame(
 
 MGMRT07_2020 <- data.frame(
   mrt = "Januária - Januária, Bonito de Minas, Cônego Marinho",
-  tipologia_de_uso = c("Januária/Geral", "Januária – Terras para pastejo",  "Januária – Terras de cerrado arenosas", "Januária – Médias propriedades em terras de cultura", "Januária – Terras de cultura com disponibilidade de água para irrigação"),
+  tipologia_de_uso = c("media geral", "Terras para pastejo",  "Terras de cerrado arenosas", "Médias propriedades em terras de cultura", "Terras de cultura com disponibilidade de água para irrigação"),
   nivel = c(0, 1, 1, 1, 1),
   vti_media = c(1417.76, 1417.76,  999.99, 2381.65, 2961.51),
   vti_minimo = c(750.0, 1000.0,  750.0, 1875.0, 1859.95),
@@ -96,7 +96,7 @@ MGMRT07_2020 <- data.frame(
 
 MGMRT08_2020 <- data.frame(
   mrt = "Janaúba - Janaúba, Catuti, Espinosa, Gameleira,",
-  tipologia_de_uso = c("Janaúba/Geral", "Janaúba – Terras com pastagem",  "Janaúba – Terras de cultura de 1ª com pastagem de médio suporte", "Janaúba – Terras de cultura de 1ª com possibilidade de irrigação", "Janaúba – Terras de cultura de 2ª com pastagem de baixo suporte"),
+  tipologia_de_uso = c("media geral", "Terras com pastagem",  "Terras de cultura de 1ª com pastagem de médio suporte", "Terras de cultura de 1ª com possibilidade de irrigação", "Terras de cultura de 2ª com pastagem de baixo suporte"),
   nivel = c(0, 1, 1, 1, 1),
   vti_media = c(3178.66, 3178.66,  3767.36, 7200.0, 2170.0),
   vti_minimo = c(1500.0, 1800.0,  2500.0, 4800.0, 1500.0),
@@ -109,7 +109,7 @@ MGMRT08_2020 <- data.frame(
 
 MGMRT09_2020 <- data.frame(
   mrt = "Pirapora - Buritizeiro, Ibiaí, Jequitaí, Lagoa dos Patos,",
-  tipologia_de_uso = c("Pirapora/Geral", "Pirapora – Pecuária", "Pirapora – Uso misto (pecuária/agricultura/reflorestamento)"),
+  tipologia_de_uso = c("media geral", "Pecuária", "Uso misto (pecuária/agricultura/reflorestamento)"),
   nivel = c(0, 1, 1),
   vti_media = c(4594.53, 4015.38, 5907.61),
   vti_minimo = c(2550.0, 2550.0, 3541.67),
@@ -122,7 +122,7 @@ MGMRT09_2020 <- data.frame(
 
 MGMRT10_2020 <- data.frame(
   mrt = "Mucuri 1 Carlos Chagas - Carlos Chagas, Nanuque, Serra dos Aimorés",
-  tipologia_de_uso = c("Mucuri 1 Carlos Chagas/Geral", "Mucuri 1 Carlos Chagas – Solos com pastagens e potencial para culturas"),
+  tipologia_de_uso = c("media geral", "Solos com pastagens e potencial para culturas"),
   nivel = c(0, 1),
   vti_media = c(5730.32, 11893.93),
   vti_minimo = c(4390.5, 9658.55),
@@ -135,7 +135,7 @@ MGMRT10_2020 <- data.frame(
 
 MGMRT11_2020 <- data.frame(
   mrt = "Mucuri 2 Teofilo Otoni - Ataléia, Ouro Verde de Minas, Frei Gaspar,",
-  tipologia_de_uso = c("Mucuri 2 Teofilo Otoni/Geral", "Mucuri 2 Teofilo Otoni/Uso agropecuário"),
+  tipologia_de_uso = c("Geral", " agropecuário"),
   nivel = c(0, 1),
   vti_media = c(3843.18, 3843.18),
   vti_minimo = c(2635.0, 2635.0),
@@ -148,7 +148,7 @@ MGMRT11_2020 <- data.frame(
 
 MGMRT12_2020 <- data.frame(
   mrt = "Curvelo - Abaeté, Augusto de Lima, Biquinhas,",
-  tipologia_de_uso = c("Curvelo/Geral", "Curvelo – Pecuária", "Curvelo – Pecuária com potencial agricultura"),
+  tipologia_de_uso = c("Geral", "Pecuária", "Pecuária com potencial agricultura"),
   nivel = c(0, 1, 1),
   vti_media = c(4719.85, 3275.1, 7457.21),
   vti_minimo = c(2034.33, 2034.33, 5137.61),
@@ -161,7 +161,7 @@ MGMRT12_2020 <- data.frame(
 
 MGMRT13_2020 <- data.frame(
   mrt = "Paracatu - Paracatu, Guarda-Mor, Vazante, Lagamar,",
-  tipologia_de_uso = c("Paracatu/Geral", "Paracatu – Pecuária", "Paracatu – Agricultura", "Paracatu – Agricultura em altitude", "Paracatu – Agricultura no vão"),
+  tipologia_de_uso = c("Geral", "Pecuária", "Agricultura", "Agricultura em altitude", "Agricultura no vão"),
   nivel = c(0, 1, 1, 1, 1),
   vti_media = c(7967.74, 7517.96, 25144.74,  26903.85, 22799.27),
   vti_minimo = c(4802.66, 4802.66, 15000.0,  17000.0, 15000.0),
@@ -174,7 +174,7 @@ MGMRT13_2020 <- data.frame(
 
 MGMRT14_2020 <- data.frame(
   mrt = "João Pinheiro - João Pinheiro, Brasilândia de Minas,",
-  tipologia_de_uso = c("João Pinheiro/Geral", "João Pinheiro – Área de Pecuária", "João Pinheiro – Área de pecuária com potencial agricultura irrigada"),
+  tipologia_de_uso = c("Geral", "Pecuária", "pecuária com potencial agricultura irrigada"),
   nivel = c(0, 1, 1),
   vti_media = c(6475.25, 5485.29, 9850.0),
   vti_minimo = c(3200.0, 3200.0, 8750.0),
@@ -187,7 +187,7 @@ MGMRT14_2020 <- data.frame(
 
 MGMRT15_2020 <- data.frame(
   mrt = "Jequitinhonha 1 Almenara - Divisópolis, Mata Verde, Bandeira, Jordânia,",
-  tipologia_de_uso = c("Jequitinhonha 1 Almenara/Geral", "Jequitinhonha 1 Almenara – pecuária"),
+  tipologia_de_uso = c("Geral", "pecuária"),
   nivel = c(0, 1),
   vti_media = c(3325.32, 3325.32),
   vti_minimo = c(2634.3, 2634.3),
@@ -200,7 +200,7 @@ MGMRT15_2020 <- data.frame(
 
 MGMRT16_2020 <- data.frame(
   mrt = "Jequitinhonha 2 Araçuaí - Jequitinhonha, Pedra Azul, Cachoeira do",
-  tipologia_de_uso = c("Jequitinhonha 2 Araçuaí/Geral", "Jequitinhonha 2 Araçuaí – pecuária"),
+  tipologia_de_uso = c("Geral", "pecuária"),
   nivel = c(0, 1),
   vti_media = c(1896.03, 1896.03),
   vti_minimo = c(1317.15, 1317.15),
@@ -213,7 +213,7 @@ MGMRT16_2020 <- data.frame(
 
 MGMRT17_2020 <- data.frame(
   mrt = "Jequitinhonha 3 Capelinha - José Gonçalves de Minas, Berilo, Francisco",
-  tipologia_de_uso = c("Jequitinhonha 3 Capelinha/Geral", "Jequitinhonha 3 Capelinha – Agropecuária"),
+  tipologia_de_uso = c("Geral", "Agropecuária"),
   nivel = c(0, 1),
   vti_media = c(2127.99, 2127.99),
   vti_minimo = c(1500.0, 1500.0),
@@ -226,7 +226,7 @@ MGMRT17_2020 <- data.frame(
 
 MGMRT18_2020 <- data.frame(
   mrt = "Jequitinhonha 4 Diamantina - Senador Modestino Gonçalves, São Gonçalo",
-  tipologia_de_uso = c("Jequitinhonha 4 Diamantina/Geral", "Jequitinhonha 4 Diamantina – pecuária"),
+  tipologia_de_uso = c("Geral", "pecuária"),
   nivel = c(0, 1),
   vti_media = c(1839.88, 1839.88),
   vti_minimo = c(800.0, 800.0),
@@ -239,7 +239,7 @@ MGMRT18_2020 <- data.frame(
 
 MGMRT19_2020 <- data.frame(
   mrt = "Guanhães - Guanhães, Senhora do Porto, Dores de",
-  tipologia_de_uso = c("Guanhães/Geral", "Guanhães – Pecuária"),
+  tipologia_de_uso = c("Geral", "Pecuária"),
   nivel = c(0, 1),
   vti_media = c(6399.66, 6484.8),
   vti_minimo = c(4545.45, 4545.45),
@@ -252,7 +252,7 @@ MGMRT19_2020 <- data.frame(
 
 MGMRT20_2020 <- data.frame(
   mrt = "Aimorés - Aimorés, Alvarenga, Conceição de Ipanema,",
-  tipologia_de_uso = c("Aimorés/Geral", "Aimorés – Terras de pastagem de baixa produtividade", "Aimorés – Terras de pastagem de nível médio de produtividade"),
+  tipologia_de_uso = c("Geral", "Terras de pastagem de baixa produtividade", "Terras de pastagem de nível médio de produtividade"),
   nivel = c(0, 1, 1),
   vti_media = c(4615.76, 4407.95, 10168.07),
   vti_minimo = c(3161.14, 3161.14, 9297.52),
@@ -265,7 +265,7 @@ MGMRT20_2020 <- data.frame(
 
 MGMRT21_2020 <- data.frame(
   mrt = "Caratinga - Caratinga, Piedade de Caratinga, Vargem Alegre,",
-  tipologia_de_uso = c("Caratinga/Geral", "Caratinga – Terras de café", "Caratinga – Terras de pastagem geral", "Caratinga – Terras de pastagem de nível médio de produtividade"),
+  tipologia_de_uso = c("Geral", "Terras de café", "Terras de pastagem geral", "Terras de pastagem de nível médio de produtividade"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(13384.91, 18433.42, 10095.56, 12919.39),
   vti_minimo = c(6382.23, 13429.75, 6382.23,  9350.0),
@@ -278,7 +278,7 @@ MGMRT21_2020 <- data.frame(
 
 MGMRT22_2020 <- data.frame(
   mrt = "Governador Valadares - Governador Valadares, Alpercata, Capitão",
-  tipologia_de_uso = c("Governador Valadares/geral", "Valadares – Terras de pastagem de baixa produtividade (encapoeiradas)", "Valadares – Terras de pastagem de nível médio de produtividade (suporte)", "Valadares – Terras de pastagem de nível alto de produtividade (suporte)"),
+  tipologia_de_uso = c("geral", "Terras de pastagem de baixa produtividade (encapoeiradas)", "Terras de pastagem de nível médio de produtividade (suporte)", "Terras de pastagem de nível alto de produtividade (suporte)"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(6366.28, 3498.54, 6279.99, 9658.4),
   vti_minimo = c(2685.95, 2685.95, 5165.1, 9297.02),
@@ -291,7 +291,7 @@ MGMRT22_2020 <- data.frame(
 
 MGMRT23_2020 <- data.frame(
   mrt = "Metropolitana IV - Belo Horizonte, Betim, Brumadinho, Caeté,",
-  tipologia_de_uso = c("Metropolitana IV (Belo Horizonte)", "Metropolitana IV(BH) – Terras de uso diversificado de cultura/mata", "Metropolitana IV(BH) – Terras de uso diversificado em campo/cerrado"),
+  tipologia_de_uso = c("Geral", "Terras de uso diversificado de cultura/mata", "Terras de uso diversificado em campo/cerrado"),
   nivel = c(1, 1, 1),
   vti_media = c(13703.62, 16301.6, 9371.3),
   vti_minimo = c(5780.35, 11855.67, 5780.35),
