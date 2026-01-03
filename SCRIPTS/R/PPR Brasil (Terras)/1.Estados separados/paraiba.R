@@ -3,7 +3,7 @@
 ##2018####
 PBMRT1_2018 <- data.frame(
   mrt = "ZONA DA MATA PARAIBANA (Alhandra, Baía da Traição, Bayeux, Caaporã, Cabedelo, Capim, Conde, Cruz do Espírito Santo, João Pessoa, Juripiranga, Lucena, Mamanguape, Marcação, Mataraca, Pedras de Fogo, Pitimbu, Rio Tinto, Santa Rita, São Miguel de Taipu, Sapé e Sobrado.)",
-  tipologia_de_uso = c("Uso indefinido (média geral)", "Agricultura", "Agricultura Lavoura Temporária “B”", "Agricultura Lavoura Permanente Cana de açúcar", "Agricultura Lavoura Temporária “B” (Rio Tinto)", "Agricultura Lavoura Temporária “B” (Alhandra)", "Agricultura Lavoura Permanente Cana de açúcar (Mamanguape)"),
+  tipologia_de_uso = c("média geral", "Agricultura", "Agricultura Lavoura Temporária “B”", "Agricultura Lavoura Permanente Cana de açúcar", "Agricultura Lavoura Temporária “B” (Rio Tinto)", "Agricultura Lavoura Temporária “B” (Alhandra)", "Agricultura Lavoura Permanente Cana de açúcar (Mamanguape)"),
   nivel = c(0, 1, 2, 2, 2, 2, 2),
   vti_media = c(14717.84, 15911.06, 12912.93, 16635.98, 9572.04, 21941.41, 16635.98),
   vti_minimo = c(12510.16, 13524.4, 10975.99, 14140.58, 8136.23, 18650.2, 14140.58),
@@ -17,7 +17,7 @@ PBMRT1_2018 <- data.frame(
 ##2020####
 PBMRT_ZONA_DA_MATA_PARAIBANA_2020 <- data.frame(
   mrt = "ZONA DA MATA PARAIΒΑΝΑ",
-  tipologia_de_uso = c("TODAS AS TIPOLOGIAS (média geral)", "Agricultura", "Agricultura Lavoura Temporária \"LB\"", "Agricultura Lavoura Permanente Cana de Açúcar", "Agricultura Lavoura Temporária \"LB\" (Rio Tinto)", "Agricultura Lavoura Temporária \"LB\" (Pedras de Fogo)", "Agricultura Lavoura Permanente Cana de Açúcar (Rio Tinto)", "Agricultura Lavoura Permanente Cana de Açúcar (Sapé)"),
+  tipologia_de_uso = c("média geral", "Agricultura", "Agricultura Lavoura Temporária \"LB\"", "Agricultura Lavoura Permanente Cana de Açúcar", "Agricultura Lavoura Temporária \"LB\" (Rio Tinto)", "Agricultura Lavoura Temporária \"LB\" (Pedras de Fogo)", "Agricultura Lavoura Permanente Cana de Açúcar (Rio Tinto)", "Agricultura Lavoura Permanente Cana de Açúcar (Sapé)"),
   nivel = c(0, 1, 2, 2, 3, 3, 3, 3),
   vti_media = c(12743.07, 12743.07, 11075.00, 15962.01, 9458.58, 13462.54, 21038.18, 7130.67),
   vti_minimo = c(10831.61, 10831.61, 9413.75, 13567.71, 8039.79, 11443.16, 17882.45, 6061.07),
@@ -105,7 +105,7 @@ PBMRT_ZONA_DA_MATA_PARAIBANA_2024 <- data.frame(
 PBMRT2_2018 <- data.frame(
   mrt = "AGRESTE E BREJO PARAIBANO (Alagoa Grande, Alagoa Nova, Alagoinha, Algodão de Jandaíra, Araçagi, Arara, Araruna, Areia, Areial, Aroeiras, Bananeiras, Belém, Borborema, Cacimba de Dentro, Caiçara, Caldas Brandão, Campina Grande, Tacima, Casserengue, Cuité de Mamanguape, Cuitegi, Curral de Cima, Dona Inês, Duas Estradas, Esperança, Fagundes, Gado Bravo, Guarabira, Gurinhém, Ingá, Itabaiana, Itapororoca, Itatuba, Jacaraú, Juarez Távora, Lagoa de Dentro, Lagoa Seca, Logradouro, Mari, Massaranduba, Matinhas, Mogeiro, Montadas, Mulungu, Natuba, Pedro Régis, Pilar, Pilões, Pilõezinhos, Pirpirituba, Puxinanã, Queimadas, Remígio, Riachão, Riachão do Bacamarte, Riachão do Poço, Salgado de São Félix, Santa Cecília, São José dos Ramos, São Sebastião de Lagoa de Roça, Serra da Raiz, Serra Redonda, Serraria, Sertãozinho, Solânea, Umbuzeiro.)",
   tipologia_de_uso = c( "Uso indefinido média geral","Agricultura", "Pecuária", "Exploração Mista", "Agricultura Lavoura Temporária “A”", "Agricultura Lavoura Temporária “B”", "Agricultura Lavoura Permanente Cana de açúcar", "Pecuária - “P1”", "Exploração Mista - (“LA + P1”)", "Agricultura Lavoura Temporária ‘A” (Duas Estradas)", "Agricultura Lavoura Temporária ‘B” (Itapororoca)", "Agricultura Lavoura Temporária ‘B” (Alagoa Nova)", "Agricultura Lavoura Temporária ‘B” (Mari)", "Agricultura Lavoura Permanente Cana-de-açúcar (Alagoa Grande)", "Agricultura Lavoura Permanente Cana-de-açúcar (Pirpirituba)", "Pecuária “P1” (Solânea)", "Exploração mista (“LA” + “P1”) (Esperança)"),
-  nivel = c(1, 1, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(11463.85,13427.11, 2372.43, 5818.0, 10819.75, 12039.38, 17226.59, 2372.43, 5818.0, 10680.33, 9632.87, 13365.67, 9341.03, 16284.75, 16089.35, 1904.56, 5094.81),
   vti_minimo = c( 9744.27,11413.05, 2016.57, 4945.3, 9196.79, 10233.47, 14642.6, 2016.57, 4945.3, 9078.28, 8187.94, 11360.82, 7939.87, 13842.03, 13675.95, 1618.87, 4330.59),
   vti_maximo = c(13185.43,15441.18, 2728.3, 6690.7, 12442.72, 13845.28, 19810.58, 2728.3, 6690.7, 12282.38, 11077.8, 15370.52, 10742.18, 18727.46, 18502.75, 2190.24, 5859.04),
@@ -247,7 +247,7 @@ PBMRT_AGRESTE_E_BREJO_PARAIBANO_2024 <- data.frame(
 PBMRT3_2018 <- data.frame(
   mrt = "CARIRI E CURIMATAÚ PARAIBANO (Alcantil, Amparo, Areia de Baraúnas, Assunção, Baraúna, Barra de Santa Rosa, Barra de Santana, Barra de São Miguel, Boa Vista, Boqueirão, Cabaceiras, Cacimba de Areia, Cacimbas, Camalaú, Caraúbas, Caturité, Congo, Coxixola, Cubati, Cuité, Damião, Desterro, Frei Martinho, Gurjão, Juazeirinho, Junco do Seridó, Livramento, Monteiro, Nova Floresta, Nova Palmeira, Olivedos, Ouro velho, Parari, Passagem, Pedra Lavrada, Picuí, Pocinhos, Prata, Riacho de Santo Antônio, Salgadinho, Santo André, São Domingos do Cariri, São João do Cariri, São João do Tigre, São José do Bonfim, São José dos Cordeiros, São Sebastião do Umbuzeiro, São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixeira, Tenório e Zabelê.)",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária - Pastagem de Baixo Suporte"),
-  nivel = c(0, 1, 1),
+  nivel = c(0, 1, 2),
   vti_media = c(1199.2, 1199.2, 1199.2),
   vti_minimo = c(1019.32, 1019.32, 1019.32),
   vti_maximo = c(1379.08, 1379.08, 1379.08),
@@ -394,7 +394,7 @@ São Vicente do Seridó, Serra Branca, Soledade, Sossego, Sumé, Taperoá, Teixe
 PBMRT4_2018 <- data.frame(
   mrt = "SERTÃO PARAIBANO 1 (Água Branca, Aguiar, Boa Ventura, Bom Jesus, Bonito de Santa Fé, Cachoeira dos Índios, Cajazeiras, Carrapateira, Conceição, Coremas, Curral Velho, Diamante, Ibiara, Igaracy, Imaculada, Itaporanga, Juru, Mãe D’água, Manaíra, Matureia, Monte Horebe, Nazarezinho, Nova Olinda, Olho d'água, Pedra Branca, Piancó, Princesa Isabel, Santa Inês, Santana de Mangueira, Santana dos Garrotes, São José da Lagoa Tapada, São José de Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares" ,
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Pecuária - “P1”", "Pecuária - “P1” (Coremas)", "Pecuária - “P1” (Patos)"),
-  nivel = c(0, 1, 1, 1, 1),
+  nivel = c(0, 1, 2, 2, 2),
   vti_media = c(1201.65, 1201.65, 1201.65, 1116.09, 2038.84),
   vti_minimo = c(1021.4, 1021.4, 1021.4, 948.68, 1733.02),
   vti_maximo = c(1381.9, 1381.9, 1381.9, 1283.5, 2344.67),
@@ -516,7 +516,7 @@ Caiana, São José de Piranhas, São José de Princesa, Serra Grande e Tavares."
 PBMRT5_2018 <- data.frame(
   mrt = "SERTÃO PARAIBANO 2 (Aparecida, Belém do Brejo do Cruz, Bernadino Batista, Bom Sucesso, Brejo do Cruz, Brejo dos Santos, Cajazeirinhas, Catingueira, Catolé do Rocha, Condado, Emas, Jericó, Lagoa, Lastro, Malta, Marizópolis, Mato Grosso, Patos, Paulista, Poço Dantas, Poço José de Moura, Pombal, Quixaba, Riacho dos Cavalos, Santa Cruz, Santa Helena, Santa Luzia, Santa Teresinha, Joca Claudino, São Bentinho, São Bento, São Domingos, São Francisco, São João do Rio do Peixe, São José do Brejo do Cruz, São José do Espinharas, São José do Sabugi, São Mamede, Sousa, Triunfo, Uiraúna, Várzea, Vieirópolis e Vista Serrana.)",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Exploração Mista", "Pecuária - “P1”", "Exploração Mista - (“LA + P1”)", "Exploração Mista - (“LA + P2”)"),
-  nivel = c(0, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 1, 2, 2, 2),
   vti_media = c(1663.22, 1079.1, 2337.7, 1079.1, 1676.47, 3080.83),
   vti_minimo = c(1413.73, 917.23, 1987.05, 917.23, 1425.0, 2618.7),
   vti_maximo = c(1912.7, 1240.96, 2688.36, 1240.96, 1927.94, 3542.95),

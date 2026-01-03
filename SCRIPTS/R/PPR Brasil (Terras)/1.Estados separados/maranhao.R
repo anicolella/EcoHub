@@ -26,7 +26,7 @@ MAMRT1_2018 <- data.frame(
     "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual até 30 km da margem da BR ou MA",
     "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual a mais de 30 km da margem da BR ou MA"
   ),
-  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(1165.15, 1135.71, 1475.0, 1070.0, 651.67, 930.0, 3333.33, 1600.0, 971.43, 4065.79, 1966.67, 2466.67, 1266.67, NA, 1070.0, 1025.0),
   vti_minimo = c(990.38, 965.36, 1253.75, 909.5, 553.92, 790.5, 2833.33, 1360.0, 825.71, 3455.92, 1671.67, 2096.67, 1076.67, NA, 909.5, 871.25),
   vti_maximo = c(1339.92, 1306.07, 1696.25, 1230.5, 749.42, 1069.5, 3833.33, 1840.0, 1117.14, 4675.66, 2261.67, 2836.67, 1456.67, NA, 1230.5, 1178.75),
@@ -54,7 +54,7 @@ MAMRT02_2021<- data.frame(
     "Vegetação de Cerrado até 30 km da margem da BR ou MA",
     "Vegetação Nativa com até 30 km da margem da BR ou MA"
   ),
-  nivel = c(1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3),
+  nivel = c(1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
   vti_media = c(1475.00, 2500.00, 1020.00, 1820.00, 1475.00, 10225.81, 2500.00, 1475.00, 10225.81, 2666.67, 945.00, 1833.33, NA),
   vti_minimo = c(1253.75, 2125.00, 867.00, 1547.00, 1253.75, 8691.94, 2125.00, 1253.75, 8691.94, 2266.67, 803.25, 1558.33, NA),
   vti_maximo = c(1696.25, 2875.00, 1173.00, 2093.00, 1696.25, 11759.68, 2875.00, 1696.25, 11759.68, 3066.67, 1086.75, 2108.33, NA),
@@ -82,7 +82,7 @@ MAMRT02_2022 <- data.frame(
 MAMRT2_2018 <- data.frame(
   mrt = "BAIXADA MARANHENSE",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual", "Agricultura de Subsistência", "Pecuária de alto nível tecnológico", "Agricultura de Subsistência na margem da BR ou MA", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual na margem da BR ou MA"),
-  nivel = c(0, 1, 1, 1, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 2, 2),
   vti_media = c(1168.92, 2175.58, 1750.0, 1007.44, 2482.23, 1033.33, NA),
   vti_minimo = c(993.58, 1849.24, 1487.5, 856.32, 2109.9, 878.33, NA),
   vti_maximo = c(1344.25, 2501.92, 2012.5, 1158.56, 2854.56, 1188.33, NA),
@@ -133,7 +133,7 @@ MAMRT07_2022 <- data.frame(
 MAMRT3_2018 <- data.frame(
   mrt = "ITAPECURU-MIRIM",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Agricultura", "Pecuária", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual", "Vegetação Nativa", "Agricultura de Subsistência", "Pecuária com baixo nível tecnológico", "Pecuária com alto nível tecnológico", "Agricultura de Subsistência", "Pecuária com baixo nível tecnológico até 30 km da BR ou MA", "Pecuária com alto nível tecnológico na margem da BR ou MA", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual até  30 km da margem da BR ou MA", "Vegetação Nativa com até 30 km da BR ou MA"),
-  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(1339.07, 552.8, 1700.86, 947.75, 850.0, 552.8, 1387.47, 2872.6, 561.0, 1411.85, 2965.75, 1045.5, 800.0),
   vti_minimo = c(1138.21, 469.88, 1445.73, 805.59, 722.5, 469.88, 1179.35, 2441.71, 476.85, 1200.07, 2520.89, 888.68, 680.0),
   vti_maximo = c(1539.93, 635.72, 1955.99, 1089.91, 977.5, 635.72, 1595.59, 3303.49, 645.15, 1623.62, 3410.61, 1202.33, 920.0),
@@ -215,7 +215,7 @@ MAMRT05_2021 <- data.frame(
     "Mosaico de Pastagens, Florestas abertas e vegetação degradada com babaçu/babaçual a mais de 30 km margem da BR ou MA",
     "Vegetação Nativa com até 30 km da BR ou MA"
   ),
-  nivel = c(1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
+  nivel = c(1, 2, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
   vti_media = c(5410.00, 4766.67, 1687.50, 5157.14,NA , 4900.00, 1687.50, 7500.00, 4940.00,NA ,5000.00,NA ,1633.33),
   vti_minimo = c(4598.50, 4051.67, 1434.38, 4383.57,NA , 4165.00, 1434.38, 6375.00, 4199.00, NA ,4250.00, NA ,1388.33),
   vti_maximo = c(6221.50, 5481.67, 1940.63, 5930.71,NA ,5635.00, 1940.63, 8625.00, 5681.00, NA ,5750.00, NA ,1878.33),
@@ -286,7 +286,7 @@ MAMRT08_2022 <- data.frame(
 MAMRT6_2018 <- data.frame(
   mrt = "LITORAL ORIENTAL",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Agricultura Moderna/Intensiva", "Pecuária de baixo nível tecnológico", "Agricultura Moderna/Intensiva na margem da BR ou MA", "Agricultura Moderna/Intensiva até 30 km da margem da BR", "Agricultura moderna/intensiva a mais de 30 km da margem da BR"),
-  nivel = c(0, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 2, 2),
   vti_media = c(1367.57, 2021.42, 1517.73, 2021.42, 682.04, 1450.0, 1587.94),
   vti_minimo = c(1162.44, 1718.21, 1290.07, 1718.21, 579.73, 1232.5, 1349.75),
   vti_maximo = c(1572.71, 2324.64, 1745.39, 2324.64, 784.34, 1667.5, 1826.13),
@@ -311,7 +311,7 @@ MAMRT03_2021 <- data.frame(
                        "Vegetação Nativa com até 30 km da BR ou MA",
                        "Vegetação Nativa a mais de 30 km da BR ou MA"
   ),
-  nivel = c(1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(1, 2, 1, 2, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(1312.50, 1666.67, 1425.00, 1312.50, 1700.00, 1400.00, 1033.33, 1900.00, 1666.67, 1350.00, 1233.33),
   vti_minimo = c(1115.63, 1416.67, 1211.25, 1115.63, 1445.00, 1190.00, 878.33, 1615.00, 1416.67, 1202.80, 911.88),
   vti_maximo = c(1509.38, 1916.67, 1638.75, 1509.38, 1955.00, 1610.00, 1188.33, 2185.00, 1916.67, 1497.20, 1554.79),
@@ -326,7 +326,7 @@ MAMRT03_2021 <- data.frame(
 
 MAMRT03_2022 <- data.frame(
   mrt = "LITORAL ORIENTAL",
-  tipologia_de_uso = c("Geral", "Agricola/Culturas de Subsistência/Fruticultura", "Pecuária/Pasto Plantado/Pasto Nativo (Bovinocultura)", "Vegetação Nativa (Mata/Babaçual/Cerrado pouco Denso)"),
+  tipologia_de_uso = c("Geral", "Agricola", "Pecuária", "Vegetação Nativa"),
   nivel = c(0, 1, 1, 1),
   vti_media = c(2188.10, 2919.09, 2446.25, 1593.62),
   vti_minimo = c(1573.03, 2290.73, 1936.55, 1071.06),
@@ -362,7 +362,7 @@ MAMRT01_2021 <- data.frame(
                        "Pecuária com Baixo Nível Tecnológico Regional Buriticupu", "Pecuária com Baixo Nível Tecnológico Regional Imperatriz", "Pecuária com Baixo Nível Tecnológico Regional Zé Doca",
                        "Pecuária com Alto Nível Tecnológico Regional Buriticupu", "Pecuária com Alto Nível Tecnológico Regional Imperatriz",
                        "Mosaico de Vegetação (Pastagens Degradadas, Florestas Nativas Abertas e Vegetação com Babaçu) Regional Imperatriz", "Mosaico de Vegetação (Pastagens Degradadas, Florestas Nativas Abertas e Vegetação com Babaçu) Regional Zé Doca"),
-  nivel = c(1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(12266.74, 5577.71, 2639.49, 12266.74, 4758.66, 7488.82, 10901.63, 12293.15, 4534.55, 4753.70, 5076.73, 6629.18, 7801.42, 2997.72, 2227.55),
   vti_minimo = c(10426.73, 4741.05, 2243.56, 10426.73, 4044.86, 6365.50, 9266.39, 10449.18, 3854.36, 4040.64, 4315.22, 5634.80, 6631.21, 2548.06, 1893.42),
   vti_maximo = c(14106.75, 6414.36, 3035.41, 14106.75, 5472.46, 8612.15, 12536.88, 14137.12, 5214.73, 5466.75, 5838.24, 7623.56, 8971.63, 3447.38, 2561.68),
@@ -391,7 +391,7 @@ MAMRT01_2022 <- data.frame(
 MAMRT8_2018 <- data.frame(
   mrt = "SUL MARANHENSE",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Agricultura", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual", "Vegetação Nativa", "Agricultura Moderna/Intensiva", "Agricultura Moderna/Intensiva até 30 km da margem da BR", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual na margem da BR ou MA", "Vegetação Nativa até 30 km da margem da BR ou MA"),
-  nivel = c(0, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 1, 2, 2, 2, 2),
   vti_media = c(3366.4, 9527.71, 1498.26, 965.78, 9527.71, 9527.71, 1308.98, 965.78),
   vti_minimo = c(2861.44, 8098.55, 1273.52, 820.91, 8098.55, 8098.55, 1112.63, 820.91),
   vti_maximo = c(3871.36, 10956.86, 1723.0, 1110.65, 10956.86, 10956.86, 1505.32, 1110.65),
@@ -467,7 +467,7 @@ dos Crentes, São Raimundo das Mangabeiras, Sucupira do Norte, Sucupira do Riach
 ### 2022 ####
 MAMRT04_2022 <- data.frame(
   mrt = "SUL MARANHENSE",
-  tipologia_de_uso = c("Geral", "Agricola - Grãos Diversos", "Pecuária - Bovino - Pastagem Nativa/Formada", "Vegetação Nativa - Cerrado", "Agrícola - Grãos Diversos - Capacidade Alta", "Agricola - Grãos Diversos - Capacidade Baixa", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa", "Vegetação Nativa - Cerrado - Capacidade Alta", "Vegetação Nativa - Cerrado - Capacidade Baixa", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Balsas", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Colinas", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Porto Franco", "Agricola - Grãos Diversos - Capacidade Baixa - Polo Regional Balsas", "Agricola - Grãos Diversos - Capacidade Baixa - Polo Regional Colinas", "Agrícola - Grãos Diversos - Capacidade Baixa - Polo Regional Porto Franco", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Balsas", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Colinas", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Porto Franco", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Balsas", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Colinas", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Porto Franco", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Balsas", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Colinas", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Porto Franco", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Balsas", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Colinas", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Porto Franco"),
+  tipologia_de_uso = c("Geral", "Agricola", "Pecuária", "Vegetação Nativa", "Agrícola - Grãos Diversos - Capacidade Alta", "Agricola - Grãos Diversos - Capacidade Baixa", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa", "Vegetação Nativa - Cerrado - Capacidade Alta", "Vegetação Nativa - Cerrado - Capacidade Baixa", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Balsas", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Colinas", "Agrícola - Grãos Diversos - Capacidade Alta - Polo Regional Porto Franco", "Agricola - Grãos Diversos - Capacidade Baixa - Polo Regional Balsas", "Agricola - Grãos Diversos - Capacidade Baixa - Polo Regional Colinas", "Agrícola - Grãos Diversos - Capacidade Baixa - Polo Regional Porto Franco", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Balsas", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Colinas", "Pecuária - Bovino - Pastagem Nativa/Formada - Capacidade Média - Polo Regional Porto Franco", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Balsas", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Colinas", "Pecuária - Bovino - Pastagem Nativa - Capacidade Baixa - Polo Regional Porto Franco", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Balsas", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Colinas", "Vegetação Nativa - Cerrado - Capacidade Alta - Polo Regional Porto Franco", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Balsas", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Colinas", "Vegetação Nativa - Cerrado - Capacidade Baixa - Polo Regional Porto Franco"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(5083.31, 10967.87, 3549.09, 1774.31, 13994.19, 7664.11, 4669.60, 2739.83, 3478.60, 1033.49, 20216.35, 14087.24, 11585.56, 7691.51, 7375.00, 7918.95, 4612.50, 3941.13, 5637.29, 2286.28, 1764.00, 3593.27, 2377.16, 3108.75, 5225.25, 906.68, 1022.85, 1528.06),
   vti_minimo = c(3006.23, 8972.97, 2856.38, 1190.43, 11742.03, 7251.16, 4130.72, 2261.91, 2781.30, 916.30, 16114.00, 11010.36, 10403.65, 7171.20, 6970.08, 7591.33, 4263.47, 3448.85, 5210.36, 1788.30, 1723.75, 3394.94, 2155.44, 2667.17, 4884.14, 780.52, 941.40, 1251.64),

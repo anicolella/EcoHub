@@ -12,8 +12,8 @@
 #### 2018 ####
 ALMRT1_2018 <- data.frame(
   mrt = "MRT 1-SERTÃO ALAGOANO",
-  tipologia_de_uso = c("1 - Sertão Alagoano", "Terras de Pecuária", "Terras de Vegetação Nativa (Caatinga)", "Terras de Pecuária com Pastagem Plantada", "Terras de Pecuária com Pastagem Nativa", "Terras de Pecuária com Pastagem Plantada em Batalha"),
-  nivel = c(0, 1, 1, 1, 1, 1),
+  tipologia_de_uso = c("média geral", "Terras de Pecuária", "Terras de Vegetação Nativa (Caatinga)", "Terras de Pecuária com Pastagem Plantada", "Terras de Pecuária com Pastagem Nativa", "Terras de Pecuária com Pastagem Plantada em Batalha"),
+  nivel = c(0, 1, 2, 2, 2, 2),
   vti_media = c(5835.68, 6646.98, 3696.78, 6257.36, 6885.09, 9869.22),
   vti_minimo = c(3014.81, 4163.18, 1556.74, 4204.24, 3911.85, 7663.8),
   vti_maximo = c(8656.55, 9130.79, 5836.82, 8310.48, 9858.32, 12074.64),
@@ -27,7 +27,7 @@ ALMRT1_2018 <- data.frame(
 ALMRT1_2022 <- data.frame(
   mrt = "MRT 1-SERTÃO ALAGOANO",
   tipologia_de_uso = c("Geral", "Pecuária", "Pecuária/Leite", "Pecuária em baixo nivel de exploração", "Pecuária/Leite em baixo nivel de exploração"),
-  nivel = c(0, 1, 1, 2, 2),
+  nivel = c(0, 1, 2, 2, 2),
   vti_media = c(6573.70, 5860.32, 6288.58, 3906.06, 4885.70),
   vti_minimo = c(5587.54, 4981.27, 5345.29, 3320.15, 4152.84),
   vti_maximo = c(7559.75, 6739.37, 7231.86, 4491.97, 5618.55),
@@ -58,8 +58,8 @@ ALMRT1_2024 <- data.frame(
 #### 2018 ####
 ALMRT2_2018 <- data.frame(
   mrt = "MRT 2-AGRESTE ALAGOANO",
-  tipologia_de_uso = c("2 - Agreste Alagoano", "Terras de Pecuária", "Terras de Agricultura", "Terras de Pecuária com Pastagem Plantada", "Terras de Pecuária com Pastagem Plantada em Quebrangulo"),
-  nivel = c(0, 1, 1, 1, 1),
+  tipologia_de_uso = c("media geral", "Terras de Pecuária", "Terras de Agricultura", "Terras de Pecuária com Pastagem Plantada", "Terras de Pecuária com Pastagem Plantada em Quebrangulo"),
+  nivel = c(0, 1, 1, 2, 2),
   vti_media = c(18178.3, 18511.88, 16202.74, 18580.68, 20885.92),
   vti_minimo = c(12411.61, 12226.68, 15007.86, 12308.4, 15806.9),
   vti_maximo = c(23944.99, 24757.07, 17397.61, 24852.95, 25964.95),
@@ -315,7 +315,7 @@ MRT2204_2024 <- data.frame(
     "Pecuária - Bovino - Pastagem Formada - Baixa Capacidade",
     "Pecuária - Bovino - Leite - Baixa Capacidade"
   ),
-  nivel = c(0, 1, 1, 2, 2),
+  nivel = c(0, 1, 2, 2, 2),
   vti_media = c(
     6573.70, 5860.32, 6856.04, 4518.25, 6766.18
   ),
