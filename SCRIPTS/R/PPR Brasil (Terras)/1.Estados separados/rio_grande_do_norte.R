@@ -132,7 +132,7 @@ Cruz e Vila Flor"
 RNMRT4_2019 <- data.frame(
   mrt = "LITORAL ORIENTAL",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Ceará-Mirim)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Goianinha)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Macaíba)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Maxaranguape)", "Exploração Mista(Agricultura e/ou Pecuária de médio rendimento (Monte Alegre)", "Exploração Mista(Agricultura e/ou Pecuária de alto rendimento (Monte Alegre)"),
-  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(10273.65, 10273.65, 11100.13, 6495.45, 14381.65, 10718.01, 8965.56, 6229.52, 5136.16, 11947.41),
   vti_minimo = c(5657.71, 5657.71, 6530.38, 3896.75, 9383.92, 8610.31, 4858.58, 4384.57, 3091.62, 7682.09),
   vti_maximo = c(14889.59, 14889.59, 15669.88, 9094.14, 19379.38, 12825.72, 13072.54, 8074.46, 7180.69, 16212.72),
@@ -1149,7 +1149,7 @@ MRT1903_2024 <- data.frame(
     "Exploração Mista - Agrícola + Pastagem Baixa Capacidade",
     "Exploração Mista - Agrícola + Pastagem Média Capacidade"
   ),
-  nivel = c(0, 1, 1, 2, 2),
+  nivel = c(0, 1, 2, 2, 2),
   vti_media = c(
     2533.25, 2454.24, 14632.42, 2225.06, 21666.67
   ),

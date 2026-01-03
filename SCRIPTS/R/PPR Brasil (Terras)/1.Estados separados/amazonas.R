@@ -43,7 +43,7 @@ AMMRTSul_Amazonense_2016 <- data.frame(
     "Pecuária (Pastagem de baixo suporte | Boca do Acre",
     "Pecuária (Pastagem de baixo suporte | Careiro"
   ),
-  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
   vti_media = c(833.07, 712.32, 886.36, 897.13, 712.32, 886.36, 897.13, 886.36, 836.13, 823.81),
   vti_minimo = c(708.11, 605.47, 753.41, 762.56, 605.47, 753.41, 762.56, 753.41, 710.71, 700.24),
   vti_maximo = c(958.03, 819.17, 1019.32, 1031.70, 819.17, 1019.32, 1031.70, 1019.32, 961.55, 947.38),
@@ -75,7 +75,7 @@ AMMRTIranduba_2016 <- data.frame(
     "Uso indefinido (média geral)", "Floresta", "Agricultura",
     "Floresta (Estágio inicial de Regeneração)", "Agricultura (Olericultura)"
   ),
-  nivel = c(0, 1, 1, 1, 1),
+  nivel = c(0, 1, 1, 2, 2),
   vti_media = c(16747.77, 13917.11, 19578.44, 13917.11, 19578.44),
   vti_minimo = c(14235.60, 11829.54, 16641.67, 11829.54, 16641.67),
   vti_maximo = c(19259.94, 16004.68, 22515.20, 16004.68, 22515.20),
@@ -99,7 +99,7 @@ AMMRTCentro_Leste_Amazonense_2016 <- data.frame(
     "Pecuária (Pastagem de baixo suporte | Parintins",
     "Pecuária (Pastagem de baixo suporte | Autazes"
   ),
-  nivel = c(0, 1, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 1, 2, 2, 2, 3, 3),
   vti_media = c(1211.72, 1189.09, 1227.18, 1136.46, 1227.18, 1168.85, 1197.43, 1264.36),
   vti_minimo = c(1029.96, 1010.72, 1043.10, 965.33, 1043.10, 993.52, 1017.82, 1074.71),
   vti_maximo = c(1393.48, 1367.45, 1411.26, 1306.93, 1411.26, 1344.17, 1377.05, 1454.01),
