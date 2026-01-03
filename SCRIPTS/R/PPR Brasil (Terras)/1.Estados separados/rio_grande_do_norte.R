@@ -582,7 +582,7 @@ de baixo rendimento - Florânia)", "Exploração Mista (Agricultura e/ou Pecuár
 de baixo rendimento - Ipueira)", "Exploração Mista (Agricultura e/ou Pecuária 
 de baixo rendimento - Jardim de Piranhas)", "Exploração Mista (Agricultura e/ou Pecuária 
 de baixo rendimento - Jardim do Seridó)"), 
-  nivel = c(1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+  nivel = c(0, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(2062.67, 2062.67, 1972.71, 15223.91, 1062.33, 2130.61, 3224.49, 1533.33, 21508.31, 2323.68, 943.19, 932.87, 1106.13, 1413.19, 1261.54, 2503.08),
   vti_minimo = c(766.08, 766.08, 772.32, 6385.73, 570.26, 324.75, 1430.67, 1475.6, 18065.47, 1298.49, 893.18, 466.43, 676.62, 962.48, 365.16, 1520.36), 
   vti_maximo = c(3359.25, 3359.25, 3173.09, 24062.08, 1554.39, 3936.46, 5018.31, 1591.07, 24951.14, 3348.87, 993.19, 1399.3, 1535.64, 1863.9, 2157.91, 3485.79),
@@ -621,7 +621,7 @@ de (São José do Seridó)", "Exploração mista – Agrícola + Pastagem baixa 
 de (São Vicente)", "Exploração mista – Agrícola + Pastagem baixa capacida-
 de (Serra Negra do Norte)", "Agrícola – Fruticultura diversa media capacidade (Serra", "Exploração mista – Agrícola + Pastagem baixa capacida-
 de (Timbaúba dos Batistas)"),
-  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(0, 1, 3, 3, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(2533.25, 2454.24, 14632.42, 2225.06, 21666.67, 14632.42, 1305.68, 2263.92, 3206.11, 26677.81, 2378.76, 1794.49, 3021.74, 2293.27, 2772.81, 1972.14, 1951.89, 3076.61, 2424.67, 2794.54, 2684.53, 1129.06, 4929.68, 2597.94, 1920.95, 10839.40, 1175.28),
   vti_minimo = c(2153.26, 2086.10, 12437.56, 1891.30, 18416.67, 12437.56, 1109.83, 1924.33, 2725.20, 22676.14, 2021.94, 1525.32, 2568.48, 1949.28, 2356.89, 1676.32, 1659.10, 2615.12, 2060.97, 2375.36, 2281.85, 959.70, 4190.23, 2208.25, 1632.81, 9213.49, 998.99),
   vti_maximo = c(2913.24, 2822.37, 16827.28, 2558.82, 24916.67, 16827.28, 1501.53, 2603.51, 3687.03, 30679.48, 2735.57, 2063.66, 3475.00, 2637.26, 3188.73, 2267.96, 2244.67, 3538.10, 2788.37, 3213.72, 3087.21, 1298.42, 5669.13, 2987.64, 2209.10, 12465.31, 1351.58),
@@ -637,7 +637,7 @@ Sabugi, São José do Seridó, São Vicente, Serra Negra do Norte, Tenente Laure
 RNMRTCaicoCerroCora_2025 <- data.frame(
   mrt = "MRT Caicó",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Agrícola (Serra de Santana)", "Exploração mista - Agrícola + Pastagem baixa capacidade", "Exploração mista - Agrícola + Pastagem média capacidade", "Agricola - Fruticulturas diversas média capacidade (Serra de Santana)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Acari)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Bodó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Caicó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Carnaúba dos Dantas)", "Agrícola - Fruticulturas diversas média capacidade (Cerro-Corá)", "Exploração mista - Agricola + Pastagem baixa capacidade (Cruzeta)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Currais Novos)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Equador)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Florânia)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jardim de Piranhas)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jardim do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Jucurutu)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Ouro Branco)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Parelhas)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Santana do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São Fernando)", "Exploração mista - Agricola + Pastagem baixa capacidade (São João do Sabugi)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São José do Seridó)", "Exploração mista - Agrícola + Pastagem baixa capacidade (São Vicente)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Serra Negra do Norte)", "Agricola - Fruticulturas diversas média capacidade (Ten. Laurentino Cruz)", "Exploração mista - Agrícola + Pastagem baixa capacidade (Timbaúba dos Batistas)"),
-  nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(0, 1, 3, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(2550.75, 2295.68, 14573.49, 2295.68, 21666.67, 14573.49, 1305.68, 2358.31, 2263.92, 3206.11, 26677.81, 2378.76, 1754.23, 3021.74, 2703.59, 2772.81, 1972.14, 1951.89, 3076.61, 2424.67, 2794.54, 2684.53, 1129.06, 4929.68, 2267.30, 1920.95, 10662.60, 1175.28),
   vti_minimo = c(2168.14, 1951.33, 12387.46, 1951.33, 18416.67, 12387.46, 1109.83, 2004.56, 1924.33, 2725.20, 22676.14, 2021.94, 1491.10, 2568.48, 2298.05, 2356.89, 1676.32, 1659.10, 2615.12, 2060.97, 2375.36, 2281.85, 959.70, 4190.23, 1927.21, 1632.81, 9063.21, 998.99),
   vti_maximo = c(2933.36, 2640.04, 16759.51, 2640.04, 24916.67, 16759.51, 1501.53, 2712.05, 2603.51, 3687.03, 30679.48, 2735.57, 2017.37, 3475.00, 3109.13, 3188.73, 2267.96, 2244.67, 3538.10, 2788.37, 3213.72, 3087.21, 1298.42, 5669.13, 2607.40, 2209.10, 12261.99, 1351.58),
@@ -699,7 +699,7 @@ Upanema"
 RNMRT5_2019 <- data.frame(
   mrt = "MÉDIO OESTE",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de Baixo Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Médio Rendimento)", "Exploração Mista (Agricultura e/ou Pecuária de Alto Rendimento)", "Agricultura e/ou pecuária de alto rendimento (Apodi)", "Agricultura de baixo rendimento (Caraúbas)", "Agricultura de alto rendimento (Ipanguaçu)", "Agricultura de baixo rendimento (São Rafael)"),
-  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(1816.59, 1816.59, 941.35, 1684.97, 2292.65, 2288.29, 1337.6, 14535.35, 698.29),
   vti_minimo = c(838.19, 838.19, 526.06, 1366.95, 2118.52, 2093.98, 790.83, 12403.27, 420.31),
   vti_maximo = c(2794.99, 2794.99, 1356.64, 2002.99, 2466.78, 2482.61, 1884.37, 16667.43, 976.26),
@@ -753,7 +753,7 @@ RNMRTMossoroAssu_2021 <- data.frame(
     "Exploração Mista (Agricultura e/ou Pecuária de médio rendimento - Serra do Mel)",
     "Exploração Mista (Agricultura e/ou Pecuária de alto rendimento - Upanema)"
   ),
-  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(
     2603.52, 2603.52, 2551.48, 2217.29, 3482.76, 9000.72, 2297.81, 2261.40,
     3449.58, 1430.67, 2143.20, 4963.77, 1301.51, 2299.86, 3068.40, 4517.61,
@@ -811,7 +811,7 @@ Guerra)", "Expl. Mista - Agrícola + pastagem de baixa capacidade
 (Upanema)", "Expl. Mista - Agrícola + pastagem de média capacidade 
 (Upanema)", "Expl. Mista - Agrícola + pastagem de Alta capacidade 
 (Upanema)"),
-  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(3009.42, 2817.98, 7014.03, 1623.25, 3259.59, 2162.58, 4160.03, 8688.65, 12717.95, 1067.67, 3171.30, 4196.57, 6770.19, 1521.61, 3253.44, 1389.17, 2697.01, 7659.56, 3403.68, 1519.77, 2211.17, 3405.55, 4267.08, 18437.69, 3996.30, 7722.14, 4160.03, 1250.04, 3480.25, 1258.49),
   vti_minimo = c(2558.01, 2395.29, 5961.93, 1379.76, 2770.65, 1838.19, 3536.02, 7385.35, 10810.26, 907.52, 2695.60, 3567.08, 5754.66, 1293.37, 2765.42, 1180.79, 2292.46, 6510.62, 2893.13, 1291.81, 1879.49, 2894.71, 3627.02, 15672.04, 3396.85, 6563.82, 3536.02, 1062.54, 2958.21, 1069.72),
   vti_maximo = c(3460.84, 3240.68, 8066.14, 1866.74, 3748.53, 2486.97, 4784.03, 9991.94, 14625.64, 1227.83, 3646.99, 4826.05, 7785.72, 1749.85, 3741.45, 1597.55, 3101.56, 8808.49, 3914.23, 1747.74, 2542.84, 3916.38, 4907.15, 21203.34, 4595.74, 8880.46, 4784.03, 1437.55, 4002.28, 1447.26),
@@ -869,7 +869,7 @@ Ver e Viçosa"
 RNMRT2_2019 <- data.frame(
   mrt = "MRT ALTO OESTE",
   tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Exploração Mista", "Exploração Mista (Agricultura e/ou Pecuária de baixo rendimento)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Alexandria)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Antônio Martins)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Encanto)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Janduís)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Marcelino Vieira)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Olho d`água dos Borges)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Patu)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Pilões)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Riacho de Santana)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Francisco do Oeste)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (São Miguel)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Taboleiro Grande)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Umarizal)", "Exploração Mista(Agricultura e/ou Pecuária de baixo rendimento (Venha Ver)"),
-  nivel = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(1559.14, 1559.14, 1559.14, 1420.46, 913.11, 1358.45, 940.97, 1466.09, 1751.62, 2245.61, 1243.08, 4496.06, 2568.65, 2013.92, 1810.68, 1119.43, 1459.78),
   vti_minimo = c(807.36, 807.36, 807.36, 1000.49, 854.5, 1177.24, 753.99, 783.61, 994.31, 1107.71, 1174.45, 3579.03, 1422.6, 1551.47, 690.72, 988.66, 616.05),
   vti_maximo = c(2310.91, 2310.91, 2310.91, 1840.44, 971.73, 1539.66, 1127.95, 2148.57, 2508.93, 3383.51, 1311.71, 5413.1, 3714.71, 2476.37, 2930.63, 1250.21, 2303.51),
@@ -1038,7 +1038,7 @@ capacidade (Itajá)", "Exploração mista – Agrícola + Pastagem, baixa
 capacidade (Jardim de Angicos)", "Pecuária diversos - baixa capacidade (Lajes)", "Pecuária diversos - baixa capacidade (Pedro 
 Avelino)", "Pecuária Bovino - Pastagem Nativa (Santana do 
 Matos)", "Pecuária Bovino - Pastagem Nativa (São Rafael)"),
-  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(1860.81, 1646.50, 2232.55, 1902.61, 1476.38, 2120.43, 4752.65, 835.90, 2204.94, 965.89, 4752.65, 2811.01, 2969.05, 2195.89, 1002.45, 2072.80),
   vti_minimo = c(1581.69, 1399.52, 1897.67, 1617.22, 1254.92, 1802.36, 4039.76, 710.51, 1874.20, 821.00, 4039.76, 2389.35, 2523.69, 1866.51, 852.08, 1761.88),
   vti_maximo = c(2139.93, 1893.47, 2567.43, 2188.00, 1697.84, 2438.49, 5465.55, 961.28, 2535.68, 1110.77, 5465.55, 3232.66, 3414.41, 2525.28, 1152.82, 2383.72),
