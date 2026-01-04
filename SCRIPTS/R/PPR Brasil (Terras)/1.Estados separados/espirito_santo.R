@@ -11,7 +11,7 @@
 ESMRT_Norte_2016 <- data.frame(
   mrt = "Norte",
   tipologia_de_uso = c("Uso Indefinido (Media geral)", "Pecuária na Região Noroeste", "Pecuária (Excelo Noroeste)", "Exploração Mista"),
-  nivel = c(0, 1, 1, 1),
+  nivel = c(0, 2, 2, 1),
   vti_media = c(10832.67, 7454.00, 11778.20, 13911.85),
   vti_minimo = c(9207.77, 6335.90, 10011.47, 11825.07),
   vti_maximo = c(12457.57, 8572.09, 13544.93, 15998.62),
@@ -220,7 +220,7 @@ ESMRT_Centro_Norte_I_2024 <- data.frame(
 ### 2016 ####
 ESMRT_Noroeste_2016 <- data.frame(
   mrt = "Noroeste",
-  tipologia_de_uso = c("Uso Indefinido (Média geral)", "Pecuária", "Café (Arábica e Conilon)", "Exploração Mista"),
+  tipologia_de_uso = c("Uso Indefinido (Média geral)", "Pecuária", "Café (Arábica e Conilon", "Exploração Mista"), #"Café (Arábica e Conilon)" virou agricola
   nivel = c(0, 1, 1, 1),
   vti_media = c(11389.55, 11793.36, 10569.35, 10192.84),
   vti_minimo = c(9681.12, 10024.36, 8983.95, 8663.91),
@@ -289,7 +289,7 @@ ESMRT_Noroeste_2024 <- data.frame(
 #### 2016 ####
 ESMRT_Centro_Norte_II_2016 <- data.frame(
   mrt = "Centro-Norte II",
-  tipologia_de_uso = c("Uso Indefinido (Média geral)", "Café Conilon", "Exploração Mista", "Pecuária"),
+  tipologia_de_uso = c("Uso Indefinido (Média geral)", "café conilon", "Exploração Mista", "Pecuária"), #café conilon -> agrícola
   nivel = c(0, 1, 1, 1),
   vti_media = c(24821.46, 42424.24, 31927.74, 17398.84),
   vti_minimo = c(21098.24, 36060.61, 27138.58, 14789.02),
@@ -360,8 +360,8 @@ ESMRT_Centro_Norte_II_2024 <- data.frame(
 ### 2016 #####
 ESMRT_Centro_Leste_2016 <- data.frame(
   mrt = "Centro-Leste",
-  tipologia_de_uso = c("Uso Indefinido (Media geral)", "Pecuária a Oeste do Mercado", "Pecuária a Leste do Mercado", "Exploração Mista", "Café (Arábica e Conilon)", "Silvicultura", "Mata"),
-  nivel = c(0, 1, 1, 1, 1, 1, 1),
+  tipologia_de_uso = c("Uso Indefinido (Media geral)", "Pecuária a Oeste do Mercado", "Pecuária a Leste do Mercado", "Exploração Mista", "Café (Arábica e Conilon)", "Silvicultura", "vegetação nativa"),
+  nivel = c(0, 1, 2, 2, 1, 1, 1),
   vti_media = c(11711.31, 8990.32, 17269.28, 10129.01, 18140.50, 10598.07, 6953.21),
   vti_minimo = c(9954.61, 7641.77, 14678.89, 8609.66, 15419.42, 9008.36, 5910.22),
   vti_maximo = c(13468.00, 10338.87, 19859.68, 11648.36, 20861.57, 12187.78, 7996.19),
@@ -450,7 +450,7 @@ ESMRT_Centro_Oeste_2016 <- data.frame(
 ##### 2018 ###
 ESMRT_Centro_Oeste_2018 <- data.frame(
   mrt = "Centro-Oeste",
-  tipologia_de_uso = c("Uso Indefinido (Média geral)", "Pecuária", "Exploração Mista", "Mata", "Explor. Mista (Pecuária e Agricultura)", "Pecuária (Baixo Guandu)", "Pecuária (Itaguaçu e Itarana)"),
+  tipologia_de_uso = c("Uso Indefinido (Média geral)", "Pecuária", "Exploração Mista", "Vegetação Nativa", "Explor. Mista (Pecuária e Agricultura)", "Pecuária (Baixo Guandu)", "Pecuária (Itaguaçu e Itarana)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2),
   vti_media = c(8059.58, 7734.02, 10614.60, 3336.78, 10764.08, 5527.10, 13908.38),
   vti_minimo = c(6850.64, 6573.92, 9022.41, 2836.26, 9149.46, 4698.04, 11822.13),
@@ -463,7 +463,7 @@ ESMRT_Centro_Oeste_2018 <- data.frame(
 ##### 2021 ###
 ESMRT_Centro_Oeste_2021 <- data.frame(
   mrt = "Centro-Oeste",
-  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Mata", "Pecuária (Alto Suporte)", "Pecuária (Baixo Suporte)", "Pecuária (Baixo Suporte) - Baixo Guandu"),
+  tipologia_de_uso = c("Uso Indefinido (Média Geral)", "Pecuária", "Exploração Mista", "Vegetação nativa", "Pecuária (Alto Suporte)", "Pecuária (Baixo Suporte)", "Pecuária (Baixo Suporte) - Baixo Guandu"),
   nivel = c(0, 1, 1, 1, 2, 2, 3),
   vti_media = c(13495.58, 12384.74, 22304.61, 5303.03, 17237.31, 8269.19, 6951.76),
   vti_minimo = c(11471.25, 10527.03, 18958.91, 4507.58, 14651.71, 7028.81, 5908.99),
@@ -548,7 +548,7 @@ ESMRT_Serrano_2021 <- data.frame(
 ESMRT_Serrano_2022 <- data.frame(
   mrt = "Serrano",
   tipologia_de_uso = c("Geral", "Agrícola", "Pecuária", "Exploração Mista", "Floresta Plantada", "Agrícola - Produção Diversificada", "Pecuária - Diversos", "Exploração Mista - Diversificada", "Floresta Plantada - Silvicultura"),
-  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2),
   vti_media = c(29078.00, 69348.00, 22407.00, 31662.00, 37350.00, 69348.00, 22407.00, 31662.00, 37350.00),
   vti_minimo = c(24716.00, 58946.00, 19046.00, 26913.00, 31748.00, 58946.00, 19046.00, 26913.00, 31748.00),
   vti_maximo = c(33440.00, 79750.00, 25768.00, 36411.00, 42953.00, 79750.00, 25768.00, 36411.00, 42953.00),

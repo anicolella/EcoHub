@@ -17,6 +17,13 @@ resultado_igpdi_limpo <- resultado_igpdi %>%
 
 resultado_igpdi_limpo <- resultado_igpdi_limpo  |> filter(nivel == 0 | nivel == 1)
 
+
+result_analis <- resultado_igpdi_limpo |>
+  distinct(tipologia_de_uso, .keep_all = TRUE)
+
+
+
+
 library(dplyr)
 library(stringr)
 

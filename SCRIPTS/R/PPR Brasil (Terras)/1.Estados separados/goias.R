@@ -23,7 +23,7 @@ GOMRT01_2022 <- data.frame(
   tipologia_de_uso = c(
     "Geral",
     "Agricultura-grãos diversos",
-    "Exploração Mista Agricola Pastagem",
+    "Exploração Mista",
     "Pecuária-Bovino-Pastagem Formada.",
     "Vegetação Nativa - Cerrado",
     "Agricultura-grãos diversos- Médio Suporte",
@@ -62,8 +62,11 @@ GOMRT01_2024 <- data.frame(
 ###2017####
 GOMRT2_2017 <- data.frame(
   mrt = "MRT 2 – RIO MARANHÃO",
-  tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2),
+  tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", 
+  "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", 
+  "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", 
+  "AGRICULTURA ALTA (> 55sc/ha)"),
+  nivel = c(0, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(5419.44, 4651.75, 3168.93, 3802.72, 5178.41, 6367.17, 4800.27, 6367.17, 10426.93, 12685.95, 15276.80, NA, 12642.87),
   vti_minimo = c(424.90, 2247.31, 2787.39, 24.10, 4334.79, 4419.74, 2429.70, 6168.20, 7794.08, 10240.03, 14223.22, NA, 11452.62),
   vti_maximo = c(10159.28, 8464.37, 3524.62, 10100.43, 5885.16, 9580.14, 7155.52, 6677.52, 12295.60, 16647.61, 16330.38, NA, 13143.06),
@@ -116,8 +119,10 @@ GOMRT02_2024 <- data.frame(
 ###2017####
 GOMRT3_2017 <- data.frame(
   mrt = "MRT 3 – SÃO PATRÍCIO",
-  tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha.)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2),
+  tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", 
+  "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)",
+   "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha.)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
+  nivel = c(0, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(11505.31, 9350.56, 6974.57, 12296.20, 9426.86, 13573.04, 10466.86, 13696.44, 16906.67, 17932.85, 17932.85, NA, NA),
   vti_minimo = c(5929.82, 4477.70, 5032.81, 12230.96, 7797.27, 3473.38, 10160.04, 11158.53, 15973.21, 16884.82, 16884.82, NA, NA),
   vti_maximo = c(24997.10, 13664.83, 8892.22, 12361.45, 11565.01, 22683.01, 10875.09, 17268.16, 17840.14, 19679.56, 19679.56, NA, NA),
@@ -170,8 +175,10 @@ GOMRT03_2024 <- data.frame(
 ###2017####
 GOMRT4_2017 <- data.frame(
   mrt = "MRT 4 – SERRA DOURADA",
-  tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2),
+  tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", 
+  "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)",
+   "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
+  nivel = c(0, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(13512.00, 9948.20, 5194.75, 12699.83, 9948.20, 11955.59, 8552.23, 12269.68, 14010.28, 20323.69, 19013.61, 28942.95, 21166.38),
   vti_minimo = c(5194.75, 5194.75, 5194.75, 3463.61, 9948.20, 5001.36, 5843.35, 8903.34, 11554.13, 15784.47, 16403.94, 6171.36, 20323.69),
   vti_maximo = c(30804.84, 23783.29, 5194.75, 18241.56, 9948.20, 18980.91, 11157.05, 15803.50, 16809.91, 24395.52, 20637.22, 44851.19, 21226.58),
@@ -224,7 +231,7 @@ GOMRT04_2024 <- data.frame(
 GOMRT5_2017 <- data.frame(
   mrt = "MRT 5 – CINTURÃO VERDE",
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2),
   vti_media = c(22816.34, 22816.34, 17957.30, 38660.76, 21126.24),
   vti_minimo = c(53.00, 53.00, 17957.30, 29516.25, 21126.24),
   vti_maximo = c(56248.29, 56248.29, 17957.30, 44606.41, 23238.86),
@@ -243,7 +250,7 @@ GOMRT05_2022 <- data.frame(
     "Pecuária-Diversos",
     "Pecuária-Bovino-Pastagem Formada",
     "Exploração Mista Agricola + Pastagem + Floresta plantada",
-    "Agrícola - Fruticultura Laranja",
+    "Fruticultura Laranja",
     "Vegetação Nativa - Cerrado",
     "Pecuária-Diversos-Ato supotre",
     "Pecuária - Bovino -Pastagem Formada Médio Suporte"
@@ -278,7 +285,7 @@ GOMRT05_2024 <- data.frame(
 GOMRT6_2017 <- data.frame(
   mrt = "MRT 6 – CAIAPÓ",
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(8450.50, 5830.34, 3802.72, 5281.56, 6337.87, 10439.74, 9445.12, NA, 14524.29, 21126.24, NA, 15651.37, 24295.17),
   vti_minimo = c(3802.72, 3697.09, 3802.72, 5281.56, 4911.22, 5097.32, 5051.46, NA, 14524.29, 9529.25, NA, 15651.37, 21126.24),
   vti_maximo = c(21060.22, 7922.34, 3802.72, 5281.56, 8038.91, 13842.60, 13820.76, NA, 14524.29, 33154.72, NA, 15651.37, 30633.04),
