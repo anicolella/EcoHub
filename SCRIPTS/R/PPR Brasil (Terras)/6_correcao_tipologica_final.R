@@ -219,3 +219,8 @@ print(head(df_tratado, 20))
 
 # Contagem para verificar distribuição
 table(df_tratado$Tipologia_Final, df_tratado$Nivel)
+
+write.csv2(df_classificado, 
+           file = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.csv", 
+           row.names = FALSE,  # Não cria coluna de índice 1,2,3
+           fileEncoding = "UTF-8") # Garante que "Pecuária" não vire "PecuÃ¡ria" no Excel
