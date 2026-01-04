@@ -56,7 +56,7 @@ ACMRT1_2021 <- data.frame(
 ##2022####
 ACMRT01_2022 <- data.frame(
   mrt = "MRT-01 (JURUÁ)",
-  tipologia_de_uso = c("Geral", "Agricultura - grãos diversos", "Pecuária", "Vegetação nativa floresta amazônica", "Pecuária - bovino- pastagem - Alto nível tecnológico", "Pecuária - bovino- pastagem Médio nível tecnológico", "Pecuária - bovino- pastagem - Baixo nível tecnológico"),
+  tipologia_de_uso = c("Geral", "Agricultura", "Pecuária", "Vegetação nativa floresta amazônica", "Pecuária - bovino- pastagem - Alto nível tecnológico", "Pecuária - bovino- pastagem Médio nível tecnológico", "Pecuária - bovino- pastagem - Baixo nível tecnológico"),
   nivel = c(0, 1, 1, 1, 2, 2, 2),
   vti_media = c(6296.21, NA, 7282.27, 1126.67, 17896.89, 8094.52, 4217.80),
   vti_minimo = c(5351.78, NA, 6189.93, 957.67, 15212.36, 6880.34, 3585.13),
@@ -105,7 +105,7 @@ MRT1403_2024 <- data.frame(
 ##2025####
 ACMRT01_2025 <- data.frame(
   mrt = "MRT-01 (JURUÁ)",
-  tipologia_de_uso = c("Geral", "Pecuária Bovino-Pastagem Formada", "Floresta mata nativa", "Pecuária Bovino-Pastagem Formada Baixo Suporte", "Pecuária Bovino-Pastagem Formada- médio Suporte", "Pecuária Bovino-Pastagem Formada-Alto Suporte"),
+  tipologia_de_uso = c("Geral", "Pecuária", "Floresta mata nativa", "Pecuária Bovino-Pastagem Formada Baixo Suporte", "Pecuária Bovino-Pastagem Formada- médio Suporte", "Pecuária Bovino-Pastagem Formada-Alto Suporte"),
   nivel = c(0, 1, 1, 2, 2, 2),
   vti_media = c(4924.94, 7309.58, 995.83, 2996.05, 6854.93, 12548.74),
   vti_minimo = c(4186.20, 6213.14, 846.46, 2546.64, 5826.69, 10666.43),
@@ -120,7 +120,7 @@ ACMRT01_2025 <- data.frame(
 ##2016####
 ACMRT_Zona2_2016 <- data.frame(
   mrt = "MRT-02 (TARAUACA-ENVIRA)",
-  tipologia_de_uso = c("MÉDIA GERAL (USO INDEFINIDO)", "Seringal", "Exploração mista (Fazenda)"),
+  tipologia_de_uso = c("MÉDIA GERAL (USO INDEFINIDO)", "Seringal", "Exploração mista"),
   nivel = c(0, 1, 1),
   vti_media = c(NA, NA, NA),
   vti_minimo = c(NA, NA, NA),
@@ -133,7 +133,7 @@ ACMRT_Zona2_2016 <- data.frame(
 ##2019####
 ACMRT_02_2019 <- data.frame(
   mrt = "MRT-02 (TARAUACA-ENVIRA)",
-  tipologia_de_uso = c("Seringal", "Fazenda"),
+  tipologia_de_uso = c("Seringal", "Exploração misra"), #aqui no lugar de exporação mista era fazenda, porem fazenda em 2016 tava seguido de *exploração mista. Então fiz a substituição - João 
   nivel = c(1, 1),
   vti_media = c(552.78, 1174.85),
   vti_minimo = c(469.86, 998.63),
@@ -171,8 +171,8 @@ ACMRT2_2021 <- data.frame(
 )
 ##2022####
 ACMRT02_2022 <- data.frame(
-  mrt = "MRT-02 (TARAUACA-ENVIRA)",
-  tipologia_de_uso = c("Geral", "Pecuária", "Vegetação nativa floresta amazônica", "Pecuária - bovino- pastagem Médio nível tecnológico", "Pecuária - bovino- pastagem - Baixo nível tecnológico"),
+  mrt = "MRT-02 (TARAUACA-ENVIRA)", # a vegetação nativa abaixo é da floresta amazonica
+  tipologia_de_uso = c("Geral", "Pecuária", "Vegetação nativa", "Pecuária - bovino- pastagem Médio nível tecnológico", "Pecuária - bovino- pastagem - Baixo nível tecnológico"),
   nivel = c(0, 1, 1, 2, 2),
   vti_media = c(1706.78, 3521.22, 841.21, 6523.46, 2979.27),
   vti_minimo = c(1450.76, 2993.04, 715.03, 5544.95, 2532.38),
@@ -219,7 +219,7 @@ MRT1402_2024 <- data.frame(
 ##2025####
 ACMRT02_2025 <- data.frame(
   mrt = "MRT-02 (TARAUACA-ENVIRA)",
-  tipologia_de_uso = c("Geral", "Pecuária-Bovino-Pastagem Formada", "Floresta mata nativa", "Pecuária Bovino-Pastagem Formada-Baixo Suporte", "Pecuária Bovino-Pastagem Formada-Médio Suporte"),
+  tipologia_de_uso = c("Geral", "Pecuária", "vegetação nativa", "Pecuária Bovino-Pastagem Formada-Baixo Suporte", "Pecuária Bovino-Pastagem Formada-Médio Suporte"),
   nivel = c(0, 1, 1, 2, 2),
   vti_media = c(3749.70, 7302.23, 1212.18, 4533.69, 9147.92),
   vti_minimo = c(3187.24, 6206.89, 1030.35, 3853.63, 7775.73),
@@ -233,7 +233,7 @@ ACMRT02_2025 <- data.frame(
 ##2016####
 ACMRT_Zona3_2016 <- data.frame(
   mrt = "MRT-03 (RIO ACRE)",
-  tipologia_de_uso = c("MÉDIA GERAL (USO INDEFINIDO)", "Seringal", "Exploração mista (Fazenda)"),
+  tipologia_de_uso = c("MÉDIA GERAL (USO INDEFINIDO)", "Seringal", "Exploração mista"),
   nivel = c(0, 1, 1),
   vti_media = c(NA, NA, NA),
   vti_minimo = c(NA, NA, NA),
@@ -246,7 +246,7 @@ ACMRT_Zona3_2016 <- data.frame(
 ##2019####
 ACMRT_03_2019 <- data.frame(
   mrt = "MRT-03 (RIO ACRE)",
-  tipologia_de_uso = c("Seringal", "Fazenda"),
+  tipologia_de_uso = c("Seringal", "Exploração mista"),
   nivel = c(1, 1),
   vti_media = c(694.75, 3603.29),
   vti_minimo = c(590.54, 3062.80),
@@ -283,9 +283,9 @@ ACMRT3_2021 <- data.frame(
   origem = "Sena Madureira, Rio Branco, Bujari, Porto Acre, Acrelândia, Senador Guiomard, Placido de Castro, Capixaba, Xapuri, Epitaciolândia, Brasileia e Assis Brasi"
 )
 ##2022####
-ACMRT03_2022 <- data.frame(
+ACMRT03_2022 <- data.frame( #vegetaçao nativa amazonia
   mrt = "MRT-03 (RIO ACRE)",
-  tipologia_de_uso = c("Geral", "Agricultura - grãos diversos", "Pecuária", "Vegetação nativa floresta amazônica", "Pecuária - bovino- pastagem - Alto nível tecnológico", "Pecuária - bovino- pastagem Médio nível tecnológico", "Pecuária - bovino- pastagem - Baixo nível tecnológico"),
+  tipologia_de_uso = c("Geral", "Agricultura", "Pecuária", "Vegetação nativa", "Pecuária - bovino- pastagem - Alto nível tecnológico", "Pecuária - bovino- pastagem Médio nível tecnológico", "Pecuária - bovino- pastagem - Baixo nível tecnológico"),
   nivel = c(0, 1, 1, 1, 2, 2, 2),
   vti_media = c(17158.95, 32600.00, 16740.47, 4061.38, 25625.00, 15771.90, 11882.62),
   vti_minimo = c(14585.11, 27710.00, 14229.40, 3452.17, 21781.25, 13406.12, 10100.23),
@@ -298,7 +298,7 @@ ACMRT03_2022 <- data.frame(
 ##2025####
 ACMRT03_2025 <- data.frame(
   mrt = "MRT-03 (RIO ACRE)",
-  tipologia_de_uso = c("Geral", "Pecuária-Bovino-Pastagem Formada", "Agricultura Grãos soja e milho", "Floresta mata nativa", "Pecuária Bovino-Pastagem Formada-Baixo Suporte", "Pecuária Bovino Pastagem Formada Médio Suporte", "Pecuária Bovino -Pastagem Formada-Alto Suporte"),
+  tipologia_de_uso = c("Geral", "Pecuária", "Agricultura Grãos soja e milho", "Floresta mata nativa", "Pecuária Bovino-Pastagem Formada-Baixo Suporte", "Pecuária Bovino Pastagem Formada Médio Suporte", "Pecuária Bovino -Pastagem Formada-Alto Suporte"),
   nivel = c(0, 1, 1, 1, 2, 2, 2),
   vti_media = c(15065.18, 16384.01, 29403.19, 2244.08, 9829.28, 17201.59, 23707.84),
   vti_minimo = c(12805.41, 13926.41, 24992.71, 1907.47, 8354.89, 14621.35, 20151.66),

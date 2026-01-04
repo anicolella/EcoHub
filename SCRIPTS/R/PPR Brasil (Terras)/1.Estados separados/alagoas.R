@@ -12,7 +12,7 @@
 #### 2018 ####
 ALMRT1_2018 <- data.frame(
   mrt = "MRT 1-SERTÃO ALAGOANO",
-  tipologia_de_uso = c("média geral", "Terras de Pecuária", "Terras de Vegetação Nativa (Caatinga)", "Terras de Pecuária com Pastagem Plantada", "Terras de Pecuária com Pastagem Nativa", "Terras de Pecuária com Pastagem Plantada em Batalha"),
+  tipologia_de_uso = c("média geral", "pecuária", " vegetação nativa", "Terras de Pecuária com Pastagem Plantada", "Terras de Pecuária com Pastagem Nativa", "Terras de Pecuária com Pastagem Plantada em Batalha"),
   nivel = c(0, 1, 2, 2, 2, 2),
   vti_media = c(5835.68, 6646.98, 3696.78, 6257.36, 6885.09, 9869.22),
   vti_minimo = c(3014.81, 4163.18, 1556.74, 4204.24, 3911.85, 7663.8),
@@ -58,7 +58,7 @@ ALMRT1_2024 <- data.frame(
 #### 2018 ####
 ALMRT2_2018 <- data.frame(
   mrt = "MRT 2-AGRESTE ALAGOANO",
-  tipologia_de_uso = c("media geral", "Terras de Pecuária", "Terras de Agricultura", "Terras de Pecuária com Pastagem Plantada", "Terras de Pecuária com Pastagem Plantada em Quebrangulo"),
+  tipologia_de_uso = c("media geral", "Pecuária", "Agricultura", "Terras de Pecuária com Pastagem Plantada", "Terras de Pecuária com Pastagem Plantada em Quebrangulo"),
   nivel = c(0, 1, 1, 2, 2),
   vti_media = c(18178.3, 18511.88, 16202.74, 18580.68, 20885.92),
   vti_minimo = c(12411.61, 12226.68, 15007.86, 12308.4, 15806.9),
@@ -101,9 +101,9 @@ ALMRT3_2018 <- data.frame(
   mrt = "MRT 3-ZONA DA MATA ALAGOANA",
   tipologia_de_uso = c(
     "Uso Indefinido (Média Geral do MRT)",
-    "Terras de Agricultura",
-    "Terras de Pecuária",
-    "Terras de Exploração Mista",
+    "Agricultura",
+    "Pecuária",
+    "Exploração Mista",
     "Terras de Agricultura com Cana de Açúcar",
     "Terras de Pecuária com Pastagem Plantada",
     "Terras de Exploração Mista com Cana de Açúcar e Pastagem",

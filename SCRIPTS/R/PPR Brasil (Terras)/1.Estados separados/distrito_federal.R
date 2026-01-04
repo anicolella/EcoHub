@@ -44,7 +44,7 @@ DFMRT1_2020 <- data.frame(
 ## 2021 ####
 DFMRT1_2021 <- data.frame(
   mrt = "MRT 1 – VÃO DO PARANÃ",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Atividade Mista", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Pecuária de Baixo Suporte (Monte Alegre)", "Pecuária de Médio Suporte (Divinópolis)", "Pecuária de Médio Suporte (São Domingos)", "Pecuária de Alto Suporte (Alvorada do Norte)", "Pecuária de Alto Suporte (Flores de Goiás)", "Pecuária de Alto Suporte (Monte Alegre)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Pecuária de Baixo Suporte (Monte Alegre)", "Pecuária de Médio Suporte (Divinópolis)", "Pecuária de Médio Suporte (São Domingos)", "Pecuária de Alto Suporte (Alvorada do Norte)", "Pecuária de Alto Suporte (Flores de Goiás)", "Pecuária de Alto Suporte (Monte Alegre)"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3),
   vti_media = c(9539.06, 9298.38, 15572.76, 3369.71,
                 7244.90, 13474.76, 3520.39, 8561.39,
@@ -77,7 +77,7 @@ DFMRT1_2021 <- data.frame(
 #O MRT mudou de nome pós 2020, o nome anterior era: "MRT 2-Buritis / Arinos"
 DFMRT2_2017 <- data.frame(
   mrt ="MRT 2 – MAMBAÍ/ FORMOSO" ,
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista (lavoura e pecuária)", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Médio Suporte (Buritis)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Médio Suporte (Buritis)"),
   nivel = c(0, 1, 1, 2, 2, 2),
   vti_media = c(4306.52, 4184.09, 4691.05, 2519.03, 4756.51, 4867.94),
   vti_minimo = c(2160.70, 2289.14, 3405.64, 1436.30, 3029.21, 3690.75),
@@ -91,7 +91,7 @@ DFMRT2_2017 <- data.frame(
 ## 2020 ####
 DFMRT2_2020 <- data.frame(
   mrt = "MRT 2 – MAMBAÍ/ FORMOSO",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Mata", "Pecuária", "Exploração Mista", "Mata Nativa", "Pecuária de Alto Suporte", "Exploração Mista (Misto: Lavoura de Alta Produtividade e Pecuária de Médio Suporte).", "Exploração Mista - Misto: Lavoura de Alta Produtividade e Pecuária de Médio Suporte (Sitio D' Abadia)."),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "vegetação nativa", "Pecuária", "Exploração Mista", "Mata Nativa", "Pecuária de Alto Suporte", "Exploração Mista (Misto: Lavoura de Alta Produtividade e Pecuária de Médio Suporte).", "Exploração Mista - Misto: Lavoura de Alta Produtividade e Pecuária de Médio Suporte (Sitio D' Abadia)."),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 3),
   vti_media = c(4236.48, 1212.38, 4989.19, 9199.74, 1212.38, 7664.51, 9199.74, 9199.74),
   vti_minimo = c(3389.18, 969.91, 3991.35, 7359.79, 969.91, 6131.61, 7359.79, 7359.79),
@@ -122,7 +122,7 @@ DFMRT2_2021 <- data.frame(
 ## 2017 ####
 DFMRT3_2017 <- data.frame(
   mrt = "MRT 3 – UNAÍ / CRISTALINA",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista (lavoura e pecuária)", "Lavoura", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Lavoura de Alta Produtiviade", "Pecuária de Médio Suporte (Unai)", "Pecuária de Alto Suporte (Unai)", "Lavoura de Alta Produtiviade (Cristalina)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "agricola", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Lavoura de Alta Produtiviade", "Pecuária de Médio Suporte (Unai)", "Pecuária de Alto Suporte (Unai)", "Lavoura de Alta Produtiviade (Cristalina)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
   vti_media = c(9887.72, 7967.66, 13684.76, 12671.14,  7621.87,7271.46, 12671.14, 8008.33, 7833.80, 12671.14),
   vti_minimo = c(6193.43, 5481.86, 8943.32, 10760.45, 4704.12, 5811.49, 10760.45, 4992.04, 5087.02, 10760.45),
@@ -228,7 +228,7 @@ DFMRT4_2021 <- data.frame(
 ## 2017 ####
 DFMRT5_2017 <- data.frame(
   mrt = "MRT 5 – PADRE BERNARDO",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Lavoura", "Lavoura de Alta Produtividade"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "agricultura", "Lavoura de Alta Produtividade"),
   nivel = c(0, 1, 1, 2),
   vti_media = c(7322.89, 6365.49, 12010.90, 12010.90),
   vti_minimo = c(4644.15, 4258.14, 9003.59, 9003.59),
@@ -271,7 +271,7 @@ DFMRT5_2021 <- data.frame(
 ## 2017 ####
 DFMRT6_2017 <- data.frame(
   mrt = "MRT 6 – FORMOSA / SÃO JOÃO D'ALIANÇA",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "Lavoura", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Exploração Mista (Lavoura de Média Produtividade e Pecuária de Médio Suporte)", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte (São João da Aliança)", "Lavoura de Alta Produtividade (Planaltina de Goiás)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "agricultura", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Exploração Mista (Lavoura de Média Produtividade e Pecuária de Médio Suporte)", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte (São João da Aliança)", "Lavoura de Alta Produtividade (Planaltina de Goiás)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(6098.68, 5590.91, 6362.91, 16827.59, 2396.00, 4931.23, 8888.37, 4481.69, 21375.00, 4952.28, 24500.00),
   vti_minimo = c(3182.87, 2897.54, 3544.68, 6716.55, 1524.70, 4054.50, 7555.12, 3808.02, 12017.52, 4126.35, 15970.64),
@@ -284,7 +284,7 @@ DFMRT6_2017 <- data.frame(
 ## 2020 ####
 DFMRT6_2020 <- data.frame(
   mrt = "MRT 6 – FORMOSA / SÃO JOÃO D'ALIANÇA",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "Lavoura", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Exploração Mista (Lavoura de Média Produtividade e Pecuária de Médio Suporte)", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte (Planaltina)", "Lavoura de Alta Produtividade (Planaltina)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Exploração Mista", "agricultura", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Exploração Mista (Lavoura de Média Produtividade e Pecuária de Médio Suporte)", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte (Planaltina)", "Lavoura de Alta Produtividade (Planaltina)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3),
   vti_media = c(5739.51, 5102.97, 8586.27, 28854.91, 1888.89, 5101.72, 8319.25, 6870.89, 28854.91, 5792.03, 28854.91),
   vti_minimo = c(4591.61, 4082.38, 6869.01, 24526.67, 1511.11, 4081.37, 7071.37, 5496.71, 24526.67, 4633.62, 24526.67),
@@ -297,7 +297,7 @@ DFMRT6_2020 <- data.frame(
 ## 2021 ####
 DFMRT6_2021 <- data.frame(
   mrt = "MRT 6 – FORMOSA / SÃO JOÃO D'ALIANÇA",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Atividade Mista", "Lavoura", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Atividade Mista (Lavoura de Média Produtividade e Pecuária de Médio Suporte)", "Pecuária de Médio Suporte (Formosa)", "Pecuária de Médio Suporte (Planaltina de Goiás)", "Pecuária de Alto Suporte (Cabeceiras de Goiás)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Atividade Mista", "agricultura", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Atividade Mista (Lavoura de Média Produtividade e Pecuária de Médio Suporte)", "Pecuária de Médio Suporte (Formosa)", "Pecuária de Médio Suporte (Planaltina de Goiás)", "Pecuária de Alto Suporte (Cabeceiras de Goiás)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3),
   vti_media = c(10791.02, 10462.40, 12159.98, 41459.18, 9818.52,
                 18185.80, 12159.98, 11636.04, 8124.79, 17750.00),
@@ -337,7 +337,7 @@ DFMRT7_2017 <- data.frame(
 ## 2020 ####
 DFMRT7_2020 <- data.frame(
   mrt = "MRT 7 – CHAPADA DOS VEADEIROS",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Mata", "Pecuária", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Médio Suporte (Cavalcante)", "Pecuária de Médio Suporte (Colinas do Sul)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "vegetação nativa", "Pecuária", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Médio Suporte (Cavalcante)", "Pecuária de Médio Suporte (Colinas do Sul)"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3),
   vti_media = c(3866.76, 1840.77, 4388.81, 1840.77, 2683.22, 5146.85, 4774.00, 5573.48),
   vti_minimo = c(3093.41, 1564.65, 3511.05, 1564.65, 2146.58, 4117.48, 3819.20, 4458.79),
@@ -350,7 +350,7 @@ DFMRT7_2020 <- data.frame(
 ## 2021 ####
 DFMRT7_2021 <- data.frame(
   mrt = "MRT 7 – CHAPADA DOS VEADEIROS",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Mata", "Pecuária", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Mata Nativa (Cavalcante)", "Pecuária de Médio Suporte (Cavalcante)", "Pecuária de Médio Suporte (Colinas do Sul)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "vegetação nativa", "Pecuária", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Mata Nativa (Cavalcante)", "Pecuária de Médio Suporte (Cavalcante)", "Pecuária de Médio Suporte (Colinas do Sul)"),
   nivel = c(0, 1, 1, 2, 2, 2, 3, 3, 3),
   vti_media = c(4111.86, 1984.08, 4852.84, 1984.08, 2737.59, 
                 5381.66, 1984.08, 4145.83, 5432.42),
@@ -392,7 +392,7 @@ DFMRT8_2017 <- data.frame(
 ## 2020 ####
 DFMRT8_2020 <- data.frame(
   mrt = "MRT 8 – DISTRITO FEDERAL",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Hortifrutigranjeiro", "Lavoura", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Hortifrutigranjeiro - Hortaliça", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte (DF)", "Pecuária de Alto Suporte (DF)", "Hortifrutigranjeiro - Hortaliça (DF)", "Lavoura de Alta Produtividade (DF)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Hortifrutigranjeiro", "agricultura", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Hortifrutigranjeiro - Hortaliça", "Lavoura de Alta Produtividade", "Pecuária de Médio Suporte (DF)", "Pecuária de Alto Suporte (DF)", "Hortifrutigranjeiro - Hortaliça (DF)", "Lavoura de Alta Produtividade (DF)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
   vti_media = c(23841.53, 19989.50, 27740.75, 29216.11, 19625.54, 
                 23854.84, 27740.75, 29216.11, 19625.54, 23854.84, 
@@ -423,7 +423,7 @@ DFMRT8_2020 <- data.frame(
 ##  2021 ####
 DFMRT8_2021 <- data.frame(
   mrt = "MRT 8 – DISTRITO FEDERAL",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Atividade Mista", "Lavoura", "Hortifrutigranjeiro", "Pecuária de Baixo Suporte", "Pecuária de Alto Suporte", "Atividade Mista - Lav. de Alta Prod. e Pec. de Médio Sup.", "Lavoura de Média Produtividade", "Lavoura de Alta Produtividade", "Hortifrutigranjeiro - Exploração Mista", "Pecuária de Baixo Suporte (DF)", "Pecuária de Alto Suporte (DF)", "Atividade Mista - Lav. de Alta Prod. e Pec. de Médio Sup. (DF)", "Lavoura de Média Produtividade (DF)", "Lavoura de Alta Produtividade (DF)", "Hortifrutigranjeiro - Hortaliça (DF)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Atividade Mista", "agricultura", "Hortifrutigranjeiro", "Pecuária de Baixo Suporte", "Pecuária de Alto Suporte", "Atividade Mista - Lav. de Alta Prod. e Pec. de Médio Sup.", "Lavoura de Média Produtividade", "Lavoura de Alta Produtividade", "Hortifrutigranjeiro - Exploração Mista", "Pecuária de Baixo Suporte (DF)", "Pecuária de Alto Suporte (DF)", "Atividade Mista - Lav. de Alta Prod. e Pec. de Médio Sup. (DF)", "Lavoura de Média Produtividade (DF)", "Lavoura de Alta Produtividade (DF)", "Hortifrutigranjeiro - Hortaliça (DF)"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
   vti_media = c(41777.18, 35789.21, 42511.36, 49056.46, 118941.18, 
                 16347.62, 47214.98, 46681.82, 35634.52, 66952.38,
@@ -465,7 +465,7 @@ DFMRT8_2021 <- data.frame(
 
 DFMRT9_2020 <- data.frame(
   mrt = "MRT 9 – ARINOS / CHAPADA GAÚCHA",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Mata", "Pecuária", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte (Arinos)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "vegetação nativa", "Pecuária", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Baixo Suporte (Arinos)"),
   nivel = c(0, 1, 1, 2, 2, 2, 3),
   vti_media = c(2444.32, 1632.22, 2666.71, 1632.22, 2515.52, 4827.60, 2679.22),
   vti_minimo = c(1955.46, 1305.77, 2185.91, 1305.77, 2062.24, 3862.08, 2225.25),
@@ -480,7 +480,7 @@ DFMRT9_2020 <- data.frame(
 ##2021####
 DFMRT9_2021 <- data.frame(
   mrt = "MRT 9 – ARINOS / CHAPADA GAÚCHA",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Mata", "Pecuária", "Lavoura", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Mata Nativa (Arinos)", "Pecuária de Baixo Suporte (Chapada Gaúcha)", "Pecuária de Baixo Suporte (Riachinho)", "Pecuária de Baixo Suporte (Urucuia)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "vegetação nativa", "Pecuária", "agricultura", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Mata Nativa (Arinos)", "Pecuária de Baixo Suporte (Chapada Gaúcha)", "Pecuária de Baixo Suporte (Riachinho)", "Pecuária de Baixo Suporte (Urucuia)"),
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
   vti_media = c(6455.22, 2383.00, 6946.84, 15066.67, 2383.00,
                 4540.07, 9543.26, 12183.33, 2628.80, 5383.33, 
@@ -524,7 +524,7 @@ DFMRT10_2020 <- data.frame(
 ## 2021 ####
 DFMRT10_2021 <- data.frame(
   mrt = "MRT 10 – BRASILÂNDIA DE MINAS",
-  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Lavoura", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte (Dom Bosco)"),
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "agricultura", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Pecuária de Médio Suporte (Dom Bosco)"),
   nivel = c(0, 1, 1, 2, 2, 3),
   vti_media = c(6885.27, 6645.68, 36379.64, 6794.21, 8500.00, 7468.73),
   vti_minimo = c(5508.22, 5316.54, 29103.71, 5606.20, 7225.00, 6332.13),

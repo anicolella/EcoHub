@@ -7,7 +7,7 @@
 ## 2016####
 AMMRTManaus_Entorno_2016 <- data.frame(
   mrt = "Manaus e Entorno",
-  tipologia_de_uso = c("Uso indefinido (média geral)", "Floresta"),
+  tipologia_de_uso = c("Uso indefinido (média geral)", "vegetação nativa"),# #  a vegetação nativa aqui é floresta
   nivel = c(0, 1),
   vti_media = c(6213.87, 5656.56),
   vti_minimo = c(5281.79, 4808.08),
@@ -37,12 +37,12 @@ AMMRT1_2023 <- data.frame(
 AMMRTSul_Amazonense_2016 <- data.frame(
   mrt = "Sul Amazonense",
   tipologia_de_uso = c(
-    "Uso indefinido (média geral)", "Floresta", "Agricultura", "Pecuária",
+    "Uso indefinido (média geral)", "vegetação nativa", "Agricultura", "Pecuária",
     "Floresta em Estágio Inicial de Regeneração", "Agricultura subsistência",
     "Pecuária (Pastagem de baixo suporte)", "Agricultura subsistência (humaitá)",
     "Pecuária (Pastagem de baixo suporte | Boca do Acre",
     "Pecuária (Pastagem de baixo suporte | Careiro"
-  ),
+  ), #  a vegetação nativa aqui é floresta
   nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
   vti_media = c(833.07, 712.32, 886.36, 897.13, 712.32, 886.36, 897.13, 886.36, 836.13, 823.81),
   vti_minimo = c(708.11, 605.47, 753.41, 762.56, 605.47, 753.41, 762.56, 753.41, 710.71, 700.24),
@@ -72,9 +72,9 @@ AMMRT3_2023 <- data.frame(
 AMMRTIranduba_2016 <- data.frame(
   mrt = "Iranduba",
   tipologia_de_uso = c(
-    "Uso indefinido (média geral)", "Floresta", "Agricultura",
+    "Uso indefinido (média geral)", "vegetação nativa", "Agricultura",
     "Floresta (Estágio inicial de Regeneração)", "Agricultura (Olericultura)"
-  ),
+  ),  #  a vegetação nativa aqui é floresta
   nivel = c(0, 1, 1, 2, 2),
   vti_media = c(16747.77, 13917.11, 19578.44, 13917.11, 19578.44),
   vti_minimo = c(14235.60, 11829.54, 16641.67, 11829.54, 16641.67),
