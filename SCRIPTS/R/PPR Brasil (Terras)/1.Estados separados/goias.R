@@ -8,7 +8,7 @@
 GOMRT1_2017 <- data.frame(
   mrt = "MRT 1 - VALE DO ARAGUAIA",
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha)", "AGRICULTURA MÉDIA (50 a 55 sc/ha.)", "AGRICULTURA ALTA (>55SC/ha)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(7927.77, 5045.37, 3388.88, 4614.75, 5281.67, 8077.83, 8423.71, 8003.78, 10563.13, 12295.47, 14788.38, 11065.92, 28574.61),
   vti_minimo = c(1099.81, 2123.39, 1999.31, 3835.74, 5270.19, 4811.38, 1523.98, 6274.80, 7320.22, 5482.23, 14788.38, 10143.76, 28574.61),
   vti_maximo = c(14222.92, 7176.55, 4652.09, 5393.77, 5300.51, 11600.03, 14361.04, 9254.53, 14559.55, 20372.06, 14788.38, 12602.85, 28574.61),
@@ -122,7 +122,7 @@ GOMRT3_2017 <- data.frame(
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", 
   "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)",
    "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha.)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(11505.31, 9350.56, 6974.57, 12296.20, 9426.86, 13573.04, 10466.86, 13696.44, 16906.67, 17932.85, 17932.85, NA, NA),
   vti_minimo = c(5929.82, 4477.70, 5032.81, 12230.96, 7797.27, 3473.38, 10160.04, 11158.53, 15973.21, 16884.82, 16884.82, NA, NA),
   vti_maximo = c(24997.10, 13664.83, 8892.22, 12361.45, 11565.01, 22683.01, 10875.09, 17268.16, 17840.14, 19679.56, 19679.56, NA, NA),
@@ -178,7 +178,7 @@ GOMRT4_2017 <- data.frame(
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", 
   "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)",
    "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
+  nivel = c(0, 0, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(13512.00, 9948.20, 5194.75, 12699.83, 9948.20, 11955.59, 8552.23, 12269.68, 14010.28, 20323.69, 19013.61, 28942.95, 21166.38),
   vti_minimo = c(5194.75, 5194.75, 5194.75, 3463.61, 9948.20, 5001.36, 5843.35, 8903.34, 11554.13, 15784.47, 16403.94, 6171.36, 20323.69),
   vti_maximo = c(30804.84, 23783.29, 5194.75, 18241.56, 9948.20, 18980.91, 11157.05, 15803.50, 16809.91, 24395.52, 20637.22, 44851.19, 21226.58),
@@ -337,7 +337,7 @@ GOMRT06_2024 <- data.frame(
 GOMRT7_2017 <- data.frame(
   mrt = "MRT 7 – RIO DOS BOIS",
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha.)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha.)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(14260.21, 8450.49, 3380.20, 12675.74, 8450.49, 13732.05, 8027.97, 13255.87, 15844.68, 21126.24, 21126.24, 25351.49, 31689.36),
   vti_minimo = c(2315.21, 1267.59, 2315.21, 12675.74, 5473.94, 7952.45, 5334.37, 11151.49, 15052.43, 10034.96, 21126.23, 21126.24, 21126.24),
   vti_maximo = c(37763.15, 14788.36, 7876.04, 12675.74, 12011.03, 20580.01, 11672.25, 15280.39, 17165.08, 39611.70, 21126.25, 29576.73, 35003.32),
@@ -391,7 +391,7 @@ GOMRT07_2024 <- data.frame(
 GOMRT8_2017 <- data.frame(
   mrt = "MRT 8 – BAIXO PARANAIBA",
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "CERRADO", "CERRADO BAIXA (RL e APP)", "CERRADO MÉDIA (aptidão pecuária)", "CERRADO ALTA (aptidão cultivo)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha.)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha.)"),
-  nivel = c(0, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(9873.16, 5303.77, 4110.42, 5303.77, 6878.72, 10403.54, 8486.02, 9546.78, 12729.04, 21215.06, 16900.99, 40308.61, 21215.06),
   vti_minimo = c(2446.34, 1060.75, 2622.86, 4018.13, 4821.60, 3182.26, 7435.22, 8114.31, 10912.53, 13170.60, 8910.33, 40308.61, 21215.06),
   vti_maximo = c(23256.38, 9546.78, 5215.10, 7446.49, 8936.05, 18457.10, 9795.39, 11777.08, 15423.77, 26041.74, 25203.49, 40308.61, 21215.06),
@@ -443,7 +443,7 @@ GOMRT08_2024 <- data.frame(
 GOMRT9_2017 <- data.frame(
   mrt = "MRT 9 – RIO VERDÃO",
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha.)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(14308.61, 10985.64, 10351.86, 13732.05, 14788.37, 21126.24, 20116.80, 23238.86, 31689.36),
   vti_minimo = c(7157.10, 5281.56, 2605.79, 11183.70, 12604.20, 14092.70, 13922.69, 23238.86, 31689.36),
   vti_maximo = c(31923.74, 18802.35, 15337.52, 15261.07, 17788.97, 26698.44, 25448.37, 23238.86, 31689.36),
@@ -498,7 +498,7 @@ GOMRT09_2024 <- data.frame(
 GOMRT10_2017 <- data.frame(
   mrt = "MRT 10 – ALTO PARANAIBA",
   tipologia_de_uso = c("USO INDEFINIDO (MÉDIA GERAL)", "PECUÁRIA", "PECUÁRIA BAIXA (<1UA/ha)", "PECUÁRIA MÉDIA (1 a 1,5 UA/ha)", "PECUÁRIA ALTA (> 1,5 1UA/ha)", "AGRICULTURA", "AGRICULTURA BAIXA (<50sc/ha.)", "AGRICULTURA MÉDIA (50 a 55 sc/ha)", "AGRICULTURA ALTA (> 55sc/ha)"),
-  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 2, 2, 1, 2, 2, 2),
   vti_media = c(12675.74, 12675.74, 10563.12, 12675.74, 16900.99, 28520.42, 19013.61, NA, 38027.23),
   vti_minimo = c(6884.04, 6646.05, 9889.72, 11725.06, 10620.16, 9506.81, 19013.61, NA, 38027.23),
   vti_maximo = c(18525.86, 18077.46, 11136.17, 14260.21, 20669.49, 47534.03, 19013.61, NA, 38027.23),

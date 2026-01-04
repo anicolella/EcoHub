@@ -325,7 +325,7 @@ PAMRT9_2016 <- data.frame(
 ###16.14 MRT 10 #####
 PAMRT10_2016 <- data.frame(
   mrt = "Novo Progresso",
-  tipologia_de_uso = c("Uso indefinido (média geral)", "Mista", "Pecuária 1"),
+  tipologia_de_uso = c("Uso indefinido (média geral)", "Mista", "Pecuária"),
   nivel = c(0, 1, 1),
   vti_media = c(2838.89, 4524.07, 1782.29),
   vti_minimo = c(2413.06, 3845.46, 1514.95),
@@ -390,7 +390,7 @@ Xinguara"
 #### 2020 ####
 PAMRT1_2020 <- data.frame(
   mrt = "ZONA HOMOGÊNEA 1",
-  tipologia_de_uso = c("Terra para Pecuária", "Pecuária de Alta a Baixa Representatividade"),
+  tipologia_de_uso = c("Terra para Pecuária", "Pecuária"),
   nivel = c(1, 2),
   vti_media = c(6456.89, 6456.89),
   vti_minimo = c(5488.36, 5488.36),
@@ -466,7 +466,7 @@ PAMRT2_2023 <- data.frame(
 PAMRT3_2017 <- data.frame(
   mrt = "Zona Homogênea 03",
   tipologia_de_uso = c("Terra para pecuária", "Pecuária de Baixa Representatividade"),
-  nivel = c(1, 1),
+  nivel = c(1, 2),
   vti_media = c(3969.05, 3969.05),
   vti_minimo = c(3373.69, 3373.69),
   vti_maximo = c(4564.40, 4564.40),
@@ -519,7 +519,7 @@ Branco."
 PAMRT4_2017 <- data.frame(
   mrt = "Zona Homogênea 04",
   tipologia_de_uso = c("Terra para pecuária", "Pecuária de Alta Representatividade."),
-  nivel = c(1, 1),
+  nivel = c(1, 2),
   vti_media = c(5389.86, 5389.86),
   vti_minimo = c(4581.38, 4581.38),
   vti_maximo = c(6198.34, 6198.34),
@@ -561,7 +561,7 @@ PAMRT4_2023 <- data.frame(
 PAMRT5_2017 <- data.frame(
   mrt = "Zona Homogênea 05",
   tipologia_de_uso = c("Terra para pecuária", "Pecuária de Baixa Representatividade"),
-  nivel = c(1, 1),
+  nivel = c(1, 2),
   vti_media = c(6477.98, 6477.98),
   vti_minimo = c(5506.28, 5506.28),
   vti_maximo = c(7449.67, 7449.67),
@@ -607,7 +607,7 @@ PAMRT5_2023 <- data.frame(
 PAMRT6_2017 <- data.frame(
   mrt = "Zona Homogênea 06",
   tipologia_de_uso = c("Terra para pecuária", "Pecuária de Baixa Representatividade"),
-  nivel = c(1, 1),
+  nivel = c(1, 2),
   vti_media = c(6198.26, 6198.26),
   vti_minimo = c(5268.52, 5268.52),
   vti_maximo = c(7128.00, 7128.00),
@@ -651,7 +651,7 @@ PAMRT6_2023 <- data.frame(
 PAMRT7_2017 <- data.frame(
   mrt = "Zona Homogênea 07",
   tipologia_de_uso = c("Terra para pecuária", "Pecuária de Baixa Representatividade."),
-  nivel = c(1, 1),
+  nivel = c(1, 2),
   vti_media = c(5750.74, 5750.74),
   vti_minimo = c(4888.13, 4888.13),
   vti_maximo = c(6613.35, 6613.35),
