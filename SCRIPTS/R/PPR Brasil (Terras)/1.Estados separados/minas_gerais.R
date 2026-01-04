@@ -71,7 +71,7 @@ MGMRT05_2020 <- data.frame(
 MGMRT06_2020 <- data.frame(
   mrt = "São Romão - São Romão e Santa Fé de Minas",
   tipologia_de_uso = c("media geral", "Pecuária", "Pecuária com possibilidade de irrigação", "Terras para reflorestamento"),
-  nivel = c(0, 1, 1, 1),
+  nivel = c(0, 1, 2, 1),
   vti_media = c(2106.82, 2300.0, 3136.53, 1225.98),
   vti_minimo = c(1000.0, 1500.0, 2727.27, 1000.0),
   vti_maximo = c(3500.0, 2800.0, 3500.0, 1400.0),
@@ -97,7 +97,7 @@ MGMRT07_2020 <- data.frame(
 MGMRT08_2020 <- data.frame(
   mrt = "Janaúba - Janaúba, Catuti, Espinosa, Gameleira,",
   tipologia_de_uso = c("media geral", "Terras com pastagem",  "Terras de cultura de 1ª com pastagem de médio suporte", "Terras de cultura de 1ª com possibilidade de irrigação", "Terras de cultura de 2ª com pastagem de baixo suporte"),
-  nivel = c(0, 1, 1, 1, 1),
+  nivel = c(0, 1, 2, 2, 2),
   vti_media = c(3178.66, 3178.66,  3767.36, 7200.0, 2170.0),
   vti_minimo = c(1500.0, 1800.0,  2500.0, 4800.0, 1500.0),
   vti_maximo = c(9600.0, 5200.0,  6400.0, 9600.0, 2400.0),
@@ -162,7 +162,7 @@ MGMRT12_2020 <- data.frame(
 MGMRT13_2020 <- data.frame(
   mrt = "Paracatu - Paracatu, Guarda-Mor, Vazante, Lagamar,",
   tipologia_de_uso = c("Geral", "Pecuária", "Agricultura", "Agricultura em altitude", "Agricultura no vão"),
-  nivel = c(0, 1, 1, 1, 1),
+  nivel = c(0, 1, 1, 2, 2),
   vti_media = c(7967.74, 7517.96, 25144.74,  26903.85, 22799.27),
   vti_minimo = c(4802.66, 4802.66, 15000.0,  17000.0, 15000.0),
   vti_maximo = c(35937.5, 11050.0, 35937.5,  35937.5, 27200.0),
@@ -175,7 +175,7 @@ MGMRT13_2020 <- data.frame(
 MGMRT14_2020 <- data.frame(
   mrt = "João Pinheiro - João Pinheiro, Brasilândia de Minas,",
   tipologia_de_uso = c("Geral", "Pecuária", "pecuária com potencial agricultura irrigada"),
-  nivel = c(0, 1, 1),
+  nivel = c(0, 1, 2),
   vti_media = c(6475.25, 5485.29, 9850.0),
   vti_minimo = c(3200.0, 3200.0, 8750.0),
   vti_maximo = c(10400.0, 7352.94, 10400.0),
@@ -253,7 +253,7 @@ MGMRT19_2020 <- data.frame(
 MGMRT20_2020 <- data.frame(
   mrt = "Aimorés - Aimorés, Alvarenga, Conceição de Ipanema,",
   tipologia_de_uso = c("Geral", "Terras de pastagem de baixa produtividade", "Terras de pastagem de nível médio de produtividade"),
-  nivel = c(0, 1, 1),
+  nivel = c(0, 2, 2),
   vti_media = c(4615.76, 4407.95, 10168.07),
   vti_minimo = c(3161.14, 3161.14, 9297.52),
   vti_maximo = c(11377.51, 6197.75, 11377.51),
@@ -266,7 +266,7 @@ MGMRT20_2020 <- data.frame(
 MGMRT21_2020 <- data.frame(
   mrt = "Caratinga - Caratinga, Piedade de Caratinga, Vargem Alegre,",
   tipologia_de_uso = c("Geral", "Terras de café", "Terras de pastagem geral", "Terras de pastagem de nível médio de produtividade"),
-  nivel = c(0, 1, 1, 1),
+  nivel = c(0, 1, 1, 2),
   vti_media = c(13384.91, 18433.42, 10095.56, 12919.39),
   vti_minimo = c(6382.23, 13429.75, 6382.23,  9350.0),
   vti_maximo = c(25003.26, 25003.26, 12750.0,  15484.87),
@@ -279,7 +279,7 @@ MGMRT21_2020 <- data.frame(
 MGMRT22_2020 <- data.frame(
   mrt = "Governador Valadares - Governador Valadares, Alpercata, Capitão",
   tipologia_de_uso = c("geral", "Terras de pastagem de baixa produtividade (encapoeiradas)", "Terras de pastagem de nível médio de produtividade (suporte)", "Terras de pastagem de nível alto de produtividade (suporte)"),
-  nivel = c(0, 1, 1, 1),
+  nivel = c(0, 2, 2, 2),
   vti_media = c(6366.28, 3498.54, 6279.99, 9658.4),
   vti_minimo = c(2685.95, 2685.95, 5165.1, 9297.02),
   vti_maximo = c(10536.12, 4178.85, 8263.56, 10536.12),
@@ -291,8 +291,8 @@ MGMRT22_2020 <- data.frame(
 
 MGMRT23_2020 <- data.frame(
   mrt = "Metropolitana IV - Belo Horizonte, Betim, Brumadinho, Caeté,",
-  tipologia_de_uso = c("Geral", "Terras de uso diversificado de cultura/mata", "Terras de uso diversificado em campo/cerrado"),
-  nivel = c(1, 1, 1),
+  tipologia_de_uso = c("Geral", "Exploração mista", "Terras de uso diversificado em campo/cerrado"),
+  nivel = c(1, 1, 2),
   vti_media = c(13703.62, 16301.6, 9371.3),
   vti_minimo = c(5780.35, 11855.67, 5780.35),
   vti_maximo = c(20720.02, 20720.02, 12000.0),
@@ -808,7 +808,7 @@ unai_a <- data.frame(mrt = "unai",
     "Pecuária - Pastagem Plantada - Alta Capacidade",
     "Agrícola - Grãos Diversos"
   ),
-  nivel = c(0, 1, 2, 2, 2),
+  nivel = c(0, 1, 1, 2, 2),
   vti_media = c(17838.17, 12418.02, 26869.58, 13729.67, 30765.13),
   vti_minimo = c(9934.42, 9934.42, 21495.67, 11670.22, 24612.1),
   vti_maximo = c(36918.15, 14901.63, 32243.5, 15789.12, 36918.15),

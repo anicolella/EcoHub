@@ -539,7 +539,7 @@ Cruz, Timbaúba dos Batistas"
 RNMRT6_2019 <- data.frame(
   mrt = "SERIDÓ",
   tipologia_de_uso = c("Uso Indefinido (Média geral)", "Exploração Mista (Agricultura e/ou Pecuária)", "Vegetação Nativa", "Exploração Mista(Agricultura e/ou Pecuária de baixo rend imento)", "Exploração Mista(Agricultura e/ou Pecuária de baix.rend (Jucurutu)", "Exploração Mista(Agricultura e/ou Pecuária de baixo Rend (S. Tomé)", "Exploração Mista(Agricultura e/ou Pecuária de baixo Rend (S.Matos)"),
-  nivel = c(0, 1, 1, 1, 1, 1, 1),
+  nivel = c(0, 1, 1, 2, 2, 2, 2),
   vti_media = c(1156.55, 1243.43, 734.56, 1243.43, 1209.08, 3078.52, 1582.72),
   vti_minimo = c(516.54, 588.08, 390.9, 588.08, 238.23, 1107.06, 781.1),
   vti_maximo = c(1796.56, 1898.77, 1078.23, 1898.77, 2179.92, 5049.98, 2384.34),
