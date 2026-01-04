@@ -26,7 +26,7 @@ MAMRT1_2018 <- data.frame(
     "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual até 30 km da margem da BR ou MA",
     "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual a mais de 30 km da margem da BR ou MA"
   ),
-  nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
   vti_media = c(1165.15, 1135.71, 1475.0, 1070.0, 651.67, 930.0, 3333.33, 1600.0, 971.43, 4065.79, 1966.67, 2466.67, 1266.67, NA, 1070.0, 1025.0),
   vti_minimo = c(990.38, 965.36, 1253.75, 909.5, 553.92, 790.5, 2833.33, 1360.0, 825.71, 3455.92, 1671.67, 2096.67, 1076.67, NA, 909.5, 871.25),
   vti_maximo = c(1339.92, 1306.07, 1696.25, 1230.5, 749.42, 1069.5, 3833.33, 1840.0, 1117.14, 4675.66, 2261.67, 2836.67, 1456.67, NA, 1230.5, 1178.75),
@@ -187,7 +187,7 @@ MAMRT06_2022 <- data.frame(
 MAMRT4_2018 <- data.frame(
   mrt = "TRANSICAO",
   tipologia_de_uso = c("Uso indefinido (média geral)", "Pecuária", "Mosaico de pastagens, florestas abertas e vegetação degradada com babaçu/babaçual", "Vegetação Nativa", "Pecuária de baixo nível tecnológico", "Pecuária de alto nível tecnológico", "Pecuária de baixo nível tecnológico na margem da BR ou MA", "Pecuária com baixo nível tecnológico até 30 km da margem da BR ou MA", "Pecuária com baixo nível tecnológico a mais de 30 km da margem da BR ou MA", "Vegetação Nativa a mais de 30 km da margem da BR ou MA"),
-  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+  nivel = c(0, 1, 2, 1, 2, 2, 2, 2, 2, 2),
   vti_media = c(2479.73, 2994.49, 1837.07, 976.93, 2975.4, 3121.79, 3263.04, 2714.29, 1483.33, 947.02),
   vti_minimo = c(2107.77, 2545.32, 1561.51, 830.39, 5229.09, 2653.53, 2773.58, 2307.14, 1260.83, 804.96),
   vti_maximo = c(2851.69, 3443.67, 2112.64, 1123.47, 3421.71, 3590.06, 3752.49, 3121.43, 1705.83, 1089.07),
@@ -405,7 +405,7 @@ MAMRT8_2018 <- data.frame(
 MAMRT04_2021 <- data.frame(
   mrt = "SUL MARANHENSE",
   tipologia_de_uso = c(
-    "Agricultura Moderna",
+    "Agricultura",
     "Pecuária",
     "Cerrado",
     "Agricultura Moderna Alta Capacidade Produtiva",

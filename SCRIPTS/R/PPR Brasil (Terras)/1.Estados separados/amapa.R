@@ -48,8 +48,8 @@ APMRT_Leste_2016 <- data.frame(
 )
 ###2019####
 APMRTLeste_2019 <- data.frame(
-  mrt = "Mercado Regional de Terras (MRT) Leste",
-  tipologia_de_uso = c("Geral", "Agricultura", "Cerrado", "Floresta", "Pecuária", "Agricultura Diversificada", "Pecuária Bovina em Pastagem de Baixo Suporte", "Agricultura de Grãos (Sudeste)", "Agricultura Diversificada (Macapá)", "Agricultura Diversificada (Porto Grande)", "Agricultura Diversificada (Sudeste)", "Cerrado (Centro-norte)", "Cerrado (Tartarugalzinho)"),
+  mrt = "Mercado Regional de Terras (MRT) Leste", #  a vegetação nativa aqui é cerrado no caso
+  tipologia_de_uso = c("Geral", "Agricultura", "vegetação nativa", "Floresta", "Pecuária", "Agricultura Diversificada", "Pecuária Bovina em Pastagem de Baixo Suporte", "Agricultura de Grãos (Sudeste)", "Agricultura Diversificada (Macapá)", "Agricultura Diversificada (Porto Grande)", "Agricultura Diversificada (Sudeste)", "Cerrado (Centro-norte)", "Cerrado (Tartarugalzinho)"),
   nivel = c(0, 1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3),
   vti_media = c(1294.37, 1251.15, 701.18, 1434.87, 1654.69, 1142.06, 1159.28, 5842.75, 1764.39, 1271.34, 1623.84, 575.56, 749.63),
   vti_minimo = c(872.53, 932.61, 521.54, 943.50, 1088.29, 878.82, 1022.60, 3744.03, 918.01, 1020.12, 815.41, 447.81, 686.10),
@@ -65,7 +65,7 @@ APMRTLeste_VTI_2023 <- data.frame(
   tipologia_de_uso = c(
     "Geral",
     "Agricultura",
-    "Cerrado",
+    "Vegetação nativa",#  a vegetação nativa aqui é cerrado no caso
     "Pecuária",
     "Agricultura Açaí",
     "Agricultura de Grãos",
@@ -115,7 +115,7 @@ APMRT_Oeste_2016 <- data.frame(
   tipologia_de_uso = c(
     "Uso indefinido (média geral)",
     "Agricultura",
-    "Floresta",
+    "vegetação nativa", #  a vegetação nativa aqui é floresta
     "Agricultura Diversificada",
     "Pecuária Bovina em Pastagem de Baixo Suporte",
     "Agricultura com mandioca (Laranjal do Jari)",
@@ -133,7 +133,8 @@ APMRT_Oeste_2016 <- data.frame(
 ###2019####
 APMRTOeste_2019 <- data.frame(
   mrt = "Mercado Regional de Terras (MRT) Oeste",
-  tipologia_de_uso = c("Geral", "Agricultura", "Floresta", "Agricultura Diversificada", "Agricultura com Mandioca (Laranjal do Jari)", "Agricultura com Mandioca (Sul)", "Agricultura Diversificada (Laranjal do Jari)", "Agricultura Diversificada (Oiapoque)", "Agricultura Diversificada (Pedra Branca)", "Agricultura Diversificada (Sul)", "Floresta (Laranjal do Jari)", "Floresta (Mazagão)", "Floresta (Sul)"),
+  tipologia_de_uso = c("Geral", "Agricultura", "vegetação nativa"#  a vegetação nativa aqui é cerrado no caso
+  , "Agricultura Diversificada", "Agricultura com Mandioca (Laranjal do Jari)", "Agricultura com Mandioca (Sul)", "Agricultura Diversificada (Laranjal do Jari)", "Agricultura Diversificada (Oiapoque)", "Agricultura Diversificada (Pedra Branca)", "Agricultura Diversificada (Sul)", "Floresta (Laranjal do Jari)", "Floresta (Mazagão)", "Floresta (Sul)"),
   nivel = c(0, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3),
   vti_media = c(1623.7, 1721.76, 1269.06, 2006.44, 369.0, 545.4, 1931.25, 1455.56, 2313.75, 1736.43, 1125.0, 1362.19, 1216.53),
   vti_minimo = c(1061.90, 1126.46, 910.99, 1451.96, 317.10, 387.15, 1419.76, 1353.67, 1725.48, 1243.54, 838.18, 792.93, 819.64),
