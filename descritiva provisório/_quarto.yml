@@ -10,5 +10,7 @@ website:
 format: 
   html: 
     theme: journal
+    code-fold: true
+    code-summary: veja o código
 
 mainfont: sans-serif;
