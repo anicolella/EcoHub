@@ -1,0 +1,14 @@
+project: 
+  type: website
+
+website: 
+  title: "análise descritiva RAMT provisória"
+  navbar:
+    left: 
+      - principal.qmd
+
+format: 
+  html: 
+    theme: journal
+
+mainfont: sans-serif;

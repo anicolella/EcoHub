@@ -1,5 +1,6 @@
 library(dplyr)
 library(stringr)
+library(sf)
 
 
 resultado_igpdi_limpo <- resultado_igpdi %>%
@@ -17,13 +18,6 @@ resultado_igpdi_limpo <- resultado_igpdi %>%
 
 resultado_igpdi_limpo <- resultado_igpdi_limpo  |> filter(nivel == 0 | nivel == 1)
 
-
-result_analis <- resultado_igpdi_limpo |>
-  distinct(tipologia_de_uso, df)
-
-
-library(tidyverse)
-library(stringi)
 
 # Assumindo que seu dataframe se chama df_final e a coluna original é descricao_original
 df_classificado <- resultado_igpdi_limpo %>%
@@ -214,13 +208,15 @@ df_classificado <- resultado_igpdi_limpo %>%
 
 df_classificado2 <- df_classificado |> filter (categoria_final == "revisar manualmente")
 
-# Visualizar o resultado para validação
-print(head(df_tratado, 20))
 
-# Contagem para verificar distribuição
-table(df_tratado$Tipologia_Final, df_tratado$Nivel)
-
-write.csv2(df_classificado, 
+write.csv2(, 
            file = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.csv", 
            row.names = FALSE,  # Não cria coluna de índice 1,2,3
            fileEncoding = "UTF-8") # Garante que "Pecuária" não vire "PecuÃ¡ria" no Excel
+
+st_write(
+  obj   = df_classificado,
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
+  layer = "df_classificado",   # nome da camada dentro do gpkg
+  append = FALSE               # para sobrescrever se já existir
+)
