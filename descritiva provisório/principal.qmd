@@ -34,6 +34,9 @@ df_areas <- df_analise |>
     # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
     area_ha_calculada = as.numeric(area_m2) / 10000
   )
+
+ df_joined <- df_analise 
+ 
 ```
 
 ## 1.Sobre os dados
@@ -248,6 +251,57 @@ df_classificado <- resultado_igpdi_limpo %>%
   )
 
 ```
+ 
+Os valores apresentados para terra foram posteriormente deflacionados para o ano de 2024, com uso do indice IGP-DI que é aquele utilizado pelo incra segundo a normativa ( número da normativa, adicionar bibtex) seguindo o seguinte script:
+
+```{r}
+#|echo: FALSE
+#|eval : FALSE
+
+#### 1. Preparação do Índice (A Lógica do Produto Acumulado) ####
+indice_raw <- ipeadata(code = "IGP_IGPDIG", language = "br")
+
+tabela_indices <- indice_raw %>%
+  mutate(
+    ano = year(as.Date(date)),
+    # Transforma taxa percentual em fator multiplicativo (ex: 0.5% vira 1.005)
+    fator_mensal = (value / 100) + 1
+  ) %>%
+  # Agrupa para obter a inflação anualizada
+  group_by(ano) %>%
+  summarise(
+    fator_anual = prod(fator_mensal, na.rm = TRUE), 
+    .groups = "drop"
+  ) %>%
+  arrange(ano) %>%
+  # --- AQUI ESTÁ A CORREÇÃO QUE VOCÊ PEDIU ---
+  # O índice do ano X é o produto de tudo que veio antes (acumulado)
+  mutate(indice_acumulado = cumprod(fator_anual))
+
+#### 2. Definindo a Base (Para onde queremos levar o dinheiro) ####
+# Vamos pegar o valor do índice no último ano disponível (Ex: 2024)
+indice_base_topo <- tail(tabela_indices$indice_acumulado, 1)
+
+#### 3. Cruzamento e Cálculo ####
+resultado_igpdi <- df_joined %>%
+  mutate(ano = as.numeric(ano)) %>% # Garante numérico para o join
+  left_join(tabela_indices, by = "ano") %>%
+  mutate(
+    # FATOR DE CORREÇÃO:
+    # Quanto o dinheiro valia "no final da história" DIVIDIDO por quanto valia "naquele ano"
+    fator_deflator = indice_base_topo / indice_acumulado  ,
+    
+    # Aplica nas colunas
+    across(
+      c("vti_media", "vti_minimo", "vti_maximo", "vtn_media", "vtn_minimo", "vtn_maximo"), 
+      ~ .x * fator_deflator, 
+      .names = "IGPDI_{.col}"
+    )
+  ) %>%
+  # Limpeza final (mantém originais e as novas colunas 'real_')
+  select(colnames(df_joined), starts_with("IGPDI_{.col}"))
+
+```
 
 ## 2.Disponibilidade dos dados
 A coleta de dados dos relatórios RAMT apresenta significativa heterogeneidade entre as superintendências regionais do INCRA. A base de dados abrange o período de 2016 a 2025, com destaque para o ano de 2023, que apresenta maior cobertura territorial devido à publicação do Atlas do Mercado de Terras. No entanto, identificaram-se sobreposições entre o Atlas e relatórios de anos adjacentes. Metodologicamente, optou-se pela prevalência dos dados dos relatórios originais em casos de conflito, visando manter a consistência da série histórica. Essa decisão justifica as lacunas observadas em alguns estados nos mapas de 2023, onde as informações do Atlas foram suprimidas em favor dos registros dos relatórios.
@@ -398,7 +452,7 @@ ggplot(dados_plot, aes(x = fct_rev(fct_infreq(as.factor(categoria_final))), fill
   theme_minimal()
 ```
 
-natureza discreta dos dados, talvez seja melhor jogar isso para cima depois.
+Os scatter plots mostram a natureza discreta dos dados, os dados são variáveis macroeconomicas agregadas das regiões de homogeniedade determinada pelo incra através do algoritmo de WARD e do procedimento de K-means, nesse sentido, os scatters apenas demosntram um reflexo disso, do contrário seria esperado que os locai com mais áreas apresentassem uma nuvem de pontos que segue as linhas tracejadas. (REVISAR ISSO TÁ ESQUISITO E NA MINHA CABEÇA TA SEGUINDO A LINHA TRACEJADA)
 ```{r}
 # 1. Preparação dos dados (Garantia de Leveza)
 dados_scatter <- if(inherits(df_areas, "sf")) sf::st_drop_geometry(df_areas) else df_analise
@@ -441,15 +495,11 @@ ggplot(dados_agrupados, aes(x = area_total, y = n_obs)) +
   theme(legend.position = "none")
 ```
 
-Valor de terra por Quantil:
+Segue uma tabela do valor de terra por quantil ao longo de toda a amostragem, lembrando que os valores aqui apresentados são fruto de correções inflacionárias de todos os valores para o ano de 2024. 
 
 ```{r}
-#| echo: false
 #| message: false
 #| warning: false
-
-library(dplyr)
-library(gt)
 
 # 1. Cálculo dos Quantis por Categoria
 tabela_quantis <- df_analise |>
@@ -501,5 +551,275 @@ tabela_quantis |>
     columns = c(Mediana),
     method = "numeric",
     palette = "Greens" # Escala de cor para mostrar quem vale mais
+  )
+```
+Panorama geográfico 
+Os dados não tão bonitos, a organizaçãi tá esquistassa, eu tenho q revisar eles
+
+```{r}
+# 1. Preparação: O "Snapshot" do Mercado (Excluindo 2025)
+dados_panorama <- df_analise |>
+  # LIMPEZA CRÍTICA:
+  # 1. Remove 2025 (Sem IGP-DI)
+  # 2. Remove sujeira (Zeros e NAs)
+  filter(ano < 2025, !is.na(vti_media), vti_media > 0) |>
+  
+  # Filtra categorias principais
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista")) |>
+  
+  group_by(code_muni, categoria_final) |>
+  # Pega o ano mais recente DISPONÍVEL (que agora será no máximo 2024)
+  slice_max(order_by = ano, n = 1) |> 
+  ungroup() 
+
+# 2. Criação dos Quantis (Classes de Preço)
+# Recalculando os pentis com a base limpa
+dados_panorama <- dados_panorama |>
+  group_by(categoria_final) |> 
+  mutate(
+    # cut_number garante o mesmo número de observações em cada cor
+    classe_preco = cut_number(vti_media, n = 5, labels = c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"))
+  ) |>
+  ungroup()
+
+# 3. O Mapa (Choropleth)
+ggplot(dados_panorama) +
+  geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) + 
+  
+  # Escala de Cores: Magma invertido (Amarelo/Branco = Muito Alto)
+ scale_fill_brewer(
+  palette = "Spectral",
+  direction = -1, # Inverte para Vermelho ser o 'Alto' e Azul o 'Baixo'
+  name = "Faixa de Valor (VTI)"
+  ) +
+  
+  facet_wrap(~categoria_final, ncol = 2) +
+  
+  labs(
+    title = "Panorama de Valor da Terra (Até 2024)",
+    subtitle = "Classificação por Quantis baseada no último dado corrigido (IGP-DI).",
+    caption = "Nota: Dados de 2025 excluídos por ausência de deflator consolidado."
+  ) +
+  
+  theme_void() + 
+  theme(
+    legend.position = "right",
+    strip.text = element_text(face = "bold", size = 11),
+    plot.title = element_text(face = "bold")
+  )
+```
+
+Histogramas de distribuição por categoria (Texto do gemini revisar)
+
+A análise de densidade (Kernel Density Estimation) refuta a hipótese de normalidade na distribuição de preços, revelando um comportamento multimodal marcante, especialmente nas categorias 'Pecuária' e 'Exploração Mista'.
+
+Estatisticamente, a existência de múltiplos picos (modas) sugere a coexistência de submercados distintos sob a mesma rotulagem administrativa. No caso da Pecuária, a trimodalidade observada indica uma segmentação tecnológica e geográfica severa: terras de fronteira (baixa liquidez), pecuária extensiva consolidada e áreas de potencial conversão agrícola (precificadas pelo custo de oportunidade da soja).
+
+Essa heterogeneidade implica que a utilização de médias simples (VTI Médio) como medida de tendência central carrega alto risco de viés, uma vez que o valor médio frequentemente recai nos 'vales' de densidade — zonas de preço onde poucas transações reais ocorrem.
+
+```{r}
+# 1. Preparação (Mesma de antes)
+dados_hist <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_hist <- dados_hist |>
+  filter(vti_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. O Plot Híbrido (Barras + Linha Suave)
+ggplot(dados_hist, aes(x = vti_media)) +
+  
+  # Histograma normalizado (Eixo Y = Densidade)
+  geom_histogram(
+    aes(y = after_stat(density), fill = categoria_final), 
+    color = "white", 
+    alpha = 0.5, # Transparência para ver a sobreposição
+    bins = 40, 
+    show.legend = FALSE
+  ) +
+  
+  # A Linha de Densidade (Kernel Density Estimation)
+  geom_density(
+    color = "black", 
+    size = 0.8, 
+    adjust = 1.5 # Suavização (1 = Padrão, >1 = Mais liso)
+  ) +
+  
+  # Escala Logarítmica
+  scale_x_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  facet_wrap(~categoria_final, scales = "free_y") +
+  
+  labs(
+    title = "Distribuição de Preços (Histograma + Densidade)",
+    subtitle = "A curva preta suaviza a tendência. Formato de 'Sino' confirma Log-Normalidade.",
+    x = "Valor da Terra (R$/ha) [Log]",
+    y = "Densidade de Probabilidade"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    strip.text = element_text(face = "bold", size = 11),
+    axis.text.x = element_text(angle = 30, hjust = 1)
+  )
+
+```
+
+O VTN não é apenas "diferente", ele é mais sensível à localização. Enquanto o VTI reflete o Investimento Total, o VTN reflete a Renda Ricardiana (a vantagem produtiva inerente daquele pedaço de chão).
+
+```{r}
+# 1. Preparação (Mesma de antes)
+dados_hist <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_hist <- dados_hist |>
+  filter(vti_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. O Plot Híbrido (Barras + Linha Suave)
+ggplot(dados_hist, aes(x = vtn_media)) +
+  
+  # Histograma normalizado (Eixo Y = Densidade)
+  geom_histogram(
+    aes(y = after_stat(density), fill = categoria_final), 
+    color = "white", 
+    alpha = 0.5, # Transparência para ver a sobreposição
+    bins = 40, 
+    show.legend = FALSE
+  ) +
+  
+  # A Linha de Densidade (Kernel Density Estimation)
+  geom_density(
+    color = "black", 
+    size = 0.8, 
+    adjust = 1.5 # Suavização (1 = Padrão, >1 = Mais liso)
+  ) +
+  
+  # Escala Logarítmica
+  scale_x_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  facet_wrap(~categoria_final, scales = "free_y") +
+  
+  labs(
+    title = "Distribuição de Preços (Histograma + Densidade)",
+    subtitle = "A curva preta suaviza a tendência. Formato de 'Sino' confirma Log-Normalidade.",
+    x = "Valor da Terra (R$/ha) [Log]",
+    y = "Densidade de Probabilidade"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    strip.text = element_text(face = "bold", size = 11),
+    axis.text.x = element_text(angle = 30, hjust = 1)
+  )
+```
+
+Box plot - VTN e VTI
+
+```{r}
+# 1. Preparação: Pivotagem (Wide -> Long)
+dados_box <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_comparativos <- dados_box |>
+  # Filtra sujeira e categorias principais
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa")) |>
+  
+  # Seleciona apenas o necessário para pivotar
+  select(categoria_final, vti_media, vtn_media) |>
+  
+  # Transforma colunas em linhas (VTI e VTN viram "Tipo de Valor")
+  pivot_longer(
+    cols = c(vti_media, vtn_media),
+    names_to = "tipo_valor",
+    values_to = "valor_ha"
+  ) |>
+  
+  # Renomeia para ficar bonito na legenda
+  mutate(
+    tipo_valor = factor(tipo_valor, 
+                        levels = c("vti_media", "vtn_media"), 
+                        labels = c("VTI (Com Imóvel)", "VTN (Terra Nua)"))
+  )
+
+# 2. O Plot (Boxplot Pareado)
+ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = median), y = valor_ha, fill = tipo_valor)) +
+  
+  # Boxplot: Mostra Mediana, Quartis e Outliers
+  geom_boxplot(outlier.alpha = 0.2, outlier.size = 0.5, outlier.color = "gray40") +
+  
+  # Escala Logarítmica (Crucial)
+  scale_y_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  # Cores contrastantes (Laranja pro Capital, Azul pra Terra Nua - ou vice-versa)
+  scale_fill_manual(values = c("VTI (Com Imóvel)" = "#E69F00", "VTN (Terra Nua)" = "#56B4E9")) +
+  
+  coord_flip() + # Deita o gráfico para facilitar leitura dos nomes
+  
+  labs(
+    title = "Dispersão de Preços: VTI vs. VTN",
+    subtitle = "A distância entre as caixas representa o valor agregado das benfeitorias.",
+    x = NULL, # Remove label redundante
+    y = "Valor por Hectare (Log)",
+    fill = "Métrica"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    axis.text.y = element_text(face = "bold", size = 10),
+    panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas
+  )
+```
+
+Por estado:
+consertar escala para mostrar as ufs:
+```{r}
+# 1. Preparação
+dados_uf <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_uf <- dados_uf |>
+  filter(vti_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "silvicultura", "vegetacao nativa")) |>
+  # Garante que temos a UF (Se não tiver a coluna abbrev_state, extraímos do código)
+  mutate(
+    UF = if("abbrev_state" %in% names(dados_uf)) abbrev_state else substr(code_muni, 1, 2)
+  )
+
+# 2. O Plot (Boxplot Ordenado)
+ggplot(dados_uf, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +
+  
+  # Boxplot limpo
+  geom_boxplot(aes(fill = categoria_final), outlier.size = 0.5, outlier.alpha = 0.3, show.legend = FALSE) +
+  
+  # Escala Logarítmica (Obrigatória para comparar PI com SP)
+  scale_y_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  # Facetas Livres (Cada categoria tem seu próprio ranking de estados)
+  facet_wrap(~categoria_final, scales = "free", ncol = 2) +
+  
+  coord_flip() + # Estados no eixo Y para leitura fácil
+  
+  labs(
+    title = "Hierarquia de Valor: Ranking Estadual por Uso",
+    subtitle = "Ordenado pela Mediana de Preço (VTI). Escala Logarítmica.",
+    x = NULL,
+    y = "Valor da Terra (R$/ha) [Log]"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    strip.text = element_text(face = "bold", size = 11),
+    axis.text.y = element_text(size = 7) # Fonte menor para caber todas as UFs
   )
 ```
