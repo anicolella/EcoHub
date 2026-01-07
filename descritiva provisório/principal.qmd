@@ -304,7 +304,7 @@ resultado_igpdi <- df_joined %>%
 ```
 
 ## 2.Disponibilidade dos dados
-A coleta de dados dos relatórios RAMT apresenta significativa heterogeneidade entre as superintendências regionais do INCRA. A base de dados abrange o período de 2016 a 2025, com destaque para o ano de 2023, que apresenta maior cobertura territorial devido à publicação do Atlas do Mercado de Terras. No entanto, identificaram-se sobreposições entre o Atlas e relatórios de anos adjacentes. Metodologicamente, optou-se pela prevalência dos dados dos relatórios originais em casos de conflito, visando manter a consistência da série histórica. Essa decisão justifica as lacunas observadas em alguns estados nos mapas de 2023, onde as informações do Atlas foram suprimidas em favor dos registros dos relatórios.
+A coleta de dados dos relatórios RAMT apresenta significativa heterogeneidade entre as superintendências regionais do INCRA. A base de dados abrange o período de 2016 a 2025, com destaque para o ano de 2023, que apresenta maior cobertura territorial devido à publicação do Atlas do Mercado de Terras. No entanto, identificaram-se sobreposições entre o Atlas e relatórios de anos adjacentes. Metodologicamente, optou-se pela prevalência dos dados dos relatórios originais em casos de conflito, visando manter a consistência da série histórica. Essa decisão justifica as lacunas observadas em alguns estados nos mapas de 2023, onde as informações do Atlas foram suprimidas em favor dos registros dos relatórios. Além disso, os relatórios nem sempre contemplam todos os municípios da zona homogênea (Mercado de terras), portanto, existem algumas lacunas nos mapas por falta de melhor detalhamento nos municípios. É possível observar que existem alguns relatórios em que somente informações parciais dos mercados de um mesmo stado são publicados.
 
 Seguem os mapas sobre as disponibilidades dos dados dos relatórios:
 ```{r}
@@ -339,7 +339,7 @@ for (um_ano in anos_disponiveis) {
     geom_sf(data = dados_do_ano, fill = "firebrick", color = NA) + 
     geom_sf(data = br_states, fill = NA, color = "gray40", lwd = 0.3) +
     labs(title = paste("Coleta de dados RAMT:", um_ano), 
-         subtitle = paste(nrow(dados_do_ano), "municípios com dados"),
+         subtitle = paste(n_distinct(dados_do_ano$origem), "municípios com dados"),
          caption = "Fonte: INCRA/RAMT") +
     theme_void() +
     theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "gray20"))
@@ -356,7 +356,28 @@ cat(":::\n")
 ```
 
 As observações variam de acordo com a quantidade de cada tipologia, a quantidade de observações para cada tipologia foi a seguinte:
+```{r}
+#Rever o parágrafo acima, está ruim.
+# Prevenção contra objeto SF pesado
+dados_plot <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
 
+ggplot(dados_plot, aes(x = fct_rev(fct_infreq(as.factor(categoria_final))), fill = as.factor(categoria_final))) +
+  geom_bar(show.legend = FALSE) +
+  
+  # Gira o gráfico
+  coord_flip() + 
+  
+  labs(
+    title = "Contagem por categoria final",
+    x = NULL,
+    y = "Total de Observações"
+  ) +
+    theme(
+  axis.text.x = element_text(face = "bold", size = 10), # Negrito nas categorias (que estão na esquerda)
+  axis.text.y = element_text(face = "bold")             # Se quiser negrito nos números embaixo também
+) + 
+  theme_minimal()
+```
 
 ## 3. Análise e distribuições
 A estatística descritiva revela uma oscilação expressiva nos valores de VTI e VTN ao longo da série histórica. Essa volatilidade não reflete necessariamente uma tendência de mercado, mas sim a heterogeneidade espacial da coleta de dados em cada exercício. A tabela a seguir consolida as métricas de tendência central (média) e dispersão (mínimos e máximos) para ambas as categorias.
@@ -428,29 +449,6 @@ tabela_pivo |>
 ```
 
 A distribuição amostral revela a predominância de dados agregados ('Média Geral'), seguida pela Pecuária, refletindo a capilaridade extensiva dessa atividade no território nacional. Nota-se, contudo,  um volume expressivo de dados classificados como 'Exploração Mista', o que sugere desafios na segregação precisa do uso do solo em diversas regionai. 
-
-```{r}
-#Rever o parágrafo acima, está ruim.
-# Prevenção contra objeto SF pesado
-dados_plot <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
-
-ggplot(dados_plot, aes(x = fct_rev(fct_infreq(as.factor(categoria_final))), fill = as.factor(categoria_final))) +
-  geom_bar(show.legend = FALSE) +
-  
-  # Gira o gráfico
-  coord_flip() + 
-  
-  labs(
-    title = "Contagem por categoria final",
-    x = NULL,
-    y = "Total de Observações"
-  ) +
-    theme(
-  axis.text.x = element_text(face = "bold", size = 10), # Negrito nas categorias (que estão na esquerda)
-  axis.text.y = element_text(face = "bold")             # Se quiser negrito nos números embaixo também
-) + 
-  theme_minimal()
-```
 
 Os scatter plots mostram a natureza discreta dos dados, os dados são variáveis macroeconomicas agregadas das regiões de homogeniedade determinada pelo incra através do algoritmo de WARD e do procedimento de K-means, nesse sentido, os scatters apenas demosntram um reflexo disso, do contrário seria esperado que os locai com mais áreas apresentassem uma nuvem de pontos que segue as linhas tracejadas. (REVISAR ISSO TÁ ESQUISITO E NA MINHA CABEÇA TA SEGUINDO A LINHA TRACEJADA)
 ```{r}
@@ -779,8 +777,7 @@ ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = medi
   )
 ```
 
-Por estado:
-consertar escala para mostrar as ufs:
+
 ```{r}
 # 1. Preparação
 dados_uf <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
@@ -790,7 +787,7 @@ dados_uf <- dados_uf |>
   filter(categoria_final %in% c("agricultura", "pecuaria", "silvicultura", "vegetacao nativa")) |>
   # Garante que temos a UF (Se não tiver a coluna abbrev_state, extraímos do código)
   mutate(
-    UF = if("abbrev_state" %in% names(dados_uf)) abbrev_state else substr(code_muni, 1, 2)
+    UF = if("UF" %in% names(dados_uf)) UF else substr(code_muni, 1, 2)
   )
 
 # 2. O Plot (Boxplot Ordenado)
@@ -821,5 +818,271 @@ ggplot(dados_uf, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +
   theme(
     strip.text = element_text(face = "bold", size = 11),
     axis.text.y = element_text(size = 7) # Fonte menor para caber todas as UFs
+  )
+```
+
+
+Médias ponderadas por área, por estado:
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| results: asis 
+
+library(ggplot2)
+library(dplyr)
+library(sf)
+
+# 1. CÁLCULO DAS MÉTRICAS (VTI - Com Imóvel)
+serie_vti_ponderada <- df_areas |>
+  st_drop_geometry() |>
+  # Garante UF e Peso de segurança
+  mutate(
+    UF = if("abbrev_state" %in% names(df_areas)) abbrev_state else substr(code_muni, 1, 2),
+    area_peso = ifelse(is.na(area_ha_calculada) | area_ha_calculada <= 0, 1, area_ha_calculada)
+  ) |>
+  # Filtra VTI válido e categorias principais
+  filter(ano < 2025, vti_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral")) |> 
+  
+  # AQUI ESTAVA FALTANDO: O AGRUPAMENTO E RESUMO
+  group_by(ano, UF, categoria_final) |> 
+  summarise(
+    # Mediana (Tendência Central)
+    vti_mediano = median(vti_media, na.rm = TRUE),
+    
+    # Média Ponderada (Valor do Estoque)
+    vti_ponderado = sum(vti_media * area_peso, na.rm = TRUE) / sum(area_peso, na.rm = TRUE),
+    
+    n_obs = n(),
+    .groups = "drop"
+  ) |>
+  # Só mantém anos/estados com dados suficientes para não gerar ruído
+  filter(n_obs >= 5)
+
+# 2. TRATAMENTO DE SIGLAS (De Código IBGE para Letras)
+serie_vti_tratada <- serie_vti_ponderada |>
+  mutate(
+    UF_cod = as.character(UF),
+    UF_sigla = case_match(UF_cod,
+      "11" ~ "RO", "12" ~ "AC", "13" ~ "AM", "14" ~ "RR", "15" ~ "PA", "16" ~ "AP", "17" ~ "TO",
+      "21" ~ "MA", "22" ~ "PI", "23" ~ "CE", "24" ~ "RN", "25" ~ "PB", "26" ~ "PE", "27" ~ "AL", "28" ~ "SE", "29" ~ "BA",
+      "31" ~ "MG", "32" ~ "ES", "33" ~ "RJ", "35" ~ "SP",
+      "41" ~ "PR", "42" ~ "SC", "43" ~ "RS",
+      "50" ~ "MS", "51" ~ "MT", "52" ~ "GO", "53" ~ "DF",
+      .default = UF_cod # Se já estiver certo, mantém
+    )
+  )
+
+lista_ufs_vti <- sort(unique(serie_vti_tratada$UF_sigla))
+
+# 3. LOOP DE PLOTAGEM (ABAS POR ESTADO)
+cat("::: {.panel-tabset}\n\n")
+
+for (uf_atual in lista_ufs_vti) {
+  
+  cat("## ", uf_atual, "\n\n")
+  
+  dados_plot_uf <- serie_vti_tratada |> 
+    filter(UF_sigla == uf_atual)
+  
+  p <- ggplot(dados_plot_uf, aes(x = ano)) +
+    
+    # Linha Tracejada = Mediana (Referência)
+    geom_line(aes(y = vti_mediano, color = "Mediana (Simples)"), linetype = "dashed", size = 0.8) +
+    
+    # Linha Sólida = Média Ponderada (Valor do Estoque)
+    geom_line(aes(y = vti_ponderado, color = "Média Ponderada (Área)"), size = 1.2) +
+    
+    facet_wrap(~categoria_final, scales = "free_y") +
+    
+    scale_y_continuous(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+    scale_x_continuous(breaks = seq(2016, 2024, 2)) +
+    
+    # Cores (Azul para VTI)
+    scale_color_manual(values = c("Mediana (Simples)" = "gray50", "Média Ponderada (Área)" = "darkblue")) +
+    
+    labs(
+      title = paste("Evolução do VTI (Com Imóvel) -", uf_atual),
+      subtitle = "Comparativo: Ponderado pela Área vs. Mediana Central",
+      y = "VTI Médio (R$/ha)",
+      x = NULL,
+      color = NULL
+    ) +
+    
+    theme_minimal() +
+    theme(
+      legend.position = "top",
+      plot.title = element_text(face = "bold"),
+      strip.text = element_text(face = "bold", size = 12)
+    )
+  
+  print(p)
+  cat("\n\n")
+}
+
+cat(":::\n")
+```
+
+Evolução de preços do VTN
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| results: asis 
+
+library(ggplot2)
+library(dplyr)
+library(sf) # Caso precise manipular geom, mas st_drop garante leveza
+
+# 1. CÁLCULO DAS MÉTRICAS (VTN)
+serie_vtn_ponderada <- df_areas |>
+  st_drop_geometry() |>
+  # Garante UF e Peso
+  mutate(
+    UF = if("abbrev_state" %in% names(df_areas)) abbrev_state else substr(code_muni, 1, 2),
+    area_peso = ifelse(is.na(area_ha_calculada) | area_ha_calculada <= 0, 1, area_ha_calculada)
+  ) |>
+  # FILTRO CRÍTICO: Agora olhamos para VTN > 0
+  filter(ano < 2025, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral")) |> 
+  
+  group_by(ano, UF, categoria_final) |> 
+  summarise(
+    # --- MEDIANA DO VTN ---
+    vtn_mediano = median(vtn_media, na.rm = TRUE),
+    
+    # --- MÉDIA PONDERADA DO VTN ---
+    vtn_ponderado = sum(vtn_media * area_peso, na.rm = TRUE) / sum(area_peso, na.rm = TRUE),
+    
+    n_obs = n(),
+    .groups = "drop"
+  ) |>
+  filter(n_obs >= 5)
+
+# 2. TRATAMENTO DE SIGLAS (De-Para IBGE)
+serie_vtn_tratada <- serie_vtn_ponderada |>
+  mutate(
+    UF_cod = as.character(UF),
+    UF_sigla = case_match(UF_cod,
+      "11" ~ "RO", "12" ~ "AC", "13" ~ "AM", "14" ~ "RR", "15" ~ "PA", "16" ~ "AP", "17" ~ "TO",
+      "21" ~ "MA", "22" ~ "PI", "23" ~ "CE", "24" ~ "RN", "25" ~ "PB", "26" ~ "PE", "27" ~ "AL", "28" ~ "SE", "29" ~ "BA",
+      "31" ~ "MG", "32" ~ "ES", "33" ~ "RJ", "35" ~ "SP",
+      "41" ~ "PR", "42" ~ "SC", "43" ~ "RS",
+      "50" ~ "MS", "51" ~ "MT", "52" ~ "GO", "53" ~ "DF",
+      .default = UF_cod
+    )
+  )
+
+lista_ufs_vtn <- sort(unique(serie_vtn_tratada$UF_sigla))
+
+# 3. LOOP DE PLOTAGEM (ABAS)
+cat("::: {.panel-tabset}\n\n")
+
+for (uf_atual in lista_ufs_vtn) {
+  
+  cat("## ", uf_atual, "\n\n")
+  
+  dados_plot_uf <- serie_vtn_tratada |> 
+    filter(UF_sigla == uf_atual)
+  
+  p <- ggplot(dados_plot_uf, aes(x = ano)) +
+    
+    # Linha Tracejada = Mediana VTN
+    geom_line(aes(y = vtn_mediano, color = "Mediana (Simples)"), linetype = "dashed", size = 0.8) +
+    
+    # Linha Sólida = Ponderada VTN
+    geom_line(aes(y = vtn_ponderado, color = "Média Ponderada (Área)"), size = 1.2) +
+    
+    facet_wrap(~categoria_final, scales = "free_y") +
+    
+    scale_y_continuous(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+    scale_x_continuous(breaks = seq(2016, 2024, 2)) +
+    
+    # Cores Diferentes para VTN (Verde/Cinza para diferenciar do VTI azul)
+    scale_color_manual(values = c("Mediana (Simples)" = "gray50", "Média Ponderada (Área)" = "darkgreen")) +
+    
+    labs(
+      title = paste("Evolução do Valor da Terra Nua (VTN) -", uf_atual),
+      subtitle = "Comparativo: Ponderado pela Área vs. Mediana Central",
+      y = "VTN (R$/ha)",
+      x = NULL,
+      color = NULL
+    ) +
+    
+    theme_minimal() +
+    theme(
+      legend.position = "top",
+      plot.title = element_text(face = "bold"),
+      strip.text = element_text(face = "bold", size = 12)
+    )
+  
+  print(p)
+  cat("\n\n")
+}
+
+cat(":::\n")
+```
+
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(sf)
+
+# 1. FILTRO DE ESTABILIDADE (Define quem é "Município Guerreiro")
+# Objetivo: Evitar viés de composição. Só queremos analisar a tendência de preço
+# de locais que reportaram dados consistentemente ao longo do tempo.
+
+# Remove geometria para ficar leve
+dados_painel <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+municipios_estaveis <- dados_painel |>
+  filter(ano < 2025, vti_media > 0) |>
+  group_by(code_muni, categoria_final) |>
+  summarise(
+    anos_presentes = n_distinct(ano),
+    .groups = "drop"
+  ) |>
+  # CRITÉRIO DE CORTE: Só aceita quem tem pelo menos 4 anos de dados
+  filter(anos_presentes >= 4)
+
+# 2. FILTRAGEM DOS DADOS ORIGINAIS
+# Mantém apenas as linhas correspondentes aos municípios estáveis
+dados_serie_limpa <- dados_painel |>
+  semi_join(municipios_estaveis, by = c("code_muni", "categoria_final")) |>
+  filter(ano < 2025)
+
+# 3. O GRÁFICO "SPAGHETTI" (Trajetória Individual + Tendência)
+ggplot(dados_serie_limpa, aes(x = ano, y = vti_media)) +
+  
+  # A. O "Espaguete" (Caos Individual)
+  # Cada linha cinza é um município. Alpha baixo (0.15) para ver onde acumula.
+  geom_line(aes(group = code_muni), alpha = 0.15, color = "gray50", size = 0.3) +
+  
+  # B. A Tendência Central ROBUSTA (Suavização LOESS)
+  # A linha colorida resume o comportamento do grupo estável
+  geom_smooth(aes(color = categoria_final), method = "loess", se = TRUE, size = 1.2) +
+  
+  # Separa por uso para não misturar escalas
+  facet_wrap(~categoria_final, scales = "free_y") +
+  
+  # Escalas e Formatação
+  scale_y_log10(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+  scale_x_continuous(breaks = seq(2016, 2024, 2)) + # Garante anos pares no eixo
+  
+  labs(
+    title = "Trajetória de Preços: Análise de Painel Estável (N >= 4 anos)",
+    subtitle = "Linhas cinzas = Municípios individuais. Linha colorida = Tendência suavizada.",
+    caption = "Apenas municípios com recorrência temporal foram mantidos para evitar viés de composição.",
+    y = "VTI (R$/ha) [Log]",
+    x = "Ano"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "none", # A cor já está explicada no facet
+    strip.text = element_text(face = "bold", size = 11)
   )
 ```
