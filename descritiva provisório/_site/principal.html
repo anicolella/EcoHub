@@ -458,7 +458,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 </section>
 <section id="disponibilidade-dos-dados" class="level2">
 <h2 class="anchored" data-anchor-id="disponibilidade-dos-dados">2.Disponibilidade dos dados</h2>
-<p>A coleta de dados dos relatórios RAMT apresenta significativa heterogeneidade entre as superintendências regionais do INCRA. A base de dados abrange o período de 2016 a 2025, com destaque para o ano de 2023, que apresenta maior cobertura territorial devido à publicação do Atlas do Mercado de Terras. No entanto, identificaram-se sobreposições entre o Atlas e relatórios de anos adjacentes. Metodologicamente, optou-se pela prevalência dos dados dos relatórios originais em casos de conflito, visando manter a consistência da série histórica. Essa decisão justifica as lacunas observadas em alguns estados nos mapas de 2023, onde as informações do Atlas foram suprimidas em favor dos registros dos relatórios.</p>
+<p>A coleta de dados dos relatórios RAMT apresenta significativa heterogeneidade entre as superintendências regionais do INCRA. A base de dados abrange o período de 2016 a 2025, com destaque para o ano de 2023, que apresenta maior cobertura territorial devido à publicação do Atlas do Mercado de Terras. No entanto, identificaram-se sobreposições entre o Atlas e relatórios de anos adjacentes. Metodologicamente, optou-se pela prevalência dos dados dos relatórios originais em casos de conflito, visando manter a consistência da série histórica. Essa decisão justifica as lacunas observadas em alguns estados nos mapas de 2023, onde as informações do Atlas foram suprimidas em favor dos registros dos relatórios. Além disso, os relatórios nem sempre contemplam todos os municípios da zona homogênea (Mercado de terras), portanto, existem algumas lacunas nos mapas por falta de melhor detalhamento nos municípios. É possível observar que existem alguns relatórios em que somente informações parciais dos mercados de um mesmo stado são publicados.</p>
 <p>Seguem os mapas sobre as disponibilidades dos dados dos relatórios: ::: {.panel-tabset}</p>
 </section>
 <section id="section" class="level2">
@@ -502,6 +502,38 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 <p><img src="principal_files/figure-html/unnamed-chunk-5-10.png" class="img-fluid" width="672"></p>
 <p>:::</p>
 <p>As observações variam de acordo com a quantidade de cada tipologia, a quantidade de observações para cada tipologia foi a seguinte:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>veja o código</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Rever o parágrafo acima, está ruim.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prevenção contra objeto SF pesado</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dados_plot <span class="ot">&lt;-</span> <span class="cf">if</span>(<span class="fu">inherits</span>(df_analise, <span class="st">"sf"</span>)) sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>(df_analise) <span class="cf">else</span> df_analise</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_plot, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_infreq</span>(<span class="fu">as.factor</span>(categoria_final))), <span class="at">fill =</span> <span class="fu">as.factor</span>(categoria_final))) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Gira o gráfico</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Contagem por categoria final"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Total de Observações"</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">10</span>), <span class="co"># Negrito nas categorias (que estão na esquerda)</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)             <span class="co"># Se quiser negrito nos números embaixo também</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="principal_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="análise-e-distribuições" class="level2">
 <h2 class="anchored" data-anchor-id="análise-e-distribuições">3. Análise e distribuições</h2>
@@ -509,88 +541,88 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 <div class="cell">
 <details class="code-fold">
 <summary>veja o código</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Preparar os dados (Agregação Manual)</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tabela_pivo <span class="ot">&lt;-</span> df_analise <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">|&gt;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Métricas para VTI</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">vti_med =</span> <span class="fu">mean</span>(vti_media, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">vti_min =</span> <span class="fu">min</span>(vti_minimo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">vti_max =</span> <span class="fu">max</span>(vti_maximo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Métricas para VTN</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">vtn_med =</span> <span class="fu">mean</span>(vtn_media, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">vtn_min =</span> <span class="fu">min</span>(vtn_minimo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">vtn_max =</span> <span class="fu">max</span>(vtn_maximo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Contagem (Opcional, mas bom para auditoria)</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_registros =</span> <span class="fu">n</span>()</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Gerar a Tabela Profissional</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>tabela_pivo <span class="sc">|&gt;</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- Cabeçalho ---</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Evolução Histórica de Preços (VTI vs VTN)**"</span>),</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Valores Agregados por Ano (Média Nacional e Amplitude)"</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- Formatação Numérica (Antes de fundir) ---</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="sc">-</span>ano, <span class="co"># Formata tudo exceto o ano</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span>,   <span class="co"># Sem centavos para limpar a vista</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">"."</span>,</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">dec_mark =</span> <span class="st">","</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- O PULO DO GATO: Fusão de Colunas (Pattern) ---</span></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria o formato: "Média (Mín - Máx)"</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_merge</span>(</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(vti_med, vti_min, vti_max),</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="st">"{1} ({2} - {3})"</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_merge</span>(</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(vtn_med, vtn_min, vtn_max),</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="st">"{1} ({2} - {3})"</span></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- Renomear as Colunas Finais ---</span></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">ano =</span> <span class="st">"Ano"</span>,</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">vti_med =</span> <span class="fu">md</span>(<span class="st">"**VTI (R$/ha)**&lt;br&gt;&lt;small&gt;Média (Mín - Máx)&lt;/small&gt;"</span>),</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">vtn_med =</span> <span class="fu">md</span>(<span class="st">"**VTN (R$/ha)**&lt;br&gt;&lt;small&gt;Média (Mín - Máx)&lt;/small&gt;"</span>),</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_registros =</span> <span class="st">"Nº Municípios"</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- Alinhamento e Estilo ---</span></span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>() <span class="sc">|&gt;</span> <span class="co"># Listras zebradas para facilitar leitura</span></span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>), <span class="co"># Ocupa 100% da largura do container</span></span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>)</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Preparar os dados (Agregação Manual)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tabela_pivo <span class="ot">&lt;-</span> df_analise <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Métricas para VTI</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">vti_med =</span> <span class="fu">mean</span>(vti_media, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">vti_min =</span> <span class="fu">min</span>(vti_minimo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">vti_max =</span> <span class="fu">max</span>(vti_maximo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Métricas para VTN</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">vtn_med =</span> <span class="fu">mean</span>(vtn_media, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">vtn_min =</span> <span class="fu">min</span>(vtn_minimo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">vtn_max =</span> <span class="fu">max</span>(vtn_maximo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Contagem (Opcional, mas bom para auditoria)</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_registros =</span> <span class="fu">n</span>()</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Gerar a Tabela Profissional</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>tabela_pivo <span class="sc">|&gt;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- Cabeçalho ---</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Evolução Histórica de Preços (VTI vs VTN)**"</span>),</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Valores Agregados por Ano (Média Nacional e Amplitude)"</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- Formatação Numérica (Antes de fundir) ---</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="sc">-</span>ano, <span class="co"># Formata tudo exceto o ano</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span>,   <span class="co"># Sem centavos para limpar a vista</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">"."</span>,</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">dec_mark =</span> <span class="st">","</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- O PULO DO GATO: Fusão de Colunas (Pattern) ---</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria o formato: "Média (Mín - Máx)"</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_merge</span>(</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(vti_med, vti_min, vti_max),</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="st">"{1} ({2} - {3})"</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_merge</span>(</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(vtn_med, vtn_min, vtn_max),</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="st">"{1} ({2} - {3})"</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- Renomear as Colunas Finais ---</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">ano =</span> <span class="st">"Ano"</span>,</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">vti_med =</span> <span class="fu">md</span>(<span class="st">"**VTI (R$/ha)**&lt;br&gt;&lt;small&gt;Média (Mín - Máx)&lt;/small&gt;"</span>),</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">vtn_med =</span> <span class="fu">md</span>(<span class="st">"**VTN (R$/ha)**&lt;br&gt;&lt;small&gt;Média (Mín - Máx)&lt;/small&gt;"</span>),</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_registros =</span> <span class="st">"Nº Municípios"</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --- Alinhamento e Estilo ---</span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>() <span class="sc">|&gt;</span> <span class="co"># Listras zebradas para facilitar leitura</span></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>), <span class="co"># Ocupa 100% da largura do container</span></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>)</span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="kqqnzlvvqe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kqqnzlvvqe table {
+<div id="boerdloeok" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#boerdloeok table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kqqnzlvvqe thead, #kqqnzlvvqe tbody, #kqqnzlvvqe tfoot, #kqqnzlvvqe tr, #kqqnzlvvqe td, #kqqnzlvvqe th {
+#boerdloeok thead, #boerdloeok tbody, #boerdloeok tfoot, #boerdloeok tr, #boerdloeok td, #boerdloeok th {
   border-style: none;
 }
 
-#kqqnzlvvqe p {
+#boerdloeok p {
   margin: 0;
   padding: 0;
 }
 
-#kqqnzlvvqe .gt_table {
+#boerdloeok .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -616,12 +648,12 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-left-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_caption {
+#boerdloeok .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kqqnzlvvqe .gt_title {
+#boerdloeok .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -633,7 +665,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-bottom-width: 0;
 }
 
-#kqqnzlvvqe .gt_subtitle {
+#boerdloeok .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -645,7 +677,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-top-width: 0;
 }
 
-#kqqnzlvvqe .gt_heading {
+#boerdloeok .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -657,13 +689,13 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-right-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_bottom_border {
+#boerdloeok .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_col_headings {
+#boerdloeok .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -678,7 +710,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-right-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_col_heading {
+#boerdloeok .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -698,7 +730,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   overflow-x: hidden;
 }
 
-#kqqnzlvvqe .gt_column_spanner_outer {
+#boerdloeok .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -710,15 +742,15 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 4px;
 }
 
-#kqqnzlvvqe .gt_column_spanner_outer:first-child {
+#boerdloeok .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kqqnzlvvqe .gt_column_spanner_outer:last-child {
+#boerdloeok .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kqqnzlvvqe .gt_column_spanner {
+#boerdloeok .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -730,11 +762,11 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   width: 100%;
 }
 
-#kqqnzlvvqe .gt_spanner_row {
+#boerdloeok .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kqqnzlvvqe .gt_group_heading {
+#boerdloeok .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -760,7 +792,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   text-align: left;
 }
 
-#kqqnzlvvqe .gt_empty_group_heading {
+#boerdloeok .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -775,15 +807,15 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   vertical-align: middle;
 }
 
-#kqqnzlvvqe .gt_from_md > :first-child {
+#boerdloeok .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kqqnzlvvqe .gt_from_md > :last-child {
+#boerdloeok .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kqqnzlvvqe .gt_row {
+#boerdloeok .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -802,7 +834,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   overflow-x: hidden;
 }
 
-#kqqnzlvvqe .gt_stub {
+#boerdloeok .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -815,7 +847,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#kqqnzlvvqe .gt_stub_row_group {
+#boerdloeok .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -829,15 +861,15 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   vertical-align: top;
 }
 
-#kqqnzlvvqe .gt_row_group_first td {
+#boerdloeok .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kqqnzlvvqe .gt_row_group_first th {
+#boerdloeok .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kqqnzlvvqe .gt_summary_row {
+#boerdloeok .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -847,16 +879,16 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#kqqnzlvvqe .gt_first_summary_row {
+#boerdloeok .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_first_summary_row.thick {
+#boerdloeok .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kqqnzlvvqe .gt_last_summary_row {
+#boerdloeok .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -866,7 +898,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-bottom-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_grand_summary_row {
+#boerdloeok .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -876,7 +908,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#kqqnzlvvqe .gt_first_grand_summary_row {
+#boerdloeok .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -886,7 +918,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-top-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_last_grand_summary_row_top {
+#boerdloeok .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -896,11 +928,11 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-bottom-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_striped {
+#boerdloeok .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kqqnzlvvqe .gt_table_body {
+#boerdloeok .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -909,7 +941,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-bottom-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_footnotes {
+#boerdloeok .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -923,7 +955,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-right-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_footnote {
+#boerdloeok .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -932,7 +964,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#kqqnzlvvqe .gt_sourcenotes {
+#boerdloeok .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -946,7 +978,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-right-color: #D3D3D3;
 }
 
-#kqqnzlvvqe .gt_sourcenote {
+#boerdloeok .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -954,72 +986,72 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#kqqnzlvvqe .gt_left {
+#boerdloeok .gt_left {
   text-align: left;
 }
 
-#kqqnzlvvqe .gt_center {
+#boerdloeok .gt_center {
   text-align: center;
 }
 
-#kqqnzlvvqe .gt_right {
+#boerdloeok .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kqqnzlvvqe .gt_font_normal {
+#boerdloeok .gt_font_normal {
   font-weight: normal;
 }
 
-#kqqnzlvvqe .gt_font_bold {
+#boerdloeok .gt_font_bold {
   font-weight: bold;
 }
 
-#kqqnzlvvqe .gt_font_italic {
+#boerdloeok .gt_font_italic {
   font-style: italic;
 }
 
-#kqqnzlvvqe .gt_super {
+#boerdloeok .gt_super {
   font-size: 65%;
 }
 
-#kqqnzlvvqe .gt_footnote_marks {
+#boerdloeok .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kqqnzlvvqe .gt_asterisk {
+#boerdloeok .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kqqnzlvvqe .gt_indent_1 {
+#boerdloeok .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kqqnzlvvqe .gt_indent_2 {
+#boerdloeok .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kqqnzlvvqe .gt_indent_3 {
+#boerdloeok .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kqqnzlvvqe .gt_indent_4 {
+#boerdloeok .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kqqnzlvvqe .gt_indent_5 {
+#boerdloeok .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kqqnzlvvqe .katex-display {
+#boerdloeok .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kqqnzlvvqe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#boerdloeok div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1113,38 +1145,6 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 </div>
 </div>
 <p>A distribuição amostral revela a predominância de dados agregados (‘Média Geral’), seguida pela Pecuária, refletindo a capilaridade extensiva dessa atividade no território nacional. Nota-se, contudo, um volume expressivo de dados classificados como ‘Exploração Mista’, o que sugere desafios na segregação precisa do uso do solo em diversas regionai.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>veja o código</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Rever o parágrafo acima, está ruim.</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prevenção contra objeto SF pesado</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>dados_plot <span class="ot">&lt;-</span> <span class="cf">if</span>(<span class="fu">inherits</span>(df_analise, <span class="st">"sf"</span>)) sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>(df_analise) <span class="cf">else</span> df_analise</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_plot, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_infreq</span>(<span class="fu">as.factor</span>(categoria_final))), <span class="at">fill =</span> <span class="fu">as.factor</span>(categoria_final))) <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Gira o gráfico</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Contagem por categoria final"</span>,</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Total de Observações"</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">10</span>), <span class="co"># Negrito nas categorias (que estão na esquerda)</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)             <span class="co"># Se quiser negrito nos números embaixo também</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> </span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="principal_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <p>Os scatter plots mostram a natureza discreta dos dados, os dados são variáveis macroeconomicas agregadas das regiões de homogeniedade determinada pelo incra através do algoritmo de WARD e do procedimento de K-means, nesse sentido, os scatters apenas demosntram um reflexo disso, do contrário seria esperado que os locai com mais áreas apresentassem uma nuvem de pontos que segue as linhas tracejadas. (REVISAR ISSO TÁ ESQUISITO E NA MINHA CABEÇA TA SEGUINDO A LINHA TRACEJADA)</p>
 <div class="cell">
 <details class="code-fold">
@@ -1261,23 +1261,23 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 <span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="qabpoyoqpz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qabpoyoqpz table {
+<div id="kujhqkdnvh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kujhqkdnvh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qabpoyoqpz thead, #qabpoyoqpz tbody, #qabpoyoqpz tfoot, #qabpoyoqpz tr, #qabpoyoqpz td, #qabpoyoqpz th {
+#kujhqkdnvh thead, #kujhqkdnvh tbody, #kujhqkdnvh tfoot, #kujhqkdnvh tr, #kujhqkdnvh td, #kujhqkdnvh th {
   border-style: none;
 }
 
-#qabpoyoqpz p {
+#kujhqkdnvh p {
   margin: 0;
   padding: 0;
 }
 
-#qabpoyoqpz .gt_table {
+#kujhqkdnvh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1303,12 +1303,12 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-left-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_caption {
+#kujhqkdnvh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qabpoyoqpz .gt_title {
+#kujhqkdnvh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1320,7 +1320,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-bottom-width: 0;
 }
 
-#qabpoyoqpz .gt_subtitle {
+#kujhqkdnvh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1332,7 +1332,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-top-width: 0;
 }
 
-#qabpoyoqpz .gt_heading {
+#kujhqkdnvh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1344,13 +1344,13 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-right-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_bottom_border {
+#kujhqkdnvh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_col_headings {
+#kujhqkdnvh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1365,7 +1365,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-right-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_col_heading {
+#kujhqkdnvh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1385,7 +1385,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   overflow-x: hidden;
 }
 
-#qabpoyoqpz .gt_column_spanner_outer {
+#kujhqkdnvh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1397,15 +1397,15 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 4px;
 }
 
-#qabpoyoqpz .gt_column_spanner_outer:first-child {
+#kujhqkdnvh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qabpoyoqpz .gt_column_spanner_outer:last-child {
+#kujhqkdnvh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qabpoyoqpz .gt_column_spanner {
+#kujhqkdnvh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1417,11 +1417,11 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   width: 100%;
 }
 
-#qabpoyoqpz .gt_spanner_row {
+#kujhqkdnvh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qabpoyoqpz .gt_group_heading {
+#kujhqkdnvh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1447,7 +1447,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   text-align: left;
 }
 
-#qabpoyoqpz .gt_empty_group_heading {
+#kujhqkdnvh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1462,15 +1462,15 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   vertical-align: middle;
 }
 
-#qabpoyoqpz .gt_from_md > :first-child {
+#kujhqkdnvh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qabpoyoqpz .gt_from_md > :last-child {
+#kujhqkdnvh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qabpoyoqpz .gt_row {
+#kujhqkdnvh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1489,7 +1489,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   overflow-x: hidden;
 }
 
-#qabpoyoqpz .gt_stub {
+#kujhqkdnvh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1502,7 +1502,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#qabpoyoqpz .gt_stub_row_group {
+#kujhqkdnvh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1516,15 +1516,15 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   vertical-align: top;
 }
 
-#qabpoyoqpz .gt_row_group_first td {
+#kujhqkdnvh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qabpoyoqpz .gt_row_group_first th {
+#kujhqkdnvh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qabpoyoqpz .gt_summary_row {
+#kujhqkdnvh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1534,16 +1534,16 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#qabpoyoqpz .gt_first_summary_row {
+#kujhqkdnvh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_first_summary_row.thick {
+#kujhqkdnvh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qabpoyoqpz .gt_last_summary_row {
+#kujhqkdnvh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1553,7 +1553,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-bottom-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_grand_summary_row {
+#kujhqkdnvh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1563,7 +1563,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#qabpoyoqpz .gt_first_grand_summary_row {
+#kujhqkdnvh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1573,7 +1573,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-top-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_last_grand_summary_row_top {
+#kujhqkdnvh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1583,11 +1583,11 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-bottom-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_striped {
+#kujhqkdnvh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qabpoyoqpz .gt_table_body {
+#kujhqkdnvh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1596,7 +1596,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-bottom-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_footnotes {
+#kujhqkdnvh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1610,7 +1610,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-right-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_footnote {
+#kujhqkdnvh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1619,7 +1619,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#qabpoyoqpz .gt_sourcenotes {
+#kujhqkdnvh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1633,7 +1633,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   border-right-color: #D3D3D3;
 }
 
-#qabpoyoqpz .gt_sourcenote {
+#kujhqkdnvh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1641,72 +1641,72 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
   padding-right: 5px;
 }
 
-#qabpoyoqpz .gt_left {
+#kujhqkdnvh .gt_left {
   text-align: left;
 }
 
-#qabpoyoqpz .gt_center {
+#kujhqkdnvh .gt_center {
   text-align: center;
 }
 
-#qabpoyoqpz .gt_right {
+#kujhqkdnvh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qabpoyoqpz .gt_font_normal {
+#kujhqkdnvh .gt_font_normal {
   font-weight: normal;
 }
 
-#qabpoyoqpz .gt_font_bold {
+#kujhqkdnvh .gt_font_bold {
   font-weight: bold;
 }
 
-#qabpoyoqpz .gt_font_italic {
+#kujhqkdnvh .gt_font_italic {
   font-style: italic;
 }
 
-#qabpoyoqpz .gt_super {
+#kujhqkdnvh .gt_super {
   font-size: 65%;
 }
 
-#qabpoyoqpz .gt_footnote_marks {
+#kujhqkdnvh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qabpoyoqpz .gt_asterisk {
+#kujhqkdnvh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qabpoyoqpz .gt_indent_1 {
+#kujhqkdnvh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qabpoyoqpz .gt_indent_2 {
+#kujhqkdnvh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qabpoyoqpz .gt_indent_3 {
+#kujhqkdnvh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qabpoyoqpz .gt_indent_4 {
+#kujhqkdnvh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qabpoyoqpz .gt_indent_5 {
+#kujhqkdnvh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qabpoyoqpz .katex-display {
+#kujhqkdnvh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qabpoyoqpz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kujhqkdnvh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2069,7 +2069,6 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 </div>
 </div>
 </div>
-<p>Por estado: consertar escala para mostrar as ufs:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>veja o código</summary>
@@ -2081,7 +2080,7 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(categoria_final <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"agricultura"</span>, <span class="st">"pecuaria"</span>, <span class="st">"silvicultura"</span>, <span class="st">"vegetacao nativa"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Garante que temos a UF (Se não tiver a coluna abbrev_state, extraímos do código)</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">UF =</span> <span class="cf">if</span>(<span class="st">"abbrev_state"</span> <span class="sc">%in%</span> <span class="fu">names</span>(dados_uf)) abbrev_state <span class="cf">else</span> <span class="fu">substr</span>(code_muni, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">UF =</span> <span class="cf">if</span>(<span class="st">"UF"</span> <span class="sc">%in%</span> <span class="fu">names</span>(dados_uf)) UF <span class="cf">else</span> <span class="fu">substr</span>(code_muni, <span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. O Plot (Boxplot Ordenado)</span></span>
@@ -2118,6 +2117,295 @@ ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 <div>
 <figure class="figure">
 <p><img src="principal_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Médias ponderadas por área, por estado: ::: {.panel-tabset}</p>
+</section>
+<section id="ac" class="level2">
+<h2 class="anchored" data-anchor-id="ac">AC</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</section>
+<section id="al" class="level2">
+<h2 class="anchored" data-anchor-id="al">AL</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid" width="672"></p>
+</section>
+<section id="am" class="level2">
+<h2 class="anchored" data-anchor-id="am">AM</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-3.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ap" class="level2">
+<h2 class="anchored" data-anchor-id="ap">AP</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-4.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ba" class="level2">
+<h2 class="anchored" data-anchor-id="ba">BA</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-5.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ce" class="level2">
+<h2 class="anchored" data-anchor-id="ce">CE</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-6.png" class="img-fluid" width="672"></p>
+</section>
+<section id="es" class="level2">
+<h2 class="anchored" data-anchor-id="es">ES</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-7.png" class="img-fluid" width="672"></p>
+</section>
+<section id="go" class="level2">
+<h2 class="anchored" data-anchor-id="go">GO</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-8.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ma" class="level2">
+<h2 class="anchored" data-anchor-id="ma">MA</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-9.png" class="img-fluid" width="672"></p>
+</section>
+<section id="mg" class="level2">
+<h2 class="anchored" data-anchor-id="mg">MG</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-10.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ms" class="level2">
+<h2 class="anchored" data-anchor-id="ms">MS</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-11.png" class="img-fluid" width="672"></p>
+</section>
+<section id="mt" class="level2">
+<h2 class="anchored" data-anchor-id="mt">MT</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-12.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pa" class="level2">
+<h2 class="anchored" data-anchor-id="pa">PA</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-13.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pb" class="level2">
+<h2 class="anchored" data-anchor-id="pb">PB</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-14.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pe" class="level2">
+<h2 class="anchored" data-anchor-id="pe">PE</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-15.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pi" class="level2">
+<h2 class="anchored" data-anchor-id="pi">PI</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-16.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pr" class="level2">
+<h2 class="anchored" data-anchor-id="pr">PR</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-17.png" class="img-fluid" width="672"></p>
+</section>
+<section id="rj" class="level2">
+<h2 class="anchored" data-anchor-id="rj">RJ</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-18.png" class="img-fluid" width="672"></p>
+</section>
+<section id="rn" class="level2">
+<h2 class="anchored" data-anchor-id="rn">RN</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-19.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ro" class="level2">
+<h2 class="anchored" data-anchor-id="ro">RO</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-20.png" class="img-fluid" width="672"></p>
+</section>
+<section id="rr" class="level2">
+<h2 class="anchored" data-anchor-id="rr">RR</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-21.png" class="img-fluid" width="672"></p>
+</section>
+<section id="rs" class="level2">
+<h2 class="anchored" data-anchor-id="rs">RS</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-22.png" class="img-fluid" width="672"></p>
+</section>
+<section id="sc" class="level2">
+<h2 class="anchored" data-anchor-id="sc">SC</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-23.png" class="img-fluid" width="672"></p>
+</section>
+<section id="se" class="level2">
+<h2 class="anchored" data-anchor-id="se">SE</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-24.png" class="img-fluid" width="672"></p>
+</section>
+<section id="sp" class="level2">
+<h2 class="anchored" data-anchor-id="sp">SP</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-25.png" class="img-fluid" width="672"></p>
+</section>
+<section id="to" class="level2">
+<h2 class="anchored" data-anchor-id="to">TO</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-15-26.png" class="img-fluid" width="672"></p>
+<p>:::</p>
+<p>Evolução de preços do VTN ::: {.panel-tabset}</p>
+</section>
+<section id="ac-1" class="level2">
+<h2 class="anchored" data-anchor-id="ac-1">AC</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</section>
+<section id="al-1" class="level2">
+<h2 class="anchored" data-anchor-id="al-1">AL</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-2.png" class="img-fluid" width="672"></p>
+</section>
+<section id="am-1" class="level2">
+<h2 class="anchored" data-anchor-id="am-1">AM</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-3.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ap-1" class="level2">
+<h2 class="anchored" data-anchor-id="ap-1">AP</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-4.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ba-1" class="level2">
+<h2 class="anchored" data-anchor-id="ba-1">BA</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-5.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ce-1" class="level2">
+<h2 class="anchored" data-anchor-id="ce-1">CE</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-6.png" class="img-fluid" width="672"></p>
+</section>
+<section id="es-1" class="level2">
+<h2 class="anchored" data-anchor-id="es-1">ES</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-7.png" class="img-fluid" width="672"></p>
+</section>
+<section id="go-1" class="level2">
+<h2 class="anchored" data-anchor-id="go-1">GO</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-8.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ma-1" class="level2">
+<h2 class="anchored" data-anchor-id="ma-1">MA</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-9.png" class="img-fluid" width="672"></p>
+</section>
+<section id="mg-1" class="level2">
+<h2 class="anchored" data-anchor-id="mg-1">MG</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-10.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ms-1" class="level2">
+<h2 class="anchored" data-anchor-id="ms-1">MS</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-11.png" class="img-fluid" width="672"></p>
+</section>
+<section id="mt-1" class="level2">
+<h2 class="anchored" data-anchor-id="mt-1">MT</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-12.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pa-1" class="level2">
+<h2 class="anchored" data-anchor-id="pa-1">PA</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-13.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pb-1" class="level2">
+<h2 class="anchored" data-anchor-id="pb-1">PB</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-14.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pe-1" class="level2">
+<h2 class="anchored" data-anchor-id="pe-1">PE</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-15.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pi-1" class="level2">
+<h2 class="anchored" data-anchor-id="pi-1">PI</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-16.png" class="img-fluid" width="672"></p>
+</section>
+<section id="pr-1" class="level2">
+<h2 class="anchored" data-anchor-id="pr-1">PR</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-17.png" class="img-fluid" width="672"></p>
+</section>
+<section id="rj-1" class="level2">
+<h2 class="anchored" data-anchor-id="rj-1">RJ</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-18.png" class="img-fluid" width="672"></p>
+</section>
+<section id="rn-1" class="level2">
+<h2 class="anchored" data-anchor-id="rn-1">RN</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-19.png" class="img-fluid" width="672"></p>
+</section>
+<section id="ro-1" class="level2">
+<h2 class="anchored" data-anchor-id="ro-1">RO</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-20.png" class="img-fluid" width="672"></p>
+</section>
+<section id="rr-1" class="level2">
+<h2 class="anchored" data-anchor-id="rr-1">RR</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-21.png" class="img-fluid" width="672"></p>
+</section>
+<section id="rs-1" class="level2">
+<h2 class="anchored" data-anchor-id="rs-1">RS</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-22.png" class="img-fluid" width="672"></p>
+</section>
+<section id="sc-1" class="level2">
+<h2 class="anchored" data-anchor-id="sc-1">SC</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-23.png" class="img-fluid" width="672"></p>
+</section>
+<section id="se-1" class="level2">
+<h2 class="anchored" data-anchor-id="se-1">SE</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-24.png" class="img-fluid" width="672"></p>
+</section>
+<section id="sp-1" class="level2">
+<h2 class="anchored" data-anchor-id="sp-1">SP</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-25.png" class="img-fluid" width="672"></p>
+</section>
+<section id="to-1" class="level2">
+<h2 class="anchored" data-anchor-id="to-1">TO</h2>
+<p><img src="principal_files/figure-html/unnamed-chunk-16-26.png" class="img-fluid" width="672"></p>
+<p>:::</p>
+<div class="cell">
+<details class="code-fold">
+<summary>veja o código</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. FILTRO DE ESTABILIDADE (Define quem é "Município Guerreiro")</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Objetivo: Evitar viés de composição. Só queremos analisar a tendência de preço</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># de locais que reportaram dados consistentemente ao longo do tempo.</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove geometria para ficar leve</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>dados_painel <span class="ot">&lt;-</span> <span class="cf">if</span>(<span class="fu">inherits</span>(df_analise, <span class="st">"sf"</span>)) sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>(df_analise) <span class="cf">else</span> df_analise</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>municipios_estaveis <span class="ot">&lt;-</span> dados_painel <span class="sc">|&gt;</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ano <span class="sc">&lt;</span> <span class="dv">2025</span>, vti_media <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(code_muni, categoria_final) <span class="sc">|&gt;</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">anos_presentes =</span> <span class="fu">n_distinct</span>(ano),</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># CRITÉRIO DE CORTE: Só aceita quem tem pelo menos 4 anos de dados</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(anos_presentes <span class="sc">&gt;=</span> <span class="dv">4</span>)</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. FILTRAGEM DOS DADOS ORIGINAIS</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Mantém apenas as linhas correspondentes aos municípios estáveis</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>dados_serie_limpa <span class="ot">&lt;-</span> dados_painel <span class="sc">|&gt;</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">semi_join</span>(municipios_estaveis, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code_muni"</span>, <span class="st">"categoria_final"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ano <span class="sc">&lt;</span> <span class="dv">2025</span>)</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. O GRÁFICO "SPAGHETTI" (Trajetória Individual + Tendência)</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_serie_limpa, <span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> vti_media)) <span class="sc">+</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A. O "Espaguete" (Caos Individual)</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cada linha cinza é um município. Alpha baixo (0.15) para ver onde acumula.</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> code_muni), <span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">color =</span> <span class="st">"gray50"</span>, <span class="at">size =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># B. A Tendência Central ROBUSTA (Suavização LOESS)</span></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A linha colorida resume o comportamento do grupo estável</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">color =</span> categoria_final), <span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Separa por uso para não misturar escalas</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>categoria_final, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Escalas e Formatação</span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">prefix =</span> <span class="st">"R$ "</span>, <span class="at">scale_cut =</span> scales<span class="sc">::</span><span class="fu">cut_short_scale</span>())) <span class="sc">+</span></span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2016</span>, <span class="dv">2024</span>, <span class="dv">2</span>)) <span class="sc">+</span> <span class="co"># Garante anos pares no eixo</span></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Trajetória de Preços: Análise de Painel Estável (N &gt;= 4 anos)"</span>,</span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Linhas cinzas = Municípios individuais. Linha colorida = Tendência suavizada."</span>,</span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Apenas municípios com recorrência temporal foram mantidos para evitar viés de composição."</span>,</span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"VTI (R$/ha) [Log]"</span>,</span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Ano"</span></span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="co"># A cor já está explicada no facet</span></span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">11</span>)</span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 30 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="principal_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

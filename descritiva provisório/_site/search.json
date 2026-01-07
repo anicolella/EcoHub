@@ -18,7 +18,7 @@
     "href": "principal.html#disponibilidade-dos-dados",
     "title": "Análise descritivas RAMT",
     "section": "2.Disponibilidade dos dados",
-    "text": "2.Disponibilidade dos dados\nA coleta de dados dos relatórios RAMT apresenta significativa heterogeneidade entre as superintendências regionais do INCRA. A base de dados abrange o período de 2016 a 2025, com destaque para o ano de 2023, que apresenta maior cobertura territorial devido à publicação do Atlas do Mercado de Terras. No entanto, identificaram-se sobreposições entre o Atlas e relatórios de anos adjacentes. Metodologicamente, optou-se pela prevalência dos dados dos relatórios originais em casos de conflito, visando manter a consistência da série histórica. Essa decisão justifica as lacunas observadas em alguns estados nos mapas de 2023, onde as informações do Atlas foram suprimidas em favor dos registros dos relatórios.\nSeguem os mapas sobre as disponibilidades dos dados dos relatórios: ::: {.panel-tabset}"
+    "text": "2.Disponibilidade dos dados\nA coleta de dados dos relatórios RAMT apresenta significativa heterogeneidade entre as superintendências regionais do INCRA. A base de dados abrange o período de 2016 a 2025, com destaque para o ano de 2023, que apresenta maior cobertura territorial devido à publicação do Atlas do Mercado de Terras. No entanto, identificaram-se sobreposições entre o Atlas e relatórios de anos adjacentes. Metodologicamente, optou-se pela prevalência dos dados dos relatórios originais em casos de conflito, visando manter a consistência da série histórica. Essa decisão justifica as lacunas observadas em alguns estados nos mapas de 2023, onde as informações do Atlas foram suprimidas em favor dos registros dos relatórios. Além disso, os relatórios nem sempre contemplam todos os municípios da zona homogênea (Mercado de terras), portanto, existem algumas lacunas nos mapas por falta de melhor detalhamento nos municípios. É possível observar que existem alguns relatórios em que somente informações parciais dos mercados de um mesmo stado são publicados.\nSeguem os mapas sobre as disponibilidades dos dados dos relatórios: ::: {.panel-tabset}"
   },
   {
     "objectID": "principal.html#section",
@@ -88,13 +88,377 @@
     "href": "principal.html#section-9",
     "title": "Análise descritivas RAMT",
     "section": "2025",
-    "text": "2025\n\n:::\nAs observações variam de acordo com a quantidade de cada tipologia, a quantidade de observações para cada tipologia foi a seguinte:"
+    "text": "2025\n\n:::\nAs observações variam de acordo com a quantidade de cada tipologia, a quantidade de observações para cada tipologia foi a seguinte:\n\n\nveja o código\n#Rever o parágrafo acima, está ruim.\n# Prevenção contra objeto SF pesado\ndados_plot &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\nggplot(dados_plot, aes(x = fct_rev(fct_infreq(as.factor(categoria_final))), fill = as.factor(categoria_final))) +\n  geom_bar(show.legend = FALSE) +\n  \n  # Gira o gráfico\n  coord_flip() + \n  \n  labs(\n    title = \"Contagem por categoria final\",\n    x = NULL,\n    y = \"Total de Observações\"\n  ) +\n    theme(\n  axis.text.x = element_text(face = \"bold\", size = 10), # Negrito nas categorias (que estão na esquerda)\n  axis.text.y = element_text(face = \"bold\")             # Se quiser negrito nos números embaixo também\n) + \n  theme_minimal()"
   },
   {
     "objectID": "principal.html#análise-e-distribuições",
     "href": "principal.html#análise-e-distribuições",
     "title": "Análise descritivas RAMT",
     "section": "3. Análise e distribuições",
-    "text": "3. Análise e distribuições\nA estatística descritiva revela uma oscilação expressiva nos valores de VTI e VTN ao longo da série histórica. Essa volatilidade não reflete necessariamente uma tendência de mercado, mas sim a heterogeneidade espacial da coleta de dados em cada exercício. A tabela a seguir consolida as métricas de tendência central (média) e dispersão (mínimos e máximos) para ambas as categorias.\n\n\nveja o código\n# 1. Preparar os dados (Agregação Manual)\ntabela_pivo &lt;- df_analise |&gt;\n  st_drop_geometry() |&gt;\n  group_by(ano) |&gt;\n  summarise(\n    # Métricas para VTI\n    vti_med = mean(vti_media, na.rm = TRUE),\n    vti_min = min(vti_minimo, na.rm = TRUE),\n    vti_max = max(vti_maximo, na.rm = TRUE),\n    \n    # Métricas para VTN\n    vtn_med = mean(vtn_media, na.rm = TRUE),\n    vtn_min = min(vtn_minimo, na.rm = TRUE),\n    vtn_max = max(vtn_maximo, na.rm = TRUE),\n    \n    # Contagem (Opcional, mas bom para auditoria)\n    n_registros = n()\n  )\n\n# 2. Gerar a Tabela Profissional\ntabela_pivo |&gt;\n  gt() |&gt;\n  \n  # --- Cabeçalho ---\n  tab_header(\n    title = md(\"**Evolução Histórica de Preços (VTI vs VTN)**\"),\n    subtitle = \"Valores Agregados por Ano (Média Nacional e Amplitude)\"\n  ) |&gt;\n  \n  # --- Formatação Numérica (Antes de fundir) ---\n  fmt_number(\n    columns = -ano, # Formata tudo exceto o ano\n    decimals = 0,   # Sem centavos para limpar a vista\n    sep_mark = \".\",\n    dec_mark = \",\"\n  ) |&gt;\n  \n  # --- O PULO DO GATO: Fusão de Colunas (Pattern) ---\n  # Cria o formato: \"Média (Mín - Máx)\"\n  cols_merge(\n    columns = c(vti_med, vti_min, vti_max),\n    pattern = \"{1} ({2} - {3})\"\n  ) |&gt;\n  cols_merge(\n    columns = c(vtn_med, vtn_min, vtn_max),\n    pattern = \"{1} ({2} - {3})\"\n  ) |&gt;\n  \n  # --- Renomear as Colunas Finais ---\n  cols_label(\n    ano = \"Ano\",\n    vti_med = md(\"**VTI (R$/ha)**&lt;br&gt;&lt;small&gt;Média (Mín - Máx)&lt;/small&gt;\"),\n    vtn_med = md(\"**VTN (R$/ha)**&lt;br&gt;&lt;small&gt;Média (Mín - Máx)&lt;/small&gt;\"),\n    n_registros = \"Nº Municípios\"\n  ) |&gt;\n  \n  # --- Alinhamento e Estilo ---\n  cols_align(align = \"center\", columns = everything()) |&gt;\n  opt_row_striping() |&gt; # Listras zebradas para facilitar leitura\n  tab_options(\n    table.width = pct(100), # Ocupa 100% da largura do container\n    data_row.padding = px(6)\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvolução Histórica de Preços (VTI vs VTN)\n\n\nValores Agregados por Ano (Média Nacional e Amplitude)\n\n\nAno\nVTI (R$/ha)Média (Mín - Máx)\nVTN (R$/ha)Média (Mín - Máx)\nNº Municípios\n\n\n\n\n2016\n6.050 (346 - 48.788)\n4.692 (120 - 25.978)\n1.194\n\n\n2017\n18.427 (53 - 98.250)\n18.661 (255 - 98.250)\n5.963\n\n\n2018\n11.259 (470 - 559.065)\n11.705 (470 - 524.047)\n4.022\n\n\n2019\n18.114 (−3.896 - 86.875)\n16.038 (−2.359 - 83.580)\n4.271\n\n\n2020\n13.608 (361 - 89.751)\n12.039 (125 - 82.125)\n5.912\n\n\n2021\n28.362 (602 - 146.584)\n26.032 (492 - 129.646)\n3.501\n\n\n2022\n53.039 (−3.896 - 2.180.003)\n48.266 (−2.359 - 2.131.786)\n19.041\n\n\n2023\n47.787 (100 - 2.180.003)\n42.760 (80 - 2.131.786)\n21.191\n\n\n2024\n44.513 (846 - 309.402)\n40.408 (153 - 142.117)\n4.641\n\n\n2025\n7.582 (1.474 - 34.731)\n6.714 (1.313 - 33.982)\n490\n\n\n\n\n\n\n\nA distribuição amostral revela a predominância de dados agregados (‘Média Geral’), seguida pela Pecuária, refletindo a capilaridade extensiva dessa atividade no território nacional. Nota-se, contudo, um volume expressivo de dados classificados como ‘Exploração Mista’, o que sugere desafios na segregação precisa do uso do solo em diversas regionai.\n\n\nveja o código\n#Rever o parágrafo acima, está ruim.\n# Prevenção contra objeto SF pesado\ndados_plot &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\nggplot(dados_plot, aes(x = fct_rev(fct_infreq(as.factor(categoria_final))), fill = as.factor(categoria_final))) +\n  geom_bar(show.legend = FALSE) +\n  \n  # Gira o gráfico\n  coord_flip() + \n  \n  labs(\n    title = \"Contagem por categoria final\",\n    x = NULL,\n    y = \"Total de Observações\"\n  ) +\n    theme(\n  axis.text.x = element_text(face = \"bold\", size = 10), # Negrito nas categorias (que estão na esquerda)\n  axis.text.y = element_text(face = \"bold\")             # Se quiser negrito nos números embaixo também\n) + \n  theme_minimal()\n\n\n\n\n\n\n\n\n\nOs scatter plots mostram a natureza discreta dos dados, os dados são variáveis macroeconomicas agregadas das regiões de homogeniedade determinada pelo incra através do algoritmo de WARD e do procedimento de K-means, nesse sentido, os scatters apenas demosntram um reflexo disso, do contrário seria esperado que os locai com mais áreas apresentassem uma nuvem de pontos que segue as linhas tracejadas. (REVISAR ISSO TÁ ESQUISITO E NA MINHA CABEÇA TA SEGUINDO A LINHA TRACEJADA)\n\n\nveja o código\n# 1. Preparação dos dados (Garantia de Leveza)\ndados_scatter &lt;- if(inherits(df_areas, \"sf\")) sf::st_drop_geometry(df_areas) else df_analise\n\ndados_agrupados &lt;- dados_scatter |&gt;\n  group_by(code_muni, categoria_final) |&gt;\n  summarise(\n    n_obs = n(),\n    area_total = first(area_ha_calculada), # Usa a área corrigida do geobr\n    .groups = \"drop\"\n  ) |&gt;\n  # Filtro de segurança para log\n  filter(n_obs &gt; 0, area_total &gt; 0)\n\n# 2. Plot com Correção de Jitter\nggplot(dados_agrupados, aes(x = area_total, y = n_obs)) +\n  \n  # A CORREÇÃO ESTÁ AQUI:\n  # width = 0 (Não mexe na Área, que é precisa)\n  # height = 0.2 (Espalha o N verticalmente para desfazer a linha reta)\n  geom_jitter(aes(color = categoria_final), alpha = 0.4, width = 0, height = 0.2) +\n  \n  # Escalas Logarítmicas\n  scale_x_log10(labels = scales::label_number(scale_cut = scales::cut_short_scale())) +\n  # Breaks manuais para facilitar leitura no log\n  scale_y_log10(breaks = c(1, 2, 5, 10, 20, 50, 100)) +\n  \n  # Linha de Tendência (Regressão Linear no Log)\n  geom_smooth(method = \"lm\", color = \"black\", linetype = \"dashed\", se = FALSE, size = 0.5) +\n  \n  facet_wrap(~categoria_final, scales = \"free\") +\n  \n  labs(\n    title = \"Densidade Amostral: Área vs. Observações (Ajustado)\",\n    subtitle = \"Dispersão com Jitter para visualizar concentração em N=1\",\n    x = \"Área da Zona (ha) [Log]\",\n    y = \"Nº de Observações [Log]\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nSegue uma tabela do valor de terra por quantil ao longo de toda a amostragem, lembrando que os valores aqui apresentados são fruto de correções inflacionárias de todos os valores para o ano de 2024.\n\n\nveja o código\n# 1. Cálculo dos Quantis por Categoria\ntabela_quantis &lt;- df_analise |&gt;\n  st_drop_geometry() |&gt;\n  filter(!is.na(vti_media), vti_media &gt; 0) |&gt;\n  group_by(categoria_final) |&gt;\n  summarise(\n    N = n(),\n    # Calcula os cortes de preço que dividem o mercado\n    P10 = quantile(vti_media, 0.10),\n    P25 = quantile(vti_media, 0.25),\n    Mediana = median(vti_media),\n    P75 = quantile(vti_media, 0.75),\n    P90 = quantile(vti_media, 0.90)\n  ) |&gt;\n  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato\n\n# 2. Renderização da Tabela\ntabela_quantis |&gt;\n  gt() |&gt;\n  tab_header(\n    title = md(\"**Estrutura de Preços: Distribuição por Quantis**\"),\n    subtitle = \"Valores de Terra (VTI) em R$/ha\"\n  ) |&gt;\n  fmt_number(\n    columns = c(P10, P25, Mediana, P75, P90),\n    decimals = 0,\n    sep_mark = \".\",\n    dec_mark = \",\"\n  ) |&gt;\n  cols_label(\n    categoria_final = \"Categoria\",\n    N = \"Amostras\",\n    P10 = \"Piso (10%)\",\n    P25 = \"Baixo (25%)\",\n    Mediana = \"Médio (50%)\",\n    P75 = \"Alto (75%)\",\n    P90 = \"Teto (90%)\"\n  ) |&gt;\n  # Destaque visual para a Mediana (o valor mais provável)\n  tab_style(\n    style = list(\n      cell_text(weight = \"bold\", color = \"black\"),\n      cell_fill(color = \"lightgray\")\n    ),\n    locations = cells_body(columns = Mediana)\n  ) |&gt;\n  data_color(\n    columns = c(Mediana),\n    method = \"numeric\",\n    palette = \"Greens\" # Escala de cor para mostrar quem vale mais\n  )\n\n\n\n\n\n\n\n\nEstrutura de Preços: Distribuição por Quantis\n\n\nValores de Terra (VTI) em R$/ha\n\n\nCategoria\nAmostras\nPiso (10%)\nBaixo (25%)\nMédio (50%)\nAlto (75%)\nTeto (90%)\n\n\n\n\nnao agricola\n2198\n16.350\n46.190\n89.150\n278.251\n750.690\n\n\nagricultura\n13769\n6.038\n15.796\n37.778\n68.578\n96.575\n\n\nsilvicultura\n2384\n4.831\n14.137\n25.826\n59.040\n72.149\n\n\nexploracao mista\n12257\n1.809\n5.203\n22.601\n46.072\n60.591\n\n\nmedia geral\n18020\n1.736\n5.135\n16.110\n47.694\n70.176\n\n\npecuaria\n15975\n2.021\n5.255\n15.531\n29.712\n51.932\n\n\naquicultura\n50\n9.546\n9.546\n9.546\n11.133\n31.198\n\n\nvegetacao nativa\n4907\n977\n1.864\n5.914\n19.339\n35.412\n\n\n\n\n\n\n\nPanorama geográfico Os dados não tão bonitos, a organizaçãi tá esquistassa, eu tenho q revisar eles\n\n\nveja o código\n# 1. Preparação: O \"Snapshot\" do Mercado (Excluindo 2025)\ndados_panorama &lt;- df_analise |&gt;\n  # LIMPEZA CRÍTICA:\n  # 1. Remove 2025 (Sem IGP-DI)\n  # 2. Remove sujeira (Zeros e NAs)\n  filter(ano &lt; 2025, !is.na(vti_media), vti_media &gt; 0) |&gt;\n  \n  # Filtra categorias principais\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"media geral\", \"exploracao mista\")) |&gt;\n  \n  group_by(code_muni, categoria_final) |&gt;\n  # Pega o ano mais recente DISPONÍVEL (que agora será no máximo 2024)\n  slice_max(order_by = ano, n = 1) |&gt; \n  ungroup() \n\n# 2. Criação dos Quantis (Classes de Preço)\n# Recalculando os pentis com a base limpa\ndados_panorama &lt;- dados_panorama |&gt;\n  group_by(categoria_final) |&gt; \n  mutate(\n    # cut_number garante o mesmo número de observações em cada cor\n    classe_preco = cut_number(vti_media, n = 5, labels = c(\"Muito Baixo\", \"Baixo\", \"Médio\", \"Alto\", \"Muito Alto\"))\n  ) |&gt;\n  ungroup()\n\n# 3. O Mapa (Choropleth)\nggplot(dados_panorama) +\n  geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) + \n  \n  # Escala de Cores: Magma invertido (Amarelo/Branco = Muito Alto)\n scale_fill_brewer(\n  palette = \"Spectral\",\n  direction = -1, # Inverte para Vermelho ser o 'Alto' e Azul o 'Baixo'\n  name = \"Faixa de Valor (VTI)\"\n  ) +\n  \n  facet_wrap(~categoria_final, ncol = 2) +\n  \n  labs(\n    title = \"Panorama de Valor da Terra (Até 2024)\",\n    subtitle = \"Classificação por Quantis baseada no último dado corrigido (IGP-DI).\",\n    caption = \"Nota: Dados de 2025 excluídos por ausência de deflator consolidado.\"\n  ) +\n  \n  theme_void() + \n  theme(\n    legend.position = \"right\",\n    strip.text = element_text(face = \"bold\", size = 11),\n    plot.title = element_text(face = \"bold\")\n  )\n\n\n\n\n\n\n\n\n\nHistogramas de distribuição por categoria (Texto do gemini revisar)\nA análise de densidade (Kernel Density Estimation) refuta a hipótese de normalidade na distribuição de preços, revelando um comportamento multimodal marcante, especialmente nas categorias ‘Pecuária’ e ‘Exploração Mista’.\nEstatisticamente, a existência de múltiplos picos (modas) sugere a coexistência de submercados distintos sob a mesma rotulagem administrativa. No caso da Pecuária, a trimodalidade observada indica uma segmentação tecnológica e geográfica severa: terras de fronteira (baixa liquidez), pecuária extensiva consolidada e áreas de potencial conversão agrícola (precificadas pelo custo de oportunidade da soja).\nEssa heterogeneidade implica que a utilização de médias simples (VTI Médio) como medida de tendência central carrega alto risco de viés, uma vez que o valor médio frequentemente recai nos ‘vales’ de densidade — zonas de preço onde poucas transações reais ocorrem.\n\n\nveja o código\n# 1. Preparação (Mesma de antes)\ndados_hist &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\ndados_hist &lt;- dados_hist |&gt;\n  filter(vti_media &gt; 0) |&gt;\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"media geral\", \"exploracao mista\", \"silvicultura\", \"vegetacao nativa\"))\n\n# 2. O Plot Híbrido (Barras + Linha Suave)\nggplot(dados_hist, aes(x = vti_media)) +\n  \n  # Histograma normalizado (Eixo Y = Densidade)\n  geom_histogram(\n    aes(y = after_stat(density), fill = categoria_final), \n    color = \"white\", \n    alpha = 0.5, # Transparência para ver a sobreposição\n    bins = 40, \n    show.legend = FALSE\n  ) +\n  \n  # A Linha de Densidade (Kernel Density Estimation)\n  geom_density(\n    color = \"black\", \n    size = 0.8, \n    adjust = 1.5 # Suavização (1 = Padrão, &gt;1 = Mais liso)\n  ) +\n  \n  # Escala Logarítmica\n  scale_x_log10(\n    labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale()),\n    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)\n  ) +\n  \n  facet_wrap(~categoria_final, scales = \"free_y\") +\n  \n  labs(\n    title = \"Distribuição de Preços (Histograma + Densidade)\",\n    subtitle = \"A curva preta suaviza a tendência. Formato de 'Sino' confirma Log-Normalidade.\",\n    x = \"Valor da Terra (R$/ha) [Log]\",\n    y = \"Densidade de Probabilidade\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    strip.text = element_text(face = \"bold\", size = 11),\n    axis.text.x = element_text(angle = 30, hjust = 1)\n  )\n\n\n\n\n\n\n\n\n\nO VTN não é apenas “diferente”, ele é mais sensível à localização. Enquanto o VTI reflete o Investimento Total, o VTN reflete a Renda Ricardiana (a vantagem produtiva inerente daquele pedaço de chão).\n\n\nveja o código\n# 1. Preparação (Mesma de antes)\ndados_hist &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\ndados_hist &lt;- dados_hist |&gt;\n  filter(vti_media &gt; 0) |&gt;\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"media geral\", \"exploracao mista\", \"silvicultura\", \"vegetacao nativa\"))\n\n# 2. O Plot Híbrido (Barras + Linha Suave)\nggplot(dados_hist, aes(x = vtn_media)) +\n  \n  # Histograma normalizado (Eixo Y = Densidade)\n  geom_histogram(\n    aes(y = after_stat(density), fill = categoria_final), \n    color = \"white\", \n    alpha = 0.5, # Transparência para ver a sobreposição\n    bins = 40, \n    show.legend = FALSE\n  ) +\n  \n  # A Linha de Densidade (Kernel Density Estimation)\n  geom_density(\n    color = \"black\", \n    size = 0.8, \n    adjust = 1.5 # Suavização (1 = Padrão, &gt;1 = Mais liso)\n  ) +\n  \n  # Escala Logarítmica\n  scale_x_log10(\n    labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale()),\n    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)\n  ) +\n  \n  facet_wrap(~categoria_final, scales = \"free_y\") +\n  \n  labs(\n    title = \"Distribuição de Preços (Histograma + Densidade)\",\n    subtitle = \"A curva preta suaviza a tendência. Formato de 'Sino' confirma Log-Normalidade.\",\n    x = \"Valor da Terra (R$/ha) [Log]\",\n    y = \"Densidade de Probabilidade\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    strip.text = element_text(face = \"bold\", size = 11),\n    axis.text.x = element_text(angle = 30, hjust = 1)\n  )\n\n\nWarning: Removed 2370 rows containing non-finite outside the scale range\n(`stat_bin()`).\n\n\nWarning: Removed 2370 rows containing non-finite outside the scale range\n(`stat_density()`).\n\n\n\n\n\n\n\n\n\nBox plot - VTN e VTI\n\n\nveja o código\n# 1. Preparação: Pivotagem (Wide -&gt; Long)\ndados_box &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\ndados_comparativos &lt;- dados_box |&gt;\n  # Filtra sujeira e categorias principais\n  filter(vti_media &gt; 0, vtn_media &gt; 0) |&gt;\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"media geral\", \"exploracao mista\", \"silvicultura\", \"vegetacao nativa\")) |&gt;\n  \n  # Seleciona apenas o necessário para pivotar\n  select(categoria_final, vti_media, vtn_media) |&gt;\n  \n  # Transforma colunas em linhas (VTI e VTN viram \"Tipo de Valor\")\n  pivot_longer(\n    cols = c(vti_media, vtn_media),\n    names_to = \"tipo_valor\",\n    values_to = \"valor_ha\"\n  ) |&gt;\n  \n  # Renomeia para ficar bonito na legenda\n  mutate(\n    tipo_valor = factor(tipo_valor, \n                        levels = c(\"vti_media\", \"vtn_media\"), \n                        labels = c(\"VTI (Com Imóvel)\", \"VTN (Terra Nua)\"))\n  )\n\n# 2. O Plot (Boxplot Pareado)\nggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = median), y = valor_ha, fill = tipo_valor)) +\n  \n  # Boxplot: Mostra Mediana, Quartis e Outliers\n  geom_boxplot(outlier.alpha = 0.2, outlier.size = 0.5, outlier.color = \"gray40\") +\n  \n  # Escala Logarítmica (Crucial)\n  scale_y_log10(\n    labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale()),\n    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)\n  ) +\n  \n  # Cores contrastantes (Laranja pro Capital, Azul pra Terra Nua - ou vice-versa)\n  scale_fill_manual(values = c(\"VTI (Com Imóvel)\" = \"#E69F00\", \"VTN (Terra Nua)\" = \"#56B4E9\")) +\n  \n  coord_flip() + # Deita o gráfico para facilitar leitura dos nomes\n  \n  labs(\n    title = \"Dispersão de Preços: VTI vs. VTN\",\n    subtitle = \"A distância entre as caixas representa o valor agregado das benfeitorias.\",\n    x = NULL, # Remove label redundante\n    y = \"Valor por Hectare (Log)\",\n    fill = \"Métrica\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    legend.position = \"top\",\n    axis.text.y = element_text(face = \"bold\", size = 10),\n    panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas\n  )\n\n\n\n\n\n\n\n\n\nPor estado: consertar escala para mostrar as ufs:\n\n\nveja o código\n# 1. Preparação\ndados_uf &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\ndados_uf &lt;- dados_uf |&gt;\n  filter(vti_media &gt; 0) |&gt;\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"silvicultura\", \"vegetacao nativa\")) |&gt;\n  # Garante que temos a UF (Se não tiver a coluna abbrev_state, extraímos do código)\n  mutate(\n    UF = if(\"abbrev_state\" %in% names(dados_uf)) abbrev_state else substr(code_muni, 1, 2)\n  )\n\n# 2. O Plot (Boxplot Ordenado)\nggplot(dados_uf, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +\n  \n  # Boxplot limpo\n  geom_boxplot(aes(fill = categoria_final), outlier.size = 0.5, outlier.alpha = 0.3, show.legend = FALSE) +\n  \n  # Escala Logarítmica (Obrigatória para comparar PI com SP)\n  scale_y_log10(\n    labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale()),\n    breaks = c(1000, 10000, 50000, 100000, 500000)\n  ) +\n  \n  # Facetas Livres (Cada categoria tem seu próprio ranking de estados)\n  facet_wrap(~categoria_final, scales = \"free\", ncol = 2) +\n  \n  coord_flip() + # Estados no eixo Y para leitura fácil\n  \n  labs(\n    title = \"Hierarquia de Valor: Ranking Estadual por Uso\",\n    subtitle = \"Ordenado pela Mediana de Preço (VTI). Escala Logarítmica.\",\n    x = NULL,\n    y = \"Valor da Terra (R$/ha) [Log]\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    strip.text = element_text(face = \"bold\", size = 11),\n    axis.text.y = element_text(size = 7) # Fonte menor para caber todas as UFs\n  )"
+    "text": "3. Análise e distribuições\nA estatística descritiva revela uma oscilação expressiva nos valores de VTI e VTN ao longo da série histórica. Essa volatilidade não reflete necessariamente uma tendência de mercado, mas sim a heterogeneidade espacial da coleta de dados em cada exercício. A tabela a seguir consolida as métricas de tendência central (média) e dispersão (mínimos e máximos) para ambas as categorias.\n\n\nveja o código\n# 1. Preparar os dados (Agregação Manual)\ntabela_pivo &lt;- df_analise |&gt;\n  st_drop_geometry() |&gt;\n  group_by(ano) |&gt;\n  summarise(\n    # Métricas para VTI\n    vti_med = mean(vti_media, na.rm = TRUE),\n    vti_min = min(vti_minimo, na.rm = TRUE),\n    vti_max = max(vti_maximo, na.rm = TRUE),\n    \n    # Métricas para VTN\n    vtn_med = mean(vtn_media, na.rm = TRUE),\n    vtn_min = min(vtn_minimo, na.rm = TRUE),\n    vtn_max = max(vtn_maximo, na.rm = TRUE),\n    \n    # Contagem (Opcional, mas bom para auditoria)\n    n_registros = n()\n  )\n\n# 2. Gerar a Tabela Profissional\ntabela_pivo |&gt;\n  gt() |&gt;\n  \n  # --- Cabeçalho ---\n  tab_header(\n    title = md(\"**Evolução Histórica de Preços (VTI vs VTN)**\"),\n    subtitle = \"Valores Agregados por Ano (Média Nacional e Amplitude)\"\n  ) |&gt;\n  \n  # --- Formatação Numérica (Antes de fundir) ---\n  fmt_number(\n    columns = -ano, # Formata tudo exceto o ano\n    decimals = 0,   # Sem centavos para limpar a vista\n    sep_mark = \".\",\n    dec_mark = \",\"\n  ) |&gt;\n  \n  # --- O PULO DO GATO: Fusão de Colunas (Pattern) ---\n  # Cria o formato: \"Média (Mín - Máx)\"\n  cols_merge(\n    columns = c(vti_med, vti_min, vti_max),\n    pattern = \"{1} ({2} - {3})\"\n  ) |&gt;\n  cols_merge(\n    columns = c(vtn_med, vtn_min, vtn_max),\n    pattern = \"{1} ({2} - {3})\"\n  ) |&gt;\n  \n  # --- Renomear as Colunas Finais ---\n  cols_label(\n    ano = \"Ano\",\n    vti_med = md(\"**VTI (R$/ha)**&lt;br&gt;&lt;small&gt;Média (Mín - Máx)&lt;/small&gt;\"),\n    vtn_med = md(\"**VTN (R$/ha)**&lt;br&gt;&lt;small&gt;Média (Mín - Máx)&lt;/small&gt;\"),\n    n_registros = \"Nº Municípios\"\n  ) |&gt;\n  \n  # --- Alinhamento e Estilo ---\n  cols_align(align = \"center\", columns = everything()) |&gt;\n  opt_row_striping() |&gt; # Listras zebradas para facilitar leitura\n  tab_options(\n    table.width = pct(100), # Ocupa 100% da largura do container\n    data_row.padding = px(6)\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvolução Histórica de Preços (VTI vs VTN)\n\n\nValores Agregados por Ano (Média Nacional e Amplitude)\n\n\nAno\nVTI (R$/ha)Média (Mín - Máx)\nVTN (R$/ha)Média (Mín - Máx)\nNº Municípios\n\n\n\n\n2016\n6.050 (346 - 48.788)\n4.692 (120 - 25.978)\n1.194\n\n\n2017\n18.427 (53 - 98.250)\n18.661 (255 - 98.250)\n5.963\n\n\n2018\n11.259 (470 - 559.065)\n11.705 (470 - 524.047)\n4.022\n\n\n2019\n18.114 (−3.896 - 86.875)\n16.038 (−2.359 - 83.580)\n4.271\n\n\n2020\n13.608 (361 - 89.751)\n12.039 (125 - 82.125)\n5.912\n\n\n2021\n28.362 (602 - 146.584)\n26.032 (492 - 129.646)\n3.501\n\n\n2022\n53.039 (−3.896 - 2.180.003)\n48.266 (−2.359 - 2.131.786)\n19.041\n\n\n2023\n47.787 (100 - 2.180.003)\n42.760 (80 - 2.131.786)\n21.191\n\n\n2024\n44.513 (846 - 309.402)\n40.408 (153 - 142.117)\n4.641\n\n\n2025\n7.582 (1.474 - 34.731)\n6.714 (1.313 - 33.982)\n490\n\n\n\n\n\n\n\nA distribuição amostral revela a predominância de dados agregados (‘Média Geral’), seguida pela Pecuária, refletindo a capilaridade extensiva dessa atividade no território nacional. Nota-se, contudo, um volume expressivo de dados classificados como ‘Exploração Mista’, o que sugere desafios na segregação precisa do uso do solo em diversas regionai.\nOs scatter plots mostram a natureza discreta dos dados, os dados são variáveis macroeconomicas agregadas das regiões de homogeniedade determinada pelo incra através do algoritmo de WARD e do procedimento de K-means, nesse sentido, os scatters apenas demosntram um reflexo disso, do contrário seria esperado que os locai com mais áreas apresentassem uma nuvem de pontos que segue as linhas tracejadas. (REVISAR ISSO TÁ ESQUISITO E NA MINHA CABEÇA TA SEGUINDO A LINHA TRACEJADA)\n\n\nveja o código\n# 1. Preparação dos dados (Garantia de Leveza)\ndados_scatter &lt;- if(inherits(df_areas, \"sf\")) sf::st_drop_geometry(df_areas) else df_analise\n\ndados_agrupados &lt;- dados_scatter |&gt;\n  group_by(code_muni, categoria_final) |&gt;\n  summarise(\n    n_obs = n(),\n    area_total = first(area_ha_calculada), # Usa a área corrigida do geobr\n    .groups = \"drop\"\n  ) |&gt;\n  # Filtro de segurança para log\n  filter(n_obs &gt; 0, area_total &gt; 0)\n\n# 2. Plot com Correção de Jitter\nggplot(dados_agrupados, aes(x = area_total, y = n_obs)) +\n  \n  # A CORREÇÃO ESTÁ AQUI:\n  # width = 0 (Não mexe na Área, que é precisa)\n  # height = 0.2 (Espalha o N verticalmente para desfazer a linha reta)\n  geom_jitter(aes(color = categoria_final), alpha = 0.4, width = 0, height = 0.2) +\n  \n  # Escalas Logarítmicas\n  scale_x_log10(labels = scales::label_number(scale_cut = scales::cut_short_scale())) +\n  # Breaks manuais para facilitar leitura no log\n  scale_y_log10(breaks = c(1, 2, 5, 10, 20, 50, 100)) +\n  \n  # Linha de Tendência (Regressão Linear no Log)\n  geom_smooth(method = \"lm\", color = \"black\", linetype = \"dashed\", se = FALSE, size = 0.5) +\n  \n  facet_wrap(~categoria_final, scales = \"free\") +\n  \n  labs(\n    title = \"Densidade Amostral: Área vs. Observações (Ajustado)\",\n    subtitle = \"Dispersão com Jitter para visualizar concentração em N=1\",\n    x = \"Área da Zona (ha) [Log]\",\n    y = \"Nº de Observações [Log]\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nSegue uma tabela do valor de terra por quantil ao longo de toda a amostragem, lembrando que os valores aqui apresentados são fruto de correções inflacionárias de todos os valores para o ano de 2024.\n\n\nveja o código\n# 1. Cálculo dos Quantis por Categoria\ntabela_quantis &lt;- df_analise |&gt;\n  st_drop_geometry() |&gt;\n  filter(!is.na(vti_media), vti_media &gt; 0) |&gt;\n  group_by(categoria_final) |&gt;\n  summarise(\n    N = n(),\n    # Calcula os cortes de preço que dividem o mercado\n    P10 = quantile(vti_media, 0.10),\n    P25 = quantile(vti_media, 0.25),\n    Mediana = median(vti_media),\n    P75 = quantile(vti_media, 0.75),\n    P90 = quantile(vti_media, 0.90)\n  ) |&gt;\n  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato\n\n# 2. Renderização da Tabela\ntabela_quantis |&gt;\n  gt() |&gt;\n  tab_header(\n    title = md(\"**Estrutura de Preços: Distribuição por Quantis**\"),\n    subtitle = \"Valores de Terra (VTI) em R$/ha\"\n  ) |&gt;\n  fmt_number(\n    columns = c(P10, P25, Mediana, P75, P90),\n    decimals = 0,\n    sep_mark = \".\",\n    dec_mark = \",\"\n  ) |&gt;\n  cols_label(\n    categoria_final = \"Categoria\",\n    N = \"Amostras\",\n    P10 = \"Piso (10%)\",\n    P25 = \"Baixo (25%)\",\n    Mediana = \"Médio (50%)\",\n    P75 = \"Alto (75%)\",\n    P90 = \"Teto (90%)\"\n  ) |&gt;\n  # Destaque visual para a Mediana (o valor mais provável)\n  tab_style(\n    style = list(\n      cell_text(weight = \"bold\", color = \"black\"),\n      cell_fill(color = \"lightgray\")\n    ),\n    locations = cells_body(columns = Mediana)\n  ) |&gt;\n  data_color(\n    columns = c(Mediana),\n    method = \"numeric\",\n    palette = \"Greens\" # Escala de cor para mostrar quem vale mais\n  )\n\n\n\n\n\n\n\n\nEstrutura de Preços: Distribuição por Quantis\n\n\nValores de Terra (VTI) em R$/ha\n\n\nCategoria\nAmostras\nPiso (10%)\nBaixo (25%)\nMédio (50%)\nAlto (75%)\nTeto (90%)\n\n\n\n\nnao agricola\n2198\n16.350\n46.190\n89.150\n278.251\n750.690\n\n\nagricultura\n13769\n6.038\n15.796\n37.778\n68.578\n96.575\n\n\nsilvicultura\n2384\n4.831\n14.137\n25.826\n59.040\n72.149\n\n\nexploracao mista\n12257\n1.809\n5.203\n22.601\n46.072\n60.591\n\n\nmedia geral\n18020\n1.736\n5.135\n16.110\n47.694\n70.176\n\n\npecuaria\n15975\n2.021\n5.255\n15.531\n29.712\n51.932\n\n\naquicultura\n50\n9.546\n9.546\n9.546\n11.133\n31.198\n\n\nvegetacao nativa\n4907\n977\n1.864\n5.914\n19.339\n35.412\n\n\n\n\n\n\n\nPanorama geográfico Os dados não tão bonitos, a organizaçãi tá esquistassa, eu tenho q revisar eles\n\n\nveja o código\n# 1. Preparação: O \"Snapshot\" do Mercado (Excluindo 2025)\ndados_panorama &lt;- df_analise |&gt;\n  # LIMPEZA CRÍTICA:\n  # 1. Remove 2025 (Sem IGP-DI)\n  # 2. Remove sujeira (Zeros e NAs)\n  filter(ano &lt; 2025, !is.na(vti_media), vti_media &gt; 0) |&gt;\n  \n  # Filtra categorias principais\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"media geral\", \"exploracao mista\")) |&gt;\n  \n  group_by(code_muni, categoria_final) |&gt;\n  # Pega o ano mais recente DISPONÍVEL (que agora será no máximo 2024)\n  slice_max(order_by = ano, n = 1) |&gt; \n  ungroup() \n\n# 2. Criação dos Quantis (Classes de Preço)\n# Recalculando os pentis com a base limpa\ndados_panorama &lt;- dados_panorama |&gt;\n  group_by(categoria_final) |&gt; \n  mutate(\n    # cut_number garante o mesmo número de observações em cada cor\n    classe_preco = cut_number(vti_media, n = 5, labels = c(\"Muito Baixo\", \"Baixo\", \"Médio\", \"Alto\", \"Muito Alto\"))\n  ) |&gt;\n  ungroup()\n\n# 3. O Mapa (Choropleth)\nggplot(dados_panorama) +\n  geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) + \n  \n  # Escala de Cores: Magma invertido (Amarelo/Branco = Muito Alto)\n scale_fill_brewer(\n  palette = \"Spectral\",\n  direction = -1, # Inverte para Vermelho ser o 'Alto' e Azul o 'Baixo'\n  name = \"Faixa de Valor (VTI)\"\n  ) +\n  \n  facet_wrap(~categoria_final, ncol = 2) +\n  \n  labs(\n    title = \"Panorama de Valor da Terra (Até 2024)\",\n    subtitle = \"Classificação por Quantis baseada no último dado corrigido (IGP-DI).\",\n    caption = \"Nota: Dados de 2025 excluídos por ausência de deflator consolidado.\"\n  ) +\n  \n  theme_void() + \n  theme(\n    legend.position = \"right\",\n    strip.text = element_text(face = \"bold\", size = 11),\n    plot.title = element_text(face = \"bold\")\n  )\n\n\n\n\n\n\n\n\n\nHistogramas de distribuição por categoria (Texto do gemini revisar)\nA análise de densidade (Kernel Density Estimation) refuta a hipótese de normalidade na distribuição de preços, revelando um comportamento multimodal marcante, especialmente nas categorias ‘Pecuária’ e ‘Exploração Mista’.\nEstatisticamente, a existência de múltiplos picos (modas) sugere a coexistência de submercados distintos sob a mesma rotulagem administrativa. No caso da Pecuária, a trimodalidade observada indica uma segmentação tecnológica e geográfica severa: terras de fronteira (baixa liquidez), pecuária extensiva consolidada e áreas de potencial conversão agrícola (precificadas pelo custo de oportunidade da soja).\nEssa heterogeneidade implica que a utilização de médias simples (VTI Médio) como medida de tendência central carrega alto risco de viés, uma vez que o valor médio frequentemente recai nos ‘vales’ de densidade — zonas de preço onde poucas transações reais ocorrem.\n\n\nveja o código\n# 1. Preparação (Mesma de antes)\ndados_hist &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\ndados_hist &lt;- dados_hist |&gt;\n  filter(vti_media &gt; 0) |&gt;\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"media geral\", \"exploracao mista\", \"silvicultura\", \"vegetacao nativa\"))\n\n# 2. O Plot Híbrido (Barras + Linha Suave)\nggplot(dados_hist, aes(x = vti_media)) +\n  \n  # Histograma normalizado (Eixo Y = Densidade)\n  geom_histogram(\n    aes(y = after_stat(density), fill = categoria_final), \n    color = \"white\", \n    alpha = 0.5, # Transparência para ver a sobreposição\n    bins = 40, \n    show.legend = FALSE\n  ) +\n  \n  # A Linha de Densidade (Kernel Density Estimation)\n  geom_density(\n    color = \"black\", \n    size = 0.8, \n    adjust = 1.5 # Suavização (1 = Padrão, &gt;1 = Mais liso)\n  ) +\n  \n  # Escala Logarítmica\n  scale_x_log10(\n    labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale()),\n    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)\n  ) +\n  \n  facet_wrap(~categoria_final, scales = \"free_y\") +\n  \n  labs(\n    title = \"Distribuição de Preços (Histograma + Densidade)\",\n    subtitle = \"A curva preta suaviza a tendência. Formato de 'Sino' confirma Log-Normalidade.\",\n    x = \"Valor da Terra (R$/ha) [Log]\",\n    y = \"Densidade de Probabilidade\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    strip.text = element_text(face = \"bold\", size = 11),\n    axis.text.x = element_text(angle = 30, hjust = 1)\n  )\n\n\n\n\n\n\n\n\n\nO VTN não é apenas “diferente”, ele é mais sensível à localização. Enquanto o VTI reflete o Investimento Total, o VTN reflete a Renda Ricardiana (a vantagem produtiva inerente daquele pedaço de chão).\n\n\nveja o código\n# 1. Preparação (Mesma de antes)\ndados_hist &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\ndados_hist &lt;- dados_hist |&gt;\n  filter(vti_media &gt; 0) |&gt;\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"media geral\", \"exploracao mista\", \"silvicultura\", \"vegetacao nativa\"))\n\n# 2. O Plot Híbrido (Barras + Linha Suave)\nggplot(dados_hist, aes(x = vtn_media)) +\n  \n  # Histograma normalizado (Eixo Y = Densidade)\n  geom_histogram(\n    aes(y = after_stat(density), fill = categoria_final), \n    color = \"white\", \n    alpha = 0.5, # Transparência para ver a sobreposição\n    bins = 40, \n    show.legend = FALSE\n  ) +\n  \n  # A Linha de Densidade (Kernel Density Estimation)\n  geom_density(\n    color = \"black\", \n    size = 0.8, \n    adjust = 1.5 # Suavização (1 = Padrão, &gt;1 = Mais liso)\n  ) +\n  \n  # Escala Logarítmica\n  scale_x_log10(\n    labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale()),\n    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)\n  ) +\n  \n  facet_wrap(~categoria_final, scales = \"free_y\") +\n  \n  labs(\n    title = \"Distribuição de Preços (Histograma + Densidade)\",\n    subtitle = \"A curva preta suaviza a tendência. Formato de 'Sino' confirma Log-Normalidade.\",\n    x = \"Valor da Terra (R$/ha) [Log]\",\n    y = \"Densidade de Probabilidade\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    strip.text = element_text(face = \"bold\", size = 11),\n    axis.text.x = element_text(angle = 30, hjust = 1)\n  )\n\n\nWarning: Removed 2370 rows containing non-finite outside the scale range\n(`stat_bin()`).\n\n\nWarning: Removed 2370 rows containing non-finite outside the scale range\n(`stat_density()`).\n\n\n\n\n\n\n\n\n\nBox plot - VTN e VTI\n\n\nveja o código\n# 1. Preparação: Pivotagem (Wide -&gt; Long)\ndados_box &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\ndados_comparativos &lt;- dados_box |&gt;\n  # Filtra sujeira e categorias principais\n  filter(vti_media &gt; 0, vtn_media &gt; 0) |&gt;\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"media geral\", \"exploracao mista\", \"silvicultura\", \"vegetacao nativa\")) |&gt;\n  \n  # Seleciona apenas o necessário para pivotar\n  select(categoria_final, vti_media, vtn_media) |&gt;\n  \n  # Transforma colunas em linhas (VTI e VTN viram \"Tipo de Valor\")\n  pivot_longer(\n    cols = c(vti_media, vtn_media),\n    names_to = \"tipo_valor\",\n    values_to = \"valor_ha\"\n  ) |&gt;\n  \n  # Renomeia para ficar bonito na legenda\n  mutate(\n    tipo_valor = factor(tipo_valor, \n                        levels = c(\"vti_media\", \"vtn_media\"), \n                        labels = c(\"VTI (Com Imóvel)\", \"VTN (Terra Nua)\"))\n  )\n\n# 2. O Plot (Boxplot Pareado)\nggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = median), y = valor_ha, fill = tipo_valor)) +\n  \n  # Boxplot: Mostra Mediana, Quartis e Outliers\n  geom_boxplot(outlier.alpha = 0.2, outlier.size = 0.5, outlier.color = \"gray40\") +\n  \n  # Escala Logarítmica (Crucial)\n  scale_y_log10(\n    labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale()),\n    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)\n  ) +\n  \n  # Cores contrastantes (Laranja pro Capital, Azul pra Terra Nua - ou vice-versa)\n  scale_fill_manual(values = c(\"VTI (Com Imóvel)\" = \"#E69F00\", \"VTN (Terra Nua)\" = \"#56B4E9\")) +\n  \n  coord_flip() + # Deita o gráfico para facilitar leitura dos nomes\n  \n  labs(\n    title = \"Dispersão de Preços: VTI vs. VTN\",\n    subtitle = \"A distância entre as caixas representa o valor agregado das benfeitorias.\",\n    x = NULL, # Remove label redundante\n    y = \"Valor por Hectare (Log)\",\n    fill = \"Métrica\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    legend.position = \"top\",\n    axis.text.y = element_text(face = \"bold\", size = 10),\n    panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas\n  )\n\n\n\n\n\n\n\n\n\n\n\nveja o código\n# 1. Preparação\ndados_uf &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\ndados_uf &lt;- dados_uf |&gt;\n  filter(vti_media &gt; 0) |&gt;\n  filter(categoria_final %in% c(\"agricultura\", \"pecuaria\", \"silvicultura\", \"vegetacao nativa\")) |&gt;\n  # Garante que temos a UF (Se não tiver a coluna abbrev_state, extraímos do código)\n  mutate(\n    UF = if(\"UF\" %in% names(dados_uf)) UF else substr(code_muni, 1, 2)\n  )\n\n# 2. O Plot (Boxplot Ordenado)\nggplot(dados_uf, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +\n  \n  # Boxplot limpo\n  geom_boxplot(aes(fill = categoria_final), outlier.size = 0.5, outlier.alpha = 0.3, show.legend = FALSE) +\n  \n  # Escala Logarítmica (Obrigatória para comparar PI com SP)\n  scale_y_log10(\n    labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale()),\n    breaks = c(1000, 10000, 50000, 100000, 500000)\n  ) +\n  \n  # Facetas Livres (Cada categoria tem seu próprio ranking de estados)\n  facet_wrap(~categoria_final, scales = \"free\", ncol = 2) +\n  \n  coord_flip() + # Estados no eixo Y para leitura fácil\n  \n  labs(\n    title = \"Hierarquia de Valor: Ranking Estadual por Uso\",\n    subtitle = \"Ordenado pela Mediana de Preço (VTI). Escala Logarítmica.\",\n    x = NULL,\n    y = \"Valor da Terra (R$/ha) [Log]\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    strip.text = element_text(face = \"bold\", size = 11),\n    axis.text.y = element_text(size = 7) # Fonte menor para caber todas as UFs\n  )\n\n\n\n\n\n\n\n\n\nMédias ponderadas por área, por estado: ::: {.panel-tabset}"
+  },
+  {
+    "objectID": "principal.html#ac",
+    "href": "principal.html#ac",
+    "title": "Análise descritivas RAMT",
+    "section": "AC",
+    "text": "AC"
+  },
+  {
+    "objectID": "principal.html#al",
+    "href": "principal.html#al",
+    "title": "Análise descritivas RAMT",
+    "section": "AL",
+    "text": "AL"
+  },
+  {
+    "objectID": "principal.html#am",
+    "href": "principal.html#am",
+    "title": "Análise descritivas RAMT",
+    "section": "AM",
+    "text": "AM"
+  },
+  {
+    "objectID": "principal.html#ap",
+    "href": "principal.html#ap",
+    "title": "Análise descritivas RAMT",
+    "section": "AP",
+    "text": "AP"
+  },
+  {
+    "objectID": "principal.html#ba",
+    "href": "principal.html#ba",
+    "title": "Análise descritivas RAMT",
+    "section": "BA",
+    "text": "BA"
+  },
+  {
+    "objectID": "principal.html#ce",
+    "href": "principal.html#ce",
+    "title": "Análise descritivas RAMT",
+    "section": "CE",
+    "text": "CE"
+  },
+  {
+    "objectID": "principal.html#es",
+    "href": "principal.html#es",
+    "title": "Análise descritivas RAMT",
+    "section": "ES",
+    "text": "ES"
+  },
+  {
+    "objectID": "principal.html#go",
+    "href": "principal.html#go",
+    "title": "Análise descritivas RAMT",
+    "section": "GO",
+    "text": "GO"
+  },
+  {
+    "objectID": "principal.html#ma",
+    "href": "principal.html#ma",
+    "title": "Análise descritivas RAMT",
+    "section": "MA",
+    "text": "MA"
+  },
+  {
+    "objectID": "principal.html#mg",
+    "href": "principal.html#mg",
+    "title": "Análise descritivas RAMT",
+    "section": "MG",
+    "text": "MG"
+  },
+  {
+    "objectID": "principal.html#ms",
+    "href": "principal.html#ms",
+    "title": "Análise descritivas RAMT",
+    "section": "MS",
+    "text": "MS"
+  },
+  {
+    "objectID": "principal.html#mt",
+    "href": "principal.html#mt",
+    "title": "Análise descritivas RAMT",
+    "section": "MT",
+    "text": "MT"
+  },
+  {
+    "objectID": "principal.html#pa",
+    "href": "principal.html#pa",
+    "title": "Análise descritivas RAMT",
+    "section": "PA",
+    "text": "PA"
+  },
+  {
+    "objectID": "principal.html#pb",
+    "href": "principal.html#pb",
+    "title": "Análise descritivas RAMT",
+    "section": "PB",
+    "text": "PB"
+  },
+  {
+    "objectID": "principal.html#pe",
+    "href": "principal.html#pe",
+    "title": "Análise descritivas RAMT",
+    "section": "PE",
+    "text": "PE"
+  },
+  {
+    "objectID": "principal.html#pi",
+    "href": "principal.html#pi",
+    "title": "Análise descritivas RAMT",
+    "section": "PI",
+    "text": "PI"
+  },
+  {
+    "objectID": "principal.html#pr",
+    "href": "principal.html#pr",
+    "title": "Análise descritivas RAMT",
+    "section": "PR",
+    "text": "PR"
+  },
+  {
+    "objectID": "principal.html#rj",
+    "href": "principal.html#rj",
+    "title": "Análise descritivas RAMT",
+    "section": "RJ",
+    "text": "RJ"
+  },
+  {
+    "objectID": "principal.html#rn",
+    "href": "principal.html#rn",
+    "title": "Análise descritivas RAMT",
+    "section": "RN",
+    "text": "RN"
+  },
+  {
+    "objectID": "principal.html#ro",
+    "href": "principal.html#ro",
+    "title": "Análise descritivas RAMT",
+    "section": "RO",
+    "text": "RO"
+  },
+  {
+    "objectID": "principal.html#rr",
+    "href": "principal.html#rr",
+    "title": "Análise descritivas RAMT",
+    "section": "RR",
+    "text": "RR"
+  },
+  {
+    "objectID": "principal.html#rs",
+    "href": "principal.html#rs",
+    "title": "Análise descritivas RAMT",
+    "section": "RS",
+    "text": "RS"
+  },
+  {
+    "objectID": "principal.html#sc",
+    "href": "principal.html#sc",
+    "title": "Análise descritivas RAMT",
+    "section": "SC",
+    "text": "SC"
+  },
+  {
+    "objectID": "principal.html#se",
+    "href": "principal.html#se",
+    "title": "Análise descritivas RAMT",
+    "section": "SE",
+    "text": "SE"
+  },
+  {
+    "objectID": "principal.html#sp",
+    "href": "principal.html#sp",
+    "title": "Análise descritivas RAMT",
+    "section": "SP",
+    "text": "SP"
+  },
+  {
+    "objectID": "principal.html#to",
+    "href": "principal.html#to",
+    "title": "Análise descritivas RAMT",
+    "section": "TO",
+    "text": "TO\n\n:::\nEvolução de preços do VTN ::: {.panel-tabset}"
+  },
+  {
+    "objectID": "principal.html#ac-1",
+    "href": "principal.html#ac-1",
+    "title": "Análise descritivas RAMT",
+    "section": "AC",
+    "text": "AC"
+  },
+  {
+    "objectID": "principal.html#al-1",
+    "href": "principal.html#al-1",
+    "title": "Análise descritivas RAMT",
+    "section": "AL",
+    "text": "AL"
+  },
+  {
+    "objectID": "principal.html#am-1",
+    "href": "principal.html#am-1",
+    "title": "Análise descritivas RAMT",
+    "section": "AM",
+    "text": "AM"
+  },
+  {
+    "objectID": "principal.html#ap-1",
+    "href": "principal.html#ap-1",
+    "title": "Análise descritivas RAMT",
+    "section": "AP",
+    "text": "AP"
+  },
+  {
+    "objectID": "principal.html#ba-1",
+    "href": "principal.html#ba-1",
+    "title": "Análise descritivas RAMT",
+    "section": "BA",
+    "text": "BA"
+  },
+  {
+    "objectID": "principal.html#ce-1",
+    "href": "principal.html#ce-1",
+    "title": "Análise descritivas RAMT",
+    "section": "CE",
+    "text": "CE"
+  },
+  {
+    "objectID": "principal.html#es-1",
+    "href": "principal.html#es-1",
+    "title": "Análise descritivas RAMT",
+    "section": "ES",
+    "text": "ES"
+  },
+  {
+    "objectID": "principal.html#go-1",
+    "href": "principal.html#go-1",
+    "title": "Análise descritivas RAMT",
+    "section": "GO",
+    "text": "GO"
+  },
+  {
+    "objectID": "principal.html#ma-1",
+    "href": "principal.html#ma-1",
+    "title": "Análise descritivas RAMT",
+    "section": "MA",
+    "text": "MA"
+  },
+  {
+    "objectID": "principal.html#mg-1",
+    "href": "principal.html#mg-1",
+    "title": "Análise descritivas RAMT",
+    "section": "MG",
+    "text": "MG"
+  },
+  {
+    "objectID": "principal.html#ms-1",
+    "href": "principal.html#ms-1",
+    "title": "Análise descritivas RAMT",
+    "section": "MS",
+    "text": "MS"
+  },
+  {
+    "objectID": "principal.html#mt-1",
+    "href": "principal.html#mt-1",
+    "title": "Análise descritivas RAMT",
+    "section": "MT",
+    "text": "MT"
+  },
+  {
+    "objectID": "principal.html#pa-1",
+    "href": "principal.html#pa-1",
+    "title": "Análise descritivas RAMT",
+    "section": "PA",
+    "text": "PA"
+  },
+  {
+    "objectID": "principal.html#pb-1",
+    "href": "principal.html#pb-1",
+    "title": "Análise descritivas RAMT",
+    "section": "PB",
+    "text": "PB"
+  },
+  {
+    "objectID": "principal.html#pe-1",
+    "href": "principal.html#pe-1",
+    "title": "Análise descritivas RAMT",
+    "section": "PE",
+    "text": "PE"
+  },
+  {
+    "objectID": "principal.html#pi-1",
+    "href": "principal.html#pi-1",
+    "title": "Análise descritivas RAMT",
+    "section": "PI",
+    "text": "PI"
+  },
+  {
+    "objectID": "principal.html#pr-1",
+    "href": "principal.html#pr-1",
+    "title": "Análise descritivas RAMT",
+    "section": "PR",
+    "text": "PR"
+  },
+  {
+    "objectID": "principal.html#rj-1",
+    "href": "principal.html#rj-1",
+    "title": "Análise descritivas RAMT",
+    "section": "RJ",
+    "text": "RJ"
+  },
+  {
+    "objectID": "principal.html#rn-1",
+    "href": "principal.html#rn-1",
+    "title": "Análise descritivas RAMT",
+    "section": "RN",
+    "text": "RN"
+  },
+  {
+    "objectID": "principal.html#ro-1",
+    "href": "principal.html#ro-1",
+    "title": "Análise descritivas RAMT",
+    "section": "RO",
+    "text": "RO"
+  },
+  {
+    "objectID": "principal.html#rr-1",
+    "href": "principal.html#rr-1",
+    "title": "Análise descritivas RAMT",
+    "section": "RR",
+    "text": "RR"
+  },
+  {
+    "objectID": "principal.html#rs-1",
+    "href": "principal.html#rs-1",
+    "title": "Análise descritivas RAMT",
+    "section": "RS",
+    "text": "RS"
+  },
+  {
+    "objectID": "principal.html#sc-1",
+    "href": "principal.html#sc-1",
+    "title": "Análise descritivas RAMT",
+    "section": "SC",
+    "text": "SC"
+  },
+  {
+    "objectID": "principal.html#se-1",
+    "href": "principal.html#se-1",
+    "title": "Análise descritivas RAMT",
+    "section": "SE",
+    "text": "SE"
+  },
+  {
+    "objectID": "principal.html#sp-1",
+    "href": "principal.html#sp-1",
+    "title": "Análise descritivas RAMT",
+    "section": "SP",
+    "text": "SP"
+  },
+  {
+    "objectID": "principal.html#to-1",
+    "href": "principal.html#to-1",
+    "title": "Análise descritivas RAMT",
+    "section": "TO",
+    "text": "TO\n\n:::\n\n\nveja o código\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)\n\n# 1. FILTRO DE ESTABILIDADE (Define quem é \"Município Guerreiro\")\n# Objetivo: Evitar viés de composição. Só queremos analisar a tendência de preço\n# de locais que reportaram dados consistentemente ao longo do tempo.\n\n# Remove geometria para ficar leve\ndados_painel &lt;- if(inherits(df_analise, \"sf\")) sf::st_drop_geometry(df_analise) else df_analise\n\nmunicipios_estaveis &lt;- dados_painel |&gt;\n  filter(ano &lt; 2025, vti_media &gt; 0) |&gt;\n  group_by(code_muni, categoria_final) |&gt;\n  summarise(\n    anos_presentes = n_distinct(ano),\n    .groups = \"drop\"\n  ) |&gt;\n  # CRITÉRIO DE CORTE: Só aceita quem tem pelo menos 4 anos de dados\n  filter(anos_presentes &gt;= 4)\n\n# 2. FILTRAGEM DOS DADOS ORIGINAIS\n# Mantém apenas as linhas correspondentes aos municípios estáveis\ndados_serie_limpa &lt;- dados_painel |&gt;\n  semi_join(municipios_estaveis, by = c(\"code_muni\", \"categoria_final\")) |&gt;\n  filter(ano &lt; 2025)\n\n# 3. O GRÁFICO \"SPAGHETTI\" (Trajetória Individual + Tendência)\nggplot(dados_serie_limpa, aes(x = ano, y = vti_media)) +\n  \n  # A. O \"Espaguete\" (Caos Individual)\n  # Cada linha cinza é um município. Alpha baixo (0.15) para ver onde acumula.\n  geom_line(aes(group = code_muni), alpha = 0.15, color = \"gray50\", size = 0.3) +\n  \n  # B. A Tendência Central ROBUSTA (Suavização LOESS)\n  # A linha colorida resume o comportamento do grupo estável\n  geom_smooth(aes(color = categoria_final), method = \"loess\", se = TRUE, size = 1.2) +\n  \n  # Separa por uso para não misturar escalas\n  facet_wrap(~categoria_final, scales = \"free_y\") +\n  \n  # Escalas e Formatação\n  scale_y_log10(labels = scales::label_number(prefix = \"R$ \", scale_cut = scales::cut_short_scale())) +\n  scale_x_continuous(breaks = seq(2016, 2024, 2)) + # Garante anos pares no eixo\n  \n  labs(\n    title = \"Trajetória de Preços: Análise de Painel Estável (N &gt;= 4 anos)\",\n    subtitle = \"Linhas cinzas = Municípios individuais. Linha colorida = Tendência suavizada.\",\n    caption = \"Apenas municípios com recorrência temporal foram mantidos para evitar viés de composição.\",\n    y = \"VTI (R$/ha) [Log]\",\n    x = \"Ano\"\n  ) +\n  \n  theme_minimal() +\n  theme(\n    legend.position = \"none\", # A cor já está explicada no facet\n    strip.text = element_text(face = \"bold\", size = 11)\n  )\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 30 rows containing non-finite outside the scale range\n(`stat_smooth()`)."
   }
 ]
