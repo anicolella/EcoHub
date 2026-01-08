@@ -12,5 +12,6 @@ format:
     theme: journal
     code-fold: true
     code-summary: veja o código
+  
 
 mainfont: sans-serif;
