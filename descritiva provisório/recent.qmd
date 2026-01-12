@@ -1,0 +1,77 @@
+---
+title: "analise recorte recente"
+format: html
+---
+## Justificativa
+Tendo em vista a heterogeniedade dos gráficos demonstrada na página "principal", busca-se aqui fazer uma análise mais completa do cenário brasileiro para o mercado de terras se utilizando de valores unificados para um único ano com maior disponibilidade dos dados e correção inflacionária dos municípios que não estão presentes no referente ano, neste caso 2023.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(geobr)
+library(ipeadatar)
+library(stringr)
+library(readr)
+library(sf)
+library(gtsummary)
+library(gt)
+
+df_analise <- st_read(
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
+```
+
+Criação do data frame com os dados mais recentes até 2023 de cada município: 
+
+```{r}
+library(dplyr)
+library(sf)
+
+# 1. CONSTRUÇÃO DO CORTE HÍBRIDO
+df_corte_2023 <- df_analise |>
+  # A. Trava no teto (O futuro não explica o presente)
+  filter(ano <= 2023) |> 
+  
+  # B. Ordena para o topo ser sempre o dado mais recente
+  arrange(code_muni, categoria_final, desc(ano)) |> 
+  
+  # C. Agrupa e Fatia
+  group_by(code_muni, categoria_final) |> 
+  slice(1) |> # Pega a 1ª linha (A mais recente disponível até 2023)
+  ungroup() |>
+  
+  # D. Cria Metadados de Controle (Fundamental para sua defesa)
+  mutate(
+    origem_dado = ifelse(ano == 2023, "2023 (Oficial)", paste("Lag", ano)),
+    defasagem_anos = 2023 - ano
+  )
+
+# 2. RELATÓRIO DE COMPOSIÇÃO (O "Diagnóstico da Amostra")
+cat("=== RAIO-X DO CORTE 2023 ===\n")
+cat("Total de Municípios/Usos recuperados:", nrow(df_corte_2023), "\n")
+
+# Mostra quantos dados são realmente de 2023 vs. recuperados de anos anteriores
+table(df_corte_2023$origem_dado) |> 
+  as.data.frame() |>
+  rename(Origem = Var1, Qtd = Freq) |>
+  arrange(desc(Origem)) |>
+  print()
+
+# 3. VERIFICAÇÃO DE PERDAS
+# Se a defasagem for muito grande (ex: dado de 2015 sendo usado em 2023), 
+# talvez valha a pena filtrar. Aqui vemos a distribuição:
+summary(df_corte_2023$defasagem_anos)
+```
+
+
+```{r}
+cat("=== RAIO-X DO CORTE 2023 (Por Municípios Únicos) ===\n")
+cat("Total de Linhas (Pares Muni-Uso):", nrow(df_corte_2023), "\n")
+cat("Total de Municípios Únicos Cobertos:", n_distinct(df_corte_2023$origem), "\n\n")
+```

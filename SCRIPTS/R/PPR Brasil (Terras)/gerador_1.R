@@ -14,7 +14,7 @@ path1_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R
 path1_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\"
 
 scripts <- c(
-  "2_juncao", "3_filetinho", "4_matching" , "5_correcao_inflacionaria"
+  "2_juncao", "3_filetinho" , "4_matching" , "5_correcao_inflacionaria"
 )
 
 

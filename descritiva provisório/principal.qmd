@@ -49,6 +49,7 @@ $$
 ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 $$
 
+
 A otimização do procedimento de cluster é feito por meio do processo de "K-means". Esse algoritmo forma K grupos diversos de municípios que posteriormente serão modificados movendo cidades de um local ao outro de modo a maximizar ou minimizar a função, aumentando a qualidade do cluster.
 
 O banco de dados estrutura-se em 18 variáveis, organizadas para capturar a dinâmica espacial e econômica do mercado de terras. As observações são indexadas temporalmente (ano) e geograficamente (code_muni, UF, origem), assegurando a identificação unívoca dos registros dos Relatórios de Análise do Mercado de Terras (RAMT).
