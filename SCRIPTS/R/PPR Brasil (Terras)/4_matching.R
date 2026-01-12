@@ -75,9 +75,8 @@ mun_data <- mun_data %>%
     name_muni = str_remove(name_muni, "^e ")
   )
 
-
 df_resultado <- dep %>%
-  left_join(mun_data, by = c("origem" = "name_muni"))
+  left_join(mun_data, by = c("origem" = "name_muni", "uf" = "abbrev_state"))
 
 miss_match <- df_resultado %>% 
   filter(is.na(code_muni)) |> distinct(origem, uf, code_muni)
@@ -266,4 +265,26 @@ miss_match3 <- df_joined %>%
 
 print(miss_match3)
 
+check_sua_base <- df_joined %>%
+ # 1. Agrupar pela chave composta (Cidade + Estado)
+ group_by(origem, UF) %>%    
+   # 2. Resumir o cenário
+   summarise(
+     n_registros = n(), # Quantas linhas existem para essa cidade?
+     
+     # Se você JÁ TEM uma coluna de código e quer checar consistência:
+     n_codigos = n_distinct(code_muni), 
+     
+     # Lista visualmente quais códigos aparecem (para pegar erros de digitação)
+     lista_codigos = paste(unique(code_muni), collapse = " | "), 
+     
+     .groups = "drop"
+   ) %>%
+  
+  # 3. Filtrar apenas onde há ambiguidade (1 cidade com + de 1 código)
+   filter(n_codigos > 1) 
+
+
 df_joined <- st_as_sf(df_joined)
+
+
