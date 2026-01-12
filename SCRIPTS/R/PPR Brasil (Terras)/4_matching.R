@@ -285,6 +285,6 @@ check_sua_base <- df_joined %>%
    filter(n_codigos > 1) 
 
 
-df_joined <- st_as_sf(df_joined)
+
 
 

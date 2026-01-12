@@ -208,11 +208,7 @@ df_classificado <- resultado_igpdi_limpo %>%
 
 df_classificado2 <- df_classificado |> filter (categoria_final == "revisar manualmente")
 
-
-write.csv2(, 
-           file = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.csv", 
-           row.names = FALSE,  # Não cria coluna de índice 1,2,3
-           fileEncoding = "UTF-8") # Garante que "Pecuária" não vire "PecuÃ¡ria" no Excel
+df_joined <- st_as_sf(df_classificado)
 
 st_write(
   obj   = df_classificado,
