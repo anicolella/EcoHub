@@ -1,10 +1,11 @@
 name: Update Commits Data
 
 on:
-  push:
-    branches: [main, site]
-  schedule:
-    - cron: '0 */6 * * *'  # A cada 6 horas
+  # Desabilitado temporariamente até configurar GH_PAT secret
+  # push:
+  #   branches: [main, site]
+  # schedule:
+  #   - cron: '0 */6 * * *'  # A cada 6 horas
   workflow_dispatch:  # Permite execução manual
 
 jobs:
