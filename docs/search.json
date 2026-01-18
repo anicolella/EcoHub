@@ -95,13 +95,13 @@
     "href": "commits.html",
     "title": "Commits",
     "section": "",
-    "text": "Visualização interativa do histórico de commits de todos os branches do projeto EcoHub.\n\n\n\n  \n    Filtrar por Autor:\n    \n      Todos os autores\n    \n  \n  \n  \n    Data de:\n    \n  \n  \n  \n    Data até:\n    \n  \n  \n  Resetar Filtros\n\n\n\n  📅 Timeline\n  📊 Tabela\n  🔥 Heatmap\n  📈 Gráficos\n  🌳 Árvore\n\n\n⏳ Carregando commits do GitHub..."
+    "text": "Visualização interativa do histórico de commits de todos os branches do projeto EcoHub.\n\n\n\n  \n    Filtrar por Autor:\n    \n      Todos os autores\n    \n  \n  \n  \n    Data de:\n    \n  \n  \n  \n    Data até:\n    \n  \n  \n  Resetar Filtros\n\n  \n    Token GitHub (opcional):\n    \n      \n      Usar token\n      Limpar\n    \n    Armazenado apenas no seu navegador para evitar rate limit.\n  \n\n\n\n  📊 Tabela\n  🔥 Heatmap\n  📈 Gráficos\n\n\n⏳ Carregando commits do GitHub..."
   },
   {
     "objectID": "commits.html#histórico-de-commits",
     "href": "commits.html#histórico-de-commits",
     "title": "Commits",
     "section": "",
-    "text": "Visualização interativa do histórico de commits de todos os branches do projeto EcoHub.\n\n\n\n  \n    Filtrar por Autor:\n    \n      Todos os autores\n    \n  \n  \n  \n    Data de:\n    \n  \n  \n  \n    Data até:\n    \n  \n  \n  Resetar Filtros\n\n\n\n  📅 Timeline\n  📊 Tabela\n  🔥 Heatmap\n  📈 Gráficos\n  🌳 Árvore\n\n\n⏳ Carregando commits do GitHub..."
+    "text": "Visualização interativa do histórico de commits de todos os branches do projeto EcoHub.\n\n\n\n  \n    Filtrar por Autor:\n    \n      Todos os autores\n    \n  \n  \n  \n    Data de:\n    \n  \n  \n  \n    Data até:\n    \n  \n  \n  Resetar Filtros\n\n  \n    Token GitHub (opcional):\n    \n      \n      Usar token\n      Limpar\n    \n    Armazenado apenas no seu navegador para evitar rate limit.\n  \n\n\n\n  📊 Tabela\n  🔥 Heatmap\n  📈 Gráficos\n\n\n⏳ Carregando commits do GitHub..."
   }
 ]
