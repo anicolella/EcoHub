@@ -18,7 +18,7 @@
     "href": "tracker.html",
     "title": "Tracker",
     "section": "",
-    "text": "Registro rápido dos fatos do projeto. Colaboradores do repositório podem adicionar novas entradas através do formulário web."
+    "text": "Em desenvolvimento…"
   },
   {
     "objectID": "tracker.html#instruções-para-colaboradores",
@@ -82,5 +82,26 @@
     "title": "Sobre",
     "section": "Cronograma (Roadmap)",
     "text": "Cronograma (Roadmap)\n\nFase 1 — Levantamento & Documentação (metadados, licenças, fontes)\n\nFase 2 — ETL & Padronização (tabelas, séries, shapefiles/rasters)\n\nFase 3 — Análises & Visualizações (exploratórias, econométricas)\n\nFase 4 — Pacotes & Automação (R/Python, pipelines reprodutíveis)"
+  },
+  {
+    "objectID": "tracker.html#histórico-de-commits",
+    "href": "tracker.html#histórico-de-commits",
+    "title": "Tracker",
+    "section": "Histórico de Commits",
+    "text": "Histórico de Commits\nVisualização interativa do histórico de commits de todos os branches do projeto.\n\n\n\n  \n    Filtrar por Autor:\n    \n      Todos os autores\n    \n  \n  \n  \n    Data de:\n    \n  \n  \n  \n    Data até:\n    \n  \n  \n  Resetar Filtros\n\n\n⏳ Carregando commits do GitHub..."
+  },
+  {
+    "objectID": "commits.html",
+    "href": "commits.html",
+    "title": "Commits",
+    "section": "",
+    "text": "Visualização interativa do histórico de commits de todos os branches do projeto EcoHub.\n\n\n\n  \n    Filtrar por Autor:\n    \n      Todos os autores\n    \n  \n  \n  \n    Data de:\n    \n  \n  \n  \n    Data até:\n    \n  \n  \n  Resetar Filtros\n\n  \n    Token GitHub (opcional):\n    \n      \n      Usar token\n      Limpar\n    \n    Armazenado apenas no seu navegador para evitar rate limit.\n  \n\n\n\n  📊 Tabela\n  🔥 Heatmap\n  📈 Gráficos\n\n\n⏳ Carregando commits do GitHub..."
+  },
+  {
+    "objectID": "commits.html#histórico-de-commits",
+    "href": "commits.html#histórico-de-commits",
+    "title": "Commits",
+    "section": "",
+    "text": "Visualização interativa do histórico de commits de todos os branches do projeto EcoHub.\n\n\n\n  \n    Filtrar por Autor:\n    \n      Todos os autores\n    \n  \n  \n  \n    Data de:\n    \n  \n  \n  \n    Data até:\n    \n  \n  \n  Resetar Filtros\n\n  \n    Token GitHub (opcional):\n    \n      \n      Usar token\n      Limpar\n    \n    Armazenado apenas no seu navegador para evitar rate limit.\n  \n\n\n\n  📊 Tabela\n  🔥 Heatmap\n  📈 Gráficos\n\n\n⏳ Carregando commits do GitHub..."
   }
 ]
