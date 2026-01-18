@@ -1,21 +1,61 @@
 const REPO = 'anicolella/EcoHub';
 const API_URL = `https://api.github.com/repos/${REPO}`;
+function getToken() {
+  if (typeof window === 'undefined') return null;
+  return window.GITHUB_TOKEN || localStorage.getItem('github_token') || null;
+}
 let allCommits = [];
 let filteredCommits = [];
-let currentTab = 'timeline';
+let currentTab = 'table';
+
+function apiFetch(url) {
+  const token = getToken();
+  const headers = {
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+  };
+  if (token) headers.Authorization = `Bearer ${token}`;
+  return fetch(url, { headers });
+}
+
+// Permite setar token em runtime e recarregar
+if (typeof window !== 'undefined') {
+  window.setGithubToken = function(token) {
+    if (token) {
+      localStorage.setItem('github_token', token);
+    } else {
+      localStorage.removeItem('github_token');
+    }
+    allCommits = [];
+    filteredCommits = [];
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('loading').innerHTML = '⏳ Recarregando commits com novo token...';
+    fetchAllCommits();
+  };
+}
 
 // Buscar todos os commits
 async function fetchAllCommits() {
   try {
-    const branches = await fetch(`${API_URL}/branches`).then(r => r.json());
+    document.getElementById('loading').style.display = 'block';
+    const branchesResp = await apiFetch(`${API_URL}/branches`);
+    const branchesData = await branchesResp.json();
+
+    if (!branchesResp.ok || !Array.isArray(branchesData)) {
+      throw new Error(branchesData?.message || `Falha ao listar branches (HTTP ${branchesResp.status})`);
+    }
+
+    const branches = branchesData;
     const commits = new Map();
     
     for (const branch of branches) {
       const branchCommits = await fetchCommitsForBranch(branch.name);
       branchCommits.forEach(c => {
         if (!commits.has(c.sha)) {
+          // Guarda a primeira branch encontrada como branch primária
           commits.set(c.sha, {
             ...c,
+            primaryBranch: branch.name,
             branches: [branch.name]
           });
         } else {
@@ -30,21 +70,50 @@ async function fetchAllCommits() {
     
     populateAuthorFilter();
     applyFilters();
-    renderTimeline();
+    if (allCommits.length === 0) {
+      document.getElementById('loading').innerHTML = '⚠️ Nenhum commit retornado. Possível limite da API do GitHub. Configure um token ou tente novamente mais tarde.';
+      document.getElementById('loading').style.display = 'block';
+    }
     
   } catch (error) {
     console.error('Erro ao buscar commits:', error);
     document.getElementById('loading').innerHTML = 
-      '❌ Erro ao carregar dados. Verifique sua conexão.';
+      '❌ Erro ao carregar dados. ' + (error?.message || 'Verifique conexão ou limite da API do GitHub.');
   }
 }
 
 async function fetchCommitsForBranch(branch) {
   try {
-    const response = await fetch(`${API_URL}/commits?sha=${branch}&per_page=100`);
-    return await response.json();
+    let allCommits = [];
+    let page = 1;
+    let hasMore = true;
+    const maxPages = 10; // 1.000 commits por branch sem estourar rate limit anônimo
+    
+    // Paginação completa até esgotar commits (ou atingir o limite de segurança)
+    while (hasMore && page <= maxPages) {
+      const response = await apiFetch(`${API_URL}/commits?sha=${branch}&per_page=100&page=${page}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        const msg = data && data.message ? data.message : `Erro HTTP ${response.status}`;
+        throw new Error(msg);
+      }
+
+      const commits = Array.isArray(data) ? data : [];
+      
+      if (commits.length === 0) {
+        hasMore = false;
+      } else {
+        allCommits = allCommits.concat(commits);
+        hasMore = commits.length === 100;
+        page++;
+      }
+    }
+    
+    return allCommits;
   } catch (error) {
     console.error(`Erro ao buscar commits da branch ${branch}:`, error);
+    document.getElementById('loading').innerHTML = '❌ Erro ao carregar commits. ' + (error?.message || 'Verifique o limite da API do GitHub.');
     return [];
   }
 }
@@ -92,39 +161,9 @@ function switchTab(tab) {
 function renderCurrentTab() {
   document.getElementById('loading').style.display = 'none';
   
-  if (currentTab === 'timeline') renderTimeline();
-  else if (currentTab === 'table') renderTable();
+  if (currentTab === 'table') renderTable();
   else if (currentTab === 'heatmap') renderHeatmap();
   else if (currentTab === 'charts') renderCharts();
-  else if (currentTab === 'tree') renderTree();
-}
-
-// ========== TIMELINE LINEAR ==========
-function renderTimeline() {
-  const container = document.getElementById('timeline-content');
-  if (!container) return;
-  
-  if (filteredCommits.length === 0) {
-    container.innerHTML = '<p style="text-align: center; color: #999;">Nenhum commit encontrado.</p>';
-    return;
-  }
-
-  container.innerHTML = filteredCommits.map(commit => {
-    const date = new Date(commit.commit.author.date);
-    const msg = commit.commit.message.split('\n')[0];
-    return `
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">${date.toLocaleDateString('pt-BR')}</div>
-          <h4>${msg}</h4>
-          <p><strong>${commit.commit.author.name}</strong> • ${commit.sha.substring(0, 7)}</p>
-          <p class="timeline-branches">${commit.branches.join(', ')}</p>
-          <a href="${commit.html_url}" target="_blank">Ver no GitHub →</a>
-        </div>
-      </div>
-    `;
-  }).join('');
 }
 
 // ========== TABELA INTERATIVA ==========
@@ -230,6 +269,11 @@ function renderCharts() {
   const container = document.getElementById('charts-content');
   if (!container) return;
 
+  if (filteredCommits.length === 0) {
+    container.innerHTML = '<p style="text-align: center; color: #999;">Nenhum commit encontrado.</p>';
+    return;
+  }
+
   // Commits por autor
   const byAuthor = {};
   filteredCommits.forEach(c => {
@@ -237,98 +281,56 @@ function renderCharts() {
     byAuthor[author] = (byAuthor[author] || 0) + 1;
   });
 
-  // Commits por branch
+  // Commits por branch usando a branch primária (evita duplicar o mesmo commit em múltiplas branches)
   const byBranch = {};
   filteredCommits.forEach(c => {
-    c.branches.forEach(b => {
-      byBranch[b] = (byBranch[b] || 0) + 1;
-    });
+    const branch = c.primaryBranch || (c.branches && c.branches[0]);
+    if (!branch) return;
+    byBranch[branch] = (byBranch[branch] || 0) + 1;
   });
 
   let html = '<div class="charts-grid">';
   
   // Gráfico de Autor
   html += '<div class="chart-container"><h4>Commits por Autor</h4><div>';
-  Object.entries(byAuthor).sort((a, b) => b[1] - a[1]).forEach(([author, count]) => {
-    const width = (count / Math.max(...Object.values(byAuthor))) * 100;
-    html += `
-      <div class="bar-chart">
-        <label>${author}</label>
-        <div class="bar" style="width: ${width}%"></div>
-        <span>${count}</span>
-      </div>
-    `;
-  });
+  const authorEntries = Object.entries(byAuthor).sort((a, b) => b[1] - a[1]);
+  if (authorEntries.length === 0) {
+    html += '<p style="color: #999;">Nenhum dado disponível</p>';
+  } else {
+    authorEntries.forEach(([author, count]) => {
+      const width = (count / Math.max(...Object.values(byAuthor))) * 100;
+      html += `
+        <div class="bar-chart">
+          <label>${author}</label>
+          <div class="bar" style="width: ${width}%"></div>
+          <span>${count}</span>
+        </div>
+      `;
+    });
+  }
   html += '</div></div>';
 
   // Gráfico de Branch
   html += '<div class="chart-container"><h4>Commits por Branch</h4><div>';
-  Object.entries(byBranch).sort((a, b) => b[1] - a[1]).forEach(([branch, count]) => {
-    const width = (count / Math.max(...Object.values(byBranch))) * 100;
-    html += `
-      <div class="bar-chart">
-        <label>${branch}</label>
-        <div class="bar" style="width: ${width}%"></div>
-        <span>${count}</span>
-      </div>
-    `;
-  });
+  const branchEntries = Object.entries(byBranch).sort((a, b) => b[1] - a[1]);
+  if (branchEntries.length === 0) {
+    html += '<p style="color: #999;">Nenhum dado disponível</p>';
+  } else {
+    branchEntries.forEach(([branch, count]) => {
+      const maxBranch = Math.max(...Object.values(byBranch));
+      const width = maxBranch > 0 ? (count / maxBranch) * 100 : 0;
+      html += `
+        <div class="bar-chart">
+          <label>${branch}</label>
+          <div class="bar" style="width: ${width}%"></div>
+          <span>${count}</span>
+        </div>
+      `;
+    });
+  }
   html += '</div></div></div>';
 
   container.innerHTML = html;
-}
-
-// ========== ÁRVORE DE BRANCHES ==========
-function renderTree() {
-  const container = document.getElementById('tree-content');
-  if (!container) return;
-
-  const width = container.offsetWidth;
-  const height = 500;
-
-  container.innerHTML = '';
-  const svg = d3.select('#tree-content')
-    .append('svg')
-    .attr('width', width)
-    .attr('height', height);
-
-  const g = svg.append('g').attr('transform', 'translate(50, 30)');
-
-  const branches = [...new Set(filteredCommits.flatMap(c => c.branches))];
-  const branchY = {};
-  branches.forEach((b, i) => {
-    branchY[b] = i * 60;
-  });
-
-  // Linhas de branch
-  branches.forEach(branch => {
-    g.append('line')
-      .attr('x1', 0)
-      .attr('y1', branchY[branch])
-      .attr('x2', width - 100)
-      .attr('y2', branchY[branch])
-      .attr('stroke', '#ddd')
-      .attr('stroke-width', 2);
-  });
-
-  // Commits no timeline
-  filteredCommits.slice(0, 20).forEach((commit, i) => {
-    const branch = commit.branches[0];
-    const x = (i / 20) * (width - 100);
-    const y = branchY[branch];
-
-    g.append('circle')
-      .attr('cx', x)
-      .attr('cy', y)
-      .attr('r', 6)
-      .attr('fill', '#065f46')
-      .style('cursor', 'pointer')
-      .on('click', () => {
-        alert(`${commit.commit.message.split('\n')[0]}\n${commit.commit.author.name}\n${commit.sha}`);
-      });
-
-    g.append('title').text(commit.commit.message.split('\n')[0]);
-  });
 }
 
 function resetFilters() {
