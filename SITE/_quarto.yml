@@ -23,7 +23,7 @@ website:
           - text: "Tracker"
             href: tracker.qmd
           - text: "Commits"
-            href: '#'
+            href: commits.qmd
           - text: "Wiki"
             href: '#'
       - text: Dados
