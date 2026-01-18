@@ -38,6 +38,23 @@ if (typeof window !== 'undefined') {
 async function fetchAllCommits() {
   try {
     document.getElementById('loading').style.display = 'block';
+    
+    // Tentar carregar do JSON estático primeiro (gerado via GitHub Action)
+    try {
+      const staticResp = await fetch('data/commits.json');
+      if (staticResp.ok) {
+        const data = await staticResp.json();
+        console.log(`📦 Loaded ${data.total_commits} commits from static cache (updated: ${data.updated_at})`);
+        allCommits = data.commits;
+        populateAuthorFilter();
+        applyFilters();
+        return;
+      }
+    } catch (err) {
+      console.log('ℹ️ Static data not available, falling back to API');
+    }
+    
+    // Fallback: buscar da API do GitHub
     const branchesResp = await apiFetch(`${API_URL}/branches`);
     const branchesData = await branchesResp.json();
 
