@@ -1,0 +1,39 @@
+name: Update Commits Data
+
+on:
+  push:
+    branches: [main, site]
+  schedule:
+    - cron: '0 */6 * * *'  # A cada 6 horas
+  workflow_dispatch:  # Permite execução manual
+
+jobs:
+  update-commits:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: site
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install requests
+      
+      - name: Fetch commits from API
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: python .github/scripts/fetch-commits.py
+      
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add SITE/data/commits.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update commits data [skip ci]" && git push)
