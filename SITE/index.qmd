@@ -16,7 +16,7 @@ format:
      <p>O Brasil já produz uma imensidão de dados ambientais — fundiários, florestais, hídricos, econômicos — mas eles estão espalhados em fontes distintas, com formatos, licenças e documentações heterogêneas. Essa fragmentação eleva o custo de pesquisa, atrasa diagnósticos e enfraquece o planejamento público e privado.</p> 
       
       
-      <p>O projeto visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.</p>
+      <p>Este projeto, coordenado pelo Prof. Alexandre Nicolella (FEARP/USP), visa criar um repositório e plataforma de dados ambientais, desde a coleta, documentação, tratamento, integração e análises com foco em pesquisa.</p>
     </div>
   </div>
 </section>
@@ -84,10 +84,10 @@ format:
 <div class="data-grid">
 
     <!-- RAMT / PPR (INCRA) -->
-  <a class="data-card" href="#" data-fase="1" data-status="fila">
+  <a class="data-card" href="#" data-fase="2" data-status="fila">
     <div class="card-head">
       <h3>RAMT / PPR (INCRA)</h3>
-      <span class="badge fase1">Fase 1</span>
+      <span class="badge fase2">Fase 2</span>
     </div>
     <p>Relação de áreas em malha/terras e procedimentos de regularização.</p>
     <span class="badge-origem origem-brasil">Brasil</span>

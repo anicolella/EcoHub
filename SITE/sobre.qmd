@@ -3,10 +3,19 @@ title: "Sobre"
 ---
 
 ## Descrição do Projeto
-O projeto integra bases ambientais difusas, padroniza formatos, documenta metadados e oferece análises para apoiar pesquisa acadêmica e formulação de políticas públicas.
+O EcoHub integra e qualifica bases ambientais dispersas, padroniza formatos e documenta metadados de forma transparente para apoiar pesquisa acadêmica, formulação de políticas públicas e iniciativas da sociedade civil. A proposta é construir um ecossistema reprodutível de dados e análises, com documentação clara e processos de ETL auditáveis, garantindo rastreabilidade desde a fonte até os produtos finais. Ao consolidar dados e boas práticas, o projeto busca reduzir o custo de acesso à informação, aumentar a confiança nos resultados e fomentar a colaboração entre diferentes equipes e áreas de atuação.
 
-## Cronograma (Roadmap)
-- **Fase 1** — Levantamento & Documentação (metadados, licenças, fontes)  
-- **Fase 2** — ETL & Padronização (tabelas, séries, shapefiles/rasters)  
-- **Fase 3** — Análises & Visualizações (exploratórias, econométricas)  
-- **Fase 4** — Pacotes & Automação (R/Python, pipelines reprodutíveis)
+## Objetivos
+O projeto está estruturado em três fases articuladas e complementares. 
+
+Na Fase 1, realizamos o levantamento e a documentação das bases de dados primárias, compilando metadados, licenças e referências, além de registrar o contexto e as limitações de cada fonte. O objetivo é assegurar que cada dataset utilizado possua origem verificável, termos de uso claros e um dicionário de variáveis que facilite a compreensão e o reúso por terceiros. Essa etapa estabelece o alicerce da qualidade e da transparência, indispensável para qualquer análise subsequente.
+
+Na Fase 2, conduzimos a análise preliminar descritiva de cada base e disponibilizamos à comunidade versões tratadas e tabuladas (csv, xlsx ou rdata), acompanhadas da documentação de criação do dataframe e do dicionário de dados. Esse processo envolve padronização de nomes, tipos e unidades, checagem de qualidade, tratamento de valores ausentes e organização em estruturas que favorecem ligações com outras fontes. O foco é produzir artefatos úteis e reprodutíveis, prontos para análises subsequentes e integração em pipelines, de modo a acelerar pesquisas e tornar os dados mais acessíveis e confiáveis.
+
+Na Fase 3, desenvolvemos pacotes (bibliotecas) em R e Python baseados nos dados auferidos, automatizando e otimizando o acesso, a limpeza e a transformação. Esses pacotes incorporam funções para leitura eficiente, validação, junção e visualização, além de exemplos de uso e testes automatizados. A ambição é reduzir o atrito no trabalho com dados ambientais, padronizar práticas de engenharia de dados em projetos correlatos e ampliar o impacto dos dados ao facilitar a criação de produtos analíticos e aplicações.
+
+## Público-Alvo
+O público-alvo inclui pesquisadoras e pesquisadores, equipes de governo, organizações da sociedade civil, jornalistas de dados, estudantes e desenvolvedores interessados em aplicações ambientais e socioeconômicas. As contribuições podem ocorrer de diversas formas: doação de dados e metadados, relatos de uso e qualidade, abertura de issues com sugestões de melhoria, envio de pull requests com correções ou novas funções, e compartilhamento de estudos de caso que demonstrem o valor dos artefatos produzidos. Ao incentivar a participação e o escrutínio público, o projeto busca fortalecer a comunidade em torno de dados ambientais abertos e de alta qualidade.
+
+## Resultados
+Entre os resultados esperados estão um catálogo de dados com documentação completa, pipelines de ETL reprodutíveis, coleções de dataframes prontos para análise, relatórios descritivos e dashboards interativos, além de pacotes em R e Python que consolidem boas práticas e ampliem o acesso a dados ambientais. Espera-se também fomentar redes de colaboração, fortalecer a transparência e contribuir para a tomada de decisão baseada em evidências, com impacto mensurável na pesquisa e nas políticas públicas. Em conjunto, esses entregáveis melhoram a capacidade de investigação e implementação de soluções, criando uma base sólida para estudos, monitoramentos e políticas mais efetivas.
