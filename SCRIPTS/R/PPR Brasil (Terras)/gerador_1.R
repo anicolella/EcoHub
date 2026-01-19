@@ -16,7 +16,7 @@ path1_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_us
 scripts <- c(
   "2_juncao", "3_filetinho" , "4_matching" , "5_correcao_inflacionaria", "6_correcao_tipologia_final"
 )
-
+#fff
 
 # Detecção automática do usuário atual
 if (Sys.getenv("USERNAME") == "jodom") {
