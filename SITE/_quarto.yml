@@ -5,6 +5,7 @@ project:
     - "admin/**"
     - "tracker/_media/**"
     - "assets/amazon_rainforest.mp4"
+    - "assets/wetlands.mp4"
     - "assets/projeto_bd.png"
 
 website:
@@ -20,12 +21,10 @@ website:
         href: index.qmd
       - text: "Gestão"
         menu:
-          - text: "Tracker"
-            href: tracker.qmd
+          - text: "Deliberações"
+            href: deliberacoes.qmd
           - text: "Commits"
             href: commits.qmd
-          - text: "Wiki"
-            href: '#'
       - text: Dados
         href: dados.qmd
       - text: Equipe

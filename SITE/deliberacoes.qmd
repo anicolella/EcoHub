@@ -1,5 +1,5 @@
 ---
-title: "Tracker"
+title: "Reuniões"
 page-layout: article
 ---
 
@@ -72,29 +72,6 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
     font-weight: 600;
   }
 
-  .tracker-status {
-    padding: 4px 8px;
-    border-radius: 3px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-align: center;
-  }
-
-  .status-implementado {
-    background: #d1fae5;
-    color: #065f46;
-  }
-
-  .status-progresso {
-    background: #fef3c7;
-    color: #92400e;
-  }
-
-  .status-pendente {
-    background: #fee2e2;
-    color: #991b1b;
-  }
-
   .tracker-decisoes {
     max-width: 400px;
     line-height: 1.5;
@@ -125,7 +102,6 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
         <th>Tema</th>
         <th>Participantes</th>
         <th>Principais Decisões</th>
-        <th>Status</th>
       </tr>
     </thead>
     <tbody>
@@ -143,7 +119,6 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
             <li>Objetivo: repositório com pacotes R/Python automatizados</li>
           </ul>
         </td>
-        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
       </tr>
 
       <tr>
@@ -157,7 +132,6 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
             <li>Reunião semanal operacional</li>
           </ul>
         </td>
-        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
       </tr>
 
       <tr>
@@ -172,7 +146,6 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
             <li>Definir ordem de pesquisa dos dados (conforme Drive)</li>
           </ul>
         </td>
-        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
       </tr>
 
       <tr>
@@ -186,7 +159,6 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
             <li>Junção de bases via 'Modular.R'</li>
           </ul>
         </td>
-        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
       </tr>
 
       <tr>
@@ -201,7 +173,6 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
             <li>Iniciar dados do CAR</li>
           </ul>
         </td>
-        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
       </tr>
 
       <tr>
@@ -214,8 +185,20 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
             <li>João fazer análises para Prof. Nicolella</li>
           </ul>
         </td>
-        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
       </tr>
+
+            <tr>
+        <td class="tracker-date">20/10/2025</td>
+        <td class="tracker-tema">Indexação dos scripts R</td>
+        <td class="tracker-participantes">João</td>
+        <td class="tracker-decisoes">
+          <ul>
+            <li>Numerar as pastas e arquivos</li>
+          </ul>
+        </td>
+      </tr>
+
+
     </tbody>
   </table>
 </div>
@@ -253,31 +236,6 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
   }
 </script>
 ```
-
-## Como Adicionar uma Nova Reunião
-
-1. Copie a estrutura abaixo e adicione antes de `</tbody>`
-2. Preencha com data, tema, participantes, decisões e status
-
-```html
-<tr>
-  <td class="tracker-date">DD/MM/YYYY</td>
-  <td class="tracker-tema">Tema da Reunião</td>
-  <td class="tracker-participantes">Nome1, Nome2, Nome3</td>
-  <td class="tracker-decisoes">
-    <ul>
-      <li>Decisão 1</li>
-      <li>Decisão 2</li>
-    </ul>
-  </td>
-  <td><span class="tracker-status status-progresso">Em Progresso</span></td>
-</tr>
-```
-
-**Status disponíveis:**
-- `status-implementado` → ✅ Implementado
-- `status-progresso` → 🟡 Em Progresso  
-- `status-pendente` → ⏳ Pendente
 
 
 
