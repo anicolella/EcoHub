@@ -3,7 +3,282 @@ title: "Tracker"
 page-layout: article
 ---
 
-Em desenvolvimento...
+## Rastreamento de Reuniões & Deliberações
+
+Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
+
+```{=html}
+<style>
+  .tracker-container {
+    margin-top: 20px;
+  }
+
+  .tracker-controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .tracker-search {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .tracker-search input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  .tracker-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  .tracker-table thead {
+    background: #065f46;
+    color: white;
+  }
+
+  .tracker-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #ddd;
+  }
+
+  .tracker-table td {
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .tracker-table tr:hover {
+    background: #f9fafb;
+  }
+
+  .tracker-date {
+    font-weight: 600;
+    color: #065f46;
+    min-width: 90px;
+  }
+
+  .tracker-tema {
+    color: #1f2937;
+    font-weight: 600;
+  }
+
+  .tracker-status {
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .status-implementado {
+    background: #d1fae5;
+    color: #065f46;
+  }
+
+  .status-progresso {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .status-pendente {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+
+  .tracker-decisoes {
+    max-width: 400px;
+    line-height: 1.5;
+  }
+
+  .tracker-decisoes li {
+    margin: 4px 0;
+    font-size: 0.85rem;
+  }
+
+  .tracker-participantes {
+    font-size: 0.85rem;
+    color: #666;
+  }
+</style>
+
+<div class="tracker-container">
+  <div class="tracker-controls">
+    <div class="tracker-search">
+      <input type="text" id="trackerSearch" placeholder="🔍 Buscar por tema, participante ou decisão..." onkeyup="filterTracker()">
+    </div>
+  </div>
+
+  <table class="tracker-table" id="trackerTable">
+    <thead>
+      <tr>
+        <th onclick="sortTracker(0)">Data ↕</th>
+        <th>Tema</th>
+        <th>Participantes</th>
+        <th>Principais Decisões</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tracker-date">07/08/2025</td>
+        <td class="tracker-tema">Concepção do Projeto</td>
+        <td class="tracker-participantes">João, Fernando, Prof. Nicolella</td>
+        <td class="tracker-decisoes">
+          <ul>
+            <li>João estruturar dados iniciais</li>
+            <li>Trabalhar um banco por vez com dataframe mãe</li>
+            <li>Documentar tudo</li>
+            <li>Reunião em 13/08 para ferramentas</li>
+            <li>Integração de outros alunos com projetos correlatos</li>
+            <li>Objetivo: repositório com pacotes R/Python automatizados</li>
+          </ul>
+        </td>
+        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
+      </tr>
+
+      <tr>
+        <td class="tracker-date">21/08/2025</td>
+        <td class="tracker-tema">Funcionamento do Projeto</td>
+        <td class="tracker-participantes">Equipe</td>
+        <td class="tracker-decisoes">
+          <ul>
+            <li>BD → documentação → integração</li>
+            <li>Documentar em markdown via Quarto (estilo rpubs) cada fase</li>
+            <li>Reunião semanal operacional</li>
+          </ul>
+        </td>
+        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
+      </tr>
+
+      <tr>
+        <td class="tracker-date">25/08/2025</td>
+        <td class="tracker-tema">GitHub e Raspagem de Dados</td>
+        <td class="tracker-participantes">João, Fernando</td>
+        <td class="tracker-decisoes">
+          <ul>
+            <li>Apresentar GitHub ao João</li>
+            <li>Ensinar push/pull no GitHub</li>
+            <li>João se familiarizar com raspagem web (1ª semana)</li>
+            <li>Definir ordem de pesquisa dos dados (conforme Drive)</li>
+          </ul>
+        </td>
+        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
+      </tr>
+
+      <tr>
+        <td class="tracker-date">01/09/2025</td>
+        <td class="tracker-tema">Junção de Bases, Dicionário e Quarto</td>
+        <td class="tracker-participantes">Equipe</td>
+        <td class="tracker-decisoes">
+          <ul>
+            <li>Criar dicionário das colunas</li>
+            <li>Fazer Quarto do projeto</li>
+            <li>Junção de bases via 'Modular.R'</li>
+          </ul>
+        </td>
+        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
+      </tr>
+
+      <tr>
+        <td class="tracker-date">15/09/2025</td>
+        <td class="tracker-tema">Verificação da Junção de Base</td>
+        <td class="tracker-participantes">Equipe</td>
+        <td class="tracker-decisoes">
+          <ul>
+            <li>Verificação compartimentação RAMMT</li>
+            <li>Padronização: nomes em minúsculos, espaços com underscore</li>
+            <li>Testes finais arquivos RAMMT (João)</li>
+            <li>Iniciar dados do CAR</li>
+          </ul>
+        </td>
+        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
+      </tr>
+
+      <tr>
+        <td class="tracker-date">06/10/2025</td>
+        <td class="tracker-tema">Pivotagem de Dados</td>
+        <td class="tracker-participantes">João, Prof. Nicolella</td>
+        <td class="tracker-decisoes">
+          <ul>
+            <li>João pivotar e documentar dados RAMNT</li>
+            <li>João fazer análises para Prof. Nicolella</li>
+          </ul>
+        </td>
+        <td><span class="tracker-status status-progresso">Em Progresso</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function filterTracker() {
+    const input = document.getElementById('trackerSearch').value.toLowerCase();
+    const rows = document.querySelectorAll('#trackerTable tbody tr');
+    
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(input) ? '' : 'none';
+    });
+  }
+
+  function sortTracker(n) {
+    const table = document.querySelector('#trackerTable tbody');
+    const rows = Array.from(table.querySelectorAll('tr'));
+    
+    rows.sort((a, b) => {
+      const aVal = a.querySelectorAll('td')[n].innerText;
+      const bVal = b.querySelectorAll('td')[n].innerText;
+      
+      // Se for coluna de data, ordena numericamente
+      if (n === 0) {
+        const aDate = new Date(aVal.split('/').reverse().join('-'));
+        const bDate = new Date(bVal.split('/').reverse().join('-'));
+        return bDate - aDate; // mais recente primeiro
+      }
+      
+      return aVal.localeCompare(bVal);
+    });
+    
+    rows.forEach(row => table.appendChild(row));
+  }
+</script>
+```
+
+## Como Adicionar uma Nova Reunião
+
+1. Copie a estrutura abaixo e adicione antes de `</tbody>`
+2. Preencha com data, tema, participantes, decisões e status
+
+```html
+<tr>
+  <td class="tracker-date">DD/MM/YYYY</td>
+  <td class="tracker-tema">Tema da Reunião</td>
+  <td class="tracker-participantes">Nome1, Nome2, Nome3</td>
+  <td class="tracker-decisoes">
+    <ul>
+      <li>Decisão 1</li>
+      <li>Decisão 2</li>
+    </ul>
+  </td>
+  <td><span class="tracker-status status-progresso">Em Progresso</span></td>
+</tr>
+```
+
+**Status disponíveis:**
+- `status-implementado` → ✅ Implementado
+- `status-progresso` → 🟡 Em Progresso  
+- `status-pendente` → ⏳ Pendente
+
 
 
 
