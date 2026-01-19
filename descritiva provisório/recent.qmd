@@ -21,57 +21,141 @@ library(gtsummary)
 library(gt)
 
 df_analise <- st_read(
-  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/proxy_classificado.gpkg",
   layer = "df_classificado",
   quiet = TRUE   # ou o nome de camada que você usou no st_write
 )
 ```
 
-Criação do data frame com os dados mais recentes até 2023 de cada município: 
+A correção inflacionária foi alterada para o ano de 2023, seguindo o código:
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+library(dplyr)
+library(lubridate)
+library(ipeadatar)
+
+indice_raw <- ipeadata(code = "IGP_IGPDIG", language = "br")
+
+tabela_indices <- indice_raw %>%
+  mutate(
+    ano = year(as.Date(date)),
+    # Transforma taxa percentual em fator multiplicativo (ex: 0.5% vira 1.005)
+    fator_mensal = (value / 100) + 1
+  ) %>%
+  # Agrupa para obter a inflação anualizada
+  group_by(ano) %>%
+  summarise(
+    fator_anual = prod(fator_mensal, na.rm = TRUE), 
+    .groups = "drop"
+  ) %>%
+  arrange(ano) %>%
+  # --- AQUI ESTÁ A CORREÇÃO QUE VOCÊ PEDIU ---
+  # O índice do ano X é o produto de tudo que veio antes (acumulado)
+  mutate(indice_acumulado = cumprod(fator_anual))
+
+# Extrai o índice acumulado EXATAMENTE do ano de 2024.
+# O 'pull' transforma o dataframe de 1 célula em um valor numérico puro (vector).
+indice_base_2023 <- tabela_indices %>%
+  filter(ano == 2023) %>%
+  pull(indice_acumulado)
+
+# CHECK DE SEGURANÇA (Defensive Programming)
+if(length(indice_base_2023) == 0) stop("ERRO CRÍTICO: Ano de 2024 não encontrado na base do IPEA.")
+
+#### 3. Cruzamento e Cálculo ####
+resultado_igpdi <- df_joined %>%
+  mutate(ano = as.numeric(ano)) %>% 
+  left_join(tabela_indices, by = "ano") %>%
+  mutate(
+    # FATOR DE CORREÇÃO (Deflacionamento):
+    # Fórmula: Valor_Real = Valor_Nominal * (Indice_Base / Indice_Corrente)
+    # Aqui trazemos tudo para o poder de compra de 2024.
+    fator_deflator = indice_base_2023 / indice_acumulado,
+    
+    across(
+      c("vti_media", "vti_minimo", "vti_maximo", "vtn_media", "vtn_minimo", "vtn_maximo"), 
+      ~ .x * fator_deflator, 
+      .names = "IGPDI_{.col}"
+    )
+  ) %>%
+  select(colnames(df_joined), starts_with("IGPDI_"))
+
+```
+
+Os dados posteriormente foram separados para aqueles mais próximos do ano de 2023, com o critério de desempate sendo os dados com o ano mais atualizado:
 
 ```{r}
+#| message: false
+#| warning: false
+#| eval: false
+#| echo: false 
+resultado_2023_proxy <- resultado_igpdi %>%
+  # 1. Define o escopo de comparação (por cidade)
+  group_by(code_muni) %>%
+  
+  # 2. Calcula a "distância temporal" para cada registro
+  mutate(delta_tempo = abs(ano - 2023)) %>%
+  
+  # 3. Filtro em dois estágios para garantir a melhor escolha:
+  
+  # Estágio A: Fica apenas com os anos que têm a menor distância absoluta
+  filter(delta_tempo == min(delta_tempo)) %>%
+  
+  # Estágio B: Critério de Desempate (Tie-breaker)
+  # Se uma cidade tiver dados de 2022 e 2024 (ambos delta=1),
+  # escolhemos o mais recente (2024) por conter informação mais atualizada.
+  filter(ano == max(ano)) %>%
+  
+  # 4. Limpeza
+  ungroup() %>%
+  select(-delta_tempo)
+```
+
+disponibilidade total dos dados:
+
+```{r}
+library(geobr)
+library(ggplot2)
 library(dplyr)
 library(sf)
 
-# 1. CONSTRUÇÃO DO CORTE HÍBRIDO
-df_corte_2023 <- df_analise |>
-  # A. Trava no teto (O futuro não explica o presente)
-  filter(ano <= 2023) |> 
-  
-  # B. Ordena para o topo ser sempre o dado mais recente
-  arrange(code_muni, categoria_final, desc(ano)) |> 
-  
-  # C. Agrupa e Fatia
-  group_by(code_muni, categoria_final) |> 
-  slice(1) |> # Pega a 1ª linha (A mais recente disponível até 2023)
-  ungroup() |>
-  
-  # D. Cria Metadados de Controle (Fundamental para sua defesa)
+# 1. Baixar a Malha Municipal Oficial (O "Tabuleiro" completo)
+# Usamos 2020 ou 2022 para garantir compatibilidade com a maioria das bases históricas
+mapa_base <- read_municipality(year = 2020, showProgress = FALSE)
+
+# 2. Preparar seus dados para o confronto
+# Importante: Removemos a geometria do seu df para evitar duplicidade ou erro no join
+dados_existentes <- resultado_2023_proxy %>% # Ou use resultado_igpdi se preferir
+  st_drop_geometry() %>% # Garante que vira um tibble puro, sem geometria
+  select(code_muni) %>% 
+  distinct() %>% 
+  mutate(status = "Disponível")
+
+# 3. Cruzamento: Quem está no mapa oficial vs. Quem está na sua base
+mapa_diagnostico <- mapa_base %>%
+  mutate(code_muni = as.numeric(code_muni)) %>% 
+  left_join(dados_existentes, by = "code_muni") %>%
   mutate(
-    origem_dado = ifelse(ano == 2023, "2023 (Oficial)", paste("Lag", ano)),
-    defasagem_anos = 2023 - ano
+    # Se não deu match, é "Ausente"
+    status = ifelse(is.na(status), "Ausente", status)
   )
 
-# 2. RELATÓRIO DE COMPOSIÇÃO (O "Diagnóstico da Amostra")
-cat("=== RAIO-X DO CORTE 2023 ===\n")
-cat("Total de Municípios/Usos recuperados:", nrow(df_corte_2023), "\n")
-
-# Mostra quantos dados são realmente de 2023 vs. recuperados de anos anteriores
-table(df_corte_2023$origem_dado) |> 
-  as.data.frame() |>
-  rename(Origem = Var1, Qtd = Freq) |>
-  arrange(desc(Origem)) |>
-  print()
-
-# 3. VERIFICAÇÃO DE PERDAS
-# Se a defasagem for muito grande (ex: dado de 2015 sendo usado em 2023), 
-# talvez valha a pena filtrar. Aqui vemos a distribuição:
-summary(df_corte_2023$defasagem_anos)
-```
-
-
-```{r}
-cat("=== RAIO-X DO CORTE 2023 (Por Municípios Únicos) ===\n")
-cat("Total de Linhas (Pares Muni-Uso):", nrow(df_corte_2023), "\n")
-cat("Total de Municípios Únicos Cobertos:", n_distinct(df_corte_2023$origem), "\n\n")
+# 4. Plotagem de Auditoria
+ggplot(data = mapa_diagnostico) +
+  # Camada única colorida pelo status
+  geom_sf(aes(fill = status), color = NA) + 
+  
+  # Cores de Alto Contraste: Cinza Escuro (Dados OK) vs Vermelho Vivo (Problema)
+  scale_fill_manual(values = c("Disponível" = "#0026ff78", "Ausente" = "#ff0000ff")) +
+  
+  theme_void() + # Remove eixos e poluição visual
+  labs(
+    title = "Auditoria de Cobertura Espacial",
+    subtitle = paste0("Ausentes: ", sum(mapa_diagnostico$status == "Ausente"), 
+                      " municípios (Vermelho)"),
+    caption = "Atenção: Clusters vermelhos na fronteira da Amazônia invalidam o RDD."
+  )
 ```
