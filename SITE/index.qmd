@@ -11,7 +11,7 @@ format:
   <video class="bg-video" src="assets/amazon_rainforest.mp4" autoplay loop muted playsinline></video>
   <div class="section-content">
     <div class="section-text">
-      <h2>Dados Ambientais</h2>
+      <h2>Hub de dados ambientais</h2>
      
      <p>O Brasil já produz uma imensidão de dados ambientais — fundiários, florestais, hídricos, econômicos — mas eles estão espalhados em fontes distintas, com formatos, licenças e documentações heterogêneas. Essa fragmentação eleva o custo de pesquisa, atrasa diagnósticos e enfraquece o planejamento público e privado.</p> 
       
