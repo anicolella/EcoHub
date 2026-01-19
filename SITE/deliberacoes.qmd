@@ -105,6 +105,8 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
       </tr>
     </thead>
     <tbody>
+
+<!-- NOVA REUNIÃO -->
       <tr>
         <td class="tracker-date">07/08/2025</td>
         <td class="tracker-tema">Concepção do Projeto</td>
@@ -121,6 +123,7 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
         </td>
       </tr>
 
+<!-- NOVA REUNIÃO -->
       <tr>
         <td class="tracker-date">21/08/2025</td>
         <td class="tracker-tema">Funcionamento do Projeto</td>
@@ -134,6 +137,7 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
         </td>
       </tr>
 
+<!-- NOVA REUNIÃO -->
       <tr>
         <td class="tracker-date">25/08/2025</td>
         <td class="tracker-tema">GitHub e Raspagem de Dados</td>
@@ -148,6 +152,7 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
         </td>
       </tr>
 
+<!-- NOVA REUNIÃO -->
       <tr>
         <td class="tracker-date">01/09/2025</td>
         <td class="tracker-tema">Junção de Bases, Dicionário e Quarto</td>
@@ -161,6 +166,7 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
         </td>
       </tr>
 
+<!-- NOVA REUNIÃO -->
       <tr>
         <td class="tracker-date">15/09/2025</td>
         <td class="tracker-tema">Verificação da Junção de Base</td>
@@ -175,6 +181,7 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
         </td>
       </tr>
 
+<!-- NOVA REUNIÃO -->
       <tr>
         <td class="tracker-date">06/10/2025</td>
         <td class="tracker-tema">Pivotagem de Dados</td>
@@ -187,6 +194,7 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
         </td>
       </tr>
 
+<!-- NOVA REUNIÃO -->
             <tr>
         <td class="tracker-date">20/10/2025</td>
         <td class="tracker-tema">Indexação dos scripts R</td>
@@ -194,6 +202,22 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
         <td class="tracker-decisoes">
           <ul>
             <li>Numerar as pastas e arquivos</li>
+          </ul>
+        </td>
+      </tr>
+
+<!-- NOVA REUNIÃO -->
+            <tr>
+        <td class="tracker-date">19/01/2026</td>
+        <td class="tracker-tema">Fechamento trabalhos RAMMT</td>
+        <td class="tracker-participantes">João e Fernando</td>
+        <td class="tracker-decisoes">
+          <ul>
+            <li>Revisar todo o df final</li>
+            <li>Revisar análise descritiva e deixar gráficos em plotly</li>
+            <li>criar cópia do df final e documentar (dicionário) as colunas</li>
+            <li>Na próxima reunião, definir a publicação no site do df (csv), análise e documentos e dados primários</li>
+            <li>Criada a branch Github 'script' para alterações preliminaresl</li>
           </ul>
         </td>
       </tr>
