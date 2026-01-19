@@ -50,7 +50,7 @@ website:
             href: "https://www.ourworldindata.org"
             target: "_blank"
           - text: "Brasil.gov"
-            href: "https://data.un.org"
+            href: "https://dados.gov.br/home"
             target: "_blank"
           - text: "OCDE"
             href: "https://data.oecd.org"
