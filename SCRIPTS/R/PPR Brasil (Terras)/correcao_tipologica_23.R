@@ -17,7 +17,7 @@ resultado_2023_proxy_limpo <- resultado_2023_proxy  %>%
     
   ) 
 
-resultado_2023_proxy_limpoo <- resultado_2023_proxy_limpo |> filter(nivel == 0 | nivel == 1)
+resultado_2023_proxy_limpo <- resultado_2023_proxy_limpo |> filter(nivel == 0 | nivel == 1)
 
 
 # Assumindo que seu dataframe se chama df_final e a coluna original é descricao_original
@@ -207,7 +207,7 @@ proxy_classificado <- resultado_2023_proxy_limpo %>%
   )
 
 
-proxy_classificado <- proxy_classificado |> filter (categoria_final == "revisar manualmente")
+proxy_classificado2 <- proxy_classificado |> filter (categoria_final == "revisar manualmente")
 
 proxy_classificado <- st_as_sf(proxy_classificado)
 

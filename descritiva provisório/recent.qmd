@@ -19,12 +19,24 @@ library(readr)
 library(sf)
 library(gtsummary)
 library(gt)
+library(plotly)
 
 df_analise <- st_read(
   dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/proxy_classificado.gpkg",
   layer = "df_classificado",
   quiet = TRUE   # ou o nome de camada que você usou no st_write
 )
+
+df_areas <- df_analise |>
+  mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+ df_joined <- df_analise 
 ```
 
 A correção inflacionária foi alterada para o ano de 2023, seguindo o código:
@@ -128,7 +140,7 @@ mapa_base <- read_municipality(year = 2020, showProgress = FALSE)
 
 # 2. Preparar seus dados para o confronto
 # Importante: Removemos a geometria do seu df para evitar duplicidade ou erro no join
-dados_existentes <- resultado_2023_proxy %>% # Ou use resultado_igpdi se preferir
+dados_existentes <- df_analise %>% # Ou use resultado_igpdi se preferir
   st_drop_geometry() %>% # Garante que vira um tibble puro, sem geometria
   select(code_muni) %>% 
   distinct() %>% 
@@ -143,19 +155,212 @@ mapa_diagnostico <- mapa_base %>%
     status = ifelse(is.na(status), "Ausente", status)
   )
 
-# 4. Plotagem de Auditoria
-ggplot(data = mapa_diagnostico) +
-  # Camada única colorida pelo status
-  geom_sf(aes(fill = status), color = NA) + 
+mapa_diagnostico_light <- mapa_diagnostico %>%
+  st_simplify(dTolerance = 0.01, preserveTopology = TRUE)
+
+# 1. Plotagem Adaptada para Interatividade
+p <- ggplot(data = mapa_diagnostico_light) +
+  geom_sf(aes(fill = status, 
+              # O 'text' define o que aparece no hover do mouse
+              text = paste0("Município: ", name_muni, "\n",
+                            "Código: ", code_muni, "\n",
+                            "Status: ", status)), 
+          color = NA, size = 0.05) + # size reduzido para limpar bordas
   
-  # Cores de Alto Contraste: Cinza Escuro (Dados OK) vs Vermelho Vivo (Problema)
-  scale_fill_manual(values = c("Disponível" = "#0026ff78", "Ausente" = "#ff0000ff")) +
+  scale_fill_manual(values = c("Disponível" = "#0c7700ff", 
+                               "Ausente" = "#ff0000ff")) +
   
-  theme_void() + # Remove eixos e poluição visual
+  theme_void() +
+  labs(title = "Auditoria Interativa: Cobertura Espacial")
+
+# 2. Conversão (O Pulo do Gato)
+# tooltip = "text" garante que só mostre o que configuramos acima, limpando o ruído de lat/long
+figura_interativa <- ggplotly(p, tooltip = "text")
+
+# 3. Execução
+figura_interativa
+```
+
+As observações variam de acordo com a quantidade de cada tipologia, a quantidade de observações para cada tipologia foi a seguinte:
+
+```{r}
+library(plotly)
+library(forcats)
+library(dplyr)
+
+dados_plot <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_plot <- dados_plot %>%
+  mutate(
+    # Ao nomear a coluna como 'Categoria', o tooltip mostrará "Categoria: [valor]"
+    Categoria = fct_rev(fct_infreq(as.factor(categoria_final)))
+  )
+
+# 2. Construção do Objeto Gráfico (Frontend)
+p <- ggplot(dados_plot, aes(x = Categoria, fill = Categoria)) + 
+  geom_bar(show.legend = FALSE) +
+  
+  coord_flip() + 
+  
   labs(
-    title = "Auditoria de Cobertura Espacial",
-    subtitle = paste0("Ausentes: ", sum(mapa_diagnostico$status == "Ausente"), 
-                      " municípios (Vermelho)"),
-    caption = "Atenção: Clusters vermelhos na fronteira da Amazônia invalidam o RDD."
+    title = "Contagem por Categoria Final",
+    x = NULL,
+    y = "Total de Observações"
+  ) +
+  
+  theme_minimal() + 
+  
+  theme(
+    axis.text.y = element_text(face = "bold", size = 10),
+    axis.text.x = element_text(face = "bold")            
+  )
+
+# 3. Conversão Cirúrgica
+# tooltip = c("x", "y") força o plotly a mostrar apenas as variáveis dos eixos,
+# ignorando metadados residuais.
+ggplotly(p, tooltip = c("x", "y"))
+```
+
+## 3. Análise e distribuições
+A estatística descritiva revela uma oscilação expressiva nos valores de VTI e VTN ao longo da série histórica. Essa volatilidade não reflete necessariamente uma tendência de mercado, mas sim a heterogeneidade espacial da coleta de dados em cada exercício. A tabela a seguir consolida as métricas de tendência central (média) e dispersão (mínimos e máximos) para ambas as categorias.
+
+mostra a disponibilidade de dados para 23 e oq foi usado para atualizar.
+```{r}
+library(gt)
+library(dplyr)
+library(sf)
+
+# 1. Preparar os dados (Agregação Ponderada)
+tabela_pivo <- df_areas |>
+  st_drop_geometry() |>
+  group_by(ano) |>
+  summarise(
+    # --- VTI: Ponderado pela Área ---
+    vti_med = weighted.mean(vti_media, w = area_ha_calculada, na.rm = TRUE),
+    vti_min = min(vti_minimo, na.rm = TRUE),
+    vti_max = max(vti_maximo, na.rm = TRUE),
+    
+    # --- VTN: Ponderado pela Área ---
+    vtn_med = weighted.mean(vtn_media, w = area_ha_calculada, na.rm = TRUE),
+    vtn_min = min(vtn_minimo, na.rm = TRUE),
+    vtn_max = max(vtn_maximo, na.rm = TRUE),
+    
+    # --- Auditoria ---
+    n_registros = n_distinct(origem)
+  )
+
+# 2. Gerar a Tabela Profissional
+tabela_pivo |>
+  gt() |>
+  
+  # --- Cabeçalho ---
+  tab_header(
+    title = md("**Evolução Histórica de Preços (VTI vs VTN)**"),
+    subtitle = "Média Ponderada por Área (ha) e Amplitude"
+  ) |>
+  
+  # --- Formatação Numérica ---
+  fmt_number(
+    columns = -ano,
+    decimals = 0,
+    sep_mark = ".",
+    dec_mark = ","
+  ) |>
+  
+  # --- Fusão (Merge) ---
+  cols_merge(
+    columns = c(vti_med, vti_min, vti_max),
+    pattern = "{1} ({2} - {3})"
+  ) |>
+  cols_merge(
+    columns = c(vtn_med, vtn_min, vtn_max),
+    pattern = "{1} ({2} - {3})"
+  ) |>
+  
+  # --- Labels ---
+  cols_label(
+    ano = "Ano",
+    vti_med = md("**VTI (R$/ha)**<br><small>Média (Mín - Máx)</small>"),
+    vtn_med = md("**VTN (R$/ha)**<br><small>Média (Mín - Máx)</small>"),
+    n_registros = "Nº Municípios"
+  ) |>
+  
+  # --- Estilo ---
+  # Ajuste Tático: Ano centralizado, Números à direita (padrão financeiro)
+  cols_align(align = "center", columns = ano) |>
+  cols_align(align = "right", columns = -ano) |> 
+  
+  opt_row_striping() |>
+  tab_options(
+    table.width = pct(100),
+    data_row.padding = px(6)
+  )
+```
+
+Segue uma tabela do valor de terra por quantil ao longo de toda a amostragem, lembrando que os valores aqui apresentados são fruto de correções inflacionárias de todos os valores para o ano de 2023. 
+
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Cálculo dos Quantis por Categoria
+tabela_quantis <- df_areas |>
+  st_drop_geometry() |>
+  filter(!is.na(vti_media), vti_media > 0) |>
+  group_by(categoria_final) |>
+  summarise(
+    N = n(),
+    # Calcula os cortes de preço que dividem o mercado
+    P10 = quantile(vti_media, 0.10),
+    P25 = quantile(vti_media, 0.25),
+    Mediana = median(vti_media),
+    P75 = quantile(vti_media, 0.75),
+    P90 = quantile(vti_media, 0.90)
+  ) |>
+  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato
+
+# 2. Renderização da Tabela
+tabela_quantis |>
+  gt() |>
+  tab_header(
+    title = md("**Estrutura de Preços: Distribuição por Quantis**"),
+    subtitle = "Valores de Terra (VTI) em R$/ha"
+  ) |>
+  fmt_number(
+    columns = c(P10, P25, Mediana, P75, P90),
+    decimals = 0,
+    sep_mark = ".",
+    dec_mark = ","
+  ) |>
+  cols_label(
+    categoria_final = "Categoria",
+    N = "Amostras",
+    P10 = "Piso (10%)",
+    P25 = "Baixo (25%)",
+    Mediana = "Médio (50%)",
+    P75 = "Alto (75%)",
+    P90 = "Teto (90%)"
+  ) |>
+  # Destaque visual para a Mediana (o valor mais provável)
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", color = "black"),
+      cell_fill(color = "lightgray")
+    ),
+    locations = cells_body(columns = Mediana)
+  ) |>
+  data_color(
+    columns = c(Mediana),
+    method = "numeric",
+    palette = "Greens" # Escala de cor para mostrar quem vale mais
+  )
+```
+
+Geograficamente, os dados refletem uma estrutura que respeita o esperado: os estados das regiões Sul, Sudeste e Centro-Oeste apresentam um maior valor para a terra com imóvel, enquanto as regiões Norte e Nordeste apresentam valores inferiores. Uma anomalia que se encontra é a região de Manaus, que compõe a Zona Homogênea de Terras 'Manaus e Entorno'. Os valores dos imóveis provavelmente aumentam por conta da pressão da zona urbana, como é o caso típico de imóveis apresentando maior valor em áreas altamente urbanizadas.
+
+
+```{r}
+
+
   )
 ```
