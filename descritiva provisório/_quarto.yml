@@ -1,6 +1,10 @@
 project: 
   type: website
 
+execute:
+  keep-md: false  # Não manter o markdown intermediário
+  freeze: auto    # Congela computação (salva cache) apenas se necessário, mas deve ser ignorado pelo git se for local
+
 website: 
   title: "análise descritiva RAMT provisória"
   navbar:

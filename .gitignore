@@ -46,3 +46,12 @@ dados/
 # ---- Ambiente R
 .Renviron
 SITE/.gitignore
+
+# Ignorar pastas de figuras geradas localmente - João 
+*_files/
+*_cache/
+
+# Ignorar site gerado e arquivos HTML pesados
+_site/
+*.html
+*_files/
