@@ -40,7 +40,11 @@ df_areas <- df_analise |>
  df_joined <- df_analise 
 ```
 
+<<<<<<< HEAD
 A correção inflacionária foi feita para o ano de 2023, utilzando-se do índice IGPDI anual, com uso das séries de tempo referentes a API do IPEA.
+=======
+A correção inflacionária foi alterada para o ano de 2023, seguindo o código:
+>>>>>>> a6584ea4282af447af8f93ba870ae189becefe3d
 ```{r}
 #| echo: false
 #| message: false
@@ -127,7 +131,11 @@ resultado_2023_proxy <- resultado_igpdi %>%
   select(-delta_tempo)
 ```
 
+<<<<<<< HEAD
 Encontra-se a seguinte disponibilidade de dados, em verde os dados atualmente disponíveis com o recorte temporal mais completo possível, enquanto em vermelho são aqueles municípios sem observação presente. O ano do mapa utilizado foi de 2020, usando a API do IBGE.
+=======
+disponibilidade total dos dados:
+>>>>>>> a6584ea4282af447af8f93ba870ae189becefe3d
 
 ```{r}
 library(geobr)
@@ -141,7 +149,11 @@ mapa_base <- read_municipality(year = 2020, showProgress = FALSE)
 
 # 2. Preparar seus dados para o confronto
 # Importante: Removemos a geometria do seu df para evitar duplicidade ou erro no join
+<<<<<<< HEAD
 dados_existentes <- df_analise %>% # Ou use resultado_igpdi se preferir
+=======
+dados_existentes <- resultado_2023_proxy %>% # Ou use resultado_igpdi se preferir
+>>>>>>> a6584ea4282af447af8f93ba870ae189becefe3d
   st_drop_geometry() %>% # Garante que vira um tibble puro, sem geometria
   select(code_muni) %>% 
   distinct() %>% 
@@ -156,6 +168,7 @@ mapa_diagnostico <- mapa_base %>%
     status = ifelse(is.na(status), "Ausente", status)
   )
 
+<<<<<<< HEAD
 mapa_diagnostico_light <- mapa_diagnostico %>%
   st_simplify(dTolerance = 0.01, preserveTopology = TRUE)
 
@@ -738,3 +751,21 @@ p2 <- ggplot(dados_uf, aes(x = reorder(UF, vti_media, FUN = median), y = vti_med
 ggplotly(p2)
 ```
 
+=======
+# 4. Plotagem de Auditoria
+ggplot(data = mapa_diagnostico) +
+  # Camada única colorida pelo status
+  geom_sf(aes(fill = status), color = NA) + 
+  
+  # Cores de Alto Contraste: Cinza Escuro (Dados OK) vs Vermelho Vivo (Problema)
+  scale_fill_manual(values = c("Disponível" = "#0026ff78", "Ausente" = "#ff0000ff")) +
+  
+  theme_void() + # Remove eixos e poluição visual
+  labs(
+    title = "Auditoria de Cobertura Espacial",
+    subtitle = paste0("Ausentes: ", sum(mapa_diagnostico$status == "Ausente"), 
+                      " municípios (Vermelho)"),
+    caption = "Atenção: Clusters vermelhos na fronteira da Amazônia invalidam o RDD."
+  )
+```
+>>>>>>> a6584ea4282af447af8f93ba870ae189becefe3d
