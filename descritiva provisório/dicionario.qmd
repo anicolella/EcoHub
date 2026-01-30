@@ -1,0 +1,150 @@
+---
+title: "dicionário de dados"
+format: html
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(geobr)
+library(ipeadatar)
+library(stringr)
+library(readr)
+library(sf)
+library(gtsummary)
+library(gt)
+
+df_analise <- st_read(
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
+
+df_eco1 <- df_analise |> select(-c("df", "desc_chave"))
+
+df_areas <- df_analise |>
+  mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+ df_joined <- df_analise 
+ 
+```
+
+## Introdução
+Os dados dos RAMT (Relatórios de Análise do Mercado de Terras) são elaborados pelo INCRA a partir da análise de diferentes mercados de terras em todo o território nacional, sendo essas terras tratadas como zonas homogêneas. Estas zonas são *clusters* (agrupamentos homogêneos com características semelhantes) que, a partir de então, têm seu valor analisado tendo em vista o uso da terra e as dinâmicas desses diferentes mercados. Os *clusters* são formados com base em um conjunto de variáveis: vocação produtiva da terra, gestão econômica e atividades agrícolas, nível tecnológico e a concentração fundiária (tendo em vista o índice de Gini fundiário). A metodologia de clusterização adotada é a de Ward, criando uma árvore de clusters inicialmente que depois é diferenciada por meio de algoritmos de K-means. O tratamento estatístico pressupõe uma distribuição aproximadamente normal dentro da zona homogênea. Os índices de inflação são corrigidos segundo o IGP-DI. Esse procedimento de clusterização é feito dentro de uma superintendência regional do INCRA.
+
+A metodologia de Ward baseia-se na criação de partições que minimizem a Soma dos Quadrados dos Erros (SQE), ou seja, a soma das distâncias euclidianas quadráticas de cada amostra em relação ao centroide (média) do cluster, conforme a fórmula:
+
+$$
+ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
+$$
+
+
+A otimização do procedimento de cluster é feito por meio do processo de "K-means". Esse algoritmo forma K grupos diversos de municípios que posteriormente serão modificados movendo cidades de um local ao outro de modo a maximizar ou minimizar a função, aumentando a qualidade do cluster.
+
+O banco de dados estrutura-se em 18 variáveis, organizadas para capturar a dinâmica espacial e econômica do mercado de terras. As observações são indexadas temporalmente (ano) e geograficamente (code_muni, UF, origem), assegurando a identificação unívoca dos registros dos Relatórios de Análise do Mercado de Terras (RAMT).
+
+## Sobre as fontes
+As fontes utilizadas para a construção do banco de dados foram os Relatórios de Análise do Mercado de Terras (2016-2025) e o Atlas do Mercado de Terras (2023). Os dados são coletados pelas superintendências regionais do INCRA; consequentemente, apresentam baixa uniformidade metodológica, como evidenciado nos gráficos de coleta. A ausência de dados para 2023 em determinadas unidades federativas decorre da repetição de séries históricas anteriores no Atlas.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| results: asis 
+
+# ATENÇÃO: A opção 'results: asis' acima é OBRIGATÓRIA.
+# Sem ela, o Quarto vai achar que os textos são logs do R e não formatação.
+
+# 1. Preparação (Fora do Loop)
+br_outline <- read_country(year = 2020, showProgress = FALSE) 
+br_states  <- read_state(code_state = "all", year = 2020, showProgress = FALSE)
+anos_disponiveis <- sort(unique(df_analise$ano)) # Garante ordem cronológica
+
+# 2. Abertura do Painel de Abas (Comando Markdown via R)
+cat("::: {.panel-tabset}\n\n")
+
+# 3. Loop
+for (um_ano in anos_disponiveis) {
+  
+  # A. Cria o Título da Aba (Markdown)
+  # O \n é crucial para o Quarto entender que é um cabeçalho
+  cat("## ", um_ano, "\n\n")
+  
+  # B. Gera o Mapa
+  dados_do_ano <- subset(df_analise, ano == um_ano)
+  
+  p <- ggplot() +
+    geom_sf(data = br_outline, fill = "gray95", color = "gray90") +
+    geom_sf(data = dados_do_ano, fill = "firebrick", color = NA) + 
+    geom_sf(data = br_states, fill = NA, color = "gray40", lwd = 0.3) +
+    labs(title = paste("Coleta de dados RAMT:", um_ano), 
+         subtitle = paste(n_distinct(dados_do_ano$origem), "municípios com dados"),
+         caption = "Fonte: INCRA/RAMT") +
+    theme_void() +
+    theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "gray20"))
+  
+  # C. Imprime o Mapa
+  print(p)
+  
+  # D. Fecha o espaço da aba
+  cat("\n\n")
+}
+
+# 4. Fechamento do Painel
+cat(":::\n")
+```
+
+Além da análise qualitativa, os relatórios contêm as Planilhas de Preços Referenciais de Terras (as chamadas PPRs). Cada relatório varia sua quantidade de tabelas de acordo com a quantidade de clusters ou zonas homogêneas; nesse sentido, o conteúdo principal deste dataframe é a digitalização das PPRs. É importante ressaltar que nem todos os elementos das PPRs estão inclusos neste banco. A variação ocorre pois algumas PPRs mudam seu formato, notadamente aquelas presentes em relatórios do ano de 2022, que apresentam algumas medidas estatísticas a mais. Assim, buscou-se registrar o que se mantém constante nessas planilhas ao longo da maioria dos anos: os valores de terra com imóvel e sem imóvel. É importante dizer que esses valores são criados com base em uma hipótese de normalidade dos valores de propriedades dentro da Zona Homogênea ou Cluster. Nesse sentido, tendo-se o valor médio, mínimo e máximo, é possível reconstruir a distribuição dentro do intervalo de confiança, sendo este de geralmente 15% *verificar*, segundo os relatórios.
+
+## Metodologia
+A extração das planilhas foi feita com o auxílio da inteligência artificial Google Gemini por meio de prints das tabelas; as tabelas eram printadas, transcritas pelo Gemini e, posteriormente, verificadas manualmente. Além disso, alguns scripts para a extração das tabelas foram criados e utilizados, usando o Camelot do Python ou até mesmo o Shiny no R. Entretanto, devido à diversidade da publicação das tabelas, algumas em PDF, outras em imagem e algumas vezes prints de tabelas com uma notável dificuldade na legibilidade, a maioria foi feita via Gemini.
+
+A cerca da incompatibilidade de dados Relatórios de Análise dos Mercados de Terras (RAMT) com os dados do atlas para casos de mesmo ano, preferiu-se priorizar os dados presentes nos RAMT's, tendo em vista a maior frequência. Nesse sentido, os dados de 2023 são majoritariamente do atlas, existindo a exceção apra o estado do Mato Grosso, pois, havia um relatório para o ano de 2023 que variava dos valores apresentados no atlas, enquanto que os valores apresentados no atlas foram para um relatório de 2024. Assim, usou-se os valores do Relatório para 2023.
+
+## Dicionário das colunas do Data Frame
+As colunas presentes no dataframe são as seguintes:
+```{r}
+library(gt)
+library(dplyr)
+
+# Criando o dataframe do dicionário
+dicionario_data <- tribble(
+  ~Variável, ~Tipo, ~Descrição,
+  "mrt", "Texto", "Nome da zona homogênea no arquivo de origem.",
+  "origem", "Texto", "Cidade analisada.",
+  "code_muni", "ID", "Código do município segundo o IBGE.",
+  "ano", "Temporal", "Ano de publicação do documento original.",
+  "vti_media", "Monetária", "Valor médio da terra com benfeitorias (por hectare).",
+  "vtn_media", "Monetária", "Valor médio da terra nua (por hectare).",
+  "igpdi_vti_media", "Monetária", "Valor VTI deflacionado pelo IGP-DI (Preços Reais).",
+  "geom", "Espacial", "Geometria municipal (SIRGAS 2000).",
+  "categoria_final", "Categórica", "Unificação das tipologias de uso da terra."
+)
+
+# Renderizando a tabela gtsummary/gt
+dicionario_data |>
+  gt() |>
+  tab_header(
+    title = "Dicionário de Variáveis do Banco de Dados RAMT/INCRA",
+    subtitle = "Estrutura de dados para análise de mercado de terras (2016-2025)"
+  ) |>
+  cols_label(
+    Variável = md("**Variável**"),
+    Tipo = md("**Tipo**"),
+    Descrição = md("**Descrição**")
+  ) |>
+  tab_options(
+    table.width = pct(100),
+    column_labels.background.color = "gray90"
+  )
+```
