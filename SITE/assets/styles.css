@@ -709,7 +709,7 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
 /* Reset e responsividade */
 .home-section {
   width: 100%;
-  padding: 3rem 0;
+  padding: 1.5rem 0; /* espaço vertical muito reduzido */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -720,6 +720,11 @@ html[data-bs-theme="dark"] .navbar-nav .dropdown-menu {
      fiquem atrás de ancestrais (ex.: main/content no tema escuro) */
   z-index: 0;
   isolation: isolate;
+}
+
+/* Reduz ainda mais o vão entre seções consecutivas da home */
+.home-section + .home-section {
+  padding-top: 0.75rem;
 }
 
 /* Vídeo de fundo */
@@ -870,13 +875,13 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
   float: right; /* imagem/vídeo flutua à direita por padrão */
   width: 45%; /* ocupa parte da largura do container, maior que antes */
   max-width: calc(560px + 4rem); /* aumentado em 4rem conforme solicitado */
-  margin: 5.5rem 0 1rem 1.25rem; /* deslocada para baixo conforme pedido */
+  margin: 0.5rem 0 1rem 1.25rem; /* deslocamento mínimo */
   display: block;
 }
 /* Variante: mídia à ESQUERDA (para seção 3) */
 .wrap-media-text.left .section-media {
   float: left;
-  margin: 5.5rem 1.25rem 1rem 0; /* espelho do margin quando está à direita */
+  margin: 0.5rem 1.25rem 1rem 0; /* espelho do margin com espaço mínimo */
 }
 
 /* Garante que o texto não sobreponha a mídia quando à esquerda */
