@@ -536,16 +536,244 @@ DFMRT10_2021 <- data.frame(
 )
 
 ## 2025 ####
+# Digitalização da Planilha de Preços Referenciais (PPR) - INCRA
+# Documento: PPR/SR(28)/DFE/Nº 01/2024
+# Data do Documento: 20 de maio de 2025
+
+MRT1_2025 <- data.frame(
+  mrt = "MRT 1 - VÃO DO PARÁ",
+  tipologia_de_uso = c(
+    "Uso indefinido (média geral do MRT)",
+    "Pecuária",
+    "Atividade Mista",
+    "Pecuária de Baixo Suporte",
+    "Pecuária de Médio Suporte",
+    "Pecuária de Alto Suporte",
+    "Lavoura de Média Prod. e Pecuária de Médio Suporte",
+    "Pecuária de Baixo Suporte (Monte Alegre)",
+    "Pecuária de Médio Suporte (Flores de Goiás)",
+    "Pecuária de Médio Suporte (Divinópolis)",
+    "Pecuária de Médio Suporte (São Domingos)",
+    "Pecuária de Alto Suporte (Alvorada do Norte)",
+    "Pecuária de Alto Suporte (Flores de Goiás)",
+    "Pecuária de Alto Suporte (Divinópolis)",
+    "Pecuária de Alto Suporte (Vila Boa)"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(
+    13740.34, 13915.21, 15926.22, 5227.17, 10898.10, 
+    20749.23, 14333.55, 6158.88, 15115.69, 8792.16, 
+    8781.11, 20365.86, 23038.41, 16735.54, 17518.16
+  ),
+  vti_minimo = c(
+    10992.27, 11132.17, 12740.98, 4181.73, 8718.48, 
+    16599.39, 11466.84, 4927.10, 12848.34, 7033.73, 
+    7024.89, 16292.69, 18430.72, 14225.21, 14890.44
+  ),
+  vti_maximo = c(
+    16488.41, 16698.25, 19111.47, 6272.60, 13077.72, 
+    24899.08, 17200.26, 7390.66, 17383.04, 10550.59, 
+    10537.33, 24439.03, 27646.09, 19245.87, 20145.89
+  ),
+  vtn_media = c(
+    12262.61, 12438.82, 13953.07, 4449.71, 9634.31, 
+    18754.77, 12249.07, 5526.79, 13753.96, 7526.62, 
+    7035.24, 19510.77, 20903.61, 13792.47, 16068.56
+  ),
+  vtn_minimo = c(
+    9810.09, 9951.06, 11162.45, 3559.77, 7707.45, 
+    15003.82, 9799.26, 4421.43, 11690.87, 6021.29, 
+    5628.19, 15608.61, 16722.89, 11408.35, 13658.27
+  ),
+  vtn_maximo = c(
+    14715.14, 14926.59, 16743.68, 5339.65, 11561.17, 
+    22505.73, 14698.89, 6632.15, 15817.06, 9031.94, 
+    8442.29, 23412.92, 25084.34, 16176.59, 18478.84
+  ),
+  origem = "Campos Belos; Monte Alegre de Goiás; Divinópolis de Goiás; São Domingos; Nova Roma; Guarani de Goiás; Iaciara; Posse; Simolândia; Alvorada do Norte; Flores de Goiás; Vila Boa"
+)
+
+
+MRT2_2025 <- data.frame(
+  mrt = "MRT 2 - MAMBAÍ / FORMOSO",
+  tipologia_de_uso = c(
+    "Uso indefinido (media geral do MRT)",
+    "Pecuária",
+    "Pecuária de Baixo Suporte",
+    "Pecuária de Médio Suporte",
+    "Pecuária de Baixo Suporte (Formoso)",
+    "Pecuária de Médio Suporte (Buritinópolis)"
+  ),
+  nivel = c(0, 1, 2, 2, 3, 3),
+  vti_media = c(9831.72, 9793.27, 6474.40, 12520.79, 7068.96, 12928.46),
+  vti_minimo = c(7865.38, 7834.61, 5503.24, 10080.63, 6008.62, 10342.77),
+  vti_maximo = c(11798.07, 11751.92, 7445.56, 14960.94, 8129.31, 15514.16),
+  vtn_media = c(8752.30, 8629.31, 5353.02, 11270.17, 5683.86, 11339.16),
+  vtn_minimo = c(7001.84, 6903.45, 4282.41, 9016.13, 4547.08, 9071.33),
+  vtn_maximo = c(10502.76, 10355.17, 6423.62, 13524.20, 6820.63, 13606.99),
+  origem = "Buritinópolis; Mambaí; Damianópolis; Sítio D’ Abadia;Formoso."
+)
+
+MRT3_2025 <- data.frame(
+  mrt = "MRT 3 - UNAÍ/CRISTALINA",
+  tipologia_de_uso = c(
+    "Uso indefinido (média geral do MRT)",
+    "Pecuária",
+    "Atividade Mista",
+    "Lavoura",
+    "Pecuária de Baixo Suporte",
+    "Pecuária de Médio Suporte",
+    "Pecuária de Alto Suporte",
+    "Atividade Mista - Lav. de Média Prod. e Pec. de Médio Suporte",
+    "Lavoura de Alta Produtividade",
+    "Pecuária de Baixo Suporte (Buritis)",
+    "Pecuária de Médio Suporte (Buritis)",
+    "Pecuária de Médio Suporte (Unaí)",
+    "Pecuária de Médio Suporte (Cristalina)",
+    "Pecuária de Alto Suporte (Buritis)",
+    "Pecuária de Alto Suporte (Luziânia)",
+    "Pecuária de Alto Suporte (Unaí)",
+    "Lavoura de Alta Produtividade (Unaí)",
+    "Lavoura de Alta Produtividade (Cristalina)"
+  ),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(23716.66, 20463.93, 41309.47, 58427.29, 11174.44, 15429.64, 24759.85, 41309.47, 58427.29, 9832.59, 15633.96, 14526.79, 20030.42, 20784.58, 30254.07, 26267.86, 57800.00, 67139.03),
+  vti_minimo = c(18973.33, 16371.15, 33047.58, 46741.84, 8939.55, 12343.71, 19807.88, 33047.58, 46741.84, 8086.98, 12507.17, 11621.43, 16024.33, 17666.89, 25715.96, 21014.29, 46240.00, 53711.22),
+  vti_maximo = c(28459.99, 24556.72, 49571.36, 70112.75, 13409.33, 18515.57, 29711.82, 49571.36, 70112.75, 11578.19, 18760.75, 17432.14, 24036.50, 23902.27, 34792.18, 31521.43, 69360.00, 80566.84),
+  vtn_media = c(21180.59, 18010.33, 37669.65, 52749.30, 8671.79, 13450.35, 22452.30, 37669.65, 52749.30, 9162.39, 14628.83, 11813.22, 14629.71, 19372.56, 27747.06, 22914.65, 52398.65, 64537.88),
+  vtn_minimo = c(16944.47, 14408.26, 30135.72, 42199.44, 6948.83, 10760.28, 17961.84, 30135.72, 42199.44, 7427.80, 11703.06, 9450.58, 11703.76, 16466.67, 23585.00, 18331.72, 41918.92, 51630.30),
+  vtn_maximo = c(25416.71, 21612.40, 45203.58, 63299.16, 10394.75, 16140.42, 26942.76, 45203.58, 63299.16, 10896.97, 17554.60, 14175.87, 17555.65, 22278.44, 31909.12, 27497.58, 62878.38, 77445.45),
+  origem = "Unaí; Cabeceira Grande; Cristalina; Luziânia; Cidade Ocidental; Buritis."
+)
+
+MRT4_2025 <- data.frame(
+  mrt = "MRT 4 - ALEXÂNIA",
+  tipologia_de_uso = c(
+    "Uso indefinido (média geral do MRT)", "Pecuária", "Atividade Mista",
+    "Pecuária de Médio Suporte", "Pecuária de Alto Suporte",
+    "Atividade Mista (Lav. de Média Prod. e Pec. de Alto Suporte)",
+    "Pecuária de Alto Suporte (Alexânia)"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 3),
+  vti_media = c(30741.60, 30461.79, 35315.51, 21874.00, 34343.23, 40647.95, 38284.49),
+  vti_minimo = c(24593.28, 24369.43, 28252.41, 17499.20, 27474.59, 32518.36, 30627.59),
+  vti_maximo = c(36889.92, 36554.14, 42378.61, 26248.80, 41211.88, 48777.54, 45941.39),
+  vtn_media = c(25205.87, 24131.28, 31905.16, 19177.04, 26423.27, 37113.22, 32424.74),
+  vtn_minimo = c(20164.70, 19305.03, 25524.13, 15341.63, 21138.62, 29690.58, 25939.79),
+  vtn_maximo = c(30247.04, 28957.54, 38286.19, 23012.45, 31707.93, 44535.86, 38909.69),
+  origem = "Alexânia; Corumbá de Goiás; Santo Antônio do Descoberto."
+)
+
+
+MRT5_2025 <- data.frame(
+  mrt = "MRT 5 - PADRE BERNARDO",
+  tipologia_de_uso = c(
+    "Uso indefinido (media geral do MRT)", "Pecuária", "Atividade Mista",
+    "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte",
+    "Lavoura de Alta Produtividade e Pecuária de Alto Suporte", "Pecuária de Baixo Suporte (Padre Bernardo)",
+    "Pecuária de Médio Suporte (Cocalzinho de Goiás)", "Pecuária de Alto Suporte (Padre Bernardo)",
+    "Lavoura de Alta Produtividade e Pecuária de Alto Suporte (Padre Bernardo)"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  vti_media = c(17087.25, 17833.19, 42285.90, 11141.65, 17839.48, 26284.96, 48554.69, 9800.18, 17275.15, 27007.48, 58052.11),
+  vti_minimo = c(13669.80, 14266.55, 33828.72, 8913.32, 14271.59, 21027.97, 38843.76, 7840.14, 13820.12, 21605.99, 47464.90),
+  vti_maximo = c(20504.70, 21399.82, 50743.08, 13369.98, 21407.38, 31541.96, 58265.63, 11760.21, 20730.18, 32408.98, 68639.32),
+  vtn_media = c(15093.38, 15814.99, 38538.25, 9950.47, 14801.56, 24639.08, 44704.83, 8628.07, 15037.35, 26232.65, 53770.43),
+  vtn_minimo = c(12074.71, 12651.99, 30830.60, 7960.38, 11841.25, 19711.26, 35763.86, 6902.46, 12029.88, 20986.12, 43016.35),
+  vtn_maximo = c(18112.06, 18977.99, 46245.89, 11940.56, 17761.87, 29566.90, 53645.80, 10353.68, 18044.82, 31479.18, 64524.52),
+  origem = "Padre Bernardo; Cocalzinho de Goiás; Mimoso de Goiás."
+)
+
+MRT6_2025 <- data.frame(
+  mrt = "MRT 6 - Formosa / São João D' Aliança",
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Atividade Mista", "Lavoura", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Atividade Mista (Lavoura de Alta Produtividade e Pecuária de Alto Suporte)", "Lavoura de Alta Produtividade", "Pecuária de Baixo Suporte (Formosa)", "Pecuária de Baixo Suporte (Planaltina de Goiás)", "Pecuária de Baixo Suporte (São João D'Aliança)", "Pecuária de Médio Suporte (Formosa)", "Pecuária de Médio Suporte (Planaltina de Goiás)", "Pecuária de Alto Suporte (Formosa)"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
+  vti_media = c(14891.68, 14992.80, 55089.48, 65987.92, 6179.55, 14914.21, 28340.40, 62560.20, 65987.92, 3776.01, 7366.65, 6041.18, 17119.89, 11412.33, 29187.48),
+  vti_minimo = c(11913.34, 11994.24, 44071.59, 56089.73, 4943.64, 11931.37, 22672.32, 50048.16, 56089.73, 3020.81, 5893.32, 4832.95, 14289.69, 9129.87, 23349.98),
+  vti_maximo = c(17870.02, 17991.36, 66107.38, 75886.11, 7415.46, 17897.06, 34008.48, 75072.24, 75886.11, 4531.22, 8839.98, 7249.42, 19950.09, 13694.80, 35024.97),
+  vtn_media = c(12888.03, 12667.12, 52644.88, 63211.47, 4769.28, 12894.96, 24143.64, 60103.62, 63211.47, 2790.74, 5504.83, 4739.67, 15188.44, 9789.14, 24653.44),
+  vtn_minimo = c(10310.42, 10133.70, 42115.90, 53729.75, 3815.43, 10315.96, 19314.92, 48082.89, 53729.75, 2232.60, 4403.86, 3791.73, 12423.36, 7831.31, 19722.75),
+  vtn_maximo = c(15465.64, 15200.54, 63173.85, 72693.19, 5723.14, 15473.95, 28972.37, 72124.34, 72693.19, 3348.89, 6605.79, 5687.60, 17953.51, 11746.97, 29584.13),
+  origem = "São João D'Aliança; Formosa; Água Fria de Goiás; Planaltina; Cabeceiras"
+)
+
+MRT7_2025 <- data.frame(
+  mrt = "MRT - CHAPADA DOS VEADEIROS",
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Mata Nativa", "Pecuária", "Lavoura", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Lavoura de Média Produtividade", "Mata Nativa (Cavalcante)", "Pecuária de Baixo Suporte (Cavalcante)", "Pecuária de Baixo Suporte (Teresina de Goiás)", "Pecuária de Médio Suporte (Cavalcante)", "Pecuária de Médio Suporte (Teresina de Goiás)", "Pecuária de Médio Suporte (Colinas do Sul)"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3),
+  vti_media = c(6269.65, 3153.58, 6307.74, 21299.85, 3153.58, 3796.76, 8362.17, 21299.85, 2997.25, 2982.95, 4242.62, 3925.45, 10499.16, 9384.09),
+  vti_minimo = c(5015.72, 2522.86, 5046.19, 17285.74, 2522.86, 3037.41, 6689.74, 17285.74, 2480.71, 2535.51, 3394.09, 3284.82, 8924.28, 7507.27),
+  vti_maximo = c(7523.58, 3784.29, 7569.28, 25313.95, 3784.29, 4556.11, 10034.60, 25313.95, 3513.78, 3430.39, 5091.14, 4566.07, 12074.03, 11260.90),
+  vtn_media = c(5388.95, 2911.19, 5414.11, 19252.33, 2911.19, 3355.78, 7098.19, 19252.33, 2812.40, 2766.01, 3554.14, 3683.03, 9161.05, 7642.83),
+  vtn_minimo = c(4311.16, 2367.87, 4331.29, 15401.86, 2367.87, 2684.63, 5678.55, 15401.86, 2269.88, 2231.72, 2843.31, 3079.54, 7786.90, 6114.27),
+  vtn_maximo = c(6466.74, 3454.50, 6496.93, 23102.80, 3454.50, 4026.94, 8517.83, 23102.80, 3354.92, 3300.29, 4264.96, 4286.51, 10535.21, 9171.40),
+  origem = "Alto Paraíso de Goiás; Cavalcante; Colinas do Sul; Teresina de Goiás"
+)
+
+
+MRT8_2025 <- data.frame(
+  mrt = "MRT 8 - DISTRITO FEDERAL",
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Atividade Mista", "Lavoura", "Hortifrutigranjeiro", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Atividade Mista - Lav. de Média Prod. e Pec. de Médio Sup.", "Lavoura de Média Produtividade", "Lavoura de Alta Produtividade", "Hortifrutigranjeiro", "Pecuária de Baixo Suporte (DF)", "Pecuária de Médio Suporte (DF)", "Pecuária de Alto Suporte (DF)", "Atividade Mista - Lav. de Média Prod. e Pec. de Médio Sup. (DF)", "Lavoura de Média Produtividade (DF)", "Lavoura de Alta Produtividade (DF)", "Hortifrutigranjeiro (DF)"),
+  nivel = c(0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(44755.45, 41594.56, 41388.66, 61753.48, 139347.83, 19810.58, 47809.06, 58717.65, 41388.66, 50383.45, 95245.14, 139347.83, 19810.58, 47809.06, 58717.65, 41388.66, 50383.45, 95245.14, 139347.83),
+  vti_minimo = c(35804.36, 33275.64, 33110.92, 49402.78, 112001.01, 15848.47, 39370.48, 46974.12, 33110.92, 40306.76, 76196.12, 112001.01, 15848.47, 39370.48, 46974.12, 33110.92, 40306.76, 76196.12, 112001.01),
+  vti_maximo = c(53706.54, 49913.47, 49666.39, 74104.17, 166694.66, 23772.70, 56247.64, 70461.18, 49666.39, 60460.14, 114294.17, 166694.66, 23772.70, 56247.64, 70461.18, 49666.39, 60460.14, 114294.17, 166694.66),
+  vtn_media = c(34414.50, 28285.22, 35971.21, 48561.88, 126110.10, 14664.61, 30029.46, 40597.66, 35971.21, 44652.17, 65299.86, 126110.10, 14664.61, 30029.46, 40597.66, 35971.21, 44652.17, 65299.86, 126110.10),
+  vtn_minimo = c(27531.60, 22628.18, 28776.97, 38849.50, 103318.84, 11731.69, 25525.04, 32478.13, 28776.97, 35721.74, 52239.89, 103318.84, 11731.69, 25525.04, 32478.13, 28776.97, 35721.74, 52239.89, 103318.84),
+  vtn_maximo = c(41297.40, 33942.27, 43165.45, 58274.25, 148901.35, 17597.54, 34533.88, 48717.19, 43165.45, 53582.61, 78359.83, 148901.35, 17597.54, 34533.88, 48717.19, 43165.45, 53582.61, 78359.83, 148901.35),
+  origem = "Distrito Federal; Novo Gama; Valparaíso de Goiás; Águas Lindas de Goiás"
+)
+
+
+MRT9_2025 <- data.frame(
+  mrt = "MRT 9 – ARINOS / CHAPADA GAÚCHA" ,
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Mata", "Pecuária", "Atividade Mista", "Mata Nativa", "Pecuária de Baixo Suporte", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Mata Nativa (Arinos)", "Pecuária de Baixo Suporte (Arinos)", "Pecuária de Médio Suporte (Riachinho)", "Pecuária de Médio Suporte (Urucuia)"),
+  nivel = c(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  vti_media = c(7603.61, 3287.65, 8278.96, 23854.73, 3287.65, 5070.35, 9585.02, 20279.90, 3038.45, 6800.00, 10983.33, 8975.00),
+  vti_minimo = c(6082.89, 2630.12, 6623.17, 19083.79, 2630.12, 4056.28, 7961.90, 17237.91, 2558.82, 5440.00, 9335.83, 7433.63),
+  vti_maximo = c(9124.33, 3945.18, 9934.75, 28625.68, 3945.18, 6084.42, 11208.13, 23321.88, 3518.08, 8160.00, 12630.83, 10516.37),
+  vtn_media = c(6724.02, 3185.65, 7297.23, 20385.55, 3185.65, 4574.33, 8521.42, 18122.92, 2963.74, 5996.92, 9574.43, 8057.47),
+  vtn_minimo = c(5379.21, 2548.52, 5837.78, 16308.44, 2548.52, 3659.46, 6817.14, 15404.48, 2487.41, 4797.53, 7659.54, 6445.98),
+  vtn_maximo = c(8068.82, 3822.78, 8756.67, 24462.66, 3822.78, 5489.19, 10225.70, 20841.36, 3440.07, 7196.30, 11489.31, 9668.96),
+  origem = "Arinos; Chapada Gaúcha; Pintópolis; Riachinho; Urucuia; Uruana de Minas"
+)
+
+
+MRT10_2025 <- data.frame(
+  mrt = "MRT 10 – BRASILÂNDIA DE MINAS",
+  tipologia_de_uso = c("Uso indefinido (média geral do MRT)", "Pecuária", "Pecuária de Médio Suporte", "Pecuária de Alto Suporte", "Pecuária de Alto Suporte (Dom Bosco)", "Pecuária de Alto Suporte (Brasilândia de Minas)", "Pecuária de Alto Suporte (Natalândia)"),
+  nivel = c(0, 1, 2, 2, 3, 3, 3),
+  vti_media = c(12345.09, 12818.43, 9337.96, 16135.72, 19001.81, 14747.50, 15583.33),
+  vti_minimo = c(9876.07, 10254.74, 7470.37, 12908.58, 15201.45, 12535.38, 12466.67),
+  vti_maximo = c(14814.11, 15382.11, 11205.56, 19362.87, 22802.17, 16959.63, 18700.00),
+  vtn_media = c(11025.43, 11514.36, 7993.95, 14731.68, 17993.41, 13048.01, 14276.06),
+  vtn_minimo = c(8820.35, 9211.49, 6395.16, 11785.34, 14394.73, 11090.81, 11420.85),
+  vtn_maximo = c(13230.52, 13817.23, 9592.74, 17678.01, 21592.09, 15005.21, 17131.28),
+  origem = "Bonfinópolis de Minas; Brasilândia de Minas; Dom Bosco; Natalândia."
+)
 
 
 DF2017 <- rbind(DFMRT1_2017, DFMRT2_2017, DFMRT3_2017, DFMRT4_2017, DFMRT5_2017, DFMRT6_2017, DFMRT7_2017, DFMRT8_2017)
 DF2021 <- rbind(DFMRT1_2021, DFMRT2_2021, DFMRT3_2021, DFMRT4_2021, DFMRT5_2021, DFMRT6_2021, DFMRT7_2021, DFMRT8_2021, DFMRT9_2021, DFMRT10_2021)
 DF2020 <- rbind(DFMRT1_2020, DFMRT2_2020, DFMRT3_2020, DFMRT4_2020, DFMRT5_2020, DFMRT6_2020, DFMRT7_2020, DFMRT8_2020, DFMRT9_2020, DFMRT10_2020)
 
+DF_2025 <- rbind(
+  MRT1_2025,
+  MRT2_2025,
+  MRT3_2025,
+  MRT4_2025,
+  MRT5_2025,
+  MRT6_2025,
+  MRT7_2025,
+  MRT8_2025,
+  MRT9_2025,
+  MRT10_2025
+)
+
 DF2017$ano <- 2017
 DF2021$ano <- 2021
 DF2020$ano <- 2020
 
-DFTEMPORAL <- rbind(DF2017, DF2020, DF2021)
+DFTEMPORAL <- rbind(DF2017, DF2020, DF2021, DF_2025)
 DFTEMPORAL$estado <- 52
 DFTEMPORAL$regiao <- "Centro Oeste"
