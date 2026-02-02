@@ -643,7 +643,7 @@ RJ23 <- rbind(
   MRT706_2024
 )
 
-RJ17$ano <- 2017 
+RJ17$ano <- 2017  # essa planilha aqui vai ter uma questão de correção inflacionária 
 RJ22$ano <- 2022 
 RJ23$ano <- 2023
 RJTEMPORAL <- rbind(RJ17, RJ22, RJ23)

@@ -1180,6 +1180,8 @@ MG22 <- rbind(
   MGMRT_Patos_de_Minas_2022
 )
 
+# adicição do que for possível do relatório de 2019
+
 MG2020$ano <- 2020
 MG22$ano <- 2022
 
