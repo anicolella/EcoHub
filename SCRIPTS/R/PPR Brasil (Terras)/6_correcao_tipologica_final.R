@@ -1,6 +1,7 @@
 library(dplyr)
 library(stringr)
 library(sf)
+library(stringi)
 
 
 resultado_igpdi_limpo <- resultado_igpdi %>%
@@ -210,9 +211,9 @@ df_classificado2 <- df_classificado |> filter (categoria_final == "revisar manua
 
 df_joined <- st_as_sf(df_classificado)
 
-st_write(
-  obj   = df_classificado,
-  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
-  layer = "df_classificado",   # nome da camada dentro do gpkg
-  append = FALSE               # para sobrescrever se já existir
-)
+df_total <- df_joined |> select(origem, code_muni, mrt, ano, UF, tipologia_de_uso, categoria_final, vti_media, vti_minimo,
+                                          vti_maximo, vtn_media, vtn_minimo, vtn_maximo, geom) |> clean_names()
+
+df_total <- st_as_sf(df_total)
+
+
