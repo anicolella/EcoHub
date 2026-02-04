@@ -13,7 +13,8 @@ MGMRT01_2020 <- data.frame(
   vtn_media = c(11730.04, 13790.75, 13176.44, 10132.76),
   vtn_minimo = c(5481.48, 11157.02, 11418.73, 5481.48),
   vtn_maximo = c(16363.64, 16075.39, 16363.64, 10330.58),
-  origem = "Ituiutaba, Limeira D’Oeste, Santa Vitória, União de Minas, Ipiaçu, Gurinhatã, Monte Alegre de Minas,Prata, Campina Verde, Veríssimo,  Comendador Gomes, Campo Florido"
+  origem = "Ituiutaba, Limeira D’Oeste, Santa Vitória, União de Minas, Ipiaçu, Gurinhatã, Monte Alegre de Minas,Prata, Campina Verde, Veríssimo,  Comendador Gomes, Campo Florido",
+  ano = 2017
 )
 
 MGMRT02_2020 <- data.frame(
@@ -26,7 +27,8 @@ MGMRT02_2020 <- data.frame(
   vtn_media = c(17741.23, 20955.28, 15648.25, 12883.42),
   vtn_minimo = c(11474.97, 16092.43, 12396.69, 11474.97),
   vtn_maximo = c(29350.92, 29350.92, 15272.04, 16563.78),
-  origem = "Uberlândia, Araguari, Indianópolis, Tupaciguara, Araporã, Centralina, Cachoeira Dourada, Canápolis, Capinópolis."
+  origem = "Uberlândia, Araguari, Indianópolis, Tupaciguara, Araporã, Centralina, Cachoeira Dourada, Canápolis, Capinópolis.",
+  ano = 2017
 )
 
 MGMRT03_2020 <- data.frame(
@@ -39,7 +41,8 @@ MGMRT03_2020 <- data.frame(
   vtn_media = c(18661.54, 26896.05, 20798.55, 13958.58),
   vtn_minimo = c(13016.53, 19008.26, 18576.45, 13016.53),
   vtn_maximo = c(37949.06, 37949.06, 20919.42, 14876.03),
-  origem = "Uberaba, Perdizes, Santa Juliana, Pedrinópolis, Nova Ponte, Delta, Conquista, Água Comprida, Itapagipe, Conceição das Alagoas, Frutal, Planura, Fronteira, São Francisco de Sales, Iturama, Carneirinho."
+  origem = "Uberaba, Perdizes, Santa Juliana, Pedrinópolis, Nova Ponte, Delta, Conquista, Água Comprida, Itapagipe, Conceição das Alagoas, Frutal, Planura, Fronteira, São Francisco de Sales, Iturama, Carneirinho.",
+  ano = 2017
 )
 
 MGMRT04_2020 <- data.frame(
@@ -52,7 +55,8 @@ MGMRT04_2020 <- data.frame(
   vtn_media = c(21446.72, 24347.77, 17170.49),
   vtn_minimo = c(11280.0, 24024.49, 11280.0),
   vtn_maximo = c(29154.55, 29154.55, 15519.57),
-  origem = "Araxá, Sacramento, Tapira, Pratinha, Ibiá, Campos Altos e Santa Rosa da Serra."
+  origem = "Araxá, Sacramento, Tapira, Pratinha, Ibiá, Campos Altos e Santa Rosa da Serra.",
+  ano = 2018
 )
 
 MGMRT05_2020 <- data.frame(
@@ -65,7 +69,8 @@ MGMRT05_2020 <- data.frame(
   vtn_media = c(11366.75, 16557.5, 30372.04, 4092.72),
   vtn_minimo = c(2954.73, 12687.5, 27166.67, 2954.73),
   vtn_maximo = c(39357.08, 20888.3, 39357.08, 5041.6),
-  origem = "Abadia dos Dourados, Arapuá, Carmo do Paranaíba, Cascalho Rico, Coromandel, Cruzeiro da Fortaleza, Douradoquara, Estrela do Sul, Grupiara, Guimarânia, Iraí de Minas, Lagoa Formosa, Matutina, Monte Carmelo, Patos de Minas, Patrocínio, Rio Paranaíba, Romaria, São Gotardo, Serra do Salitre, Tiros."
+  origem = "Abadia dos Dourados, Arapuá, Carmo do Paranaíba, Cascalho Rico, Coromandel, Cruzeiro da Fortaleza, Douradoquara, Estrela do Sul, Grupiara, Guimarânia, Iraí de Minas, Lagoa Formosa, Matutina, Monte Carmelo, Patos de Minas, Patrocínio, Rio Paranaíba, Romaria, São Gotardo, Serra do Salitre, Tiros.",
+  ano = 2018
 )
 
 MGMRT06_2020 <- data.frame(
@@ -78,7 +83,8 @@ MGMRT06_2020 <- data.frame(
   vtn_media = c(1974.54, 2047.32, 2837.9, 1105.43),
   vtn_minimo = c(978.24, 1351.46, 2495.45, 978.24),
   vtn_maximo = c(3250.0, 2437.13, 3250.0, 1243.66),
-  origem = "São Romão e Santa Fé de Minas"
+  origem = "São Romão e Santa Fé de Minas",
+  ano = 2018
 )
 
 MGMRT07_2020 <- data.frame(
@@ -91,7 +97,8 @@ MGMRT07_2020 <- data.frame(
   vtn_media = c(1255.87, 1255.87,  981.71, 1883.74, 2358.79),
   vtn_minimo = c(712.5, 1000.0,  712.5, 1500.0, 1487.96),
   vtn_maximo = c(3272.73, 1500.0,  1200.0, 2400.0, 3272.73),
-  origem = "Januária, Bonito de Minas, Cônego Marinho, Pedras de Maria da Cruz, São Francisco, Japonvar, Lontra, Ibiracatu e Icaraí de Minas."
+  origem = "Januária, Bonito de Minas, Cônego Marinho, Pedras de Maria da Cruz, São Francisco, Japonvar, Lontra, Ibiracatu e Icaraí de Minas.",
+  ano = 2018
 )
 
 MGMRT08_2020 <- data.frame(
@@ -104,7 +111,8 @@ MGMRT08_2020 <- data.frame(
   vtn_media = c(2700.61, 2700.61,  2779.85, 6240.0, 1507.93),
   vtn_minimo = c(1050.0, 1530.0,  2250.0, 4560.0, 1050.0),
   vtn_maximo = c(7680.0, 3120.0,  3840.0, 7680.0, 2160.0),
-  origem = "Janaúba, Catuti, Espinosa, Gameleiras, Jaíba, Mamonas, Manga, Matias Cardoso, Mato Verde, Monte Azul, Nova Porteirinha, Pai Pedro, Porteirinha, Riacho dos Machados, Serranópolis de Minas, Verdelândia, Itacarambi, Montalvânia, Miravânia, Varzelândia, Juvenília, São João das Missões"
+  origem = "Janaúba, Catuti, Espinosa, Gameleiras, Jaíba, Mamonas, Manga, Matias Cardoso, Mato Verde, Monte Azul, Nova Porteirinha, Pai Pedro, Porteirinha, Riacho dos Machados, Serranópolis de Minas, Verdelândia, Itacarambi, Montalvânia, Miravânia, Varzelândia, Juvenília, São João das Missões",
+  ano = 2016
 )
 
 MGMRT09_2020 <- data.frame(
@@ -117,7 +125,8 @@ MGMRT09_2020 <- data.frame(
   vtn_media = c(3961.22, 3441.46, 5155.71),
   vtn_minimo = c(2354.0, 2354.0, 3071.24),
   vtn_maximo = c(7466.94, 4200.0, 7466.94),
-  origem = "Buritizeiro, Ibiaí, Jequitaí, Lagoa dos Patos,Lassance,  Pirapora e Várzea da Palma"
+  origem = "Buritizeiro, Ibiaí, Jequitaí, Lagoa dos Patos,Lassance,  Pirapora e Várzea da Palma",
+  ano = 2017
 )
 
 MGMRT10_2020 <- data.frame(
@@ -130,7 +139,8 @@ MGMRT10_2020 <- data.frame(
   vtn_media = c(4329.01, 10077.91),
   vtn_minimo = c(2905.48, 8405.13),
   vtn_maximo = c(11008.68, 11008.68),
-  origem = "Carlos Chagas, Nanuque, Serra dos Aimorés, Crisólita, Umburatiba, Águas Formosas, Machacalis, Bertópolis, Fronteira dos Vales, Santa Helena de Minas."
+  origem = "Carlos Chagas, Nanuque, Serra dos Aimorés, Crisólita, Umburatiba, Águas Formosas, Machacalis, Bertópolis, Fronteira dos Vales, Santa Helena de Minas.",
+  ano = 2016
 )
 
 MGMRT11_2020 <- data.frame(
@@ -143,7 +153,8 @@ MGMRT11_2020 <- data.frame(
   vtn_media = c(2244.27, 2244.27),
   vtn_minimo = c(1699.05, 1699.05),
   vtn_maximo = c(2300.67, 2300.67),
-  origem = "Ataléia, Ouro Verde de Minas, Frei Gaspar, Teófilo Otoni, Poté, Malacacheta, Franciscópolis, Setubinha, Ladainha, Itaipé, Catuji, Novo Oriente de Minas, Pavão."
+  origem = "Ataléia, Ouro Verde de Minas, Frei Gaspar, Teófilo Otoni, Poté, Malacacheta, Franciscópolis, Setubinha, Ladainha, Itaipé, Catuji, Novo Oriente de Minas, Pavão.",
+  ano = 2019 # não se encontrou o ano desagregado no relatório de MG 
 )
 
 MGMRT12_2020 <- data.frame(
@@ -156,7 +167,8 @@ MGMRT12_2020 <- data.frame(
   vtn_media = c(3921.94, 2734.47, 5717.54),
   vtn_minimo = c(1897.81, 1897.81, 3835.21),
   vtn_maximo = c(8310.71, 3642.11, 8310.71),
-  origem = "Abaeté, Augusto de Lima, Biquinhas, Buenópolis, Cedro do Abaeté, Corinto, Curvelo, Felixlândia, Inimutaba, Joaquim Felício, Martinho Campos, Monjolos, Morada Nova de Minas, Morro da Garça, Paineiras, Pompéu, Presidente Juscelino, Santo Hipólito, Três Marias."
+  origem = "Abaeté, Augusto de Lima, Biquinhas, Buenópolis, Cedro do Abaeté, Corinto, Curvelo, Felixlândia, Inimutaba, Joaquim Felício, Martinho Campos, Monjolos, Morada Nova de Minas, Morro da Garça, Paineiras, Pompéu, Presidente Juscelino, Santo Hipólito, Três Marias.",
+  ano = 2019
 )
 
 MGMRT13_2020 <- data.frame(
@@ -169,7 +181,8 @@ MGMRT13_2020 <- data.frame(
   vtn_media = c(6811.83, 6515.93, 21784.49,  22794.95, 20437.2),
   vtn_minimo = c(4323.57, 4323.57, 12265.7,  16093.22, 12265.7),
   vtn_maximo = c(31234.38, 9750.72, 31234.38,  31234.38, 25650.0),
-  origem = "Paracatu, Guarda-Mor, Vazante, Lagamar, Lagoa Grande, Presidente Olegário, Varjão de Minas."
+  origem = "Paracatu, Guarda-Mor, Vazante, Lagamar, Lagoa Grande, Presidente Olegário, Varjão de Minas.", 
+  ano = 2018
 )
 
 MGMRT14_2020 <- data.frame(
@@ -182,7 +195,8 @@ MGMRT14_2020 <- data.frame(
   vtn_media = c(5809.17, 4817.73, 8984.89),
   vtn_minimo = c(3150.0, 3150.0, 7937.5),
   vtn_maximo = c(9704.12, 6529.41, 9704.12),
-  origem = "João Pinheiro, Brasilândia de Minas, Bonfinópolis de Minas, Natalândia, Dom Bosco e São Gonçalo do Abaeté"
+  origem = "João Pinheiro, Brasilândia de Minas, Bonfinópolis de Minas, Natalândia, Dom Bosco e São Gonçalo do Abaeté",
+  ano = 2018
 )
 
 MGMRT15_2020 <- data.frame(
@@ -195,7 +209,8 @@ MGMRT15_2020 <- data.frame(
   vtn_media = c(2784.4, 2784.4),
   vtn_minimo = c(2378.62, 2378.62),
   vtn_maximo = c(3261.54, 3261.54),
-  origem = "Divisópolis, Mata Verde, Bandeira, Jordânia, Salto da Divisa, Santa Maria do Salto, Santo Antônio do Jacinto, Jacinto, Almenara, Rubim, Palmópolis, Rio do Prado, Felisburgo, Joaíma, Monte Formoso."
+  origem = "Divisópolis, Mata Verde, Bandeira, Jordânia, Salto da Divisa, Santa Maria do Salto, Santo Antônio do Jacinto, Jacinto, Almenara, Rubim, Palmópolis, Rio do Prado, Felisburgo, Joaíma, Monte Formoso.",
+  ano = 2018
 )
 
 MGMRT16_2020 <- data.frame(
@@ -208,7 +223,8 @@ MGMRT16_2020 <- data.frame(
   vtn_media = c(1581.68, 1581.68),
   vtn_minimo = c(748.97, 748.97),
   vtn_maximo = c(2588.68, 2588.68),
-  origem = "Jequitinhonha, Pedra Azul, Cachoeira do Pajeú, Medina, Comercinho, Itinga, Coronel Murta, Virgem da Lapa, Araçuaí, Novo Cruzeiro, Caraí, Padre Paraíso, Pontos dos Volantes, Itaobim."
+  origem = "Jequitinhonha, Pedra Azul, Cachoeira do Pajeú, Medina, Comercinho, Itinga, Coronel Murta, Virgem da Lapa, Araçuaí, Novo Cruzeiro, Caraí, Padre Paraíso, Pontos dos Volantes, Itaobim.",
+  ano = 2018
 )
 
 MGMRT17_2020 <- data.frame(
@@ -221,7 +237,8 @@ MGMRT17_2020 <- data.frame(
   vtn_media = c(1840.41, 1840.41),
   vtn_minimo = c(1465.44, 1465.44),
   vtn_maximo = c(2382.9, 2382.9),
-  origem = "José Gonçalves de Minas, Berilo, Francisco Badaró, Jenipapo de Minas, Chapada do Norte, Angelândia, Capelinha, Aricanduva, Itamarandiba, Carbonita, Turmalina, Veredinha, Minas Novas, Leme do Prado."
+  origem = "José Gonçalves de Minas, Berilo, Francisco Badaró, Jenipapo de Minas, Chapada do Norte, Angelândia, Capelinha, Aricanduva, Itamarandiba, Carbonita, Turmalina, Veredinha, Minas Novas, Leme do Prado.",
+  ano = 2018
 )
 
 MGMRT18_2020 <- data.frame(
@@ -234,7 +251,8 @@ MGMRT18_2020 <- data.frame(
   vtn_media = c(1472.33, 1472.33),
   vtn_minimo = c(800.0, 800.0),
   vtn_maximo = c(1536.84, 1536.84),
-  origem = "Senador Modestino Gonçalves, São Gonçalo do Rio Preto, Felício dos Santos, Couto de Magalhães de Minas, Diamantina, Gouveia, Datas, Presidente Kubitschek."
+  origem = "Senador Modestino Gonçalves, São Gonçalo do Rio Preto, Felício dos Santos, Couto de Magalhães de Minas, Diamantina, Gouveia, Datas, Presidente Kubitschek.",
+  ano = 2018
 )
 
 MGMRT19_2020 <- data.frame(
@@ -247,7 +265,8 @@ MGMRT19_2020 <- data.frame(
   vtn_media = c(4883.28, 4970.25),
   vtn_minimo = c(3119.09, 3119.09),
   vtn_maximo = c(6855.75, 6855.75),
-  origem = "Guanhães, Senhora do Porto, Dores de Guanhães, Carmésia, Sabinópolis, Materlândia, Virginópolis, Divinolândia de Minas, Gonzaga, Sardoá, São João Evangelista, Paulistas, Cantagalo, Peçanha, Coroaci, São Pedro do Suaçuí, São Sebastião do Maranhão, José Raydan, Coluna, Frei Lagonegro, Açucena, Braúnas, Joanésia, Mesquita, Belo Oriente, Timóteo, Jaguaraçu, Antônio Dias, Marliéria, São José do Jacuri, Naque, Santa do Paraíso, Ipatinga, Coronel Fabriciano."
+  origem = "Guanhães, Senhora do Porto, Dores de Guanhães, Carmésia, Sabinópolis, Materlândia, Virginópolis, Divinolândia de Minas, Gonzaga, Sardoá, São João Evangelista, Paulistas, Cantagalo, Peçanha, Coroaci, São Pedro do Suaçuí, São Sebastião do Maranhão, José Raydan, Coluna, Frei Lagonegro, Açucena, Braúnas, Joanésia, Mesquita, Belo Oriente, Timóteo, Jaguaraçu, Antônio Dias, Marliéria, São José do Jacuri, Naque, Santa do Paraíso, Ipatinga, Coronel Fabriciano.",
+  ano = 2019
 )
 
 MGMRT20_2020 <- data.frame(
@@ -260,7 +279,8 @@ MGMRT20_2020 <- data.frame(
   vtn_media = c(3822.68, 3646.8, 7981.41),
   vtn_minimo = c(2682.14, 2682.14, 7083.83),
   vtn_maximo = c(8624.16, 5061.8, 8624.16),
-  origem = "Aimorés, Alvarenga, Conceição de Ipanema, Conselheiro Pena, Cuparaque, Goiabeira, Ipanema, Itueta, Mutum, Pocrane, Resplendor, Santa Rita do Itueto, Taparuba."
+  origem = "Aimorés, Alvarenga, Conceição de Ipanema, Conselheiro Pena, Cuparaque, Goiabeira, Ipanema, Itueta, Mutum, Pocrane, Resplendor, Santa Rita do Itueto, Taparuba.",
+  ano = 2017
 )
 
 MGMRT21_2020 <- data.frame(
@@ -273,7 +293,8 @@ MGMRT21_2020 <- data.frame(
   vtn_media = c(11570.16, 13939.0, 8826.49,  11532.44),
   vtn_minimo = c(5443.67, 12913.22, 5443.67,  7401.28),
   vtn_maximo = c(15198.06, 15198.06, 11537.28,  14388.03),
-  origem = "Caratinga, Piedade de Caratinga, Vargem Alegre, Bugre, Iapu, Pingo D'Água, Córrego Novo, Santa Bárbara do Leste, Bom Jesus do Galho, Entre Folhas, Ubaporanga, Inhapim, Imbé de Minas, São Domingos das Dores, São Sebastião do Anta, Dom Cavati, Ipaba, Santa Rita de Minas, São João do Oriente."
+  origem = "Caratinga, Piedade de Caratinga, Vargem Alegre, Bugre, Iapu, Pingo D'Água, Córrego Novo, Santa Bárbara do Leste, Bom Jesus do Galho, Entre Folhas, Ubaporanga, Inhapim, Imbé de Minas, São Domingos das Dores, São Sebastião do Anta, Dom Cavati, Ipaba, Santa Rita de Minas, São João do Oriente.",
+  ano = 2017
 )
 
 MGMRT22_2020 <- data.frame(
@@ -286,7 +307,8 @@ MGMRT22_2020 <- data.frame(
   vtn_media = c(5361.98, 2980.88, 5500.2, 7469.79),
   vtn_minimo = c(2558.23, 2558.23, 4190.34, 7874.98),
   vtn_maximo = c(9007.53, 3134.14, 7357.47, 9007.53),
-  origem = "Governador Valadares, Alpercata, Capitão Andrade, Itanhomi, Fernandes Tourinho, Periquito, Engenheiro Caldas, Sobrália, Tumiritinga, Galiléia, São Geraldo do Baixo, Divino das Laranjeiras, Central de Minas, São João do Manteninha, Mantena, Mendes Pimentel, São Felix de Minas, Itabirinha, Nova Belém, São José do Divino, Nova Módica, Pescador, Jampruta, Frei Inocência, Mathias Lobato, Marilac, Nacip Raydan, Virgolândia, São José da Safira, São Geraldo da Piedade, Santa Maria do Suaçuí, Água Boa, Virgolândia, Itambacuri, Campanário, Pescador, Santa Efigênia de Minas."
+  origem = "Governador Valadares, Alpercata, Capitão Andrade, Itanhomi, Fernandes Tourinho, Periquito, Engenheiro Caldas, Sobrália, Tumiritinga, Galiléia, São Geraldo do Baixo, Divino das Laranjeiras, Central de Minas, São João do Manteninha, Mantena, Mendes Pimentel, São Felix de Minas, Itabirinha, Nova Belém, São José do Divino, Nova Módica, Pescador, Jampruta, Frei Inocência, Mathias Lobato, Marilac, Nacip Raydan, Virgolândia, São José da Safira, São Geraldo da Piedade, Santa Maria do Suaçuí, Água Boa, Virgolândia, Itambacuri, Campanário, Pescador, Santa Efigênia de Minas.",
+  ano = 2018
 )
 
 MGMRT23_2020 <- data.frame(
@@ -299,8 +321,54 @@ MGMRT23_2020 <- data.frame(
   vtn_media = c(11583.52, 13378.27, 7929.34),
   vtn_minimo = c(4954.58, 10721.65, 4954.58),
   vtn_maximo = c(15022.02, 15022.02, 11150.94),
-  origem = "Belo Horizonte, Betim, Brumadinho, Caeté, Capim Branco, Confins, Contagem, Esmeraldas, Florestal, Ibirité, Igarapé, Itatiaiuçu, Juatuba, Lagoa Santa, Mário Campos, Mateus Leme, Matozinhos, Nova Lima, Pedro Leopoldo, Raposos, Ribeirão das Neves, Rio Acima, Sabará, Santa Luzia, São Joaquim de Bicas, São José da Lapa, Sarzedo, Taquaraçu de Minas, Vespasiano, Fortuna de Minas, Funilândia, Inhaúma, Pará de Minas, Prudente de Morais, São José da Varginha, Sete Lagoas, Cachoeira da Prata, Pequi, Maravilhas, Onça do Pitangui, Pitangui, Papagaios, Nova União."
+  origem = "Belo Horizonte, Betim, Brumadinho, Caeté, Capim Branco, Confins, Contagem, Esmeraldas, Florestal, Ibirité, Igarapé, Itatiaiuçu, Juatuba, Lagoa Santa, Mário Campos, Mateus Leme, Matozinhos, Nova Lima, Pedro Leopoldo, Raposos, Ribeirão das Neves, Rio Acima, Sabará, Santa Luzia, São Joaquim de Bicas, São José da Lapa, Sarzedo, Taquaraçu de Minas, Vespasiano, Fortuna de Minas, Funilândia, Inhaúma, Pará de Minas, Prudente de Morais, São José da Varginha, Sete Lagoas, Cachoeira da Prata, Pequi, Maravilhas, Onça do Pitangui, Pitangui, Papagaios, Nova União.",
+  ano = 2018
 )
+
+MGMRT24_2020 <- data.frame(
+  mrt = "Bambuí",
+  tipologia_de_uso = c("Geral"),
+  nivel = c(0),
+  vti_media = c(12215.81),
+  vti_minimo = c(7017.54),
+  vti_maximo = c(16445.29),
+  vtn_media = c(11008.45),
+  vtn_minimo = c(16023.61),
+  vtn_maximo = c(11008.45),
+  origem = "Bambuí", 
+  ano = 2018
+)
+
+MGMRT25_2020 <- data.frame(
+  mrt = "GOIANÁ E ENTORNO",
+  tipologia_de_uso = c("Geral"),
+  nivel = c(0),
+  vti_media = c(7938.62),
+  vti_minimo = c(7017.54),
+  vti_maximo = c(16445.29),
+  vtn_media = c(NA),
+  vtn_minimo = c(4452.38),
+  vtn_maximo = c(8807.34),
+  origem = "Goianá", 
+  ano = 2018
+)
+
+
+MGMRT26_2020 <- data.frame(
+  mrt = "Visconde do Rio Branco",
+  tipologia_de_uso = c("Geral"),
+  nivel = c(0),
+  vti_media = c(14467.48),
+  vti_minimo = c(10592.88),
+  vti_maximo = c(16445.29),
+  vtn_media = c(12538.95),
+  vtn_minimo = c(9584.03),
+  vtn_maximo = c(13829.35),
+  origem = "Visconde do Rio Branco", 
+  ano = 2018
+)
+
+
 
 MG2020 <- rbind(MGMRT01_2020, 
                 MGMRT02_2020, 
@@ -324,7 +392,10 @@ MG2020 <- rbind(MGMRT01_2020,
                 MGMRT20_2020, 
                 MGMRT21_2020,
                 MGMRT22_2020, 
-                MGMRT23_2020)
+                MGMRT23_2020,
+                MGMRT24_2020, 
+                MGMRT25_2020,
+                MGMRT26_2020)
 
 
 
@@ -1181,8 +1252,6 @@ MG22 <- rbind(
 )
 
 # adicição do que for possível do relatório de 2019
-
-MG2020$ano <- 2020
 MG22$ano <- 2022
 
 MGTEMPORAL <- rbind(MG2020, MG22, atlas23)
