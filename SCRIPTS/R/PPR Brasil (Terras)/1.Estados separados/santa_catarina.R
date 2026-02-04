@@ -1811,11 +1811,16 @@ Timbó Grande e Três Barras."
 
 
 ### Consolidação dos dados #####
-SC2017 <- rbind(
-  SCMRT_Curitibanos_2017,
+SC2016 <- rbind(
   SCMRT_Xanxere_2016,
   SCMRT_Planalto_Serrano_2016
 )
+
+SC2017 <- rbind(
+  SCMRT_Curitibanos_2017
+)
+
+SC2016$ano <- 2016
 
 SC22 <- rbind(
   SCMRT_Ararangua_2022,
@@ -1860,7 +1865,6 @@ SC23$ano <- 2023
 
 SC2019<- rbind(
   SCMRT_Planalto_Serrano_2016_2019,
-  SCMRT_Xanxere_2016,
   SCMRT_Curitibanos_2016_2019,
   SCMRT_Canoinhas_2016_2019,
   SCMRT_Ituporanga_2016_2019,
@@ -1874,6 +1878,7 @@ SC2017$ano <- 2017
 SC22$ano <- 2022
 SCTEMPORAL <- rbind(
   SC2019,
+  SC2016,
   SC2017,
   SC22,
   SC23
