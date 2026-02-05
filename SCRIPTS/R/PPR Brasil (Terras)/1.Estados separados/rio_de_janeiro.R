@@ -56,7 +56,8 @@ RJMRT_ValeDoParaiba_2017 <- data.frame(
 Levy Gasparian, Engenheiro Paulo de Frontin, Itatiaia,
 Mangaratiba, Mendes, Miguel Pereira, Paraíba do Sul, Paraty,
 Pinheiral, Piraí, Porto Real, Quatis, Resende, Rio Claro, Rio das
-Flores, Sapucaia, Três Rios, Valença, Vassouras, Volta Redonda")
+Flores, Sapucaia, Três Rios, Valença, Vassouras, Volta Redonda"),
+ano = 2016
 )
 
 ### 2022 ####
@@ -103,7 +104,8 @@ RJMRT_LesteFluminense_2017 <- data.frame(
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
   origem = ("Campos dos Goytacazes, Carapebus, Conceição do Macabu,
-Macaé, Quissamã, São Francisco de Itabapoana, São João da Barra")
+Macaé, Quissamã, São Francisco de Itabapoana, São João da Barra"),
+ano = 2015
 )
 
 ### 2022 ####
@@ -169,7 +171,8 @@ RJMRT_Serrana_2017<- data.frame(
   origem = "Bom Jardim, Cantagalo, Carmo, Cordeiro, Duas Barras, Macuco, Nova
 Friburgo, Paty do Alferes, Petrópolis, Santa Maria Madalena, São José
 do Vale do Rio Preto, São Sebastião do Alto, Sumidouro, Teresópolis,
-Trajano de Moraes"
+Trajano de Moraes",
+ano = 2017
 )
 
 ### 2022 ####
@@ -211,7 +214,8 @@ RJMRT_Metropolitana_2017 <- data.frame(
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA),
   origem = "Cachoeiras de Macacu, Duque de Caxias, Guapimirim, Itaboraí, Itaguaí,
-Magé, Maricá, Nova Iguaçu, Paracambi, Rio Bonito, Tanguá"
+Magé, Maricá, Nova Iguaçu, Paracambi, Rio Bonito, Tanguá",
+ano = 2017
 )
 
 ### 2022 ####
@@ -266,7 +270,8 @@ RJMRT_NordesteFluminense_2017 <- data.frame(
   origem = "Aperibé, Bom Jesus do Itabapoana, Cambuci, Cardoso Moreira, Italva,
 Itaocara, Itaperuna, Laje do Muriaé, Miracema, Natividade,
 Porciúncula, Santo Antônio de Pádua, São Fidélis, São José de Ubá e
-Varre-Sai"
+Varre-Sai",
+ano = 2016
 )
 
 ### 2022 ####
@@ -308,7 +313,8 @@ RJMRT_Lagos_2017 <- data.frame(
   vtn_minimo = c(NA, NA, NA, NA, NA, NA, NA, NA),
   vtn_maximo = c(NA, NA, NA, NA, NA, NA, NA, NA),
   origem = "Araruama, Armação de Búzios, Arraial do Cabo, Cabo Frio, Casimiro de
-Abreu, Iguaba Grande, Rio das Ostras, São Pedro da Aldeia, Saquarema, Silva Jardim"
+Abreu, Iguaba Grande, Rio das Ostras, São Pedro da Aldeia, Saquarema, Silva Jardim",
+ano = 2017
 )
 
 ### 2022 #####
@@ -643,7 +649,6 @@ RJ23 <- rbind(
   MRT706_2024
 )
 
-RJ17$ano <- 2017  # essa planilha aqui vai ter uma questão de correção inflacionária 
 RJ22$ano <- 2022 
 RJ23$ano <- 2023
 RJTEMPORAL <- rbind(RJ17, RJ22, RJ23)
