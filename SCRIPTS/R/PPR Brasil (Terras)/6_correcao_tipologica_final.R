@@ -217,3 +217,6 @@ df_total <- df_joined |> select(origem, code_muni, mrt, ano, UF, tipologia_de_us
 df_total <- st_as_sf(df_total)
 
 
+st_write(obj = df_total, 
+         dsn = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg", 
+         delete_dsn = TRUE)
