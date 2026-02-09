@@ -17,6 +17,7 @@ library(sf)
 library(gtsummary)
 library(gt)
 
+
 df_analise <- st_read(
   dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
   layer = "df_classificado",
@@ -68,49 +69,65 @@ $$
 
 A otimização do procedimento de cluster é feito por meio do processo de "K-means". Esse algoritmo forma K grupos diversos de municípios que posteriormente serão modificados movendo cidades de um local ao outro de modo a maximizar ou minimizar a função, aumentando a qualidade do cluster( BRASIL,2014 ). As variáveis que são recomendadas para sereme levadas em conta durante o processo de formação agrupamentos (Zonas Homogêneas), pelas superintendências do INCRA, são as seguintes (BRASIL, 2014):
 
-1 - Variáveis relacionadas à vocação produtiva da terra
-- área total (hectares)
+```{r}
+library(tidyverse)
+library(gt)
 
-- área total de lavouras permanentes (% da área total)
+# 1. Consolidação Estrita (Apenas o seu input)
+dicionario_data <- tribble(
+  ~grupo, ~variável,
+  
+  # 1 - Variáveis relacionadas à vocação produtiva da terra
+  "1 - Variáveis relacionadas à vocação produtiva da terra", "total de tratores (nº/1000 hec)",
+  "1 - Variáveis relacionadas à vocação produtiva da terra", "fracao de terras irrigadas (% da área total)",
+  
+  # 2 - Variáveis relacionadas ao nível tecnológico
+  "2 - Variáveis relacionadas ao nível tecnológico", "total de tratores (nº/1000 hec)",
+  "2 - Variáveis relacionadas ao nível tecnológico", "fracao de terras irrigadas (% da área total)",
+  
+  # 3 - Variáveis relacionadas com a gestão de resultados
+  "3 - Variáveis relacionadas com a gestão de resultados", "total de investimentos (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "total de financiamentos (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "total de despesas (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "valor total da produção animal (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "valor total da produção vegetal (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "valor total da produção (animal + vegetal) (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "receita total liquida (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "receita total bruta (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "área de arrendatários no município (% da área total)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "área de parceiros no município (% da área total)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "área de proprietários no município (% da área total)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "custos de transporte da sede municipal até a capital mais próxima",
+  "3 - Variáveis relacionadas com a gestão de resultados", "receita bruta por unidade de área",
+  "3 - Variáveis relacionadas com a gestão de resultados", "índice integrador do ITC e ITR cultura anual",
+  "3 - Variáveis relacionadas com a gestão de resultados", "índice integrador do ITC e ITR cultura perene",
+  "3 - Variáveis relacionadas com a gestão de resultados", "valores médios de Commodity",
+  
+  # 4 - Variáveis relacionadas com a concentração da terra
+  "4 - Variáveis relacionadas com a concentração da terra", "índice de gini fundiário (valor)",
+  "4 - Variáveis relacionadas com a concentração da terra", "propriedades menores de 500 hec (% do total)",
+  "4 - Variáveis relacionadas com a concentração da terra", "propriedades maiores de 500 hec (% do total)",
+  "4 - Variáveis relacionadas com a concentração da terra", "índice de gini decenal (valor)"
+)
 
- - área total de lavouras temporárias (% da área total)
-
- - área total de lavouras temporárias em descanso (pousio) (% da área total)
-
- - área total de pastagem natural (% da área total)
- - área total de pastagem plantada (% da área total)
- - área total de matas e florestas naturais (% da área total)
- - área total de matas e florestas plantadas (% da área total)
- - área total de terras não utilizáveis (% da área total)
-
-2 - Variáveis relacionadas ao nível tecnológico
-- total de tratores (nº/1000 hec)
-- fracao de terras irrigadas (% da área total)
-
-3 - Variáveis relacionadas com a gestão de resultados
-- total de investimentos (valor/hec)
-- total de financiamentos (valor/hec)
-- total de despesas (valor/hec)
-- valor total da produção animal (valor/hec)
-- valor total da produção vegetal (valor/hec)
-- valor total da produção (animal + vegetal) (valor/hec)
-- receita total liquida (valor/hec)
-- receita total bruta (valor/hec)
-- área de arrendatários no município (% da área total)
-- área de parceiros no município (% da área total)
-- área de proprietários no município (% da área total)
-- custos de transporte da sede municipal até a capital mais próxima
-- receita bruta por unidade de área
-- índice integrador do ITC e ITR cultura anual
-- índice integrador do ITC e ITR cultura perene
-- valores médios de Commodity
-
-4 - Variáveis relacionadas com a concentração da terra
-- índice de gini fundiário (valor)
-- propriedades menores de 500 hec (% do total)
-- propriedades maiores de 500 hec (% do total)
-- índice de gini decenal (valor)
-
+# 2. Renderização Otimizada
+dicionario_data |>
+  gt(groupname_col = "grupo") |>
+  tab_header(
+    title = "Dicionário de Variáveis",
+    subtitle = "Fonte: Brasil, 2014"
+  ) |>
+  cols_label(
+    variável = md("**Variável**")
+  ) |>
+  tab_options(
+    table.width = pct(100),
+    column_labels.background.color = "#9f0000ff", # Cor original do seu código
+    row_group.background.color = "#f2f2f2",
+    row_group.font.weight = "bold"
+  ) |>
+  opt_row_striping()
+```
 
 Após esses processos, são formadas as zonas homogêneas ou os mercados de terra sob os quais são realizadas as análises do INCRA, com a finalidade de determinar os valores de terra na região (BRASIL, 2014). O principal componente das PPRs é a presença de um valor médio para Terra Nua e um valor médio para terra com imóvel, variando de acordo com a tipologia indicada. Essas médias são construídas mediante saneamento das amostras (método de ± 1 desvio padrão), sendo os novos saneamentos realizados até que o coeficiente de variação seja inferior ou igual a 30% (BRASIL, 2014).
 
@@ -822,7 +839,19 @@ df_classificado <- resultado_igpdi_limpo %>%
 
 Para além desse data frame principal (EcoHub), que consolida os dados de todos os relatórios da RAMT, realizou-se um corte transversal referente ao ano de 2023, visando obter a maior completude de dados possível para um mesmo período. Para a elaboração desse segundo banco de dados, aplicaram-se os mesmos procedimentos anteriores, com o diferencial da atualização dos valores monetários para 2023. Além disso, integraram-se dados de municípios que não possuíam observações naquele ano específico; nestes casos, selecionaram-se os registros mais recentes de cada região. Quando ocorria empate na distância temporal, adotou-se o critério de proximidade cronológica sob unidade de tempo anual.
 
-O Fluxo de scripts é basicamente o mesmo, o que muda é que a correção inflacionária segue o seguinte script (este já contendo a função de recorte temporal):
+O Fluxo de scripts é basicamente o mesmo, o que muda é que a correção inflacionária (diagrama do fluxo de scripts):
+
+```{r}
+library(ggplot2)
+library(cowplot)
+library(magick)
+
+# Carregar a imagem
+img <- image_read("C:/Users/jodom/OneDrive/Área de Trabalho/kuro.jpg")
+plot(img)
+```
+
+segue o seguinte script (este já contendo a função de recorte temporal):
 
 ```{r}
 #| message: false
