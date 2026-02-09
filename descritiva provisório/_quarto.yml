@@ -10,7 +10,6 @@ website:
   navbar:
     left: 
       - principal.qmd
-      - recent.qmd
 
 format: 
   html: 

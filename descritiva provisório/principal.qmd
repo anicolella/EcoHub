@@ -70,6 +70,8 @@ $$
 A otimização do procedimento de cluster é feito por meio do processo de "K-means". Esse algoritmo forma K grupos diversos de municípios que posteriormente serão modificados movendo cidades de um local ao outro de modo a maximizar ou minimizar a função, aumentando a qualidade do cluster( BRASIL,2014 ). As variáveis que são recomendadas para sereme levadas em conta durante o processo de formação agrupamentos (Zonas Homogêneas), pelas superintendências do INCRA, são as seguintes (BRASIL, 2014):
 
 ```{r}
+#| message: false
+#| warning: false
 library(tidyverse)
 library(gt)
 
@@ -114,7 +116,7 @@ dicionario_data <- tribble(
 dicionario_data |>
   gt(groupname_col = "grupo") |>
   tab_header(
-    title = "Dicionário de Variáveis",
+    title = "Fatores valor da Terra",
     subtitle = "Fonte: Brasil, 2014"
   ) |>
   cols_label(
@@ -842,6 +844,8 @@ Para além desse data frame principal (EcoHub), que consolida os dados de todos 
 O Fluxo de scripts é basicamente o mesmo, o que muda é que a correção inflacionária (diagrama do fluxo de scripts):
 
 ```{r}
+#| message: false
+#| warning: false
 library(ggplot2)
 library(cowplot)
 library(magick)
@@ -938,6 +942,9 @@ De forma sintética, o processo de formação dos dataframes foi o seguinte: dig
 ## 3. Dicionário de variáveis 
 As colunas presentes nos dataframes são as seguintes:
 ```{r}
+#| message: false
+#| warning: false
+
 library(gt)
 library(dplyr)
 
@@ -987,6 +994,9 @@ dicionario_data |>
 A estatística descritiva revela uma oscilação expressiva nos valores de VTI e VTN ao longo da série histórica. Essa volatilidade não reflete necessariamente uma tendência de mercado, mas sim a heterogeneidade espacial da coleta de dados em cada exercício. A tabela a seguir consolida as métricas de tendência central (média) e dispersão (mínimos e máximos) para ambas as categorias.
 
 ```{r}
+#| message: false
+#| warning: false
+
 # 1. Preparar os dados (Agregação Manual)
 tabela_pivo <- df_analise |>
   st_drop_geometry() |>
@@ -1056,6 +1066,9 @@ A distribuição amostral revela a predominância de dados agregados ('Média Ge
 
 Os scatter plots mostram a natureza discreta dos dados, os dados são variáveis macroeconomicas agregadas das regiões de homogeniedade determinada pelo incra através do algoritmo de WARD e do procedimento de K-means, nesse sentido, os scatters apenas demosntram um reflexo disso, do contrário seria esperado que os locai com mais áreas apresentassem uma nuvem de pontos que segue as linhas tracejadas.
 ```{r}
+#| message: false
+#| warning: false
+
 # 1. Preparação dos dados (Garantia de Leveza)
 dados_scatter <- if(inherits(df_areas, "sf")) sf::st_drop_geometry(df_areas) else df_analise
 
@@ -1106,6 +1119,9 @@ $$
 O resultado dos betas demonstra uma oferta inelástica de informação em relação a área, alpem disso os $R^2$ explicitam a falta de poder preditivo a cerca das coletas, nesse sentido, é demonstrada a natureza agregada dos dados, o que nada mais é que um reflexo da metodologia de K-means e algoritmo de Ward.
 
 ```{r}
+#| message: false
+#| warning: false
+
 library(dplyr)
 library(broom)
 library(gt)
@@ -1242,119 +1258,9 @@ tabela_quantis |>
 Geograficamente, os dados refletem uma estrutura que respeita o esperado: os estados das regiões Sul, Sudeste e Centro-Oeste apresentam um maior valor para a terra com imóvel, enquanto as regiões Norte e Nordeste apresentam valores inferiores. Uma anomalia que se encontra é a região de Manaus, que compõe a Zona Homogênea de Terras 'Manaus e Entorno'. Os valores dos imóveis provavelmente aumentam por conta da pressão da zona urbana, como é o caso típico de imóveis apresentando maior valor em áreas altamente urbanizadas.
 
 ```{r}
-# 1. Preparação: O "Snapshot" do Mercado (Excluindo 2025)
-dados_panorama <- df_analise |>
-  # LIMPEZA CRÍTICA:
-  # 1. Remove 2025 (Sem IGP-DI)
-  # 2. Remove sujeira (Zeros e NAs)
-  filter(ano < 2025, !is.na(vti_media), vti_media > 0) |>
-  
-  # Filtra categorias principais
-  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista")) |>
-  
-  group_by(code_muni, categoria_final) |>
-  # Pega o ano mais recente DISPONÍVEL (que agora será no máximo 2024)
-  slice_max(order_by = ano, n = 1) |> 
-  ungroup() 
-
-# 2. Criação dos Quantis (Classes de Preço)
-# Recalculando os pentis com a base limpa
-dados_panorama <- dados_panorama |>
-  group_by(categoria_final) |> 
-  mutate(
-    # cut_number garante o mesmo número de observações em cada cor
-    classe_preco = cut_number(vti_media, n = 5, labels = c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"))
-  ) |>
-  ungroup()
-
-# 3. O Mapa (Choropleth)
-ggplot(dados_panorama) +
-  geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) + 
-  
-  # Escala de Cores: Magma invertido (Amarelo/Branco = Muito Alto)
- scale_fill_brewer(
-  palette = "Spectral",
-  direction = -1, # Inverte para Vermelho ser o 'Alto' e Azul o 'Baixo'
-  name = "Faixa de Valor (VTI)"
-  ) +
-  
-  facet_wrap(~categoria_final, ncol = 2) +
-  
-  labs(
-    title = "Panorama de Valor da Terra (Até 2024)",
-    subtitle = "Classificação por Quantis baseada no último dado corrigido (IGP-DI).",
-    caption = "Nota: Dados de 2025 excluídos por ausência de deflator consolidado."
-  ) +
-  
-  theme_void() + 
-  theme(
-    legend.position = "right",
-    strip.text = element_text(face = "bold", size = 11),
-    plot.title = element_text(face = "bold")
-  )
-```
-
-Panorama Geográfico para o vTN:
-```{r}
 #| message: false
 #| warning: false
 
-# 1. Cálculo dos Quantis por Categoria
-tabela_quantis <- df_analise |>
-  st_drop_geometry() |>
-  filter(!is.na(vti_media), vti_media > 0) |>
-  group_by(categoria_final) |>
-  summarise(
-    N = n(),
-    # Calcula os cortes de preço que dividem o mercado
-    P10 = quantile(vti_media, 0.10),
-    P25 = quantile(vti_media, 0.25),
-    Mediana = median(vti_media),
-    P75 = quantile(vti_media, 0.75),
-    P90 = quantile(vti_media, 0.90)
-  ) |>
-  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato
-
-# 2. Renderização da Tabela
-tabela_quantis |>
-  gt() |>
-  tab_header(
-    title = md("**Estrutura de Preços: Distribuição por Quantis**"),
-    subtitle = "Valores de Terra (VTI) em R$/ha"
-  ) |>
-  fmt_number(
-    columns = c(P10, P25, Mediana, P75, P90),
-    decimals = 0,
-    sep_mark = ".",
-    dec_mark = ","
-  ) |>
-  cols_label(
-    categoria_final = "Categoria",
-    N = "Amostras",
-    P10 = "Piso (10%)",
-    P25 = "Baixo (25%)",
-    Mediana = "Médio (50%)",
-    P75 = "Alto (75%)",
-    P90 = "Teto (90%)"
-  ) |>
-  # Destaque visual para a Mediana (o valor mais provável)
-  tab_style(
-    style = list(
-      cell_text(weight = "bold", color = "black"),
-      cell_fill(color = "lightgray")
-    ),
-    locations = cells_body(columns = Mediana)
-  ) |>
-  data_color(
-    columns = c(Mediana),
-    method = "numeric",
-    palette = "Greens" # Escala de cor para mostrar quem vale mais
-  )
-```
-
-Geograficamente, os dados refletem uma estrutura que respeita o esperado: os estados das regiões Sul, Sudeste e Centro-Oeste apresentam um maior valor para a terra com imóvel, enquanto as regiões Norte e Nordeste apresentam valores inferiores. Uma anomalia que se encontra é a região de Manaus, que compõe a Zona Homogênea de Terras 'Manaus e Entorno'. Os valores dos imóveis provavelmente aumentam por conta da pressão da zona urbana, como é o caso típico de imóveis apresentando maior valor em áreas altamente urbanizadas.
-
-```{r}
 library(dplyr)
 library(ggplot2)
 library(sf)
@@ -1493,7 +1399,7 @@ for(cat in categorias_alvo) {
     ) +
     
     labs(
-      title = paste("Panorama VTN:", toupper(cat)),
+      title = paste("Panorama VTN (atualizado 2024):", toupper(cat)),
       subtitle = "Distribuição de Preços Relativa (Quantis)",
       x = NULL, y = NULL
     ) +
@@ -1712,6 +1618,9 @@ htmltools::tagList(lista_plots2)
 O preço do VTN apresenta, em geral, um maior grau de variância da média quando comparado ao VTI e, geralmente, valores menores para os máximos, provavelmente por conta das variações tecnológicas. Além disso, é possível observar que a tendência geral é que os valores de terras com imóvel sejam maiores do que os de terras sem imóvel.
 
 ```{r}
+#| message: false
+#| warning: false
+
 # 1. Preparação
 dados_uf <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
 
@@ -1756,11 +1665,196 @@ ggplot(dados_uf, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +
 
 Aqui é visível o efeito regional nas distribuições, é interessante mostrar que os valores maiores se apresentam na região sul e sudeste enquanto as menores nas regiões norte e nordeste o que pode levar a um favorecimento do desmatamento, isso é corroborado quando se observa que o valor da vegetação nativa raramente chefa a mais que 50 mil, enquanto em estados com um maior indice urbano o valor das atividades é num geral mais elevado.
 
+```{r}
+#| message: false
+#| warning: false
+# 1. Preparação: Pivotagem (Wide -> Long)
+
+dados_box <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_comparativos <- dados_box |>
+  # Filtra sujeira e categorias principais
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa")) |>
+  
+  # Seleciona apenas o necessário para pivotar
+  select(categoria_final, vti_media, vtn_media) |>
+  
+  # Transforma colunas em linhas (VTI e VTN viram "Tipo de Valor")
+  pivot_longer(
+    cols = c(vti_media, vtn_media),
+    names_to = "tipo_valor",
+    values_to = "valor_ha"
+  ) |>
+  
+  # Renomeia para ficar bonito na legenda
+  mutate(
+    tipo_valor = factor(tipo_valor, 
+                        levels = c("vti_media", "vtn_media"), 
+                        labels = c("VTI (Com Imóvel)", "VTN (Terra Nua)"))
+  )
+
+# 2. O Plot (Boxplot Pareado)
+ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = median), y = valor_ha, fill = tipo_valor)) +
+  
+  # Boxplot: Mostra Mediana, Quartis e Outliers
+  geom_boxplot(outlier.alpha = 0.2, outlier.size = 0.5, outlier.color = "gray40") +
+  
+  # Escala Logarítmica (Crucial)
+  scale_y_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  # Cores contrastantes (Laranja pro Capital, Azul pra Terra Nua - ou vice-versa)
+  scale_fill_manual(values = c("VTI (Com Imóvel)" = "#E69F00", "VTN (Terra Nua)" = "#56B4E9")) +
+  
+  coord_flip() + # Deita o gráfico para facilitar leitura dos nomes
+  
+  labs(
+    title = "Dispersão de Preços: VTI vs. VTN",
+    subtitle = "A distância entre as caixas representa o valor agregado das benfeitorias.",
+    x = NULL, # Remove label redundante
+    y = "Valor por Hectare (Log)",
+    fill = "Métrica"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    axis.text.y = element_text(face = "bold", size = 10),
+    panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas
+  )
+```
+
+- Anotações Box plot VTI vs VTN
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+
+# 1. Preparação dos Dados (Mantendo a correção da UF)
+dados_limpos <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+# Garante a coluna UF antes de entrar no loop
+dados_prontos <- dados_limpos |>
+  filter(vtn_media > 0) |>
+  filter(categoria_final %in% c("media geral","agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
+
+# 2. Execução (Loop For + Print)
+categorias_unicas <- unique(dados_prontos$categoria_final)
+
+for(cat in categorias_unicas) {
+  
+  # A. Filtra a categoria atual
+  dados_fatia <- dados_prontos |> filter(categoria_final == cat)
+  
+  # B. Pula se não tiver dados suficientes
+  if(nrow(dados_fatia) < 5) next 
+  
+  # C. Gera o Plot
+  p <- ggplot(dados_fatia, aes(x = reorder(uf, vti_media, FUN = median), y = vti_media)) +
+    
+    geom_boxplot(fill = "#760000ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    
+    scale_y_log10(
+      labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+      breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+    ) +
+    
+    coord_flip() +
+    
+    labs(
+      title = paste("Ranking Estadual (VTI):", toupper(cat)),
+      subtitle = "Ordenado pela Mediana de Preço. Escala Logarítmica.",
+      x = NULL,
+      y = "Valor da Terra (R$/ha)"
+    ) +
+    
+    theme_minimal() +
+    theme(
+      axis.text.y = element_text(size = 8, face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  
+  # D. O comando essencial para loops:
+  print(p)
+}
+```
+
+Observa-se uma correlação direta entre as distribuições do Valor Total do Imóvel (VTI) e do Valor da Terra Nua (VTN), mantendo-se uma hierarquia de preços consistente entre as unidades federativas. Essa convergência evidencia as desigualdades regionais brasileiras, onde os preços mais elevados de terra concentram-se em estados com indicadores socioeconômicos superiores, enquanto os menores valores são registrados em regiões com menor dinamismo econômico.
+
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+
+# 1. Preparação dos Dados (Mantendo a correção da UF)
+dados_limpos <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+# Garante a coluna UF antes de entrar no loop
+if(!"UF" %in% names(dados_limpos)) {
+  dados_limpos$UF <- substr(dados_limpos$code_muni, 1, 2)
+}
+
+dados_prontos <- dados_limpos |>
+  filter(vtn_media > 0) |>
+  filter(categoria_final %in% c("media geral","agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
+
+# 2. Execução (Loop For + Print)
+categorias_unicas <- unique(dados_prontos$categoria_final)
+
+for(cat in categorias_unicas) {
+  
+  # A. Filtra a categoria atual
+  dados_fatia <- dados_prontos |> filter(categoria_final == cat)
+  
+  # B. Pula se não tiver dados suficientes
+  if(nrow(dados_fatia) < 5) next 
+  
+  # C. Gera o Plot
+  p <- ggplot(dados_fatia, aes(x = reorder(UF, vtn_media, FUN = median), y = vtn_media)) +
+    
+    geom_boxplot(fill = "#257a00ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    
+    scale_y_log10(
+      labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+      breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+    ) +
+    
+    coord_flip() +
+    
+    labs(
+      title = paste("Ranking Estadual (VTI):", toupper(cat)),
+      subtitle = "Ordenado pela Mediana de Preço. Escala Logarítmica.",
+      x = NULL,
+      y = "Valor da Terra sem Imóvel (R$/ha)"
+    ) +
+    
+    theme_minimal() +
+    theme(
+      axis.text.y = element_text(size = 8, face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  
+  # D. O comando essencial para loops:
+  print(p)
+}
+```
+
+
+
 ## 4.2 Análise Descritiva DataFrame 2023
 
 Na tentativa de completar a informação de todos os municípios brasileiros com o menor índice de distorção, o ano utilizado foi o de 2023 e como observado anteriormente os dados foram trazidos para o ano de 2023 com base em sua proximidade, desse modo, segue a tabela do número de municípios por ano.
 
 ```{r}
+#| message: false
+#| warning: false
+
 # 1. Preparar os dados (Agregação Ponderada)
 # 1. Preparar os dados (Apenas Contagem)
 tabela_pivo <- df_areas2 |>
@@ -1849,15 +1943,12 @@ ggplot(dados_agrupados, aes(x = area_total, y = n_obs)) +
   theme(legend.position = "none")
 ```
 
-As linhas tracejadas são regressões lineares no modelo LOG-LOG para verificar a elasticidade do número de observações à área, utilizando os níveis categóricos 0 e 1 . Seguindo a seguintes fórmula:
-
-$$
-Log(N_i) = B_0 + B_1 * log(área_i) + \epsilon_i
-$$
-
-O resultado dos betas demonstra uma oferta inelástica de informação em relação a área, alpem disso os $R^2$ explicitam a falta de poder preditivo a cerca das coletas, nesse sentido, é demonstrada a natureza agregada dos dados, o que nada mais é que um reflexo da metodologia de K-means e algoritmo de Ward.
+As linhas tracejadas são regressões lineares no modelo LOG-LOG para verificar a elasticidade do número de observações à área, utilizando os níveis categóricos 0 e 1, conforme explicado nos scatter plots anteriores, o resultado dos betas demonstra uma oferta inelástica de informação em relação a área, como visto no data-frame anterior.
 
 ```{r}
+#| message: false
+#| warning: false
+
 library(dplyr)
 library(broom)
 library(gt)
@@ -2427,9 +2518,6 @@ library(ggplot2)
 dados_limpos <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
 
 # Garante a coluna UF antes de entrar no loop
-if(!"UF" %in% names(dados_limpos)) {
-  dados_limpos$UF <- substr(dados_limpos$code_muni, 1, 2)
-}
 
 dados_prontos <- dados_limpos |>
   filter(vti_media > 0) |>
@@ -2487,10 +2575,6 @@ library(ggplot2)
 # 1. Preparação dos Dados (Mantendo a correção da UF)
 dados_limpos <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
 
-# Garante a coluna UF antes de entrar no loop
-if(!"UF" %in% names(dados_limpos)) {
-  dados_limpos$UF <- substr(dados_limpos$code_muni, 1, 2)
-}
 
 dados_prontos <- dados_limpos |>
   filter(vtn_media > 0) |>
@@ -2538,7 +2622,11 @@ for(cat in categorias_unicas) {
 ```
 
 ## 5. Visão Geral
+O banco de dados construído a partir do Relatório de Análise de Mercado de Terras (RAMT) reflete a estrutura fundiária e as desigualdades regionais observadas no país. A base de dados demonstra que o valor da terra varia de forma sistemática conforme as condições socioeconômicas de cada estado brasileiro. Esses valores sintetizam diversos fatores relevantes para a compreensão da distribuição e do mercado de terras no Brasil.
 
+No levantamento, é notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas para a valoração do meio ambiente no mercado imobiliário rural. O banco de dados foi capaz de contemplar grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
+
+Ademais, é importante ressaltar que o procedimento de digitalização, por ser um processo de transcrição de documentos físicos e digitais para código, pode conter erros pontuais. Os documentos referenciados, que serviram de base para esta digitalização, estão organizados na seguinte tabela para cada estado:
 
 ## Referências:
 BRASIL. Ministério do Desenvolvimento Agrário. Instituto Nacional de Colonização e Reforma Agrária. Diretoria de Obtenção de Terras e Implantação de Projetos de Assentamento. Norma de Execução/INCRA/DT n. 112, de 12 de setembro de 2014: aprova o Módulo V do Manual de Obtenção de Terras – Relatório de Análise de Mercados de Terras – RAMT. Brasília, DF: INCRA, 2014. Publicada no Diário Oficial da União, 15 out. 2014, Seção 1, p. 150. Disponível em:https://www.gov.br/incra/pt-br/centrais-de-conteudos/legislacao/ne_112_2014.pdf. Acesso em: 7 fev. 2026.
