@@ -1003,7 +1003,7 @@ tabela_pivo <- df_analise |>
     vtn_max = max(vtn_maximo, na.rm = TRUE),
     
     # Contagem (Opcional, mas bom para auditoria)
-    n_registros = n_distinct(origem)
+    n_registros = n_distinct(code_muni)
   )
 
 # 2. Gerar a Tabela Profissional
@@ -1355,109 +1355,258 @@ tabela_quantis |>
 Geograficamente, os dados refletem uma estrutura que respeita o esperado: os estados das regiões Sul, Sudeste e Centro-Oeste apresentam um maior valor para a terra com imóvel, enquanto as regiões Norte e Nordeste apresentam valores inferiores. Uma anomalia que se encontra é a região de Manaus, que compõe a Zona Homogênea de Terras 'Manaus e Entorno'. Os valores dos imóveis provavelmente aumentam por conta da pressão da zona urbana, como é o caso típico de imóveis apresentando maior valor em áreas altamente urbanizadas.
 
 ```{r}
-# 1. Preparação: O "Snapshot" do Mercado (Excluindo 2025)
-dados_panorama <- df_analise |>
-  # LIMPEZA CRÍTICA:
-  # 1. Remove 2025 (Sem IGP-DI)
-  # 2. Remove sujeira (Zeros e NAs)
-  filter(ano < 2025, !is.na(vtn_media), vtn_media > 0) |>
-  
-  # Filtra categorias principais
-  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista")) |>
-  
-  group_by(code_muni, categoria_final) |>
-  # Pega o ano mais recente DISPONÍVEL (que agora será no máximo 2024)
-  slice_max(order_by = ano, n = 1) |> 
-  ungroup() 
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
 
-# 2. Criação dos Quantis (Classes de Preço)
-# Recalculando os pentis com a base limpa
-dados_panorama <- dados_panorama |>
-  group_by(categoria_final) |> 
-  mutate(
-    # cut_number garante o mesmo número de observações em cada cor
-    classe_preco = cut_number(vtn_media, n = 5, labels = c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"))
-  ) |>
-  ungroup()
+# 1. Definição do Escopo
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
 
-# 3. O Mapa (Choropleth)
-ggplot(dados_panorama) +
-  geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) + 
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
   
-  # Escala de Cores: Magma invertido (Amarelo/Branco = Muito Alto)
- scale_fill_brewer(
-  palette = "Spectral",
-  direction = -1, # Inverte para Vermelho ser o 'Alto' e Azul o 'Baixo'
-  name = "Faixa de Valor (VTN)"
-  ) +
+  # A. Filtragem
+  dados_cat <- df_analise |>
+    filter(ano < 2025, !is.na(vti_media), vti_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
   
-  facet_wrap(~categoria_final, ncol = 2) +
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(vti_media, n = 5, dig.lab = 10),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
   
-  labs(
-    title = "Panorama de Valor da Terra (Até 2024)",
-    subtitle = "Classificação por Quantis baseada no último dado corrigido (IGP-DI).",
-    caption = "Nota: Dados de 2025 excluídos por ausência de deflator consolidado."
-  ) +
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
   
-  theme_void() + 
-  theme(
-    legend.position = "right",
-    strip.text = element_text(face = "bold", size = 11),
-    plot.title = element_text(face = "bold")
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
   )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTI (atualizado 2024):", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
 ```
 
 A tendência apresentada pelo VTN é básicamente a mesma.
 
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
+
+# 1. Definição do Escopo
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
+
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem
+  dados_cat <- df_analise2 |>
+    filter(ano < 2025, !is.na(vtn_media), vtn_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(vtn_media, n = 5, dig.lab = 15),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
+  
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
+  )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTN:", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
+```
+
 Histogramas de distribuição por categoria (VTI)
 ```{r}
-# 1. Preparação (Mesma de antes)
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
+
+# 1. Preparação dos Dados (Inalterada)
 dados_hist <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
 
 dados_hist <- dados_hist |>
-  filter(vti_media > 0) |>
-  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa"))
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
 
-# 2. O Plot Híbrido (Barras + Linha Suave)
-ggplot(dados_hist, aes(x = vti_media)) +
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
   
-  # Histograma normalizado (Eixo Y = Densidade)
-  geom_histogram(
-    aes(y = after_stat(density), fill = categoria_final), 
-    color = "white", 
-    alpha = 0.5, # Transparência para ver a sobreposição
-    bins = 40, 
-    show.legend = FALSE
-  ) +
+  var_sym <- rlang::ensym(var_col)
   
-  # A Linha de Densidade (Kernel Density Estimation)
-  geom_density(
-    color = "black", 
-    size = 0.8, 
-    adjust = 1.5 # Suavização (1 = Padrão, >1 = Mais liso)
-  ) +
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
   
-  # Escala Logarítmica
-  scale_x_log10(
-    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
-    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
-  ) +
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#2980b9", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTI -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
   
-  facet_wrap(~categoria_final, scales = "free_y") +
-  
-  labs(
-    title = "Distribuição de Preços (Histograma + Densidade)",
-    subtitle = "A curva preta suaviza a tendência. Formato de 'Sino' confirma Log-Normalidade.",
-    x = "Valor da Terra (R$/ha) [Log]",
-    y = "Densidade de Probabilidade"
-  ) +
-  
-  theme_minimal() +
-  theme(
-    strip.text = element_text(face = "bold", size = 11),
-    axis.text.x = element_text(angle = 30, hjust = 1)
-  )
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
 
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, vti_media, cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots)
 ```
 
 A análise das linhas de densidade demonsrea um comportamento de multimodalidade para todas as categorias na distribuição dos preços. Apresentando notavelmente uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas: "pecuária", "agricultura" e vegetação nativa. 
@@ -1465,115 +1614,99 @@ A análise das linhas de densidade demonsrea um comportamento de multimodalidade
 Estatisticamente, a existência de múltiplos picos (modas) sugere a coexistência de submercados distintos sob a mesma rotulagem. No caso da Pecuária, a trimodalidade observada indica uma segmentação tecnológica e geográfica severa. Isso pode ser efeito da unificação tipologica para fins de análise.
 
 ```{r}
-# 1. Preparação (Mesma de antes)
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
+
+# 1. Preparação dos Dados (Inalterada)
 dados_hist <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
 
 dados_hist <- dados_hist |>
-  filter(vti_media > 0) |>
-  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa"))
-
-# 2. O Plot Híbrido (Barras + Linha Suave)
-ggplot(dados_hist, aes(x = vtn_media)) +
-  
-  # Histograma normalizado (Eixo Y = Densidade)
-  geom_histogram(
-    aes(y = after_stat(density), fill = categoria_final), 
-    color = "white", 
-    alpha = 0.5, # Transparência para ver a sobreposição
-    bins = 40, 
-    show.legend = FALSE
-  ) +
-  
-  # A Linha de Densidade (Kernel Density Estimation)
-  geom_density(
-    color = "black", 
-    size = 0.8, 
-    adjust = 1.5 # Suavização (1 = Padrão, >1 = Mais liso)
-  ) +
-  
-  # Escala Logarítmica
-  scale_x_log10(
-    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
-    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
-  ) +
-  
-  facet_wrap(~categoria_final, scales = "free_y") +
-  
-  labs(
-    title = "Distribuição de Preços (Histograma + Densidade)",
-    subtitle = "A curva preta suaviza a tendência. Formato de 'Sino' confirma Log-Normalidade.",
-    x = "Valor da Terra (R$/ha) [Log]",
-    y = "Densidade de Probabilidade"
-  ) +
-  
-  theme_minimal() +
-  theme(
-    strip.text = element_text(face = "bold", size = 11),
-    axis.text.x = element_text(angle = 30, hjust = 1)
-  )
-```
-
-O VTN apresenta uma distribuição também multimodal; entretanto, diferencia-se da distribuição apresentada pelos diagramas do VTI. Essa divergência decorre, provavelmente, de diferenças estruturais na formação do preço: o VTI reflete, em alguma medida, a estrutura de capital já investido, enquanto o VTN reflete, preponderantemente, diferenças geográficas. Nesse sentido, é possível ver que a linha de desnsidaade é muito mais suave no gráfico do VTN que provavelmente não reflete tanto essas diferenças tecnológicas.
-
-Box plot - VTN e VTI
-```{r}
-# 1. Preparação: Pivotagem (Wide -> Long)
-
-dados_box <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
-
-dados_comparativos <- dados_box |>
-  # Filtra sujeira e categorias principais
   filter(vti_media > 0, vtn_media > 0) |>
-  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa")) |>
-  
-  # Seleciona apenas o necessário para pivotar
-  select(categoria_final, vti_media, vtn_media) |>
-  
-  # Transforma colunas em linhas (VTI e VTN viram "Tipo de Valor")
-  pivot_longer(
-    cols = c(vti_media, vtn_media),
-    names_to = "tipo_valor",
-    values_to = "valor_ha"
-  ) |>
-  
-  # Renomeia para ficar bonito na legenda
-  mutate(
-    tipo_valor = factor(tipo_valor, 
-                        levels = c("vti_media", "vtn_media"), 
-                        labels = c("VTI (Com Imóvel)", "VTN (Terra Nua)"))
-  )
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
 
-# 2. O Plot (Boxplot Pareado)
-ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = median), y = valor_ha, fill = tipo_valor)) +
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
   
-  # Boxplot: Mostra Mediana, Quartis e Outliers
-  geom_boxplot(outlier.alpha = 0.2, outlier.size = 0.5, outlier.color = "gray40") +
+  var_sym <- rlang::ensym(var_col)
   
-  # Escala Logarítmica (Crucial)
-  scale_y_log10(
-    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
-    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
-  ) +
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
   
-  # Cores contrastantes (Laranja pro Capital, Azul pra Terra Nua - ou vice-versa)
-  scale_fill_manual(values = c("VTI (Com Imóvel)" = "#E69F00", "VTN (Terra Nua)" = "#56B4E9")) +
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#0a7d00ff", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTN -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
   
-  coord_flip() + # Deita o gráfico para facilitar leitura dos nomes
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
+
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
   
-  labs(
-    title = "Dispersão de Preços: VTI vs. VTN",
-    subtitle = "A distância entre as caixas representa o valor agregado das benfeitorias.",
-    x = NULL, # Remove label redundante
-    y = "Valor por Hectare (Log)",
-    fill = "Métrica"
-  ) +
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
   
-  theme_minimal() +
-  theme(
-    legend.position = "top",
-    axis.text.y = element_text(face = "bold", size = 10),
-    panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas
-  )
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, vtn_media, cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots2 <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots2)
 ```
 
 O preço do VTN apresenta, em geral, um maior grau de variância da média quando comparado ao VTI e, geralmente, valores menores para os máximos, provavelmente por conta das variações tecnológicas. Além disso, é possível observar que a tendência geral é que os valores de terras com imóvel sejam maiores do que os de terras sem imóvel.
