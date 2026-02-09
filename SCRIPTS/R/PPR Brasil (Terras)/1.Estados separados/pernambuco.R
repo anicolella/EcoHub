@@ -361,16 +361,32 @@ PEMRT_V_Agreste_Oeste_2019 <- data.frame(
 
 ## 2022 ####
 PEMRT_V_Agreste_Oeste_2022 <- data.frame(
-  mrt = "MRT-5, Agreste Oeste",
-  tipologia_de_uso = c("Geral", "Pecuária", "Exploração Mista", "Não Agrícola", "Pecuária - Bovino - Pastagem Formada", "Pecuária - Diversos", "Exploração Mista - Diversificada", "Pecuária - Bovino - Pastagem Formada - Águas Belas", "Pecuária - Bovino - Pastagem Formada - Angelim", "Pecuária - Bovino - Pastagem Formada - Cachoeirinha", "Pecuária - Bovino - Pastagem Formada - Caetés", "Pecuária - Bovino - Pastagem Formada - Capoeiras", "Pecuária - Bovino - Pastagem Formada - Iati", "Pecuária - Bovino - Pastagem Formada - Ibirajuba", "Pecuária - Bovino - Pastagem Formada - Jurema", "Pecuária - Bovino - Pastagem Formada - Lagoa do Ouro", "Pecuária - Bovino - Pastagem Formada - Paranatama", "Pecuária - Bovino - Pastagem Nativa - Águas Belas", "Pecuária - Bovino - Pastagem Nativa - Cachoeirinha", "Pecuária - Bovino - Pastagem Nativa - Itaíba", "Pecuária - Bovino - Pastagem Nativa - Paranatama", "Exploração Mista - Diversificada - Águas Belas", "Exploração Mista - Diversificada - Angelim", "Exploração Mista - Diversificada - Brejo da Madre de Deus", "Exploração Mista - Diversificada - Cachoeirinha", "Exploração Mista - Diversificada - Garanhuns", "Exploração Mista - Diversificada - Itaíba", "Exploração Mista - Diversificada - Jupi", "Exploração Mista - Diversificada - Lajedo", "Exploração Mista - Diversificada - Taquaritinga do Norte"),
-  nivel = c(0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
-  vti_media = c(5135.28, 5255.28, 4847.34, 16348.79, 6519.91, 3589.71, 4396.82, 4847.34, 5090.26, 24234.28, 9420.11, 11584.96, 8011.34, 3979.04, 3689.88, 7116.23, 1992.24, 4952.20, 2991.63, 3455.78, 3300.00, 2982.91, 2391.68, 7979.97, 3536.98, 4998.18, 2591.12, 5007.82, 4522.52, 4967.32),
-  vti_minimo = c(4741.09, 4755.09, 4245.06, -3895.69, 5755.91, 3058.09, 615.11, 4245.05, 4091.84, 10791.55, 4974.59, 8660.64, 5203.86, 2985.53, 3331.20, 106.89, 1611.89, 2151.02, 2977.40, 538.68, 704.66, 2932.99, 1913.50, 3840.63, 2504.75, 1370.28, 827.56, 1900.53, 4489.01, 4871.90),
-  vti_maximo =  c(5529.87, 5755.47, 5449.62, 36595.27, 7283.91, 4121.33, 8178.53, 5449.63, 6088.68, 37677.01, 13865.63, 14509.28, 10818.82, 4972.55, 4048.56, 14125.57, 2372.59, 7753.38, 3005.86, 6372.88, 5895.34, 3032.83, 2869.88, 12119.31, 4569.23, 8626.08, 4354.68, 8115.11, 4556.03, 5062.74),
-  vtn_media = c(3974.19, 3869.21, 4004.83, 5287.86, 4710.14, 2905.88, 2760.32, 4004.83, 3215.94, 19318.28, 6781.24, 8024.88, 4987.98, 2387.43, 3290.38, 4814.00, 2017.73, 4651.29, 2258.11, 3455.78, 2913.33, 2982.91, 1912.79, 6120.77, 3048.82, 4760.23, 2591.12, 4045.91, 4525.58, 5000.00),
-  vtn_minimo = c(3704.60, 3542.16, 3571.78, -2358.53, 4184.50, 2521.32, 843.82, 3571.76, 2667.69, 749.71, 4803.18, 6480.59, 3680.57, 1791.32, 2718.37, -324.67, 1650.66, 1785.05, 1492.01, 538.68, -141.07, 2932.99, 1678.87, 4166.87, 1845.60, 1021.63, 827.56, 1970.05, 4479.41, 4871.90),
-  vtn_maximo = c(4243.78, 4196.26, 4437.80, 12934.31, 5225.78, 3290.44, 4676.82, 4437.90, 3764.19, 37886.85, 8758.30, 9568.39, 6295.39, 2983.54, 3852.39, 9952.67, 2384.80, 7517.73, 3024.21, 6372.88, 5967.73, 3032.83, 2146.67, 8074.67, 4248.04, 8498.83, 4354.68, 6121.77, 4642.29, 5062.74),
-  origem = "Águas Belas, Alagoinha, Angelim, Arcoverde, Belo Jardim, Brejo da Madre de Deus, Buíque, Cachoeirinha, Caetés, Calçado, Canhotinho, Capoeiras, Cupira, Iati, Ibirajuba, Itaíba, Jataúba, Jucati, Jupi, Jurema, Lagoa dos Gatos, Lajedo, Manari, Palmeirina, Panelas, Paranatama, Pedra, Pesqueira, Poção, Saloá, Sanharó, Santa Cruz do Capibaribe, São Caetano, São Bento do Una, Tacaimbó, Taquaritinga do Norte, Tupanatinga e Venturosa"
+  mrt = "V - Agreste Oeste", # Identificador baseado na última imagem
+  tipologia_de_uso = c(
+    "Uso indefinido (média geral do MRT)",
+    "Terra de exploração mista",
+    "Terra de pecuária",
+    "Terra de exploração mista/Sem recursos hídricos",
+    "Terra de pecuária/pastagem nativa sem recursos hídricos",
+    "Terra de pecuária/pastagem nativa com recursos hídricos",
+    "Terra de pecuária/pastagem plantada sem recursos hídricos",
+    "Terra de pecuária/pastagem plantada com recursos hídricos",
+    "Terra de exploração mista/Sem recursos hídricos (Alagoinha)",
+    "Terra de exploração mista/Sem recursos hídricos (Itaíba)",
+    "Terra de pecuária/Com pastagem nativa sem recursos hídricos (Águas Belas)",
+    "Terra de pecuária/Com pastagem nativa sem recursos hídricos (Belo Jardim)",
+    "Terra de pecuária/Com pastagem nativa sem recursos hídricos (Iati)",
+    "Terra de pecuária/Com pastagem nativa sem recursos hídricos (Itaíba)",
+    "Terra de pecuária/Com pastagem nativa sem recursos hídricos (Jataúba)"
+  ),
+  nivel = c(0, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3),
+  vti_media = c(4525.80, 2445.59, 4679.80, 2408.03, 2658.45, 7083.52, 6561.74, 7109.99, 1903.64, 3117.62, 2895.13, 2431.83, 2638.29, 3253.27, 1872.48),
+  vti_minimo = c(2834.43, 1890.18, 3027.51, 1838.41, 2002.62, 5352.22, 4503.04, 5717.52, 1590.41, 2948.46, 2589.22, 1804.03, 1990.95, 2697.05, 1048.23),
+  vti_maximo = c(6217.17, 3001.01, 6332.09, 2977.66, 3314.28, 8814.82, 8620.43, 8502.46, 2216.87, 3286.78, 3201.04, 3059.61, 3285.62, 3809.49, 2696.72),
+  vtn_media = c(4039.09, 1925.03, 4147.62, 1817.27, 2399.18, 6249.23, 5203.30, 6351.62, 1445.09, 2986.67, 2790.41, 1877.44, 2402.37, 2737.08, 1729.01),
+  vtn_minimo = c(2510.74, 1466.77, 2698.53, 1355.14, 1802.37, 4637.46, 3579.69, 5084.98, 1083.48, 2852.68, 2491.21, 1439.93, 1679.46, 2350.64, 877.28),
+  vtn_maximo = c(5567.44, 2383.29, 5596.71, 2279.40, 2995.99, 7861.00, 6826.91, 7618.27, 1806.70, 3120.65, 3089.62, 2314.94, 3125.28, 3123.52, 2580.75),
+  origem = "Águas Belas, Alagoinha, Angelim, Arcoverde, Belo Jardim, Brejo da Madre de Deus, Buíque, Cachoeirinha, Caetés, Calçado, Canhotinho, Capoeiras, Cupira, Iati, Ibirajuba, Itaíba, Jataúba, Jucati, Jupi, Jurema, Lagoa dos Gatos, Lajedo, Manarí, Palmeirina, Panelas, Paranatama, Pedra, Pesqueira, Poção, Saloá, Sanharó, Santa Cruz do Capibaribe, São Bento do Una, São Caetano, São João, Tacaimbó, Taquaritinga do Norte, Tupanatinga e Venturosa"
 )
 
 
