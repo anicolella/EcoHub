@@ -1,8 +1,64 @@
+---
+title: "head1"
+format: html
+---
+```{r} 
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
 
-## Introdução
-## 1.Sobre os dados
+library(tidyverse)
+library(geobr)
+library(ipeadatar)
+library(stringr)
+library(readr)
+library(sf)
+library(gtsummary)
+library(gt)
 
-Os dados dos RAMT (Relatórios de Análise do Mercado de Terras) são elaborados pelo INCRA a partir da análise de diferentes mercados de terras em todo o território nacional, sendo essas terras tratadas como zonas homogêneas. Estas zonas são *clusters* (agrupamentos homogêneos com características semelhantes) que, a partir de então, têm seu valor analisado tendo em vista o uso da terra e as dinâmicas desses diferentes mercados. Os *clusters* são formados com base em um conjunto de variáveis: vocação produtiva da terra, gestão econômica e atividades agrícolas, nível tecnológico e a concentração fundiária (tendo em vista o índice de Gini fundiário). A metodologia de clusterização adotada é a de Ward, criando uma árvore de clusters inicialmente que depois é diferenciada por meio de algoritmos de K-means. O tratamento estatístico pressupõe uma distribuição aproximadamente normal dentro da zona homogênea. Os índices de inflação são corrigidos segundo o IGP-DI. Esse procedimento de clusterização é feito dentro de uma superintendência regional do INCRA.
+df_analise <- st_read(
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
+
+
+df_areas <- df_analise |>
+  mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+ df_joined <- df_analise 
+
+
+ df_analise2 <- st_read(
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/proxy_classificado.gpkg",
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
+
+df_areas2 <- df_analise2 |>
+  mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+ df_joined2 <- df_analise 
+ 
+```
+
+## 1.Introdução
+O presente trabalho teve como objetivo a digitalização, uniformização e disponibilização dos dados publicados nos Relatórios de Análises do mercado de Terras que são instrumentos de análise dos diferentes mercados fundiários estabelecidos no país realizadas pelas superintendências do INCRA - Instituto Nacional de Colonização e Reforma Agrária - em cada estado (BRASIL, 2014). O material que buscou-se digitalizar foram as PPRs - Planilhas de Preços Referenciais de Terras - disponibilizadas nesses relatórios, essas planilhas possuem os valores de referência usados pelo órgão com a finalidade de avaliar imóveis rurais de todo o país (BRASIL, 2014).
+
+Os relatórios de Análise do Mercado de terra sintetizam informações de terra, nesse sentido, ocorre a separação de diferentes estados em várias Zonas Homogêneas para a finalidade de análise. Essas zonas Homogêneas são construídas por meio de um processo de clusterização (BRASIL, 2014). A clusterização ocorre em duas etapas: primeiro é aplicado o algoritmo de Ward para a definição do Número de Clusters, posteriormente, por meio de um algoritmo de K-means são feitos ajustes nas cidades de modo a adequar melhor os clusters.
 
 A metodologia de Ward baseia-se na criação de partições que minimizem a Soma dos Quadrados dos Erros (SQE), ou seja, a soma das distâncias euclidianas quadráticas de cada amostra em relação ao centroide (média) do cluster, conforme a fórmula:
 
@@ -10,26 +66,576 @@ $$
 ESS_k = \sum_{i=1}^{n} \| x_i - \bar{x}_k \|^2
 $$
 
+A otimização do procedimento de cluster é feito por meio do processo de "K-means". Esse algoritmo forma K grupos diversos de municípios que posteriormente serão modificados movendo cidades de um local ao outro de modo a maximizar ou minimizar a função, aumentando a qualidade do cluster( BRASIL,2014 ). As variáveis que são recomendadas para sereme levadas em conta durante o processo de formação agrupamentos (Zonas Homogêneas), pelas superintendências do INCRA, são as seguintes (BRASIL, 2014):
 
-A otimização do procedimento de cluster é feito por meio do processo de "K-means". Esse algoritmo forma K grupos diversos de municípios que posteriormente serão modificados movendo cidades de um local ao outro de modo a maximizar ou minimizar a função, aumentando a qualidade do cluster.
+1 - Variáveis relacionadas à vocação produtiva da terra
+- área total (hectares)
 
-O banco de dados estrutura-se em 18 variáveis, organizadas para capturar a dinâmica espacial e econômica do mercado de terras. As observações são indexadas temporalmente (ano) e geograficamente (code_muni, UF, origem), assegurando a identificação unívoca dos registros dos Relatórios de Análise do Mercado de Terras (RAMT).
+- área total de lavouras permanentes (% da área total)
 
-As variáveis econômicas decompõem-se em tríades métricas (mínimo, médio e máximo) para o Valor da Terra Nua (VTN) e Valor da Terra com Imóvel (VTI). Estatisticamente, estes limites não são arbitrários: segundo a metodologia do INCRA, eles delimitam o intervalo de validade amostral.
+ - área total de lavouras temporárias (% da área total)
 
-Para fins analíticos, a heterogeneidade das classificações originais (tipologia) foi harmonizada na variável categoria_final, garantindo consistência sintática. A dimensão espacial é preservada pela geometria vetorial (geom), habilitando operações de geoprocessamento
+ - área total de lavouras temporárias em descanso (pousio) (% da área total)
+
+ - área total de pastagem natural (% da área total)
+ - área total de pastagem plantada (% da área total)
+ - área total de matas e florestas naturais (% da área total)
+ - área total de matas e florestas plantadas (% da área total)
+ - área total de terras não utilizáveis (% da área total)
+
+2 - Variáveis relacionadas ao nível tecnológico
+- total de tratores (nº/1000 hec)
+- fracao de terras irrigadas (% da área total)
+
+3 - Variáveis relacionadas com a gestão de resultados
+- total de investimentos (valor/hec)
+- total de financiamentos (valor/hec)
+- total de despesas (valor/hec)
+- valor total da produção animal (valor/hec)
+- valor total da produção vegetal (valor/hec)
+- valor total da produção (animal + vegetal) (valor/hec)
+- receita total liquida (valor/hec)
+- receita total bruta (valor/hec)
+- área de arrendatários no município (% da área total)
+- área de parceiros no município (% da área total)
+- área de proprietários no município (% da área total)
+- custos de transporte da sede municipal até a capital mais próxima
+- receita bruta por unidade de área
+- índice integrador do ITC e ITR cultura anual
+- índice integrador do ITC e ITR cultura perene
+- valores médios de Commodity
+
+4 - Variáveis relacionadas com a concentração da terra
+- índice de gini fundiário (valor)
+- propriedades menores de 500 hec (% do total)
+- propriedades maiores de 500 hec (% do total)
+- índice de gini decenal (valor)
+
+
+Após esses processos, são formadas as zonas homogêneas ou os mercados de terra sob os quais são realizadas as análises do INCRA, com a finalidade de determinar os valores de terra na região (BRASIL, 2014). O principal componente das PPRs é a presença de um valor médio para Terra Nua e um valor médio para terra com imóvel, variando de acordo com a tipologia indicada. Essas médias são construídas mediante saneamento das amostras (método de ± 1 desvio padrão), sendo os novos saneamentos realizados até que o coeficiente de variação seja inferior ou igual a 30% (BRASIL, 2014).
+
+Assim, o presente banco de dados é produto da digitalização dos materiais presentes nos diferentes relatórios de análise do mercado de terras. Foram digitalizados cerca de 133 documentos em PDF, cada um contendo algumas PPRs, havendo sobreposição dos documentos sintéticos de PPRs com Relatórios de Análise de Terras. Ademais, foram utilizados dados do Atlas do Mercado de Terras, uma iniciativa do ano de 2023 para a unificação dos preços de terra em um único ano. Nesse sentido, como as observações são feitas por diferentes unidades do INCRA em tempos distintos, existe um grande índice de segregação espaço-temporal dos dados. Além disso, alguns municípios estão faltantes na base, seja por erro de transcrição ou por falta de dados nos documentos originais. Nesse sentido, segue a disponibilidade de dados por ano, seguindo os territórios municipais:
+
 ```{r}
-colnames(df_eco1)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: asis 
+
+# ATENÇÃO: A opção 'results: asis' acima é OBRIGATÓRIA.
+# Sem ela, o Quarto vai achar que os textos são logs do R e não formatação.
+
+# 1. Preparação (Fora do Loop)
+br_outline <- read_country(year = 2020, showProgress = FALSE) 
+br_states  <- read_state(code_state = "all", year = 2020, showProgress = FALSE)
+anos_disponiveis <- sort(unique(df_analise$ano)) # Garante ordem cronológica
+
+# 2. Abertura do Painel de Abas (Comando Markdown via R)
+cat("::: {.panel-tabset}\n\n")
+
+# 3. Loop
+for (um_ano in anos_disponiveis) {
+  
+  # A. Cria o Título da Aba (Markdown)
+  # O \n é crucial para o Quarto entender que é um cabeçalho
+  cat("## ", um_ano, "\n\n")
+  
+  # B. Gera o Mapa
+  dados_do_ano <- subset(df_analise, ano == um_ano)
+  
+  p <- ggplot() +
+    geom_sf(data = br_outline, fill = "gray95", color = "gray90") +
+    geom_sf(data = dados_do_ano, fill = "firebrick", color = NA) + 
+    geom_sf(data = br_states, fill = NA, color = "gray40", lwd = 0.3) +
+    labs(title = paste("Coleta de dados RAMT:", um_ano), 
+         subtitle = paste(n_distinct(dados_do_ano$origem), "municípios com dados"),
+         caption = "Fonte: INCRA/RAMT") +
+    theme_void() +
+    theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "gray20"))
+  
+  # C. Imprime o Mapa
+  print(p)
+  
+  # D. Fecha o espaço da aba
+  cat("\n\n")
+}
+
+# 4. Fechamento do Painel
+cat(":::\n")
+
 ```
 
-O procedimento de unificação de categorias foi feito através do seguinte loop, sendo o loop taxativo, esse loop foi construído com ajuda do gemini, após um processo de verificação das tipologias via a função unique do package "dyplr":
+## 2.Metodologia 
+A extração das planilhas foi feita com o auxílio da inteligência artificial Google Gemini por meio de prints das tabelas; as tabelas eram printadas, transcritas pelo Gemini e, posteriormente, verificadas manualmente. Além disso, alguns scripts para a extração das tabelas foram criados e utilizados, usando o Camelot do Python ou até mesmo o Shiny no R. Entretanto, devido à diversidade da publicação das tabelas, algumas em PDF, outras em imagem e algumas vezes prints de tabelas com uma notável dificuldade na legibilidade, a maioria foi feita via Gemini.
+
+A cerca da incompatibilidade de dados Relatórios de Análise dos Mercados de Terras (RAMT) com os dados do atlas para casos de mesmo ano, preferiu-se priorizar os dados presentes nos RAMT's, tendo em vista a maior frequência. Nesse sentido, os dados de 2023 são majoritariamente do atlas, existindo a exceção apra o estado do Mato Grosso, pois, havia um relatório para o ano de 2023 que variava dos valores apresentados no atlas, enquanto que os valores apresentados no atlas foram para um relatório de 2024. Assim, usou-se os valores do Relatório para 2023.
+
+Após a digitalização dos dados eles foram revisados de maneira manual, além disso, buscou-se parear as cidades que anteriormente foram digitalizadas por meio de uma lista que pode ser encontrada na coluna "cluster" dos dados, para isso criou-se inicialmente um script de separação da string. As strings foram separadas segundo o seguinte trecho:
 
 ```{r}
+#| message: false
+#| warning: false
+#| results: asis 
 #| eval: false
-#| code-fold: true
+
+# A coluna origem continha o vetor de cidades, hoje é equivalente a coluna "Cluster"
+# df_novo2 é um data frame contendo os dados das PPRS.
+# A função "separate_rows" separa as strings dessa coluna segundo o separador "sep", desse modo criando novas linhas.
+# É criada uma linha por unidade separada
+df_novo2 <- separate_rows(BRASILTEMPORAL, origem, sep = ", ")
+df_novo2 <- separate_rows(df_novo2, origem, sep = " e ")
+df_novo2 <- separate_rows(df_novo2, origem, sep = ",")
+df_novo2 <- separate_rows(df_novo2, origem, sep = ";")
+df_novo2 <- separate_rows(df_novo2, origem, sep = ":")
+df_novo2 <- separate_rows(df_novo2, origem, sep = "/")
+```
+
+Após o procedimento de separação, passou-se para a etapa de correspondência (matching) das cidades com o código do IBGE, processo que ocorreu em duas fases. Primeiro, foi feita uma limpeza nos nomes dos municípios, tanto no dataframe do IBGE quanto no dataframe construído; em seguida, procedeu-se ao matching utilizando a função left_join do pacote dplyr. Inicialmente, esse procedimento deixou algumas cidades sem correspondência. Ademais, foi necessário fazer um matching de código do IBG, número da UF com a sigla da unidade federativa a fim de realizar o procedimento de "left_join".
+
+```{r}
+#| message: false
+#| warning: false
+#| results: asis 
+#| eval: false
+
+tabela_uf <- tibble::tribble(
+  ~codigo_ibge, ~UF,
+  11, "RO", 12, "AC", 13, "AM", 14, "RR", 15, "PA", 16, "AP",
+  17, "TO", 21, "MA", 22, "PI", 23, "CE", 24, "RN", 25, "PB",
+  26, "PE", 27, "AL", 28, "SE", 29, "BA", 31, "MG", 32, "ES",
+  33, "RJ", 35, "SP", 41, "PR", 42, "SC", 43, "RS", 50, "MS",
+  51, "MT", 52, "GO", 53, "DF"
+)
+
+mun_data <- read_municipality(year = 2024, showProgress = FALSE)
+
+
+dep <- df_novo2 %>%
+  mutate(
+    # 1. Converte para minúsculas
+    origem = tolower(origem), 
+    
+    # 2. Remove acentos (sobrescrevendo a coluna origem para manter limpo)
+    origem = iconv(origem, from = "UTF-8", to = "ASCII//TRANSLIT"),
+    
+    # 3. Remove o "e " do início
+    origem = str_remove(origem, "^e "),
+    
+    # 4. Converte estado para numérico (tratando fator se necessário)
+    estado = as.numeric(as.character(estado))
+  ) %>%
+  # 5. Faz o Join
+  left_join(tabela_uf, by = c("estado" = "codigo_ibge"))
+
+mun_data <- mun_data %>%
+  mutate(
+    # 1. Converte para minúsculas
+    origem = tolower(name_muni), 
+    
+    # 2. Remove acentos (sobrescrevendo a coluna origem para manter limpo)
+    origem = iconv(name_muni, from = "UTF-8", to = "ASCII//TRANSLIT"),
+    
+    # 3. Remove o "e " do início
+    origem = str_remove(name_muni, "^e "),
+    
+  ) 
+dep <- dep %>% clean_names()
+mun_data <- mun_data %>% clean_names()
+
+
+dep <- dep %>%
+  clean_names() %>% # 1. Limpa só os das colunas
+  mutate(
+    # 2. Limpa o conteúdo da coluna origem
+    origem = tolower(origem),
+    origem = str_squish(origem), # Tira espaços duplos, tabs e espaços nas pontas
+    origem = iconv(origem, from = "UTF-8", to = "ASCII//TRANSLIT"), # Tira acento
+    origem = str_remove(origem, "^e ")
+  )
+
+mun_data <- mun_data %>%
+  clean_names() %>% # 1. Limpa só os NOMES das colunas
+  mutate(
+    # 2. Limpa o CONTEÚDO da coluna origem
+    name_muni = tolower(name_muni),
+    name_muni = str_squish(name_muni), # Tira espaços duplos, tabs e espaços nas pontas
+    name_muni = iconv(name_muni, from = "UTF-8", to = "ASCII//TRANSLIT"), # Tira acento
+    name_muni = str_remove(name_muni, "^e ")
+  )
+
+df_resultado <- dep %>%
+  left_join(mun_data, by = c("origem" = "name_muni", "uf" = "abbrev_state"))
+```
+
+Os erros de join foram isolados em um data frame distinto para correção. A fim de facilitar o processo, utilizou-se uma técnica de fuzzy matching, baseada no cálculo da distância de edição das strings do banco de dados original (denominado eco1) em relação às do IBGE. Estabeleceu-se um limiar de distância de 0,2 para a substituição automática; contudo, mesmo após esse procedimento, algumas inconsistências remanescentes exigiram correção manual.
+
+```{r}
+#| message: false
+#| warning: false
+#| results: asis 
+#| eval: false
+miss_match <- df_resultado %>% 
+  filter(is.na(code_muni)) |> distinct(origem, uf, code_muni)
+
+miss_match2 <- miss_match %>%
+  # Adiciona um ID único para cada linha. ISSO É MUITO IMPORTANTE para agrupar depois.
+  mutate(id_linha_original = row_number())
+
+
+resultado_bruto <- stringdist_left_join(
+  miss_match2,                  # Sua base com a chave_suja
+  mun_data,      # Gabarito com a chave_gabarito
+  by = c("origem" = "name_muni"), # A correspondência correta
+  method = "jw",
+  max_dist = 0.2,               # <<<<<< CORRIGIDO!
+  distance_col = "distancia"
+)
+
+
+resultado_liquido <- resultado_bruto %>%
+  # Agrupa por cada linha original da sua base
+  group_by(id_linha_original) %>%
+  
+  # Seleciona apenas a correspondência com a MENOR distância (o melhor match)
+  slice_min(order_by = distancia, n = 1, with_ties = FALSE) %>%
+  
+  # Desagrupa para continuar o trabalho
+  ungroup() |> mutate(origem = origem.x)
+
+
+resultado_filtrado <- resultado_liquido |>
+  distinct(origem.y, .keep_all = TRUE) |> select((-id_linha_original))
+
+### Tratamento do df_novo 3 ####
+### Tratamento CORRIGIDO do df_novo 3 ####
+df_novo3 <- df_novo3 %>%
+  # Se quiser garantir os nomes das colunas igual fez no 2:
+  clean_names() %>% 
+  mutate(
+    # 1. Converte para minúsculas
+    origem = tolower(origem), 
+    
+    # 2. O COMANDO QUE FALTOU (Tira espaços duplos e das pontas)
+    origem = str_squish(origem), 
+    
+    # 3. Remove acentos
+    origem = iconv(origem, from = "UTF-8", to = "ASCII//TRANSLIT"),
+    
+    # 4. Remove o "e " do início
+    origem = str_remove(origem, "^e "),
+    
+    # 5. Converte estado
+    estado = as.numeric(as.character(estado))
+  ) %>%
+  # 6. Faz o Join com UF
+  left_join(tabela_uf, by = c("estado" = "codigo_ibge"))
+
+```
+
+As correções manuais necessárias apresentaram naturezas distintas, decorrentes de uma série de inconsistências. Algumas foram provenientes de limitações na métrica de distância de edição utilizada no processo de fuzzy matching. Outras derivaram da estrutura de construção do data frame, a exemplo da associação de cidades da Zona Homogênea do Distrito Federal ao código do IBGE da unidade federativa correspondente. Identificaram-se, ainda, nomes incompletos nos próprios Relatórios de Análise do Mercado de Terras e casos de cidades cujos nomes continham a conjunção 'e' — as quais haviam sido indevidamente fragmentadas no script de separação inicial, exigindo correções diretamente no código de separção. Ademais, algumas cidades tiveram que ter seu nome alterado para bater com o nome da tabela do IBGE, tendo em vista que os dados variam de 2015 a 2025. Por fim, observaram-se cidades fronteiriças que, ocasionalmente, constavam em mercados regionais de outros estados
+
+```{r}
+#| message: false
+#| warning: false
+#| results: asis 
+#| eval: false
+
+### Correções geográficas e nominais #####
+# --- 1. CONFIGURAÇÃO DAS LISTAS (Sem acentos para bater com a base limpa) ---
+cidades_para_mg_lower <- c(
+  "buritis", "arinos", "uruana de minas", "unai", "cabeceira grande", 
+  "chapada gaucha", "pintopolis", "riachinho", "urucuia",            
+  "bonfinopolis de minas", "brasilandia de minas", "dom bosco", "natalandia"
+)
+
+cba <- c("abare", "chorrocho", "curaca", "gloria", "macurure", "rodelas")
+padroes_ba <- paste(cba, collapse = "|")
+
+cma <- c("tasso fragoso", "milagres do maranhao")
+padroes_ma <- paste(cma, collapse = "|")
+
+cbpe <- "palmares paulista" # Usado para PE e RS
+
+
+# --- 2. CORREÇÃO PE (Pernambuco) ---
+# Se for "palmares paulista" em PE -> vira "palmares"
+condicao_pe <- df_novo3$origem == cbpe & df_novo3$UF == "PE"
+df_novo3$origem[condicao_pe] <- "palmares"
+
+
+# --- 3. CORREÇÃO MG (Minas Gerais) ---
+# Se estiver na lista de MG mas o estado for GO -> muda UF para MG
+condicao_mg <- df_novo3$origem %in% cidades_para_mg_lower & df_novo3$UF == "GO"
+df_novo3$UF[condicao_mg] <- "MG"
+
+
+# --- 4. CORREÇÃO BA (Bahia) ---
+# Se tiver nome da Bahia mas estiver em PE (e não for Goiana) -> muda UF para BA
+condicao_base <- grepl(padroes_ba, df_novo3$origem) & df_novo3$UF == "PE"
+condicao_excecao_goita <- grepl("goita", df_novo3$origem)
+
+condicao_ba_final <- condicao_base & !condicao_excecao_goita
+df_novo3$UF[condicao_ba_final] <- "BA"
+
+
+# --- 5. CORREÇÃO MA (Maranhão) ---
+# Se tiver nome do MA mas estiver em PI -> muda UF para MA
+condicao_ma <- grepl(padroes_ma, df_novo3$origem) & df_novo3$UF == "PI"
+df_novo3$UF[condicao_ma] <- "MA"
+
+
+# --- 6. CORREÇÃO RS (Rio Grande do Sul) ---
+# Se for "palmares paulista" em RS -> vira "palmares"
+# CORREÇÃO FEITA AQUI: Antes você usava [condicao_pe] aqui por engano
+condicao_rs <- df_novo3$origem == cbpe & df_novo3$UF == "RS"
+df_novo3$origem[condicao_rs] <- "palmares"
+
+
+# --- 7. CORREÇÕES GO/DF (Adicionadas do seu histórico anterior) ---
+
+# Mimoso do Sul (GO) -> Mimoso de Goiás
+condicao_mimoso <- df_novo3$origem == "mimoso do sul" & df_novo3$UF == "GO"
+df_novo3$origem[condicao_mimoso] <- "mimoso de goias"
+
+# Distrito Federal (GO) -> Brasília / DF
+condicao_df <- df_novo3$origem == "distrito federal" & df_novo3$UF == "GO"
+condicao_df2 <- df_novo3$origem == "brasilia" & df_novo3$UF == "GO"
+df_novo3$UF[condicao_df] <- "DF"
+df_novo3$origem[condicao_df] <- "brasilia"
+df_novo3$UF[condicao_df2] <- "DF"
+df_novo3$origem[condicao_df2] <- "brasilia"
+
+# Monte Alegre (GO) -> Monte Alegre de Goiás
+condicao_monte <- df_novo3$origem == "monte alegre" & df_novo3$UF == "GO"
+df_novo3$origem[condicao_monte] <- "monte alegre de goias"
+```
+
+Seguem as correções nominais realizadas no script de separação, as duplicatas geradas pela separção foram também removidas:
+
+```{r}
+#| message: false
+#| warning: false
+#| results: asis 
+#| eval: false
+df_novo2 <- df_novo2 %>%
+  mutate(origem = str_replace_all(origem, "\\.", ""))
+
+df_novo2 <- df_novo2 %>%
+  mutate(origem = str_replace(origem, "pontes", "pontes e lacerda"))
+
+df_novo2 <- df_novo2 %>%
+  filter(!grepl("lacerda", origem)) |> filter(!grepl("lomato junior", origem)) |> filter(!grepl("lomato júnior", origem))
+
+df_novo2 <- df_novo2 %>%
+  mutate(origem = str_replace(origem, "abreu", "abreu e lima"))
+df_novo2 <- df_novo2 %>%
+  filter(!grepl("lima", origem))
+
+df_novo2 <- df_novo2 %>%
+  mutate(origem = str_replace(origem, "passa", "passa e fica"))
+df_novo2 <- df_novo2 %>%
+  filter(!grepl("fica", origem))
+
+df_novo3 <- df_novo2
+```
+
+
+Repetiu-se então o procedimento de fuzzy join e além disso fez-se uma verificação acerca dos municípios que se encontravam sem pareamento no join, ao final do processo, nenhum município da base ficou sem identificação.
+```{r}
+#| message: false
+#| warning: false
+#| results: asis 
+#| eval: false
+
+##### Matching Fuzzy ####
+corrig <- df_novo3 %>%
+  # 1. Junta os data frames
+  left_join(resultado_liquido, by = c("origem" = "origem.x")) %>%
+  
+  # 2. Corrige a coluna 'origem'
+  mutate(origem = coalesce(name_muni, origem)) %>%
+  
+  # 3. Limpeza Final: REMOVE O LIXO
+  select(
+    -name_muni,                # Já usou no coalesce, não precisa mais
+    -starts_with("origem."),   # Remove origem.y e origem.y.y
+    -starts_with("code_muni"), # Remove códigos parciais/velhos (.x e .y)
+    -distancia,                # Remove a nota do fuzzy join
+    -geom,                     # Remove o mapa (deixa o df leve)
+    -abbrev_state,
+    -name_state,                       # Remove a duplicata minúscula (fique com UF)
+    -matches("^code_"),        # Remove code_state, code_region (pegue limpo depois)
+    -matches("^name_region")   # Remove name_region (pegue limpo depois)
+  ) 
+
+df_joined <- corrig %>%
+  left_join(mun_data, by = c("origem" = "name_muni",  "UF" = "abbrev_state" ))
+
+
+df_joined <- df_joined %>%
+  select(
+    # 1. Identificadores principais (O que você pediu primeiro)
+    df,
+    mrt,
+    origem,
+    code_muni,
+    ano,
+    cluster = original, 
+
+    # 2. Localização (Mantendo apenas o essencial e removendo redundâncias)
+    UF,           # Geralmente prefere-se a sigla a 'estado' ou 'name_state'
+    regiao = name_region, # Renomeando 'name_region' para 'regiao' (mais curto)
+
+    # 3. Categorias da análise
+    tipologia_de_uso,
+    nivel,
+    mrt,
+
+    # 4. Métricas (Usando helper functions para pegar todas de uma vez)
+    starts_with("vti_"), # Pega vti_media, vti_minimo, vti_maximo
+    starts_with("vtn_"), # Pega vtn_media, vtn_minimo, vtn_maximo
+
+    # 5. Geometria (Geralmente fica por último)
+    geom
+  )
+
+
+miss_match3 <- df_joined %>% 
+  filter(is.na(code_muni)) %>% distinct(origem, df, ano, cluster, UF)
+#Santarém PB -> Claudio Joca.
+#Seridó PB -> São Vicente do Seridó
+print(miss_match3)
+
+check_sua_base <- df_joined %>%
+ # 1. Agrupar pela chave composta (Cidade + Estado)
+ group_by(origem, UF) %>%    
+   # 2. Resumir o cenário
+   summarise(
+     n_registros = n(), # Quantas linhas existem para essa cidade?
+     
+     # Se você JÁ TEM uma coluna de código e quer checar consistência:
+     n_codigos = n_distinct(code_muni), 
+     
+     # Lista visualmente quais códigos aparecem (para pegar erros de digitação)
+     lista_codigos = paste(unique(code_muni), collapse = " | "), 
+     
+     .groups = "drop"
+   ) %>%
+  
+  # 3. Filtrar apenas onde há ambiguidade (1 cidade com + de 1 código)
+   filter(n_codigos > 1) 
+
+```
+
+Após esses procedimentos foi realizada a correção inflacionária pelo índice IGPDI, que é o índice recomendado pelo INCRA para a correção dos valores de terra, segundo a norma de execução para a elaboração dos relatórios (BRASIL, 2014). A correção inflacionária foi feita com auxílio da API do IPEA para adquirir as séries temporais de variação no índice. 
+
+```{r}
+#| message: false
+#| warning: false
+#| results: asis 
+#| eval: false
+
+
+#### Configuração #####
+#series <- available_series() | ver séries disponíveis
+# 1. Carregar Pacotes
+library(dplyr)
+library(lubridate)
+library(ipeadatar)
+
+#### 1. Preparação do Índice (A Lógica do Produto Acumulado) ####
+indice_raw <- ipeadata(code = "IGP_IGPDIG", language = "br")
+indice_raw2 <- ipeadata(code = "IGP_IGPMG", language = "br")
+
+
+tabela_indices <- indice_raw %>%
+  mutate(
+    ano = year(as.Date(date)),
+    # Transforma taxa percentual em fator multiplicativo (ex: 0.5% vira 1.005)
+    fator_mensal = (value / 100) + 1
+  ) %>%
+  # Agrupa para obter a inflação anualizada
+  group_by(ano) %>%
+  summarise(
+    fator_anual = prod(fator_mensal, na.rm = TRUE), 
+    .groups = "drop"
+  ) %>%
+  arrange(ano) %>%
+  # --- AQUI ESTÁ A CORREÇÃO QUE VOCÊ PEDIU ---
+  # O índice do ano X é o produto de tudo que veio antes (acumulado)
+  mutate(indice_acumulado = cumprod(fator_anual))
+
+#### 2. Definindo a Base (Para onde queremos levar o dinheiro) ####
+# Vamos pegar o valor do índice no último ano disponível (Ex: 2024)
+indice_base_topo <- tail(tabela_indices$indice_acumulado, 1)
+
+#### 3. Cruzamento e Cálculo ####
+resultado_igpdi <- df_joined %>%
+  mutate(ano = as.numeric(ano)) %>% # Garante numérico para o join
+  left_join(tabela_indices, by = "ano") %>%
+  mutate(
+    # FATOR DE CORREÇÃO:
+    # Quanto o dinheiro valia "no final da história" DIVIDIDO por quanto valia "naquele ano"
+    fator_deflator = indice_base_topo / indice_acumulado  ,
+    
+    # Aplica nas colunas
+    across(
+      c("vti_media", "vti_minimo", "vti_maximo", "vtn_media", "vtn_minimo", "vtn_maximo"), 
+      ~ .x * fator_deflator, 
+      .names = "IGPDI_{.col}"
+    )
+  ) %>%
+  # Limpeza final (mantém originais e as novas colunas 'real_')
+  select(colnames(df_joined), starts_with("IGPDI_{.col}"))
+
+```
+
+A tabela possuí a variação do índice, então foi necessário calcular o acumulado seguindo as seguintes fórmulas:
+$$ V_{f} = V_{i} \times (1 + \pi) $$
+$$ \pi_{total} = \left[ \prod_{t=1}^{n} (1 + \pi_{t}) \right] - 1 $$
+
+Onde:
+$V_{f}$: Valor Final (ou Valor Presente), representando o montante corrigido após a aplicação da inflação.
+
+$V_{i}$: Valor Inicial (ou Valor Nominal), correspondente ao preço histórico registrado nos Relatórios de Análise do Mercado de Terras.
+
+$\pi$: Taxa de inflação (ou variação do índice) do período, expressa em valor decimal (ex: 5% = 0,05).
+
+$\pi_{total}$: Taxa de inflação acumulada entre a data de origem e a data de destino.
+
+$\pi_{t}$: Taxa de inflação observada em cada intervalo de tempo $t$ (ex: inflação mensal ou anual).
+
+$\prod_{t=1}^{n}$: Operador de produtório, indicando que as taxas de cada período devem ser multiplicadas de forma composta para refletir o efeito dos juros sobre juros na inflação.
+
+n: Número total de períodos (meses ou anos) compreendidos na análise.
+
+Após as correções inflacionárias, unificaram-se as tipologias, as quais foram filtradas para os níveis categóricos zero e um, em uma tentativa de abranger agricultura, pecuária, vegetação nativa e a média geral. Nesse sentido, utilizaram-se os pacotes stringdist e dplyr. Todas as variações nominais presentes nesses níveis foram tratadas por meio da função mutate, unificando os tipos. Além disso, os nomes foram previamente tratados para reduzir inconsistências com strings, conforme a correção apresentada a seguir:
+
+```{r}
+#| message: false
+#| warning: false
+#| results: asis 
+#| eval: false
+resultado_igpdi_limpo <- resultado_igpdi %>%
+  mutate(
+    # 1. Converte para minúsculas
+    tipologia_de_uso = tolower(tipologia_de_uso), 
+    
+    # 2. Remove acentos (sobrescrevendo a coluna origem para manter limpo)
+    tipologia_de_uso = iconv(tipologia_de_uso, from = "UTF-8", to = "ASCII//TRANSLIT"),
+    
+    # 3. Remove o "e " do início
+    tipologia_de_uso = str_remove(tipologia_de_uso, "^e "),
+    
+  ) 
+
+resultado_igpdi_limpo <- resultado_igpdi_limpo  |> filter(nivel == 0 | nivel == 1)
+
+
+# Assumindo que seu dataframe se chama df_final e a coluna original é descricao_original
 df_classificado <- resultado_igpdi_limpo %>%
   mutate(
-    # 1. tratamento dos nomes para garantir o match exato
+    # 1. Higienização para garantir o match exato
     desc_chave = stri_trans_general(tipologia_de_uso, "Latin-ASCII"),
     desc_chave = str_to_lower(str_trim(desc_chave)),
     
@@ -213,14 +819,21 @@ df_classificado <- resultado_igpdi_limpo %>%
   )
 
 ```
- 
-Os valores apresentados para terra foram posteriormente deflacionados para o ano de 2024, com uso do indice IGP-DI que é aquele utilizado pelo incra segundo a normativa ( número da normativa, adicionar bibtex) seguindo o seguinte script:
+
+Para além desse data frame principal (EcoHub), que consolida os dados de todos os relatórios da RAMT, realizou-se um corte transversal referente ao ano de 2023, visando obter a maior completude de dados possível para um mesmo período. Para a elaboração desse segundo banco de dados, aplicaram-se os mesmos procedimentos anteriores, com o diferencial da atualização dos valores monetários para 2023. Além disso, integraram-se dados de municípios que não possuíam observações naquele ano específico; nestes casos, selecionaram-se os registros mais recentes de cada região. Quando ocorria empate na distância temporal, adotou-se o critério de proximidade cronológica sob unidade de tempo anual.
+
+O Fluxo de scripts é basicamente o mesmo, o que muda é que a correção inflacionária segue o seguinte script (este já contendo a função de recorte temporal):
 
 ```{r}
-#|echo: FALSE
-#|eval : FALSE
+#| message: false
+#| warning: false
+#| results: asis 
+#| eval: false
 
-#### 1. Preparação do Índice (A Lógica do Produto Acumulado) ####
+library(dplyr)
+library(lubridate)
+library(ipeadatar)
+
 indice_raw <- ipeadata(code = "IGP_IGPDIG", language = "br")
 
 tabela_indices <- indice_raw %>%
@@ -240,108 +853,108 @@ tabela_indices <- indice_raw %>%
   # O índice do ano X é o produto de tudo que veio antes (acumulado)
   mutate(indice_acumulado = cumprod(fator_anual))
 
-#### 2. Definindo a Base (Para onde queremos levar o dinheiro) ####
-# Vamos pegar o valor do índice no último ano disponível (Ex: 2024)
-indice_base_topo <- tail(tabela_indices$indice_acumulado, 1)
+# Extrai o índice acumulado EXATAMENTE do ano de 2024.
+# O 'pull' transforma o dataframe de 1 célula em um valor numérico puro (vector).
+indice_base_2023 <- tabela_indices %>%
+  filter(ano == 2023) %>%
+  pull(indice_acumulado)
+
+# CHECK DE SEGURANÇA (Defensive Programming)
+if(length(indice_base_2023) == 0) stop("ERRO CRÍTICO: Ano de 2024 não encontrado na base do IPEA.")
 
 #### 3. Cruzamento e Cálculo ####
 resultado_igpdi <- df_joined %>%
-  mutate(ano = as.numeric(ano)) %>% # Garante numérico para o join
+  mutate(ano = as.numeric(ano)) %>% 
   left_join(tabela_indices, by = "ano") %>%
   mutate(
-    # FATOR DE CORREÇÃO:
-    # Quanto o dinheiro valia "no final da história" DIVIDIDO por quanto valia "naquele ano"
-    fator_deflator = indice_base_topo / indice_acumulado  ,
+    # FATOR DE CORREÇÃO (Deflacionamento):
+    # Fórmula: Valor_Real = Valor_Nominal * (Indice_Base / Indice_Corrente)
+    # Aqui trazemos tudo para o poder de compra de 2024.
+    fator_deflator = indice_base_2023 / indice_acumulado,
     
-    # Aplica nas colunas
     across(
       c("vti_media", "vti_minimo", "vti_maximo", "vtn_media", "vtn_minimo", "vtn_maximo"), 
       ~ .x * fator_deflator, 
       .names = "IGPDI_{.col}"
     )
   ) %>%
-  # Limpeza final (mantém originais e as novas colunas 'real_')
-  select(colnames(df_joined), starts_with("IGPDI_{.col}"))
+  select(colnames(df_joined), starts_with("IGPDI_"))
+
+
+resultado_2023_proxy <- resultado_igpdi %>%
+  # 1. Define o escopo de comparação (por cidade)
+  group_by(code_muni) %>%
+  
+  # 2. Calcula a "distância temporal" para cada registro
+  mutate(delta_tempo = abs(ano - 2023)) %>%
+  
+  # 3. Filtro em dois estágios para garantir a melhor escolha:
+  
+  # Estágio A: Fica apenas com os anos que têm a menor distância absoluta
+  filter(delta_tempo == min(delta_tempo)) %>%
+  
+  # Estágio B: Critério de Desempate (Tie-breaker)
+  # Se uma cidade tiver dados de 2022 e 2024 (ambos delta=1),
+  # escolhemos o mais recente (2024) por conter informação mais atualizada.
+  filter(ano == max(ano)) %>%
+  
+  # 4. Limpeza
+  ungroup() %>%
+  select(-delta_tempo)
 
 ```
 
-## 2.Disponibilidade dos dados
-A coleta de dados dos relatórios RAMT apresenta significativa heterogeneidade entre as superintendências regionais do INCRA. A base de dados abrange o período de 2016 a 2025, com destaque para o ano de 2023, que apresenta maior cobertura territorial devido à publicação do Atlas do Mercado de Terras. No entanto, identificaram-se sobreposições entre o Atlas e relatórios de anos adjacentes. Metodologicamente, optou-se pela prevalência dos dados dos relatórios originais em casos de conflito, visando manter a consistência da série histórica. Essa decisão justifica as lacunas observadas em alguns estados nos mapas de 2023, onde as informações do Atlas foram suprimidas em favor dos registros dos relatórios. Além disso, os relatórios nem sempre contemplam todos os municípios da zona homogênea (Mercado de terras), portanto, existem algumas lacunas nos mapas por falta de melhor detalhamento nos municípios. É possível observar que existem alguns relatórios em que somente informações parciais dos mercados de um mesmo stado são publicados.
+De forma sintética, o processo de formação dos dataframes foi o seguinte: digitalização das PPRs com auxílio de IA e scripts em Python/R; desagregação dos dados via separação de strings; correspondência (matching) de cidades por meio de fuzzy join; cálculo inflacionário e tratamento das nomenclaturas tipológicas.
 
-Seguem os mapas sobre as disponibilidades dos dados dos relatórios:
+## 3. Dicionário de variáveis 
+As colunas presentes nos dataframes são as seguintes:
 ```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| results: asis 
+library(gt)
+library(dplyr)
 
-# ATENÇÃO: A opção 'results: asis' acima é OBRIGATÓRIA.
-# Sem ela, o Quarto vai achar que os textos são logs do R e não formatação.
+# Criando o dataframe do dicionário
+dicionario_data <- tribble(
+  ~Variável, ~Tipo, ~Descrição,
+  "mrt", "Texto", "Nome da zona homogênea no arquivo de origem.",
+  "origem", "Texto", "Cidade analisada.",
+  "code_muni", "ID", "Código do município segundo o IBGE.",
+  "ano", "Temporal", "Ano de publicação do documento original.",
+  "vti_media", "Monetária", "Valor médio da terra com benfeitorias (por hectare).",
+  "vti_minimo", "Monetária", "Limite inferior da terra distribuição de terras com benfeitorias (por hectare).",
+  "vti_maximo", "Monetária", "Limite superior da terra distribuição de terras com benfeitorias (por hectare).",
+  "vtn_media", "Monetária", "Limite inferior da terra distribuição de terras sem benfeitorias (por hectare).",
+  "vtn_maximo", "Monetária", "Limite superior da terra distribuição de terras sem benfeitorias (por hectare).",
+  "igpdi_vti_media", "Monetária", "Valor vti_media corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vti_minimo", "Monetária", "Valor vti_minimo corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vti_maximo", "Monetária", "Valor vti_maximo corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vtn_media", "Monetária", "Valor vtn_media corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vtn_minimo", "Monetária", "Valor vtn_minimo corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vtn_maximo", "Monetária", "Valor vtn_maximo corrigida pelo IGP-DI (Preços Reais).",
+  "geom", "Espacial", "Geometria municipal (SIRGAS 2000).",
+  "categoria_final", "Categórica", "Unificação das tipologias de uso da terra."
+)
 
-# 1. Preparação (Fora do Loop)
-br_outline <- read_country(year = 2020, showProgress = FALSE) 
-br_states  <- read_state(code_state = "all", year = 2020, showProgress = FALSE)
-anos_disponiveis <- sort(unique(df_analise$ano)) # Garante ordem cronológica
+# Renderizando a tabela gtsummary/gt
+dicionario_data |>
+  gt() |>
+  tab_header(
+    title = "Dicionário de Variáveis do Banco de Dados RAMT/INCRA",
+    subtitle = "Estrutura de dados para análise de mercado de terras (2016-2025)"
+  ) |>
+  cols_label(
+    Variável = md("**Variável**"),
+    Tipo = md("**Tipo**"),
+    Descrição = md("**Descrição**")
+  ) |>
+  tab_options(
+    table.width = pct(100),
+    column_labels.background.color = "gray90"
+  )
 
-# 2. Abertura do Painel de Abas (Comando Markdown via R)
-cat("::: {.panel-tabset}\n\n")
-
-# 3. Loop
-for (um_ano in anos_disponiveis) {
-  
-  # A. Cria o Título da Aba (Markdown)
-  # O \n é crucial para o Quarto entender que é um cabeçalho
-  cat("## ", um_ano, "\n\n")
-  
-  # B. Gera o Mapa
-  dados_do_ano <- subset(df_analise, ano == um_ano)
-  
-  p <- ggplot() +
-    geom_sf(data = br_outline, fill = "gray95", color = "gray90") +
-    geom_sf(data = dados_do_ano, fill = "firebrick", color = NA) + 
-    geom_sf(data = br_states, fill = NA, color = "gray40", lwd = 0.3) +
-    labs(title = paste("Coleta de dados RAMT:", um_ano), 
-         subtitle = paste(n_distinct(dados_do_ano$origem), "municípios com dados"),
-         caption = "Fonte: INCRA/RAMT") +
-    theme_void() +
-    theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "gray20"))
-  
-  # C. Imprime o Mapa
-  print(p)
-  
-  # D. Fecha o espaço da aba
-  cat("\n\n")
-}
-
-# 4. Fechamento do Painel
-cat(":::\n")
 ```
 
-As observações variam de acordo com a quantidade de cada tipologia, a quantidade de observações para cada tipologia foi a seguinte:
-```{r}
-#Rever o parágrafo acima, está ruim.
-# Prevenção contra objeto SF pesado
-dados_plot <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
-
-ggplot(dados_plot, aes(x = fct_rev(fct_infreq(as.factor(categoria_final))), fill = as.factor(categoria_final))) +
-  geom_bar(show.legend = FALSE) +
-  
-  # Gira o gráfico
-  coord_flip() + 
-  
-  labs(
-    title = "Contagem por categoria final",
-    x = NULL,
-    y = "Total de Observações"
-  ) +
-    theme(
-  axis.text.x = element_text(face = "bold", size = 10), # Negrito nas categorias (que estão na esquerda)
-  axis.text.y = element_text(face = "bold")             # Se quiser negrito nos números embaixo também
-) + 
-  theme_minimal()
-```
-
-## 3. Análise e distribuições
+## 4. Análise Descritiva
+## 4.1 Análise Descritiva DataFrame Completo
 A estatística descritiva revela uma oscilação expressiva nos valores de VTI e VTN ao longo da série histórica. Essa volatilidade não reflete necessariamente uma tendência de mercado, mas sim a heterogeneidade espacial da coleta de dados em cada exercício. A tabela a seguir consolida as métricas de tendência central (média) e dispersão (mínimos e máximos) para ambas as categorias.
 
 ```{r}
@@ -978,269 +1591,793 @@ ggplot(dados_uf, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +
     axis.text.y = element_text(size = 7) # Fonte menor para caber todas as UFs
   )
 ```
+
 Aqui é visível o efeito regional nas distribuições, é interessante mostrar que os valores maiores se apresentam na região sul e sudeste enquanto as menores nas regiões norte e nordeste o que pode levar a um favorecimento do desmatamento, isso é corroborado quando se observa que o valor da vegetação nativa raramente chefa a mais que 50 mil, enquanto em estados com um maior indice urbano o valor das atividades é num geral mais elevado.
 
-Médias ponderadas por área, por estado:
+## 4.2 Análise Descritiva DataFrame 2023
+
+Na tentativa de completar a informação de todos os municípios brasileiros com o menor índice de distorção, o ano utilizado foi o de 2023 e como observado anteriormente os dados foram trazidos para o ano de 2023 com base em sua proximidade, desse modo, segue a tabela do número de municípios por ano.
+
 ```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| results: asis 
-
-library(ggplot2)
-library(dplyr)
-library(sf)
-
-# 1. CÁLCULO DAS MÉTRICAS (VTI - Com Imóvel)
-serie_vti_ponderada <- df_areas |>
+# 1. Preparar os dados (Agregação Ponderada)
+# 1. Preparar os dados (Apenas Contagem)
+tabela_pivo <- df_areas2 |>
   st_drop_geometry() |>
-  # Garante UF e Peso de segurança
-  mutate(
-    UF = if("abbrev_state" %in% names(df_areas)) abbrev_state else substr(code_muni, 1, 2),
-    area_peso = ifelse(is.na(area_ha_calculada) | area_ha_calculada <= 0, 1, area_ha_calculada)
-  ) |>
-  # Filtra VTI válido e categorias principais
-  filter(ano < 2025, vti_media > 0) |>
-  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral")) |> 
-  
-  # AQUI ESTAVA FALTANDO: O AGRUPAMENTO E RESUMO
-  group_by(ano, UF, categoria_final) |> 
+  group_by(ano) |>
   summarise(
-    # Mediana (Tendência Central)
-    vti_mediano = median(vti_media, na.rm = TRUE),
-    
-    # Média Ponderada (Valor do Estoque)
-    vti_ponderado = sum(vti_media * area_peso, na.rm = TRUE) / sum(area_peso, na.rm = TRUE),
-    
-    n_obs = n(),
-    .groups = "drop"
-  ) |>
-  # Só mantém anos/estados com dados suficientes para não gerar ruído
-  filter(n_obs >= 5)
-
-# 2. TRATAMENTO DE SIGLAS (De Código IBGE para Letras)
-serie_vti_tratada <- serie_vti_ponderada |>
-  mutate(
-    UF_cod = as.character(UF),
-    UF_sigla = case_match(UF_cod,
-      "11" ~ "RO", "12" ~ "AC", "13" ~ "AM", "14" ~ "RR", "15" ~ "PA", "16" ~ "AP", "17" ~ "TO",
-      "21" ~ "MA", "22" ~ "PI", "23" ~ "CE", "24" ~ "RN", "25" ~ "PB", "26" ~ "PE", "27" ~ "AL", "28" ~ "SE", "29" ~ "BA",
-      "31" ~ "MG", "32" ~ "ES", "33" ~ "RJ", "35" ~ "SP",
-      "41" ~ "PR", "42" ~ "SC", "43" ~ "RS",
-      "50" ~ "MS", "51" ~ "MT", "52" ~ "GO", "53" ~ "DF",
-      .default = UF_cod # Se já estiver certo, mantém
-    )
+    # Use 'code_muni' para garantir contagem exata de municípios únicos. 
+    # Se 'origem' for a variável correta na sua base, mantenha a original.
+    n_municipios = n_distinct(code_muni) 
   )
 
-lista_ufs_vti <- sort(unique(serie_vti_tratada$UF_sigla))
-
-# 3. LOOP DE PLOTAGEM (ABAS POR ESTADO)
-cat("::: {.panel-tabset}\n\n")
-
-for (uf_atual in lista_ufs_vti) {
+# 2. Gerar a Tabela Enxuta
+tabela_pivo |>
+  gt() |>
   
-  cat("## ", uf_atual, "\n\n")
+  # --- Cabeçalho ---
+  tab_header(
+    title = md("**Cobertura Temporal**"),
+    subtitle = "Quantidade de Municípios Auditados por Ano"
+  ) |>
   
-  dados_plot_uf <- serie_vti_tratada |> 
-    filter(UF_sigla == uf_atual)
+  # --- Labels ---
+  cols_label(
+    ano = "Ano",
+    n_municipios = "Nº Municípios"
+  ) |>
   
-  p <- ggplot(dados_plot_uf, aes(x = ano)) +
-    
-    # Linha Tracejada = Mediana (Referência)
-    geom_line(aes(y = vti_mediano, color = "Mediana (Simples)"), linetype = "dashed", size = 0.8) +
-    
-    # Linha Sólida = Média Ponderada (Valor do Estoque)
-    geom_line(aes(y = vti_ponderado, color = "Média Ponderada (Área)"), size = 1.2) +
-    
-    facet_wrap(~categoria_final, scales = "free_y") +
-    
-    scale_y_continuous(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
-    scale_x_continuous(breaks = seq(2016, 2024, 2)) +
-    
-    # Cores (Azul para VTI)
-    scale_color_manual(values = c("Mediana (Simples)" = "gray50", "Média Ponderada (Área)" = "darkblue")) +
-    
-    labs(
-      title = paste("Evolução do VTI (Com Imóvel) -", uf_atual),
-      subtitle = "Comparativo: Ponderado pela Área vs. Mediana Central",
-      y = "VTI Médio (R$/ha)",
-      x = NULL,
-      color = NULL
-    ) +
-    
-    theme_minimal() +
-    theme(
-      legend.position = "top",
-      plot.title = element_text(face = "bold"),
-      strip.text = element_text(face = "bold", size = 12)
-    )
+  # --- Formatação ---
+  fmt_number(
+    columns = n_municipios,
+    decimals = 0,
+    sep_mark = "."
+  ) |>
   
-  print(p)
-  cat("\n\n")
-}
-
-cat(":::\n")
+  # --- Estilo ---
+  cols_align(align = "center", columns = everything()) |>
+  opt_row_striping() |>
+  tab_options(
+    table.width = pct(50) # Tabela mais estreita, já que tem poucas colunas
+  )
 ```
 
-Evolução de preços do VTN
+Uma hipótese que se pode fazer a cerca do número de observações é a de que poderia haver um número maior de observações onde existe uma maior área, entretanto, isso não se verifica na amostra como pode ser visto por meio dos scatter plots:
+
 ```{r}
-#| echo: false
 #| message: false
 #| warning: false
-#| results: asis 
+# 1. Preparação dos dados (Garantia de Leveza)
+dados_scatter <- if(inherits(df_areas2, "sf")) sf::st_drop_geometry(df_areas2) else df_analise2
 
-library(ggplot2)
-library(dplyr)
-library(sf) # Caso precise manipular geom, mas st_drop garante leveza
-
-# 1. CÁLCULO DAS MÉTRICAS (VTN)
-serie_vtn_ponderada <- df_areas |>
-  st_drop_geometry() |>
-  # Garante UF e Peso
-  mutate(
-    UF = if("abbrev_state" %in% names(df_areas)) abbrev_state else substr(code_muni, 1, 2),
-    area_peso = ifelse(is.na(area_ha_calculada) | area_ha_calculada <= 0, 1, area_ha_calculada)
-  ) |>
-  # FILTRO CRÍTICO: Agora olhamos para VTN > 0
-  filter(ano < 2025, vtn_media > 0) |>
-  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral")) |> 
-  
-  group_by(ano, UF, categoria_final) |> 
-  summarise(
-    # --- MEDIANA DO VTN ---
-    vtn_mediano = median(vtn_media, na.rm = TRUE),
-    
-    # --- MÉDIA PONDERADA DO VTN ---
-    vtn_ponderado = sum(vtn_media * area_peso, na.rm = TRUE) / sum(area_peso, na.rm = TRUE),
-    
-    n_obs = n(),
-    .groups = "drop"
-  ) |>
-  filter(n_obs >= 5)
-
-# 2. TRATAMENTO DE SIGLAS (De-Para IBGE)
-serie_vtn_tratada <- serie_vtn_ponderada |>
-  mutate(
-    UF_cod = as.character(UF),
-    UF_sigla = case_match(UF_cod,
-      "11" ~ "RO", "12" ~ "AC", "13" ~ "AM", "14" ~ "RR", "15" ~ "PA", "16" ~ "AP", "17" ~ "TO",
-      "21" ~ "MA", "22" ~ "PI", "23" ~ "CE", "24" ~ "RN", "25" ~ "PB", "26" ~ "PE", "27" ~ "AL", "28" ~ "SE", "29" ~ "BA",
-      "31" ~ "MG", "32" ~ "ES", "33" ~ "RJ", "35" ~ "SP",
-      "41" ~ "PR", "42" ~ "SC", "43" ~ "RS",
-      "50" ~ "MS", "51" ~ "MT", "52" ~ "GO", "53" ~ "DF",
-      .default = UF_cod
-    )
-  )
-
-lista_ufs_vtn <- sort(unique(serie_vtn_tratada$UF_sigla))
-
-# 3. LOOP DE PLOTAGEM (ABAS)
-cat("::: {.panel-tabset}\n\n")
-
-for (uf_atual in lista_ufs_vtn) {
-  
-  cat("## ", uf_atual, "\n\n")
-  
-  dados_plot_uf <- serie_vtn_tratada |> 
-    filter(UF_sigla == uf_atual)
-  
-  p <- ggplot(dados_plot_uf, aes(x = ano)) +
-    
-    # Linha Tracejada = Mediana VTN
-    geom_line(aes(y = vtn_mediano, color = "Mediana (Simples)"), linetype = "dashed", size = 0.8) +
-    
-    # Linha Sólida = Ponderada VTN
-    geom_line(aes(y = vtn_ponderado, color = "Média Ponderada (Área)"), size = 1.2) +
-    
-    facet_wrap(~categoria_final, scales = "free_y") +
-    
-    scale_y_continuous(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
-    scale_x_continuous(breaks = seq(2016, 2024, 2)) +
-    
-    # Cores Diferentes para VTN (Verde/Cinza para diferenciar do VTI azul)
-    scale_color_manual(values = c("Mediana (Simples)" = "gray50", "Média Ponderada (Área)" = "darkgreen")) +
-    
-    labs(
-      title = paste("Evolução do Valor da Terra Nua (VTN) -", uf_atual),
-      subtitle = "Comparativo: Ponderado pela Área vs. Mediana Central",
-      y = "VTN (R$/ha)",
-      x = NULL,
-      color = NULL
-    ) +
-    
-    theme_minimal() +
-    theme(
-      legend.position = "top",
-      plot.title = element_text(face = "bold"),
-      strip.text = element_text(face = "bold", size = 12)
-    )
-  
-  print(p)
-  cat("\n\n")
-}
-
-cat(":::\n")
-```
-
-
-
-```{r}
-library(ggplot2)
-library(dplyr)
-library(sf)
-
-# 1. FILTRO DE ESTABILIDADE (Define quem é "Município Guerreiro")
-# Objetivo: Evitar viés de composição. Só queremos analisar a tendência de preço
-# de locais que reportaram dados consistentemente ao longo do tempo.
-
-# Remove geometria para ficar leve
-dados_painel <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
-
-municipios_estaveis <- dados_painel |>
-  filter(ano < 2025, vti_media > 0) |>
+dados_agrupados <- dados_scatter |>
   group_by(code_muni, categoria_final) |>
   summarise(
-    anos_presentes = n_distinct(ano),
+    n_obs = n(),
+    area_total = first(area_ha_calculada), # Usa a área corrigida do geobr
     .groups = "drop"
   ) |>
-  # CRITÉRIO DE CORTE: Só aceita quem tem pelo menos 4 anos de dados
-  filter(anos_presentes >= 4)
+  # Filtro de segurança para log
+  filter(n_obs > 0, area_total > 0)
 
-# 2. FILTRAGEM DOS DADOS ORIGINAIS
-# Mantém apenas as linhas correspondentes aos municípios estáveis
-dados_serie_limpa <- dados_painel |>
-  semi_join(municipios_estaveis, by = c("code_muni", "categoria_final")) |>
-  filter(ano < 2025)
-
-# 3. O GRÁFICO "SPAGHETTI" (Trajetória Individual + Tendência)
-ggplot(dados_serie_limpa, aes(x = ano, y = vti_media)) +
+# 2. Plot com Correção de Jitter
+ggplot(dados_agrupados, aes(x = area_total, y = n_obs)) +
   
-  # A. O "Espaguete" (Caos Individual)
-  # Cada linha cinza é um município. Alpha baixo (0.15) para ver onde acumula.
-  geom_line(aes(group = code_muni), alpha = 0.15, color = "gray50", size = 0.3) +
+  # A CORREÇÃO ESTÁ AQUI:
+  # width = 0 (Não mexe na Área, que é precisa)
+  # height = 0.2 (Espalha o N verticalmente para desfazer a linha reta)
+  geom_jitter(aes(color = categoria_final), alpha = 0.4, width = 0, height = 0.2) +
   
-  # B. A Tendência Central ROBUSTA (Suavização LOESS)
-  # A linha colorida resume o comportamento do grupo estável
-  geom_smooth(aes(color = categoria_final), method = "loess", se = TRUE, size = 1.2) +
+  # Escalas Logarítmicas
+  scale_x_log10(labels = scales::label_number(scale_cut = scales::cut_short_scale())) +
+  # Breaks manuais para facilitar leitura no log
+  scale_y_log10(breaks = c(1, 2, 5, 10, 20, 50, 100)) +
   
-  # Separa por uso para não misturar escalas
-  facet_wrap(~categoria_final, scales = "free_y") +
+  # Linha de Tendência (Regressão Linear no Log)
+  geom_smooth(method = "lm", color = "black", linetype = "dashed", se = FALSE, size = 0.5) +
   
-  # Escalas e Formatação
-  scale_y_log10(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
-  scale_x_continuous(breaks = seq(2016, 2024, 2)) + # Garante anos pares no eixo
+  facet_wrap(~categoria_final, scales = "free") +
   
   labs(
-    title = "Trajetória de Preços: Análise de Painel Estável (N >= 4 anos)",
-    subtitle = "Linhas cinzas = Municípios individuais. Linha colorida = Tendência suavizada.",
-    caption = "Apenas municípios com recorrência temporal foram mantidos para evitar viés de composição.",
-    y = "VTI (R$/ha) [Log]",
-    x = "Ano"
+    title = "Densidade Amostral: Área vs. Observações (Ajustado)",
+    subtitle = "Dispersão com Jitter para visualizar concentração em N=1",
+    x = "Área da Zona (ha) [Log]",
+    y = "Nº de Observações [Log]"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+As linhas tracejadas são regressões lineares no modelo LOG-LOG para verificar a elasticidade do número de observações à área, utilizando os níveis categóricos 0 e 1 . Seguindo a seguintes fórmula:
+
+$$
+Log(N_i) = B_0 + B_1 * log(área_i) + \epsilon_i
+$$
+
+O resultado dos betas demonstra uma oferta inelástica de informação em relação a área, alpem disso os $R^2$ explicitam a falta de poder preditivo a cerca das coletas, nesse sentido, é demonstrada a natureza agregada dos dados, o que nada mais é que um reflexo da metodologia de K-means e algoritmo de Ward.
+
+```{r}
+library(dplyr)
+library(broom)
+library(gt)
+#| message: false
+#| warning: false
+# 1. Preparação da base (Igual ao anterior)
+dados_regressao <- df_areas2 |>
+  st_drop_geometry() |>
+  group_by(code_muni, categoria_final) |>
+  summarise(
+    n_obs = n(), 
+    area_total = first(area_ha_calculada), 
+    .groups = "drop"
+  ) |>
+  filter(n_obs > 0, area_total > 0)
+
+# 2. Loop de Regressão (Beta + R2 Ajustado)
+tabela_elasticidade <- dados_regressao |>
+  group_by(categoria_final) |>
+  group_modify(~ {
+    # Roda o modelo
+    modelo <- lm(log10(n_obs) ~ log10(area_total), data = .x)
+    
+    # Extrai o Beta (Elasticidade)
+    coefs <- broom::tidy(modelo) |> 
+      filter(term == "log10(area_total)") |>
+      select(Beta = estimate, Erro_Padrao = std.error, P_Valor = p.value)
+    
+    # Extrai o R2 Ajustado (Poder Explicativo)
+    stats <- broom::glance(modelo) |>
+      select(R2_Ajustado = adj.r.squared, N_Total = nobs)
+    
+    # Junta as duas informações numa única linha
+    bind_cols(coefs, stats)
+  }) |>
+  ungroup() |>
+  
+  # Tratamento estético e diagnósticos
+  mutate(
+    Significancia = case_when(
+      P_Valor < 0.001 ~ "***",
+      P_Valor < 0.05 ~ "*",
+      TRUE ~ "ns"
+    ),
+    Diagnostico_Elasticidade = ifelse(Beta < 0.2, "Inelástico", "Elástico"),
+    Diagnostico_R2 = ifelse(R2_Ajustado < 0.1, "Ruído Puro", "Alguma Relação")
+  ) |>
+  arrange(desc(Beta))
+
+# 3. Renderização da Tabela Final
+tabela_elasticidade |>
+  gt() |>
+  tab_header(
+    title = md("**Elasticidade e Ajuste da Amostragem (Log-Log)**"),
+    subtitle = "Modelagem: Log(N) ~ Log(Área)"
+  ) |>
+  fmt_number(columns = c(Beta, Erro_Padrao, R2_Ajustado), decimals = 4) |>
+  fmt_scientific(columns = c(P_Valor), decimals = 2) |>
+  cols_label(
+    Beta = "Elasticidade (β)",
+    R2_Ajustado = md("R² Ajustado"),
+    N_Total = "N (Zonas)",
+    P_Valor = "P-Valor",
+    Significancia = "Sig."
+  ) |>
+  # Destaque para R2 muito baixo (Prova de irrelevância da área)
+  tab_style(
+    style = cell_text(color = "red", weight = "bold"),
+    locations = cells_body(columns = R2_Ajustado, rows = R2_Ajustado < 0.05)
+  ) |>
+  tab_source_note(
+    source_note = "Nota: R² ajustado próximo de 0 indica que a área da zona não possui poder preditivo sobre o número de coletas realizadas."
+  )
+```
+
+
+O valor de terra por quantil ao longo de toda a amostragem, lembrando que os valores aqui apresentados são fruto de correções inflacionárias de todos os valores para o ano de 2023. 
+
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Cálculo dos Quantis por Categoria
+tabela_quantis <- df_areas2 |>
+  st_drop_geometry() |>
+  filter(!is.na(vti_media), vti_media > 0) |>
+  group_by(categoria_final) |>
+  summarise(
+    N = n(),
+    # Calcula os cortes de preço que dividem o mercado
+    P10 = quantile(vti_media, 0.10),
+    P25 = quantile(vti_media, 0.25),
+    Mediana = median(vti_media),
+    P75 = quantile(vti_media, 0.75),
+    P90 = quantile(vti_media, 0.90)
+  ) |>
+  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato
+
+# 2. Renderização da Tabela
+tabela_quantis |>
+  gt() |>
+  tab_header(
+    title = md("**Estrutura de Preços: Distribuição por Quantis**"),
+    subtitle = "Valores de Terra (VTI) em R$/ha"
+  ) |>
+  fmt_number(
+    columns = c(P10, P25, Mediana, P75, P90),
+    decimals = 0,
+    sep_mark = ".",
+    dec_mark = ","
+  ) |>
+  cols_label(
+    categoria_final = "Categoria",
+    N = "Amostras",
+    P10 = "Piso (10%)",
+    P25 = "Baixo (25%)",
+    Mediana = "Médio (50%)",
+    P75 = "Alto (75%)",
+    P90 = "Teto (90%)"
+  ) |>
+  # Destaque visual para a Mediana (o valor mais provável)
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", color = "black"),
+      cell_fill(color = "lightgray")
+    ),
+    locations = cells_body(columns = Mediana)
+  ) |>
+  data_color(
+    columns = c(Mediana),
+    method = "numeric",
+    palette = "Greens" # Escala de cor para mostrar quem vale mais
+  )
+```
+
+Geograficamente, os dados refletem uma estrutura que respeita o esperado: os estados das regiões Sul, Sudeste e Centro-Oeste apresentam um maior valor para a terra com imóvel, enquanto as regiões Norte e Nordeste apresentam valores inferiores. Uma anomalia que se encontra é a região de Manaus, que compõe a Zona Homogênea de Terras 'Manaus e Entorno'. Os valores dos imóveis provavelmente aumentam por conta da pressão da zona urbana, como é o caso típico de imóveis apresentando maior valor em áreas altamente urbanizadas.
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
+
+# 1. Definição do Escopo
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
+
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem
+  dados_cat <- df_analise2 |>
+    filter(ano < 2025, !is.na(vti_media), vti_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(vti_media, n = 5, dig.lab = 15),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
+  
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
+  )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTI:", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
+
+```
+
+A distribuição geográfica do VTN segue mais ou menos a mesma lógica. É interessante notar a falta de dados acerca do valor da vegetação nativa.
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
+
+# 1. Definição do Escopo
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
+
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem
+  dados_cat <- df_analise2 |>
+    filter(ano < 2025, !is.na(vtn_media), vtn_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(vtn_media, n = 5, dig.lab = 15),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
+  
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
+  )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTN:", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
+
+```
+
+A análise das linhas de densidade ( valor de terra com imóvel - VTI) demonstra um comportamento de multimodalidade para todas as categorias na distribuição dos preços. Apresentando notavelmente uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas: "pecuária", "agricultura" e vegetação nativa. 
+
+```{r}
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
+
+# 1. Preparação dos Dados (Inalterada)
+dados_hist <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+dados_hist <- dados_hist |>
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
+  
+  var_sym <- rlang::ensym(var_col)
+  
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
+  
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#2980b9", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTI -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
+  
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
+
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, vti_media, cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots)
+```
+
+A análise das linhas de densidade do VTN (valor de terra nua) demonstra um comportamento de multimodalidade para todas as categorias na distribuição dos preços, apresentando o mesmo tipo de comportamento que aquele apresentado no VTI.
+```{r}
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
+
+# 1. Preparação dos Dados (Inalterada)
+dados_hist <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+dados_hist <- dados_hist |>
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
+  
+  var_sym <- rlang::ensym(var_col)
+  
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
+  
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#0a7d00ff", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTN -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
+  
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
+
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, vtn_media, cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots2 <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots2)
+```
+
+Box plot - VTN e VTI
+```{r}
+#| message: false
+#| warning: false
+# 1. Preparação: Pivotagem (Wide -> Long)
+
+dados_box <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+dados_comparativos <- dados_box |>
+  # Filtra sujeira e categorias principais
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa")) |>
+  
+  # Seleciona apenas o necessário para pivotar
+  select(categoria_final, vti_media, vtn_media) |>
+  
+  # Transforma colunas em linhas (VTI e VTN viram "Tipo de Valor")
+  pivot_longer(
+    cols = c(vti_media, vtn_media),
+    names_to = "tipo_valor",
+    values_to = "valor_ha"
+  ) |>
+  
+  # Renomeia para ficar bonito na legenda
+  mutate(
+    tipo_valor = factor(tipo_valor, 
+                        levels = c("vti_media", "vtn_media"), 
+                        labels = c("VTI (Com Imóvel)", "VTN (Terra Nua)"))
+  )
+
+# 2. O Plot (Boxplot Pareado)
+ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = median), y = valor_ha, fill = tipo_valor)) +
+  
+  # Boxplot: Mostra Mediana, Quartis e Outliers
+  geom_boxplot(outlier.alpha = 0.2, outlier.size = 0.5, outlier.color = "gray40") +
+  
+  # Escala Logarítmica (Crucial)
+  scale_y_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  # Cores contrastantes (Laranja pro Capital, Azul pra Terra Nua - ou vice-versa)
+  scale_fill_manual(values = c("VTI (Com Imóvel)" = "#E69F00", "VTN (Terra Nua)" = "#56B4E9")) +
+  
+  coord_flip() + # Deita o gráfico para facilitar leitura dos nomes
+  
+  labs(
+    title = "Dispersão de Preços: VTI vs. VTN",
+    subtitle = "A distância entre as caixas representa o valor agregado das benfeitorias.",
+    x = NULL, # Remove label redundante
+    y = "Valor por Hectare (Log)",
+    fill = "Métrica"
   ) +
   
   theme_minimal() +
   theme(
-    legend.position = "none", # A cor já está explicada no facet
-    strip.text = element_text(face = "bold", size = 11)
+    legend.position = "top",
+    axis.text.y = element_text(face = "bold", size = 10),
+    panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas
   )
 ```
+
+O preço do VTN apresenta, em geral, um maior grau de variância da média quando comparado ao VTI e, geralmente, valores menores para os máximos, provavelmente por conta das variações tecnológicas. Além disso, é possível observar que a tendência geral é que os valores de terras com imóvel sejam maiores do que os de terras sem imóvel.
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+
+# 1. Preparação dos Dados (Mantendo a correção da UF)
+dados_limpos <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+# Garante a coluna UF antes de entrar no loop
+if(!"UF" %in% names(dados_limpos)) {
+  dados_limpos$UF <- substr(dados_limpos$code_muni, 1, 2)
+}
+
+dados_prontos <- dados_limpos |>
+  filter(vti_media > 0) |>
+  filter(categoria_final %in% c("media geral","agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
+
+# 2. Execução (Loop For + Print)
+categorias_unicas <- unique(dados_prontos$categoria_final)
+
+for(cat in categorias_unicas) {
+  
+  # A. Filtra a categoria atual
+  dados_fatia <- dados_prontos |> filter(categoria_final == cat)
+  
+  # B. Pula se não tiver dados suficientes
+  if(nrow(dados_fatia) < 5) next 
+  
+  # C. Gera o Plot
+  p <- ggplot(dados_fatia, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +
+    
+    geom_boxplot(fill = "#760000ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    
+    scale_y_log10(
+      labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+      breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+    ) +
+    
+    coord_flip() +
+    
+    labs(
+      title = paste("Ranking Estadual (VTI):", toupper(cat)),
+      subtitle = "Ordenado pela Mediana de Preço. Escala Logarítmica.",
+      x = NULL,
+      y = "Valor da Terra (R$/ha)"
+    ) +
+    
+    theme_minimal() +
+    theme(
+      axis.text.y = element_text(size = 8, face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  
+  # D. O comando essencial para loops:
+  print(p)
+}
+```
+
+Aqui é visível o efeito regional nas distribuições, é interessante mostrar que os valores maiores se apresentam na região sul e sudeste enquanto as menores nas regiões norte e nordeste o que pode levar a um favorecimento do desmatamento, isso é corroborado quando se observa que o valor da vegetação nativa raramente chefa a mais que 50 mil, enquanto em estados com um maior indice urbano o valor das atividades é num geral mais elevado.
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+
+# 1. Preparação dos Dados (Mantendo a correção da UF)
+dados_limpos <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+# Garante a coluna UF antes de entrar no loop
+if(!"UF" %in% names(dados_limpos)) {
+  dados_limpos$UF <- substr(dados_limpos$code_muni, 1, 2)
+}
+
+dados_prontos <- dados_limpos |>
+  filter(vtn_media > 0) |>
+  filter(categoria_final %in% c("media geral","agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
+
+# 2. Execução (Loop For + Print)
+categorias_unicas <- unique(dados_prontos$categoria_final)
+
+for(cat in categorias_unicas) {
+  
+  # A. Filtra a categoria atual
+  dados_fatia <- dados_prontos |> filter(categoria_final == cat)
+  
+  # B. Pula se não tiver dados suficientes
+  if(nrow(dados_fatia) < 5) next 
+  
+  # C. Gera o Plot
+  p <- ggplot(dados_fatia, aes(x = reorder(UF, vtn_media, FUN = median), y = vtn_media)) +
+    
+    geom_boxplot(fill = "#257a00ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    
+    scale_y_log10(
+      labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+      breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+    ) +
+    
+    coord_flip() +
+    
+    labs(
+      title = paste("Ranking Estadual (VTI):", toupper(cat)),
+      subtitle = "Ordenado pela Mediana de Preço. Escala Logarítmica.",
+      x = NULL,
+      y = "Valor da Terra sem Imóvel (R$/ha)"
+    ) +
+    
+    theme_minimal() +
+    theme(
+      axis.text.y = element_text(size = 8, face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  
+  # D. O comando essencial para loops:
+  print(p)
+}
+```
+
+## 5. Visão Geral
+
+
+## Referências:
+BRASIL. Ministério do Desenvolvimento Agrário. Instituto Nacional de Colonização e Reforma Agrária. Diretoria de Obtenção de Terras e Implantação de Projetos de Assentamento. Norma de Execução/INCRA/DT n. 112, de 12 de setembro de 2014: aprova o Módulo V do Manual de Obtenção de Terras – Relatório de Análise de Mercados de Terras – RAMT. Brasília, DF: INCRA, 2014. Publicada no Diário Oficial da União, 15 out. 2014, Seção 1, p. 150. Disponível em:https://www.gov.br/incra/pt-br/centrais-de-conteudos/legislacao/ne_112_2014.pdf. Acesso em: 7 fev. 2026.
+​
