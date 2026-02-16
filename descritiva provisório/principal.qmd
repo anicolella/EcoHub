@@ -946,11 +946,14 @@ dicionario_data <- tribble(
   "mrt", "Texto", "Nome da zona homogênea no arquivo de origem.",
   "origem", "Texto", "Cidade analisada.",
   "code_muni", "ID", "Código do município segundo o IBGE.",
+  "cluster", "texto", "lista de municípios da zona homogêmea",
   "ano", "Temporal", "Ano de publicação do documento original.",
+  "UF", "Texto", "Unidade Federativa",
   "vti_media", "Monetária", "Valor médio da terra com benfeitorias (por hectare).",
   "vti_minimo", "Monetária", "Limite inferior da terra distribuição de terras com benfeitorias (por hectare).",
   "vti_maximo", "Monetária", "Limite superior da terra distribuição de terras com benfeitorias (por hectare).",
-  "vtn_media", "Monetária", "Limite inferior da terra distribuição de terras sem benfeitorias (por hectare).",
+   "vtn_media", "Monetária", "Valor médio da terra sem benfeitorias (por hectare).",
+  "vtn_minimo", "Monetária", "Limite inferior da terra distribuição de terras sem benfeitorias (por hectare).",
   "vtn_maximo", "Monetária", "Limite superior da terra distribuição de terras sem benfeitorias (por hectare).",
   "igpdi_vti_media", "Monetária", "Valor vti_media corrigida pelo IGP-DI (Preços Reais).",
   "igpdi_vti_minimo", "Monetária", "Valor vti_minimo corrigida pelo IGP-DI (Preços Reais).",
@@ -959,7 +962,10 @@ dicionario_data <- tribble(
   "igpdi_vtn_minimo", "Monetária", "Valor vtn_minimo corrigida pelo IGP-DI (Preços Reais).",
   "igpdi_vtn_maximo", "Monetária", "Valor vtn_maximo corrigida pelo IGP-DI (Preços Reais).",
   "geom", "Espacial", "Geometria municipal (SIRGAS 2000).",
+  "area_m2", "Espacial", "Área em metros quadrados",
+  "area_ha_calculada", "Espacial", "Área em hectares quadrados",
   "categoria_final", "Categórica", "Unificação das tipologias de uso da terra."
+  
 )
 
 # Renderizando a tabela gtsummary/gt
@@ -967,12 +973,143 @@ dicionario_data |>
   gt() |>
   tab_header(
     title = "Dicionário de Variáveis do Banco de Dados RAMT/INCRA",
-    subtitle = "Estrutura de dados para análise de mercado de terras (2016-2025)"
+    subtitle = "Estrutura de dados para análise de mercado de terras (2015-2025)"
   ) |>
   cols_label(
     Variável = md("**Variável**"),
     Tipo = md("**Tipo**"),
     Descrição = md("**Descrição**")
+  ) |>
+  tab_options(
+    table.width = pct(100),
+    column_labels.background.color = "gray90"
+  )
+
+```
+
+Segue a listagem de relatórios que serviram na construção do banco de dados: 
+
+```{r}
+df_incra <- tribble(
+  ~estado, ~ano, ~relatorio,
+  "Acre", 2016, "PPR ACRE 2016",
+  "Acre", 2019, "RAMT ACRE 2019",
+  "Acre", 2022, "RAMT ACRE 2022",
+  "Acre", 2023, "Atlas de Terras",
+  "Acre", 2025, "RAMT ACRE 2025",
+  "Alagoas", 2018, "PPR ALAGOAS 2018",
+  "Alagoas", 2022, "RAMT PPR 2022",
+  "Alagoas", 2023, "Atlas de Terras",
+  "Alagoas", 2024, "RAMT 2024",
+  "Amapá", 2016, "PPR 2016",
+  "Amapá", 2019, "PPR 2019",
+  "Amapá", 2023, "Atlas de Terras",
+  "Amazonas", 2016, "PPR AMAZONAS 2016",
+  "Amazonas", 2023, "RAMT Amazonas 2023",
+  "Bahia", 2018, "PPR Bahia 2018",
+  "Bahia", 2020, "PPR RAMT BAHIA 2020",
+  "Ceará", 2017, "PPR CEARA 2017",
+  "Ceará", 2022, "RAMT CEARA 2022",
+  "Ceará", 2023, "Atlas de Terras",
+  "Ceará", 2024, "RAMT CEARA 2024",
+  "Distrito Federal e Entorno", 2017, "PPR 2017 DF",
+  "Distrito Federal e Entorno", 2020, "PPR E RAMT 2020 DF",
+  "Distrito Federal e Entorno", 2021, "RAMT E PPR 2021",
+  "Distrito Federal e Entorno", 2024, "RAMT 2024/25",
+  "Espírito Santo", 2016, "PPR 2016",
+  "Espírito Santo", 2018, "RAMT 2018 ES",
+  "Espírito Santo", 2021, "RAMT E PPR 2021 ES",
+  "Espírito Santo", 2022, "RAMT E PPR 2022 ES",
+  "Espírito Santo", 2024, "RAMT ES 2024",
+  "Goiás", 2017, "PPR 2017 GO",
+  "Goiás", 2022, "RAMT E PPR 2022 GO",
+  "Goiás", 2023, "Atlas de Terras",
+  "Goiás", 2024, "RAMT GO 2024",
+  "Maranhão", 2018, "PPR MA 2018",
+  "Maranhão", 2021, "PPR MA 2021",
+  "Maranhão", 2022, "RAMT MA 2022",
+  "Maranhão", 2023, "Atlas de Terras",
+  "Mato Grosso", 2018, "PPR MT 2018",
+  "Mato Grosso", 2019, "PPR MT 2019",
+  "Mato Grosso", 2023, "RAMT MT 2023",
+  "Mato Grosso", 2024, "RAMT MT 2024",
+  "Mato Grosso do Sul", 2017, "RAMT MS 2017",
+  "Mato Grosso do Sul", 2018, "PPR MS 2018",
+  "Mato Grosso do Sul", 2020, "RAMT 2020 MS",
+  "Mato Grosso do Sul", 2023, "Atlas de Terras",
+  "Pará", 2023, "Atlas de Terras",
+  "Pará Nordeste", 2016, "PPR PA (BELÉM) 2016",
+  "Pará Nordeste", 2019, "PPR PA 2019",
+  "Pará Nordeste", 2022, "RAMT PA 2022",
+  "Pará Oeste", 2016, "PPR PA (SANTARÉM) 2016",
+  "Pará Marabá", 2017, "PPR PA MARABÁ 2017",
+  "Pará Marabá", 2020, "RAMT E PPR PA MARABÁ 2020",
+  "Pará Marabá", 2022, "RAMT E PPR MARABÁ 2022",
+  "Paraíba", 2018, "PPR PB 2018",
+  "Paraíba", 2020, "RAMT E PPR PB 2020",
+  "Paraíba", 2021, "RAMT PB 2021",
+  "Paraíba", 2023, "Atlas de Terras",
+  "Paraíba", 2024, "RAMT PB 2024",
+  "Pernambuco", 2016, "RAMT PE 2016",
+  "Pernambuco", 2017, "PPR PE 2017",
+  "Pernambuco", 2019, "PPR PE 2019",
+  "Pernambuco", 2022, "RAMT PE 2022",
+  "Pernambuco", 2022, "RAMT UNIDADE AVANÇADA ESPECIAL DO SERTÃO 2022",
+  "Pernambuco", 2023, "Atlas de Terras",
+  "Pernambuco", 2024, "RAMT UNIDADE AVANÇADA ESPECIAL DO SERTÃO 2024",
+  "Unidade Especial do Sertão Petrolina PE", 2017, "PPR PE",
+  "Unidade Especial do Sertão Petrolina PE", 2020, "RAMT PE",
+  "Unidade Especial do Sertão Petrolina PE", 2023, "Atlas de Terras",
+  "Piauí", 2020, "PPR RAMT 2020 PI",
+  "Piauí", 2022, "RAMT 2022 PI",
+  "Piauí", 2023, "Atlas de Terras",
+  "Rio de Janeiro", 2015, "RAMT 2015 - 2017 RJ",
+  "Rio de Janeiro", 2016, "RAMT 2015 - 2017 RJ",
+  "Rio de Janeiro", 2017, "RAMT 2015 - 2017 RJ",
+  "Rio de Janeiro", 2022, "RAMT E PPR 2022 RJ",
+  "Rio de Janeiro", 2023, "Atlas de Terras",
+  "Rio Grande do Norte", 2017, "PPR RN 2017",
+  "Rio Grande do Norte", 2019, "PPR RN 2019",
+  "Rio Grande do Norte", 2020, "PPR RN 2020",
+  "Rio Grande do Norte", 2021, "PPR RN 2021",
+  "Rio Grande do Norte", 2022, "PPR RN 2022",
+  "Rio Grande do Norte", 2023, "PPR RN 2023",
+  "Rio Grande do Norte", 2025, "PPR RN 2025",
+  "Rio Grande do Sul", 2017, "PPR 2017 RS",
+  "Rio Grande do Sul", 2020, "PPR - RAMT RS 2020",
+  "Rio Grande do Sul", 2022, "RAMT RS 2022",
+  "Rio Grande do Sul", 2023, "Atlas de Terras",
+  "Rondônia", 2019, "RAMT e PPR - 2024/2025 RO",
+  "Rondônia", 2022, "RAMT e PPR - 2021 / 2022 RO",
+  "Rondônia", 2023, "Atlas de Terras",
+  "Roraima", 2018, "PPR - 2018 RR",
+  "Roraima", 2022, "RAMT e PPR - 2022 RR",
+  "Roraima", 2023, "Atlas de Terras",
+  "Roraima", 2024, "RAMT - 2024 RR",
+  "Santa Catarina", 2016, "RAMT 2016 - 2019 SC",
+  "Santa Catarina", 2017, "RAMT 2016 - 2019 SC",
+  "Santa Catarina", 2018, "RAMT 2016 - 2019 SC",
+  "Santa Catarina", 2019, "RAMT 2016 - 2019 SC",
+  "Santa Catarina", 2022, "RAMT 2022 SC",
+  "Santa Catarina", 2023, "Atlas de Terras",
+  "São Paulo", 2018, "RAMT 2018 SP",
+  "São Paulo", 2022, "RAMT E PPR 2022 SP",
+  "São Paulo", 2023, "Atlas de Terras",
+  "Sergipe", 2017, "RAMT SE 20217",
+  "Sergipe", 2020, "RAMT SE 2020",
+  "Sergipe", 2022, "RAMT E PPR SE 2022",
+  "Sergipe", 2023, "Atlas de Terras",
+  "Tocantins", 2016, "PPR TO 2016",
+  "Tocantins", 2018, "RAMT TO 2016",
+  "Tocantins", 2022, "RAMT PPR TO 2022",
+  "Tocantins", 2023, "Atlas de Terras"
+)
+
+df_incra |>
+  gt() |>
+  tab_header(
+    title = "Dicionário de Fontes do Banco de Dados RAMT/INCRA",
+    subtitle = "Estrutura de dados para análise de mercado de terras (2015-2025)"
   ) |>
   tab_options(
     table.width = pct(100),
@@ -1170,16 +1307,16 @@ O valor de terra por quantil ao longo de toda a amostragem, lembrando que os val
 # 1. Cálculo dos Quantis por Categoria
 tabela_quantis <- df_areas2 |>
   st_drop_geometry() |>
-  filter(!is.na(vti_media), vti_media > 0) |>
+  filter(!is.na(IGPDI_vti_media), IGPDI_vti_media > 0) |>
   group_by(categoria_final) |>
   summarise(
     N = n(),
     # Calcula os cortes de preço que dividem o mercado
-    P10 = quantile(vti_media, 0.10),
-    P25 = quantile(vti_media, 0.25),
-    Mediana = median(vti_media),
-    P75 = quantile(vti_media, 0.75),
-    P90 = quantile(vti_media, 0.90)
+    P10 = quantile(IGPDI_vti_media, 0.10),
+    P25 = quantile(IGPDI_vti_media, 0.25),
+    Mediana = median(IGPDI_vti_media),
+    P75 = quantile(IGPDI_vti_media, 0.75),
+    P90 = quantile(IGPDI_vti_media, 0.90)
   ) |>
   arrange(desc(Mediana)) # Ordena do mais caro para o mais barato
 
@@ -1240,7 +1377,7 @@ for(cat in categorias_alvo) {
   
   # A. Filtragem
   dados_cat <- df_analise2 |>
-    filter(ano < 2025, !is.na(vti_media), vti_media > 0) |>
+    filter(ano < 2025, !is.na(IGPDI_vti_media), IGPDI_vti_media > 0) |>
     filter(categoria_final == cat) |> 
     group_by(code_muni) |>
     slice_max(order_by = ano, n = 1) |> 
@@ -1250,7 +1387,7 @@ for(cat in categorias_alvo) {
   # dig.lab = 15 força números inteiros (sem 1e+05)
   dados_cat <- dados_cat |>
     mutate(
-      classe_raw = cut_number(vti_media, n = 5, dig.lab = 15),
+      classe_raw = cut_number(IGPDI_vti_media, n = 5, dig.lab = 15),
       classe_preco = classe_raw # Cria cópia para modificar os níveis
     )
 
@@ -1322,7 +1459,7 @@ for(cat in categorias_alvo) {
   
   # A. Filtragem
   dados_cat <- df_analise2 |>
-    filter(ano < 2025, !is.na(vtn_media), vtn_media > 0) |>
+    filter(ano < 2025, !is.na(IGPDI_vtn_media), IGPDI_vtn_media > 0) |>
     filter(categoria_final == cat) |> 
     group_by(code_muni) |>
     slice_max(order_by = ano, n = 1) |> 
@@ -1332,7 +1469,7 @@ for(cat in categorias_alvo) {
   # dig.lab = 15 força números inteiros (sem 1e+05)
   dados_cat <- dados_cat |>
     mutate(
-      classe_raw = cut_number(vtn_media, n = 5, dig.lab = 15),
+      classe_raw = cut_number(IGPDI_vtn_media, n = 5, dig.lab = 15),
       classe_preco = classe_raw # Cria cópia para modificar os níveis
     )
 
@@ -1399,7 +1536,7 @@ library(htmltools) # Necessário para renderizar lista de widgets
 dados_hist <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
 
 dados_hist <- dados_hist |>
-  filter(vti_media > 0, vtn_media > 0) |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
   filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
                                 "exploracao mista", "silvicultura", "vegetacao nativa"))
 
@@ -1468,7 +1605,7 @@ lista_plots <- lapply(categorias_unicas, function(cat) {
   
   # Gera o plot se houver dados
   if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
-    gerar_plot_individual(dados_fatia, vti_media, cat)
+    gerar_plot_individual(dados_fatia, IGPDI_vti_media, cat)
   } else {
     NULL
   }
@@ -1496,7 +1633,7 @@ library(htmltools) # Necessário para renderizar lista de widgets
 dados_hist <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
 
 dados_hist <- dados_hist |>
-  filter(vti_media > 0, vtn_media > 0) |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
   filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
                                 "exploracao mista", "silvicultura", "vegetacao nativa"))
 
@@ -1565,7 +1702,7 @@ lista_plots <- lapply(categorias_unicas, function(cat) {
   
   # Gera o plot se houver dados
   if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
-    gerar_plot_individual(dados_fatia, vtn_media, cat)
+    gerar_plot_individual(dados_fatia, IGPDI_vtn_media , cat)
   } else {
     NULL
   }
@@ -1589,15 +1726,15 @@ dados_box <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) e
 
 dados_comparativos <- dados_box |>
   # Filtra sujeira e categorias principais
-  filter(vti_media > 0, vtn_media > 0) |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
   filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa")) |>
   
   # Seleciona apenas o necessário para pivotar
-  select(categoria_final, vti_media, vtn_media) |>
+  select(categoria_final, IGPDI_vti_media, IGPDI_vtn_media) |>
   
   # Transforma colunas em linhas (VTI e VTN viram "Tipo de Valor")
   pivot_longer(
-    cols = c(vti_media, vtn_media),
+    cols = c(IGPDI_vti_media, IGPDI_vtn_media),
     names_to = "tipo_valor",
     values_to = "valor_ha"
   ) |>
@@ -1605,7 +1742,7 @@ dados_comparativos <- dados_box |>
   # Renomeia para ficar bonito na legenda
   mutate(
     tipo_valor = factor(tipo_valor, 
-                        levels = c("vti_media", "vtn_media"), 
+                        levels = c("IGPDI_vti_media", "IGPDI_vtn_media"), 
                         labels = c("VTI (Com Imóvel)", "VTN (Terra Nua)"))
   )
 
@@ -1656,7 +1793,7 @@ dados_limpos <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2
 # Garante a coluna UF antes de entrar no loop
 
 dados_prontos <- dados_limpos |>
-  filter(vti_media > 0) |>
+  filter(IGPDI_vti_media > 0) |>
   filter(categoria_final %in% c("media geral","agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
 
 # 2. Execução (Loop For + Print)
@@ -1671,7 +1808,7 @@ for(cat in categorias_unicas) {
   if(nrow(dados_fatia) < 5) next 
   
   # C. Gera o Plot
-  p <- ggplot(dados_fatia, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +
+  p <- ggplot(dados_fatia, aes(x = reorder(UF, IGPDI_vti_media, FUN = median), y = vti_media)) +
     
     geom_boxplot(fill = "#760000ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
     
@@ -1713,7 +1850,7 @@ dados_limpos <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2
 
 
 dados_prontos <- dados_limpos |>
-  filter(vtn_media > 0) |>
+  filter(IGPDI_vtn_media > 0) |>
   filter(categoria_final %in% c("media geral","agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
 
 # 2. Execução (Loop For + Print)
@@ -1728,7 +1865,7 @@ for(cat in categorias_unicas) {
   if(nrow(dados_fatia) < 5) next 
   
   # C. Gera o Plot
-  p <- ggplot(dados_fatia, aes(x = reorder(UF, vtn_media, FUN = median), y = vtn_media)) +
+  p <- ggplot(dados_fatia, aes(x = reorder(UF, IGPDI_vtn_media, FUN = median), y = vtn_media)) +
     
     geom_boxplot(fill = "#257a00ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
     
