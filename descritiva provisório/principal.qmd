@@ -833,21 +833,7 @@ df_classificado <- resultado_igpdi_limpo %>%
 
 Para além desse data frame principal (EcoHub), que consolida os dados de todos os relatórios da RAMT, realizou-se um corte transversal referente ao ano de 2023, visando obter a maior completude de dados possível para um mesmo período. Para a elaboração desse segundo banco de dados, aplicaram-se os mesmos procedimentos anteriores, com o diferencial da atualização dos valores monetários para 2023. Além disso, integraram-se dados de municípios que não possuíam observações naquele ano específico; nestes casos, selecionaram-se os registros mais recentes de cada região. Quando ocorria empate na distância temporal, adotou-se o critério de proximidade cronológica sob unidade de tempo anual.
 
-O Fluxo de scripts é basicamente o mesmo, o que muda é que a correção inflacionária (diagrama do fluxo de scripts):
-
-```{r}
-#| message: false
-#| warning: false
-library(ggplot2)
-library(cowplot)
-library(magick)
-
-# Carregar a imagem
-img <- image_read("C:/Users/jodom/OneDrive/Área de Trabalho/kuro.jpg")
-plot(img)
-```
-
-segue o seguinte script (este já contendo a função de recorte temporal):
+O Fluxo de scripts é basicamente o mesmo, o que muda é que a correção inflacionária, segue o seguinte script (este já contendo a função de recorte temporal):
 
 ```{r}
 #| message: false
