@@ -1,0 +1,859 @@
+---
+title: "Untitled"
+format: html
+---
+
+## 4.1 Análise Descritiva DataFrame Completo
+A estatística descritiva revela uma oscilação expressiva nos valores de VTI e VTN ao longo da série histórica. Essa volatilidade não reflete necessariamente uma tendência de mercado, mas sim a heterogeneidade espacial da coleta de dados em cada exercício. A tabela a seguir consolida as métricas de tendência central (média) e dispersão (mínimos e máximos) para ambas as categorias.
+
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Preparar os dados (Agregação Manual)
+tabela_pivo <- df_analise |>
+  st_drop_geometry() |>
+  group_by(ano) |>
+  summarise(
+    # Métricas para VTI
+    vti_med = mean(vti_media, na.rm = TRUE),
+    vti_min = min(vti_minimo, na.rm = TRUE),
+    vti_max = max(vti_maximo, na.rm = TRUE),
+    
+    # Métricas para VTN
+    vtn_med = mean(vtn_media, na.rm = TRUE),
+    vtn_min = min(vtn_minimo, na.rm = TRUE),
+    vtn_max = max(vtn_maximo, na.rm = TRUE),
+    
+    # Contagem (Opcional, mas bom para auditoria)
+    n_registros = n_distinct(code_muni)
+  )
+
+# 2. Gerar a Tabela Profissional
+tabela_pivo |>
+  gt() |>
+  
+  # --- Cabeçalho ---
+  tab_header(
+    title = md("**Evolução Histórica de Preços (VTI vs VTN)**"),
+    subtitle = "Valores Agregados por Ano (Média Nacional e Amplitude)"
+  ) |>
+  
+  # --- Formatação Numérica (Antes de fundir) ---
+  fmt_number(
+    columns = -ano, # Formata tudo exceto o ano
+    decimals = 0,   # Sem centavos para limpar a vista
+    sep_mark = ".",
+    dec_mark = ","
+  ) |>
+  
+  # --- O PULO DO GATO: Fusão de Colunas (Pattern) ---
+  # Cria o formato: "Média (Mín - Máx)"
+  cols_merge(
+    columns = c(vti_med, vti_min, vti_max),
+    pattern = "{1} ({2} - {3})"
+  ) |>
+  cols_merge(
+    columns = c(vtn_med, vtn_min, vtn_max),
+    pattern = "{1} ({2} - {3})"
+  ) |>
+  
+  # --- Renomear as Colunas Finais ---
+  cols_label(
+    ano = "Ano",
+    vti_med = md("**VTI (R$/ha)**<br><small>Média (Mín - Máx)</small>"),
+    vtn_med = md("**VTN (R$/ha)**<br><small>Média (Mín - Máx)</small>"),
+    n_registros = "Nº Municípios"
+  ) |>
+  
+  # --- Alinhamento e Estilo ---
+  cols_align(align = "center", columns = everything()) |>
+  opt_row_striping() |> # Listras zebradas para facilitar leitura
+  tab_options(
+    table.width = pct(100), # Ocupa 100% da largura do container
+    data_row.padding = px(6)
+  )
+```
+
+A distribuição amostral revela a predominância de dados agregados ('Média Geral'), seguida pela Pecuária, refletindo a capilaridade extensiva dessa atividade no território nacional. Nota-se, contudo,  um volume expressivo de dados classificados como 'Exploração Mista', o que sugere desafios na segregação precisa do uso do solo em diversas regionai. 
+
+Os scatter plots mostram a natureza discreta dos dados, os dados são variáveis macroeconomicas agregadas das regiões de homogeniedade determinada pelo incra através do algoritmo de WARD e do procedimento de K-means, nesse sentido, os scatters apenas demosntram um reflexo disso, do contrário seria esperado que os locai com mais áreas apresentassem uma nuvem de pontos que segue as linhas tracejadas.
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Preparação dos dados (Garantia de Leveza)
+dados_scatter <- if(inherits(df_areas, "sf")) sf::st_drop_geometry(df_areas) else df_analise
+
+dados_agrupados <- dados_scatter |>
+  group_by(code_muni, categoria_final) |>
+  summarise(
+    n_obs = n(),
+    area_total = first(area_ha_calculada), # Usa a área corrigida do geobr
+    .groups = "drop"
+  ) |>
+  # Filtro de segurança para log
+  filter(n_obs > 0, area_total > 0)
+
+# 2. Plot com Correção de Jitter
+ggplot(dados_agrupados, aes(x = area_total, y = n_obs)) +
+  
+  # A CORREÇÃO ESTÁ AQUI:
+  # width = 0 (Não mexe na Área, que é precisa)
+  # height = 0.2 (Espalha o N verticalmente para desfazer a linha reta)
+  geom_jitter(aes(color = categoria_final), alpha = 0.4, width = 0, height = 0.2) +
+  
+  # Escalas Logarítmicas
+  scale_x_log10(labels = scales::label_number(scale_cut = scales::cut_short_scale())) +
+  # Breaks manuais para facilitar leitura no log
+  scale_y_log10(breaks = c(1, 2, 5, 10, 20, 50, 100)) +
+  
+  # Linha de Tendência (Regressão Linear no Log)
+  geom_smooth(method = "lm", color = "black", linetype = "dashed", se = FALSE, size = 0.5) +
+  
+  facet_wrap(~categoria_final, scales = "free") +
+  
+  labs(
+    title = "Densidade Amostral: Área vs. Observações (Ajustado)",
+    subtitle = "Dispersão com Jitter para visualizar concentração em N=1",
+    x = "Área da Zona (ha) [Log]",
+    y = "Nº de Observações [Log]"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+As linhas tracejadas são regressões lineares no modelo LOG-LOG para verificar a elasticidade do número de observações à área, utilizando os níveis categóricos 0 e 1 . Seguindo a seguintes fórmula:
+
+$$
+Log(N_i) = B_0 + B_1 * log(área_i) + \epsilon_i
+$$
+
+O resultado dos betas demonstra uma oferta inelástica de informação em relação a área, alpem disso os $R^2$ explicitam a falta de poder preditivo a cerca das coletas, nesse sentido, é demonstrada a natureza agregada dos dados, o que nada mais é que um reflexo da metodologia de K-means e algoritmo de Ward.
+
+```{r}
+#| message: false
+#| warning: false
+
+library(dplyr)
+library(broom)
+library(gt)
+
+# 1. Preparação da base (Igual ao anterior)
+dados_regressao <- df_areas |>
+  st_drop_geometry() |>
+  group_by(code_muni, categoria_final) |>
+  summarise(
+    n_obs = n(), 
+    area_total = first(area_ha_calculada), 
+    .groups = "drop"
+  ) |>
+  filter(n_obs > 0, area_total > 0)
+
+# 2. Loop de Regressão (Beta + R2 Ajustado)
+tabela_elasticidade <- dados_regressao |>
+  group_by(categoria_final) |>
+  group_modify(~ {
+    # Roda o modelo
+    modelo <- lm(log10(n_obs) ~ log10(area_total), data = .x)
+    
+    # Extrai o Beta (Elasticidade)
+    coefs <- broom::tidy(modelo) |> 
+      filter(term == "log10(area_total)") |>
+      select(Beta = estimate, Erro_Padrao = std.error, P_Valor = p.value)
+    
+    # Extrai o R2 Ajustado (Poder Explicativo)
+    stats <- broom::glance(modelo) |>
+      select(R2_Ajustado = adj.r.squared, N_Total = nobs)
+    
+    # Junta as duas informações numa única linha
+    bind_cols(coefs, stats)
+  }) |>
+  ungroup() |>
+  
+  # Tratamento estético e diagnósticos
+  mutate(
+    Significancia = case_when(
+      P_Valor < 0.001 ~ "***",
+      P_Valor < 0.05 ~ "*",
+      TRUE ~ "ns"
+    ),
+    Diagnostico_Elasticidade = ifelse(Beta < 0.2, "Inelástico", "Elástico"),
+    Diagnostico_R2 = ifelse(R2_Ajustado < 0.1, "Ruído Puro", "Alguma Relação")
+  ) |>
+  arrange(desc(Beta))
+
+# 3. Renderização da Tabela Final
+tabela_elasticidade |>
+  gt() |>
+  tab_header(
+    title = md("**Elasticidade e Ajuste da Amostragem (Log-Log)**"),
+    subtitle = "Modelagem: Log(N) ~ Log(Área)"
+  ) |>
+  fmt_number(columns = c(Beta, Erro_Padrao, R2_Ajustado), decimals = 4) |>
+  fmt_scientific(columns = c(P_Valor), decimals = 2) |>
+  cols_label(
+    Beta = "Elasticidade (β)",
+    R2_Ajustado = md("R² Ajustado"),
+    N_Total = "N (Zonas)",
+    P_Valor = "P-Valor",
+    Significancia = "Sig."
+  ) |>
+  # Destaque para R2 muito baixo (Prova de irrelevância da área)
+  tab_style(
+    style = cell_text(color = "red", weight = "bold"),
+    locations = cells_body(columns = R2_Ajustado, rows = R2_Ajustado < 0.05)
+  ) |>
+  tab_source_note(
+    source_note = "Nota: R² ajustado próximo de 0 indica que a área da zona não possui poder preditivo sobre o número de coletas realizadas."
+  )
+```
+
+Segue uma tabela do valor de terra por quantil ao longo de toda a amostragem, lembrando que os valores aqui apresentados são fruto de correções inflacionárias de todos os valores para o ano de 2024. Ademais, os valores de 2025 não foram inclusos, por falta de disponibilidade da série de correção inflacionária. Essa tabela reflete os valores médios dessas terras durante o dados período de tempo.
+
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Cálculo dos Quantis por Categoria
+tabela_quantis <- df_analise |>
+  st_drop_geometry() |>
+  filter(!is.na(vti_media), vti_media > 0) |>
+  group_by(categoria_final) |>
+  summarise(
+    N = n(),
+    # Calcula os cortes de preço que dividem o mercado
+    P10 = quantile(vti_media, 0.10),
+    P25 = quantile(vti_media, 0.25),
+    Mediana = median(vti_media),
+    P75 = quantile(vti_media, 0.75),
+    P90 = quantile(vti_media, 0.90)
+  ) |>
+  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato
+
+# 2. Renderização da Tabela
+tabela_quantis |>
+  gt() |>
+  tab_header(
+    title = md("**Estrutura de Preços: Distribuição por Quantis**"),
+    subtitle = "Valores de Terra (VTI) em R$/ha"
+  ) |>
+  fmt_number(
+    columns = c(P10, P25, Mediana, P75, P90),
+    decimals = 0,
+    sep_mark = ".",
+    dec_mark = ","
+  ) |>
+  cols_label(
+    categoria_final = "Categoria",
+    N = "Amostras",
+    P10 = "Piso (10%)",
+    P25 = "Baixo (25%)",
+    Mediana = "Médio (50%)",
+    P75 = "Alto (75%)",
+    P90 = "Teto (90%)"
+  ) |>
+  # Destaque visual para a Mediana (o valor mais provável)
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", color = "black"),
+      cell_fill(color = "lightgray")
+    ),
+    locations = cells_body(columns = Mediana)
+  ) |>
+  data_color(
+    columns = c(Mediana),
+    method = "numeric",
+    palette = "Greens" # Escala de cor para mostrar quem vale mais
+  )
+```
+
+Geograficamente, os dados refletem uma estrutura que respeita o esperado: os estados das regiões Sul, Sudeste e Centro-Oeste apresentam um maior valor para a terra com imóvel, enquanto as regiões Norte e Nordeste apresentam valores inferiores. Uma anomalia que se encontra é a região de Manaus, que compõe a Zona Homogênea de Terras 'Manaus e Entorno'. Os valores dos imóveis provavelmente aumentam por conta da pressão da zona urbana, como é o caso típico de imóveis apresentando maior valor em áreas altamente urbanizadas.
+
+```{r}
+#| message: false
+#| warning: false
+
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
+
+# 1. Definição do Escopo
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
+
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem
+  dados_cat <- df_analise |>
+    filter(ano < 2025, !is.na(vti_media), vti_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(vti_media, n = 5, dig.lab = 10),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
+  
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
+  )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTI (atualizado 2024):", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
+```
+
+A tendência apresentada pelo VTN é básicamente a mesma.
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
+
+# 1. Definição do Escopo
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
+
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem
+  dados_cat <- df_analise2 |>
+    filter(ano < 2025, !is.na(vtn_media), vtn_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(vtn_media, n = 5, dig.lab = 15),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
+  
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
+  )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTN (atualizado 2024):", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
+```
+
+Histogramas de distribuição por categoria (VTI)
+```{r}
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
+
+# 1. Preparação dos Dados (Inalterada)
+dados_hist <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_hist <- dados_hist |>
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
+  
+  var_sym <- rlang::ensym(var_col)
+  
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
+  
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#2980b9", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTI -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
+  
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
+
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, vti_media, cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots)
+```
+
+A análise das linhas de densidade demonsrea um comportamento de multimodalidade para todas as categorias na distribuição dos preços. Apresentando notavelmente uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas: "pecuária", "agricultura" e vegetação nativa. 
+
+Estatisticamente, a existência de múltiplos picos (modas) sugere a coexistência de submercados distintos sob a mesma rotulagem. No caso da Pecuária, a trimodalidade observada indica uma segmentação tecnológica e geográfica severa. Isso pode ser efeito da unificação tipologica para fins de análise.
+
+```{r}
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
+
+# 1. Preparação dos Dados (Inalterada)
+dados_hist <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_hist <- dados_hist |>
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
+  
+  var_sym <- rlang::ensym(var_col)
+  
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
+  
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#0a7d00ff", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTN -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
+  
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
+
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, vtn_media, cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots2 <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots2)
+```
+
+O preço do VTN apresenta, em geral, um maior grau de variância da média quando comparado ao VTI e, geralmente, valores menores para os máximos, provavelmente por conta das variações tecnológicas. Além disso, é possível observar que a tendência geral é que os valores de terras com imóvel sejam maiores do que os de terras sem imóvel.
+
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Preparação
+dados_uf <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_uf <- dados_uf |>
+  filter(vti_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "silvicultura", "vegetacao nativa")) |>
+  # Garante que temos a UF (Se não tiver a coluna abbrev_state, extraímos do código)
+  mutate(
+    UF = if("UF" %in% names(dados_uf)) UF else substr(code_muni, 1, 2)
+  )
+
+# 2. O Plot (Boxplot Ordenado)
+ggplot(dados_uf, aes(x = reorder(UF, vti_media, FUN = median), y = vti_media)) +
+  
+  # Boxplot limpo
+  geom_boxplot(aes(fill = categoria_final), outlier.size = 0.5, outlier.alpha = 0.3, show.legend = FALSE) +
+  
+  # Escala Logarítmica (Obrigatória para comparar PI com SP)
+  scale_y_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  # Facetas Livres (Cada categoria tem seu próprio ranking de estados)
+  facet_wrap(~categoria_final, scales = "free", ncol = 2) +
+  
+  coord_flip() + # Estados no eixo Y para leitura fácil
+  
+  labs(
+    title = "Hierarquia de Valor: Ranking Estadual por Uso",
+    subtitle = "Ordenado pela Mediana de Preço (VTI). Escala Logarítmica.",
+    x = NULL,
+    y = "Valor da Terra (R$/ha) [Log]"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    strip.text = element_text(face = "bold", size = 11),
+    axis.text.y = element_text(size = 7) # Fonte menor para caber todas as UFs
+  )
+```
+
+Aqui é visível o efeito regional nas distribuições, é interessante mostrar que os valores maiores se apresentam na região sul e sudeste enquanto as menores nas regiões norte e nordeste o que pode levar a um favorecimento do desmatamento, isso é corroborado quando se observa que o valor da vegetação nativa raramente chefa a mais que 50 mil, enquanto em estados com um maior indice urbano o valor das atividades é num geral mais elevado.
+
+```{r}
+#| message: false
+#| warning: false
+# 1. Preparação: Pivotagem (Wide -> Long)
+
+dados_box <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_comparativos <- dados_box |>
+  # Filtra sujeira e categorias principais
+  filter(vti_media > 0, vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa")) |>
+  
+  # Seleciona apenas o necessário para pivotar
+  select(categoria_final, vti_media, vtn_media) |>
+  
+  # Transforma colunas em linhas (VTI e VTN viram "Tipo de Valor")
+  pivot_longer(
+    cols = c(vti_media, vtn_media),
+    names_to = "tipo_valor",
+    values_to = "valor_ha"
+  ) |>
+  
+  # Renomeia para ficar bonito na legenda
+  mutate(
+    tipo_valor = factor(tipo_valor, 
+                        levels = c("vti_media", "vtn_media"), 
+                        labels = c("VTI (Com Imóvel)", "VTN (Terra Nua)"))
+  )
+
+# 2. O Plot (Boxplot Pareado)
+ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = median), y = valor_ha, fill = tipo_valor)) +
+  
+  # Boxplot: Mostra Mediana, Quartis e Outliers
+  geom_boxplot(outlier.alpha = 0.2, outlier.size = 0.5, outlier.color = "gray40") +
+  
+  # Escala Logarítmica (Crucial)
+  scale_y_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  # Cores contrastantes (Laranja pro Capital, Azul pra Terra Nua - ou vice-versa)
+  scale_fill_manual(values = c("VTI (Com Imóvel)" = "#E69F00", "VTN (Terra Nua)" = "#56B4E9")) +
+  
+  coord_flip() + # Deita o gráfico para facilitar leitura dos nomes
+  
+  labs(
+    title = "Dispersão de Preços: VTI vs. VTN",
+    subtitle = "A distância entre as caixas representa o valor agregado das benfeitorias.",
+    x = NULL, # Remove label redundante
+    y = "Valor por Hectare (Log)",
+    fill = "Métrica"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    axis.text.y = element_text(face = "bold", size = 10),
+    panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas
+  )
+```
+
+- Anotações Box plot VTI vs VTN
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+
+# 1. Preparação dos Dados (Mantendo a correção da UF)
+dados_limpos <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+# Garante a coluna UF antes de entrar no loop
+dados_prontos <- dados_limpos |>
+  filter(vtn_media > 0) |>
+  filter(categoria_final %in% c("media geral","agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
+
+# 2. Execução (Loop For + Print)
+categorias_unicas <- unique(dados_prontos$categoria_final)
+
+for(cat in categorias_unicas) {
+  
+  # A. Filtra a categoria atual
+  dados_fatia <- dados_prontos |> filter(categoria_final == cat)
+  
+  # B. Pula se não tiver dados suficientes
+  if(nrow(dados_fatia) < 5) next 
+  
+  # C. Gera o Plot
+  p <- ggplot(dados_fatia, aes(x = reorder(uf, vti_media, FUN = median), y = vti_media)) +
+    
+    geom_boxplot(fill = "#760000ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    
+    scale_y_log10(
+      labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+      breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+    ) +
+    
+    coord_flip() +
+    
+    labs(
+      title = paste("Ranking Estadual (VTI):", toupper(cat)),
+      subtitle = "Ordenado pela Mediana de Preço. Escala Logarítmica.",
+      x = NULL,
+      y = "Valor da Terra (R$/ha)"
+    ) +
+    
+    theme_minimal() +
+    theme(
+      axis.text.y = element_text(size = 8, face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  
+  # D. O comando essencial para loops:
+  print(p)
+}
+```
+
+Observa-se uma correlação direta entre as distribuições do Valor Total do Imóvel (VTI) e do Valor da Terra Nua (VTN), mantendo-se uma hierarquia de preços consistente entre as unidades federativas. Essa convergência evidencia as desigualdades regionais brasileiras, onde os preços mais elevados de terra concentram-se em estados com indicadores socioeconômicos superiores, enquanto os menores valores são registrados em regiões com menor dinamismo econômico.
+
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+
+# 1. Preparação dos Dados (Mantendo a correção da UF)
+dados_limpos <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+# Garante a coluna UF antes de entrar no loop
+if(!"UF" %in% names(dados_limpos)) {
+  dados_limpos$UF <- substr(dados_limpos$code_muni, 1, 2)
+}
+
+dados_prontos <- dados_limpos |>
+  filter(vtn_media > 0) |>
+  filter(categoria_final %in% c("media geral","agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
+
+# 2. Execução (Loop For + Print)
+categorias_unicas <- unique(dados_prontos$categoria_final)
+
+for(cat in categorias_unicas) {
+  
+  # A. Filtra a categoria atual
+  dados_fatia <- dados_prontos |> filter(categoria_final == cat)
+  
+  # B. Pula se não tiver dados suficientes
+  if(nrow(dados_fatia) < 5) next 
+  
+  # C. Gera o Plot
+  p <- ggplot(dados_fatia, aes(x = reorder(UF, vtn_media, FUN = median), y = vtn_media)) +
+    
+    geom_boxplot(fill = "#257a00ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    
+    scale_y_log10(
+      labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+      breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+    ) +
+    
+    coord_flip() +
+    
+    labs(
+      title = paste("Ranking Estadual (VTI):", toupper(cat)),
+      subtitle = "Ordenado pela Mediana de Preço. Escala Logarítmica.",
+      x = NULL,
+      y = "Valor da Terra sem Imóvel (R$/ha)"
+    ) +
+    
+    theme_minimal() +
+    theme(
+      axis.text.y = element_text(size = 8, face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  
+  # D. O comando essencial para loops:
+  print(p)
+}
+```
