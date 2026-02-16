@@ -1109,7 +1109,7 @@ df_incra |>
   gt() |>
   tab_header(
     title = "Dicionário de Fontes do Banco de Dados RAMT/INCRA",
-    subtitle = "Estrutura de dados para análise de mercado de terras (2015-2025)"
+    subtitle = "(BRASIL, 2026)"
   ) |>
   tab_options(
     table.width = pct(100),
@@ -1117,6 +1117,9 @@ df_incra |>
   )
 
 ```
+
+Observação, as Zonas Homogêneas do Distrito Federal contemplam uma série de municípios que não são do estado de Goiás, nesse sentido, os documentos do Distrito apresentam também municípios de Minas Gerais e Bahia. As correções da geolocalização desses municípios pode ser vista na sessão de metodologia.
+
 
 ## 4. Análise Descritiva
 Para a finalidade da análise descritiva do banco de dados optou-se por realizar um recorte temporal para o ano de 2023, uma vez que, é o ano com o maior disponibilidade de dados contemporâneos para o maior número de municípios ao mesmo tempo. Desse modo, com a finalidade de complementar as informações das cidades, as quais o recorte temporal de 2023 carecia, utilizou-se de dados de outros anos, corrigindo-os por meio do índice do IGPDI, como citado a cima.
@@ -1903,4 +1906,6 @@ Ademais, é importante ressaltar que o procedimento de digitalização, por ser 
 
 ## Referências:
 BRASIL. Ministério do Desenvolvimento Agrário. Instituto Nacional de Colonização e Reforma Agrária. Diretoria de Obtenção de Terras e Implantação de Projetos de Assentamento. Norma de Execução/INCRA/DT n. 112, de 12 de setembro de 2014: aprova o Módulo V do Manual de Obtenção de Terras – Relatório de Análise de Mercados de Terras – RAMT. Brasília, DF: INCRA, 2014. Publicada no Diário Oficial da União, 15 out. 2014, Seção 1, p. 150. Disponível em:https://www.gov.br/incra/pt-br/centrais-de-conteudos/legislacao/ne_112_2014.pdf. Acesso em: 7 fev. 2026.
+
+INCRA. Superintendência Regional de São Paulo. Relatório de Análise de Mercados de Terras – São Paulo. Brasília, DF: Instituto Nacional de Colonização e Reforma Agrária, [2026?]. Disponível em: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/sao-paulo. Acesso em: 15 dez. de 2025.
 ​
