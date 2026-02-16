@@ -775,6 +775,7 @@ DF2021$ano <- 2021
 DF2020$ano <- 2020
 DF_2025$ano <- 2024
 
+
 DFTEMPORAL <- rbind(DF2017, DF2020, DF2021, DF_2025)
 DFTEMPORAL$estado <- 52
 DFTEMPORAL$regiao <- "Centro Oeste"
