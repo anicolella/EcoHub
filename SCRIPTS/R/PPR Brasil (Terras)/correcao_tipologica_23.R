@@ -209,7 +209,40 @@ proxy_classificado <- resultado_2023_proxy_limpo %>%
 
 proxy_classificado2 <- proxy_classificado |> filter (categoria_final == "revisar manualmente")
 
-proxy_classificado <- st_as_sf(proxy_classificado)
+
+proxy_classificado <- proxy_classificado |>   mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+
+proxy_classificado <- st_as_sf(proxy_classificado) |> select(
+    mrt,
+    origem,
+    code_muni,
+    cluster,
+    ano,
+    UF,
+    vti_media,
+    vti_minimo,
+    vti_maximo,
+    vtn_media,
+    vtn_minimo,
+    vtn_maximo,
+    IGPDI_vti_media,
+    IGPDI_vti_minimo,
+    IGPDI_vti_maximo,
+    IGPDI_vtn_media,
+    IGPDI_vtn_minimo,
+    IGPDI_vtn_maximo,
+    geom,
+    area_m2,
+    area_ha_calculada,
+    categoria_final
+  )
 
 st_write(
   obj   = proxy_classificado,
