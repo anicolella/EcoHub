@@ -32,7 +32,6 @@ SITE/site_libs/
 /.quarto/
 **/*.quarto_ipynb
 
-
 # ---- SO / editor
 .DS_Store
 Thumbs.db
@@ -42,6 +41,8 @@ Thumbs.db
 # ---- Dados locais (se existirem)
 data/
 dados/
+!SITE/data/
+!SITE/data/**
 
 # ---- Ambiente R
 .Renviron

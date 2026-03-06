@@ -2,22 +2,316 @@
 title: "Equipe"
 ---
 
-::: {.grid .cols-3}
-:::{.card}
-### Lattes
-Links para currículos dos pesquisadores (CNPq).  
-[Ver Lattes](#){.button}
-:::
+## Conheça nossa equipe
 
-:::{.card}
-### GitHub
-Perfis e principais contribuições no repositório.  
-[Ver perfis](#){.button}
-:::
+Equipe dedicada a pesquisa aplicada em sustentabilidade e dados ambientais.
 
-:::{.card}
-### E-mail
-Contatos institucionais e formulário de comunicação.  
-[Entrar em contato](mailto:contato@exemplo.br){.button}
-:::
-:::
+```{=html}
+<style>
+  .equipe-container {
+    margin: 40px 0;
+  }
+
+  .equipe-secao {
+    margin-bottom: 50px;
+  }
+
+  .equipe-secao h3 {
+    color: #0ea5e9;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #10b981;
+    padding-bottom: 10px;
+  }
+
+  .membros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .membro-card {
+    background: linear-gradient(135deg, #e8fff5 0%, #e8faff 45%, #e6fff2 100%);
+    border: 2px solid #10b981;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.18);
+  }
+
+  .membro-card:hover {
+    box-shadow: 0 10px 24px rgba(14, 165, 233, 0.24);
+    transform: translateY(-3px);
+    border-color: #0ea5e9;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .membro-card {
+      background: linear-gradient(135deg, #0f2f35 0%, #0b443a 50%, #0f3242 100%);
+      border-color: #38bdf8;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+    }
+    
+    .membro-card:hover {
+      border-color: #67e8f9;
+      background: linear-gradient(135deg, #10404a 0%, #0c5243 50%, #10384a 100%);
+    }
+  }
+
+  .membro-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 3px solid #10b981;
+    display: block;
+    background: #f0fdf4;
+    overflow: hidden;
+  }
+
+  .membro-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .membro-nome {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    margin: 15px 0 5px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .membro-nome {
+      color: #e2e8f0 !important;
+    }
+  }
+
+  .membro-bio {
+    font-size: 0.95rem;
+    color: #1f2937 !important;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    min-height: 60px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .membro-bio {
+      color: #cbd5e1 !important;
+    }
+  }
+
+  .membro-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .membro-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0ea5e9;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-weight: 600;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .membro-link {
+      background: #38bdf8;
+      color: #0b1726;
+    }
+  }
+
+  .membro-link:hover {
+    background: #0284c7;
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .membro-link:hover {
+      background: #67e8f9;
+      color: #0b1726;
+    }
+  }
+
+  .membro-cargo {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .coordenador .membro-cargo {
+    background: #065f46;
+  }
+
+  .coordenador .membro-avatar {
+    border-width: 4px;
+  }
+
+  .carregando {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .carregando {
+      color: #9ca3af;
+    }
+  }
+</style>
+
+<div class="equipe-container">
+  <!-- Coordenador -->
+  <div class="equipe-secao">
+    <h3>🎯 Coordenador</h3>
+    <div class="membros-grid">
+      <div id="coordenador" class="membro-card coordenador">
+        <div class="carregando">Carregando dados...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Colaboradores -->
+  <div class="equipe-secao">
+    <h3>👥 Colaboradores</h3>
+    <div class="membros-grid" id="colaboradores">
+      <div class="carregando">Carregando dados...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Dados de fallback caso a API falhe
+  const dadosFallback = {
+    'anicolella': {
+      nome: 'Alexandre Nicolella',
+      bio: 'Professor of Economics at the University of São Paulo. Research areas: policy evaluation, social and environmental-agricultural economics',
+      avatar: 'https://avatars.githubusercontent.com/u/7339117?v=4',
+      github: 'https://github.com/anicolella'
+    },
+    'fernandovieira1': {
+      nome: 'Fernando Vieira',
+      bio: 'Economista pela UFMT, mestre em Economia Aplicada (UFMT) e doutorando em Economia (USP)',
+      avatar: 'https://avatars.githubusercontent.com/u/82428739?v=4',
+      github: 'https://github.com/fernandovieira1'
+    },
+    'shirodragon': {
+      nome: 'João Vítor Alves Domingues',
+      bio: 'Contribuidor do projeto',
+      avatar: 'https://avatars.githubusercontent.com/u/43154620?v=4',
+      github: 'https://github.com/shirodragon'
+    }
+  };
+
+  async function carregarPerfil(username) {
+    try {
+      console.log(`Tentando carregar perfil de ${username}...`);
+      const response = await fetch(`https://api.github.com/users/${username}`, {
+        headers: {
+          'Accept': 'application/vnd.github.v3+json'
+        }
+      });
+      
+      if (!response.ok) {
+        console.warn(`API retornou ${response.status} para ${username}, usando fallback`);
+        const fallback = dadosFallback[username];
+        console.log(`Usando fallback para ${username}:`, fallback);
+        return fallback || null;
+      }
+      
+      const data = await response.json();
+      console.log(`Perfil de ${username} carregado com sucesso`);
+      
+      return {
+        nome: data.name || data.login,
+        bio: data.bio || dadosFallback[username]?.bio || 'Contribuidor do projeto',
+        avatar: data.avatar_url,
+        github: data.html_url,
+        localizacao: data.location
+      };
+    } catch (error) {
+      console.error(`Erro ao carregar ${username}:`, error);
+      // Usa dados de fallback em caso de erro
+      const fallback = dadosFallback[username];
+      console.log(`Usando fallback após erro para ${username}:`, fallback);
+      return fallback || null;
+    }
+  }
+
+  function criarCardMembro(perfil, cargo) {
+    if (!perfil) {
+      console.error('Perfil é null ou undefined');
+      return `
+        <div class="membro-card">
+          <p style="color: #065f46;">Erro ao carregar perfil</p>
+        </div>
+      `;
+    }
+    
+    console.log(`Criando card para ${perfil.nome}, avatar: ${perfil.avatar}`);
+    
+    return `
+      <div class="membro-card">
+        <span class="membro-cargo">${cargo}</span>
+        <img src="${perfil.avatar}" alt="${perfil.nome}" class="membro-avatar" onerror="console.error('Erro ao carregar imagem:', this.src)">
+        <div class="membro-nome">${perfil.nome}</div>
+        <div class="membro-bio">${perfil.bio || 'Sem descrição'}</div>
+        <div class="membro-links">
+          <a href="${perfil.github}" class="membro-link" title="Perfil GitHub" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
+  async function inicializarEquipe() {
+    try {
+      // Coordenador
+      const coordenador = await carregarPerfil('anicolella');
+      const divCoordenador = document.getElementById('coordenador');
+      divCoordenador.innerHTML = criarCardMembro(coordenador, 'Prof. Dr. Coordenador');
+
+      // Colaboradores
+      const colaboradores = await Promise.all([
+        carregarPerfil('fernandovieira1'),
+        carregarPerfil('shirodragon')
+      ]);
+
+      const divColaboradores = document.getElementById('colaboradores');
+      divColaboradores.innerHTML = colaboradores
+        .map(c => criarCardMembro(c, 'Colaborador'))
+        .join('');
+    } catch (error) {
+      console.error('Erro ao inicializar equipe:', error);
+    }
+  }
+
+  // Carregar quando o DOM estiver pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inicializarEquipe);
+  } else {
+    inicializarEquipe();
+  }
+</script>
+```
