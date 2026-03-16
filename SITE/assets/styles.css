@@ -875,13 +875,13 @@ html[data-bs-theme="dark"] .home-section.video-bg .section-text p {
   float: right; /* imagem/vídeo flutua à direita por padrão */
   width: 45%; /* ocupa parte da largura do container, maior que antes */
   max-width: calc(560px + 4rem); /* aumentado em 4rem conforme solicitado */
-  margin: 0.5rem 0 1rem 1.25rem; /* deslocamento mínimo */
+  margin: 5rem 0 1rem 1.25rem; /* afasta da parte superior para não escapar do h2 */
   display: block;
 }
 /* Variante: mídia à ESQUERDA (para seção 3) */
 .wrap-media-text.left .section-media {
   float: left;
-  margin: 0.5rem 1.25rem 1rem 0; /* espelho do margin com espaço mínimo */
+  margin: 5rem 1.25rem 1rem 0; /* aumentado para igualar a seção de Objetivos */
 }
 
 /* Garante que o texto não sobreponha a mídia quando à esquerda */
