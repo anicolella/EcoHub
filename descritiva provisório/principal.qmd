@@ -201,7 +201,7 @@ df_novo2 <- separate_rows(df_novo2, origem, sep = ":")
 df_novo2 <- separate_rows(df_novo2, origem, sep = "/")
 ```
 
-Após o procedimento de separação, passou-se para a etapa de correspondência (matching) das cidades com o código do IBGE, processo que ocorreu em duas fases. Primeiro, foi feita uma limpeza nos nomes dos municípios, tanto no dataframe do IBGE quanto no dataframe construído; em seguida, procedeu-se ao matching utilizando a função left_join do pacote dplyr. Inicialmente, esse procedimento deixou algumas cidades sem correspondência. Ademais, foi necessário fazer um matching de código do IBG, número da UF com a sigla da unidade federativa a fim de realizar o procedimento de "left_join".
+Após o procedimento de separação, passou-se para a etapa de correspondência (matching) das cidades com o código do IBGE, processo que ocorreu em duas fases. Primeiro, foi feita uma limpeza nos nomes dos municípios, tanto no dataframe do IBGE quanto no dataframe construído; em seguida, procedeu-se ao matching utilizando a função left_join do pacote dplyr. Inicialmente, esse procedimento deixou algumas cidades sem correspondência. Ademais, foi necessário fazer um matching de código do IBGE, número da UF com a sigla da unidade federativa a fim de realizar o procedimento de "left_join".
 
 ```{r}
 #| message: false
@@ -947,10 +947,10 @@ dicionario_data <- tribble(
   "igpdi_vtn_media", "Monetária", "Valor vtn_media corrigida pelo IGP-DI (Preços Reais).",
   "igpdi_vtn_minimo", "Monetária", "Valor vtn_minimo corrigida pelo IGP-DI (Preços Reais).",
   "igpdi_vtn_maximo", "Monetária", "Valor vtn_maximo corrigida pelo IGP-DI (Preços Reais).",
-  "geom", "Espacial", "Geometria municipal (SIRGAS 2000).",
   "area_m2", "Espacial", "Área em metros quadrados",
-  "area_ha_calculada", "Espacial", "Área em hectares quadrados",
-  "categoria_final", "Categórica", "Unificação das tipologias de uso da terra."
+  "area_ha_calculada", "Espacial", "Área em hectares quadrados",4
+  "categoria_final", "Categórica", "Unificação das tipologias de uso da terra.",
+  "geom", "Espacial", "Geometria municipal (SIRGAS 2000).",
   
 )
 
@@ -1155,6 +1155,7 @@ tabela_pivo |>
     table.width = pct(50) # Tabela mais estreita, já que tem poucas colunas
   )
 ```
+
 
 Uma hipótese que se pode fazer a cerca do número de observações é a de que poderia haver um número maior de observações onde existe uma maior área, entretanto, isso não se verifica na amostra como pode ser visto por meio dos scatter plots:
 
@@ -1426,6 +1427,106 @@ for(cat in categorias_alvo) {
   print(p)
 }
 
+```
+
+```{r}
+# --- 0. Dependências e Setup ---
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
+library(patchwork) # <--- ESSENCIAL
+
+# Definição do Escopo Reduzido (Custo Te = 4)
+# Removida 'vegetacao nativa' por ser tipicamente discrepante das demais em termos de VTI
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista")
+lista_plots <- list()
+
+# --- 1. Execução Iterativa (Ciclo de Feedback Sunk Cost) ---
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem e Amostragem (Ponto Ótimo de Dados)
+  dados_cat <- df_analise2 |>
+    filter(ano < 2025, !is.na(IGPDI_vti_media), IGPDI_vti_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Geração de Classes (Quantis)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(IGPDI_vti_media, n = 5, dig.lab = 15),
+      classe_preco = classe_raw 
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) - Mantido ---
+  niveis_originais <- levels(dados_cat$classe_preco)
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # Aplicação de Labels (Qualitativo + Quantitativo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos 
+  )
+
+  # D. Plotagem Estática (Otimizada para Composição)
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)",
+      guide = guide_legend(keyheight = unit(0.9, "cm")) # Melhora legibilidade do text \n
+    ) +
+    
+    labs(
+      title = paste(toupper(cat)), # Título limpo
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 12, hjust = 0.5), # Títulos menores e centralizados
+      legend.position = "right",
+      legend.text = element_text(size = 8)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Mapa gerado:", cat))
+}
+
+# --- 2. COMPOSIÇÃO COM PATCHWORK (Arranjo Te = 2x2) ---
+
+figura_composta <- (
+  # Linha 1
+  (lista_plots[["agricultura"]] | lista_plots[["pecuaria"]]) / 
+  # Linha 2
+  (lista_plots[["media geral"]] | lista_plots[["exploracao mista"]])
+) + 
+  
+  # --- 3. ANOTAÇÕES E LAYOUT COLETIVO (Sinal > Ruído) ---
+  plot_layout(
+    guides = "collect" # <--- ESSENCIAL: Coleta e unifica a legenda à direita
+  ) + 
+  
+  plot_annotation(
+    title = "**Panorama do VTI no Agronegócio Brasileiro**",
+    subtitle = "Distribuição de Preços Relativa por Categoria (Quantis)",
+    caption = "Fonte: Dados de auditoria. Processamento próprio. Último ano disponível por município.",
+    theme = theme(
+      plot.title = element_text(face = "bold", size = 18, hjust = 0.5),
+      plot.subtitle = element_text(size = 13, hjust = 0.5),
+      plot.caption = element_text(size = 9, face = "italic", color = "grey40")
+    )
+  )
+
+# Visualizar a figura final
+figura_composta
 ```
 
 A distribuição geográfica do VTN segue mais ou menos a mesma lógica. É interessante notar a falta de dados acerca do valor da vegetação nativa.
@@ -1888,7 +1989,6 @@ O banco de dados construído a partir do Relatório de Análise de Mercado de Te
 
 No levantamento, é notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas para a valoração do meio ambiente no mercado imobiliário rural. O banco de dados foi capaz de contemplar grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
 
-Ademais, é importante ressaltar que o procedimento de digitalização, por ser um processo de transcrição de documentos físicos e digitais para código, pode conter erros pontuais. Os documentos referenciados, que serviram de base para esta digitalização, estão organizados na seguinte tabela para cada estado:
 
 ## Referências:
 BRASIL. Ministério do Desenvolvimento Agrário. Instituto Nacional de Colonização e Reforma Agrária. Diretoria de Obtenção de Terras e Implantação de Projetos de Assentamento. Norma de Execução/INCRA/DT n. 112, de 12 de setembro de 2014: aprova o Módulo V do Manual de Obtenção de Terras – Relatório de Análise de Mercados de Terras – RAMT. Brasília, DF: INCRA, 2014. Publicada no Diário Oficial da União, 15 out. 2014, Seção 1, p. 150. Disponível em:https://www.gov.br/incra/pt-br/centrais-de-conteudos/legislacao/ne_112_2014.pdf. Acesso em: 7 fev. 2026.
