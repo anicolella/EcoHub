@@ -57,10 +57,9 @@ df_areas2 <- df_analise2 |>
 ```
 
 ## 1.Introdução
-O presente trabalho teve como objetivo a digitalização, uniformização e disponibilização dos dados publicados nos Relatórios de Análises do mercado de Terras que são instrumentos de análise dos diferentes mercados fundiários estabelecidos no país realizadas pelas superintendências do INCRA - Instituto Nacional de Colonização e Reforma Agrária - em cada estado (BRASIL, 2014). O material que buscou-se digitalizar foram as PPRs - Planilhas de Preços Referenciais de Terras - disponibilizadas nesses relatórios, essas planilhas possuem os valores de referência usados pelo órgão com a finalidade de avaliar imóveis rurais de todo o país (BRASIL, 2014).
+O presente trabalho teve como objetivo a digitalização, uniformização e disponibilização dos dados publicados nos Relatórios de Análises do Mercado de Terras, que são instrumentos de análise dos diferentes mercados fundiários estabelecidos no país, realizados pelas superintendências do INCRA — Instituto Nacional de Colonização e Reforma Agrária — em cada estado (BRASIL, 2014). O material que se buscou digitalizar foram as PPRs — Planilhas de Preços Referenciais de Terras — disponibilizadas nesses relatórios. Essas planilhas possuem os valores de referência utilizados pelo órgão com a finalidade de avaliar imóveis rurais em todo o país (BRASIL, 2014).
 
-Os relatórios de Análise do Mercado de terra sintetizam informações de terra, nesse sentido, ocorre a separação de diferentes estados em várias Zonas Homogêneas para a finalidade de análise. Essas zonas Homogêneas são construídas por meio de um processo de clusterização (BRASIL, 2014). A clusterização ocorre em duas etapas: primeiro é aplicado o algoritmo de Ward para a definição do Número de Clusters, posteriormente, por meio de um algoritmo de K-means são feitos ajustes nas cidades de modo a adequar melhor os clusters. As variáveis que são recomendadas para sereme levadas em conta durante o processo de formação agrupamentos (Zonas Homogêneas), pelas superintendências do INCRA, são as seguintes (BRASIL, 2014):
-
+Os relatórios de Análise do Mercado de Terras sintetizam informações sobre a terra; nesse sentido, ocorre a separação dos diferentes estados em várias Zonas Homogêneas para fins de análise. Essas Zonas Homogêneas são construídas por meio de um processo de clusterização (BRASIL, 2014). A clusterização ocorre em duas etapas: primeiro, é aplicado o algoritmo de Ward para a definição do número de clusters; posteriormente, por meio de um algoritmo de K-means, são feitos ajustes nas cidades de modo a adequar melhor os clusters. As variáveis recomendadas pelas superintendências do INCRA para serem levadas em conta durante o processo de formação dos agrupamentos (Zonas Homogêneas) são as seguintes (BRASIL, 2014):
 ```{r}
 #| message: false
 #| warning: false
@@ -123,9 +122,11 @@ dicionario_data |>
   opt_row_striping()
 ```
 
-Após esses processos, são formadas as zonas homogêneas ou os mercados de terra sob os quais são realizadas as análises do INCRA, com a finalidade de determinar os valores de terra na região (BRASIL, 2014). O principal componente das PPRs é a presença de um valor médio para Terra Nua e um valor médio para terra com imóvel, variando de acordo com a tipologia indicada. 
+Após esses processos, são formadas as Zonas Homogêneas, ou mercados de terra, sob os quais são realizadas as análises do INCRA, com a finalidade de determinar os valores da terra na região (BRASIL, 2014). O principal componente das PPRs é a presença de um valor médio para Terra Nua e um valor médio para terra com imóvel, variando de acordo com a tipologia indicada.
 
-Assim, o presente banco de dados é produto da digitalização dos materiais presentes nos diferentes relatórios de análise do mercado de terras. Foram digitalizados cerca de 133 documentos em PDF, cada um contendo algumas PPRs, havendo sobreposição dos documentos sintéticos de PPRs com Relatórios de Análise de Terras. Ademais, foram utilizados dados do Atlas do Mercado de Terras, uma iniciativa do ano de 2023 para a unificação dos preços de terra em um único ano. Nesse sentido, como as observações são feitas por diferentes unidades do INCRA em tempos distintos, existe um grande índice de segregação espaço-temporal dos dados. Além disso, alguns municípios estão faltantes na base, seja por erro de transcrição ou por falta de dados nos documentos originais. Nesse sentido, segue a disponibilidade de dados por ano, seguindo os territórios municipais:
+Assim, o presente banco de dados é produto da digitalização dos materiais presentes nos diferentes Relatórios de Análise do Mercado de Terras. Foram digitalizados cerca de 133 documentos em PDF, cada um contendo algumas PPRs, havendo sobreposição entre os documentos sintéticos de PPRs e os Relatórios de Análise de Terras. Ademais, foram utilizados dados do Atlas do Mercado de Terrras, uma iniciativa do ano de 2023 voltada à unificação dos preços de terra em um único ano de referência.
+
+Nesse sentido, como as observações são realizadas por diferentes unidades do INCRA em momentos distintos, existe um elevado grau de segregação espaço-temporal dos dados. Além disso, alguns municípios estão faltantes na base, seja por erro de transcrição, seja por ausência de dados nos documentos originais. Nesse sentido, segue a disponibilidade de dados por ano, considerando os territórios municipais:
 
 ```{r}
 #| echo: false
@@ -177,11 +178,11 @@ cat(":::\n")
 ```
 
 ## 2.Metodologia 
-A extração das planilhas foi feita com o auxílio da inteligência artificial Google Gemini por meio de prints das tabelas; as tabelas eram printadas, transcritas pelo Gemini e, posteriormente, verificadas manualmente. Além disso, alguns scripts para a extração das tabelas foram criados e utilizados, usando o Camelot do Python ou até mesmo o Shiny no R. Entretanto, devido à diversidade da publicação das tabelas, algumas em PDF, outras em imagem e algumas vezes prints de tabelas com uma notável dificuldade na legibilidade, a maioria foi feita via Gemini.
+A extração das planilhas foi feita com o auxílio da inteligência artificial Google Gemini, por meio de prints das tabelas; as tabelas eram capturadas, transcritas pelo Gemini e, posteriormente, verificadas manualmente. Além disso, alguns scripts para a extração das tabelas foram criados e utilizados, empregando o Camelot no Python ou até mesmo o Shiny no R. Entretanto, devido à diversidade na forma de publicação das tabelas — algumas em PDF, outras em imagem e, por vezes, prints de tabelas com notável dificuldade de legibilidade — a maioria das extrações foi realizada via Gemini.
 
-A cerca da incompatibilidade de dados Relatórios de Análise dos Mercados de Terras (RAMT) com os dados do atlas para casos de mesmo ano, preferiu-se priorizar os dados presentes nos RAMT's, tendo em vista a maior frequência. Nesse sentido, os dados de 2023 são majoritariamente do atlas, existindo a exceção apra o estado do Mato Grosso, pois, havia um relatório para o ano de 2023 que variava dos valores apresentados no atlas, enquanto que os valores apresentados no atlas foram para um relatório de 2024. Assim, usou-se os valores do Relatório para 2023.
+Acerca da incompatibilidade de dados entre os Relatórios de Análise dos Mercados de Terras (RAMT) e os dados do Atlas para casos de mesmo ano, preferiu-se priorizar os dados presentes nos RAMTs, tendo em vista sua maior frequência. Nesse sentido, os dados de 2023 são majoritariamente provenientes do Atlas, existindo a exceção para o estado do Mato Grosso, pois havia um relatório para o ano de 2023 cujos valores divergiam dos apresentados no Atlas, enquanto os valores apresentados no Atlas foram utilizados para um relatório de 2024. Assim, utilizaram-se os valores do relatório para 2023.
 
-Após a digitalização dos dados eles foram revisados de maneira manual, além disso, buscou-se parear as cidades que anteriormente foram digitalizadas por meio de uma lista que pode ser encontrada na coluna "cluster" dos dados, para isso criou-se inicialmente um script de separação da string. As strings foram separadas segundo o seguinte trecho:
+Após a digitalização, os dados foram revisados manualmente. Além disso, buscou-se parear as cidades que anteriormente foram digitalizadas por meio de uma lista que pode ser encontrada na coluna "cluster" dos dados. Para isso, criou-se inicialmente um script de separação da string. As strings foram separadas segundo o seguinte trecho:
 
 ```{r}
 #| message: false
@@ -201,7 +202,7 @@ df_novo2 <- separate_rows(df_novo2, origem, sep = ":")
 df_novo2 <- separate_rows(df_novo2, origem, sep = "/")
 ```
 
-Após o procedimento de separação, passou-se para a etapa de correspondência (matching) das cidades com o código do IBGE, processo que ocorreu em duas fases. Primeiro, foi feita uma limpeza nos nomes dos municípios, tanto no dataframe do IBGE quanto no dataframe construído; em seguida, procedeu-se ao matching utilizando a função left_join do pacote dplyr. Inicialmente, esse procedimento deixou algumas cidades sem correspondência. Ademais, foi necessário fazer um matching de código do IBGE, número da UF com a sigla da unidade federativa a fim de realizar o procedimento de "left_join".
+Após o procedimento de separação, passou-se para a etapa de correspondência (matching) das cidades com o código do IBGE, processo que ocorreu em duas fases. Primeiro, foi realizada uma limpeza nos nomes dos municípios, tanto no dataframe do IBGE quanto no dataframe construído; em seguida, procedeu-se ao matching utilizando a função left_join do pacote dplyr. Inicialmente, esse procedimento deixou algumas cidades sem correspondência. Ademais, foi necessário realizar a correspondência entre o código do IBGE, o número da UF e a sigla da unidade federativa, a fim de viabilizar o procedimento de left_join.
 
 ```{r}
 #| message: false
@@ -278,7 +279,7 @@ df_resultado <- dep %>%
   left_join(mun_data, by = c("origem" = "name_muni", "uf" = "abbrev_state"))
 ```
 
-Os erros de join foram isolados em um data frame distinto para correção. A fim de facilitar o processo, utilizou-se uma técnica de fuzzy matching, baseada no cálculo da distância de edição das strings do banco de dados original (denominado eco1) em relação às do IBGE. Estabeleceu-se um limiar de distância de 0,2 para a substituição automática; contudo, mesmo após esse procedimento, algumas inconsistências remanescentes exigiram correção manual.
+Os erros de join foram isolados em um dataframe distinto para correção. A fim de facilitar o processo, utilizou-se uma técnica de fuzzy matching, baseada no cálculo da distância de edição entre as strings do banco de dados original (denominado eco1) e as do IBGE. Estabeleceu-se um limiar de distância de 0,2 para a substituição automática; contudo, mesmo após esse procedimento, algumas inconsistências remanescentes exigiram correção manual.
 
 ```{r}
 #| message: false
@@ -343,7 +344,7 @@ df_novo3 <- df_novo3 %>%
 
 ```
 
-As correções manuais necessárias apresentaram naturezas distintas, decorrentes de uma série de inconsistências. Algumas foram provenientes de limitações na métrica de distância de edição utilizada no processo de fuzzy matching. Outras derivaram da estrutura de construção do data frame, a exemplo da associação de cidades da Zona Homogênea do Distrito Federal ao código do IBGE da unidade federativa correspondente. Identificaram-se, ainda, nomes incompletos nos próprios Relatórios de Análise do Mercado de Terras e casos de cidades cujos nomes continham a conjunção 'e' — as quais haviam sido indevidamente fragmentadas no script de separação inicial, exigindo correções diretamente no código de separção. Ademais, algumas cidades tiveram que ter seu nome alterado para bater com o nome da tabela do IBGE, tendo em vista que os dados variam de 2015 a 2025. Por fim, observaram-se cidades fronteiriças que, ocasionalmente, constavam em mercados regionais de outros estados
+As correções manuais necessárias apresentaram naturezas distintas, decorrentes de uma série de inconsistências. Algumas foram provenientes de limitações na métrica de distância de edição utilizada no processo de fuzzy matching. Outras derivaram da estrutura de construção do dataframe, a exemplo da associação de cidades da Zona Homogênea do Distrito Federal ao código do IBGE da unidade federativa correspondente. Identificaram-se, ainda, nomes incompletos nos próprios Relatórios de Análise do Mercado de Terras e casos de cidades cujos nomes continham a conjunção “e”, as quais haviam sido indevidamente fragmentadas no script de separação inicial, exigindo correções diretamente no código de separação. Ademais, algumas cidades tiveram que ter seus nomes alterados para corresponder aos nomes presentes na tabela do IBGE, tendo em vista que os dados variam de 2015 a 2025. Por fim, observaram-se cidades fronteiriças que, ocasionalmente, constavam em mercados regionais de outros estados.
 
 ```{r}
 #| message: false
@@ -451,7 +452,7 @@ df_novo3 <- df_novo2
 ```
 
 
-Repetiu-se então o procedimento de fuzzy join e além disso fez-se uma verificação acerca dos municípios que se encontravam sem pareamento no join, ao final do processo, nenhum município da base ficou sem identificação.
+Repetiu-se, então, o procedimento de fuzzy join e, além disso, realizou-se uma verificação acerca dos municípios que se encontravam sem pareamento no join. Ao final do processo, nenhum município da base ficou sem identificação.
 ```{r}
 #| message: false
 #| warning: false
@@ -538,7 +539,7 @@ check_sua_base <- df_joined %>%
 
 ```
 
-Após esses procedimentos foi realizada a correção inflacionária pelo índice IGPDI, que é o índice recomendado pelo INCRA para a correção dos valores de terra, segundo a norma de execução para a elaboração dos relatórios (BRASIL, 2014). A correção inflacionária foi feita com auxílio da API do IPEA para adquirir as séries temporais de variação no índice. 
+Após esses procedimentos, foi realizada a correção inflacionária pelo índice IGP-DI, que é o índice recomendado pelo INCRA para a correção dos valores da terra, segundo a norma de execução para a elaboração dos relatórios (BRASIL, 2014). A correção inflacionária foi feita com o auxílio da API do IPEA para adquirir as séries temporais de variação do índice.
 
 ```{r}
 #| message: false
@@ -620,7 +621,7 @@ $\prod_{t=1}^{n}$: Operador de produtório, indicando que as taxas de cada perí
 
 n: Número total de períodos (meses ou anos) compreendidos na análise.
 
-Após as correções inflacionárias, unificaram-se as tipologias, as quais foram filtradas para os níveis categóricos zero e um, em uma tentativa de abranger agricultura, pecuária, vegetação nativa e a média geral. Nesse sentido, utilizaram-se os pacotes stringdist e dplyr. Todas as variações nominais presentes nesses níveis foram tratadas por meio da função mutate, unificando os tipos. Além disso, os nomes foram previamente tratados para reduzir inconsistências com strings, conforme a correção apresentada a seguir:
+Após as correções inflacionárias, unificaram-se as tipologias, as quais foram filtradas para os níveis categóricos zero e um, em uma tentativa de abranger agricultura, pecuária, vegetação nativa e a média geral. Nesse sentido, utilizaram-se os pacotes stringdist e dplyr. Todas as variações nominais presentes nesses níveis foram tratadas por meio da função mutate, unificando os tipos. Além disso, os nomes foram previamente tratados para reduzir inconsistências nas strings, conforme a correção apresentada a seguir:
 
 ```{r}
 #| message: false
@@ -831,9 +832,7 @@ df_classificado <- resultado_igpdi_limpo %>%
 
 ```
 
-Para além desse data frame principal (EcoHub), que consolida os dados de todos os relatórios da RAMT, realizou-se um corte transversal referente ao ano de 2023, visando obter a maior completude de dados possível para um mesmo período. Para a elaboração desse segundo banco de dados, aplicaram-se os mesmos procedimentos anteriores, com o diferencial da atualização dos valores monetários para 2023. Além disso, integraram-se dados de municípios que não possuíam observações naquele ano específico; nestes casos, selecionaram-se os registros mais recentes de cada região. Quando ocorria empate na distância temporal, adotou-se o critério de proximidade cronológica sob unidade de tempo anual.
-
-O Fluxo de scripts é basicamente o mesmo, o que muda é que a correção inflacionária, segue o seguinte script (este já contendo a função de recorte temporal):
+Para além desse dataframe principal (EcoHub), que consolida os dados de todos os relatórios da RAMT, realizou-se um corte transversal referente ao ano de 2023, visando obter a maior completude de dados possível para um mesmo período. Para a elaboração desse segundo banco de dados, aplicaram-se os mesmos procedimentos anteriores, com o diferencial da atualização dos valores monetários para 2023. Além disso, integraram-se dados de municípios que não possuíam observações naquele ano específico; nesses casos, selecionaram-se os registros mais recentes de cada região. Quando ocorria empate na distância temporal, adotou-se o critério de proximidade cronológica sob unidade de tempo anual.
 
 ```{r}
 #| message: false
@@ -948,9 +947,9 @@ dicionario_data <- tribble(
   "igpdi_vtn_minimo", "Monetária", "Valor vtn_minimo corrigida pelo IGP-DI (Preços Reais).",
   "igpdi_vtn_maximo", "Monetária", "Valor vtn_maximo corrigida pelo IGP-DI (Preços Reais).",
   "area_m2", "Espacial", "Área em metros quadrados",
-  "area_ha_calculada", "Espacial", "Área em hectares quadrados",4
+  "area_ha_calculada", "Espacial", "Área em hectares quadrados",
   "categoria_final", "Categórica", "Unificação das tipologias de uso da terra.",
-  "geom", "Espacial", "Geometria municipal (SIRGAS 2000).",
+  "geom", "Espacial", "Geometria municipal (SIRGAS 2000)."
   
 )
 
@@ -973,7 +972,7 @@ dicionario_data |>
 
 ```
 
-Segue a listagem de relatórios que serviram na construção do banco de dados: 
+Segue a listagem de relatórios que serviram para construção do banco de dados: 
 
 ```{r}
 df_incra <- tribble(
@@ -1104,12 +1103,11 @@ df_incra |>
 
 ```
 
-Observação, as Zonas Homogêneas do Distrito Federal contemplam uma série de municípios que não são do estado de Goiás, nesse sentido, os documentos do Distrito apresentam também municípios de Minas Gerais e Bahia. As correções da geolocalização desses municípios pode ser vista na sessão de metodologia.
+Observação: as Zonas Homogêneas do Distrito Federal contemplam uma série de municípios que não pertencem ao estado de Goiás. Nesse sentido, os documentos do Distrito apresentam também municípios de Minas Gerais e da Bahia. As correções da geolocalização desses municípios podem ser vistas na seção de metodologia.
 
 
 ## 4. Análise Descritiva
-Para a finalidade da análise descritiva do banco de dados optou-se por realizar um recorte temporal para o ano de 2023, uma vez que, é o ano com o maior disponibilidade de dados contemporâneos para o maior número de municípios ao mesmo tempo. Desse modo, com a finalidade de complementar as informações das cidades, as quais o recorte temporal de 2023 carecia, utilizou-se de dados de outros anos, corrigindo-os por meio do índice do IGPDI, como citado a cima.
-
+Para a finalidade da análise descritiva do banco de dados, optou-se por realizar um recorte temporal para o ano de 2023, uma vez que é o ano com a maior disponibilidade de dados contemporâneos para o maior número de municípios ao mesmo tempo. Desse modo, com a finalidade de complementar as informações das cidades para as quais o recorte temporal de 2023 carecia de dados, utilizaram-se observações de outros anos, corrigindo-as por meio do índice IGP-DI, como citado acima.
 ```{r}
 #| message: false
 #| warning: false
@@ -1157,7 +1155,7 @@ tabela_pivo |>
 ```
 
 
-Uma hipótese que se pode fazer a cerca do número de observações é a de que poderia haver um número maior de observações onde existe uma maior área, entretanto, isso não se verifica na amostra como pode ser visto por meio dos scatter plots:
+Uma hipótese que se pode formular acerca do número de observações é a de que poderia haver um número maior de observações onde existe maior área; entretanto, isso não se verifica na amostra, como pode ser visto por meio dos scatter plots:
 
 ```{r}
 #| message: false
@@ -1203,13 +1201,13 @@ ggplot(dados_agrupados, aes(x = area_total, y = n_obs)) +
   theme(legend.position = "none")
 ```
 
-As linhas tracejadas são regressões lineares no modelo LOG-LOG para verificar a elasticidade do número de observações à área, utilizando os níveis categóricos 0 e 1 . Seguindo a seguintes fórmula:
+As linhas tracejadas representam regressões lineares no modelo log-log, utilizadas para verificar a elasticidade do número de observações em relação à área, considerando os níveis categóricos 0 e 1. Segue a seguinte fórmula:
 
 $$
 Log(N_i) = B_0 + B_1 * log(área_i) + \epsilon_i
 $$
 
-O resultado dos betas demonstra uma oferta inelástica de informação em relação a área:
+O resultado dos betas demonstra uma oferta inelástica de informação em relação à área:
 ```{r}
 #| message: false
 #| warning: false
@@ -1289,7 +1287,7 @@ tabela_elasticidade |>
   )
 ```
 
-O valor de terra por quantil ao longo de toda a amostragem, lembrando que os valores aqui apresentados são fruto de correções inflacionárias de todos os valores para o ano de 2023. 
+O valor da terra por quantil ao longo de toda a amostra, lembrando que os valores aqui apresentados são fruto de correções inflacionárias de todos os valores para o ano de 2023.
 ```{r}
 #| message: false
 #| warning: false
@@ -1347,8 +1345,7 @@ tabela_quantis |>
   )
 ```
 
-Geograficamente, os dados refletem uma estrutura que respeita o esperado: os estados das regiões Sul, Sudeste e Centro-Oeste apresentam um maior valor para a terra com imóvel, enquanto as regiões Norte e Nordeste apresentam valores inferiores. Uma anomalia que se encontra é a região de Manaus, que compõe a Zona Homogênea de Terras 'Manaus e Entorno'. Os valores dos imóveis provavelmente aumentam por conta da pressão da zona urbana, como é o caso típico de imóveis apresentando maior valor em áreas altamente urbanizadas.
-
+Geograficamente, os dados refletem uma estrutura que respeita o esperado: os estados das regiões Sul, Sudeste e Centro-Oeste apresentam maior valor para a terra com imóvel, enquanto as regiões Norte e Nordeste apresentam valores inferiores. Uma anomalia observada é a região de Manaus, que compõe a Zona Homogênea de Terras “Manaus e Entorno”. Os valores dos imóveis provavelmente aumentam em razão da pressão da zona urbana, como ocorre tipicamente em áreas altamente urbanizadas, nas quais os imóveis tendem a apresentar maior valor.
 ```{r}
 #| message: false
 #| warning: false
@@ -1429,107 +1426,7 @@ for(cat in categorias_alvo) {
 
 ```
 
-```{r}
-# --- 0. Dependências e Setup ---
-library(dplyr)
-library(ggplot2)
-library(sf)
-library(scales)
-library(stringr)
-library(patchwork) # <--- ESSENCIAL
-
-# Definição do Escopo Reduzido (Custo Te = 4)
-# Removida 'vegetacao nativa' por ser tipicamente discrepante das demais em termos de VTI
-categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista")
-lista_plots <- list()
-
-# --- 1. Execução Iterativa (Ciclo de Feedback Sunk Cost) ---
-for(cat in categorias_alvo) {
-  
-  # A. Filtragem e Amostragem (Ponto Ótimo de Dados)
-  dados_cat <- df_analise2 |>
-    filter(ano < 2025, !is.na(IGPDI_vti_media), IGPDI_vti_media > 0) |>
-    filter(categoria_final == cat) |> 
-    group_by(code_muni) |>
-    slice_max(order_by = ano, n = 1) |> 
-    ungroup()
-  
-  # B. Geração de Classes (Quantis)
-  dados_cat <- dados_cat |>
-    mutate(
-      classe_raw = cut_number(IGPDI_vti_media, n = 5, dig.lab = 15),
-      classe_preco = classe_raw 
-    )
-
-  # --- C. O TRATAMENTO DE STRING (Regex) - Mantido ---
-  niveis_originais <- levels(dados_cat$classe_preco)
-  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
-  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
-  
-  # Aplicação de Labels (Qualitativo + Quantitativo Limpo)
-  levels(dados_cat$classe_preco) <- paste0(
-    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
-    "\n", 
-    niveis_limpos 
-  )
-
-  # D. Plotagem Estática (Otimizada para Composição)
-  p <- ggplot(dados_cat) +
-    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
-    
-    scale_fill_brewer(
-      palette = "Spectral", 
-      direction = -1,
-      name = "Faixa de Preço (R$/ha)",
-      guide = guide_legend(keyheight = unit(0.9, "cm")) # Melhora legibilidade do text \n
-    ) +
-    
-    labs(
-      title = paste(toupper(cat)), # Título limpo
-      x = NULL, y = NULL
-    ) +
-    
-    theme_void() +
-    theme(
-      plot.title = element_text(face = "bold", size = 12, hjust = 0.5), # Títulos menores e centralizados
-      legend.position = "right",
-      legend.text = element_text(size = 8)
-    )
-
-  lista_plots[[cat]] <- p
-  message(paste("Mapa gerado:", cat))
-}
-
-# --- 2. COMPOSIÇÃO COM PATCHWORK (Arranjo Te = 2x2) ---
-
-figura_composta <- (
-  # Linha 1
-  (lista_plots[["agricultura"]] | lista_plots[["pecuaria"]]) / 
-  # Linha 2
-  (lista_plots[["media geral"]] | lista_plots[["exploracao mista"]])
-) + 
-  
-  # --- 3. ANOTAÇÕES E LAYOUT COLETIVO (Sinal > Ruído) ---
-  plot_layout(
-    guides = "collect" # <--- ESSENCIAL: Coleta e unifica a legenda à direita
-  ) + 
-  
-  plot_annotation(
-    title = "**Panorama do VTI no Agronegócio Brasileiro**",
-    subtitle = "Distribuição de Preços Relativa por Categoria (Quantis)",
-    caption = "Fonte: Dados de auditoria. Processamento próprio. Último ano disponível por município.",
-    theme = theme(
-      plot.title = element_text(face = "bold", size = 18, hjust = 0.5),
-      plot.subtitle = element_text(size = 13, hjust = 0.5),
-      plot.caption = element_text(size = 9, face = "italic", color = "grey40")
-    )
-  )
-
-# Visualizar a figura final
-figura_composta
-```
-
-A distribuição geográfica do VTN segue mais ou menos a mesma lógica. É interessante notar a falta de dados acerca do valor da vegetação nativa.
+A distribuição geográfica do VTN segue, em linhas gerais, a mesma lógica. É interessante notar a falta de dados acerca do valor da vegetação nativa.
 
 ```{r}
 #| message: false
@@ -1611,8 +1508,7 @@ for(cat in categorias_alvo) {
 
 ```
 
-A análise das linhas de densidade ( valor de terra com imóvel - VTI) demonstra um comportamento de multimodalidade para todas as categorias na distribuição dos preços. Apresentando notavelmente uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas: "pecuária", "agricultura" e vegetação nativa. 
-
+A análise das linhas de densidade (Valor Total do Imóvel — VTI) demonstra um comportamento de multimodalidade para todas as categorias na distribuição dos preços, apresentando, de forma notável, uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas “pecuária”, “agricultura” e “vegetação nativa”.
 ```{r}
 #| message: false
 #| warning: false
@@ -1709,7 +1605,8 @@ lista_plots <- Filter(Negate(is.null), lista_plots)
 htmltools::tagList(lista_plots)
 ```
 
-A análise das linhas de densidade do VTN (valor de terra nua) demonstra um comportamento de multimodalidade para todas as categorias na distribuição dos preços, apresentando o mesmo tipo de comportamento que aquele apresentado no VTI.
+A análise das linhas de densidade do VTN (valor de terra nua) demonstra um comportamento de multimodalidade para todas as categorias na distribuição dos preços, apresentando o mesmo tipo de comportamento observado no VTI.
+
 ```{r}
 #| message: false
 #| warning: false
@@ -1869,7 +1766,7 @@ ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = medi
   )
 ```
 
-O preço do VTN apresenta, em geral, um maior grau de variância da média quando comparado ao VTI e, geralmente, valores menores para os máximos, provavelmente por conta das variações tecnológicas. Além disso, é possível observar que a tendência geral é que os valores de terras com imóvel sejam maiores do que os de terras sem imóvel.
+O preço do VTN apresenta, em geral, maior grau de variância em relação à média quando comparado ao VTI e, geralmente, valores máximos menores, provavelmente em razão das variações tecnológicas. Além disso, é possível observar que a tendência geral é que os valores de terras com imóvel sejam maiores do que os de terras sem imóvel.
 
 ```{r}
 #| message: false
@@ -1927,8 +1824,7 @@ for(cat in categorias_unicas) {
 }
 ```
 
-Aqui é visível o efeito regional nas distribuições, é interessante mostrar que os valores maiores se apresentam na região sul e sudeste enquanto as menores nas regiões norte e nordeste o que pode levar a um favorecimento do desmatamento, isso é corroborado quando se observa que o valor da vegetação nativa raramente chefa a mais que 50 mil, enquanto em estados com um maior indice urbano o valor das atividades é num geral mais elevado.
-
+Aqui é visível o efeito regional nas distribuições. É interessante notar que os maiores valores se apresentam nas regiões Sul e Sudeste, enquanto os menores ocorrem nas regiões Norte e Nordeste, o que pode levar a um favorecimento do desmatamento. Isso é corroborado quando se observa que o valor da vegetação nativa raramente chega a mais de 50 mil, enquanto, em estados com maior índice urbano, o valor das atividades é, em geral, mais elevado.
 ```{r}
 #| message: false
 #| warning: false
@@ -1985,9 +1881,9 @@ for(cat in categorias_unicas) {
 ```
 
 ## 5. Visão Geral
-O banco de dados construído a partir do Relatório de Análise de Mercado de Terras (RAMT) reflete a estrutura fundiária e as desigualdades regionais observadas no país. A base de dados demonstra que o valor da terra varia de forma sistemática conforme as condições socioeconômicas de cada estado brasileiro. Esses valores sintetizam diversos fatores relevantes para a compreensão da distribuição e do mercado de terras no Brasil.
+O banco de dados construído a partir dos Relatórios de Análise do Mercado de Terras (RAMT) reflete a estrutura fundiária e as desigualdades regionais observadas no país. A base de dados demonstra que o valor da terra varia de forma sistemática conforme as condições socioeconômicas de cada estado brasileiro. Esses valores sintetizam diversos fatores relevantes para a compreensão da distribuição e do mercado de terras no Brasil.
 
-No levantamento, é notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas para a valoração do meio ambiente no mercado imobiliário rural. O banco de dados foi capaz de contemplar grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
+No levantamento, é notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas à valoração do meio ambiente no mercado imobiliário rural. O banco de dados foi capaz de contemplar grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
 
 
 ## Referências:
