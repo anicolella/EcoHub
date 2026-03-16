@@ -24,7 +24,7 @@ jobs:
 
       # Dependências do projeto (opcionais)
       - name: Instalar deps do projeto (opcional)
-        working-directory: site
+        working-directory: SITE
         run: |
           pip install -r requirements.txt || true
           Rscript -e 'if ("renv" %in% rownames(installed.packages())) renv::restore(prompt = FALSE) else invisible(TRUE)'
@@ -32,7 +32,7 @@ jobs:
       # Renderizar site (a partir da pasta `site`)
       - name: Render
         run: quarto render
-        working-directory: site
+        working-directory: SITE
 
       # Publicar em GitHub Pages (docs gerados dentro de site/docs)
       - name: Deploy to GitHub Pages
