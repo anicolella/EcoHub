@@ -3,6 +3,43 @@ title: "relatorio1"
 format: html
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(geobr)
+library(ipeadatar)
+library(stringr)
+library(readr)
+library(sf)
+library(gtsummary)
+library(gt)
+
+
+df_analise <- st_read(
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
+
+
+df_areas <- df_analise |>
+  mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+ df_joined2 <-  df_analise |> filter(UF == "MT") 
+
+ df_mt <- df_areas |> filter(UF == "MT")
+```
+
 # Resumo
 
 Este estudo analisa a relação entre valor da terra e desmatamento no estado do Mato Grosso, destacando sua relevância para o debate sobre desenvolvimento econômico e conservação ambiental. O objetivo central é investigar de que forma a dinâmica dos mercados de terra influencia a decisão de desmatar, considerando fatores socioeconômicos e espaciais. Para isso, são utilizados dados provenientes dos Relatórios de Análise do Mercado de Terras (RAMTs), complementados por bases como MapBiomas, CAR, IPEADATA e BACEN, referentes ao período de 2018 a 2024. No âmbito metodológico, o trabalho adota umaRegressão Linear Múltipla, com controles socioeconômicos e espaciais, além de análise descritiva dos padrões observados nas tipologias de uso da terra. Os resultados descritivos indicam forte heterogeneidade regional dos preços da terra, com maior valorização associada à tipologia agrícola e maior dispersão dos valores de VTN (Valor da Terra Nua) em comparação ao VTI (Valor da Total do Imóvel). Reforçando a relevância do valor da terra como um fator econômico importante do desmatamento e apresentando implicações para o desenho de políticas públicas ambientais.
@@ -45,133 +82,561 @@ O trabalho está organizado da seguinte forma: a introdução, em que se apresen
 
 O desmatamento é um fenômeno bastante estudado. Modelos iniciais sobre o desmatamento na Amazônia Legal buscavam modelá-lo utilizando ideias microeconômicas e variáveis associadas principalmente à infraestrutura [@pfaff1999]. Posteriormente, surgiram modelos que levam em conta características socioeconômicas e espaciais [@Balboni], em especial o uso de preços de commodities para o estudo do desmatamento [@rocha].
 
-Existe uma série de variáveis já bem exploradas pela literatura como causadoras do desmatamento, sendo notável a correlação entre a atividade pecuária e o desmatamento [@nepstadg, @rocha, @Balboni]. Isso ocorre porque, historicamente, o processo da pecuária permite que a terra "cumpra sua função social" com facilidade, ou seja, a terra se torna "produtiva", facilitando o processo de grilagem \cite{brandão_rezende_marques_2006}.
+Existe uma série de variáveis já bem exploradas pela literatura como causadoras do desmatamento, sendo notável a correlação entre a atividade pecuária e o desmatamento [@nepstadg, @rocha, @Balboni]. Isso ocorre porque, historicamente, o processo da pecuária permite que a terra "cumpra sua função social" com facilidade, ou seja, a terra se torna "produtiva", facilitando o processo de grilagem [@brandão_rezende_marques_2006].
 
-Via de regra, os modelos microeconômicos partem da premissa de que o produtor rural maximiza seu lucro \cite{pfaff1999, rocha}. Outros modelos buscam modelar os dados do ponto de vista espacial e explicitar a dinâmica do desmatamento \cite{geospatial}. Outro ponto importante é que modelos mais antigos, como o de Pfaff (1999), consideram mais variáveis físicas, como a densidade da malha rodoviária, enquanto trabalhos mais recentes atribuem maior peso às variáveis socioeconômicas, e alguns consideram efeitos de restrições legais \cite{rocha}.
+Via de regra, os modelos microeconômicos partem da premissa de que o produtor rural maximiza seu lucro [@pfaff199, @rocha]. Outros modelos buscam modelar os dados do ponto de vista espacial e explicitar a dinâmica do desmatamento [@geospatial]. Outro ponto importante é que modelos mais antigos, como o de Pfaff (1999), consideram mais variáveis físicas, como a densidade da malha rodoviária, enquanto trabalhos mais recentes atribuem maior peso às variáveis socioeconômicas, e alguns consideram efeitos de restrições legais [@rocha].
 
-\subsection{Modelos de referência na literatura}
+# Modelos de referência na literatura
 
-O modelo de \citeonline{pfaff1999} explica o desmatamento por meio de uma função de maximização de lucro, considerando variáveis ligadas principalmente ao processo de colonização da Amazônia, como a facilidade de transporte, características climáticas e o arranjo demográfico, que possui inicialmente grande influência (fator colonização) e, posteriormente, efeito mais fraco. As variáveis utilizadas variam desde densidade populacional e distância de estradas até uma primeira consideração sobre o uso de crédito rural. Assim, existe uma tendência de explicar o problema de otimização a partir dessa ótica, apesar de o modelo apresentar uma inovação, que é a consideração do mercado de crédito em 1999.
+O modelo de [@pfaff1999] explica o desmatamento por meio de uma função de maximização de lucro, considerando variáveis ligadas principalmente ao processo de colonização da Amazônia, como a facilidade de transporte, características climáticas e o arranjo demográfico, que possui inicialmente grande influência (fator colonização) e, posteriormente, efeito mais fraco. As variáveis utilizadas variam desde densidade populacional e distância de estradas até uma primeira consideração sobre o uso de crédito rural. Assim, existe uma tendência de explicar o problema de otimização a partir dessa ótica, apesar de o modelo apresentar uma inovação, que é a consideração do mercado de crédito em 1999.
 
-O modelo criado por \citeonline{rocha} considera um agricultor representativo que só pode expandir sua produção por meio do desmatamento. Não há arrendamento da terra; o produtor maximiza seu lucro por meio da maximização de preços; há uma função de produção com retornos de escala decrescentes; e os fatores institucionais exercem certa influência sobre a decisão de desmatar ou não. O modelo apresenta como variáveis preços dos produtos agrícolas, área, área ótima da propriedade, tecnologia e um parâmetro de restrição legal. A principal contribuição desse modelo recai sobre a medição das restrições legais, medida pela área não disponível legalmente no município \cite{rocha}. Ademais, o artigo faz uma estimativa do custo da restrição legal em termos de PIB municipal, e o resultado do contrafactual indica que não houve efeito relevante sobre o PIB projetado \cite{rocha}.
+O modelo criado por [@rocha] considera um agricultor representativo que só pode expandir sua produção por meio do desmatamento. Não há arrendamento da terra; o produtor maximiza seu lucro por meio da maximização de preços; há uma função de produção com retornos de escala decrescentes; e os fatores institucionais exercem certa influência sobre a decisão de desmatar ou não. O modelo apresenta como variáveis preços dos produtos agrícolas, área, área ótima da propriedade, tecnologia e um parâmetro de restrição legal. A principal contribuição desse modelo recai sobre a medição das restrições legais, medida pela área não disponível legalmente no município [@rocha]. Ademais, o artigo faz uma estimativa do custo da restrição legal em termos de PIB municipal, e o resultado do contrafactual indica que não houve efeito relevante sobre o PIB projetado [@rocha].
 
-\subsection{Evidências empíricas e implicações para o estudo}
+# Evidências empíricas e implicações para o estudo
 
-Uma constante observada nesses estudos é o uso da técnica de regressão linear múltipla para a estimação dos parâmetros dos modelos \cite{rocha, pfaff1999}. Além dos estudos de modelagem microeconômica, também há estudos que buscam explicar o desmatamento por meio de técnicas econométricas aplicadas \cite{martins_francisco_2025}. Embora também utilizem regressão linear múltipla, \citeonline{martins_francisco_2025} encontrou melhor ajuste do modelo aos dados por meio do uso do modelo SAR e de testes nas amostras aplicadas na regressão múltipla.
+Uma constante observada nesses estudos é o uso da técnica de regressão linear múltipla para a estimação dos parâmetros dos modelos [@rocha, @pfaff1999]. Além dos estudos de modelagem microeconômica, também há estudos que buscam explicar o desmatamento por meio de técnicas econométricas aplicadas [@martins_francisco_2025]. Embora também utilizem regressão linear múltipla, [@martins_francisco_2025]  encontrou melhor ajuste do modelo aos dados por meio do uso do modelo SAR e de testes nas amostras aplicadas na regressão múltipla.
 
-Em geral, esses modelos se preocupam com a rentabilidade da terra, ou seja, o retorno monetário gerado pela terra ao produtor, utilizando como proxy a variação nos preços das commodities \cite{rocha, pfaff1999, martins_francisco_2025}. Entretanto, tendo em vista que o mercado de terras possui papel central — uma vez que a grilagem é um processo constante no desmatamento \cite{brandão_rezende_marques_2006} —, é importante considerar o valor da terra como fator central para o desmatamento.
+Em geral, esses modelos se preocupam com a rentabilidade da terra, ou seja, o retorno monetário gerado pela terra ao produtor, utilizando como proxy a variação nos preços das commodities [@rocha, @pfaff1999, @martins_francisco_2025]. Entretanto, tendo em vista que o mercado de terras possui papel central — uma vez que a grilagem é um processo constante no desmatamento [@brandão_rezende_marques_2006] —, é importante considerar o valor da terra como fator central para o desmatamento.
 
-O processo de desmatamento é, portanto, entendido como um problema de otimização da lucratividade do indivíduo, ou seja, o indivíduo decide se vai desmatar ou não tendo em vista seus ganhos futuros \cite{rocha, pfaff1999}. Assim, a pecuária apresenta índice positivo de correlação com o desmatamento pela facilitação da grilagem \cite{brandão_rezende_marques_2006}. Isso também explica o uso de variáveis que consideram características geoespaciais, tendo em vista que elas permitem prever, em algum grau, a lucratividade da terra e a facilidade da criação de culturas agrícolas.
+O processo de desmatamento é, portanto, entendido como um problema de otimização da lucratividade do indivíduo, ou seja, o indivíduo decide se vai desmatar ou não tendo em vista seus ganhos futuros [@rocha, @pfaff1999] . Assim, a pecuária apresenta índice positivo de correlação com o desmatamento pela facilitação da grilagem [@brandão_rezende_marques_2006]. Isso também explica o uso de variáveis que consideram características geoespaciais, tendo em vista que elas permitem prever, em algum grau, a lucratividade da terra e a facilidade da criação de culturas agrícolas.
 
-\section{Objetivos}
-\subsection{Objetivo geral}
+# Objetivos
+## Objetivo geral
 
 Analisar a influência do valor da terra sobre o desmatamento no estado do Mato Grosso, considerando fatores econômicos, socioeconômicos e ambientais no período estudado.
 
-\subsection{Objetivos específicos}
+# Objetivos específicos
 
-\begin{itemize}
-    \item Construir e organizar uma base de dados integrada, com destaque para os dados dos RAMTs, articulada com informações de fontes complementares, como CAR, MAPBIOMAS, IPEADATA e BACEN.
-    \item Caracterizar descritivamente a dinâmica do desmatamento e do valor da terra no Mato Grosso, identificando padrões relevantes para o problema de pesquisa.
-    \item Estimar a relação entre valor da terra e desmatamento por meio de regressão linear múltipla, controlando por variáveis socioeconômicas e ambientais.
-    \item Discutir os resultados à luz da literatura, avaliando implicações para o desenho de instrumentos de conservação.
-\end{itemize}
+- Construir e organizar uma base de dados integrada, com destaque para os dados dos RAMTs, articulada com informações de fontes complementares, como CAR, MAPBIOMAS, IPEADATA e BACEN.
+- Caracterizar descritivamente a dinâmica do desmatamento e do valor da terra no Mato Grosso, identificando padrões relevantes para o problema de pesquisa.
+- Estimar a relação entre valor da terra e desmatamento por meio de regressão linear múltipla, controlando por variáveis socioeconômicas e ambientais.
+- Discutir os resultados à luz da literatura, avaliando implicações para o desenho de instrumentos de conservação.
 
-\section{Metodologia}
-\subsection{Método}
+
+# Metodologia
+## Método
 
 A técnica estatística utilizada será um modelo de Regressão Linear Múltipla. Essa escolha se deve à necessidade de empregar uma série complexa de variáveis no estudo do desmatamento. A hipótese a ser testada é que o valor da terra constitui um fator determinante para o fenômeno do desmatamento. Nesse sentido, o método permite incorporar diversas variáveis de apoio \cite{wooldridge}.
 
+$$
 \begin{equation}
 Desmatamento_i =
 \beta_0 +
 \beta_1 ValorTerra_i +
-\mathbf{X}_i\boldsymbol{\gamma} +
-\mathbf{S}_i\boldsymbol{\delta} +
+\mathbf{X}_i\gamma +
+\mathbf{S}_i\delta +
 \varepsilon_i
 \end{equation}
+$$
 
-{\small
-\begin{itemize}
-\renewcommand{\labelitemi}{\textbullet}
+- $Desmatamento_i$: área desmatada na unidade de análise $i$ (por exemplo, município ou região), medida em hectares;
 
-\item $Desmatamento_i$: área desmatada na unidade de análise $i$ (por exemplo, município ou região), medida em hectares;
+- $\beta_0$: termo constante do modelo;
 
-\item $\beta_0$: termo constante do modelo;
+- $ValorTerra_i$: valor médio da terra na unidade $i$, representando o preço ou valor econômico da terra;
 
-\item $ValorTerra_i$: valor médio da terra na unidade $i$, representando o preço ou valor econômico da terra;
+- $\beta_1$: coeficiente que mede o efeito do valor da terra sobre o desmatamento;
 
-\item $\beta_1$: coeficiente que mede o efeito do valor da terra sobre o desmatamento;
+- $\mathbf{X}_i$: vetor de variáveis de controle socioeconômicas que podem influenciar o desmatamento (por exemplo, produção agropecuária, população, infraestrutura ou preços agrícolas);
 
-\item $\mathbf{X}_i$: vetor de variáveis de controle socioeconômicas que podem influenciar o desmatamento (por exemplo, produção agropecuária, população, infraestrutura ou preços agrícolas);
+- $\gamma$: vetor de coeficientes associado às variáveis de controle;
 
-\item $\gamma$: vetor de coeficientes associado às variáveis de controle;
+- $\mathbf{S}_i$: vetor de variáveis de controle espaciais, capturando características geográficas ou locacionais da região;
 
-\item $\mathbf{S}_i$: vetor de variáveis de controle espaciais, capturando características geográficas ou locacionais da região;
+- $\delta$: vetor de coeficientes associado às variáveis espaciais;
 
-\item $\delta$: vetor de coeficientes associado às variáveis espaciais;
+- $\varepsilon_i$: termo de erro aleatório, que representa fatores não observados que afetam o desmatamento.
 
-\item $\varepsilon_i$: termo de erro aleatório, que representa fatores não observados que afetam o desmatamento.
+O uso da variável valor da terra é proposto para explorar os dados ainda pouco utilizados dos Relatórios de Análise dos Mercados de Terras, elaborados pelo INCRA. Os vetores socioeconômicos, por sua vez, são comumente empregados na explicação do desmatamento [@Balboni]. Já as variáveis espaciais são essenciais para ampliar o poder explicativo do modelo, como, por exemplo, a densidade da malha rodoviária [@martins_francisco_2025]. Além disso, observa-se aumento significativo no poder explicativo dos modelos quando essas variáveis espaciais são incluídas [@Balboni].
 
-\end{itemize}
-}
+As hipóteses empíricas do estudo são: {H1}: o coeficiente associado ao valor da terra é positivo ($\beta_1>0$), isto é, maiores valores da terra estão associados a maior desmatamento; e {H2}: o efeito de $ValorTerra_i$ permanece estatisticamente significativo após a inclusão dos controles socioeconômicos ($\mathbf{X}_i$) e espaciais ($\mathbf{S}_i$).
 
-O uso da variável valor da terra é proposto para explorar os dados ainda pouco utilizados dos Relatórios de Análise dos Mercados de Terras, elaborados pelo INCRA. Os vetores socioeconômicos, por sua vez, são comumente empregados na explicação do desmatamento \cite{Balboni}. Já as variáveis espaciais são essenciais para ampliar o poder explicativo do modelo, como, por exemplo, a densidade da malha rodoviária \cite{martins_francisco_2025}. Além disso, observa-se aumento significativo no poder explicativo dos modelos quando essas variáveis espaciais são incluídas \cite{Balboni}.
-
-As hipóteses empíricas do estudo são: \textbf{H1}: o coeficiente associado ao valor da terra é positivo ($\beta_1>0$), isto é, maiores valores da terra estão associados a maior desmatamento; e \textbf{H2}: o efeito de $ValorTerra_i$ permanece estatisticamente significativo após a inclusão dos controles socioeconômicos ($\mathbf{X}_i$) e espaciais ($\mathbf{S}_i$).
-
-Os dados digitalizados da RAMT serão cruzados com outros bancos de dados, analisados descritivamente e disponibilizados on-line \cite{EcoHub}, incluindo bases como IPEADATA, CAR, MAPBIOMAS e BACEN, entre outras. O código de elaboração desse material está disponível no GitHub \cite{EcoHubRepo}. Para saber mais sobre o procedimento de digitalização dos dados verificar o anexo.
+Os dados digitalizados da RAMT serão cruzados com outros bancos de dados, analisados descritivamente e disponibilizados on-line [@EcoHub], incluindo bases como IPEADATA, CAR, MAPBIOMAS e BACEN, entre outras. O código de elaboração desse material está disponível no GitHub [@EcoHubRepo]. Para saber mais sobre o procedimento de digitalização dos dados verificar o anexo.
 
 Serão realizados testes para verificar a consistência econométrica, incluindo o teste de Breusch-Pagan para avaliar a homocedasticidade e o VIF (Variance Inflation Factor) para detectar multicolinearidade.
 
-O teste de Breusch-Pagan consiste em elevar ao quadrado os erros da regressão original e, posteriormente, regressá-los sobre as variáveis independentes do modelo original, em uma regressão auxiliar \cite{wooldridge}. Em seguida, será realizado um teste F para a hipótese de homocedasticidade.
+O teste de Breusch-Pagan consiste em elevar ao quadrado os erros da regressão original e, posteriormente, regressá-los sobre as variáveis independentes do modelo original, em uma regressão auxiliar  [@wooldridge]. Em seguida, será realizado um teste F para a hipótese de homocedasticidade.
 
-O VIF é um coeficiente que permite a análise de multicolinearidade por meio do uso do $R^2$ \cite{wooldridge} e apresenta a seguinte fórmula:
-
+O VIF é um coeficiente que permite a análise de multicolinearidade por meio do uso do $R^2$ [@wooldridge] e apresenta a seguinte fórmula:
+$$
 \begin{equation}
  VIF_J = \frac{1}{1 - R^2} 
 \end{equation}
-
+$$
 Adota-se, como referência prática, que valores de VIF acima de 10 indicam possíveis problemas de multicolinearidade \cite{wooldridge}.
 
 A análise será realizada no software estatístico R, com auxílio de pacotes como o tidyverse e APIs como o IPEADATAR, quando possível.
 
-Quanto às limitações da metodologia adotada, por se tratar de dados observacionais, há risco de endogeneidade (causalidade reversa entre valor da terra e desmatamento) e viés por variáveis omitidas não observadas \cite{wooldridge}. Além disso, as bases utilizadas podem conter erros de mensuração e diferenças de cobertura temporal e geográfica, o que pode gerar dificuldades de comparabilidade. Por fim, a presença de dependência espacial residual pode violar hipóteses do MQO, especificamente a de média condicional do erro igual a zero, mesmo com controles geográficos \cite{martins_francisco_2025}; nesse caso, será considerado o uso de variáveis instrumentais, quando possível.
+Quanto às limitações da metodologia adotada, por se tratar de dados observacionais, há risco de endogeneidade (causalidade reversa entre valor da terra e desmatamento) e viés por variáveis omitidas não observadas [@wooldridge]. Além disso, as bases utilizadas podem conter erros de mensuração e diferenças de cobertura temporal e geográfica, o que pode gerar dificuldades de comparabilidade. Por fim, a presença de dependência espacial residual pode violar hipóteses do MQO, especificamente a de média condicional do erro igual a zero, mesmo com controles geográficos  [@martins_francisco_2025]; nesse caso, será considerado o uso de variáveis instrumentais, quando possível.
 
-\subsection{Dados}
-O principal conjunto de dados deste projeto é composto pelos dados recentemente digitalizados dos RAMTs. Esses dados têm como objetivo sintetizar os valores da terra nos diferentes mercados fundiários do Brasil \cite{incra_in116_2022}. Tais mercados de terra são definidos como zonas homogêneas construídas por meio dos algoritmos K-means e Ward \cite{incra_ne112_2014}. Os elementos digitalizados desses documentos foram as Planilhas de Preços Referenciais de Terras (PPRs), que contêm o Valor Total da Terra Nua (VTN) e o Valor Total do Imóvel (VTI).
+# Dados
+O principal conjunto de dados deste projeto é composto pelos dados recentemente digitalizados dos RAMTs. Esses dados têm como objetivo sintetizar os valores da terra nos diferentes mercados fundiários do Brasil [@incra_in116_2022] . Tais mercados de terra são definidos como zonas homogêneas construídas por meio dos algoritmos K-means e Ward [@incra_ne112_2014]. Os elementos digitalizados desses documentos foram as Planilhas de Preços Referenciais de Terras (PPRs), que contêm o Valor Total da Terra Nua (VTN) e o Valor Total do Imóvel (VTI).
 
 Além disso, os dados serão complementados com o uso de outras bases de dados para a construção das variáveis de controle:
 
-\begin{itemize}
-    \item \textbf{IPEADATA}: uso de bases do IPEA com diferentes formatos de dados, incluindo séries temporais (por exemplo, índices de inflação) e shapefiles para visualização e análise espacial.
-    \item \textbf{MapBiomas}: rede colaborativa que disponibiliza dados espaço-temporais sobre cobertura e uso do solo no Brasil, essenciais para a mensuração e análise do desmatamento.
-    \item \textbf{Cadastro Ambiental Rural (CAR)}: base com informações georreferenciadas de propriedades e posses rurais no Brasil, útil para análises territoriais, fundiárias e de concentração de terras.
-    \item \textbf{Banco Central do Brasil (BACEN)}: séries de dados econômicos e financeiros, empregadas especialmente na construção de indicadores de disponibilidade de crédito.
-\end{itemize}
+- **IPEADATA**: uso de bases do IPEA com diferentes formatos de dados, incluindo séries temporais (por exemplo, índices de inflação) e shapefiles para visualização e análise espacial.
+- **MapBiomas**: rede colaborativa que disponibiliza dados espaço-temporais sobre cobertura e uso do solo no Brasil, essenciais para a mensuração e análise do desmatamento.
+- **Cadastro Ambiental Rural (CAR)**: base com informações georreferenciadas de propriedades e posses rurais no Brasil, útil para análises territoriais, fundiárias e de concentração de terras.
+- **Banco Central do Brasil (BACEN)**: séries de dados econômicos e financeiros, empregadas especialmente na construção de indicadores de disponibilidade de crédito.
 
-\section{Resultados e Discussão}
+
+# Resultados e Discussão
 Os resultados apresentados nesta seção decorrem da análise dos dados digitalizados das PPRs para o estado do Mato Grosso. Inicialmente, descreve-se a estrutura da base: o \textit{data frame} contém PPRs para os anos de 2018, 2019, 2023 e 2024. Os valores monetários foram corrigidos pelo índice IGP-DI anual. A amostra não contempla todos os 142 municípios do estado e, além disso, apresenta variação no número de municípios por ano. A seguir, apresenta-se a tabela com essa variação no número de observações:
 
+```{r}
+#| message: false
+#| warning: false
 
+# 1. Preparar os dados (Agregação Ponderada)
+# 1. Preparar os dados (Apenas Contagem)
+tabela_pivo <- df_mt |>
+  st_drop_geometry() |>
+  group_by(ano) |>
+  summarise(
+    # Use 'code_muni' para garantir contagem exata de municípios únicos. 
+    # Se 'origem' for a variável correta na sua base, mantenha a original.
+    n_municipios = n_distinct(code_muni) 
+  )
+
+# 2. Gerar a Tabela Enxuta
+tabela_pivo |>
+  gt() |>
+  
+  # --- Cabeçalho ---
+  tab_header(
+    title = md("**Cobertura Temporal**"),
+    subtitle = "Quantidade de Municípios Auditados por Ano"
+  ) |>
+  
+  # --- Labels ---
+  cols_label(
+    ano = "Ano",
+    n_municipios = "Nº Municípios"
+  ) |>
+  
+  # --- Formatação ---
+  fmt_number(
+    columns = n_municipios,
+    decimals = 0,
+    sep_mark = "."
+  ) |>
+  
+  # --- Estilo ---
+  cols_align(align = "center", columns = everything()) |>
+  opt_row_striping() |>
+  tab_options(
+    table.width = pct(50) # Tabela mais estreita, já que tem poucas colunas
+  )
+
+  # Armazene a tabela em um objeto
+tabela_cobertura_img <- tabela_pivo |>
+  gt() |>
+  tab_header(title = md("**Cobertura Temporal**"), subtitle = "Municípios Auditados") |>
+  cols_label(ano = "Ano", n_municipios = "Nº Municípios") |>
+  fmt_number(columns = n_municipios, decimals = 0, sep_mark = ".") |>
+  cols_align(align = "center", columns = everything())
+
+```
 
 Passou-se, então, à análise dos quantis do Valor Total do Imóvel (VTI) e do Valor da Terra Nua (VTN), segundo a tipologia de uso. Essa tipologia indica o tipo de uso predominante da terra, ou seja, sua finalidade econômica. Os dados foram organizados em quantis porque as áreas urbanas elevavam os valores das propriedades em alguns mercados para faixas muito acima da média, o que gerava dificuldades de visualização em outras escalas.
+
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Cálculo dos Quantis por Categoria
+tabela_quantis <- df_mt |>
+  st_drop_geometry() |>
+  filter(!is.na(IGPDI_vti_media), IGPDI_vti_media > 0) |>
+  group_by(categoria_final) |>
+  summarise(
+    N = n(),
+    # Calcula os cortes de preço que dividem o mercado
+    P10 = quantile(IGPDI_vti_media, 0.10),
+    P25 = quantile(IGPDI_vti_media, 0.25),
+    Mediana = median(IGPDI_vti_media),
+    P75 = quantile(IGPDI_vti_media, 0.75),
+    P90 = quantile(IGPDI_vti_media, 0.90)
+  ) |>
+  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato
+
+# 2. Renderização da Tabela
+tabela_quantis |>
+  gt() |>
+  tab_header(
+    title = md("**Estrutura de Preços: Distribuição por Quantis**"),
+    subtitle = "Valores de Terra (VTI) em R$/ha"
+  ) |>
+  fmt_number(
+    columns = c(P10, P25, Mediana, P75, P90),
+    decimals = 0,
+    sep_mark = ".",
+    dec_mark = ","
+  ) |>
+  cols_label(
+    categoria_final = "Categoria",
+    N = "Amostras",
+    P10 = "Piso (10%)",
+    P25 = "Baixo (25%)",
+    Mediana = "Médio (50%)",
+    P75 = "Alto (75%)",
+    P90 = "Teto (90%)"
+  ) |>
+  # Destaque visual para a Mediana (o valor mais provável)
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", color = "black"),
+      cell_fill(color = "lightgray")
+    ),
+    locations = cells_body(columns = Mediana)
+  ) |>
+  data_color(
+    columns = c(Mediana),
+    method = "numeric",
+    palette = "Greens" # Escala de cor para mostrar quem vale mais
+  )
+```
 
 
 A tabela de quantis do Valor da Terra Nua (VTN) segue a mesma lógica da tabela de quantis do VTI.
 
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Cálculo dos Quantis por Categoria
+tabela_quantis <- df_mt |>
+  st_drop_geometry() |>
+  filter(!is.na(IGPDI_vtn_media), IGPDI_vtn_media > 0) |>
+  group_by(categoria_final) |>
+  summarise(
+    N = n(),
+    # Calcula os cortes de preço que dividem o mercado
+    P10 = quantile(IGPDI_vtn_media, 0.10),
+    P25 = quantile(IGPDI_vtn_media, 0.25),
+    Mediana = median(IGPDI_vtn_media),
+    P75 = quantile(IGPDI_vtn_media, 0.75),
+    P90 = quantile(IGPDI_vtn_media, 0.90)
+  ) |>
+  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato
+
+# 2. Renderização da Tabela
+tabela_quantis |>
+  gt() |>
+  tab_header(
+    title = md("**Estrutura de Preços: Distribuição por Quantis**"),
+    subtitle = "Valores de Terra Nua (VTN) em R$/ha"
+  ) |>
+  fmt_number(
+    columns = c(P10, P25, Mediana, P75, P90),
+    decimals = 0,
+    sep_mark = ".",
+    dec_mark = ","
+  ) |>
+  cols_label(
+    categoria_final = "Categoria",
+    N = "Amostras",
+    P10 = "Piso (10%)",
+    P25 = "Baixo (25%)",
+    Mediana = "Médio (50%)",
+    P75 = "Alto (75%)",
+    P90 = "Teto (90%)"
+  ) |>
+  # Destaque visual para a Mediana (o valor mais provável)
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", color = "black"),
+      cell_fill(color = "lightgray")
+    ),
+    locations = cells_body(columns = Mediana)
+  ) |>
+  data_color(
+    columns = c(Mediana),
+    method = "numeric",
+    palette = "Greens" # Escala de cor para mostrar quem vale mais
+  )
+```
+
 Nessa perspectiva, cada tipo de atividade no estado apresenta uma faixa de preços. Assim, são apresentados os valores de VTI por quantis, atualizados para 2024, com base no valor mais recente disponível para cada tipologia. Os mapas a seguir ilustram esse padrão:
 
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
 
+# 1. Definição do Escopo
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
+
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem
+  dados_cat <- df_mt |>
+    filter(ano < 2025, !is.na(IGPDI_vti_media), IGPDI_vti_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(IGPDI_vti_media, n = 5, dig.lab = 5),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
+  
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
+  )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTI:", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
+
+```
 
 É importante observar também a evolução das médias do Valor Total do Imóvel e do Valor da Terra Nua. Nesse sentido, nota-se aumento dos valores ao longo do tempo, tanto para o VTI quanto para o VTN. A seguir, apresentam-se os gráficos de barras:
 
 
 A análise das linhas de densidade do Valor Total do Imóvel (VTI) evidencia comportamento multimodal em todas as categorias da distribuição de preços. Esse padrão é mais acentuado nas categorias "pecuária", "agricultura" e "vegetação nativa", que apresentam maior número de picos e vales.
 
+```{r}
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
+
+# 1. Preparação dos Dados (Inalterada)
+dados_hist <- if(inherits(df_mt, "sf")) sf::st_drop_geometry(df_mt) else df_mt
+
+dados_hist <- dados_hist |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
+  
+  var_sym <- rlang::ensym(var_col)
+  
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
+  
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#2980b9", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTI -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
+  
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
+
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, IGPDI_vti_media, cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots)
+```
+
 A análise das linhas de densidade do Valor da Terra Nua (VTN) também evidencia multimodalidade em todas as categorias da distribuição de preços, replicando o padrão observado para o VTI.
 
+```{r}
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
 
+# 1. Preparação dos Dados (Inalterada)
+dados_hist <- if(inherits(df_mt, "sf")) sf::st_drop_geometry(df_mt) else df_mt
+
+dados_hist <- dados_hist |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
+  
+  var_sym <- rlang::ensym(var_col)
+  
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
+  
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#0a7d00ff", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTN -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
+  
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
+
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, IGPDI_vtn_media , cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots2 <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots2)
+```
 
 Por fim, as tendências das diferentes tipologias são apresentadas por meio de boxplots:
 
@@ -180,24 +645,24 @@ Os preços do VTN apresentam, em geral, maior dispersão em torno da média quan
 
 Por fim, conclui-se que o valor da terra no Mato Grosso é multifatorial, apresentando distribuições de probabilidade distintas para cada tipologia. Além disso, é notável que o VTN possui maior variância e valor médio inferior ao VTI. Observa-se também grande heterogeneidade nos valores da terra no estado de Mato Grosso, especialmente em razão da delimitação por zonas homogêneas.
 
-\section{Conclusão}
+# Conclusão 
 
-O desmatamento é uma questão complexa, de alta relevância econômica, social e política. A decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita \cite{pfaff1999,rocha}. Assim, diversas variáveis podem ser utilizadas para refletir o valor da terra, sendo um dos principais exemplos o preço de commodities \cite{rocha}. No entanto, a escassez de dados sobre os mercados de terra dificulta o uso direto dessa variável como instrumento de modelagem \cite{KRISHNA2017335}. Nesse contexto, a recente digitalização dos RAMTs permite avançar nesse tipo de análise.
+O desmatamento é uma questão complexa, de alta relevância econômica, social e política. A decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita [@pfaff1999,@rocha]. Assim, diversas variáveis podem ser utilizadas para refletir o valor da terra, sendo um dos principais exemplos o preço de commodities [@rocha]. No entanto, a escassez de dados sobre os mercados de terra dificulta o uso direto dessa variável como instrumento de modelagem [@KRISHNA2017335]. Nesse contexto, a recente digitalização dos RAMTs permite avançar nesse tipo de análise.
 
-Dentro desse cenário, o estado do Mato Grosso, altamente relevante para o agronegócio nacional \cite{IMEA_Outlook_2032}, configura-se como um caso emblemático de estudo, tanto por sua biodiversidade quanto pela variação no tamanho das reservas legais, em razão da presença da Amazônia Legal. Assim, dadas essas condições, forma-se um cenário favorável para responder à pergunta de pesquisa: qual é a influência do valor da terra no desmatamento no estado do Mato Grosso?
+Dentro desse cenário, o estado do Mato Grosso, altamente relevante para o agronegócio nacional [@IMEA_Outlook_2032], configura-se como um caso emblemático de estudo, tanto por sua biodiversidade quanto pela variação no tamanho das reservas legais, em razão da presença da Amazônia Legal. Assim, dadas essas condições, forma-se um cenário favorável para responder à pergunta de pesquisa: qual é a influência do valor da terra no desmatamento no estado do Mato Grosso?
 
-Para responder a essa pergunta, será utilizada a técnica de Regressão Linear Múltipla, com controle de variáveis socioeconômicas e espaciais, abordagem comumente empregada na análise do desmatamento \cite{pfaff1999,martins_francisco_2025,rocha}. O uso desses controles é essencial para considerar fatores espaciais e sociais, como acesso ao crédito e variáveis climáticas.
+Para responder a essa pergunta, será utilizada a técnica de Regressão Linear Múltipla, com controle de variáveis socioeconômicas e espaciais, abordagem comumente empregada na análise do desmatamento [@pfaff1999,@martins_francisco_2025,@rocha]. O uso desses controles é essencial para considerar fatores espaciais e sociais, como acesso ao crédito e variáveis climáticas.
 
-Na análise descritiva, observa-se que as diferenças regionais geram médias de valor da terra bastante distintas, evidenciando desigualdades dentro do próprio estado do Mato Grosso. Também se verifica maior número de observações na pecuária, resultado coerente com o processo histórico de desmatamento \cite{martins_francisco_2025,brandão_rezende_marques_2006}. Ademais, destaca-se a relevância da agricultura para a formação do valor da terra no estado.
+Na análise descritiva, observa-se que as diferenças regionais geram médias de valor da terra bastante distintas, evidenciando desigualdades dentro do próprio estado do Mato Grosso. Também se verifica maior número de observações na pecuária, resultado coerente com o processo histórico de desmatamento [@martins_francisco_2025,@brandão_rezende_marques_2006]. Ademais, destaca-se a relevância da agricultura para a formação do valor da terra no estado.
 
 Depreende-se, portanto, que, como o desmatamento está associado a um processo de maximização de receita, o valor da terra é um fator central para a compreensão desse fenômeno. Somada à digitalização dos dados dos RAMTs, essa abordagem contribui para ampliar o entendimento sobre a dinâmica do desmatamento. Por fim, os próximos passos incluem: cruzamento da base com outras fontes de dados, estimação da regressão linear múltipla, execução de testes de consistência, realização de ajustes metodológicos, quando necessário, e organização final do material.
 
 
-Iniciou-se o processo de digitalização, uniformização e disponibilização dos dados publicados nos Relatórios de Análise do Mercado de Terras \cite{incra_2014}. Esses relatórios são instrumentos de inteligência fundiária criados pelo INCRA (Instituto Nacional de Colonização e Reforma Agrária) com a finalidade de descrever as diferentes dinâmicas do mercado de terras no Brasil. O material digitalizado correspondeu às PPRs (Planilhas de Preços Referenciais de Terras) disponibilizadas nesses relatórios, que apresentam os valores de referência utilizados pelo órgão para a avaliação de imóveis rurais em todo o país \cite{incra_ne112_2014}.
+Iniciou-se o processo de digitalização, uniformização e disponibilização dos dados publicados nos Relatórios de Análise do Mercado de Terras [@incra_2014]. Esses relatórios são instrumentos de inteligência fundiária criados pelo INCRA (Instituto Nacional de Colonização e Reforma Agrária) com a finalidade de descrever as diferentes dinâmicas do mercado de terras no Brasil. O material digitalizado correspondeu às PPRs (Planilhas de Preços Referenciais de Terras) disponibilizadas nesses relatórios, que apresentam os valores de referência utilizados pelo órgão para a avaliação de imóveis rurais em todo o país [@incra_ne112_2014].
 
-Foram digitalizados cerca de 133 documentos em PDF, cada um contendo uma ou mais PPRs, com sobreposição parcial entre documentos sintéticos de PPRs e Relatórios de Análise de Terras. Ademais, utilizaram-se dados do Atlas do Mercado de Terras, iniciativa de 2023 voltada à unificação dos preços da terra em um ano de referência. Como as observações são realizadas por diferentes unidades do INCRA em momentos distintos, há elevada segregação espaço-temporal dos dados \cite{incra_ne112_2014}.
+Foram digitalizados cerca de 133 documentos em PDF, cada um contendo uma ou mais PPRs, com sobreposição parcial entre documentos sintéticos de PPRs e Relatórios de Análise de Terras. Ademais, utilizaram-se dados do Atlas do Mercado de Terras, iniciativa de 2023 voltada à unificação dos preços da terra em um ano de referência. Como as observações são realizadas por diferentes unidades do INCRA em momentos distintos, há elevada segregação espaço-temporal dos dados [@incra_ne112_2014].
 
-Os Relatórios de Análise do Mercado de Terras sintetizam informações fundiárias por meio da divisão dos estados em Zonas Homogêneas para fins analíticos. Essas zonas são construídas por um processo de clusterização em duas etapas: primeiro, aplica-se o algoritmo de Ward para definir o número de clusters; em seguida, aplica-se o algoritmo K-means para ajustar a alocação dos municípios e melhorar a qualidade dos agrupamentos \cite{incra_ne112_2014}.
+Os Relatórios de Análise do Mercado de Terras sintetizam informações fundiárias por meio da divisão dos estados em Zonas Homogêneas para fins analíticos. Essas zonas são construídas por um processo de clusterização em duas etapas: primeiro, aplica-se o algoritmo de Ward para definir o número de clusters; em seguida, aplica-se o algoritmo K-means para ajustar a alocação dos municípios e melhorar a qualidade dos agrupamentos [@incra_ne112_2014].
 
 A extração das planilhas foi realizada com auxílio da inteligência artificial Google Gemini, a partir de capturas das tabelas. As tabelas eram capturadas, transcritas pelo Gemini e, posteriormente, verificadas manualmente. Além disso, foram criados e utilizados alguns scripts de extração, com ferramentas como Camelot (Python) e Shiny (R). Entretanto, devido à heterogeneidade dos formatos de publicação (PDF, imagem e capturas com baixa legibilidade), a maior parte da extração foi feita via Gemini.
 
@@ -205,9 +670,9 @@ Quanto à incompatibilidade entre dados dos Relatórios de Análise dos Mercados
 
 Após a digitalização, os dados passaram por revisão manual. Em seguida, buscou-se parear os municípios digitalizados por meio da lista presente na coluna "cluster" da base, iniciando-se com um script de separação de strings.
 
-Concluída essa etapa, passou-se à correspondência (matching) dos municípios com o código do IBGE, em duas fases. Primeiro, foi realizada a limpeza dos nomes dos municípios no dataframe do IBGE e no dataframe construído. Depois, efetuou-se o matching com a função \texttt{left\_join} do pacote \texttt{dplyr}. Inicialmente, esse procedimento deixou alguns municípios sem correspondência. Além disso, foi necessário realizar o pareamento entre código do IBGE, número da UF e sigla da unidade federativa para viabilizar os joins.
+Concluída essa etapa, passou-se à correspondência (matching) dos municípios com o código do IBGE, em duas fases. Primeiro, foi realizada a limpeza dos nomes dos municípios no dataframe do IBGE e no dataframe construído. Depois, efetuou-se o matching com a função left_join do pacote dplyr. Inicialmente, esse procedimento deixou alguns municípios sem correspondência. Além disso, foi necessário realizar o pareamento entre código do IBGE, número da UF e sigla da unidade federativa para viabilizar os joins.
 
 Após as correções, os dados ficaram corretamente pareados e prosseguiu-se para a análise descritiva. Posteriormente, os valores foram corrigidos pelo índice IGP-DI anual, com uso da API do IPEA.
 
-Por fim, selecionaram-se os níveis categóricos 0 (média geral) e 1 (pecuária, exploração mista, agricultura, vegetação nativa e silvicultura). Os nomes das tipologias foram unificados; detalhes desse procedimento podem ser consultados em \cite{EcoHub}. Essa etapa incluiu o tratamento das strings de classificação tipológica para refletir o uso do solo de forma mais uniforme e permitir a análise dos dados. Ademais, todos os scripts para a formação do data frame podem ser acessados no repositório \cite{EcoHubRepo}
-\end{document}
+Por fim, selecionaram-se os níveis categóricos 0 (média geral) e 1 (pecuária, exploração mista, agricultura, vegetação nativa e silvicultura). Os nomes das tipologias foram unificados; detalhes desse procedimento podem ser consultados em [@EcoHub]. Essa etapa incluiu o tratamento das strings de classificação tipológica para refletir o uso do solo de forma mais uniforme e permitir a análise dos dados. Ademais, todos os scripts para a formação do data frame podem ser acessados no repositório [@EcoHubRepo]
+
