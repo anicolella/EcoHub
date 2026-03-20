@@ -1,0 +1,22 @@
+project:
+  type: website
+
+execute:
+  keep-md: false
+  freeze: auto
+
+website:
+  title: "Mercado de Terras e Desmatamento: O Custo de Oportunidade da Proteção Ambiental no Mato Grosso"
+  navbar:
+    left: 
+      - relatorio.qmd
+
+format:
+  html:
+    theme: journal
+    code-fold: true
+    code-summary: veja o código
+
+bibliography: refs.bib   # vínculo do arquivo .bib aqui
+
+mainfont: sans-serif
