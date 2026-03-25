@@ -226,6 +226,8 @@ proxy_classificado <- st_as_sf(proxy_classificado) |> select(
     cluster,
     ano,
     UF,
+    nivel,
+    categoria_final,
     vti_media,
     vti_minimo,
     vti_maximo,
@@ -240,8 +242,7 @@ proxy_classificado <- st_as_sf(proxy_classificado) |> select(
     IGPDI_vtn_maximo,
     geom,
     area_m2,
-    area_ha_calculada,
-    categoria_final
+    area_ha_calculada
   )
 
 st_write(

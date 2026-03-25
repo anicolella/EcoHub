@@ -222,6 +222,8 @@ df_total <- st_as_sf(df_classificado) |> mutate(
     cluster,
     ano,
     UF,
+    nivel,
+    categoria_final,
     vti_media,
     vti_minimo,
     vti_maximo,
@@ -236,10 +238,8 @@ df_total <- st_as_sf(df_classificado) |> mutate(
     IGPDI_vtn_maximo,
     geom,
     area_m2,
-    area_ha_calculada,
-    categoria_final
+    area_ha_calculada
   )
-
 
 df_total <- st_as_sf(df_total)
 
