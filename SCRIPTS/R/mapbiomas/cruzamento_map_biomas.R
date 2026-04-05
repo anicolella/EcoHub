@@ -33,6 +33,11 @@ cover <- cover_o%>%
   ) %>% select(-starts_with("X.")) %>% 
   select(-matches("^X$"))
 
+
+
+
+names(cover_list) <- paste0("class_", vals)
+
 cover_long <- cover %>%
   # 1. Pivotagem: Transforma colunas X1985:X2024 em duas colunas: "ano" e "valor"
   pivot_longer(
