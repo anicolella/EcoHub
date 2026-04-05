@@ -1,5 +1,3 @@
-dados car
-
 library(sf)
 library(tidyverse)
 library(readr)
@@ -53,3 +51,8 @@ car_04_04_2026 <- bind_rows(
   to = to,
   .id = "uf"
 )
+
+st_write(obj = car_04_04_2026, 
+         dsn = "C:/Users/jodom/OneDrive/Área de Trabalho/car_04_04_2026.gpkg", 
+         delete_dsn = TRUE)
+      
