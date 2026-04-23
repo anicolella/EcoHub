@@ -2,8 +2,8 @@
 title: "análise descritiva RAMT provisória"
 format:
   html: default
+  pdf: default
 ---
-
 ```{r} 
 #| echo: false
 #| message: false
