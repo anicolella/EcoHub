@@ -56,3 +56,5 @@ st_write(obj = car_04_04_2026,
          dsn = "C:/Users/jodom/OneDrive/Área de Trabalho/car_04_04_2026.gpkg", 
          delete_dsn = TRUE)
       
+
+
