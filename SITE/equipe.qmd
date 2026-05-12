@@ -176,6 +176,41 @@ Equipe dedicada a pesquisa aplicada em sustentabilidade e dados ambientais.
       color: #9ca3af;
     }
   }
+
+  /* Compatibilidade com o toggle de tema (data-bs-theme) usado no site */
+  html[data-bs-theme="dark"] .membro-card {
+    background: linear-gradient(135deg, #0f2f35 0%, #0b443a 50%, #0f3242 100%);
+    border-color: #38bdf8;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+    color: #e2e8f0;
+  }
+
+  html[data-bs-theme="dark"] .membro-card:hover {
+    border-color: #67e8f9;
+    background: linear-gradient(135deg, #10404a 0%, #0c5243 50%, #10384a 100%);
+  }
+
+  html[data-bs-theme="dark"] .membro-nome {
+    color: #e2e8f0 !important;
+  }
+
+  html[data-bs-theme="dark"] .membro-bio {
+    color: #cbd5e1 !important;
+  }
+
+  html[data-bs-theme="dark"] .membro-link {
+    background: #38bdf8;
+    color: #0b1726;
+  }
+
+  html[data-bs-theme="dark"] .membro-link:hover {
+    background: #67e8f9;
+    color: #0b1726;
+  }
+
+  html[data-bs-theme="dark"] .carregando {
+    color: #9ca3af;
+  }
 </style>
 
 <div class="equipe-container">
