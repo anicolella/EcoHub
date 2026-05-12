@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/License-USP-green.svg)](LICENSE)
 [![Site](https://img.shields.io/badge/Site-EcoHub-brightgreen)](https://fernandovieira1.github.io/ambiental_bd_usp/)
 
-Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisar, tratar e integrar bases de dados ambientais** para aplicações acadêmicas e de políticas públicas.
+Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisar, tratar e integrar bases de dados ambientais** para aplicações acadêmicas e de políticas públicas. 
 
 ## 🌐 Site do Projeto
 
@@ -16,36 +16,36 @@ Repositório do projeto **Banco de Dados Ambiental**, cujo objetivo é **analisa
 
 O site contém documentação, tracker do projeto, análises e visualizações desenvolvidas pela equipe.
 
-------------------------------------------------------------------------
+---
 
 ## 📌 Objetivos
 
--   Coletar e **documentar** bases ambientais (metadados, fontes, licenças).
--   **Tratar, padronizar e integrar** dados (tabelas, séries, shapefiles/rasters).
--   Desenvolver **análises exploratórias**, **modelagem estatística/econométrica** e visualizações.
--   Garantir **reprodutibilidade** (ambiente Python/R, scripts e trilhas de auditoria).
--   Criar **pacotes em R e Python** que automatizem o processo.
+- Coletar e **documentar** bases ambientais (metadados, fontes, licenças).
+- **Tratar, padronizar e integrar** dados (tabelas, séries, shapefiles/rasters).
+- Desenvolver **análises exploratórias**, **modelagem estatística/econométrica** e visualizações.
+- Garantir **reprodutibilidade** (ambiente Python/R, scripts e trilhas de auditoria).
+- Criar **pacotes em R e Python** que automatizem o processo.
 
-------------------------------------------------------------------------
+---
 
 ## ⚒️ Ferramentas
 
-| Ferramenta       | Função                                        |
-|------------------|-----------------------------------------------|
+| Ferramenta             | Função                                          |
+| ---------------------- | ------------------------------------------------- |
 | **R**            | Análise estatística, visualização e modelagem |
-| **Python**       | Tratamento de dados, automação e web scraping |
-| **RStudio**      | IDE principal para desenvolvimento em R       |
-| **Quarto**       | Documentação, relatórios e site do projeto    |
-| **Git/GitHub**   | Controle de versão e colaboração              |
-| **Google Drive** | Armazenamento de bases e arquivos             |
+| **Python**       | Tratamento de dados, automação e web scraping   |
+| **RStudio**      | IDE principal para desenvolvimento em R           |
+| **Quarto**       | Documentação, relatórios e site do projeto     |
+| **Git/GitHub**   | Controle de versão e colaboração               |
+| **Google Drive** | Armazenamento de bases e arquivos                 |
 
-------------------------------------------------------------------------
+---
 
 ## 📂 Estrutura do Repositório
 
 A estrutura do repositório é a seguinte:
 
-``` text
+```text
 ambiental_bd_usp/
 │ .gitignore # Arquivos e pastas ignorados pelo Git
 │ ambiental_bd_usp.Rproj # Projeto RStudio
@@ -60,8 +60,8 @@ ambiental_bd_usp/
 
 Os **scripts principais do projeto** estão na pasta `SCRIPTS/`, divididos em:
 
--   **Python** → automação, tratamento e coleta de dados.\
--   **R** → análises estatísticas/econométricas, consolidação de bases e protótipos.
+- **Python** → automação, tratamento e coleta de dados.\
+- **R** → análises estatísticas/econométricas, consolidação de bases e protótipos.
 
 Essa pasta é o espaço de **trabalho ativo** (prototipagem, testes, ETL, análises preliminares).
 
