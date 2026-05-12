@@ -1,0 +1,4 @@
+/.quarto/
+**/*.quarto_ipynb
+*.tar.gz
+quarto-*.tar.gz
