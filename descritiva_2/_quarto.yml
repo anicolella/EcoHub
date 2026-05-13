@@ -1,0 +1,11 @@
+project:
+  type: default
+
+format:
+  html:
+    theme: journal
+    toc: true
+    number-sections: true
+
+bibliography: refs.bib
+csl: apa.csl

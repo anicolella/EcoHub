@@ -1,0 +1,138 @@
+---
+title: "Untitled"
+format: html
+---
+
+## introdução
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(data.table)
+library(geobr)
+library(ipeadatar)
+library(stringr)
+library(readr)
+library(sf)
+library(gtsummary)
+library(gt)
+
+
+df_analise <- st_read(
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
+
+
+df_areas <- df_analise |>
+  mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+ df_joined <- df_analise 
+
+
+ df_analise2 <- st_read(
+  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/proxy_classificado.gpkg",
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
+
+df_areas2 <- df_analise2 |>
+  mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+ df_joined2 <- df_analise 
+ 
+```
+
+O valor da terra é uma variável que é pouco estimada e disponibilizada para análises no Brasil. Esses dados podem oferecer uma variável importante para a compreensão do processo de desmatamento, que é um problema de central importância para o país que é dono do maior inventário de florestas tropicais do mundo. Então, a importância de se compreender melhor o valor da terra vem de uma necessidade de entender como o desmatamento ocorre em território nacional. Nesse sentido, o EcoHub vem de uma necessidade de digitalização de uma série histórica contendo dados dos valores da terra; essa série histórica foi extraída de uma série de documentos do INCRA (Instituto Nacional de Colonização e Reforma Agrária), sendo estes documentos: os relatórios de análise do mercado de terras e o Atlas do Mercado de Terras (RAMTS). O uso de uma série de relatórios e de um atlas tem a função de complementação: os dados dos RAMTs são obtidos por cada uma das superintendências do INCRA no país, ou seja, o procedimento de coleta não é uniforme, enquanto o Atlas do Mercado de Terras possui todos os dados para um determinado ano, no caso da base de 2023. Assim, para o ano de 2023, quando a superintendência do INCRA não soltava uma série de dados nova de sua respectiva área, houve uma complementação com os dados do Atlas; entretanto, houve estados onde os dados do relatório de 2023 eram iguais aos de anos anteriores ou posteriores. Nesse caso, preferiu-se manter nas datas originais dos relatórios, uma vez que esses são constantemente atualizados, mesmo que de maneira espaço-temporalmente irregular.
+
+Os dados dessas variáveis de valor da terra são construídos com a utilização e a criação de zonas homogêneas. Nesse sentido, a criação dessas zonas homogêneas ocorre por meio de uma classificação criada com o uso de uma série de variáveis, descritas na tabela abaixo. Essas variáveis são posteriormente organizadas em uma matriz e padronizadas. As variáveis são classificadas em quatro grandes grupos: variáveis relacionadas à vocação produtiva da terra, variáveis relacionadas ao nível tecnológico, variáveis relacionadas à gestão de resultados e variáveis relacionadas à concentração de terras.
+
+```{r}
+#| message: false
+#| warning: false
+library(gt)
+
+# 1. Consolidação Estrita (Apenas o seu input)
+dicionario_data <- tribble(
+  ~grupo, ~variável,
+  
+  # 1 - Variáveis relacionadas à vocação produtiva da terra
+  "1 - Variáveis relacionadas à vocação produtiva da terra", "total de tratores (nº/1000 hec)",
+  "1 - Variáveis relacionadas à vocação produtiva da terra", "fracao de terras irrigadas (% da área total)",
+  
+  # 2 - Variáveis relacionadas ao nível tecnológico
+  "2 - Variáveis relacionadas ao nível tecnológico", "total de tratores (nº/1000 hec)",
+  "2 - Variáveis relacionadas ao nível tecnológico", "fracao de terras irrigadas (% da área total)",
+  
+  # 3 - Variáveis relacionadas com a gestão de resultados
+  "3 - Variáveis relacionadas com a gestão de resultados", "total de investimentos (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "total de financiamentos (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "total de despesas (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "valor total da produção animal (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "valor total da produção vegetal (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "valor total da produção (animal + vegetal) (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "receita total liquida (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "receita total bruta (valor/hec)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "área de arrendatários no município (% da área total)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "área de parceiros no município (% da área total)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "área de proprietários no município (% da área total)",
+  "3 - Variáveis relacionadas com a gestão de resultados", "custos de transporte da sede municipal até a capital mais próxima",
+  "3 - Variáveis relacionadas com a gestão de resultados", "receita bruta por unidade de área",
+  "3 - Variáveis relacionadas com a gestão de resultados", "índice integrador do ITC e ITR cultura anual",
+  "3 - Variáveis relacionadas com a gestão de resultados", "índice integrador do ITC e ITR cultura perene",
+  "3 - Variáveis relacionadas com a gestão de resultados", "valores médios de Commodity",
+  
+  # 4 - Variáveis relacionadas com a concentração da terra
+  "4 - Variáveis relacionadas com a concentração da terra", "índice de gini fundiário (valor)",
+  "4 - Variáveis relacionadas com a concentração da terra", "propriedades menores de 500 hec (% do total)",
+  "4 - Variáveis relacionadas com a concentração da terra", "propriedades maiores de 500 hec (% do total)",
+  "4 - Variáveis relacionadas com a concentração da terra", "índice de gini decenal (valor)"
+)
+
+# 2. Renderização Otimizada
+dicionario_data |>
+  gt(groupname_col = "grupo") |>
+  tab_header(
+    title = "Fatores valor da Terra",
+    subtitle = "Fonte: Brasil, 2014"
+  ) |>
+  cols_label(
+    variável = md("**Variável**")
+  ) |>
+  tab_options(
+    table.width = pct(100),
+    column_labels.background.color = "#9f0000ff", # Cor original do seu código
+    row_group.background.color = "#f2f2f2",
+    row_group.font.weight = "bold"
+  ) |>
+  opt_row_striping()
+```
+
+Os dados descritos na tabela são em sua maioria obtidos do censo agropecuário. Esses dados são organizados em uma matriz bruta de dados, onde $M_i$ representa o município i e o $V_j$ o valor da variável j para o município $M_i$. Assim, se constrói a matriz bruta de dados que será posteriormente tratada para o processo de agrupamento.
+
+$$\text{Matriz de Dados} = 
+\begin{array}{cc|ccc|c}
+& \mathbf{V_1} & \mathbf{V_2} & \dots \mathbf{V_J} \dots & \mathbf{V_P} \\ \hline
+ & \mathbf{M_1} & X_{11} & X_{12} & \dots X_{1J} \dots & X_{1P} \\
+ & \mathbf{M_2} & X_{21} & X_{22} & \dots X_{2J} \dots & X_{2P} \\
+ & \vdots & \vdots & \vdots & \vdots & \vdots \\
+ & \mathbf{M_I} & X_{I1} & X_{I2} & \dots X_{IJ} \dots & X_{IP} \\
+ & \vdots & \vdots & \vdots & \vdots & \vdots \\
+ & \mathbf{M_M} & X_{M1} & X_{M2} & \dots X_{MJ} \dots & X_{MP} \\ \hline
+\end{array}$$
