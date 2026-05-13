@@ -56,3 +56,4 @@ SITE/.gitignore
 _site/
 *.html
 *_files/
+.positai
