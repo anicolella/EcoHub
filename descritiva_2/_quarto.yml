@@ -2,10 +2,9 @@ project:
   type: default
 
 format:
-  html:
+  html: 
     theme: journal
-    toc: true
-    number-sections: true
+    code-fold: true
+    code-summary: veja o código
 
 bibliography: refs.bib
-csl: apa.csl
