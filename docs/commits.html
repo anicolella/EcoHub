@@ -72,6 +72,14 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<!-- Session-based theme loader. Uses the Quarto page offset so nested pages load the same script. -->
+<script>
+(function () {
+  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  var offset = offsetMeta ? offsetMeta.getAttribute('content') : './';
+  document.write('<script src="' + offset + 'js/theme-session.js"><\/script>');
+})();
+</script>
 <!-- Header include (EcoHub) -->
 <!-- Menu dropdown nativo do Quarto - sem JavaScript customizado necessário -->
 
@@ -79,53 +87,6 @@ ul.task-list li input[type="checkbox"] {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;display=swap" rel="stylesheet">
-
-<script>
-// Dark mode toggle functionality
-(function() {
-  function initDarkModeToggle() {
-    // Encontra o botão de dark mode
-    const darkModeBtn = document.querySelector('a[aria-label="Toggle dark mode"]');
-    if (!darkModeBtn) return;
-    
-    // Verifica preferência salva ou do sistema
-    const savedTheme = localStorage.getItem('ecohub-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-    
-    // Aplica tema inicial
-    if (isDark) {
-      document.documentElement.setAttribute('data-bs-theme', 'dark');
-      updateIcon(darkModeBtn, true);
-    }
-    
-    // Adiciona evento de clique
-    darkModeBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      document.documentElement.setAttribute('data-bs-theme', newTheme);
-      localStorage.setItem('ecohub-theme', newTheme);
-      updateIcon(darkModeBtn, newTheme === 'dark');
-    });
-  }
-  
-  function updateIcon(btn, isDark) {
-    const icon = btn.querySelector('i');
-    if (icon) {
-      icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon';
-    }
-  }
-  
-  // Inicializa quando DOM estiver pronto
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDarkModeToggle);
-  } else {
-    initDarkModeToggle();
-  }
-})();
-</script>
 
 
 <link rel="stylesheet" href="assets/styles.css">
@@ -531,12 +492,12 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
   <div class="control-group">
-    <label for="date-from">Data de:</label>
+    <label for="date-from">Início:</label>
     <input type="date" id="date-from">
   </div>
   
   <div class="control-group">
-    <label for="date-to">Data até:</label>
+    <label for="date-to">Fim:</label>
     <input type="date" id="date-to">
   </div>
   

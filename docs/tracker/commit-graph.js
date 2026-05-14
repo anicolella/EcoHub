@@ -8,6 +8,35 @@ let allCommits = [];
 let filteredCommits = [];
 let currentTab = 'table';
 
+function formatDateInputValue(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function getDefaultDateRange() {
+  const dateTo = new Date();
+  const dateFrom = new Date(dateTo);
+
+  // Janela padrao dos ultimos 30 dias, usando o dia local da consulta como fim.
+  dateFrom.setDate(dateFrom.getDate() - 30);
+
+  return {
+    from: formatDateInputValue(dateFrom),
+    to: formatDateInputValue(dateTo)
+  };
+}
+
+function setDefaultDateFilters() {
+  const range = getDefaultDateRange();
+  const fromInput = document.getElementById('date-from');
+  const toInput = document.getElementById('date-to');
+
+  if (fromInput) fromInput.value = range.from;
+  if (toInput) toInput.value = range.to;
+}
+
 function apiFetch(url) {
   const token = getToken();
   const headers = {
@@ -150,14 +179,16 @@ function applyFilters() {
   const author = document.getElementById('author-filter').value;
   const dateFrom = document.getElementById('date-from').value;
   const dateTo = document.getElementById('date-to').value;
+  const dateFromValue = dateFrom ? new Date(`${dateFrom}T00:00:00`) : null;
+  const dateToValue = dateTo ? new Date(`${dateTo}T23:59:59.999`) : null;
 
   filteredCommits = allCommits.filter(commit => {
     const commitDate = new Date(commit.commit.author.date);
     const commitAuthor = commit.commit.author.name;
 
     if (author && commitAuthor !== author) return false;
-    if (dateFrom && commitDate < new Date(dateFrom)) return false;
-    if (dateTo && commitDate > new Date(dateTo)) return false;
+    if (dateFromValue && commitDate < dateFromValue) return false;
+    if (dateToValue && commitDate > dateToValue) return false;
 
     return true;
   });
@@ -352,8 +383,7 @@ function renderCharts() {
 
 function resetFilters() {
   document.getElementById('author-filter').value = '';
-  document.getElementById('date-from').value = '';
-  document.getElementById('date-to').value = '';
+  setDefaultDateFilters();
   applyFilters();
 }
 
@@ -363,4 +393,5 @@ document.getElementById('date-from').addEventListener('change', applyFilters);
 document.getElementById('date-to').addEventListener('change', applyFilters);
 
 // Inicializar
+setDefaultDateFilters();
 fetchAllCommits();

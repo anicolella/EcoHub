@@ -250,12 +250,12 @@ Visualização interativa do histórico de commits de todos os branches do proje
   </div>
   
   <div class="control-group">
-    <label for="date-from">Data de:</label>
+    <label for="date-from">Início:</label>
     <input type="date" id="date-from">
   </div>
   
   <div class="control-group">
-    <label for="date-to">Data até:</label>
+    <label for="date-to">Fim:</label>
     <input type="date" id="date-to">
   </div>
   
