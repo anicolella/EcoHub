@@ -1,0 +1,21 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="e com folha">
+  <defs>
+    <style>
+      .bg { fill: none; } /* transparente */
+      .e  { fill:#1f355a; font-weight:800;
+            font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .leaf { fill:#22c55e; }
+      .vein { fill:none; stroke:#15803d; stroke-width:6; stroke-linecap:round; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="256" height="256" rx="40"></rect>
+  <!-- Folha no topo do 'e' -->
+  <g transform="translate(46,30) scale(0.85)">
+    <path class="leaf" d="M70,10 C36,24 16,44 10,69 C4,92 7,117 19,136 C66,134 102,104 115,75 C125,54 123,37 118,27 C104,23 89,16 70,10 Z"></path>
+    <path class="vein" d="M27,116 C49,86 89,65 118,60"></path>
+  </g>
+  <!-- Letra 'e' grande -->
+  <text class="e" x="64" y="200" font-size="190">e</text>
+</svg>
