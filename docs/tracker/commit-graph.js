@@ -383,7 +383,8 @@ function renderCharts() {
 
 function resetFilters() {
   document.getElementById('author-filter').value = '';
-  setDefaultDateFilters();
+  document.getElementById('date-from').value = '';
+  document.getElementById('date-to').value = '';
   applyFilters();
 }
 
