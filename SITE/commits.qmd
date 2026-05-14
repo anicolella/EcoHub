@@ -259,6 +259,7 @@ Visualização interativa do histórico de commits de todos os branches do proje
     <input type="date" id="date-to">
   </div>
   
+  <button class="btn-reset" style="background:#065f46" onclick="applyFilters()">Consultar</button>
   <button class="btn-reset" onclick="resetFilters()">Resetar Filtros</button>
 
   <div class="control-group">
