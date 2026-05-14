@@ -125,10 +125,11 @@ Histórico de reuniões operacionais, decisões e andamento do projeto EcoHub.
             <tr>
         <td class="tracker-date">08/05/2026</td>
         <td class="tracker-tema">Fechamento trabalhos RAMMT + Planejamento Bases CAR e MapBiomas</td>
-        <td class="tracker-participantes">João e Fernando</td>
+        <td class="tracker-participantes">João, Fernando e Prof. Nicolella</td>
         <td class="tracker-decisoes">
           <ul><li>Prof. Nicolella solicitou ajustes na análise descritiva</li>
-            <li>Solicitado máquina Rstudio/Linux no servidor da FEARP. Problemas de pacotes linux. FEARP pediu tempo para configurar.</li>
+          <li>Solicitado máquina Rstudio/Linux no servidor da FEARP. Problemas de pacotes linux. FEARP pediu tempo para configurar.</li>
+          <li>Ficou definido que as próximas duas bases de dados (CAR e MapBiomas) serão focadas no estado de Mato Grosso. Após o encerramento, com infraestrutura adequada, bastará adaptar scripts e análises.</li>
           </ul>
         </td>
       </tr>
