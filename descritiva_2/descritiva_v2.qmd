@@ -208,6 +208,56 @@ df_incra |>
 
 ```
 
+#### Cobertura de dado por ano
+A cobertura das cidades realizada pelas diferentes amostras em cada um dos anos:
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| results: asis 
+
+# 1. Preparação (Fora do Loop)
+# Certifique-se de que os pacotes geobr e ggplot2 estejam carregados
+br_outline <- geobr::read_country(year = 2020, showProgress = FALSE) 
+br_states  <- geobr::read_state(code_state = "all", year = 2020, showProgress = FALSE)
+anos_disponiveis <- sort(unique(df_analise$ano))
+
+# 2. Abertura do Painel
+# Adicione \n extras para garantir que o Quarto não ignore a sintaxe
+cat("\n\n::: {.panel-tabset}\n\n")
+
+# 3. Loop
+for (um_ano in anos_disponiveis) {
+  
+  # A. Título da Aba
+  # Use ### (nível 3). Se usar ##, você pode quebrar a estrutura da página
+  cat("### ", um_ano, "\n\n")
+  
+  # B. Filtro e Gráfico
+  dados_do_ano <- df_analise[df_analise$ano == um_ano, ]
+  
+  p <- ggplot() +
+    geom_sf(data = br_outline, fill = "gray95", color = "gray90") +
+    geom_sf(data = dados_do_ano, fill = "firebrick", color = NA) + 
+    geom_sf(data = br_states, fill = NA, color = "gray40", size = 0.2) +
+    labs(title = paste("Coleta de dados RAMT:", um_ano), 
+         subtitle = paste(length(unique(dados_do_ano$origem)), "municípios"),
+         caption = "Fonte: INCRA/RAMT") +
+    theme_void() +
+    theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+  
+  # C. Renderização
+  # O print() é necessário dentro de loops
+  print(p)
+  
+  # D. Fechamento da Aba (Essencial: Linha em branco após o gráfico)
+  cat("\n\n")
+}
+
+# 4. Fechamento do Painel
+cat(":::\n\n")
+
+```
 
 #### Processo de tratamento dos dados pelo INCRA
 
