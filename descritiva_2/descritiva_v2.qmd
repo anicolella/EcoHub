@@ -6,8 +6,9 @@ format: html
 
 ## Referencial teórico 
 
-## Sobre os dados
+## Metodologia
 
+### Sobre os dados
 ```{r}
 #| echo: false
 #| message: false
@@ -208,7 +209,7 @@ df_incra |>
 ```
 
 
-### Processo de tratamento dos dados pelo INCRA
+#### Processo de tratamento dos dados pelo INCRA
 
 O processo de estimação do valor da terra pelas superintendências do INCRA acontece em dois estágios com o uso de uma série de variáveis, inicialmente, são formados agrupamentos ou zonas homogêneas, que serão descritas com mais detalhes a seguir,a formação dessas zonas homogêneas ocorre por meio de uma classificação criada com o uso de uma série de variáveis, descritas na tabela abaixo. Essas variáveis são posteriormente organizadas em uma matriz e padronizadas.
 
@@ -290,7 +291,7 @@ $$\text{Matriz de Dados} =
 \end{array}$$
 
 
-Posteriormente, esses dados são padronizados com a finalidade de obter valores adimensionais que são organizados em uma matriz de dados relativos para a análise de agrupamentos. Essa padronização acontece para que as diferenças de escala não gerem um resultado erroneo sobre as semelhanças das regiões, por exemplo, uma determinada variação de uma unidade no número de tratores provavelmente está mais distante na distribuição de probabilidade que uma variação de 1 hectare no tamanho da propriedade. Os métodos de padronização sugeridos no módulo de elaboração contêm o processo de normalização, uso do método da amplitude média e o método de normalização pela média, que são descritos abaixo: 
+Posteriormente, esses dados são padronizados com a finalidade de obter valores adimensionais que são organizados em uma matriz de dados relativos para a análise de agrupamentos. Essa padronização acontece para que as diferenças de escala não gerem um resultado erroneo sobre as semelhanças das regiões, por exemplo, uma determinada variação de uma unidade no número de tratores provavelmente está mais distante na distribuição de probabilidade que uma variação de um hectare no tamanho da propriedade. Os métodos de padronização sugeridos no módulo de elaboração contêm o processo de normalização, uso do método da amplitude média e o método de normalização pela média, que são descritos abaixo: 
 
 $$ Z_i = \frac{X_i - \bar{X}}{\sigma} \qquad Z_i = \frac{X_i - \min(X)}{\max(X) - \min(X)} \qquad Z_i = \frac{X_i}{\bar{X}} $$
 
@@ -314,14 +315,124 @@ $$\text{Matriz de Dados} =
 \end{array}$$
 
 
-O algoritmo de Ward combina clusteres com a menor distância euclidiana entre si, ou seja, ele combina os elementos mais similares entre si da matriz de similaridades, assim, vão sendo feitas combinações uma a uma reduzindo a dimensão da matriz de similaridade em cada etapa, isso ocorre até que todos os municípios da superintência que está realizando a análise sejam combinados em um único cluster. Durante esse processo é formado um dendograma que é utilizado como critério para a definição das zonas homogêneas ( ou clusteres ) na área análisada. 
+O algoritmo de Ward combina clusteres com a menor distância euclidiana entre si, ou seja, ele combina os elementos mais similares entre si da matriz de similaridades, assim, vão sendo feitas combinações uma a uma reduzindo a dimensão da matriz de similaridade em cada etapa, isso ocorre até que todos os municípios da superintência que está realizando a análise sejam combinados em um único cluster. Durante esse processo é formado um dendograma que é utilizado como critério para a definição das zonas homogêneas (clusteres/agrupamentos) na área análisada. 
 
 Após o uso do algoritmo de Ward e da definição do número de agrupamentos na região, passa-se ao uso do algoritmo de k-means, forma-se k agrupamentos, com os n municípios da região sendo classificados dentro desses agrupamentos segundo a algum critério arbitrário de distância ou similaridade. Posteriormente, os municípios são movidos de um agrupamento para outro tentanto melhorar a qualidade dos agrupamentos, isso ocorre por meio da maximização ou minimização de uma função objetivo. Os agrupamentos são então caracterizados segundo parâmetros estatísticos: média, valor máximo e valor mínimo e cada uma das variáveis. 
 
+#### Planilhas de Preços Referenciais 
+Os materiais digitalizados correspondem aos parâmetros principais da Zona Homogênea (agrupamento), contendo média, valor máximo e valor mínimo. Esses dados são disponibilizados nas planilhas de preços referenciais de terras presentes nos documentos RAMT/Atlas de Terras. Os valores são de dois tipos: valor de terra com imóvel (VTI) — ou seja, parâmetros para propriedades com edificações — e valor de terra nua, isto é, o valor da terra sem qualquer tipo de imóvel.
 
-## Metodologia
-### Extração e padronização de dados
-Os dados foram extraídos dos RAMT's e do Atlas do Mercado de Terras do ano de 2023, esses dados foram todos extraídos dos pdfs e posteriormente unidos em um data frame, indicando o ano de cada observação. Além disso, os relatórios contavam com o nome das cidades que compunham as zonas homogêneas em cada ano, sendo possível colocar esses dados por cidades 
+Esses valores são apresentados para diferentes usos do solo. Os usos são organizados em níveis categóricos que variam do nível 0 (média geral) ao nível 4 (maior detalhamento, incluindo, por exemplo, nível de irrigação e localidade específica dentro da zona homogênea).
+
+#### Extração dos dados
+Os dados provêm dos RAMTs e do Atlas do Mercado de Terras de 2023. Foram extraídos dos arquivos PDF e consolidados em um único data frame, com indicação do ano de cada observação. Os relatórios também listavam os nomes das cidades que compunham as zonas homogêneas em cada ano; essas informações foram desagregadas ao nível municipal e cruzadas com a tabela do GeoBr que contém os municípios brasileiros e seus respectivos códigos IBGE. Por fim, atribuiu‑se a cada registro a geometria poligonal no sistema SIRGAS 2000.
+
+#### Organização do data frame.
+O data frame contém 23 variáveis, entre as quais as principais são os valores de média, mínimo e máximo para o valor de terra com imóvel (VTI) e para o valor de terra nua. Esses valores foram corrigidos pelo IGP‑DI anual até o ano de 2024.
+
+```{r}
+#| message: false
+#| warning: false
+
+library(gt)
+library(dplyr)
+
+# Criando o dataframe do dicionário
+dicionario_data <- tribble(
+  ~Variável, ~Tipo, ~Descrição,
+  "mrt", "Texto", "Nome da zona homogênea no arquivo de origem.",
+  "origem", "Texto", "Cidade analisada.",
+  "code_muni", "ID", "Código do município segundo o IBGE.",
+  "cluster", "texto", "lista de municípios da zona homogêmea",
+  "ano", "Temporal", "Ano de publicação do documento original.",
+  "UF", "Texto", "Unidade Federativa",
+  "nivel", "numérica", "indica o nível categórico da atividade, ou seja, detalhamento",
+  "categoria_final", "Categórica", "Unificação das tipologias de uso da terra.",
+  "vti_media", "Monetária", "Valor médio da terra com benfeitorias (por hectare).",
+  "vti_minimo", "Monetária", "Limite inferior da terra distribuição de terras com benfeitorias (por hectare).",
+  "vti_maximo", "Monetária", "Limite superior da terra distribuição de terras com benfeitorias (por hectare).",
+   "vtn_media", "Monetária", "Valor médio da terra sem benfeitorias (por hectare).",
+  "vtn_minimo", "Monetária", "Limite inferior da terra distribuição de terras sem benfeitorias (por hectare).",
+  "vtn_maximo", "Monetária", "Limite superior da terra distribuição de terras sem benfeitorias (por hectare).",
+  "igpdi_vti_media", "Monetária", "Valor vti_media corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vti_minimo", "Monetária", "Valor vti_minimo corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vti_maximo", "Monetária", "Valor vti_maximo corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vtn_media", "Monetária", "Valor vtn_media corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vtn_minimo", "Monetária", "Valor vtn_minimo corrigida pelo IGP-DI (Preços Reais).",
+  "igpdi_vtn_maximo", "Monetária", "Valor vtn_maximo corrigida pelo IGP-DI (Preços Reais).",
+  "area_m2", "Espacial", "Área em metros quadrados",
+  "area_ha_calculada", "Espacial", "Área em hectares quadrados",
+  "geom", "Espacial", "Geometria municipal (SIRGAS 2000)."
+  
+)
+
+# Renderizando a tabela gtsummary/gt
+dicionario_data |>
+  gt() |>
+  tab_header(
+    title = "Dicionário de Variáveis do Banco de Dados RAMT/INCRA",
+    subtitle = "Estrutura de dados para análise de mercado de terras (2015-2025)"
+  ) |>
+  cols_label(
+    Variável = md("**Variável**"),
+    Tipo = md("**Tipo**"),
+    Descrição = md("**Descrição**")
+  ) |>
+  tab_options(
+    table.width = pct(100),
+    column_labels.background.color = "gray90"
+  )
+```
+### Metodologia Análise Descritiva
 
 ## Resultados e discussão
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
