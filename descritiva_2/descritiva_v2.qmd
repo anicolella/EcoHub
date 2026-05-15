@@ -258,6 +258,54 @@ for (um_ano in anos_disponiveis) {
 cat(":::\n\n")
 
 ```
+ 
+ A seguir uma tabela com a quantidade de municípios observados em cada ano disponível no banco:
+
+```{r}
+#| message: false
+#| warning: false
+
+# 1. Preparar os dados (Agregação Ponderada)
+# 1. Preparar os dados (Apenas Contagem)
+tabela_pivo <- df_areas2 |>
+  st_drop_geometry() |>
+  group_by(ano) |>
+  summarise(
+    # Use 'code_muni' para garantir contagem exata de municípios únicos. 
+    # Se 'origem' for a variável correta na sua base, mantenha a original.
+    n_municipios = n_distinct(code_muni) 
+  )
+
+# 2. Gerar a Tabela Enxuta
+tabela_pivo |>
+  gt() |>
+  
+  # --- Cabeçalho ---
+  tab_header(
+    title = md("**Cobertura Temporal**"),
+    subtitle = "Quantidade de Municípios Auditados por Ano"
+  ) |>
+  
+  # --- Labels ---
+  cols_label(
+    ano = "Ano",
+    n_municipios = "Nº Municípios"
+  ) |>
+  
+  # --- Formatação ---
+  fmt_number(
+    columns = n_municipios,
+    decimals = 0,
+    sep_mark = "."
+  ) |>
+  
+  # --- Estilo ---
+  cols_align(align = "center", columns = everything()) |>
+  opt_row_striping() |>
+  tab_options(
+    table.width = pct(50) # Tabela mais estreita, já que tem poucas colunas
+  )
+```
 
 #### Processo de tratamento dos dados pelo INCRA
 
@@ -433,13 +481,220 @@ dicionario_data |>
     column_labels.background.color = "gray90"
   )
 ```
-### Metodologia Análise Descritiva
+### Metodologia Análise Descritivas
+A análise exploratória de dados (EDA) tem como objetivo descrever as características gerais dos dados.
 
 ## Resultados e discussão
+A análise descritiva do banco de dados foi realizada com foco no ano de 2023, visando oferecer um panorama geral do valor da terra no Brasil com a menor distorção possível. Para complementar as cidades que não tinham dados referentes a 2023, corrigimos e utilizamos as observações mais próximas disponíveis, atualizando‑as pelo IGP‑DI.
 
+Inicialmente, é útil apresentar um panorama geral dos valores da terra no país. A tabela a seguir mostra esses valores por quantis. Observa-se que as terras classificadas como "não agrícolas" apresentam os maiores valores. Isso ocorre porque áreas urbanas são categorizadas como não agrícolas, o que puxa para cima o valor médio desse uso do solo em razão da maior densidade urbana e da lucratividade associada a essas áreas. Em seguida, as classes de uso mais valorizadas são: agricultura, silvicultura e exploração mista. Já as classes com valores abaixo da média são: pecuária, aquicultura e vegetação nativa.
 
+```{r}
+#| message: false
+#| warning: false
 
+# 1. Cálculo dos Quantis por Categoria
+tabela_quantis <- df_areas2 |>
+  st_drop_geometry() |>
+  filter(!is.na(IGPDI_vti_media), IGPDI_vti_media > 0) |>
+  group_by(categoria_final) |>
+  summarise(
+    N = n(),
+    # Calcula os cortes de preço que dividem o mercado
+    P10 = quantile(IGPDI_vti_media, 0.10),
+    P25 = quantile(IGPDI_vti_media, 0.25),
+    Mediana = median(IGPDI_vti_media),
+    P75 = quantile(IGPDI_vti_media, 0.75),
+    P90 = quantile(IGPDI_vti_media, 0.90)
+  ) |>
+  arrange(desc(Mediana)) # Ordena do mais caro para o mais barato
 
+# 2. Renderização da Tabela
+tabela_quantis |>
+  gt() |>
+  tab_header(
+    title = md("**Estrutura de Preços: Distribuição por Quantis**"),
+    subtitle = "Valores de Terra (VTI) em R$/ha"
+  ) |>
+  fmt_number(
+    columns = c(P10, P25, Mediana, P75, P90),
+    decimals = 0,
+    sep_mark = ".",
+    dec_mark = ","
+  ) |>
+  cols_label(
+    categoria_final = "Categoria",
+    N = "Amostras",
+    P10 = "Piso (10%)",
+    P25 = "Baixo (25%)",
+    Mediana = "Médio (50%)",
+    P75 = "Alto (75%)",
+    P90 = "Teto (90%)"
+  ) |>
+  # Destaque visual para a Mediana (o valor mais provável)
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", color = "black"),
+      cell_fill(color = "lightgray")
+    ),
+    locations = cells_body(columns = Mediana)
+  ) |>
+  data_color(
+    columns = c(Mediana),
+    method = "numeric",
+    palette = "Greens" # Escala de cor para mostrar quem vale mais
+  )
+```
+Assim, para compreender melhor a quantidade de outliers e os demais valores das distribuições de cada nível categórico, seguem os boxplots: 
+
+```{r}
+#| message: false
+#| warning: false
+# 1. Preparação: Pivotagem (Wide -> Long)
+
+dados_box <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+dados_comparativos <- dados_box |>
+  # Filtra sujeira e categorias principais
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa")) |>
+  
+  # Seleciona apenas o necessário para pivotar
+  select(categoria_final, IGPDI_vti_media, IGPDI_vtn_media) |>
+  
+  # Transforma colunas em linhas (VTI e VTN viram "Tipo de Valor")
+  pivot_longer(
+    cols = c(IGPDI_vti_media, IGPDI_vtn_media),
+    names_to = "tipo_valor",
+    values_to = "valor_ha"
+  ) |>
+  
+  # Renomeia para ficar bonito na legenda
+  mutate(
+    tipo_valor = factor(tipo_valor, 
+                        levels = c("IGPDI_vti_media", "IGPDI_vtn_media"), 
+                        labels = c("VTI (Com Imóvel)", "VTN (Terra Nua)"))
+  )
+
+# 2. O Plot (Boxplot Pareado)
+ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = median), y = valor_ha, fill = tipo_valor)) +
+  
+  # Boxplot: Mostra Mediana, Quartis e Outliers
+  geom_boxplot(outlier.alpha = 0.2, outlier.size = 0.5, outlier.color = "gray40") +
+  
+  # Escala Logarítmica (Crucial)
+  scale_y_log10(
+    labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+    breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+  ) +
+  
+  # Cores contrastantes (Laranja pro Capital, Azul pra Terra Nua - ou vice-versa)
+  scale_fill_manual(values = c("VTI (Com Imóvel)" = "#E69F00", "VTN (Terra Nua)" = "#56B4E9")) +
+  
+  coord_flip() + # Deita o gráfico para facilitar leitura dos nomes
+  
+  labs(
+    title = "Dispersão de Preços: VTI vs. VTN",
+    subtitle = "A distância entre as caixas representa o valor agregado das benfeitorias.",
+    x = NULL, # Remove label redundante
+    y = "Valor por Hectare (Log)",
+    fill = "Métrica"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    axis.text.y = element_text(face = "bold", size = 10),
+    panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas
+  )
+```
+Pode-se observar que o Valor da Terra Nua (VTN) apresenta maior variância. O Valor da Terra com Imóvel (VTI) é, em todos os casos, superior ao VTN. Outra constatação importante é que o intervalo de observações dos valores de terra é muito mais estreito para vegetação nativa em comparação com outros usos do solo. Além disso, a pecuária é a única atividade com valor médio abaixo da média geral dos usos.
+
+Duas explicações são plausíveis para esse padrão: ou a média da pecuária está sendo distorcida por outliers que elevam a média dos demais usos, ou a pecuária, frequentemente utilizada como instrumento de desmatamento, tem baixa lucratividade — sendo muitas vezes uma atividade intermediária (meio) e não um produto final (fim).
+
+Convem agora investigar os padrões apresentados pelas distribuições do valor de terra em cada tipologia, como houve um processo de agrupamento dessas médias em zonas homogêneas é de se esperar que as distribuições apresentem um comportamento multimodal, uma vez que cada zona apresenta características únicas.
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
+
+# 1. Definição do Escopo
+categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
+
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem
+  dados_cat <- df_analise2 |>
+    filter(ano < 2025, !is.na(IGPDI_vtn_media), IGPDI_vtn_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(IGPDI_vtn_media, n = 5, dig.lab = 15),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
+  
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
+  )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTN:", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
+
+```
+
+As linhas de densidade (Valor Total do Imóvel — VTI) demonstram um comportamento de multimodal para todas as categorias na distribuição dos preços, apresentando, de forma notável, uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas “pecuária”, “agricultura” e “vegetação nativa”.
 
 
 
