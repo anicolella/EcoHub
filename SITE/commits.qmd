@@ -5,7 +5,7 @@ page-layout: article
 
 ## Histórico de Commits
 
-Visualização interativa do histórico de commits de todos os branches do projeto EcoHub.
+Visualização interativa do histórico de commits de todos os branches do projeto EcoHub. Por padrão, os útlimos 30 dias são apresentados automaticamente, mas é possível alterar para intervalos maiores ou menores.
 
 ```{=html}
 <style>
@@ -250,15 +250,16 @@ Visualização interativa do histórico de commits de todos os branches do proje
   </div>
   
   <div class="control-group">
-    <label for="date-from">Data de:</label>
+    <label for="date-from">Início:</label>
     <input type="date" id="date-from">
   </div>
   
   <div class="control-group">
-    <label for="date-to">Data até:</label>
+    <label for="date-to">Fim:</label>
     <input type="date" id="date-to">
   </div>
   
+  <button class="btn-reset" style="background:#065f46" onclick="applyFilters()">Consultar</button>
   <button class="btn-reset" onclick="resetFilters()">Resetar Filtros</button>
 
   <div class="control-group">

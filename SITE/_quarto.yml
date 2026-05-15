@@ -4,6 +4,7 @@ project:
   resources:
     - "admin/**"
     - "tracker/_media/**"
+    - "js/theme-session.js"
     - "assets/amazon_rainforest.mp4"
     - "assets/wetlands.mp4"
     - "assets/projeto_bd.png"
@@ -89,6 +90,8 @@ format:
     css: assets/styles.css           
     toc: false
     smooth-scroll: true
-    include-in-header: _includes/header.html
+    include-in-header:
+      - _includes/theme-session.html
+      - _includes/header.html
     include-before-body: _includes/drawer.html
     include-after-body: _includes/scripts.html
