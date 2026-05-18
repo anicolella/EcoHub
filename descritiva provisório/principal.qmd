@@ -1800,7 +1800,7 @@ for(cat in categorias_unicas) {
   # C. Gera o Plot
   p <- ggplot(dados_fatia, aes(x = reorder(UF, IGPDI_vti_media, FUN = median), y = vti_media)) +
     
-    geom_boxplot(fill = "#760000ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    geom_boxplot(fill = "#004f25ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
     
     scale_y_log10(
       labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),

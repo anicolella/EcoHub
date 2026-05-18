@@ -1,14 +1,9 @@
 ---
 title: "Untitled"
 format: html
+bibliography: refs.bib
 ---
-## Introdução
 
-## Referencial teórico 
-
-## Metodologia
-
-### Sobre os dados
 ```{r}
 #| echo: false
 #| message: false
@@ -64,6 +59,37 @@ df_areas2 <- df_analise2 |>
  df_joined2 <- df_analise 
  
 ```
+
+
+## Introdução
+
+O Brasil é o país com o maior inventário de florestas tropicais do mundo e essas florestas são cruciais para a regulação climática e manutenção do ciclo hidrológico [@paulino2014]. Esse sistema ecológico fornece benefícios diretos e indiretos para a sociedade no Brasil e no mundo [@Guedes2012]. Assim, existe uma externalidade positiva gerada por esse sistema ecológico que é essencial para o bom funcionamento da biosfera como um todo. Junto disso, a economia brasileira tem como um de seus principais setores o agronegócio [@ibge2024pib], e o desenvolvimento desse setor econômico tem uma relação histórica com o desmatamento [@rocha].
+
+A partir dos anos 2000 o desmatamento vem sendo combatido através de uma série de legislações pelo estado brasileiro [@nepstad], isso veio como uma resposta aos picos apresentados anteriormente geradas por mudanças no cenário internacional e no funcionamento da economia do setor agrícola acoplada a esse novo cenário [@nepstadg]. Dentre esses sistemas, foi criado um sistema integrado de vigilância e governança territorial, como parte do Plano de Ação para Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm) [@rocha] em 2004. Ademais, no ano de 2008 houve um avanço condicionando a disponibilização de crédito a propriedades rurais a critérios associados ao desmatamento [@rocha].
+
+Existe um cenário de tensões entre o desenvolvimento econômico e agrário do Brasil e uma série de legislações históricas que vem no sentido de coibir o desmatamento, nesse contexto, o Brasil apresenta grande diversidade, mas historicamente o processo do desmatamento é mais estudado na Amazônia legal. Nesse cenário, o desmatamento ocorre em dois momentos: um primeiro momento vínculado a processos de exploração e um segundo momento associado à expansão produtiva, que é nosso momento atual [@brandão_rezende_marques_2006]. Aqui, configura-se uma importante mudança, as variáveis explicativas do desmatamento deixam de ser vinculadas a infraestrutura e passam a ser vinculadas também à fenômenos como a lucratividade da exploração econômica de commodites [@martins_francisco_2025].
+
+Apesar da relevância do tema, a literatura que relaciona o desmatamento aos mercados de terras ainda é escassa [@KRISHNA2017335]. Para contribuir com essa lacuna, este trabalho realizou a transcrição dos 'Relatórios de Análise do Mercado de Terras', convertendo dados de 'valor da terra' originalmente em PDF para o formato .gpkg, incluindo suas geolocalizações. O objetivo central dessa seção é realizar uma análise descritiva desses dados. Dado que o desmatamento é impulsionado por processos econômicos [@martins_francisco_2025], acredita-se que o valor da terra seja uma variável relevante na decisão do agente econômico. Assim, a série de dados aqui disponibilizada auxilia na compreensão do desmatamento no Brasil e oferece suporte para o estudo de fenômenos históricos e a formulação de políticas públicas.
+
+## Referencial teórico 
+### Abordagens teóricas sobre o desmatamento
+Os modelos iniciais para a compreensão do desmatamento, em especial na amazônia legal, tentavam o explicar através do uso de variáveis vínculadas principalmente a infraestrutura [@pfaff1999], isso é compreensível dado que num primeiro momento o desmatamento era vinculado a um processo de colonização [@martins_francisco_2025]. Posteriormente os modelos começaram a levar em conta variáveis socioeconômicas e espaciais [@Balboni], dando um certo destaque para os preços de commodites [@rocha], o que é razoável dada a conexão histórica entre a pecuária e o desamtamento [@rocha]. A relação entre a pecuária e o desmatamento é comum, pois a atividade pecuária permite que a terra cumpra requisitos jurídicos facilmente, mais especificamente cumpra sua função social facilmente [@brandão_rezende_marques_2006].
+
+### Modelos relevantes
+A modelagem de Pfaff (1999) explica o desmatamento por meio da maximização de uma função de lucro, considerando variáveis ligadas principalmente ao processo de colonização da Amazônia, como a facilidade de transporte, características climáticas e o arranjo demográfico, que possui inicialmente grande influência, durante o decorrer do processo de colonização e, posteriormente, efeito mais fraco. As variáveis utilizadas variam desde densidade populacional e distância de estradas até uma primeira consideração sobre o uso de crédito rural [@pfaff1999]. 
+
+O modelo criado por Rocha (2015) considera um agricultor representativo que só pode expandir sua produção por meio do desmatamento. Não há arrendamento da terra; o produtor maximiza seu lucro por meio da maximização de preços; há uma função de produção com retornos de escala decrescentes; e os fatores institucionais exercem certa influência sobre a decisão de desmatar ou não. O modelo apresenta como variáveis preços dos produtos agrícolas, área, área ótima da propriedade, tecnologia e um parâmetro de restrição legal. A principal contribuição desse modelo recai sobre a medição das restrições legais, medida pela área não disponível legalmente no município [@rocha]. Ademais, o artigo faz uma estimativa do custo da restrição legal em termos de PIB municipal, e o resultado do contrafactual indica que não houve efeito relevante sobre o PIB projetado [@rocha].
+
+### Evidênciais empíricas
+
+A técnica de regressão linear múltipla é mais comumente utilizada para a estimação dos parâmetros em modelos teóricos [@rocha; @pfaff1999]. Além disso, outros estudos tentam estimar o fenômeno do desmatamento através da aplicação direta de técnicas econometricas [@martins_francisco_2025]. Entretanto, é evidente que existe um melhor ajuste dos modelos aos dados quando se leva em conta efeitos espaciais, como por exemplo a aplicação do modelo SAR ao invés de uma regressão múltipla [@martins_francisco_2025].
+
+Os modelos microeconômicos se preocupam com a rentabilidade da terra, utilizando como uma proxy para isso os preços de commodities [@rocha; @pfaff1999; @martins_francisco_2025]. Nesse sentido, o valor da terra pode ser usado também como uma proxy da rentabilidade da terra.
+
+O desmatamento é, portanto, um problema de otimização da lucratividade do indivíduo, ou seja, o indivíduo decide se vai desmatar ou não tendo em vista seus ganhos futuros [@rocha; @pfaff1999]. Assim, a pecuária apresenta índice positivo de correlação com o desmatamento pela facilitação da grilagem [@brandão_rezende_marques_2006]. Desse modo, o uso da variável de valor da terra aqui disponibilizada pode contribuir como um importante fator explicativo do desmatamento.
+
+## Metodologia
+### Sobre os dados
 
 O valor da terra é uma variável que é pouco estimada e disponibilizada para análises no Brasil. Esses dados podem oferecer uma variável importante para a compreensão do processo de desmatamento, que é um problema de central importância para o país que é dono do maior inventário de florestas tropicais do mundo. Então, a importância de se compreender melhor o valor da terra vem de uma necessidade de entender como o desmatamento ocorre em território nacional. Nesse sentido, os dados extraídos aqui vem de uma necessidade de digitalização de uma série histórica contendo dados dos valores da terra; essa série histórica foi extraída de uma série de documentos do INCRA (Instituto Nacional de Colonização e Reforma Agrária), sendo estes documentos: os relatórios de análise do mercado de terras e o Atlas do Mercado de Terras (RAMTS). O uso de uma série de relatórios e de um atlas tem a função de complementação: os dados dos RAMTs são obtidos por cada uma das superintendências do INCRA no país, ou seja, o procedimento de coleta não é uniforme, enquanto o Atlas do Mercado de Terras possui todos os dados para um determinado ano, no caso da base de 2023. Assim, para o ano de 2023, quando a superintendência do INCRA não soltava uma série de dados nova de sua respectiva área, houve uma complementação com os dados do Atlas; entretanto, houve estados onde os dados do relatório de 2023 eram iguais aos de anos anteriores ou posteriores. Nesse caso, preferiu-se manter nas datas originais dos relatórios, uma vez que esses são constantemente atualizados, mesmo que de maneira espaço-temporalmente irregular. A relação de documentos para cada ano em cada estado disponível pode ser visto na tabela abaixo:
 
@@ -309,9 +335,9 @@ tabela_pivo |>
 
 #### Processo de tratamento dos dados pelo INCRA
 
-O processo de estimação do valor da terra pelas superintendências do INCRA acontece em dois estágios com o uso de uma série de variáveis, inicialmente, são formados agrupamentos ou zonas homogêneas, que serão descritas com mais detalhes a seguir,a formação dessas zonas homogêneas ocorre por meio de uma classificação criada com o uso de uma série de variáveis, descritas na tabela abaixo. Essas variáveis são posteriormente organizadas em uma matriz e padronizadas.
+O processo de estimação do valor da terra pelas superintendências do INCRA acontece em dois estágios com o uso de uma série de variáveis, inicialmente, são formados agrupamentos ou zonas homogêneas [@incra2014], que serão descritas com mais detalhes a seguir,a formação dessas zonas homogêneas ocorre por meio de uma classificação criada com o uso de uma série de variáveis, descritas na tabela abaixo. Essas variáveis são posteriormente organizadas em uma matriz e padronizadas.
 
-As variáveis são classificadas em quatro grandes grupos: variáveis relacionadas à vocação produtiva da terra, variáveis relacionadas ao nível tecnológico, variáveis relacionadas à gestão de resultados e variáveis relacionadas à concentração de terras.
+As variáveis são classificadas em quatro grandes grupos: variáveis relacionadas à vocação produtiva da terra, variáveis relacionadas ao nível tecnológico, variáveis relacionadas à gestão de resultados e variáveis relacionadas à concentração de terras [@incra2014].
 
 ```{r}
 #| message: false
@@ -374,7 +400,7 @@ dicionario_data |>
   opt_row_striping()
 ```
 
-Os dados descritos na tabela são em sua maioria obtidos do censo agropecuário. Esses dados são organizados em uma matriz bruta de dados, onde $M_i$ representa o município i e o $V_j$ o valor da variável j para o município $M_i$. Assim, se constrói a matriz bruta de dados que será posteriormente tratada para o processo de agrupamento.
+Os dados descritos na tabela são em sua maioria obtidos do censo agropecuário [@incra2014]. Esses dados são organizados em uma matriz bruta de dados, onde $M_i$ representa o município i e o $V_j$ o valor da variável j para o município $M_i$. Assim, se constrói a matriz bruta de dados que será posteriormente tratada para o processo de agrupamento [@incra2014].
 
 
 $$\text{Matriz de Dados} = 
@@ -399,7 +425,7 @@ $$
 d(P,Q) = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2 }.
 $$ 
 
-Posteriormente, com as distâncias euclidianas já calculadas, é formada uma matriz de similaridades entre os municípios, que será utilizada no processo de agrupamento dos diferentes municípios. Esse processo de aglomeração utiliza-se de dois algoritmos, um algoritmo de Ward e o algoritmo de k-means em sequência. Primeiramente, o algoritmo de Ward cria a aglomeração em clusters e posteriormente o algoritmo de K-means é utilizado com a finalidade de confirmar os municípios que compõe cada cluster e as variáveis que os definem.
+Posteriormente, com as distâncias euclidianas já calculadas, é formada uma matriz de similaridades entre os municípios, que será utilizada no processo de agrupamento dos diferentes municípios[@incra2014]. Esse processo de aglomeração utiliza-se de dois algoritmos, um algoritmo de Ward e o algoritmo de k-means em sequência [@incra2014]. Primeiramente, o algoritmo de Ward cria a aglomeração em clusters e posteriormente o algoritmo de K-means é utilizado com a finalidade de confirmar os municípios que compõe cada cluster e as variáveis que os definem [@incra2014].
 
 $$\text{Matriz de Dados} = 
 \begin{array}{cc|ccc|c}
@@ -413,12 +439,12 @@ $$\text{Matriz de Dados} =
 \end{array}$$
 
 
-O algoritmo de Ward combina clusteres com a menor distância euclidiana entre si, ou seja, ele combina os elementos mais similares entre si da matriz de similaridades, assim, vão sendo feitas combinações uma a uma reduzindo a dimensão da matriz de similaridade em cada etapa, isso ocorre até que todos os municípios da superintência que está realizando a análise sejam combinados em um único cluster. Durante esse processo é formado um dendograma que é utilizado como critério para a definição das zonas homogêneas (clusteres/agrupamentos) na área análisada. 
+O algoritmo de Ward combina clusteres com a menor distância euclidiana entre si, ou seja, ele combina os elementos mais similares entre si da matriz de similaridades, assim, vão sendo feitas combinações uma a uma reduzindo a dimensão da matriz de similaridade em cada etapa, isso ocorre até que todos os municípios da superintência que está realizando a análise sejam combinados em um único cluster [@incra2014]. Durante esse processo é formado um dendograma que é utilizado como critério para a definição das zonas homogêneas (clusteres/agrupamentos) na área análisada [@incra2014]. 
 
-Após o uso do algoritmo de Ward e da definição do número de agrupamentos na região, passa-se ao uso do algoritmo de k-means, forma-se k agrupamentos, com os n municípios da região sendo classificados dentro desses agrupamentos segundo a algum critério arbitrário de distância ou similaridade. Posteriormente, os municípios são movidos de um agrupamento para outro tentanto melhorar a qualidade dos agrupamentos, isso ocorre por meio da maximização ou minimização de uma função objetivo. Os agrupamentos são então caracterizados segundo parâmetros estatísticos: média, valor máximo e valor mínimo e cada uma das variáveis. 
+Após o uso do algoritmo de Ward e da definição do número de agrupamentos na região, passa-se ao uso do algoritmo de k-means, forma-se k agrupamentos, com os n municípios da região sendo classificados dentro desses agrupamentos segundo a algum critério arbitrário de distância ou similaridade [@incra2014]. Posteriormente, os municípios são movidos de um agrupamento para outro tentanto melhorar a qualidade dos agrupamentos, isso ocorre por meio da maximização ou minimização de uma função objetivo [@incra2014]. Os agrupamentos são então caracterizados segundo parâmetros estatísticos: média, valor máximo e valor mínimo e cada uma das variáveis [@incra2014]. 
 
 #### Planilhas de Preços Referenciais 
-Os materiais digitalizados correspondem aos parâmetros principais da Zona Homogênea (agrupamento), contendo média, valor máximo e valor mínimo. Esses dados são disponibilizados nas planilhas de preços referenciais de terras presentes nos documentos RAMT/Atlas de Terras. Os valores são de dois tipos: valor de terra com imóvel (VTI) — ou seja, parâmetros para propriedades com edificações — e valor de terra nua, isto é, o valor da terra sem qualquer tipo de imóvel.
+Os materiais digitalizados correspondem aos parâmetros principais da Zona Homogênea (agrupamento), contendo média, valor máximo e valor mínimo. Esses dados são disponibilizados nas planilhas de preços referenciais de terras presentes nos documentos RAMT/Atlas de Terras. Os valores são de dois tipos: valor de terra com imóvel (VTI) — ou seja, parâmetros para propriedades com edificações — e valor de terra nua, isto é, o valor da terra sem qualquer tipo de imóvel [@incra2014].
 
 Esses valores são apresentados para diferentes usos do solo. Os usos são organizados em níveis categóricos que variam do nível 0 (média geral) ao nível 4 (maior detalhamento, incluindo, por exemplo, nível de irrigação e localidade específica dentro da zona homogênea).
 
@@ -617,97 +643,363 @@ Convem agora investigar os padrões apresentados pelas distribuições do valor 
 ```{r}
 #| message: false
 #| warning: false
+library(plotly)
 library(dplyr)
 library(ggplot2)
-library(sf)
 library(scales)
-library(stringr)
+library(htmltools) # Necessário para renderizar lista de widgets
 
-# 1. Definição do Escopo
-categorias_alvo <- c("agricultura", "pecuaria", "media geral", "exploracao mista", "vegetacao nativa")
-lista_plots <- list()
+# 1. Preparação dos Dados (Inalterada)
+dados_hist <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
 
-# 2. Execução Iterativa
-for(cat in categorias_alvo) {
+dados_hist <- dados_hist |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
   
-  # A. Filtragem
-  dados_cat <- df_analise2 |>
-    filter(ano < 2025, !is.na(IGPDI_vtn_media), IGPDI_vtn_media > 0) |>
-    filter(categoria_final == cat) |> 
-    group_by(code_muni) |>
-    slice_max(order_by = ano, n = 1) |> 
-    ungroup()
+  var_sym <- rlang::ensym(var_col)
   
-  # B. Gera os intervalos brutos
-  # dig.lab = 15 força números inteiros (sem 1e+05)
-  dados_cat <- dados_cat |>
+  # Transformação Log no Backend
+  dados_temp <- dados |>
     mutate(
-      classe_raw = cut_number(IGPDI_vtn_media, n = 5, dig.lab = 15),
-      classe_preco = classe_raw # Cria cópia para modificar os níveis
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
     )
-
-  # --- C. O TRATAMENTO DE STRING (Regex) ---
-  # Pega os níveis originais: ex: "(100, 500]"
-  niveis_originais <- levels(dados_cat$classe_preco)
   
-  # 1. Remove colchetes e parênteses
-  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
-  
-  # 2. Substitui a vírgula por " - "
-  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
-  
-  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
-  levels(dados_cat$classe_preco) <- paste0(
-    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
-    "\n", 
-    niveis_limpos # Resultado: "100 - 500"
-  )
-
-  # D. Plotagem Estática
-  p <- ggplot(dados_cat) +
-    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
     
-    scale_fill_brewer(
-      palette = "Spectral", 
-      direction = -1,
-      name = "Faixa de Preço (R$/ha)"
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#2980b9", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
     ) +
     
     labs(
-      title = paste("Panorama VTN:", toupper(cat)),
-      subtitle = "Distribuição de Preços Relativa (Quantis)",
-      x = NULL, y = NULL
+      title = paste("Distribuição VTI -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
     ) +
     
-    theme_void() +
-    theme(
-      plot.title = element_text(face = "bold", size = 14),
-      legend.position = "right",
-      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
-      legend.text = element_text(size = 9)
-    )
+    theme_minimal()
+  
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
 
-  lista_plots[[cat]] <- p
-  message(paste("Processado:", cat))
-  print(p)
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, IGPDI_vti_media, cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots)
+```
+As linhas de densidade (Valor Total do Imóvel — VTI) demonstram um comportamento de multimodal para todas as categorias na distribuição dos preços, apresentando, de forma notável, uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas “pecuária”, “agricultura” e “vegetação nativa”.
+
+```{r}
+#| message: false
+#| warning: false
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(htmltools) # Necessário para renderizar lista de widgets
+
+# 1. Preparação dos Dados (Inalterada)
+dados_hist <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+dados_hist <- dados_hist |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", 
+                                "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. A Ferramenta Refatorada (Sem Facet, Título Dinâmico)
+gerar_plot_individual <- function(dados, var_col, cat_nome) {
+  
+  var_sym <- rlang::ensym(var_col)
+  
+  # Transformação Log no Backend
+  dados_temp <- dados |>
+    mutate(
+      valor_log = log10(!!var_sym),
+      valor_real = !!var_sym
+    )
+  
+  # Construção (Sem Facet)
+  p <- ggplot(dados_temp, aes(x = valor_log)) +
+    
+    geom_histogram(
+      aes(
+        y = after_stat(density), 
+        text = paste0(
+          "Valor Aprox: ", scales::dollar(10^after_stat(x), prefix = "R$ ", accuracy = 1), "\n",
+          "Densidade: ", round(after_stat(density), 2)
+        )
+      ), 
+      fill = "#0a7d00ff", # Cor única, já que separamos por plot
+      color = "white", 
+      alpha = 0.6, 
+      bins = 40
+    ) +
+    
+    geom_density(
+      color = "#2c3e50", 
+      size = 1, 
+      adjust = 1.2
+    ) +
+    
+    scale_x_continuous(
+      breaks = log10(c(1000, 5000, 10000, 50000, 100000, 500000, 1000000)),
+      labels = c("1k", "5k", "10k", "50k", "100k", "500k", "1M")
+    ) +
+    
+    labs(
+      title = paste("Distribuição VTN -", toupper(cat_nome)), # Título Específico
+      x = "Valor da Terra (R$/ha - Escala Log)",
+      y = "Densidade"
+    ) +
+    
+    theme_minimal()
+  
+  # Retorna o objeto plotly
+  ggplotly(p, tooltip = "text") %>% 
+    layout(margin = list(t = 50)) # Espaço extra para o título não cortar
+}
+
+# 3. Execução em Loop (Iteração Controlada)
+# Extraímos as categorias únicas presentes nos dados
+categorias_unicas <- unique(dados_hist$categoria_final)
+
+# Criamos uma lista de plots (Map Reduce approach)
+lista_plots <- lapply(categorias_unicas, function(cat) {
+  
+  # Filtra apenas a fatia necessária (Isolamento de Variável)
+  dados_fatia <- dados_hist |> filter(categoria_final == cat)
+  
+  # Gera o plot se houver dados
+  if(nrow(dados_fatia) > 5) { # Segurança mínima amostral
+    gerar_plot_individual(dados_fatia, IGPDI_vtn_media , cat)
+  } else {
+    NULL
+  }
+})
+
+# 4. Renderização Final
+# Remove NULLs caso alguma categoria tenha poucos dados
+lista_plots2 <- Filter(Negate(is.null), lista_plots)
+
+# O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
+htmltools::tagList(lista_plots2)
+```
+As linhas de densidade do VTN (valor de terra nua) demonstra também um comportamento de multimodalidade para todas as categorias na distribuição dos preços, apresentando o mesmo tipo de comportamento observado no VTI.
+
+Além disso, é de se imaginar que o valor das terras além de variar entre tipo de atividade desenvolvida varie segundo o estado em que a atividade é desenvolvida pelas diferenças nas dinâmicas regionais, tecnológicas e sociais. Desse modo é interessante expor os diferentes tipos de atividades nos diferentes estados, assim: 
+
+```{r}
+#| message: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 10
+
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+
+# 1. Preparação dos Dados
+dados_limpos <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+dados_prontos <- dados_limpos |>
+  filter(IGPDI_vti_media > 0) |>
+  filter(categoria_final %in% c("media geral", "agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
+
+# 2. Definição da Função de Plotagem
+# Criamos uma função para que cada gráfico seja gerado individualmente e guardado em uma lista
+gerar_plot_vti <- function(cat) {
+  
+  dados_fatia <- dados_prontos |> filter(categoria_final == cat)
+  
+  # Validação de dados mínimos
+  if(nrow(dados_fatia) < 5) return(NULL) 
+  
+  ggplot(dados_fatia, aes(x = reorder(UF, IGPDI_vti_media, FUN = median), y = vti_media)) +
+    geom_boxplot(fill = "#004f25ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    scale_y_log10(
+      labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+      breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+    ) +
+    coord_flip() +
+    labs(
+      title = toupper(cat),
+      subtitle = "Ordenado pela Mediana",
+      x = NULL,
+      y = "VTI (R$/ha)"
+    ) +
+    theme_minimal(base_size = 10) +
+    theme(
+      axis.text.y = element_text(size = 8, face = "bold"),
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(hjust = 0.5, face = "bold")
+    )
+}
+
+# 3. Gerar e Combinar os Gráficos
+categorias_unicas <- unique(dados_prontos$categoria_final)
+
+# Criamos a lista de gráficos
+lista_plots <- lapply(categorias_unicas, gerar_plot_vti)
+
+# Removemos os itens NULL (categorias com poucos dados) de forma segura
+lista_plots_limpa <- Filter(Negate(is.null), lista_plots)
+
+# Juntamos tudo com o patchwork
+if (length(lista_plots_limpa) > 0) {
+  
+  # wrap_plots organiza a lista automaticamente
+  painel_final <- wrap_plots(lista_plots_limpa, ncol = 2) + 
+    plot_annotation(
+      title = "Análise Comparativa do Valor de Terra (VTI) por Categoria",
+      subtitle = "Comparativo entre estados brasileiros em escala logarítmica",
+      caption = "Fonte: Dados INCRA / Elaboração própria",
+      theme = theme(plot.title = element_text(size = 16, face = "bold", hjust = 0.5))
+    )
+  
+  # Exibe o painel
+  painel_final
+  
+} else {
+  message("Dados insuficientes para gerar os gráficos.")
+}
+```
+Aqui é visível o efeito regional nas distribuições. É interessante notar que os maiores valores se apresentam nas regiões Sul e Sudeste, enquanto os menores ocorrem nas regiões Norte e Nordeste, o que pode levar a um favorecimento do desmatamento. Isso é corroborado quando se observa que o valor da vegetação nativa raramente chega a mais de 50 mil, enquanto, em estados com maior índice urbano, o valor das atividades é, em geral, mais elevado.
+
+```{r}
+#| message: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 10
+
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+
+# 1. Preparação dos Dados
+dados_limpos <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+dados_prontos <- dados_limpos |>
+  filter(IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% c("media geral", "agricultura", "pecuaria", "silvicultura", "vegetacao nativa"))
+
+# 2. Função para gerar cada gráfico individualmente
+gerar_plot_vtn <- function(cat) {
+  
+  dados_fatia <- dados_prontos |> filter(categoria_final == cat)
+  
+  # Pula se não tiver dados suficientes (retorna NULL para ser filtrado depois)
+  if(nrow(dados_fatia) < 5) return(NULL) 
+  
+  ggplot(dados_fatia, aes(x = reorder(UF, IGPDI_vtn_media, FUN = median), y = vtn_media)) +
+    # Cor alterada para o verde do seu código original de VTN (#257a00ff)
+    geom_boxplot(fill = "#257a00ff", alpha = 0.6, outlier.size = 0.5, outlier.alpha = 0.3) +
+    
+    scale_y_log10(
+      labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale()),
+      breaks = c(1000, 5000, 10000, 50000, 100000, 500000)
+    ) +
+    
+    coord_flip() +
+    
+    labs(
+      title = toupper(cat),
+      subtitle = "Ordenado pela Mediana",
+      x = NULL,
+      y = "VTN (R$/ha)"
+    ) +
+    
+    theme_minimal(base_size = 10) +
+    theme(
+      axis.text.y = element_text(size = 8, face = "bold"),
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(hjust = 0.5, face = "bold")
+    )
+}
+
+# 3. Execução e Combinação
+categorias_unicas <- unique(dados_prontos$categoria_final)
+
+# Criar lista de plots
+lista_plots_vtn <- lapply(categorias_unicas, gerar_plot_vtn)
+
+# Remover categorias que retornaram NULL
+lista_plots_vtn_limpa <- Filter(Negate(is.null), lista_plots_vtn)
+
+# Gerar o painel final com patchwork
+if (length(lista_plots_vtn_limpa) > 0) {
+  
+  painel_vtn <- wrap_plots(lista_plots_vtn_limpa, ncol = 2) + 
+    plot_annotation(
+      title = "Ranking Estadual: Valor da Terra sem Imóvel (VTN)",
+      subtitle = "Análise por categoria de uso do solo em escala logarítmica",
+      caption = "Fonte: Dados INCRA",
+      theme = theme(plot.title = element_text(size = 16, face = "bold", hjust = 0.5))
+    )
+  
+  # Exibe o resultado
+  painel_vtn
+  
+} else {
+  message("Dados insuficientes para gerar os gráficos de VTN.")
 }
 
 ```
 
-As linhas de densidade (Valor Total do Imóvel — VTI) demonstram um comportamento de multimodal para todas as categorias na distribuição dos preços, apresentando, de forma notável, uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas “pecuária”, “agricultura” e “vegetação nativa”.
+É notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas à valoração do meio ambiente no mercado imobiliário rural. O banco de dados foi capaz de contemplar grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
 
+## Conclusão
 
+O banco de dados construído a partir dos Relatórios de Análise do Mercado de Terras (RAMT) reflete a estrutura fundiária e as desigualdades regionais observadas no país. A base de dados demonstra que o valor da terra varia de forma sistemática conforme as condições socioeconômicas de cada estado brasileiro. Esses valores sintetizam diversos fatores relevantes para a compreensão da distribuição e do mercado de terras no Brasil.
 
-
-
-
-
-
-
-
-
-
-
+O desmatamento é uma questão complexa, de alta relevância econômica, social e política. A decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita  [@pfaff1999; @rocha]. Assim, diversas variáveis podem ser utilizadas para refletir o valor da terra, sendo um dos principais exemplos o preço de commodities [@rocha]. A escassez de dados sobre os mercados de terra dificulta o uso direto dessa variável como instrumento de modelagem [@KRISHNA2017335]. Assim, as variáveis presentes no banco podem ajudar a explicar o fenômeno do desmatamento, uma vez que apresentam o valor da terra e a decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita [@pfaff1999; @rocha]. Desse modo, os dados recém digitalizados dos Relatórios de Análise do Mercado de Terras podem contribuir para a compreensão do desmatamento, de fenônomenos regionais e até mesmo para a formulação de políticas públicas.
 
 
 
