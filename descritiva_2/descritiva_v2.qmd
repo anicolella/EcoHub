@@ -63,30 +63,30 @@ df_areas2 <- df_analise2 |>
 
 ## Introdução
 
-O Brasil é o país com o maior inventário de florestas tropicais do mundo e essas florestas são cruciais para a regulação climática e manutenção do ciclo hidrológico [@paulino2014]. Esse sistema ecológico fornece benefícios diretos e indiretos para a sociedade no Brasil e no mundo [@Guedes2012]. Assim, existe uma externalidade positiva gerada por esse sistema ecológico que é essencial para o bom funcionamento da biosfera como um todo. Junto disso, a economia brasileira tem como um de seus principais setores o agronegócio [@ibge2024pib], e o desenvolvimento desse setor econômico tem uma relação histórica com o desmatamento [@rocha].
+O Brasil é o país com o maior inventário de florestas tropicais do mundo, e essas florestas são cruciais para a regulação climática e a manutenção do ciclo hidrológico [@paulino2014]. Esse sistema ecológico fornece benefícios diretos e indiretos para a sociedade no Brasil e no mundo [@Guedes2012]. Assim, existe uma externalidade positiva gerada por esse sistema ecológico que é essencial para o bom funcionamento da biosfera como um todo. Junto a isso, a economia brasileira tem como um de seus principais setores o agronegócio [@ibge2024pib], e o desenvolvimento desse setor econômico tem uma relação histórica com o desmatamento [@rocha].
 
-A partir dos anos 2000 o desmatamento vem sendo combatido através de uma série de legislações pelo estado brasileiro [@nepstad], isso veio como uma resposta aos picos apresentados anteriormente geradas por mudanças no cenário internacional e no funcionamento da economia do setor agrícola acoplada a esse novo cenário [@nepstadg]. Dentre esses sistemas, foi criado um sistema integrado de vigilância e governança territorial, como parte do Plano de Ação para Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm) [@rocha] em 2004. Ademais, no ano de 2008 houve um avanço condicionando a disponibilização de crédito a propriedades rurais a critérios associados ao desmatamento [@rocha].
+A partir dos anos 2000, o desmatamento vem sendo combatido através de uma série de legislações pelo Estado brasileiro [@nepstad]; isso veio como uma resposta aos picos apresentados anteriormente, gerados por mudanças no cenário internacional e no funcionamento da economia do setor agrícola acoplada a esse novo cenário [@nepstadg]. Dentre esses sistemas, foi criado um sistema integrado de vigilância e governança territorial como parte do Plano de Ação para Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm) [@rocha], em 2004. Ademais, no ano de 2008, houve um avanço, condicionando a disponibilização de crédito para propriedades rurais a critérios associados ao desmatamento [@rocha].
 
-Existe um cenário de tensões entre o desenvolvimento econômico e agrário do Brasil e uma série de legislações históricas que vem no sentido de coibir o desmatamento, nesse contexto, o Brasil apresenta grande diversidade, mas historicamente o processo do desmatamento é mais estudado na Amazônia legal. Nesse cenário, o desmatamento ocorre em dois momentos: um primeiro momento vínculado a processos de exploração e um segundo momento associado à expansão produtiva, que é nosso momento atual [@brandão_rezende_marques_2006]. Aqui, configura-se uma importante mudança, as variáveis explicativas do desmatamento deixam de ser vinculadas a infraestrutura e passam a ser vinculadas também à fenômenos como a lucratividade da exploração econômica de commodites [@martins_francisco_2025].
+Existe um cenário de tensões entre o desenvolvimento econômico e agrário do Brasil e uma série de legislações históricas que vêm no sentido de coibir o desmatamento. Nesse contexto, o Brasil apresenta grande diversidade, mas, historicamente, o processo do desmatamento é mais estudado na Amazônia Legal. Nesse cenário, o desmatamento ocorre em dois momentos: um primeiro momento vinculado a processos de exploração e um segundo momento associado à expansão produtiva, que é o nosso momento atual [@brandão_rezende_marques_2006]. Aqui, configura-se uma importante mudança: as variáveis explicativas do desmatamento deixam de ser vinculadas à infraestrutura e passam a ser vinculadas também a fenômenos como a lucratividade da exploração econômica de commodities [@martins_francisco_2025].
 
-Apesar da relevância do tema, a literatura que relaciona o desmatamento aos mercados de terras ainda é escassa [@KRISHNA2017335]. Para contribuir com essa lacuna, este trabalho realizou a transcrição dos 'Relatórios de Análise do Mercado de Terras', convertendo dados de 'valor da terra' originalmente em PDF para o formato .gpkg, incluindo suas geolocalizações. O objetivo central dessa seção é realizar uma análise descritiva desses dados. Dado que o desmatamento é impulsionado por processos econômicos [@martins_francisco_2025], acredita-se que o valor da terra seja uma variável relevante na decisão do agente econômico. Assim, a série de dados aqui disponibilizada auxilia na compreensão do desmatamento no Brasil e oferece suporte para o estudo de fenômenos históricos e a formulação de políticas públicas.
+Apesar da relevância do tema, a literatura que relaciona o desmatamento aos mercados de terras ainda é escassa [@KRISHNA2017335]. Para contribuir com essa lacuna, este trabalho realizou a transcrição dos "Relatórios de Análise do Mercado de Terras", convertendo dados de "valor da terra" originalmente em PDF para o formato .gpkg, incluindo suas geolocalizações. O objetivo central desta seção é realizar uma análise descritiva desses dados. Dado que o desmatamento é impulsionado por processos econômicos [@martins_francisco_2025], acredita-se que o valor da terra seja uma variável relevante na decisão do agente econômico. Assim, a série de dados aqui disponibilizada auxilia na compreensão do desmatamento no Brasil e oferece suporte para o estudo de fenômenos históricos e para a formulação de políticas públicas.
 
 ## Referencial teórico 
 ### Abordagens teóricas sobre o desmatamento
-Os modelos iniciais para a compreensão do desmatamento, em especial na amazônia legal, tentavam o explicar através do uso de variáveis vínculadas principalmente a infraestrutura [@pfaff1999], isso é compreensível dado que num primeiro momento o desmatamento era vinculado a um processo de colonização [@martins_francisco_2025]. Posteriormente os modelos começaram a levar em conta variáveis socioeconômicas e espaciais [@Balboni], dando um certo destaque para os preços de commodites [@rocha], o que é razoável dada a conexão histórica entre a pecuária e o desamtamento [@rocha]. A relação entre a pecuária e o desmatamento é comum, pois a atividade pecuária permite que a terra cumpra requisitos jurídicos facilmente, mais especificamente cumpra sua função social facilmente [@brandão_rezende_marques_2006].
+Os modelos iniciais para a compreensão do desmatamento, em especial na Amazônia Legal, tentavam explicá-lo através do uso de variáveis vinculadas principalmente à infraestrutura [@pfaff1999]; isso é compreensível, dado que, num primeiro momento, o desmatamento era vinculado a um processo de colonização [@martins_francisco_2025]. Posteriormente, os modelos começaram a levar em conta variáveis socioeconômicas e espaciais [@Balboni], dando um certo destaque para os preços de commodities [@rocha], o que é razoável, dada a conexão histórica entre a pecuária e o desmatamento [@rocha]. A relação entre a pecuária e o desmatamento é comum, pois a atividade pecuária permite que a terra cumpra requisitos jurídicos facilmente, mais especificamente, cumpra sua função social facilmente [@brandão_rezende_marques_2006].
 
 ### Modelos relevantes
-A modelagem de Pfaff (1999) explica o desmatamento por meio da maximização de uma função de lucro, considerando variáveis ligadas principalmente ao processo de colonização da Amazônia, como a facilidade de transporte, características climáticas e o arranjo demográfico, que possui inicialmente grande influência, durante o decorrer do processo de colonização e, posteriormente, efeito mais fraco. As variáveis utilizadas variam desde densidade populacional e distância de estradas até uma primeira consideração sobre o uso de crédito rural [@pfaff1999]. 
+A modelagem de Pfaff (1999) explica o desmatamento por meio da maximização de uma função de lucro, considerando variáveis ligadas principalmente ao processo de colonização da Amazônia, como a facilidade de transporte, as características climáticas e o arranjo demográfico. Este último possui, inicialmente, grande influência durante o decorrer do processo de colonização e, posteriormente, um efeito mais fraco. As variáveis utilizadas variam desde densidade populacional e distância de estradas até uma primeira consideração sobre o uso de crédito rural [@pfaff1999].
 
-O modelo criado por Rocha (2015) considera um agricultor representativo que só pode expandir sua produção por meio do desmatamento. Não há arrendamento da terra; o produtor maximiza seu lucro por meio da maximização de preços; há uma função de produção com retornos de escala decrescentes; e os fatores institucionais exercem certa influência sobre a decisão de desmatar ou não. O modelo apresenta como variáveis preços dos produtos agrícolas, área, área ótima da propriedade, tecnologia e um parâmetro de restrição legal. A principal contribuição desse modelo recai sobre a medição das restrições legais, medida pela área não disponível legalmente no município [@rocha]. Ademais, o artigo faz uma estimativa do custo da restrição legal em termos de PIB municipal, e o resultado do contrafactual indica que não houve efeito relevante sobre o PIB projetado [@rocha].
+O modelo criado por Rocha (2015) considera um agricultor representativo que só pode expandir sua produção por meio do desmatamento. Não há arrendamento de terra; o produtor maximiza seu lucro por meio da variação de preços; há uma função de produção com retornos decrescentes de escala; e os fatores institucionais exercem certa influência sobre a decisão de desmatar ou não. O modelo apresenta como variáveis os preços dos produtos agrícolas, a área, a área ótima da propriedade, a tecnologia e um parâmetro de restrição legal. A principal contribuição desse modelo recai sobre a medição das restrições legais, representada pela área não disponível legalmente no município [@rocha]. Ademais, o artigo faz uma estimativa do custo da restrição legal em termos de PIB municipal, e o resultado do contrafactual indica que não houve efeito relevante sobre o PIB projetado [@rocha].
 
 ### Evidênciais empíricas
 
-A técnica de regressão linear múltipla é mais comumente utilizada para a estimação dos parâmetros em modelos teóricos [@rocha; @pfaff1999]. Além disso, outros estudos tentam estimar o fenômeno do desmatamento através da aplicação direta de técnicas econometricas [@martins_francisco_2025]. Entretanto, é evidente que existe um melhor ajuste dos modelos aos dados quando se leva em conta efeitos espaciais, como por exemplo a aplicação do modelo SAR ao invés de uma regressão múltipla [@martins_francisco_2025].
+A técnica de regressão linear múltipla é a mais comumente utilizada para a estimação dos parâmetros em modelos teóricos [@rocha; @pfaff1999]. Além disso, outros estudos tentam estimar o fenômeno do desmatamento através da aplicação direta de técnicas econométricas [@martins_francisco_2025]. Entretanto, é evidente que existe um melhor ajuste dos modelos aos dados quando se levam em conta os efeitos espaciais, como, por exemplo, a aplicação do modelo SAR em vez de uma regressão múltipla [@martins_francisco_2025].
 
-Os modelos microeconômicos se preocupam com a rentabilidade da terra, utilizando como uma proxy para isso os preços de commodities [@rocha; @pfaff1999; @martins_francisco_2025]. Nesse sentido, o valor da terra pode ser usado também como uma proxy da rentabilidade da terra.
+Os modelos microeconômicos se preocupam com a rentabilidade da terra, utilizando os preços de commodities como uma proxy para isso [@rocha; @pfaff1999; @martins_francisco_2025]. Nesse sentido, o valor da terra pode ser usado também como uma proxy da rentabilidade da terra.
 
-O desmatamento é, portanto, um problema de otimização da lucratividade do indivíduo, ou seja, o indivíduo decide se vai desmatar ou não tendo em vista seus ganhos futuros [@rocha; @pfaff1999]. Assim, a pecuária apresenta índice positivo de correlação com o desmatamento pela facilitação da grilagem [@brandão_rezende_marques_2006]. Desse modo, o uso da variável de valor da terra aqui disponibilizada pode contribuir como um importante fator explicativo do desmatamento.
+O desmatamento é, portanto, um problema de otimização da lucratividade do indivíduo; ou seja, o indivíduo decide se vai desmatar ou não tendo em vista seus ganhos futuros [@rocha; @pfaff1999]. Assim, a pecuária apresenta índice positivo de correlação com o desmatamento pela facilitação da grilagem [@brandão_rezende_marques_2006]. Desse modo, o uso da variável de valor da terra aqui disponibilizada pode contribuir como um importante fator explicativo do desmatamento.
 
 ## Metodologia
 ### Sobre os dados
@@ -235,7 +235,7 @@ df_incra |>
 ```
 
 #### Cobertura de dado por ano
-A cobertura das cidades realizada pelas diferentes amostras em cada um dos anos:
+A cobertura das cidades pelas diferentes amostras em cada ano:
 ```{r}
 #| echo: false
 #| message: false
@@ -335,7 +335,7 @@ tabela_pivo |>
 
 #### Processo de tratamento dos dados pelo INCRA
 
-O processo de estimação do valor da terra pelas superintendências do INCRA acontece em dois estágios com o uso de uma série de variáveis, inicialmente, são formados agrupamentos ou zonas homogêneas [@incra2014], que serão descritas com mais detalhes a seguir,a formação dessas zonas homogêneas ocorre por meio de uma classificação criada com o uso de uma série de variáveis, descritas na tabela abaixo. Essas variáveis são posteriormente organizadas em uma matriz e padronizadas.
+O processo de estimação do valor da terra pelas superintendências do INCRA acontece em dois estágios com o uso de uma série de variáveis. Inicialmente, são formados agrupamentos ou zonas homogêneas [@incra2014], que serão descritas com mais detalhes a seguir. A formação dessas zonas homogêneas ocorre por meio de uma classificação criada com o uso de uma série de variáveis, descritas na tabela abaixo. Essas variáveis são, posteriormente, organizadas em uma matriz e padronizadas.
 
 As variáveis são classificadas em quatro grandes grupos: variáveis relacionadas à vocação produtiva da terra, variáveis relacionadas ao nível tecnológico, variáveis relacionadas à gestão de resultados e variáveis relacionadas à concentração de terras [@incra2014].
 
@@ -400,7 +400,7 @@ dicionario_data |>
   opt_row_striping()
 ```
 
-Os dados descritos na tabela são em sua maioria obtidos do censo agropecuário [@incra2014]. Esses dados são organizados em uma matriz bruta de dados, onde $M_i$ representa o município i e o $V_j$ o valor da variável j para o município $M_i$. Assim, se constrói a matriz bruta de dados que será posteriormente tratada para o processo de agrupamento [@incra2014].
+Os dados descritos na tabela são, em sua maioria, obtidos do Censo Agropecuário [@incra2014]. Esses dados são organizados em uma matriz bruta de dados, onde $M_i$ representa o município $i$ e $V_j$, o valor da variável $j$ para o município $M_i$. Assim, constrói-se a matriz bruta de dados que será posteriormente tratada para o processo de agrupamento [@incra2014].
 
 
 $$\text{Matriz de Dados} = 
@@ -415,17 +415,17 @@ $$\text{Matriz de Dados} =
 \end{array}$$
 
 
-Posteriormente, esses dados são padronizados com a finalidade de obter valores adimensionais que são organizados em uma matriz de dados relativos para a análise de agrupamentos. Essa padronização acontece para que as diferenças de escala não gerem um resultado erroneo sobre as semelhanças das regiões, por exemplo, uma determinada variação de uma unidade no número de tratores provavelmente está mais distante na distribuição de probabilidade que uma variação de um hectare no tamanho da propriedade. Os métodos de padronização sugeridos no módulo de elaboração contêm o processo de normalização, uso do método da amplitude média e o método de normalização pela média, que são descritos abaixo: 
+Posteriormente, esses dados são padronizados com a finalidade de obter valores adimensionais que são organizados em uma matriz de dados relativos para a análise de agrupamentos. Essa padronização acontece para que as diferenças de escala não gerem um resultado errôneo sobre as semelhanças das regiões. Por exemplo, uma determinada variação de uma unidade no número de tratores provavelmente está mais distante na distribuição de probabilidade do que uma variação de um hectare no tamanho da propriedade. Os métodos de padronização sugeridos no módulo de elaboração contêm o processo de normalização, o uso do método da amplitude média e o método de normalização pela média, que são descritos abaixo:
 
 $$ Z_i = \frac{X_i - \bar{X}}{\sigma} \qquad Z_i = \frac{X_i - \min(X)}{\max(X) - \min(X)} \qquad Z_i = \frac{X_i}{\bar{X}} $$
 
-Após a normalização dessas variáveis, é construída uma matriz de similaridades, onde os municípios são comparados par a par por uso da distância euclidiana quadrática, que permite calcular a diferença entre dois elementos por meio do calculo da distância geométrica entre eles em um espaço n-dimensional. 
+Após a normalização dessas variáveis, é construída uma matriz de similaridades, onde os municípios são comparados par a par por meio do uso da distância euclidiana quadrática, que permite calcular a diferença entre dois elementos por meio do cálculo da distância geométrica entre eles em um espaço n-dimensional.
 
 $$ 
 d(P,Q) = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2 }.
 $$ 
 
-Posteriormente, com as distâncias euclidianas já calculadas, é formada uma matriz de similaridades entre os municípios, que será utilizada no processo de agrupamento dos diferentes municípios[@incra2014]. Esse processo de aglomeração utiliza-se de dois algoritmos, um algoritmo de Ward e o algoritmo de k-means em sequência [@incra2014]. Primeiramente, o algoritmo de Ward cria a aglomeração em clusters e posteriormente o algoritmo de K-means é utilizado com a finalidade de confirmar os municípios que compõe cada cluster e as variáveis que os definem [@incra2014].
+Posteriormente, com as distâncias euclidianas já calculadas, é formada uma matriz de similaridades entre os municípios, que será utilizada no processo de agrupamento dessas localidades [@incra2014]. Esse processo de aglomeração utiliza dois algoritmos em sequência: o algoritmo de Ward e o algoritmo k-means [@incra2014]. Primeiramente, o algoritmo de Ward cria a aglomeração em clusters e, posteriormente, o algoritmo k-means é utilizado com a finalidade de confirmar os municípios que compõem cada cluster e as variáveis que os definem [@incra2014].
 
 $$\text{Matriz de Dados} = 
 \begin{array}{cc|ccc|c}
@@ -439,20 +439,20 @@ $$\text{Matriz de Dados} =
 \end{array}$$
 
 
-O algoritmo de Ward combina clusteres com a menor distância euclidiana entre si, ou seja, ele combina os elementos mais similares entre si da matriz de similaridades, assim, vão sendo feitas combinações uma a uma reduzindo a dimensão da matriz de similaridade em cada etapa, isso ocorre até que todos os municípios da superintência que está realizando a análise sejam combinados em um único cluster [@incra2014]. Durante esse processo é formado um dendograma que é utilizado como critério para a definição das zonas homogêneas (clusteres/agrupamentos) na área análisada [@incra2014]. 
+O algoritmo de Ward combina clusters com a menor distância euclidiana entre si, ou seja, ele combina os elementos mais similares da matriz de similaridades. Assim, vão sendo feitas combinações uma a uma, reduzindo a dimensão da matriz de similaridade em cada etapa. Isso ocorre até que todos os municípios da superintendência que está realizando a análise sejam combinados em um único cluster [@incra2014]. Durante esse processo, é formado um dendrograma, que é utilizado como critério para a definição das zonas homogêneas (clusters/agrupamentos) na área analisada [@incra2014].
 
-Após o uso do algoritmo de Ward e da definição do número de agrupamentos na região, passa-se ao uso do algoritmo de k-means, forma-se k agrupamentos, com os n municípios da região sendo classificados dentro desses agrupamentos segundo a algum critério arbitrário de distância ou similaridade [@incra2014]. Posteriormente, os municípios são movidos de um agrupamento para outro tentanto melhorar a qualidade dos agrupamentos, isso ocorre por meio da maximização ou minimização de uma função objetivo [@incra2014]. Os agrupamentos são então caracterizados segundo parâmetros estatísticos: média, valor máximo e valor mínimo e cada uma das variáveis [@incra2014]. 
+Após o uso do algoritmo de Ward e da definição do número de agrupamentos na região, passa-se ao uso do algoritmo k-means. Formam-se k agrupamentos, com os n municípios da região sendo classificados dentro desses agrupamentos segundo um critério arbitrário de distância ou similaridade [@incra2014]. Posteriormente, os municípios são movidos de um agrupamento para outro tentando melhorar a qualidade dos agrupamentos; isso ocorre por meio da maximização ou minimização de uma função objetivo [@incra2014]. Os agrupamentos são, então, caracterizados segundo parâmetros estatísticos: média, valor máximo e valor mínimo de cada uma das variáveis [@incra2014].
 
 #### Planilhas de Preços Referenciais 
-Os materiais digitalizados correspondem aos parâmetros principais da Zona Homogênea (agrupamento), contendo média, valor máximo e valor mínimo. Esses dados são disponibilizados nas planilhas de preços referenciais de terras presentes nos documentos RAMT/Atlas de Terras. Os valores são de dois tipos: valor de terra com imóvel (VTI) — ou seja, parâmetros para propriedades com edificações — e valor de terra nua, isto é, o valor da terra sem qualquer tipo de imóvel [@incra2014].
+Os materiais digitalizados correspondem aos parâmetros principais da zona homogênea (agrupamento), contendo média, valor máximo e valor mínimo. Esses dados são disponibilizados nas planilhas de preços referenciais de terras presentes nos documentos RAMT/Atlas de Terras. Os valores são de dois tipos: Valor da Terra com Imóvel (VTI) — ou seja, parâmetros para propriedades com edificações — e Valor da Terra Nua (VTN), isto é, o valor da terra sem qualquer tipo de imóvel [@incra2014].
 
-Esses valores são apresentados para diferentes usos do solo. Os usos são organizados em níveis categóricos que variam do nível 0 (média geral) ao nível 4 (maior detalhamento, incluindo, por exemplo, nível de irrigação e localidade específica dentro da zona homogênea).
+Esses valores são apresentados para diferentes usos do solo. Os usos são organizados em níveis categóricos que variam do nível 0 (média geral) ao nível 4 (maior detalhamento, incluindo, por exemplo, o nível de irrigação e a localidade específica dentro da zona homogênea).
 
 #### Extração dos dados
-Os dados provêm dos RAMTs e do Atlas do Mercado de Terras de 2023. Foram extraídos dos arquivos PDF e consolidados em um único data frame, com indicação do ano de cada observação. Os relatórios também listavam os nomes das cidades que compunham as zonas homogêneas em cada ano; essas informações foram desagregadas ao nível municipal e cruzadas com a tabela do GeoBr que contém os municípios brasileiros e seus respectivos códigos IBGE. Por fim, atribuiu‑se a cada registro a geometria poligonal no sistema SIRGAS 2000.
+Os dados provêm dos RAMTs e do Atlas do Mercado de Terras de 2023. Eles foram extraídos dos arquivos PDF e consolidados em um único dataframe, com a indicação do ano de cada observação. Os relatórios também listavam os nomes das cidades que compunham as zonas homogêneas em cada ano; essas informações foram desagregadas ao nível municipal e cruzadas com a tabela do Geobr, que contém os municípios brasileiros e seus respectivos códigos IBGE. Por fim, atribuiu-se a cada registro a geometria poligonal no sistema SIRGAS 2000.
 
 #### Organização do data frame.
-O data frame contém 23 variáveis, entre as quais as principais são os valores de média, mínimo e máximo para o valor de terra com imóvel (VTI) e para o valor de terra nua. Esses valores foram corrigidos pelo IGP‑DI anual até o ano de 2024.
+O dataframe contém 23 variáveis, entre as quais as principais são os valores de média, mínimo e máximo para o Valor da Terra com Imóvel (VTI) e para o Valor da Terra Nua (VTN). Esses valores foram corrigidos pelo IGP-DI anual até o ano de 2024.
 
 ```{r}
 #| message: false
@@ -511,7 +511,7 @@ dicionario_data |>
 A análise exploratória de dados (EDA) tem como objetivo descrever as características gerais dos dados.
 
 ## Resultados e discussão
-A análise descritiva do banco de dados foi realizada com foco no ano de 2023, visando oferecer um panorama geral do valor da terra no Brasil com a menor distorção possível. Para complementar as cidades que não tinham dados referentes a 2023, corrigimos e utilizamos as observações mais próximas disponíveis, atualizando‑as pelo IGP‑DI.
+A análise descritiva do banco de dados foi realizada com foco no ano de 2023, visando oferecer um panorama geral do valor da terra no Brasil com a menor distorção possível. Para complementar os dados das cidades que não tinham informações referentes a 2023, corrigimos e utilizamos as observações mais próximas disponíveis, atualizando-as pelo IGP-DI.
 
 Inicialmente, é útil apresentar um panorama geral dos valores da terra no país. A tabela a seguir mostra esses valores por quantis. Observa-se que as terras classificadas como "não agrícolas" apresentam os maiores valores. Isso ocorre porque áreas urbanas são categorizadas como não agrícolas, o que puxa para cima o valor médio desse uso do solo em razão da maior densidade urbana e da lucratividade associada a essas áreas. Em seguida, as classes de uso mais valorizadas são: agricultura, silvicultura e exploração mista. Já as classes com valores abaixo da média são: pecuária, aquicultura e vegetação nativa.
 
@@ -571,7 +571,7 @@ tabela_quantis |>
     palette = "Greens" # Escala de cor para mostrar quem vale mais
   )
 ```
-Assim, para compreender melhor a quantidade de outliers e os demais valores das distribuições de cada nível categórico, seguem os boxplots: 
+Assim, para compreender melhor a quantidade de outliers e os demais valores das distribuições de cada nível categórico, apresentam-se os boxplots a seguir:
 
 ```{r}
 #| message: false
@@ -634,11 +634,11 @@ ggplot(dados_comparativos, aes(x = reorder(categoria_final, valor_ha, FUN = medi
     panel.grid.major.y = element_blank() # Limpa linhas horizontais para focar nas caixas
   )
 ```
-Pode-se observar que o Valor da Terra Nua (VTN) apresenta maior variância. O Valor da Terra com Imóvel (VTI) é, em todos os casos, superior ao VTN. Outra constatação importante é que o intervalo de observações dos valores de terra é muito mais estreito para vegetação nativa em comparação com outros usos do solo. Além disso, a pecuária é a única atividade com valor médio abaixo da média geral dos usos.
+Pode-se observar que o Valor da Terra Nua (VTN) apresenta maior variância. O Valor da Terra com Imóvel (VTI) é, em todos os casos, superior ao VTN. Outra constatação importante é que o intervalo de observações dos valores de terra é muito mais estreito para a vegetação nativa em comparação com outros usos do solo. Além disso, a pecuária é a única atividade com valor médio abaixo da média geral dos usos.
 
 Duas explicações são plausíveis para esse padrão: ou a média da pecuária está sendo distorcida por outliers que elevam a média dos demais usos, ou a pecuária, frequentemente utilizada como instrumento de desmatamento, tem baixa lucratividade — sendo muitas vezes uma atividade intermediária (meio) e não um produto final (fim).
 
-Convem agora investigar os padrões apresentados pelas distribuições do valor de terra em cada tipologia, como houve um processo de agrupamento dessas médias em zonas homogêneas é de se esperar que as distribuições apresentem um comportamento multimodal, uma vez que cada zona apresenta características únicas.
+Convém, agora, investigar os padrões apresentados pelas distribuições do valor da terra em cada tipologia. Como houve um processo de agrupamento dessas médias em zonas homogêneas, é de se esperar que as distribuições apresentem um comportamento multimodal, uma vez que cada zona apresenta características únicas.
 
 ```{r}
 #| message: false
@@ -735,7 +735,7 @@ lista_plots <- Filter(Negate(is.null), lista_plots)
 # O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
 htmltools::tagList(lista_plots)
 ```
-As linhas de densidade (Valor Total do Imóvel — VTI) demonstram um comportamento de multimodal para todas as categorias na distribuição dos preços, apresentando, de forma notável, uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas “pecuária”, “agricultura” e “vegetação nativa”.
+As linhas de densidade do Valor Total do Imóvel (VTI) demonstram um comportamento multimodal para todas as categorias na distribuição dos preços, apresentando, de forma notável, uma quantidade mais acentuada de picos e vales nas nomenclaturas categóricas "pecuária", "agricultura" e "vegetação nativa".
 
 ```{r}
 #| message: false
@@ -832,9 +832,9 @@ lista_plots2 <- Filter(Negate(is.null), lista_plots)
 # O output final DEVE ser essa tagList para aparecer no RMarkdown/Notebook
 htmltools::tagList(lista_plots2)
 ```
-As linhas de densidade do VTN (valor de terra nua) demonstra também um comportamento de multimodalidade para todas as categorias na distribuição dos preços, apresentando o mesmo tipo de comportamento observado no VTI.
+As linhas de densidade do VTN (Valor da Terra Nua) demonstram também um comportamento de multimodalidade para todas as categorias na distribuição dos preços, apresentando o mesmo tipo de comportamento observado no VTI.
 
-Além disso, é de se imaginar que o valor das terras além de variar entre tipo de atividade desenvolvida varie segundo o estado em que a atividade é desenvolvida pelas diferenças nas dinâmicas regionais, tecnológicas e sociais. Desse modo é interessante expor os diferentes tipos de atividades nos diferentes estados, assim: 
+Além disso, é de se imaginar que o valor das terras, além de variar entre os tipos de atividades desenvolvidas, varie segundo o Estado em que a atividade é desenvolvida, em razão das diferenças nas dinâmicas regionais, tecnológicas e sociais. Desse modo, é interessante expor os diferentes tipos de atividades nos diferentes Estados, assim:
 
 ```{r}
 #| message: false
@@ -911,7 +911,7 @@ if (length(lista_plots_limpa) > 0) {
   message("Dados insuficientes para gerar os gráficos.")
 }
 ```
-Aqui é visível o efeito regional nas distribuições. É interessante notar que os maiores valores se apresentam nas regiões Sul e Sudeste, enquanto os menores ocorrem nas regiões Norte e Nordeste, o que pode levar a um favorecimento do desmatamento. Isso é corroborado quando se observa que o valor da vegetação nativa raramente chega a mais de 50 mil, enquanto, em estados com maior índice urbano, o valor das atividades é, em geral, mais elevado.
+Aqui, é visível o efeito regional nas distribuições. É interessante notar que os maiores valores se apresentam nas regiões Sul e Sudeste, enquanto os menores ocorrem nas regiões Norte e Nordeste, o que pode levar a um favorecimento do desmatamento. Isso é corroborado quando se observa que o valor da vegetação nativa raramente chega a mais de 50 mil reais, enquanto, em Estados com maior índice urbano, o valor das atividades é, em geral, mais elevado.
 
 ```{r}
 #| message: false
@@ -993,13 +993,13 @@ if (length(lista_plots_vtn_limpa) > 0) {
 
 ```
 
-É notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas à valoração do meio ambiente no mercado imobiliário rural. O banco de dados foi capaz de contemplar grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
+É notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas à valoração do meio ambiente no mercado imobiliário rural. O banco de dados foi capaz de contemplar a grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
 
 ## Conclusão
 
-O banco de dados construído a partir dos Relatórios de Análise do Mercado de Terras (RAMT) reflete a estrutura fundiária e as desigualdades regionais observadas no país. A base de dados demonstra que o valor da terra varia de forma sistemática conforme as condições socioeconômicas de cada estado brasileiro. Esses valores sintetizam diversos fatores relevantes para a compreensão da distribuição e do mercado de terras no Brasil.
+O banco de dados construído a partir dos Relatórios de Análise do Mercado de Terras (RAMT) reflete a estrutura fundiária e as desigualdades regionais observadas no país. A base de dados demonstra que o valor da terra varia de forma sistemática conforme as condições socioeconômicas de cada Estado brasileiro. Esses valores sintetizam diversos fatores relevantes para a compreensão da distribuição e do mercado de terras no Brasil.
 
-O desmatamento é uma questão complexa, de alta relevância econômica, social e política. A decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita  [@pfaff1999; @rocha]. Assim, diversas variáveis podem ser utilizadas para refletir o valor da terra, sendo um dos principais exemplos o preço de commodities [@rocha]. A escassez de dados sobre os mercados de terra dificulta o uso direto dessa variável como instrumento de modelagem [@KRISHNA2017335]. Assim, as variáveis presentes no banco podem ajudar a explicar o fenômeno do desmatamento, uma vez que apresentam o valor da terra e a decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita [@pfaff1999; @rocha]. Desse modo, os dados recém digitalizados dos Relatórios de Análise do Mercado de Terras podem contribuir para a compreensão do desmatamento, de fenônomenos regionais e até mesmo para a formulação de políticas públicas.
+O desmatamento é uma questão complexa, de alta relevância econômica, social e política. A decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita [@pfaff1999; @rocha]. Assim, diversas variáveis podem ser utilizadas para refletir o valor da terra, sendo um dos principais exemplos o preço de commodities [@rocha]. A escassez de dados sobre os mercados de terras dificulta o uso direto dessa variável como instrumento de modelagem [@KRISHNA2017335]. Dessa forma, as variáveis presentes no banco podem ajudar a explicar o fenômeno do desmatamento, uma vez que apresentam o valor da terra, e a decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita [@pfaff1999; @rocha]. Desse modo, os dados recém-digitalizados dos Relatórios de Análise do Mercado de Terras podem contribuir para a compreensão do desmatamento, de fenômenos regionais e até mesmo para a formulação de políticas públicas.
 
 
 
