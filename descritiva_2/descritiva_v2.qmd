@@ -63,9 +63,10 @@ df_areas2 <- df_analise2 |>
 
 ## Introdução
 
-O Brasil é o país com o maior inventário de florestas tropicais do mundo, e essas florestas são cruciais para a regulação climática e a manutenção do ciclo hidrológico [@paulino2014]. Esse sistema ecológico fornece benefícios diretos e indiretos para a sociedade no Brasil e no mundo [@Guedes2012]. Assim, existe uma externalidade positiva gerada por esse sistema ecológico que é essencial para o bom funcionamento da biosfera como um todo. Junto a isso, a economia brasileira tem como um de seus principais setores o agronegócio [@ibge2024pib], e o desenvolvimento desse setor econômico tem uma relação histórica com o desmatamento [@rocha].
+O Brasil é o país com o maior inventário de florestas tropicais do mundo, e essas florestas são essenciais para a regulação climática global [@paulino2014]. O sistema ecológico dessas florestas fornece, portanto, benefícios diretos e indiretos à sociedade em escala global [@Guedes2012]. Esses serviços de regulação climática desempenham papel essencial, especialmente porque um dos principais setores da economia brasileira é o agronegócio [@ibge2024pib], cuja expansão histórica está associada ao desmatamento [@rocha]. Assim, configura-se um cenário de tensão entre a preservação ambiental e o desenvolvimento econômico e agropecuário do país.
 
-A partir dos anos 2000, o desmatamento vem sendo combatido através de uma série de legislações pelo Estado brasileiro [@nepstad]; isso veio como uma resposta aos picos apresentados anteriormente, gerados por mudanças no cenário internacional e no funcionamento da economia do setor agrícola acoplada a esse novo cenário [@nepstadg]. Dentre esses sistemas, foi criado um sistema integrado de vigilância e governança territorial como parte do Plano de Ação para Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm) [@rocha], em 2004. Ademais, no ano de 2008, houve um avanço, condicionando a disponibilização de crédito para propriedades rurais a critérios associados ao desmatamento [@rocha].
+
+A partir dos anos 2000, o desmatamento passou a ser combatido por uma série de legislações do Estado brasileiro [@nepstad]. Essa resposta surgiu diante dos picos observados anteriormente, associados a mudanças no cenário internacional e ao funcionamento da economia do setor agrícola nesse novo contexto [@nepstadg]. Nesse ambiente, foi criado, em 2004, um sistema integrado de vigilância e governança territorial como parte do Plano de Ação para Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm) [@rocha]. Ademais, em 2008, houve um avanço importante, ao condicionar a disponibilização de crédito para propriedades rurais a critérios associados ao desmatamento [@rocha].
 
 Existe um cenário de tensões entre o desenvolvimento econômico e agrário do Brasil e uma série de legislações históricas que vêm no sentido de coibir o desmatamento. Nesse contexto, o Brasil apresenta grande diversidade, mas, historicamente, o processo do desmatamento é mais estudado na Amazônia Legal. Nesse cenário, o desmatamento ocorre em dois momentos: um primeiro momento vinculado a processos de exploração e um segundo momento associado à expansão produtiva, que é o nosso momento atual [@brandão_rezende_marques_2006]. Aqui, configura-se uma importante mudança: as variáveis explicativas do desmatamento deixam de ser vinculadas à infraestrutura e passam a ser vinculadas também a fenômenos como a lucratividade da exploração econômica de commodities [@martins_francisco_2025].
 
@@ -80,7 +81,7 @@ A modelagem de Pfaff (1999) explica o desmatamento por meio da maximização de 
 
 O modelo criado por Rocha (2015) considera um agricultor representativo que só pode expandir sua produção por meio do desmatamento. Não há arrendamento de terra; o produtor maximiza seu lucro por meio da variação de preços; há uma função de produção com retornos decrescentes de escala; e os fatores institucionais exercem certa influência sobre a decisão de desmatar ou não. O modelo apresenta como variáveis os preços dos produtos agrícolas, a área, a área ótima da propriedade, a tecnologia e um parâmetro de restrição legal. A principal contribuição desse modelo recai sobre a medição das restrições legais, representada pela área não disponível legalmente no município [@rocha]. Ademais, o artigo faz uma estimativa do custo da restrição legal em termos de PIB municipal, e o resultado do contrafactual indica que não houve efeito relevante sobre o PIB projetado [@rocha].
 
-### Evidênciais empíricas
+### Evidências empíricas
 
 A técnica de regressão linear múltipla é a mais comumente utilizada para a estimação dos parâmetros em modelos teóricos [@rocha; @pfaff1999]. Além disso, outros estudos tentam estimar o fenômeno do desmatamento através da aplicação direta de técnicas econométricas [@martins_francisco_2025]. Entretanto, é evidente que existe um melhor ajuste dos modelos aos dados quando se levam em conta os efeitos espaciais, como, por exemplo, a aplicação do modelo SAR em vez de uma regressão múltipla [@martins_francisco_2025].
 
@@ -91,7 +92,7 @@ O desmatamento é, portanto, um problema de otimização da lucratividade do ind
 ## Metodologia
 ### Sobre os dados
 
-O valor da terra é uma variável que é pouco estimada e disponibilizada para análises no Brasil. Esses dados podem oferecer uma variável importante para a compreensão do processo de desmatamento, que é um problema de central importância para o país que é dono do maior inventário de florestas tropicais do mundo. Então, a importância de se compreender melhor o valor da terra vem de uma necessidade de entender como o desmatamento ocorre em território nacional. Nesse sentido, os dados extraídos aqui vem de uma necessidade de digitalização de uma série histórica contendo dados dos valores da terra; essa série histórica foi extraída de uma série de documentos do INCRA (Instituto Nacional de Colonização e Reforma Agrária), sendo estes documentos: os relatórios de análise do mercado de terras e o Atlas do Mercado de Terras (RAMTS). O uso de uma série de relatórios e de um atlas tem a função de complementação: os dados dos RAMTs são obtidos por cada uma das superintendências do INCRA no país, ou seja, o procedimento de coleta não é uniforme, enquanto o Atlas do Mercado de Terras possui todos os dados para um determinado ano, no caso da base de 2023. Assim, para o ano de 2023, quando a superintendência do INCRA não soltava uma série de dados nova de sua respectiva área, houve uma complementação com os dados do Atlas; entretanto, houve estados onde os dados do relatório de 2023 eram iguais aos de anos anteriores ou posteriores. Nesse caso, preferiu-se manter nas datas originais dos relatórios, uma vez que esses são constantemente atualizados, mesmo que de maneira espaço-temporalmente irregular. A relação de documentos para cada ano em cada estado disponível pode ser visto na tabela abaixo:
+Os dados extraídos aqui vêm de uma necessidade de digitalização de uma série histórica contendo dados dos valores da terra. Essa série histórica foi extraída de documentos do INCRA (Instituto Nacional de Colonização e Reforma Agrária), especificamente dos Relatórios de Análise do Mercado de Terras e do Atlas do Mercado de Terras (RAMT). O uso combinado dessas fontes tem função complementar: os RAMTs são produzidos por cada superintendência do INCRA no país, de modo que o procedimento de coleta não é uniforme, enquanto o Atlas do Mercado de Terras reúne todos os dados de um determinado ano, no caso, a base de 2023. Assim, para 2023, quando a superintendência do INCRA não disponibilizava uma nova série de dados para sua respectiva área, houve complementação com os dados do Atlas; em alguns estados, porém, os dados do relatório de 2023 eram iguais aos de anos anteriores ou posteriores. Nesses casos, preferiu-se manter as datas originais dos relatórios, uma vez que esses documentos são constantemente atualizados, ainda que de forma espaço-temporalmente irregular. A relação de documentos para cada ano e estado disponível pode ser vista na tabela abaixo.
 
 ```{r}
 df_incra <- tribble(
@@ -508,7 +509,9 @@ dicionario_data |>
   )
 ```
 ### Metodologia Análise Descritivas
-A análise exploratória de dados (EDA) tem como objetivo descrever as características gerais dos dados.
+A Análise Exploratória de Dados (EDA) visa descrever as características gerais do conjunto de dados por meio da visualização e manipulação direta, sem pressuposições estatísticas prévias [@exploratory]. Essa etapa é fundamental para aprofundar a compreensão sobre a estrutura dos dados  [@exploratory]. 
+
+Para este estudo, foram utilizados histogramas, boxplots e gráficos de dispersão, permitindo identificar padrões, detectar outliers e analisar correlações. Adicionalmente, o valor da terra foi segmentado em quantis para proporcionar uma visão panorâmica da distribuição fundiária no país.
 
 ## Resultados e discussão
 A análise descritiva do banco de dados foi realizada com foco no ano de 2023, visando oferecer um panorama geral do valor da terra no Brasil com a menor distorção possível. Para complementar os dados das cidades que não tinham informações referentes a 2023, corrigimos e utilizamos as observações mais próximas disponíveis, atualizando-as pelo IGP-DI.
@@ -993,11 +996,53 @@ if (length(lista_plots_vtn_limpa) > 0) {
 
 ```
 
-É notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas à valoração do meio ambiente no mercado imobiliário rural. O banco de dados foi capaz de contemplar a grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
+É notável a falta de valoração da vegetação nativa. Diante desse cenário, fica evidente a importância de iniciativas voltadas à valoração do meio ambiente no mercado imobiliário rural.
+
+O Valor da Terra com Imóvel (VTI) e o Valor da Terra Nua (VTN) são correlacionados, sendo que o VTN é, por vezes, estimado a partir do VTI. Nesse sentido, espera-se uma correlação positiva entre ambas as variáveis
+
+```{r}
+# 1. Preparação dos dados (sem pivotar, precisamos de VTI e VTN em colunas separadas)
+dados_scatter <- if(inherits(df_analise2, "sf")) sf::st_drop_geometry(df_analise2) else df_analise2
+
+dados_scatter <- dados_scatter |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% c("agricultura", "pecuaria", "media geral", "exploracao mista", "silvicultura", "vegetacao nativa"))
+
+# 2. O Plot (Scatterplot)
+ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = IGPDI_vti_media, color = categoria_final)) +
+  
+  # Adiciona uma linha de referência 1:1 (Onde VTI = VTN, ou seja, benfeitoria zero)
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray50") +
+  
+  # Pontos com transparência para lidar com sobreposição (overplotting)
+  geom_point(alpha = 0.5, size = 1.5) +
+  
+  # Escalas Logarítmicas em ambos os eixos
+  scale_x_log10(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+  scale_y_log10(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+  
+  # Cores amigáveis
+  scale_color_brewer(palette = "Set1") +
+  
+  labs(
+    title = "Relação VTN vs. VTI por Categoria",
+    subtitle = "A linha tracejada indica VTI = VTN (sem benfeitorias). Pontos acima indicam valor agregado.",
+    x = "Valor da Terra Nua (VTN) por Ha",
+    y = "Valor Total do Imóvel (VTI) por Ha",
+    color = "Categoria"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    panel.grid.minor = element_blank()
+  )
+```
+
+
+O banco de dados foi capaz de contemplar a grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
 
 ## Conclusão
-
-O banco de dados construído a partir dos Relatórios de Análise do Mercado de Terras (RAMT) reflete a estrutura fundiária e as desigualdades regionais observadas no país. A base de dados demonstra que o valor da terra varia de forma sistemática conforme as condições socioeconômicas de cada Estado brasileiro. Esses valores sintetizam diversos fatores relevantes para a compreensão da distribuição e do mercado de terras no Brasil.
 
 O desmatamento é uma questão complexa, de alta relevância econômica, social e política. A decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita [@pfaff1999; @rocha]. Assim, diversas variáveis podem ser utilizadas para refletir o valor da terra, sendo um dos principais exemplos o preço de commodities [@rocha]. A escassez de dados sobre os mercados de terras dificulta o uso direto dessa variável como instrumento de modelagem [@KRISHNA2017335]. Dessa forma, as variáveis presentes no banco podem ajudar a explicar o fenômeno do desmatamento, uma vez que apresentam o valor da terra, e a decisão de desmatar ou não é, em última instância, uma decisão microeconômica que envolve um problema de maximização de receita [@pfaff1999; @rocha]. Desse modo, os dados recém-digitalizados dos Relatórios de Análise do Mercado de Terras podem contribuir para a compreensão do desmatamento, de fenômenos regionais e até mesmo para a formulação de políticas públicas.
 
