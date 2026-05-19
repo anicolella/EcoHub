@@ -1038,6 +1038,87 @@ ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = IGPDI_vti_media, color = cate
     panel.grid.minor = element_blank()
   )
 ```
+A distribuição espacial dos valores de terra, corrigidos pelo IGP-DI (base 2023), é apresentada nos mapas a seguir em formato de quantis. Devido à extensão do conjunto de dados, optou-se pela exibição exclusiva do Valor Terra Imóvel (VTI). Essa escolha justifica-se pela alta correlação entre o VTI e o VTN, conforme demonstrado no gráfico de dispersão anterior, o que torna a representação de ambos os indicadores redundante para a análise espacial.
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(scales)
+library(stringr)
+
+# 1. Definição do Escopo
+categorias_alvo <- c("media geral", "agricultura", "pecuaria",  "exploracao mista", "vegetacao nativa")
+lista_plots <- list()
+
+# 2. Execução Iterativa
+for(cat in categorias_alvo) {
+  
+  # A. Filtragem
+  dados_cat <- df_analise2 |>
+    filter(ano < 2025, !is.na(IGPDI_vti_media), IGPDI_vti_media > 0) |>
+    filter(categoria_final == cat) |> 
+    group_by(code_muni) |>
+    slice_max(order_by = ano, n = 1) |> 
+    ungroup()
+  
+  # B. Gera os intervalos brutos
+  # dig.lab = 15 força números inteiros (sem 1e+05)
+  dados_cat <- dados_cat |>
+    mutate(
+      classe_raw = cut_number(IGPDI_vti_media, n = 5, dig.lab = 15),
+      classe_preco = classe_raw # Cria cópia para modificar os níveis
+    )
+
+  # --- C. O TRATAMENTO DE STRING (Regex) ---
+  # Pega os níveis originais: ex: "(100, 500]"
+  niveis_originais <- levels(dados_cat$classe_preco)
+  
+  # 1. Remove colchetes e parênteses
+  niveis_limpos <- str_remove_all(niveis_originais, "[\\(\\]\\[\\)]")
+  
+  # 2. Substitui a vírgula por " - "
+  niveis_limpos <- str_replace(niveis_limpos, ",", " - ")
+  
+  # 3. Aplica os rótulos finais (Qualitativo + Intervalo Limpo)
+  levels(dados_cat$classe_preco) <- paste0(
+    c("Muito Baixo", "Baixo", "Médio", "Alto", "Muito Alto"), 
+    "\n", 
+    niveis_limpos # Resultado: "100 - 500"
+  )
+
+  # D. Plotagem Estática
+  p <- ggplot(dados_cat) +
+    geom_sf(aes(fill = classe_preco), color = NA, lwd = 0) +
+    
+    scale_fill_brewer(
+      palette = "Spectral", 
+      direction = -1,
+      name = "Faixa de Preço (R$/ha)"
+    ) +
+    
+    labs(
+      title = paste("Panorama VTI:", toupper(cat)),
+      subtitle = "Distribuição de Preços Relativa (Quantis)",
+      x = NULL, y = NULL
+    ) +
+    
+    theme_void() +
+    theme(
+      plot.title = element_text(face = "bold", size = 14),
+      legend.position = "right",
+      legend.key.height = unit(0.8, "cm"), # Altura ajustada para 2 linhas
+      legend.text = element_text(size = 9)
+    )
+
+  lista_plots[[cat]] <- p
+  message(paste("Processado:", cat))
+  print(p)
+}
+
+```
 
 
 O banco de dados foi capaz de contemplar a grande parte dos municípios brasileiros, proporcionando uma visão ampla do território.
