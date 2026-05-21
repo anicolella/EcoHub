@@ -4,8 +4,8 @@ library(tidyverse)
 library(sf)
 library(spdep)
 library(spatialreg)
+library(sidrar)
 
-caminho <- file.choose()
 desm <- st_read("C:\\Users\\jodom\\Downloads\\yearly_deforestation_amazonia_legal_v20260330\\yearly_deforestation_amazonia_legal_v20260330.shp")
 
 df_analise <- st_read(
