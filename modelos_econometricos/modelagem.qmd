@@ -1,0 +1,36 @@
+---
+title: "modelagem econometrica Mato Grosso"
+format: html
+---
+
+Os modelos econométricos aqui descritos são uma série de testes e tentativas de modelar o desmatamento para o Mato Grosso.
+
+$$ 
+\[
+\ln(\text{Desmatamento}_{it}+1)
+=
+\beta_0
++
+\beta_1 \ln(\text{Valor\_Terra}_{it})
++
+\beta_2 \ln(\text{Valor\_Pecuaria}_{it})
++
+\beta_3 \ln(\text{Valor\_Soja}_{it})
++
+\beta_4 \ln(\text{Credito\_Rural}_{it})
++
+\beta_5 \text{Densidade\_Malha\_Rodoviaria}_{it}
++
+\beta_6 \text{Reserva\_Legal}_{it}
++
+\beta_7 \text{Precipitacao}_{it}
++
+\beta_8 \text{Area\_Cidade}_{it}
++
+\alpha_i
++
+\gamma_t
++
+\varepsilon_{it}
+\]
+$$
