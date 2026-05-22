@@ -5,6 +5,7 @@ library(sf)
 library(spdep)
 library(spatialreg)
 library(sidrar)
+library(lmtest)
 
 desm1 <- read_csv("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\desmatamento_mt.csv")
 
@@ -100,11 +101,14 @@ pecuariamt <- pecuaria_mt |>   dplyr::group_by(`Município (Código)`) %>% dplyr
 match4 <- match3 %>% 
   left_join(pecuariamt, by = c("code_muni" = "Município (Código)"))
 
-modelo_ponderado3 <- lm(desmatamento_km ~ IGPDI_vti_media + pib_valor + area_ha_calculada + total_soja + total_pecuaria,  
+modelo_ponderado3 <- lm(desmatamento_km / area_ha_calculada ~ IGPDI_vti_media + pib_valor +  total_soja + total_pecuaria,  
                        data = match4, 
                        weights = 1/area_ha_calculada)
 
-car::vif(lm(desmatamento_km ~ IGPDI_vti_media + pib_valor + area_ha_calculada + total_soja + total_pecuaria, data = match4))
+modelo_ponderado5 <- lm(desmatamento_km / area_ha_calculada ~ IGPDI_vti_media + pib_valor  + total_pecuaria + total_soja,  
+                       data = match4)
+
+car::vif(lm(desmatamento_km ~ IGPDI_vti_media + pib_valor + total_soja + total_pecuaria, data = match4))
 
 modelo_final_std <- lm(scale(desmatamento_km) ~ scale(IGPDI_vti_media) + scale(pib_valor) + scale(area_ha_calculada) +  scale(total_soja) + scale(total_pecuaria),  data = match4)
 
