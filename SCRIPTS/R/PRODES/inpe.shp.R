@@ -6,7 +6,14 @@ library(spdep)
 library(spatialreg)
 library(sidrar)
 
-desm <- st_read("C:\\Users\\jodom\\Downloads\\yearly_deforestation_amazonia_legal_v20260330\\yearly_deforestation_amazonia_legal_v20260330.shp")
+desm1 <- read_csv("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\desmatamento_mt.csv")
+
+desm <- desm1 %>%
+  pivot_longer(
+    cols = `2000`:`2024`,   # Seleciona as colunas de 2000 até 2024
+    names_to = "year",      # Nome da nova coluna que conterá os anos
+    values_to = "area_km"     # Nome da nova coluna que conterá os dados numéricos
+  )
 
 df_analise <- st_read(
   dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
@@ -16,12 +23,11 @@ df_analise <- st_read(
 
 
 desm <-  desm[desm$year == "2023", ]
-desm2 <- desm |> select(state, geometry, year, area_km)
 df_mt <-  df_analise[df_analise$ano == "2023", ]
 df_mt <-  df_mt[df_mt$UF == "MT", ]
 df_mt <-  df_mt[df_mt$categoria_final == "media geral", ]
 
-resultado <- st_join(df_mt, desm2)
+resultado <- desm |> inner_join(df_mt, by= "code_muni") 
 
 df_area_total <- resultado %>% st_drop_geometry() %>%
   dplyr::group_by(code_muni) %>%
@@ -54,6 +60,7 @@ match2 <- match %>%
   left_join(pib_limpo, by = c("code_muni" = "municipio_codigo"))
 
 modelo2 <- lm(desmatamento_km ~ IGPDI_vti_media + pib_valor + area_ha_calculada, data = match2)
+bptest(modelo2)
 
 library(sandwich)
 
@@ -134,3 +141,4 @@ modelo_sar <- lagsarlm(scale(desmatamento_km) ~ scale(IGPDI_vti_media) +
 summary(modelo_sar)
 
 SpatialML_R2(modelo_sar)
+
