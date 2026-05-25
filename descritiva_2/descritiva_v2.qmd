@@ -23,7 +23,7 @@ library(reactable)
 
 
 df_analise <- st_read(
-  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/df_classificado.gpkg",
+  dsn   = "/home/jodomingues/Downloads/dfs/df_classificado.gpkg",
   layer = "df_classificado",
   quiet = TRUE   # ou o nome de camada que você usou no st_write
 )
@@ -42,7 +42,7 @@ df_areas <- df_analise |>
 
 
  df_analise2 <- st_read(
-  dsn   = "C:/Users/jodom/OneDrive/Área de Trabalho/proxy_classificado.gpkg",
+  dsn   = "/home/jodomingues/Downloads/dfs/proxy_classificado.gpkg",
   layer = "df_classificado",
   quiet = TRUE   # ou o nome de camada que você usou no st_write
 )
@@ -347,7 +347,7 @@ library(gt)
 
 # 1. Consolidação Estrita (Apenas o seu input)
 dicionario_data <- tribble(
-  ~grupo, ~variável,
+  ~grupo, ~variavel, #tá sem acento para n dar problema no encoding
   
   # 1 - Variáveis relacionadas à vocação produtiva da terra
   "1 - Variáveis relacionadas à vocação produtiva da terra", "total de tratores (nº/1000 hec)",
@@ -390,7 +390,7 @@ dicionario_data |>
     subtitle = "Fonte: Brasil, 2014"
   ) |>
   cols_label(
-    variável = md("**Variável**")
+    variavel = md("**Variável**")
   ) |>
   tab_options(
     table.width = pct(100),
