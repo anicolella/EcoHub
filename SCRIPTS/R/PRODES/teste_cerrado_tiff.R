@@ -6,12 +6,11 @@ library(tidyr)
 # ==============================================================================
 # 1. CARREGAR BASES (Sem projetar o raster)
 # ==============================================================================
-message("Selecione o arquivo raster do PRODES...")
-raster_global <- rast(file.choose())
+raster_global <- rast("/home/jodomingues/Downloads/prodes_brasil_2024_v20260407/prodes_brasil_2024_v20260407.tif")
 
 # Carrega os municípios e projeta apenas o vetor (que é super leve) para o CRS do raster
 message("Carregando limites dos municípios de MT...")
-muni_mt <- read_municipality(code_muni = "MT", year = 2024) %>% 
+muni_mt <- read_municipality(code_muni = "all", year = 2024) %>% 
   vect() %>% 
   project(crs(raster_global))
 
