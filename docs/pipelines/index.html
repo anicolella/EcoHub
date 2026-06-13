@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Pipelines – EcoHub</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -36,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ccdfbfb71809d714b9af12cc12956fc9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,21 +70,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<!-- Session-based theme loader. Uses the Quarto page offset so nested pages load the same script. -->
-<script>
-(function () {
-  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
-  var offset = offsetMeta ? offsetMeta.getAttribute('content') : './';
-  document.write('<script src="' + offset + 'js/theme-session.js"><\/script>');
-})();
-</script>
+<script src="js/theme-session.js"></script>
+
 <!-- Header include (EcoHub) -->
+
 <!-- Menu dropdown nativo do Quarto - sem JavaScript customizado necessário -->
 
+
+
 <!-- Google Fonts - Source Sans Pro -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;display=swap" rel="stylesheet">
+
 
 
 <link rel="stylesheet" href="../assets/styles.css">
@@ -132,10 +131,21 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../dados.html"> 
-<span class="menu-text">Dados</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dados" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dados</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dados">    
+        <li>
+    <a class="dropdown-item" href="../deliberacoes.html">
+ <span class="dropdown-text">Deliberações</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../commits.html">
+ <span class="dropdown-text">Commits</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../equipe.html"> 
 <span class="menu-text">Equipe</span></a>
@@ -228,6 +238,7 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <!-- Drawer removido - usando menu dropdown nativo do Quarto -->
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Pipelines</h1>
@@ -252,90 +263,176 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 <script>
+
 (function () {
+
   const drawer   = document.getElementById('drawer');
+
   const overlay  = document.getElementById('drawer-overlay');
+
   const closeBtn = document.getElementById('drawer-close');
+
+
 
   if (!drawer || !overlay) return;
 
+
+
   function openDrawer() {
+
     drawer.classList.add('open');
+
     drawer.setAttribute('aria-hidden', 'false');
+
     overlay.classList.add('show');
+
     overlay.setAttribute('aria-hidden', 'false');
+
   }
+
+
 
   function closeDrawer() {
+
     drawer.classList.remove('open');
+
     drawer.setAttribute('aria-hidden', 'true');
+
     overlay.classList.remove('show');
+
     overlay.setAttribute('aria-hidden', 'true');
+
   }
+
+
 
   // Fecha: overlay, botão X, tecla Esc
+
   overlay.addEventListener('click', closeDrawer);
+
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
 
+
+
   // Liga o gatilho (ícone do sanduíche) e neutraliza navegação
+
   function bindTrigger(root = document) {
+
     // <a aria-label="Menu"> é o botão gerado pelo Quarto
+
     let trigger = root.querySelector('.quarto-navbar-tools a[aria-label="Menu"]');
+
     if (!trigger) {
+
       const icon = root.querySelector('.quarto-navbar-tools i.bi.bi-list');
+
       if (icon && icon.closest('a')) trigger = icon.closest('a');
+
     }
+
     if (!trigger) return;
 
+
+
     if (trigger.dataset.drawerBound === '1') return;
+
     trigger.dataset.drawerBound = '1';
 
+
+
     // impedir /# e afins
+
     trigger.setAttribute('href', 'javascript:void(0)');
+
     trigger.setAttribute('role', 'button');
+
     trigger.style.cursor = 'pointer';
 
+
+
     trigger.addEventListener('click', (e) => {
+
       e.preventDefault();
+
       e.stopPropagation();
+
       openDrawer();
+
     });
+
+
 
     trigger.addEventListener('keydown', (e) => {
+
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDrawer(); }
+
     });
+
   }
+
+
 
   // Primeira ligação
+
   if (document.readyState === 'loading') {
+
     document.addEventListener('DOMContentLoaded', () => bindTrigger());
+
   } else {
+
     bindTrigger();
+
   }
+
+
 
   // Se a topbar for recriada (headroom/bootstrap), re-liga
+
   const header = document.getElementById('quarto-header') || document.body;
+
   if ('MutationObserver' in window) {
+
     const mo = new MutationObserver(() => bindTrigger(header));
+
     mo.observe(header, { childList: true, subtree: true });
+
   }
 
+
+
   // util p/ teste manual no console
+
   window.__eco_openDrawer  = openDrawer;
+
   window.__eco_closeDrawer = closeDrawer;
+
 })();
+
 </script>
+
+
+
 
 
 <script>console.debug("[EcoHub] scripts.html carregado (stub)");</script>
 
+
+
 <script>
+
   (function () {
+
     var y = document.getElementById('eco-year');
+
     if (y) y.textContent = new Date().getFullYear();
+
   })();
+
 </script>
+
+
 
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
