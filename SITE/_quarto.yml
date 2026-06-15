@@ -1,13 +1,30 @@
 project:
   type: website
   output-dir: ../docs
-  resources:
-    - "admin/**"
-    - "tracker/_media/**"
-    - "js/theme-session.js"
-    - "assets/amazon_rainforest.mp4"
-    - "assets/wetlands.mp4"
-    - "assets/projeto_bd.png"
+resources:
+  - "admin/**"
+  - "tracker/_media/**"
+  - "js/theme-session.js"
+  - "assets/amazon_rainforest.mp4"
+  - "assets/wetlands.mp4"
+  - "assets/projeto_bd.png"
+
+files:
+  - index.qmd
+  - commits.qmd
+  - dados.qmd
+  - deliberacoes.qmd
+  - equipe.qmd
+  - sobre.qmd
+  - analysis/**/*.qmd
+  - data_catalog/**/*.qmd
+  - pipelines/**/*.qmd
+  - viz/**/*.qmd
+  - components/**/*.qmd
+  - tracker/**/*.md
+
+exclude:
+  - descritiva_v2.qmd
 
 website:
   title: "EcoHub"
@@ -20,16 +37,24 @@ website:
     left:
       - text: Início
         href: index.qmd
+      
       - text: "Gestão"
         menu:
           - text: "Deliberações"
             href: deliberacoes.qmd
           - text: "Commits"
             href: commits.qmd
+      
       - text: Dados
-        href: dados.qmd
+        menu:
+          - text: "Deliberações"
+            href: deliberacoes.qmd
+          - text: "Commits"
+            href: commits.qmd
+      
       - text: Equipe
         href: equipe.qmd
+      
       - text: Sobre
         href: sobre.qmd
     tools:

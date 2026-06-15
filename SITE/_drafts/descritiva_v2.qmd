@@ -1,5 +1,6 @@
 ---
 title: "Untitled"
+draft: true
 format: html
 bibliography: refs.bib
 ---
@@ -21,6 +22,7 @@ library(gt)
 library(tidyverse)
 library(reactable)
 
+
 resolve_gpkg <- function(filename) {
   env_dir <- Sys.getenv("ECOHUB_GPKG_DIR", unset = "")
   candidates <- c(
@@ -34,37 +36,39 @@ resolve_gpkg <- function(filename) {
     file.path("C:/Users/ferna/Downloads/dfs", filename),
     file.path("C:/Users/ferna/Downloads", filename),
     file.path("C:/Users/ferna/Documents", filename),
-    file.path("/home/jodomingues/Downloads/dfs", filename),
     file.path("~/Downloads", filename),
     file.path("~/OneDrive/Área de Trabalho", filename)
   )
   if (nzchar(env_dir)) {
-    candidates <- c(file.path(env_dir, filename), candidates)
+    candidates <- c(env_dir, file.path(env_dir, filename), candidates)
   }
-
   candidates <- unique(candidates)
-  existing <- candidates[file.exists(candidates)]
-  if (!length(existing)) {
+
+  existing <- unique(normalizePath(candidates[file.exists(candidates)], mustWork = FALSE))
+  if (length(existing) == 0L) {
     stop(
       "Não foi possível localizar o arquivo '", filename, "'.\n",
-      "Defina a variável de ambiente ECOHUB_GPKG_DIR ou coloque os arquivos em um destes caminhos:\n",
+      if (nzchar(env_dir)) {
+        paste0("Defina 'ECOHUB_GPKG_DIR' para a pasta onde os .gpkg estão localizados, ou coloque os arquivos em um destes caminhos:\n")
+      } else {
+        "Coloque o arquivo em um dos seguintes caminhos:\n"
+      },
       paste0(" - ", candidates, collapse = "\n"),
       call. = FALSE
     )
   }
-  normalizePath(existing[[1]])
-}
-
-safe_read_gpkg <- function(filename, layer = "df_classificado") {
-  path <- resolve_gpkg(filename)
-  st_read(dsn = path, layer = layer, quiet = TRUE)
+  existing[[1]]
 }
 
 path_df_classificado <- resolve_gpkg("df_classificado.gpkg")
 path_proxy_classificado <- resolve_gpkg("proxy_classificado.gpkg")
 
 
-df_analise <- safe_read_gpkg("df_classificado.gpkg")
+df_analise <- st_read(
+  dsn   = path_df_classificado,
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
 
 
 df_areas <- df_analise |>
@@ -79,7 +83,11 @@ df_areas <- df_analise |>
  df_joined <- df_analise 
 
 
- df_analise2 <- safe_read_gpkg("proxy_classificado.gpkg")
+ df_analise2 <- st_read(
+  dsn   = path_proxy_classificado,
+  layer = "df_classificado",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
 
 df_areas2 <- df_analise2 |>
   mutate(
