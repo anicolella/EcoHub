@@ -12,7 +12,7 @@ df_ramt<- st_read(
   quiet = TRUE   # ou o nome de camada que você usou no st_write
 )
 
-df_prodes <- read_csv("/home/jodomingues/Downloads/prodes.csv")
+df_prodes <- read_csv("/home/jodomingues/Downloads/contagem_pixels.csv")
 
 df_prodes_sem_residuo <- df_prodes |> 
   select(-starts_with("r")) |> 

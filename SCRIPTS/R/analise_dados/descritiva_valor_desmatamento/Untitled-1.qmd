@@ -3,3 +3,170 @@ title: "descritiva - valor da terra, desmatamento"
 format: html
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(data.table)
+library(geobr)
+library(ipeadatar)
+library(stringr)
+library(readr)
+library(sf)
+library(gtsummary)
+library(gt)
+library(tidyverse)
+library(reactable)
+
+
+df_analise <- st_read(
+  dsn   ="/home/jodomingues/Downloads/dfs/df_ramt_prodes.gpkg",
+  layer = "df_ramt_prodes",
+  quiet = TRUE   # ou o nome de camada que você usou no st_write
+)
+
+
+df_areas <- df_analise |>
+  mutate(
+    # 1. Calcula a área (retorna em m^2 [units])
+    area_m2 = st_area(geom),
+    
+    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
+    area_ha_calculada = as.numeric(area_m2) / 10000
+  )
+
+ df_joined <- df_analise 
+
+```
+
+## Introdução
+
+## Referencial teórico
+
+## Metodologia
+
+## Análise descritiva
+
+``` {r} 
+# 1. Preparação dos dados (sem pivotar, precisamos de VTI e VTN em colunas separadas)
+dados_scatter <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_scatter <- dados_scatter |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% "media geral" )
+
+# 2. O Plot (Scatterplot)
+ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = desmatamento_acumulado_ha / area_ha_calculada, color = categoria_final)) +
+  
+  # Adiciona uma linha de referência 1:1 (Onde VTI = VTN, ou seja, benfeitoria zero)
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray50") +
+  
+  # Pontos com transparência para lidar com sobreposição (overplotting)
+  geom_point(alpha = 0.5, size = 1.5) +
+  
+  # Escalas Logarítmicas em ambos os eixos
+  scale_x_log10(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+  
+  # Cores amigáveis
+  scale_color_brewer(palette = "Set1") +
+  
+  labs(
+    title = "Relação VTN vs. VTI por Categoria",
+    subtitle = "A linha tracejada indica VTI = VTN (sem benfeitorias). Pontos acima indicam valor agregado.",
+    x = "Valor da Terra Nua (VTN) por Ha",
+    y = "desmatamento",
+    color = "Categoria"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    panel.grid.minor = element_blank()
+  )
+
+``` 
+
+
+``` {r} 
+# 1. Preparação dos dados (sem pivotar, precisamos de VTI e VTN em colunas separadas)
+dados_scatter <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_scatter <- dados_scatter |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% "media geral" )
+
+# 2. O Plot (Scatterplot)
+ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = hidrografia_ha, color = categoria_final)) +
+  
+  # Adiciona uma linha de referência 1:1 (Onde VTI = VTN, ou seja, benfeitoria zero)
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray50") +
+  
+  # Pontos com transparência para lidar com sobreposição (overplotting)
+  geom_point(alpha = 0.5, size = 1.5) +
+  
+  # Escalas Logarítmicas em ambos os eixos
+  scale_x_log10(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+  
+  # Cores amigáveis
+  scale_color_brewer(palette = "Set1") +
+  
+  labs(
+    title = "VTI X HIDROGRAFIA",
+    subtitle = "A linha tracejada indica VTI = VTN (sem benfeitorias). Pontos acima indicam valor agregado.",
+    x = "Valor da Terra Nua (VTN) por Ha",
+    y = "desmatamento",
+    color = "Categoria"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    panel.grid.minor = element_blank()
+  )
+
+``` 
+
+
+
+``` {r} 
+# 1. Preparação dos dados (sem pivotar, precisamos de VTI e VTN em colunas separadas)
+dados_scatter <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_scatter <- dados_scatter |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% "media geral" )
+
+# 2. O Plot (Scatterplot)
+ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = veg_nativa_ha, color = "#016529")) +
+  
+  # Adiciona uma linha de referência 1:1 (Onde VTI = VTN, ou seja, benfeitoria zero)
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray50") +
+  
+  # Pontos com transparência para lidar com sobreposição (overplotting)
+  geom_point(alpha = 0.5, size = 1.5) +
+  
+  # Escalas Logarítmicas em ambos os eixos
+  scale_x_log10(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+  
+  # Cores amigáveis
+  scale_color_brewer(palette = "Set1") +
+  
+  labs(
+    title = "VTI X VEG NATIVA",
+    subtitle = "A linha tracejada indica VTI = VTN (sem benfeitorias). Pontos acima indicam valor agregado.",
+    x = "Valor da Terra Nua (VTN) por Ha",
+    y = "desmatamento",
+    color = "Categoria"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    panel.grid.minor = element_blank()
+  )
+
+``` 
+
+## Discussã e resultados
