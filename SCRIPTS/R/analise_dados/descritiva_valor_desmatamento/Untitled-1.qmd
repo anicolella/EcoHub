@@ -26,19 +26,6 @@ df_analise <- st_read(
   layer = "df_ramt_prodes",
   quiet = TRUE   # ou o nome de camada que você usou no st_write
 )
-
-
-df_areas <- df_analise |>
-  mutate(
-    # 1. Calcula a área (retorna em m^2 [units])
-    area_m2 = st_area(geom),
-    
-    # 2. Converte para Hectares e remove o tipo 'units' para evitar erros em gráficos
-    area_ha_calculada = as.numeric(area_m2) / 10000
-  )
-
- df_joined <- df_analise 
-
 ```
 
 ## Introdução
@@ -49,6 +36,45 @@ df_areas <- df_analise |>
 
 ## Análise descritiva
 
+```{r}
+dados_hist_desmatamento <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_hist_desmatamento <- dados_hist_desmatamento |>
+  filter(
+    !is.na(UF),
+    !is.na(desmatamento_acumulado_ha)
+  )
+
+ggplot(dados_hist_desmatamento, aes(x = desmatamento_acumulado_ha)) +
+  geom_histogram(
+    aes(y = after_stat(density)),
+    bins = 30,
+    fill = "#016529",
+    color = "white",
+    alpha = 0.65
+  ) +
+  geom_density(
+    color = "#8c2d04",
+    linewidth = 1,
+    na.rm = TRUE
+  ) +
+  facet_wrap(~ UF, scales = "free_y") +
+  scale_x_continuous(
+    labels = scales::label_number(big.mark = ".", decimal.mark = ",")
+  ) +
+  labs(
+    title = "Distribuição do desmatamento acumulado por UF",
+    x = "Desmatamento acumulado (ha)",
+    y = "Densidade"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.minor = element_blank(),
+    strip.text = element_text(face = "bold")
+  )
+```
+
+RODAMO.
 ``` {r} 
 # 1. Preparação dos dados (sem pivotar, precisamos de VTI e VTN em colunas separadas)
 dados_scatter <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
@@ -58,7 +84,7 @@ dados_scatter <- dados_scatter |>
   filter(categoria_final %in% "media geral" )
 
 # 2. O Plot (Scatterplot)
-ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = desmatamento_acumulado_ha / area_ha_calculada, color = categoria_final)) +
+ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = porcentagem_desmat, color = categoria_final)) +
   
   # Adiciona uma linha de referência 1:1 (Onde VTI = VTN, ou seja, benfeitoria zero)
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray50") +
@@ -139,7 +165,7 @@ dados_scatter <- dados_scatter |>
   filter(categoria_final %in% "media geral" )
 
 # 2. O Plot (Scatterplot)
-ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = veg_nativa_ha, color = "#016529")) +
+ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = desmatamento_acumulado_ha, color = "#016529")) +
   
   # Adiciona uma linha de referência 1:1 (Onde VTI = VTN, ou seja, benfeitoria zero)
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray50") +
@@ -169,4 +195,95 @@ ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = veg_nativa_ha, color = "#0165
 
 ``` 
 
+
+
+```{r}
+# 1. Preparação dos dados (sem pivotar, precisamos de VTI e VTN em colunas separadas)
+dados_scatter <- if(inherits(df_analise, "sf")) sf::st_drop_geometry(df_analise) else df_analise
+
+dados_scatter <- dados_scatter |>
+  filter(IGPDI_vti_media > 0, IGPDI_vtn_media > 0) |>
+  filter(categoria_final %in% "exploracao mista" )
+
+# 2. O Plot (Scatterplot) por UF
+ggplot(dados_scatter, aes(x = IGPDI_vtn_media, y = desmatamento_acumulado_ha)) +
+  
+  # Adiciona uma linha de referência 1:1
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray50") +
+  
+  # Pontos com transparência e cor fixa (agora FORA do aes)
+  geom_point(color = "#016529", alpha = 0.5, size = 1.5) +
+  
+  # Escalas Logarítmicas em ambos os eixos
+  scale_x_log10(labels = scales::label_number(prefix = "R$ ", scale_cut = scales::cut_short_scale())) +
+  scale_y_log10() +
+  
+  # A MÁGICA ACONTECE AQUI: Cria um painel para cada UF
+  facet_wrap(~ UF) +
+  
+  labs(
+    title = "VTI X VEG NATIVA por UF",
+    subtitle = "A linha tracejada indica VTI = VTN (sem benfeitorias). Pontos acima indicam valor agregado.",
+    x = "Valor da Terra Nua (VTN) por Ha",
+    y = "Vegetação Nativa (ha)"
+  ) +
+  
+  theme_minimal() +
+  theme(
+    legend.position = "none", # Como a cor é única, não precisamos de legenda
+    panel.grid.minor = element_blank(),
+    strip.text = element_text(face = "bold") # Deixa o nome das UFs em negrito
+  )
+```
+
+
+
+```{r}
+
+# 1. Avaliando de forma geral (todos os dados juntos)
+relacao_geral_desmatamento <- dados_scatter |>
+  summarise(
+    covariancia = cov(IGPDI_vtn_media, desmatamento_acumulado_ha, use = "complete.obs"),
+    correlacao_pearson = cor(IGPDI_vtn_media, desmatamento_acumulado_ha, use = "complete.obs", method = "pearson"),
+    correlacao_spearman = cor(IGPDI_vtn_media, desmatamento_acumulado_ha, use = "complete.obs", method = "spearman")
+  )
+
+print(relacao_geral_desmatamento)
+
+# 2. Avaliando separado por Estado (ou categoria_chave)
+relacao_por_grupo_desmatamento <- dados_scatter |>
+  group_by(UF) |> # Se preferir, troque UF por categoria_chave
+  summarise(
+    covariancia = cov(IGPDI_vtn_media, desmatamento_acumulado_ha, use = "complete.obs"),
+    correlacao = cor(IGPDI_vtn_media, desmatamento_acumulado_ha, use = "complete.obs", method = "spearman"),
+    n_observacoes = n()
+  ) |>
+  arrange(desc(correlacao)) # Ordena para ver onde a relação é mais forte
+
+print(relacao_por_grupo_desmatamento)
+```
+
+
+
+```{r}
+mapa_2023 <- df_analise |> 
+  filter(ano == 2023)
+
+# 2. Cria a lista de vizinhança usando o critério Queen (chuva de vizinhos!)
+# Nota: Isso pode demorar uns minutinhos se for o Brasil todo
+vizinhos_2023 <- poly2nb(mapa_2023, queen = TRUE)
+
+# 3. Transforma a lista de vizinhos na Matriz de Pesos Espaciais (W)
+# style = "W" significa padronização na linha (soma dos pesos de cada vizinho = 1)
+pesos_espaciais_2023 <- nb2listw(vizinhos_2023, style = "W", zero.policy = TRUE)
+
+# --- BÔNUS: Teste de Moran rápido só para 2023 ---
+# Vamos ver se o desmatamento tem dependência espacial nesse ano específico
+teste_moran_desmatamento <- moran.test(mapa_2023$desmatamento_acumulado_ha, 
+                                       listw = pesos_espaciais_2023, 
+                                       zero.policy = TRUE)
+
 ## Discussã e resultados
+print(teste_moran_desmatamento)
+
+````
