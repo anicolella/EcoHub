@@ -1,0 +1,60 @@
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:first-child {
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:first-child > a.dropdown-item {
+  display: inline-flex !important;
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0.5rem 0.75rem !important;
+  white-space: nowrap;
+}
+
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(2),
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(3) {
+  position: absolute;
+  left: calc(100% + 0.25rem);
+  min-width: 11rem;
+  display: none;
+  z-index: 1100;
+}
+
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(2) {
+  top: 0;
+}
+
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(3) {
+  top: 2.7rem;
+}
+
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(2) > a.dropdown-item,
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(3) > a.dropdown-item {
+  display: block !important;
+  width: auto !important;
+  padding: 0.5rem 0.75rem !important;
+  white-space: nowrap;
+  background-color: #fff !important;
+  color: #111 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 0.35rem !important;
+  box-shadow: 0 0.35rem 0.75rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(2) > a.dropdown-item .dropdown-text,
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(3) > a.dropdown-item .dropdown-text {
+  color: #111 !important;
+}
+
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(2):hover > a.dropdown-item,
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(3):hover > a.dropdown-item {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:first-child:hover ~ li:nth-child(2),
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:first-child:hover ~ li:nth-child(3),
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(2):hover,
+.navbar-nav .dropdown-menu[aria-labelledby="nav-menu-bases-de-dados"] > li:nth-child(3):hover {
+  display: block;
+}

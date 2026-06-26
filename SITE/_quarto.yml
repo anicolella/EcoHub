@@ -45,12 +45,14 @@ website:
           - text: "Commits"
             href: commits.qmd
       
-      - text: Dados
+      - text: "Bases de Dados"
         menu:
-          - text: "Deliberações"
-            href: deliberacoes.qmd
-          - text: "Commits"
-            href: commits.qmd
+          - text: "RAMT / PPR (INCRA)"
+            href: "#"
+          - text: "Análise"
+            href: bases_dados/ramt/analise_ramt.qmd
+          - text: "Download"
+            href: bases_dados/ramt/download_ramt.qmd
       
       - text: Equipe
         href: equipe.qmd
@@ -112,11 +114,14 @@ website:
 format:
   html:
     theme: [default]                  
-    css: assets/styles.css           
+    css:
+      - assets/styles.css
+      - assets/navbar-hover.css
     toc: false
     smooth-scroll: true
     include-in-header:
       - _includes/theme-session.html
       - _includes/header.html
     include-before-body: _includes/drawer.html
-    include-after-body: _includes/scripts.html
+    include-after-body:
+      - _includes/scripts.html
