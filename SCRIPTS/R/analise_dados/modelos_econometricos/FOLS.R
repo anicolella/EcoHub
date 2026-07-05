@@ -1,103 +1,51 @@
+library(tidyverse)
 library(fixest)
 library(car)
+library(sf)
 
-df_modelos <- df_credito_chuva |> filter(categoria_final == "media geral") |> filter(uf == "MT")
-
-
-modelo_base <- feols(desmatamento_ha_taxa/area_ha_calculada  ~ vti_media_corrigido_igpdi | code_muni + ano, data = df_modelos)
-
-summary(modelo_base)
-
-modelo_base2 <- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada | code_muni + ano, data = df_modelos)
-
-summary(modelo_base2)
-
-modelo_base3<- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual | code_muni + ano, data = df_modelos)
-
-summary(modelo_base3)
-
-modelo_base4<- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual + total_credito_corrigido_igpdi | code_muni + ano, data = df_modelos)
-summary(modelo_base4)
-
-modelo_taxa4<- feols(desmatamento_obs_taxa ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual + total_credito_corrigido_igpdi | code_muni + ano, data = df_modelos)
-summary(modelo_taxa4)
+df_credito_chuva <- st_read("/home/jodomingues/Downloads/dfs/df_credito_chuva.gpkg")
 
 df_pecuaria <- df_credito_chuva |> filter(categoria_final == "pecuaria") |> filter(uf == "MT")
 
-modelo_pecuaria_1 <- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada | code_muni + ano, data = df_pecuaria)
-summary(modelo_pecuaria_1)
-
-modelo_pecuaria_2 <- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada | code_muni + ano, data = df_pecuaria)
-summary(modelo_pecuaria_2)
-
-
-modelo_pecuaria_3<- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual | code_muni + ano, data = df_pecuaria)
-summary(modelo_base3)
-
-modelo_pecuaria_4<- feols(desmatamento_acumulado_ha/area_ha_calculada ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual + total_credito_corrigido_igpdi | code_muni + ano, data = df_pecuaria)
-summary(modelo_pecuaria_4)
-
-
-df_pecuaria_padronizado <- df_pecuaria %>%
+df_pecuaria_final <- df_pecuaria %>%
+  # 1. Calcula a variável bruta primeiro
+  mutate(taxa_desmatamento = desmatamento_acumulado_ha / area_ha_calculada) %>%
+  
+  # 2. Preenche os buracos de tempo para garantir a sequência completa
+  complete(code_muni, ano = 2018:2024) %>%
+  
+  # 3. Ordena corretamente para o lag funcionar
+  arrange(code_muni, ano) %>%
+  
+  # 4. Agrupa e aplica o lag nas variáveis ORIGINAIS (antes de padronizar)
+  group_by(code_muni) %>%
   mutate(
-    taxa_desmatamento = desmatamento_acumulado_ha / area_ha_calculada,
-    
-    # Trocamos o 'total_credito' pelo 'custeio' e 'investimento'
+    lag_total_custeio = lag(total_custeio_corrigido_igpdi, n = 1),
+    lag_total_investimento = lag(total_investimento_corrigido_igpdi, n = 1)
+  ) %>%
+  ungroup() %>%
+  
+  # 5. Remove as linhas fantasmas criadas pelo 'complete'
+  filter(!is.na(taxa_desmatamento)) %>%
+  
+  # 6. AGORA SIM, calcula o z-score (padronização) para todas as variáveis
+  mutate(
     across(
       .cols = c(
         taxa_desmatamento, 
         vti_media_corrigido_igpdi, 
         area_urbanizada, 
         precipitacao_anual, 
-        total_custeio_corrigido_igpdi,     # Variável nova 1
+        total_custeio_corrigido_igpdi,     
         total_investimento_corrigido_igpdi,
-        veg_nativa # Variável nova 2
+        veg_nativa,
+        lag_total_custeio,       # Padronizando o lag recém-criado
+        lag_total_investimento   # Padronizando o lag recém-criado
       ),
       .fns = ~ as.numeric(scale(.x)),
       .names = "z_{.col}"
     )
   )
-
-# 2. Rodando o modelo com as variáveis padronizadas (e sem o efeito fixo de ano para testar a chuva)
-modelo_final <- feols(
-  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + z_area_urbanizada + z_precipitacao_anual + z_total_credito_corrigido_igpdi | code_muni, # Removi o 'ano' dos efeitos fixos
-  data = df_pecuaria_padronizado
-)
-
-
-summary(modelo_final)
-
-modelo_separado <- feols(
-  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + z_area_urbanizada + z_precipitacao_anual + z_total_custeio_corrigido_igpdi + z_total_investimento_corrigido_igpdi | code_muni, 
-  data = df_pecuaria_padronizado
-)
-
-
-summary(modelo_separado)
-
-
-df_pecuaria_lag <- df_pecuaria_padronizado %>%
-  
-  # 1. Preenche os buracos de tempo! (Isso cria linhas com NA para 2020, 2021, 2022)
-  # Ele vai garantir que para cada código de município exista a sequência completa.
-  complete(code_muni, ano = 2018:2024) %>%
-  
-  # 2. Ordena normalmente
-  arrange(code_muni, ano) %>%
-  
-  # 3. Agrupa e aplica o lag (agora o lag vai pegar os NAs dos anos fantasmas)
-  group_by(code_muni) %>%
-  mutate(
-    lag_z_custeio = lag(z_total_custeio_corrigido_igpdi, n = 1),
-    lag_z_investimento = lag(z_total_investimento_corrigido_igpdi, n = 1)
-  ) %>%
-  ungroup() %>%
-  
-  # 4. Remove as linhas fantasmas que criamos só para arrumar o lag
-  # (Se a taxa_desmatamento for NA, é porque era uma linha inventada)
-  filter(!is.na(taxa_desmatamento))
-
-####### teste com lag temporal
 
 
 # ==============================================================================
@@ -157,6 +105,71 @@ df_final_regressao <- df_final_regressao |>
     )
   )
 
+
+
+#modelos de média geral
+df_modelos <- df_credito_chuva |> filter(categoria_final == "media geral") |> filter(uf == "MT")
+
+
+modelo_base <- feols(desmatamento_ha_taxa/area_ha_calculada  ~ vti_media_corrigido_igpdi | code_muni + ano, data = df_modelos)
+
+summary(modelo_base)
+
+modelo_base2 <- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada | code_muni + ano, data = df_modelos)
+
+summary(modelo_base2)
+
+modelo_base3<- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual | code_muni + ano, data = df_modelos)
+
+summary(modelo_base3)
+
+modelo_base4<- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual + total_credito_corrigido_igpdi | code_muni + ano, data = df_modelos)
+summary(modelo_base4)
+
+modelo_taxa4<- feols(desmatamento_obs_taxa ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual + total_credito_corrigido_igpdi | code_muni + ano, data = df_modelos)
+summary(modelo_taxa4)
+
+
+#modelos percentuais pecuaria
+modelo_pecuaria_1 <- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada | code_muni + ano, data = df_pecuaria_final)
+summary(modelo_pecuaria_1)
+
+modelo_pecuaria_2 <- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada | code_muni + ano, data = df_pecuaria_final)
+summary(modelo_pecuaria_2)
+
+
+modelo_pecuaria_3<- feols(desmatamento_acumulado_ha/area_ha_calculada  ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual | code_muni + ano, data = df_pecuaria_final)
+summary(modelo_pecuaria_3)
+
+modelo_pecuaria_4<- feols(desmatamento_acumulado_ha/area_ha_calculada ~ vti_media_corrigido_igpdi + area_urbanizada/area_ha_calculada + precipitacao_anual + total_credito_corrigido_igpdi | code_muni + ano, data = df_pecuaria_final)
+summary(modelo_pecuaria_4)
+
+
+# modelo taxa z pecuaria
+modelo_final <- feols(
+  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + 
+                        z_area_urbanizada + 
+                        z_precipitacao_anual + 
+                        z_total_custeio_corrigido_igpdi +     # Custeio atual
+                        z_total_investimento_corrigido_igpdi + # Investimento atual
+                        z_lag_total_custeio +                  # Lag do custeio
+                        z_lag_total_investimento               # Lag do investimento
+                        | code_muni, 
+  data = df_pecuaria_final
+)
+
+
+summary(modelo_final)
+
+modelo_separado <- feols(
+  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + z_area_urbanizada + z_precipitacao_anual + z_total_custeio_corrigido_igpdi + z_total_investimento_corrigido_igpdi | code_muni, 
+  data = df_pecuaria_padronizado
+)
+
+
+summary(modelo_separado)
+
+
 # Modelo livre de linhas fantasma e duplicadas
 modelo_perfeito <- feols(
   z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + z_area_urbanizada + z_precipitacao_anual + z_lag_custeio + z_lag_investimento | code_muni,
@@ -170,3 +183,156 @@ modelo_perfeito2 <- feols(
   data = df_final_regressao
 )
 summary(modelo_perfeito2)
+
+
+# acrescentando preço de commodites
+library(ipeadatar)
+library(sidrar)
+library(basedosdados)
+
+# install.packages("basedosdados")
+library(basedosdados)
+
+# Defina o seu projeto do Google Cloud (é de graça)
+set_billing_id("polished-enigma-497723-a6")
+
+# Query para puxar a PAM municipal inteira
+query <- "SELECT * FROM `basedosdados.br_ibge_pam.lavoura_temporaria` WHERE produto = 'Soja (em grão)'"
+
+dados_soja_bd <- read_sql(query)
+
+dados_soja_limpo <- dados_soja_bd %>%
+  # 1. Seleciona apenas as colunas que você quer
+  select(
+    id_municipio,
+    ano,
+    area_plantada,
+    area_colhida,
+    quantidade_produzida,
+    rendimento_medio_producao
+  ) %>%
+  # 2. Coloca o "soja_" antes do nome das variáveis
+  rename(
+    soja_area_plantada = area_plantada,
+    soja_area_colhida = area_colhida,
+    soja_quantidade_produzida = quantidade_produzida,
+    soja_rendimento_medio_producao = rendimento_medio_producao
+  ) %>%
+  # 3. Substitui todos os NAs por 0 nas colunas numéricas
+  mutate(across(starts_with("soja_"), ~replace_na(., 0)))
+
+# 1. Converte o 'ano' para o tipo numérico padrão do R
+dados_soja_limpo <- dados_soja_limpo %>%
+  mutate(ano = as.numeric(ano), id_municipio = as.numeric(id_municipio))
+
+# 2. Roda o seu join novamente (agora vai liso!)
+df_redimento_soja <- inner_join(
+  df_credito_chuva, 
+  dados_soja_limpo, 
+  by = c("ano", "code_muni" = "id_municipio")
+)
+
+# 2. A query puxando a tabela da PPM e filtrando para Bovinos
+query_pecuaria <- "SELECT * FROM `basedosdados.br_ibge_ppm.efetivo_rebanhos` WHERE tipo_rebanho = 'Bovinos'"
+
+# 3. Baixando a base
+dados_pecuaria_bd <- read_sql(query_pecuaria)
+
+
+df_pecuaria <- df_credito_chuva |> filter(categoria_final == "pecuaria") |> filter(uf == "MT")
+
+
+df_padronizado_lag <- df_redimento_soja %>%
+  # 1. Criar a taxa primeiro (ela precisa existir para sabermos quem é linha fantasma depois)
+  mutate(taxa_desmatamento = desmatamento_acumulado_ha / area_ha_calculada) %>%
+  
+  # 2. Preencher os buracos de tempo ANTES de qualquer lag ou cálculo
+  complete(code_muni, ano = 2018:2024) %>%
+  arrange(code_muni, ano) %>%
+  
+  # 3. Agrupar por município para fazer os lags nas variáveis ORIGINAIS (sem Z ainda)
+  group_by(code_muni) %>%
+  mutate(
+    lag_custeio = lag(total_custeio_corrigido_igpdi, n = 1),
+    lag_investimento = lag(total_investimento_corrigido_igpdi, n = 1),
+    lag_rendimento_soja = lag(soja_rendimento_medio_producao, n = 1)
+  ) %>%
+  ungroup() %>%
+  
+  # 4. Agora sim: Remove as linhas fantasmas (deixando a amostra no tamanho real)
+  filter(!is.na(taxa_desmatamento)) %>%
+  
+  # 5. POR ÚLTIMO: Calcula o Z-score de tudo o que você vai usar no modelo
+  # Note que agora calculamos o Z-score em cima dos LAGS que já foram criados e limpos!
+  mutate(
+    across(
+      .cols = c(
+        taxa_desmatamento, 
+        vti_media_corrigido_igpdi, 
+        area_urbanizada, 
+        precipitacao_anual, 
+        total_custeio_corrigido_igpdi,     
+        total_investimento_corrigido_igpdi,
+        veg_nativa,
+        soja_rendimento_medio_producao,
+        
+        # Incluímos os Lags aqui para eles também virarem Z-score do jeito certo!
+        lag_custeio,
+        lag_investimento,
+        lag_rendimento_soja
+      ),
+      .fns = ~ as.numeric(scale(.x)),
+      .names = "z_{.col}"
+    )
+  ) |> filter(categoria_final == "media geral")
+
+
+
+df_padronizado_lag <- df_padronizado_lag |> filter(uf == "MT")
+
+# Modelo 3: Efeitos Fixos de Ano e Município (com rendimento da soja no ano atual)
+modelo_perfeito3 <- feols(
+  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + z_area_urbanizada + z_precipitacao_anual + z_lag_custeio + z_lag_investimento + z_soja_rendimento_medio_producao | ano + code_muni,
+  data = df_padronizado_lag
+)
+
+# Modelo 4: Efeitos Fixos de Ano e Município (sem a soja)
+modelo_perfeito4 <- feols(
+  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + z_area_urbanizada + z_precipitacao_anual + z_lag_custeio + z_lag_investimento | ano + code_muni,
+  data = df_padronizado_lag
+)
+
+# Modelo 5: Apenas Efeito Fixo de Município (sem controlar por choques de ano)
+modelo_perfeito5 <- feols(
+  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + z_area_urbanizada + z_precipitacao_anual + z_lag_custeio + z_lag_investimento + z_soja_rendimento_medio_producao | code_muni,
+  data = df_padronizado_lag
+)
+
+modelo_perfeito6 <- feols(
+  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + z_area_urbanizada + z_precipitacao_anual + z_lag_custeio + z_lag_investimento + z_lag_rendimento_soja | code_muni,
+  data = df_padronizado_lag
+)
+
+
+modelo_perfeito7 <- feols(
+  z_taxa_desmatamento ~ z_vti_media_corrigido_igpdi + 
+                        z_area_urbanizada + 
+                        z_precipitacao_anual + 
+                        z_total_custeio_corrigido_igpdi +     # Custeio atual
+                        z_total_investimento_corrigido_igpdi + # Investimento atual
+                        z_lag_custeio +                  # Lag do custeio
+                        z_lag_investimento # Lag do investimento
+                        | code_muni, 
+  data = df_padronizado_lag
+)
+
+summary(modelo_perfeito3)
+summary(modelo_perfeito4)
+summary(modelo_perfeito5)
+summary(modelo_perfeito6)
+
+summary(modelo_perfeito6, vcov = "cluster")
+
+
+
+
