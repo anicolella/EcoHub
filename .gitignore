@@ -6,6 +6,9 @@
 .Rprofil*
 .Rbuildignore
 
+#pasta para salvar os dataframes
+data/
+
 # ---- renv (manter renv.lock; ignorar libs locais)
 renv/library/
 renv/staging/
