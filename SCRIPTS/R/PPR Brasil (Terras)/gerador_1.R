@@ -1,64 +1,46 @@
-#pacotes_necessarios <- c("tidyverse", "ggplot2", "readr", 
-                        #"stringr", "GeoBr", "sf", 
-                        #"purr", "lubridate")
+# pacotes_necessários <- c("tidyverse", "ggplot2", "readr", 
+#                         "stringr", "geobr", "sf",  # 'geobr' em minúsculo
+#                         "purrr", "lubridate")      # 'purrr' com três r's
 
-#for (p in pacotes_necessarios) {
-  #if (!require(p, character.only = TRUE)) {
-   # install.packages(p)
-    #library(p, character.only = TRUE)
-  #}
-#}
+# for (p in pacotes_necessários) {
+#   if (!require(p, character.only = TRUE)) {
+#     install.packages(p)
+#     library(p, character.only = TRUE)
+#   }
+# }
 
+# No VS Code, a raiz do seu Workspace (getwd()) costuma ser a pasta principal do projeto.
+# Vamos construir o caminho base de forma robusta a partir da raiz:
+caminho_base <- file.path(getwd(), "SCRIPTS", "R", "PPR Brasil (Terras)")
 
-path1_joao <- "C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\"
-path1_fernando <- "C:\\Users\\ferna\\OneDrive\\Desktop OneDrive\\ambiental_bd_usp\\SCRIPTS\\R\\PPR Brasil (Terras)\\"
+# NOTA: Se você for rodar este script inteiro usando a função source() no terminal,
+# a linha abaixo (descomentada) funcionaria no lugar do file.path acima:
+# caminho_base <- dirname(sys.frame(1)$ofile)
 
 scripts <- c(
-  "2_juncao", "3_filetinho" , "4_matching" , "5_correcao_inflacionaria", "dataframe_completo", "correcao_tipologica_23" #, "6_correcao_tipologia_final"
+  "2_juncao", "3_filetinho", "4_matching", "5_correcao_inflacionaria", 
+  "dataframe_completo", "correcao_tipologica_23"
 )
-#fff
-
-# Detecção automática do usuário atual
-if (Sys.getenv("USERNAME") == "jodom") {
-  caminho1_base <- path1_joao
-} else if (Sys.getenv("USERNAME") == "ferna") {
-  caminho1_base <- path1_fernando
-} else {
-  caminho1_base <- path1_fernando  # padrão
-}
 
 for (script in scripts) {
+  caminho_script <- file.path(caminho_base, paste0(script, ".R"))
   
-  # Monta o caminho do script usando o nome do estado EXATAMENTE como está na lista
-  # Ex: vai procurar por "São Paulo.R" e "Distrito Federal.R"
-  caminho_script2 <- paste0(caminho1_base, script, ".R")
+  print(paste("Procurando por:", caminho_script))
   
-  # Mensagem de depuração: mostra qual arquivo está sendo procurado
-  print(paste("Procurando por:", caminho_script2))
-  
-  # Verifica se o arquivo realmente existe no caminho especificado
-  if (file.exists(caminho_script2)) {
-    
-    # Se existir, executa o script
-    source(caminho_script2, encoding = "UTF-8")
-    print(paste(">>> SUCESSO: Script para", script, "executado."))
-    
+  if (file.exists(caminho_script)) {
+    # Adicionei um tryCatch para que, se um script der erro (como o do TOTEMPORAL),
+    # ele te avise exatamente qual quebrou sem interromper abruptamente.
+    tryCatch({
+      source(caminho_script, encoding = "UTF-8")
+      print(paste(">>> SUCESSO: Script", script, "executado."))
+    }, error = function(e) {
+      print(paste("!!! ERRO DURANTE EXECUÇÃO DO SCRIPT:", script))
+      print(e$message)
+    })
   } else {
-    
-    # Se não existir, emite um aviso claro
-    print(paste("!!! AVISO: Arquivo não encontrado ", script))
-    
+    # Melhor imprimir o caminho_script completo para facilitar o debug
+    print(paste("!!! AVISO: Arquivo não encontrado:", caminho_script))
   }
   
-  # Adiciona uma linha em branco para melhor visualização no console
-  cat("\n") 
+  cat("\n")
 }
-
-#oitenta e cinco
-#source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\2.juncao.r", encoding = "UTF-8")
-#source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\3.filetinho.R", encoding = "UTF-8")
-#source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\4.IBGE.R", encoding = "UTF-8")
-#source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\5.correct_names.R", encoding = "UTF-8")
-#source("C:\\Users\\jodom\\OneDrive\\Área de Trabalho\\EcoHub\\SCRIPTS\\R\\PPR Brasil (Terras)\\4.IBGE.R", encoding = "UTF-8")
-
-
