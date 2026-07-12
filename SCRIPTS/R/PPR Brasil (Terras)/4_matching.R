@@ -219,7 +219,7 @@ corrig <- df_novo3 %>%
     -starts_with("origem."),   # Remove origem.y e origem.y.y
     -starts_with("code_muni"), # Remove códigos parciais/velhos (.x e .y)
     -distancia,                # Remove a nota do fuzzy join
-    -geom,                     # Remove o mapa (deixa o df leve)
+    -geometry,                     # Remove o mapa (deixa o df leve)
     -abbrev_state,
     -name_state,                       # Remove a duplicata minúscula (fique com UF)
     -matches("^code_"),        # Remove code_state, code_region (pegue limpo depois)
@@ -254,7 +254,7 @@ df_joined <- df_joined %>%
     starts_with("vtn_"), # Pega vtn_media, vtn_minimo, vtn_maximo
 
     # 5. Geometria (Geralmente fica por último)
-    geom
+    geometry
   )
 
 
