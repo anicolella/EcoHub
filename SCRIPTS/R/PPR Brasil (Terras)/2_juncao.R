@@ -1,4 +1,3 @@
-### CÓDIGO CORRIGIDO PARA CAMINHO RELATIVO ###
 library(tidyverse)
 library(dplyr)
 
@@ -8,27 +7,24 @@ estados <- c(
   "acre", "alagoas", "amapa", "amazonas", "bahia", "ceara", 
   "distrito_federal", "espirito_santo", "goias", "maranhao", 
   "mato_grosso", "mato_grosso_do_sul", "minas_gerais", "para", 
-  "paraiba", "parana", "pernambuco", "piaui", "rio_de_Janeiro", 
+  "paraiba", "parana", "pernambuco", "piaui", "rio_de_janeiro", 
   "rio_grande_do_norte", "rio_grande_do_sul", "rondonia", "roraima", 
   "santa_catarina", "sao_paulo", "sergipe", "tocantins"
 )
 
 # 2. Detecta automaticamente o caminho base (RELATIVO!)
 # ==============================================================================
-# Tenta obter o diretório do script atual (funciona no RStudio)
+# O tryCatch garante que se o rstudioapi falhar no VS Code, ele usa o getwd()
 caminho_base <- tryCatch({
   dirname(rstudioapi::getActiveDocumentContext()$path)
 }, error = function(e) {
-  # Fallback: usa o diretório de trabalho atual
   getwd()
 })
 
-# Se o caminho estiver vazio (script novo não salvo), usa getwd()
 if (caminho_base == "") {
   caminho_base <- getwd()
 }
 
-# Caminho para a pasta dos estados (relativo ao script atual)
 caminho_estados <- file.path(caminho_base, "estados_separados")
 
 print(paste("Caminho base detectado:", caminho_base))
@@ -40,24 +36,15 @@ print("--- Iniciando a execução dos scripts por estado ---")
 
 for (estado in estados) {
   
-  # Monta o caminho do script
   caminho_script <- file.path(caminho_estados, paste0(estado, ".R"))
   
-  # Mensagem de depuração
   print(paste("Procurando por:", caminho_script))
   
-  # Verifica se o arquivo existe
   if (file.exists(caminho_script)) {
-    
-    # Executa o script
     source(caminho_script, encoding = "UTF-8")
     print(paste(">>> SUCESSO: Script para", estado, "executado."))
-    
   } else {
-    
-    # Aviso se não encontrar
     print(paste("!!! AVISO: Arquivo não encontrado para o estado:", estado))
-    
   }
   
   cat("\n") 
@@ -72,9 +59,8 @@ if (exists("TOTEMPORAL")) {
 
 print("--- Execução finalizada ---")
 
-# 5. Junta todos os dataframes
+# 5. Junta todos os dataframes e APAGA TODO O RESTO DA MEMÓRIA
 # ==============================================================================
-# Lista de todos os possíveis dataframes
 dfs_possiveis <- c(
   "ACTEMPORAL", "ALTEMPORAL", "AMTEMPORAL", "APTEMPORAL", 
   "BATEMPORAL", "CETEMPORAL", "DFTEMPORAL", "ESTEMPORAL", 
@@ -85,7 +71,7 @@ dfs_possiveis <- c(
   "SETEMPORAL", "SPTEMPORAL", "TOTEMPORAL"
 )
 
-# Cria uma lista apenas com os dataframes que realmente existem
+# Cria lista apenas com dataframes existentes
 lista_dfs <- list()
 for (df_name in dfs_possiveis) {
   if (exists(df_name)) {
@@ -97,12 +83,15 @@ for (df_name in dfs_possiveis) {
 if (length(lista_dfs) > 0) {
   BRASILTEMPORAL <- bind_rows(lista_dfs, .id = "df")
   
-  # Remove duplicatas se SETEMPORAL existir
-  if (exists("SETEMPORAL")) {
-    SETEMPORAL <- SETEMPORAL |> unique()
-  }
-  
   print(paste("Dataframe BRASILTEMPORAL criado com", nrow(BRASILTEMPORAL), "linhas"))
+ 
+  gc()
+  
+  print("Memória limpa! O rodo foi passado e apenas BRASILTEMPORAL sobreviveu.")
+
+  #remoção dos demais objetos para manutenção da RAM
+  rm(list = setdiff(ls(), c("BRASILTEMPORAL", "script", "scripts", "caminho_base")), envir = .GlobalEnv)
+  
 } else {
   print("!!! Nenhum dataframe foi encontrado para juntar")
 }
