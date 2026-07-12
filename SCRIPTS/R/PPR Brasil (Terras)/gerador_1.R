@@ -1,6 +1,6 @@
 # pacotes_necessários <- c("tidyverse", "ggplot2", "readr", 
 #                         "stringr", "geobr", "sf",  # 'geobr' em minúsculo
-#                         "purrr", "lubridate")      # 'purrr' com três r's
+#                         "purrr", "lubridate", "fuzzyjoin")      # 'purrr' com três r's
 
 # for (p in pacotes_necessários) {
 #   if (!require(p, character.only = TRUE)) {
@@ -18,8 +18,7 @@ caminho_base <- file.path(getwd(), "SCRIPTS", "R", "PPR Brasil (Terras)")
 # caminho_base <- dirname(sys.frame(1)$ofile)
 
 scripts <- c(
-  "2_juncao", "3_filetinho", "4_matching", "5_correcao_inflacionaria", 
-  "dataframe_completo", "correcao_tipologica_23"
+  "2_juncao", "3_filetinho", "4_matching", "5_correcao_tipologica_final"
 )
 
 for (script in scripts) {
