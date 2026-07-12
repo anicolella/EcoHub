@@ -1,7 +1,7 @@
 # Carregar os pacotes necessários
 library(dplyr)
 library(stringr)
-library(tidyverse)
+library(tidyver)
 
 BRASILTEMPORAL$origem <- tolower(BRASILTEMPORAL$origem)
 
