@@ -1,7 +1,7 @@
 # Carregar os pacotes necessários
 library(dplyr)
 library(stringr)
-library(tidyr)
+library(tidyverse)
 
 BRASILTEMPORAL$origem <- tolower(BRASILTEMPORAL$origem)
 
@@ -65,6 +65,7 @@ df_novo2 <- df_novo2 %>%
   filter(!grepl("fica", origem))
 
 df_novo3 <- df_novo2
+
 
 
 
