@@ -15,7 +15,7 @@ ee_Initialize(drive = TRUE)
 
 
 # 1. Carregar os limites dos municípios (usando a sua rota de asset) foi obtido com read_municipality(2024)
-municipios <- ee$FeatureCollection("projects/polished-enigma-497723-a6/assets/municipios_2024")
+municipios <- ee$FeatureCollection("projects/polished-enigma-497723-a6/assets/simplificado")
 
 # 2. Carregar a coleção 10 do MapBiomas
 mapbiomas <- ee$Image("projects/mapbiomas-public/assets/brazil/lulc/collection10/mapbiomas_brazil_collection10_coverage_v2")
@@ -30,7 +30,6 @@ imagemArea <- ee$Image$pixelArea()$divide(1000000)
 print(paste("Anos selecionados:", paste(anos, collapse = ", ")))
 
 # 4. Construindo a função que roda o cálculo para cada ano
-# (A lógica do reduceRegions com group no GEE fica muito mais legível no R!)
 lista_features_anuais <- lapply(anos, function(ano) {
   
   # Seleciona a banda do ano
@@ -99,14 +98,19 @@ print("Arquivo salvo em segurança!")
 
 df_mapbiomas <- read_csv(file.path(caminho_dados, "mapbiomas_brasil_2015_2024.csv"))
 
+# Verifica o cabeçalho
+print("Cabeçalho do arquivo:")
+print(names(df_mapbiomas))
+
 rm(list = setdiff(ls(), c("df_mapbiomas", "caminho_dados")), envir = .GlobalEnv)
 
-
-cover <- df_mapbiomas |>  mutate(ano = ano_analise) |> select(code_muni, ano, groups )
+# 🎯 AJUSTADO: Usando 'code_mn' e 'ano_analise' como colunas de identificação
+cover <- df_mapbiomas |>  
+  mutate(ano = ano_analise) |> 
+  select(code_muni = code_mn, ano, groups)  # Renomeia code_mn para code_muni
 
 dados_limpos <- cover %>%
   # 1. Extrai todos os pares de 'classe=X, sum=Y' de dentro do texto
-  # O regex [0-9.eE+-]+ garante que pegue números quebrados ou em notação científica
   mutate(temp_col = str_extract_all(groups, "classe=\\d+, sum=[0-9.eE+-]+")) %>%
   
   # 2. Transforma a lista criada em linhas separadas
@@ -173,6 +177,19 @@ dados_largos <- dados_com_legenda %>%
     values_fill = 0           # Se o município não tiver aquela classe no ano, preenche com 0
   ) |> select(-fora)
 
+# 🎯 ADICIONA O PREFIXO 'cob_mapbiomas_v10_' EM TODAS AS COLUNAS DE COBERTURA
+# ==============================================================================
+# Identifica quais colunas NÃO são de identificação (code_muni, ano)
+colunas_cob <- setdiff(names(dados_largos), c("code_muni", "ano"))
+
+# Cria um vetor com os novos nomes
+novos_nomes <- paste0("cob_mapbiomas_v10_", colunas_cob)
+
+# Renomeia as colunas
+names(dados_largos)[names(dados_largos) %in% colunas_cob] <- novos_nomes
+
+print("Prefixo 'cob_mapbiomas_v10_' adicionado às colunas de cobertura!")
+print(paste("Total de colunas de cobertura:", length(colunas_cob)))
 
 rm(list = setdiff(ls(), c("dados_largos", "caminho_dados")), envir = .GlobalEnv)
 
@@ -182,10 +199,15 @@ df_ramt <- st_read(
   dsn = file.path(caminho_dados, "df_ramt_completo.gpkg"),
 )
 
+
 df_ramt <- left_join(df_ramt, dados_largos, by = c("code_muni", "ano"))
 
-library(ipeadatar)
-library(geobr)
+print("Join realizado com sucesso!")
+print(paste("Dimensões finais:", nrow(df_ramt), "linhas x", ncol(df_ramt), "colunas"))
 
-a <- read_municipality(year = 2024)
-
+# Salva o arquivo dentro da pasta data usando caminho relativo
+st_write(
+  obj = df_ramt, 
+  dsn = file.path(caminho_dados, "df_ramt_cob_uso.gpkg"), 
+  delete_dsn = TRUE
+)
