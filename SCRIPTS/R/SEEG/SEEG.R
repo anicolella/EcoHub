@@ -1,9 +1,14 @@
-library(tidyverse)
-library(data.table) # Opcional, mas melhora muito a velocidade de leitura de CSVs grandes
+# 🌳 SEEG - SQLITE COM FILTRO 2015-2024 (UM ARQUIVO POR VEZ)
+# ==============================================================================
+
+library(RSQLite)
+library(data.table)
 
 caminho_dados <- file.path(getwd(), "data", "SEEG")
-# 3. Mapear todos os arquivos da base de dados
-# Usamos o padrão "ar[2456].csv|gases.csv" para capturar todos os arquivos padrão de cada UF
+
+# Conecta no SQLite
+con <- dbConnect(SQLite(), file.path(getwd(), "data", "seeg.sqlite"))
+
 todos_arquivos <- list.files(
   path = caminho_dados,
   pattern = "\\.csv$", 
@@ -11,28 +16,67 @@ todos_arquivos <- list.files(
   full.names = TRUE
 )
 
-# 4. Ler e dar 'bind' nos arquivos criando colunas extras de identificação
-# Usamos o data.table::fread por ser extremamente rápido e purrr::map_dfr para unificar tudo
-base_consolidada <- todos_arquivos %>% 
-  # Mapeia cada arquivo e aplica a leitura
-  purrr::map_dfr(function(arquivo) {
-    
-    # Extrai o nome do arquivo (ex: ar6.csv) e o nome da pasta (UF)
-    nome_arquivo <- basename(arquivo)
-    nome_uf <- basename(dirname(arquivo))
-    
-    # Lê o arquivo CSV com encoding adequado para o português
-    dados <- data.table::fread(arquivo, encoding = "UTF-8", integer64 = "numeric")
-    
-    # Adiciona colunas para que você saiba a origem exata do dado após o bind
-    dados <- dados %>% 
-      mutate(
-        origem_uf = nome_uf,
-        tipo_arquivo = nome_arquivo
-      )
-    
-    return(dados)
-  })
+print(paste("Total de arquivos:", length(todos_arquivos)))
 
-# 5. Visualizar o resultado final
-glimpse(base_consolidada)
+primeiro <- TRUE
+
+for(i in seq_along(todos_arquivos)) {
+  
+  arquivo <- todos_arquivos[i]
+  
+  if(i %% 10 == 0) print(paste("Processando", i, "de", length(todos_arquivos)))
+  
+  nome_arquivo <- basename(arquivo)
+  nome_uf <- basename(dirname(arquivo))
+  
+  # Lê o arquivo
+  dados <- fread(arquivo, encoding = "UTF-8", header = TRUE)
+  
+  # Adiciona origem
+  dados[, `:=`(origem_uf = nome_uf, arquivo_origem = nome_arquivo)]
+  
+  # 🎯 FILTRA SÓ 2015-2024
+  colunas_ano <- grep("^201[5-9]$|^202[0-4]$", names(dados), value = TRUE)
+  colunas_manter <- c("Setor de emissão", "Categoria emissora", 
+                      "Sub-categoria emissora", "Produto ou sistema",
+                      "Detalhamento", "Recorte", "Atividade geral",
+                      "Bioma", "Emissão/Remoção/Bunker", "Gás", "Cidade",
+                      "origem_uf", "arquivo_origem", colunas_ano)
+  
+  dados <- dados[, ..colunas_manter]
+  
+  # Melt
+  id_cols <- c("Setor de emissão", "Categoria emissora", "Sub-categoria emissora",
+               "Produto ou sistema", "Detalhamento", "Recorte", "Atividade geral",
+               "Bioma", "Emissão/Remoção/Bunker", "Gás", "Cidade", 
+               "origem_uf", "arquivo_origem")
+  
+  dados_longo <- melt(dados, id.vars = id_cols, measure.vars = colunas_ano,
+                      variable.name = "ano", value.name = "emissao", 
+                      variable.factor = FALSE)
+  
+  dados_longo[, ano := as.integer(ano)]
+  
+  # 🎯 SÓ SALVA O ESSENCIAL
+  dados_light <- dados_longo[, .(Cidade, origem_uf, ano,`Atividade geral`, `Setor de emissão`,
+                                  arquivo_origem, Gás, emissao)]
+  
+  # Salva no SQLite
+  dbWriteTable(con, "seeg", dados_light, 
+               append = !primeiro, overwrite = primeiro)
+  
+  primeiro <- FALSE
+  
+  rm(dados, dados_longo, dados_light)
+  gc()
+}
+
+# Índice
+dbExecute(con, "CREATE INDEX IF NOT EXISTS idx_seeg ON seeg(Cidade, ano)")
+
+# Confere
+n <- dbGetQuery(con, "SELECT COUNT(*) AS n FROM seeg")
+print(paste("Total de linhas:", n$n))
+
+dbDisconnect(con)
+print("✅ SEEG 2015-2024 salvo no SQLite!")
