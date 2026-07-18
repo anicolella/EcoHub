@@ -1,5 +1,9 @@
 library(tidyverse)
 library(sf)
+library(terra)
+library(geobr)
+
+
 
 # Define o caminho de dados baseado no diretório atual
 caminho_dados <- file.path(getwd(), "data")
@@ -41,11 +45,6 @@ print(arquivos_tif)
 
 # 🌳 VERSÃO OTIMIZADA - USA terra::freq() PARA CONTAGEM
 # ==============================================================================
-
-library(terra)
-library(sf)
-library(tidyverse)
-library(geobr)
 
 caminho_dados <- file.path(getwd(), "data")
 
