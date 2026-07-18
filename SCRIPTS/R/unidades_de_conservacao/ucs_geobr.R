@@ -32,6 +32,8 @@ intersecoes <- st_join(
 # 4. Calcula área apenas para as interseções encontradas
 intersecoes_validas <- intersecoes[!is.na(intersecoes$uc_id), ]
 
+intersecoes_validas <- readRDS(paste0(caminho_dados, "/intersecoes_validas.rds"))
+
 if(nrow(intersecoes_validas) > 0) {
   # Calcula geometria da interseção e área
   intersecoes_validas <- intersecoes_validas %>% 
