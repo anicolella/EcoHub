@@ -2,8 +2,14 @@ library(ipeadatar)
 library(tidyverse)
 library(sf)
 
-library(dplyr)
-library(lubridate)
+
+caminho_dados <- file.path(getwd(), "data")
+arquivo_saida <- file.path(caminho_dados, "ramt_commodites.gpkg")
+
+soja <- ipeadata("IFS_SOJAGP")
+carne <- ipeadata("IFS12_BEEFB12")
+milho <- ipeadata("IFS12_MAIZE12")
+
 
 # 1. Tratando e agrupando por ANO (exemplo com a Média anual)
 soja_tratada <- soja |> 
@@ -22,7 +28,17 @@ milho_tratado <- milho |>
   summarise(ipeadata_cotacao_milho_ano = mean(value, na.rm = TRUE))
 
 # 2. Fazendo os Joins com a base espacial (RAMT)
+ramt <- st_read(file.path(caminho_dados, "df_ramt_prodes.gpkg"))
+
 ramt_final <- ramt |>
   left_join(soja_tratada, by = "ano") |>
   left_join(carne_tratada, by = "ano") |>
   left_join(milho_tratado, by = "ano")
+
+st_write(
+  obj = ramt_final,
+  dsn = arquivo_saida,
+  append = FALSE,
+  delete_layer = TRUE
+)
+
