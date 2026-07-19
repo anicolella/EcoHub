@@ -2,7 +2,11 @@ library(ipeadatar)
 library(tidyverse)
 
 
-b <- ipeadata("IDHM")
+caminho_dados <- file.path(getwd(), "data")
+arquivo_saida <- file.path(caminho_dados, "ramt_commodites_uc.gpkg")
+
+b <- available_territories()
+a <- available_series()
 
 idh_muni <- b %>%
   mutate(

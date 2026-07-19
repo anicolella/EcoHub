@@ -9,23 +9,24 @@ arquivo_saida <- file.path(caminho_dados, "ramt_commodites.gpkg")
 soja <- ipeadata("IFS_SOJAGP")
 carne <- ipeadata("IFS12_BEEFB12")
 milho <- ipeadata("IFS12_MAIZE12")
+petroleo <- ipeadata("")
 
 
 # 1. Tratando e agrupando por ANO (exemplo com a Média anual)
 soja_tratada <- soja |> 
   mutate(ano = year(as.Date(date))) |> 
   group_by(ano) |> 
-  summarise(ipeadata_cotacao_soja_ano = mean(value, na.rm = TRUE))
+  summarise(ipeadata_cotacao_soja_an_dolar = mean(value, na.rm = TRUE))
 
 carne_tratada <- carne |> 
   mutate(ano = year(as.Date(date))) |> 
   group_by(ano) |> 
-  summarise(ipeadata_cotacao_carne_ano = mean(value, na.rm = TRUE))
+  summarise(ipeadata_cotacao_carne_ano_dolar = mean(value, na.rm = TRUE))
 
 milho_tratado <- milho |> 
   mutate(ano = year(as.Date(date))) |> 
   group_by(ano) |> 
-  summarise(ipeadata_cotacao_milho_ano = mean(value, na.rm = TRUE))
+  summarise(ipeadata_cotacao_milho_ano_dolar = mean(value, na.rm = TRUE))
 
 # 2. Fazendo os Joins com a base espacial (RAMT)
 ramt <- st_read(file.path(caminho_dados, "df_ramt_prodes.gpkg"))
