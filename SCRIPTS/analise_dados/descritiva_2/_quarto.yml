@@ -1,0 +1,10 @@
+project:
+  type: default
+
+format:
+  html: 
+    theme: journal
+    code-fold: true
+    code-summary: veja o código
+
+bibliography: refs.bib
