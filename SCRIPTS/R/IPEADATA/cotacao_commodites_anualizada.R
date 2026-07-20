@@ -21,22 +21,22 @@ cambio_tratado <- cambio |>
 soja_tratada <- soja |> 
   mutate(ano = year(as.Date(date))) |> 
   group_by(ano) |> 
-  summarise(ipeadata_cotacao_soja_ano_dolar = mean(value, na.rm = TRUE))
+  summarise(ipeadata_cotacao_soja_ano_real = mean(value, na.rm = TRUE))
 
 carne_tratada <- carne |> 
   mutate(ano = year(as.Date(date))) |> 
   group_by(ano) |> 
-  summarise(ipeadata_cotacao_carne_ano_dolar = mean(value, na.rm = TRUE))
+  summarise(ipeadata_cotacao_carne_ano_real = mean(value, na.rm = TRUE))
 
 milho_tratado <- milho |> 
   mutate(ano = year(as.Date(date))) |> 
   group_by(ano) |> 
-  summarise(ipeadata_cotacao_milho_ano_dolar = mean(value, na.rm = TRUE))
+  summarise(ipeadata_cotacao_milho_ano_real = mean(value, na.rm = TRUE))
 
 petroleo_tratado <- petroleo |> 
   mutate(ano = year(as.Date(date))) |> 
   group_by(ano) |> 
-  summarise(ipeadata_cotacao_petroleo_ano_dolar = mean(value, na.rm = TRUE))
+  summarise(ipeadata_cotacao_petroleo_ano_real = mean(value, na.rm = TRUE))
 
 # 2. Fazendo os Joins com a base espacial (RAMT)
 ramt <- st_read(file.path(caminho_dados, "df_ramt_prodes.gpkg"))
