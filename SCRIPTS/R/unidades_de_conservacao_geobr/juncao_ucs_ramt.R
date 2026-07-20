@@ -2,9 +2,9 @@ library(sf)
 library(tidyverse)
 
 caminho_dados <- file.path(getwd(), "data")
-arquivo_saida <- file.path(caminho_dados, "ramt_commodites_uc.gpkg")
+arquivo_saida <- file.path(caminho_dados, "ramt_ucs.gpkg")
 
-ramt <- st_read(file.path(caminho_dados, "ramt_commodites.gpkg"))
+ramt <- st_read(file.path(caminho_dados, "ramt_fogo.gpkg"))
 ucs_cruzadas <- read_csv(file.path(caminho_dados, "ramt_com_uc.csv"))
 
 uc_por_municipio <- ucs_cruzadas %>%
