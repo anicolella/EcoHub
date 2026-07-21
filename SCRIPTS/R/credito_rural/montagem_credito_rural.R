@@ -41,7 +41,7 @@ dados_credito <- credito_rural_completo %>%
 
 
 
-ramt_credito <- inner_join(ramt, dados_credito, by = c("code_muni" = "cod_munic_ibge", "ano" = "ano_emissao"))
+ramt_credito <- left_join(ramt, dados_credito, by = c("code_muni" = "cod_munic_ibge", "ano" = "ano_emissao"))
 
 
 st_write(
