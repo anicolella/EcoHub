@@ -12,13 +12,13 @@ ramt <- st_read(file.path(caminho_dados, "ramt_commodites.gpkg"))
 
 
 
-ramt_tagged <- inner_join(ramt, tags_o, by = c("code_muni" = "id_municipio"))
+ramt_tagged <- left_join(ramt, tags_o, by = c("code_muni" = "id_municipio"))
 
 
 df_organizado <- ramt_tagged %>%
   select(
     # Identificação e Localização
-    nome, code_muni, id_municipio_6, id_municipio_tse, id_municipio_rf, id_municipio_bcb,
+    origem, code_muni, id_municipio_6, id_municipio_tse, id_municipio_rf, id_municipio_bcb,
     id_comarca,
 
   
