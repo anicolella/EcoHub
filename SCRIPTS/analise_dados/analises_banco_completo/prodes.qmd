@@ -450,35 +450,88 @@ desmatamento %>%
   modify_caption("**Comparação: Desmatamento Dentro vs Fora da Amazônia Legal**")
 ```
 
+## area desmatada
+
+```{r}
+#### 1. Filtrar categoria_final e pegar ano mais recente ####
+
+desmat_recente <- ramt %>%
+  filter(
+    !is.na(prodes_ha_desmatamento_acumulado), 
+    !is.na(area_ha_calculada),
+    categoria_final == "media geral"  # Remove duplicatas
+  ) %>%
+  group_by(code_muni, sigla_uf) %>%
+  filter(ano == max(ano, na.rm = TRUE)) %>%
+  ungroup()
+
+# Verificar se ainda tem duplicatas
+cat("Número de municípios:", nrow(desmat_recente), "\n")
+cat("Duplicatas restantes:", sum(duplicated(desmat_recente$id_municipio_6)), "\n")
+
+# Verificar distribuição dos anos
+table(desmat_recente$ano)
+
+#### 2. Calcular a razão ####
+
+desmat_recente <- desmat_recente %>%
+  mutate(
+    razao_desmat = prodes_ha_desmatamento_acumulado / area_ha_calculada,
+    pct_desmat_area = razao_desmat * 100,
+    intensidade = case_when(
+      pct_desmat_area == 0 ~ "Zero",
+      pct_desmat_area <= 5 ~ "Muito Baixa (0-5%)",
+      pct_desmat_area <= 15 ~ "Baixa (5-15%)",
+      pct_desmat_area <= 30 ~ "Média (15-30%)",
+      pct_desmat_area <= 50 ~ "Alta (30-50%)",
+      pct_desmat_area <= 75 ~ "Muito Alta (50-75%)",
+      TRUE ~ "Extrema (>75%)"
+    )
+  )
+
+#### 3. Verificar erros (>100%) ####
+
+erros <- desmat_recente %>%
+  filter(pct_desmat_area > 100)
+
+if(nrow(erros) > 0) {
+  cat("⚠️ ATENÇÃO:", nrow(erros), "municípios com razão > 100%!\n")
+}
+
+#### 4. Estatísticas descritivas ####
+
+desmat_recente %>%
+  st_drop_geometry() %>%
+  summarise(
+    n = n(),
+    media = mean(pct_desmat_area, na.rm = TRUE),
+    mediana = median(pct_desmat_area, na.rm = TRUE),
+    q25 = quantile(pct_desmat_area, 0.25, na.rm = TRUE),
+    q75 = quantile(pct_desmat_area, 0.75, na.rm = TRUE),
+    min = min(pct_desmat_area, na.rm = TRUE),
+    max = max(pct_desmat_area, na.rm = TRUE)
+  ) %>%
+  round(2)
+```
+
+
 ## Modelo LISA 
 
 
 ```{r}
-
-
 #### 1. Preparar os dados espaciais ####
 
-# Assumindo que 'ramt' tem a coluna 'geom' com a geometria dos municípios
-# e que você já tem o dataframe com os dados de desmatamento
-
-# Criar objeto sf com os dados de desmatamento
+# Assumindo que 'ramt' já tem a coluna 'geom' com geometria
 desmat_sp <- ramt %>%
   filter(!is.na(prodes_ha_desmatamento)) %>%
-  select(code_muni, sigla_uf, ano, prodes_ha_desmatamento, amazonia_legal,
-         prodes_ha_desmatamento_acumulado, prodes_porcentagem_desmat, categoria_final, geom) %>% filter(categoria_final == "media geral") %>%
+  select(id_municipio_6, sigla_uf, ano, prodes_ha_desmatamento, 
+         prodes_ha_desmatamento_acumulado, prodes_porcentagem_desmat, 
+         amazonia_legal, categoria_final, geom) %>% filter(categoria_final == "media geral") %>%
   st_as_sf()
 
-# Filtrar para o ano mais recente (ou escolha um ano específico)
-ano_recente <- max(desmat_sp$ano, na.rm = TRUE)
-
-desmat_ano <- desmat_sp %>%
-  filter(ano == ano_recente)
-
-# Ou se preferir, agregar por município (média de todos os anos)
-#### Agregar por município (CORRIGIDO) ####
-
+# Agregar por município
 desmat_agregado <- desmat_sp %>%
-  group_by(code_muni, sigla_uf) %>%
+  group_by(id_municipio_6, sigla_uf) %>%
   summarise(
     desmat_medio = mean(prodes_ha_desmatamento, na.rm = TRUE),
     desmat_total = sum(prodes_ha_desmatamento, na.rm = TRUE),
@@ -487,51 +540,32 @@ desmat_agregado <- desmat_sp %>%
     amazonia_legal = first(amazonia_legal),
     .groups = "drop"
   )
-# Não precisa de st_as_sf() novamente, summarise() já mantém a geometria
-#### 2. Criar matriz de vizinhança ####
 
-# Escolha qual variável usar:
-dados_lisa <- desmat_agregado  # ou desmat_ano
+#### 2. Matriz de vizinhança ####
 
-# Criar vizinhos (queen contiguity - rainha)
+dados_lisa <- desmat_agregado
+
 nb <- poly2nb(dados_lisa, queen = TRUE)
-
-# Verificar vizinhança
-summary(nb)
-
-# Criar pesos espaciais (row-standardized)
 lw <- nb2listw(nb, style = "W", zero.policy = TRUE)
 
-#### 3. Calcular I de Moran global ####
+#### 3. I de Moran global ####
 
-# I de Moran para desmatamento médio
 moran_test <- moran.test(dados_lisa$desmat_medio, lw, zero.policy = TRUE)
 print(moran_test)
 
-# I de Moran para percentual desmatado
-moran_test_pct <- moran.test(dados_lisa$pct_desmat, lw, zero.policy = TRUE)
-print(moran_test_pct)
+#### 4. LISA (Local Moran's I) ####
 
-#### 4. Calcular LISA (Local Moran's I) ####
-
-# Calcular LISA
 lisa <- localmoran(dados_lisa$desmat_medio, lw, zero.policy = TRUE)
 
-# Adicionar resultados ao dataframe
 dados_lisa$lisa_I <- lisa[, "Ii"]
-dados_lisa$lisa_pvalue <- lisa[, "Pr(z > 0)"]
-
-# Padronizar a variável de interesse
-dados_lisa$desmat_z <- scale(dados_lisa$desmat_medio)
-
-# Criar lag espacial (média dos vizinhos)
+dados_lisa$lisa_pvalue <- lisa[, "Pr(z != E(Ii))"]
+dados_lisa$desmat_z <- as.numeric(scale(dados_lisa$desmat_medio))
 dados_lisa$desmat_lag <- lag.listw(lw, dados_lisa$desmat_z, zero.policy = TRUE)
 
-#### 5. Classificar clusters LISA ####
+#### 5. Classificar clusters ####
 
 dados_lisa <- dados_lisa %>%
   mutate(
-    # Classificação LISA
     lisa_cluster = case_when(
       lisa_pvalue > 0.05 ~ "Não significativo",
       desmat_z > 0 & desmat_lag > 0 ~ "Alto-Alto (Hotspot)",
@@ -548,12 +582,10 @@ dados_lisa <- dados_lisa %>%
                                      "Não significativo"))
   )
 
-# Ver distribuição dos clusters
 table(dados_lisa$lisa_cluster)
 
-#### 6. Visualizar Mapa LISA ####
+#### 6. Mapa LISA ####
 
-# Cores para os clusters
 cores_lisa <- c(
   "Alto-Alto (Hotspot)" = "#e41a1c",
   "Baixo-Baixo (Coldspot)" = "#377eb8",
@@ -562,16 +594,14 @@ cores_lisa <- c(
   "Não significativo" = "#f0f0f0"
 )
 
-# Mapa principal
 ggplot(dados_lisa) +
   geom_sf(aes(fill = lisa_cluster), color = "gray60", linewidth = 0.1) +
   scale_fill_manual(values = cores_lisa, name = "Cluster LISA") +
   labs(
     title = "Análise LISA - Clusters de Desmatamento (PRODES)",
-    subtitle = paste0("Desmatamento médio por município | I de Moran = ", 
-                      round(moran_test$estimate[1], 3),
-                      " (p = ", round(moran_test$p.value, 4), ")"),
-    caption = "Fonte: PRODES | Método: Local Moran's I"
+    subtitle = paste0("I de Moran = ", round(moran_test$estimate[1], 3),
+                      " (p = ", format.pval(moran_test$p.value, digits = 4), ")"),
+    caption = "Fonte: PRODES"
   ) +
   theme_minimal() +
   theme(
@@ -583,9 +613,8 @@ ggplot(dados_lisa) +
 
 #### 7. Moran Scatterplot ####
 
-# Criar dataframe para o scatterplot
 moran_df <- data.frame(
-  valor = dados_lisa$desmat_z[,1],
+  valor = dados_lisa$desmat_z,
   lag = dados_lisa$desmat_lag,
   cluster = dados_lisa$lisa_cluster,
   uf = dados_lisa$sigla_uf
@@ -605,4 +634,5 @@ ggplot(moran_df, aes(x = valor, y = lag, color = cluster)) +
   ) +
   theme_minimal() +
   theme(legend.position = "bottom")
+
 ```
