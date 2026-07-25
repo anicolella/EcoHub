@@ -1,0 +1,608 @@
+---
+title: "PRODES"
+format: html
+---
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+#Carregando o data frame
+library(readr)
+library(sandwich)
+library(car)
+library(tidyverse)
+library(terra)
+library(data.table)
+library(sf)
+library(ipeadatar)
+library(stringr)
+library(gtsummary)
+library(gt)
+library(tidyverse)
+library(reactable)
+library(spdep)
+library(sp)
+
+
+caminho_dados <- file.path(getwd(), "data")
+ramt <- st_read(file.path(caminho_dados, "ramt_infra.gpkg"))
+```
+
+
+```{r}
+library(dplyr)
+library(lubridate)
+library(ipeadatar)
+
+#### 1. Preparação do Índice (A Lógica do Produto Acumulado) ####
+indice_raw <- ipeadata(code = "IGP_IGPDIG", language = "br")
+indice_raw2 <- ipeadata(code = "IGP_IGPMG", language = "br")
+
+
+tabela_indices <- indice_raw %>%
+  mutate(
+    ano = year(as.Date(date)),
+    # Transforma taxa percentual em fator multiplicativo (ex: 0.5% vira 1.005)
+    fator_mensal = (value / 100) + 1
+  ) %>%
+  # Agrupa para obter a inflação anualizada
+  group_by(ano) %>%
+  summarise(
+    fator_anual = prod(fator_mensal, na.rm = TRUE), 
+    .groups = "drop"
+  ) %>%
+  arrange(ano) %>%
+  # --- AQUI ESTÁ A CORREÇÃO QUE VOCÊ PEDIU ---
+  # O índice do ano X é o produto de tudo que veio antes (acumulado)
+  mutate(indice_acumulado = cumprod(fator_anual))
+
+#### 2. Definindo a Base (Para onde queremos levar o dinheiro) ####
+# Vamos pegar o valor do índice no último ano disponível (Ex: 2024)
+indice_base_topo <- tail(tabela_indices$indice_acumulado, 1)
+
+resultado_igpdi <- ramt %>%
+  mutate(ano = as.numeric(ano)) %>%
+  left_join(tabela_indices, by = "ano") %>%
+  mutate(
+    fator_deflator = indice_base_topo / indice_acumulado,
+    across(
+      c(starts_with("vt"), starts_with("ipeadata_c"), starts_with("bcb"), "total_credito"),
+      ~ .x * fator_deflator,
+      .names = "IGPDI_{.col}"
+    )
+  ) %>%
+  select(any_of(names(ramt)), starts_with("IGPDI_"))
+
+```
+
+## Introdução
+
+
+## Metodologia
+
+## Análise descritiva
+
+## Dados Prodes
+```{r}
+#### 1. Selecionar as variáveis de interesse ####
+desmatamento <- ramt %>%
+  select(ano, sigla_uf, nome_mesorregiao, prodes_ha_desmatamento, categoria_final,
+         prodes_ha_desmatamento_acumulado, prodes_porcentagem_desmat, code_muni, amazonia_legal) %>%  filter(categoria_final == "media geral") %>% st_drop_geometry()
+
+#### 2. Estatísticas descritivas gerais ####
+
+# Resumo estatístico completo
+descritivas_gerais <- desmatamento %>%
+  summarise(
+    across(c(prodes_ha_desmatamento, prodes_ha_desmatamento_acumulado, 
+             prodes_porcentagem_desmat),
+           list(
+             n = ~sum(!is.na(.)),
+             media = ~mean(., na.rm = TRUE),
+             mediana = ~median(., na.rm = TRUE),
+             dp = ~sd(., na.rm = TRUE),
+             min = ~min(., na.rm = TRUE),
+             max = ~max(., na.rm = TRUE),
+             q25 = ~quantile(., 0.25, na.rm = TRUE),
+             q75 = ~quantile(., 0.75, na.rm = TRUE)
+           ))
+  ) %>%
+  pivot_longer(everything(), 
+               names_to = c("variavel", "estatistica"), 
+               names_sep = "_(?=[^_]*$)", 
+               values_to = "valor") %>%
+  pivot_wider(names_from = estatistica, values_from = valor)
+
+print(descritivas_gerais)
+
+```
+
+
+```{r}
+temporal_anual <- desmatamento %>%
+  group_by(ano) %>%
+  summarise(
+    desmatamento_total = sum(prodes_ha_desmatamento, na.rm = TRUE),
+    desmatamento_medio = mean(prodes_ha_desmatamento, na.rm = TRUE),
+    desmatamento_mediano = median(prodes_ha_desmatamento, na.rm = TRUE),
+    municipios = n(),
+    .groups = "drop"
+  )
+
+
+  # Gráfico da evolução do desmatamento total
+ggplot(temporal_anual, aes(x = ano, y = desmatamento_total)) +
+  geom_line(color = "darkred", linewidth = 1) +
+  geom_point(color = "darkred", size = 2) +
+  labs(title = "Desmatamento Total por Ano (PRODES)",
+       x = "Ano", y = "Hectares Desmatados") +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::comma)
+
+
+
+```
+
+
+
+```{r}
+# Gráfico com média e distribuição
+ggplot(desmatamento, aes(x = factor(ano), y = prodes_ha_desmatamento)) +
+  geom_boxplot(fill = "lightgreen", alpha = 0.7, outlier.size = 0.5) +
+  scale_y_log10(labels = scales::comma) +
+  labs(title = "Desmatamento Total Agregado por Ano (PRODES)",
+       x = "Ano", y = "Hectares (escala log)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+
+
+```{r}
+#### 4. Análise por UF ####
+
+desmat_uf <- desmatamento %>%
+  group_by(sigla_uf) %>%
+  summarise(
+    media_ha = mean(prodes_ha_desmatamento, na.rm = TRUE),
+    total_ha = sum(prodes_ha_desmatamento, na.rm = TRUE),
+    mediana_pct = median(prodes_porcentagem_desmat, na.rm = TRUE),
+    qtd_municipios = n_distinct(code_muni),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(total_ha))
+
+# Top 10 UFs em desmatamento total
+ggplot(desmat_uf %>% slice_head(n = 27), 
+       aes(x = reorder(sigla_uf, total_ha), y = total_ha)) +
+  geom_col(fill = "darkorange") +
+  coord_flip() +
+  labs(title = "Ranking Desmatamento Total",
+       x = "UF", y = "Hectares Desmatados") +
+  scale_y_continuous(labels = scales::comma) +
+  theme_minimal()
+
+
+```
+
+
+```{r}
+#### 5. Relação entre desmatamento anual e acumulado ####
+
+# Matriz de correlação
+cor_desmat <- desmatamento %>%
+  select(prodes_ha_desmatamento, prodes_ha_desmatamento_acumulado, 
+         prodes_porcentagem_desmat) %>%
+  cor(use = "complete.obs")
+
+print("Matriz de Correlação:")
+print(round(cor_desmat, 3))
+
+
+```
+
+
+
+
+```{r}
+# Scatter plot
+ggplot(desmatamento, aes(x = prodes_ha_desmatamento_acumulado, 
+                          y = prodes_ha_desmatamento)) +
+  geom_point(alpha = 0.3, color = "darkgreen") +
+  geom_smooth(method = "lm", se = TRUE, color = "red") +
+  scale_x_log10(labels = scales::comma) +
+  scale_y_log10(labels = scales::comma) +
+  labs(title = "Desmatamento Anual vs Acumulado",
+       x = "Acumulado (ha)", y = "Anual (ha)") +
+  theme_minimal()
+```
+
+
+
+```{r}
+#### 6. Percentual de desmatamento - Quantis ####
+# Tabela formatada para relatório
+tabela_final <- data.frame(
+  Estatística = c("observações", "Média", "Desvio Padrão", "Mínimo", 
+                  "P5", "P10", "P25 (Q1)", "P50 (Mediana)", "P75 (Q3)", 
+                  "P90", "P95", "P99", "Máximo"),
+  `% Desmatado` = c(
+    sum(!is.na(desmatamento$prodes_porcentagem_desmat)),
+    mean(desmatamento$prodes_porcentagem_desmat, na.rm = TRUE),
+    sd(desmatamento$prodes_porcentagem_desmat, na.rm = TRUE),
+    quantile(desmatamento$prodes_porcentagem_desmat, 
+             probs = c(0, 0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95, 0.99, 1),
+             na.rm = TRUE)
+  ) %>% round(2)
+)
+
+print(tabela_final)
+
+# Se quiser exportar
+# write.csv(tabela_final, "quantis_desmatamento.csv", row.names = FALSE)
+```
+
+
+
+```{r}
+desmatamento %>%
+  select(prodes_ha_desmatamento) %>%
+  tbl_summary(
+    label = list(prodes_ha_desmatamento ~ "Desmatamento Anual (ha)"),
+    type = all_continuous() ~ "continuous2",
+    statistic = all_continuous() ~ c(
+      "N válido = {N_nonmiss}",
+      "Média = {mean}",
+      "DP = {sd}",
+      "Mín = {min}",
+      "P5 = {p5}",
+      "P10 = {p10}",
+      "Q1 = {p25}",
+      "Mediana = {median}",
+      "Q3 = {p75}",
+      "P90 = {p90}",
+      "P95 = {p95}",
+      "P99 = {p99}",
+      "Máx = {max}"
+    ),
+    # Atenção: O vetor 'digits' agora tem 13 elementos para corresponder exatamente às 13 linhas acima.
+    # O primeiro (N) com 0 casas decimais, e os demais com 1.
+    digits = all_continuous() ~ c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+    missing = "ifany",
+    missing_text = "Valores ausentes"
+  ) %>%
+  modify_header(
+    label = "**Variável**",
+    stat_0 = "**Estatísticas**"
+  ) %>%
+  bold_labels() %>%
+  italicize_levels() %>%
+  modify_caption("**Tabela 1. Estatísticas Descritivas do Desmatamento Anual (PRODES)**")
+```
+
+
+
+
+```{r histograms-uf, results='asis', echo=FALSE, fig.height=4, fig.width=8}
+library(dplyr)
+library(ggplot2)
+
+# Preparar dados
+desmat_clean <- desmatamento %>%
+  filter(!is.na(prodes_ha_desmatamento))
+
+# Ordenar UFs por mediana
+ordem_ufs <- desmat_clean %>%
+  group_by(sigla_uf) %>%
+  summarise(mediana = median(prodes_ha_desmatamento, na.rm = TRUE)) %>%
+  arrange(desc(mediana)) %>%
+  pull(sigla_uf)
+
+# Criar aba para cada UF
+for (uf_atual in ordem_ufs) {
+  
+  dados_uf <- desmat_clean %>% filter(sigla_uf == uf_atual)
+  
+  n_mun <- nrow(dados_uf)
+  mediana <- median(dados_uf$prodes_ha_desmatamento, na.rm = TRUE)
+  media <- mean(dados_uf$prodes_ha_desmatamento, na.rm = TRUE)
+  
+  p <- ggplot(dados_uf, aes(x = prodes_ha_desmatamento)) +
+    geom_histogram(aes(y = after_stat(density)), 
+                   bins = 30, 
+                   fill = "darkred", 
+                   alpha = 0.4, 
+                   color = "white") +
+    geom_density(color = "darkred", 
+                 linewidth = 1.2, 
+                 fill = "darkred", 
+                 alpha = 0.2) +
+    geom_vline(xintercept = mediana, 
+               linetype = "dashed", 
+               color = "black", 
+               linewidth = 0.8) +
+    scale_x_log10(labels = scales::comma) +
+    labs(title = paste0(uf_atual),
+         subtitle = paste0("N = ", n_mun, " | Mediana = ", 
+                          round(mediana, 1), " ha | Média = ", 
+                          round(media, 1), " ha"),
+         x = "Hectares (log)",
+         y = "Densidade") +
+    theme_minimal()
+  
+  cat("\n### ", uf_atual, "\n")
+  print(p)
+  cat("\n")
+}
+```
+
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+# Ordenar UFs pela mediana
+ordem_ufs <- desmatamento %>%
+  filter(!is.na(prodes_ha_desmatamento)) %>%
+  group_by(sigla_uf) %>%
+  summarise(mediana = median(prodes_ha_desmatamento, na.rm = TRUE)) %>%
+  arrange(desc(mediana)) %>%
+  pull(sigla_uf)
+
+# Boxplot com todos os estados
+desmatamento %>%
+  filter(!is.na(prodes_ha_desmatamento)) %>%
+  mutate(sigla_uf = factor(sigla_uf, levels = ordem_ufs)) %>%
+  ggplot(aes(x = sigla_uf, y = prodes_ha_desmatamento)) +
+  geom_boxplot(fill = "darkred", alpha = 0.6, outlier.size = 0.5) +
+  scale_y_log10(labels = scales::comma) +
+  labs(title = "Distribuição do Desmatamento Anual por UF (PRODES)",
+       subtitle = "Ordenado pela mediana | Escala logarítmica",
+       x = "UF",
+       y = "Hectares Desmatados (log)",
+       caption = "Fonte: PRODES") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, face = "bold", size = 10),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+
+
+```{r}
+# Criar label para a variável
+desmatamento <- desmatamento %>%
+  mutate(
+    amazonia_legal_label = case_when(
+      amazonia_legal == 1 ~ "Dentro da Amazônia Legal",
+      amazonia_legal == 0 ~ "Fora da Amazônia Legal"
+    )
+  )
+
+# Ordenar UFs pela mediana
+ordem_ufs <- desmatamento %>%
+  filter(!is.na(prodes_ha_desmatamento)) %>%
+  group_by(sigla_uf) %>%
+  summarise(mediana = median(prodes_ha_desmatamento, na.rm = TRUE)) %>%
+  arrange(desc(mediana)) %>%
+  pull(sigla_uf)
+
+# Boxplot com destaque Amazônia Legal
+desmatamento %>%
+  filter(!is.na(prodes_ha_desmatamento), !is.na(amazonia_legal_label)) %>%
+  mutate(sigla_uf = factor(sigla_uf, levels = ordem_ufs)) %>%
+  ggplot(aes(x = sigla_uf, y = prodes_ha_desmatamento, fill = amazonia_legal_label)) +
+  geom_boxplot(alpha = 0.7, outlier.size = 0.3) +
+  scale_y_log10(labels = scales::comma) +
+  scale_fill_manual(
+    values = c("Dentro da Amazônia Legal" = "#e41a1c", 
+               "Fora da Amazônia Legal" = "#377eb8"),
+    name = ""
+  ) +
+  labs(
+    title = "Distribuição do Desmatamento Anual por UF (PRODES)",
+    subtitle = "Destaque para municípios dentro/fora da Amazônia Legal | Escala log",
+    x = "UF",
+    y = "Hectares Desmatados (log)",
+    caption = "Fonte: PRODES"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, face = "bold", size = 10),
+    legend.position = "bottom",
+    panel.grid.major.x = element_blank()
+  )
+
+```
+
+
+
+```{r}
+
+desmatamento %>%
+  filter(!is.na(amazonia_legal_label)) %>%
+  select(amazonia_legal_label, prodes_ha_desmatamento) %>%
+  tbl_summary(
+    by = amazonia_legal_label,
+    label = list(prodes_ha_desmatamento ~ "Desmatamento Anual (ha)"),
+    type = list(prodes_ha_desmatamento ~ "continuous2"),
+    statistic = list(
+      prodes_ha_desmatamento ~ c(
+        "N = {N_nonmiss}",
+        "Média = {mean}",
+        "Mediana = {median}",
+        "Q1 = {p25}, Q3 = {p75}",
+        "Mín = {min}, Máx = {max}"
+      )
+    ),
+    digits = list(prodes_ha_desmatamento ~ c(0, 1, 1, 1, 0))
+  ) %>%
+  add_p() %>%
+  bold_labels() %>%
+  modify_caption("**Comparação: Desmatamento Dentro vs Fora da Amazônia Legal**")
+```
+
+## Modelo LISA 
+
+
+```{r}
+
+
+#### 1. Preparar os dados espaciais ####
+
+# Assumindo que 'ramt' tem a coluna 'geom' com a geometria dos municípios
+# e que você já tem o dataframe com os dados de desmatamento
+
+# Criar objeto sf com os dados de desmatamento
+desmat_sp <- ramt %>%
+  filter(!is.na(prodes_ha_desmatamento)) %>%
+  select(code_muni, sigla_uf, ano, prodes_ha_desmatamento, amazonia_legal,
+         prodes_ha_desmatamento_acumulado, prodes_porcentagem_desmat, categoria_final, geom) %>% filter(categoria_final == "media geral") %>%
+  st_as_sf()
+
+# Filtrar para o ano mais recente (ou escolha um ano específico)
+ano_recente <- max(desmat_sp$ano, na.rm = TRUE)
+
+desmat_ano <- desmat_sp %>%
+  filter(ano == ano_recente)
+
+# Ou se preferir, agregar por município (média de todos os anos)
+#### Agregar por município (CORRIGIDO) ####
+
+desmat_agregado <- desmat_sp %>%
+  group_by(code_muni, sigla_uf) %>%
+  summarise(
+    desmat_medio = mean(prodes_ha_desmatamento, na.rm = TRUE),
+    desmat_total = sum(prodes_ha_desmatamento, na.rm = TRUE),
+    desmat_acumulado = last(prodes_ha_desmatamento_acumulado),
+    pct_desmat = last(prodes_porcentagem_desmat),
+    amazonia_legal = first(amazonia_legal),
+    .groups = "drop"
+  )
+# Não precisa de st_as_sf() novamente, summarise() já mantém a geometria
+#### 2. Criar matriz de vizinhança ####
+
+# Escolha qual variável usar:
+dados_lisa <- desmat_agregado  # ou desmat_ano
+
+# Criar vizinhos (queen contiguity - rainha)
+nb <- poly2nb(dados_lisa, queen = TRUE)
+
+# Verificar vizinhança
+summary(nb)
+
+# Criar pesos espaciais (row-standardized)
+lw <- nb2listw(nb, style = "W", zero.policy = TRUE)
+
+#### 3. Calcular I de Moran global ####
+
+# I de Moran para desmatamento médio
+moran_test <- moran.test(dados_lisa$desmat_medio, lw, zero.policy = TRUE)
+print(moran_test)
+
+# I de Moran para percentual desmatado
+moran_test_pct <- moran.test(dados_lisa$pct_desmat, lw, zero.policy = TRUE)
+print(moran_test_pct)
+
+#### 4. Calcular LISA (Local Moran's I) ####
+
+# Calcular LISA
+lisa <- localmoran(dados_lisa$desmat_medio, lw, zero.policy = TRUE)
+
+# Adicionar resultados ao dataframe
+dados_lisa$lisa_I <- lisa[, "Ii"]
+dados_lisa$lisa_pvalue <- lisa[, "Pr(z > 0)"]
+
+# Padronizar a variável de interesse
+dados_lisa$desmat_z <- scale(dados_lisa$desmat_medio)
+
+# Criar lag espacial (média dos vizinhos)
+dados_lisa$desmat_lag <- lag.listw(lw, dados_lisa$desmat_z, zero.policy = TRUE)
+
+#### 5. Classificar clusters LISA ####
+
+dados_lisa <- dados_lisa %>%
+  mutate(
+    # Classificação LISA
+    lisa_cluster = case_when(
+      lisa_pvalue > 0.05 ~ "Não significativo",
+      desmat_z > 0 & desmat_lag > 0 ~ "Alto-Alto (Hotspot)",
+      desmat_z < 0 & desmat_lag < 0 ~ "Baixo-Baixo (Coldspot)",
+      desmat_z > 0 & desmat_lag < 0 ~ "Alto-Baixo (Outlier)",
+      desmat_z < 0 & desmat_lag > 0 ~ "Baixo-Alto (Outlier)",
+      TRUE ~ "Não classificado"
+    ),
+    lisa_cluster = factor(lisa_cluster, 
+                          levels = c("Alto-Alto (Hotspot)", 
+                                     "Baixo-Baixo (Coldspot)",
+                                     "Alto-Baixo (Outlier)",
+                                     "Baixo-Alto (Outlier)",
+                                     "Não significativo"))
+  )
+
+# Ver distribuição dos clusters
+table(dados_lisa$lisa_cluster)
+
+#### 6. Visualizar Mapa LISA ####
+
+# Cores para os clusters
+cores_lisa <- c(
+  "Alto-Alto (Hotspot)" = "#e41a1c",
+  "Baixo-Baixo (Coldspot)" = "#377eb8",
+  "Alto-Baixo (Outlier)" = "#ff7f00",
+  "Baixo-Alto (Outlier)" = "#4daf4a",
+  "Não significativo" = "#f0f0f0"
+)
+
+# Mapa principal
+ggplot(dados_lisa) +
+  geom_sf(aes(fill = lisa_cluster), color = "gray60", linewidth = 0.1) +
+  scale_fill_manual(values = cores_lisa, name = "Cluster LISA") +
+  labs(
+    title = "Análise LISA - Clusters de Desmatamento (PRODES)",
+    subtitle = paste0("Desmatamento médio por município | I de Moran = ", 
+                      round(moran_test$estimate[1], 3),
+                      " (p = ", round(moran_test$p.value, 4), ")"),
+    caption = "Fonte: PRODES | Método: Local Moran's I"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    panel.grid = element_blank(),
+    axis.text = element_blank(),
+    axis.title = element_blank()
+  )
+
+#### 7. Moran Scatterplot ####
+
+# Criar dataframe para o scatterplot
+moran_df <- data.frame(
+  valor = dados_lisa$desmat_z[,1],
+  lag = dados_lisa$desmat_lag,
+  cluster = dados_lisa$lisa_cluster,
+  uf = dados_lisa$sigla_uf
+)
+
+ggplot(moran_df, aes(x = valor, y = lag, color = cluster)) +
+  geom_point(alpha = 0.6, size = 2) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
+  geom_smooth(method = "lm", se = TRUE, color = "black", linewidth = 0.8) +
+  scale_color_manual(values = cores_lisa, name = "Cluster") +
+  labs(
+    title = "Moran Scatterplot - Desmatamento (PRODES)",
+    subtitle = paste0("I de Moran = ", round(moran_test$estimate[1], 3)),
+    x = "Desmatamento (Z-score)",
+    y = "Lag Espacial (média dos vizinhos)"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
