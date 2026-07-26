@@ -26,101 +26,45 @@ library(tidyverse)
 library(reactable)
 library(spdep)
 library(sp)
+library(here)
 
+caminho_dados <- here("data")
+ramt <- st_read("/home/jodomingues/EcoHub/data/ramt_infra.gpkg")
 
-caminho_dados <- file.path(getwd(), "data")
-ramt <- st_read(file.path(caminho_dados, "ramt_infra.gpkg"))
-```
-
-
-```{r}
-library(dplyr)
-library(lubridate)
-library(ipeadatar)
-
-#### 1. Preparação do Índice (A Lógica do Produto Acumulado) ####
-indice_raw <- ipeadata(code = "IGP_IGPDIG", language = "br")
-indice_raw2 <- ipeadata(code = "IGP_IGPMG", language = "br")
-
-
-tabela_indices <- indice_raw %>%
-  mutate(
-    ano = year(as.Date(date)),
-    # Transforma taxa percentual em fator multiplicativo (ex: 0.5% vira 1.005)
-    fator_mensal = (value / 100) + 1
-  ) %>%
-  # Agrupa para obter a inflação anualizada
-  group_by(ano) %>%
-  summarise(
-    fator_anual = prod(fator_mensal, na.rm = TRUE), 
-    .groups = "drop"
-  ) %>%
-  arrange(ano) %>%
-  # --- AQUI ESTÁ A CORREÇÃO QUE VOCÊ PEDIU ---
-  # O índice do ano X é o produto de tudo que veio antes (acumulado)
-  mutate(indice_acumulado = cumprod(fator_anual))
-
-#### 2. Definindo a Base (Para onde queremos levar o dinheiro) ####
-# Vamos pegar o valor do índice no último ano disponível (Ex: 2024)
-indice_base_topo <- tail(tabela_indices$indice_acumulado, 1)
-
-resultado_igpdi <- ramt %>%
-  mutate(ano = as.numeric(ano)) %>%
-  left_join(tabela_indices, by = "ano") %>%
-  mutate(
-    fator_deflator = indice_base_topo / indice_acumulado,
-    across(
-      c(starts_with("vt"), starts_with("ipeadata_c"), starts_with("bcb"), "total_credito"),
-      ~ .x * fator_deflator,
-      .names = "IGPDI_{.col}"
-    )
-  ) %>%
-  select(any_of(names(ramt)), starts_with("IGPDI_"))
-
-```
-
-## Introdução
-
-
-## Metodologia
-
-## Análise descritiva
-
-## Dados Prodes
-```{r}
-#### 1. Selecionar as variáveis de interesse ####
 desmatamento <- ramt %>%
   select(ano, sigla_uf, nome_mesorregiao, prodes_ha_desmatamento, categoria_final,
          prodes_ha_desmatamento_acumulado, prodes_porcentagem_desmat, code_muni, amazonia_legal) %>%  filter(categoria_final == "media geral") %>% st_drop_geometry()
-
-#### 2. Estatísticas descritivas gerais ####
-
-# Resumo estatístico completo
-descritivas_gerais <- desmatamento %>%
-  summarise(
-    across(c(prodes_ha_desmatamento, prodes_ha_desmatamento_acumulado, 
-             prodes_porcentagem_desmat),
-           list(
-             n = ~sum(!is.na(.)),
-             media = ~mean(., na.rm = TRUE),
-             mediana = ~median(., na.rm = TRUE),
-             dp = ~sd(., na.rm = TRUE),
-             min = ~min(., na.rm = TRUE),
-             max = ~max(., na.rm = TRUE),
-             q25 = ~quantile(., 0.25, na.rm = TRUE),
-             q75 = ~quantile(., 0.75, na.rm = TRUE)
-           ))
-  ) %>%
-  pivot_longer(everything(), 
-               names_to = c("variavel", "estatistica"), 
-               names_sep = "_(?=[^_]*$)", 
-               values_to = "valor") %>%
-  pivot_wider(names_from = estatistica, values_from = valor)
-
-print(descritivas_gerais)
-
 ```
 
+
+## Introdução
+O Brasil é um país com grande diversidade econômica, social e ambiental. O país é detentor do maior estoque de florestas tropicais do mundo [@paulino2014]. Desse modo, existe uma grande importância em compreender a dinâmica dessa vegetação em termos de manutenção, proteção e, em especial, do processo de desmatamento. Desde a década de setenta, o país vem apresentando uma série de avanços na proteção do meio ambiente, tendo em vista a importância dos serviços ambientais de regulação fornecidos pelos biomas brasileiros, em especial pela Floresta Amazônica. Nesse viés, esse processo deve ser entendido dentro de um contexto multidimensional, considerando a legislação, o processo histórico e até mesmo as dinâmicas sociais, sendo essencial o uso de dados confiáveis para a realização de análises.
+
+O desmatamento é um fenômeno histórico que ocorre em todo o país. Suas causas são múltiplas, o que pode ser ilustrado pelo caso da Amazônia Legal. Assim, observa-se um fenômeno bifásico: inicialmente, o desmatamento foi motivado por um processo de colonização da região da Amazônia Legal e, em um segundo momento, por motivações econômicas [@brandão_rezende_marques_2006]. Isso é refletido na literatura por meio dos modelos iniciais, que explicavam o desmatamento com base na facilidade logística, muito vinculada a esse processo de colonização [@pfaff1999], e, posteriormente, por modelos que buscam compreendê-lo considerando características socioeconômicas [@Balboni]. As dimensões sociais não se restringem apenas à motivação: como o fornecimento de serviços ecossistêmicos pelas florestas gera externalidades positivas [@Guedes2012], a retirada dessa vegetação resulta em externalidades negativas.
+
+A resposta a uma série dessas tensões multidimensionais levou ao desenvolvimento da legislação ambiental e do monitoramento, tendo um de seus principais avanços no ano de 1988, quando, diante da necessidade de o governo monitorar precisamente o desmatamento da Amazônia Legal, foi criado o PRODES (Projeto de Monitoramento do Desmatamento na Amazônia Legal por Satélite) [@inpe_prodes_biomas], que inicialmente monitorava somente a Amazônia Legal, porém, hoje em dia, monitora todo o país. Além disso,
+
+Além do cenário interno, o combate ao desmatamento é realizado de maneira internacional, sendo o início das legislações ambientais brasileiras, de certa maneira, uma resposta a pressões externas [@moura2016], materializadas em uma série de conferências. Inicialmente, o caráter dessa legislação era mais voltado à preservação desses recursos e, posteriormente, passou a contemplar uma maior defesa dos chamados direitos difusos. Essa preocupação com o meio ambiente acabou culminando no artigo 225 da Constituição Federal, que estabelece o direito a um meio ambiente ecologicamente equilibrado como um direito difuso [@Constituicao1988]. Essa consolidação também impõe ao Estado um dever de proteção da natureza, que vem sendo consolidado pelos processos acima descritos.
+
+Assim, o desmatamento é um importante fenômeno que pode e deve ser analisado com o uso de técnicas estatísticas e econométricas, sendo relevante tanto como um problema microeconômico quanto como um fenômeno sociopolítico e natural. Dessa maneira, a presente análise pretende contribuir para a compreensão descritiva dos dados disponíveis no PRODES, considerando o recorte temporal de 2015 a 2025. Esse período de análise foi adotado para garantir a compatibilidade com os dados de valor da terra, também incluídos no banco de dados.
+
+## Metodologia
+
+### Sobre os Dados
+
+Os dados utilizados são do PRODES, com as taxas incrementais e o acumulado de desmatamento para o recorte de 2015 a 2025. Esses dados contêm informações sobre a degradação progressiva da floresta, sendo obtidos por meio do uso de satélites com imagens do tipo Landsat, provenientes de diversas fontes: do Centro de Dados de Sensoriamento Remoto do INPE, dos repositórios do Serviço Geológico Americano e da Agência Espacial Europeia [@almeida2022metodologia]. O desmatamento é calculado de maneira incremental, e as imagens de satélite são processadas por pessoas treinadas para a identificação do tipo de desmatamento [@almeida2022metodologia].
+
+Além dos dados do PRODES, foi realizada uma agregação, em nível municipal, desses dados com o uso de um shapefile do IBGE contendo os polígonos dos diferentes municípios [@pereira2019geobr]. Assim, houve uma agregação desses dados e seu tratamento anual para a realização de uma análise descritiva em nível municipal.
+
+### Análise Descritiva
+
+A Análise Exploratória de Dados (EDA) tem como objetivo detalhar as características gerais do PRODES por meio da visualização e manipulação direta de seus dados, com uma agregação em nível municipal [@exploratory]. Sendo um procedimento crucial para a compreensão dos dados de desmatamento antes da realização de outros estudos estatísticos [@exploratory].
+
+No presente estudo, empregaram-se histogramas, boxplots e gráficos de dispersão para o reconhecimento de padrões, a detecção de outliers e a avaliação de correlações.
+
+## Resultados e discussão
+
+Inicialmente, é interessante analisar a tendência temporal do desmatamento. Nesse sentido, observa-se a evolução da taxa de área desmatada ao longo dos anos:
 
 ```{r}
 temporal_anual <- desmatamento %>%
@@ -143,9 +87,123 @@ ggplot(temporal_anual, aes(x = ano, y = desmatamento_total)) +
   theme_minimal() +
   scale_y_continuous(labels = scales::comma)
 
+```
+
+
+Pelo gráfico, é possível observar que houve um aumento entre os anos de 2015 e 2017. A partir desse período, verificou-se uma queda, atingindo o menor índice no ano de 2020, o que é condizente com o cenário da pandemia. Em seguida, observa-se um pico no ano de 2022, provavelmente em decorrência de mudanças nas políticas ambientais, seguido por uma queda acentuada até o ano de 2025.
+
+Assim, é válido avaliar onde está o maior  desmatamento em valores absolutos na amostra:
+```{r}
+#### 4. Análise por UF ####
+
+desmat_uf <- desmatamento %>%
+  group_by(sigla_uf) %>%
+  summarise(
+    media_ha = mean(prodes_ha_desmatamento, na.rm = TRUE),
+    total_ha = sum(prodes_ha_desmatamento, na.rm = TRUE),
+    mediana_pct = median(prodes_porcentagem_desmat, na.rm = TRUE),
+    qtd_municipios = n_distinct(code_muni),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(total_ha))
+
+
+# Top 10 UFs em desmatamento total
+ggplot(desmat_uf %>% slice_head(n = 28), 
+       aes(x = reorder(sigla_uf, total_ha), y = total_ha)) +
+  geom_col(fill = "darkorange") +
+  coord_flip() +
+  labs(title = "Ranking Desmatamento Total",
+       x = "UF", y = "Hectares Desmatados") +
+  scale_y_continuous(labels = scales::comma) +
+  theme_minimal()
 
 
 ```
+
+É possível ver q o desmatamento se concentra principalmente em regiões de alta pressão agrícola, sendo liderado pelo Mato Grosso, Maranhão e Tocantins em termos de valores absolutos. N
+
+Assim, também é interressante ver em quais regiões houve o maior desmatamento em termos de taxa:
+
+```{r}
+# Top 10 UFs em desmatamento total
+ggplot(desmat_uf %>% slice_head(n = 28), 
+       aes(x = reorder(sigla_uf, media_ha), y = media_ha)) +
+  geom_col(fill = "green") +
+  coord_flip() +
+  labs(title = "Ranking da Taxa Média de Incremento do Desmatamento por UF",
+       x = "UF", y = "Hectares Desmatados Taxa Anual Média") +
+  scale_y_continuous(labels = scales::comma) +
+  theme_minimal()
+
+```
+
+Os estados que apresentam uma maior taxa média de desmatamento são Rorraima, Acre e Rondonia. Esses estados, são novas fronteiras do processo de expansão agrícola.
+
+
+
+```{r}
+#| message: false
+#| warning: false
+
+library(dplyr)
+library(gt)
+
+#### 1. Selecionar e Agrupar os Dados por UF ####
+descritivas_por_uf <- ramt %>%
+  st_drop_geometry() %>%
+  # Mantive o seu filtro original
+  filter(categoria_final == "media geral") %>% 
+  # A MÁGICA ACONTECE AQUI: Agrupando por Estado
+  group_by(sigla_uf) %>% 
+  summarise(
+    n_municipios_anos = n(),
+    media_ha = mean(prodes_ha_desmatamento, na.rm = TRUE),
+    mediana_ha = median(prodes_ha_desmatamento, na.rm = TRUE),
+    max_ha = max(prodes_ha_desmatamento, na.rm = TRUE),
+    media_pct = mean(prodes_porcentagem_desmat, na.rm = TRUE)
+  ) %>%
+  # Ordenar os estados com maior média de desmatamento no topo
+  arrange(desc(media_ha)) %>%
+  # Opcional: Pegar apenas os Top 10 para a tabela não ficar gigante no relatório
+  slice_head(n = 10) 
+
+#### 2. Apresentação da Tabela com gt ####
+tabela_gt_uf <- descritivas_por_uf %>%
+  gt() %>%
+  # Atualizando os títulos para refletir a nova análise
+  tab_header(
+    title = md("**Ranking: Estatísticas de Desmatamento por Estado**"),
+    subtitle = "Top 10 UFs com maiores médias (Hectares e Porcentagem)"
+  ) %>%
+  # Renomeando as colunas para o leitor
+  cols_label(
+    sigla_uf = "UF",
+    n_municipios_anos = "N (Obs)",
+    media_ha = "Média (ha)",
+    mediana_ha = "Mediana (ha)",
+    max_ha = "Máximo (ha)",
+    media_pct = "Média (%)"
+  ) %>%
+  # Formatando os números
+  fmt_number(
+    columns = c(media_ha, mediana_ha, max_ha, media_pct),
+    decimals = 2,
+    dec_mark = ",",
+    sep_mark = "."
+  ) %>%
+  # Estilização
+  tab_options(
+    heading.align = "center",
+    column_labels.font.weight = "bold"
+  ) %>%
+  opt_row_striping()
+
+# Exibir a tabela
+tabela_gt_uf
+```
+
+
 
 
 
@@ -163,32 +221,7 @@ ggplot(desmatamento, aes(x = factor(ano), y = prodes_ha_desmatamento)) +
 
 
 
-```{r}
-#### 4. Análise por UF ####
 
-desmat_uf <- desmatamento %>%
-  group_by(sigla_uf) %>%
-  summarise(
-    media_ha = mean(prodes_ha_desmatamento, na.rm = TRUE),
-    total_ha = sum(prodes_ha_desmatamento, na.rm = TRUE),
-    mediana_pct = median(prodes_porcentagem_desmat, na.rm = TRUE),
-    qtd_municipios = n_distinct(code_muni),
-    .groups = "drop"
-  ) %>%
-  arrange(desc(total_ha))
-
-# Top 10 UFs em desmatamento total
-ggplot(desmat_uf %>% slice_head(n = 27), 
-       aes(x = reorder(sigla_uf, total_ha), y = total_ha)) +
-  geom_col(fill = "darkorange") +
-  coord_flip() +
-  labs(title = "Ranking Desmatamento Total",
-       x = "UF", y = "Hectares Desmatados") +
-  scale_y_continuous(labels = scales::comma) +
-  theme_minimal()
-
-
-```
 
 
 ```{r}
@@ -462,7 +495,7 @@ desmat_recente <- ramt %>%
     categoria_final == "media geral"  # Remove duplicatas
   ) %>%
   group_by(code_muni, sigla_uf) %>%
-  filter(ano == max(ano, na.rm = TRUE)) %>%
+  slice_max(order_by = ano, n = 1, with_ties = FALSE) %>%
   ungroup()
 
 # Verificar se ainda tem duplicatas
@@ -511,7 +544,9 @@ desmat_recente %>%
     min = min(pct_desmat_area, na.rm = TRUE),
     max = max(pct_desmat_area, na.rm = TRUE)
   ) %>%
-  round(2)
+  mutate(across(everything(), ~round(.x, 2)))
+
+
 ```
 
 
@@ -537,8 +572,7 @@ desmat_agregado <- desmat_sp %>%
     desmat_total = sum(prodes_ha_desmatamento, na.rm = TRUE),
     desmat_acumulado = last(prodes_ha_desmatamento_acumulado),
     pct_desmat = last(prodes_porcentagem_desmat),
-    amazonia_legal = first(amazonia_legal),
-    .groups = "drop"
+    amazonia_legal = first(amazonia_legal)
   )
 
 #### 2. Matriz de vizinhança ####

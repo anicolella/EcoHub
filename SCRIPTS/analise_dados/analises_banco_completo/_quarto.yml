@@ -1,6 +1,8 @@
 project:
   type: website
 
+bibliography: refs.bib
+
 website:
   title: "analises_banco_completo"
   navbar:
@@ -11,9 +13,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: journal
     css: styles.css
     toc: true
-
+    code-fold: true
 
 
