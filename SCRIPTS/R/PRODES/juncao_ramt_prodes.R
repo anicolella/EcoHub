@@ -51,7 +51,7 @@ gc()
 print(paste("Registros RAMT:", nrow(df_ramt)))
 
 # ==============================================================================
-# 2. CARREGAR E PROCESSAR PRODES
+# 2. CARREGAR E PROCESSAR PRODES (VERSÃO CORRIGIDA)
 # ==============================================================================
 print("Carregando PRODES...")
 
@@ -59,23 +59,39 @@ df_prodes <- fread(arquivo_prodes) %>%
   mutate(code_muni = as.character(code_muni))
 
 print(paste("PRODES carregado:", nrow(df_prodes), "linhas"))
-print("Colunas do PRODES:")
+print("TODAS as colunas do PRODES:")
 print(names(df_prodes))
 
 # Remove colunas de resíduo (r2010, r2011, etc.)
-cols_residuo <- grep("^r", names(df_prodes), value = TRUE)
-if (length(cols_residuo) > 0) {
-  df_prodes <- df_prodes %>% select(-all_of(cols_residuo))
-  print(paste("Colunas de resíduo removidas:", length(cols_residuo)))
-}
+#cols_residuo <- grep("^r", names(df_prodes), value = TRUE)
+#if (length(cols_residuo) > 0) {
+ ##print(paste("Colunas de resíduo removidas:", length(cols_residuo)))
+#}
 
-# Identifica colunas
-id_cols_possiveis <- c("code_muni", "nome", "Hidrografia", "veg_nativa")
+# 🔍 DIAGNÓSTICO: Procurar colunas de hidrografia e vegetação
+print("=== DIAGNÓSTICO DE COLUNAS ===")
+print("Procurando colunas com 'hidro' ou 'hidrografia':")
+print(grep("hidro|hidrografia", names(df_prodes), value = TRUE, ignore.case = TRUE))
+
+print("Procurando colunas com 'veg' ou 'nativa' ou 'vegetacao':")
+print(grep("veg|nativa|vegetacao", names(df_prodes), value = TRUE, ignore.case = TRUE))
+
+# Identifica colunas de ID padrão
+id_cols_possiveis <- c("code_muni", "nome", "municipio", "uf", "UF", "estado")
 id_cols <- intersect(id_cols_possiveis, names(df_prodes))
-ano_cols <- setdiff(names(df_prodes), id_cols)
 
-print(paste("Colunas ID:", paste(id_cols, collapse = ", ")))
+# Identifica colunas especiais (hidrografia, veg_nativa, área total, etc.)
+cols_especiais <- grep("hidrografia|hidro|veg_nativa|veg_|vegetacao|nativa|area_total|area_km2", 
+                       names(df_prodes), value = TRUE, ignore.case = TRUE)
+
+print(paste("Colunas especiais encontradas:", paste(cols_especiais, collapse = ", ")))
+
+# Separa colunas de ano (apenas números de 4 dígitos)
+ano_cols <- grep("^[0-9]{4}$", names(df_prodes), value = TRUE)
+
 print(paste("Anos PRODES:", length(ano_cols)))
+print(paste("Primeiros anos:", paste(head(ano_cols, 5), collapse = ", ")))
+print(paste("Últimos anos:", paste(tail(ano_cols, 5), collapse = ", ")))
 
 # ============================================================
 # CALCULA ÁREA TOTAL POR PIXELS
@@ -92,7 +108,7 @@ df_prodes <- df_prodes %>%
 print("Resumo da área calculada por pixels:")
 print(summary(df_prodes$prodes_area_ha_pixels))
 
-# Transforma para formato longo
+# Transforma para formato longo - MANTENDO colunas especiais
 df_prodes_long <- df_prodes %>%
   pivot_longer(
     cols = all_of(ano_cols),
@@ -104,29 +120,37 @@ df_prodes_long <- df_prodes %>%
 rm(df_prodes)
 gc()
 
-# Processa e calcula métricas
+# Processa e calcula métricas básicas
 df_prodes_long <- df_prodes_long %>%
   mutate(
     prodes_ha_desmatamento = 0.09 * prodes_pixels_desmatamento
   )
 
-# Adiciona prefixo prodes_ nas colunas de hidrografia e veg_nativa
-if("Hidrografia" %in% names(df_prodes_long)) {
-  df_prodes_long <- df_prodes_long %>%
-    mutate(
-      prodes_hidrografia_pixels = Hidrografia,
-      prodes_hidrografia_ha = 0.09 * Hidrografia
-    ) %>%
-    select(-Hidrografia)
-}
+# 🔧 PROCESSAR COLUNAS ESPECIAIS (HIDROGRAFIA, VEGETAÇÃO NATIVA, ETC.)
+print("=== PROCESSANDO COLUNAS ESPECIAIS ===")
 
-if("veg_nativa" %in% names(df_prodes_long)) {
+# Processa cada coluna especial encontrada
+for (col in cols_especiais) {
+  print(paste("Processando coluna:", col))
+  
+  # Cria nome padronizado
+  nome_padrao <- tolower(col) %>%
+    str_replace_all("[- ]", "_") %>%
+    str_replace_all("[^a-z0-9_]", "")
+  
+  if (!str_starts(nome_padrao, "prodes_")) {
+    nome_padrao <- paste0("prodes_", nome_padrao)
+  }
+  
+  # Adiciona versões em pixels e hectares
   df_prodes_long <- df_prodes_long %>%
     mutate(
-      prodes_veg_nativa_pixels = veg_nativa,
-      prodes_veg_nativa_ha = 0.09 * veg_nativa
+      !!paste0(nome_padrao, "_pixels") := .data[[col]],
+      !!paste0(nome_padrao, "_ha") := 0.09 * .data[[col]]
     ) %>%
-    select(-veg_nativa)
+    select(-all_of(col))  # Remove coluna original
+  
+  print(paste("  Criadas colunas:", paste0(nome_padrao, "_pixels"), "e", paste0(nome_padrao, "_ha")))
 }
 
 # Calcula desmatamento acumulado
@@ -137,6 +161,8 @@ df_prodes_long <- df_prodes_long %>%
   ungroup()
 
 print(paste("Registros PRODES processados:", nrow(df_prodes_long)))
+print("Colunas finais do PRODES long:")
+print(names(df_prodes_long))
 
 # ==============================================================================
 # 3. LEFT JOIN RAMT + PRODES
@@ -150,6 +176,8 @@ rm(df_ramt, df_prodes_long)
 gc()
 
 print(paste("Registros após join:", nrow(df_resultado)))
+print("Colunas após join:")
+print(names(df_resultado))
 
 # ==============================================================================
 # 4. ADICIONAR GEOMETRIA E CALCULAR ÁREAS
@@ -191,8 +219,11 @@ print(summary(diferenca))
 # ==============================================================================
 print("Organizando colunas...")
 
-# Colunas PRODES
+# Colunas PRODES (todas que começam com prodes_)
 colunas_prodes <- grep("^prodes_", names(df_resultado_sf), value = TRUE)
+
+print("Colunas PRODES encontradas:")
+print(colunas_prodes)
 
 # Ordem desejada
 cols_saida <- c(
@@ -203,10 +234,11 @@ cols_saida <- c(
   # Áreas
   "area_m2_geometria", "area_ha_geometria",
   "prodes_total_pixels", "prodes_area_ha_pixels",
-  # PRODES
+  # PRODES (inclui hidrografia, veg_nativa, etc.)
   colunas_prodes,
   # MapBiomas
   grep("^cob_mapbiomas_v10_", names(df_resultado_sf), value = TRUE),
+  grep("^mapbiomas", names(df_resultado_sf), value = TRUE),
   # Econômicas
   grep("^vti_|^vtn_", names(df_resultado_sf), value = TRUE),
   # Geometria
@@ -218,10 +250,41 @@ cols_existentes <- intersect(cols_saida, names(df_resultado_sf))
 df_final <- df_resultado_sf %>% select(all_of(cols_existentes))
 
 # ==============================================================================
-# 6. SALVAR
+# 6. VERIFICAÇÃO FINAL E SALVAR
 # ==============================================================================
-print("Salvando resultado...")
+print("=== VERIFICAÇÃO FINAL ===")
 
+# Verifica se hidrografia e veg_nativa estão presentes
+colunas_hidro <- grep("hidrografia|hidro", names(df_final), value = TRUE, ignore.case = TRUE)
+colunas_veg <- grep("veg_nativa|veg_|vegetacao|nativa", names(df_final), value = TRUE, ignore.case = TRUE)
+
+print("Colunas de hidrografia no resultado final:")
+print(colunas_hidro)
+
+print("Colunas de vegetação nativa no resultado final:")
+print(colunas_veg)
+
+# Resumo estatístico se existirem
+if(length(colunas_hidro) > 0) {
+  for(col in colunas_hidro) {
+    if(is.numeric(df_final[[col]])) {
+      print(paste("Resumo de", col, ":"))
+      print(summary(df_final[[col]]))
+    }
+  }
+}
+
+if(length(colunas_veg) > 0) {
+  for(col in colunas_veg) {
+    if(is.numeric(df_final[[col]])) {
+      print(paste("Resumo de", col, ":"))
+      print(summary(df_final[[col]]))
+    }
+  }
+}
+
+# Salvar
+print("Salvando resultado...")
 st_write(df_final, arquivo_saida, append = FALSE, delete_layer = TRUE)
 
 # Relatório final
@@ -237,13 +300,11 @@ print(paste("  - Diferença média:",
             round(mean(df_final$area_ha_geometria - 
                        df_final$prodes_area_ha_pixels, na.rm = TRUE), 2), "ha"))
 
-# Mostra exemplos
-print("Primeiras linhas do resultado:")
+# Mostra amostra dos dados
+print("Amostra dos dados (primeiras 5 linhas, sem geometria):")
 df_final %>%
   st_drop_geometry() %>%
-  select(code_muni, ano, area_ha_geometria, prodes_area_ha_pixels, 
-         prodes_porc_desmat_geometria, prodes_porc_desmat_pixels) %>%
-  head() %>%
+  head(5) %>%
   print()
 
 print("✅ Processamento concluído!")

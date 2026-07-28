@@ -3,7 +3,9 @@ library(sf)
 library(terra)
 library(geobr)
 
-
+# ==============================================================================
+# 1. PREPARAÇÃO E DOWNLOAD DOS DADOS
+# ==============================================================================
 
 # Define o caminho de dados baseado no diretório atual
 caminho_dados <- file.path(getwd(), "data")
@@ -20,39 +22,43 @@ options(timeout = 3600)  # 1 hora
 url_completa <- "https://terrabrasilis.dpi.inpe.br/download/dataset/brasil-prodes/raster/prodes_brasil_2024_v20260407.zip"
 arquivo_zip <- file.path(caminho_dados, "prodes_brasil_completo.zip")
 
-# 1. Baixa o arquivo ZIP do servidor do INPE (com barra de progresso)
+# Baixa o arquivo ZIP do servidor do INPE (com barra de progresso)
 message("Iniciando o download do arquivo completo do Brasil (pode demorar)...")
-download.file(
-  url = url_completa, 
-  destfile = arquivo_zip, 
-  mode = "wb",
-  timeout = 1800  # 30 minutos
-)
+if(!file.exists(arquivo_zip)) {
+  download.file(
+    url = url_completa, 
+    destfile = arquivo_zip, 
+    mode = "wb",
+    timeout = 1800  # 30 minutos
+  )
+}
 
-# 2. Extrai o GeoTIFF (.tif) bruto do ZIP
+# Extrai o GeoTIFF (.tif) bruto do ZIP
 message("Extraindo o GeoTIFF completo...")
 unzip(zipfile = arquivo_zip, exdir = pasta_prodes)
 
-# 3. Apaga o arquivo ZIP para liberar espaço no seu disco
-file.remove(arquivo_zip)
+# Apaga o arquivo ZIP para liberar espaço no seu disco
+if(file.exists(arquivo_zip)) file.remove(arquivo_zip)
 message("Pronto! O GeoTIFF completo do Brasil está salvo na pasta: ", pasta_prodes)
 
-# 4. Lista os arquivos extraídos
+# Lista os arquivos extraídos
 arquivos_tif <- list.files(pasta_prodes, pattern = "\\.tif$", full.names = TRUE)
 print("Arquivos GeoTIFF encontrados:")
 print(arquivos_tif)
 
 
-# 🌳 VERSÃO OTIMIZADA - USA terra::freq() PARA CONTAGEM
+# ==============================================================================
+# 2. CARREGAMENTO E CONFIGURAÇÃO (VERSÃO OTIMIZADA PARA MEMÓRIA)
 # ==============================================================================
 
-caminho_dados <- file.path(getwd(), "data")
+# Configura o pacote terra para usar menos RAM (força uso do disco se necessário)
+terraOptions(memfrac = 0.5)
 
-# Carrega raster e municípios
-arquivo_tif <- list.files(file.path(caminho_dados, "prodes_brasil_completo"), 
-                          pattern = "\\.tif$", full.names = TRUE)[1]
+# Carrega raster
+arquivo_tif <- arquivos_tif[1]
 raster_prodes <- rast(arquivo_tif)
 
+# Carrega os municípios (altere "all" para um estado específico se quiser testar antes)
 muni_mt <- read_municipality(code_muni = "all", year = 2024)
 muni_mt <- st_transform(muni_mt, crs(raster_prodes))
 
@@ -66,12 +72,17 @@ traducao_dict <- c(
   "58" = "r2018", "59" = "r2019", "60" = "r2020", "61" = "r2021", "62" = "r2022", 
   "63" = "r2023", "64" = "r2024", "100" = "veg_nativa", "91" = "Hidrografia"
 )
-# Processa todos os municípios
+
+# ==============================================================================
+# 3. PROCESSAMENTO DE BAIXO CONSUMO DE RAM
+# ==============================================================================
 print(paste("Processando", nrow(muni_mt), "municípios..."))
 
 resultado <- map_dfr(1:nrow(muni_mt), function(i) {
   
   if(i %% 10 == 0) print(paste("Processados:", i, "de", nrow(muni_mt)))
+  
+  df_retorno <- NULL
   
   tryCatch({
     # Recorta o raster para o município
@@ -80,23 +91,38 @@ resultado <- map_dfr(1:nrow(muni_mt), function(i) {
     # Usa freq() que é muito mais rápido que table()
     freq_muni <- freq(raster_muni)
     
-    if(!is.null(freq_muni)) {
+    if(!is.null(freq_muni) && nrow(freq_muni) > 0) {
       freq_muni <- as.data.frame(freq_muni)
       freq_muni$code_muni <- muni_mt$code_muni[i]
       freq_muni$nome <- muni_mt$name_muni[i]
       freq_muni$ano <- traducao_dict[as.character(freq_muni$value)]
       
-      return(freq_muni %>% 
-               filter(!is.na(ano)) %>% 
-               select(code_muni, nome, ano, qtd_pixels = count))
+      df_retorno <- freq_muni %>% 
+        filter(!is.na(ano)) %>% 
+        select(code_muni, nome, ano, qtd_pixels = count)
     }
-  }, error = function(e) NULL)
+    
+    # 🧹 LIMPEZA ESTRITA DE MEMÓRIA (Crucial para não travar o PC)
+    rm(raster_muni, freq_muni)
+    gc(reset = TRUE, full = TRUE)
+    terra::tmpFiles(remove = TRUE)
+    
+  }, error = function(e) {
+    # Em caso de erro, limpa o lixo também
+    gc()
+    terra::tmpFiles(remove = TRUE)
+  })
   
-  return(NULL)
+  return(df_retorno)
 })
 
-# Consolida e salva
+# ==============================================================================
+# 4. CONSOLIDA, CALCULA OS TOTAIS E SALVA
+# ==============================================================================
+
 if(nrow(resultado) > 0) {
+  
+  # Pivota os dados para formato largo
   resultado_largo <- resultado %>%
     group_by(code_muni, nome, ano) %>%
     summarise(qtd_pixels = sum(qtd_pixels), .groups = "drop") %>%
@@ -105,9 +131,36 @@ if(nrow(resultado) > 0) {
       names_from = ano,
       values_from = qtd_pixels,
       values_fill = 0
-    ) %>%
-    select(code_muni, nome, sort(names(.)[-(1:2)]))
+    ) 
   
+  # Segurança: Garante que as colunas de veg_nativa e Hidrografia existam 
+  # (evita erro caso não tenha nenhuma no recorte)
+  if(!"veg_nativa" %in% names(resultado_largo)) resultado_largo$veg_nativa <- 0
+  if(!"Hidrografia" %in% names(resultado_largo)) resultado_largo$Hidrografia <- 0
+  
+  # Identifica as colunas de resíduos individualmente (começam com "r" e têm 4 números)
+  col_residuos <- grep("^r\\d{4}", names(resultado_largo), value = TRUE)
+  
+  # Cria as colunas consolidadas e reordena
+  resultado_largo <- resultado_largo %>%
+    mutate(
+      total_residuos = if(length(col_residuos) > 0) rowSums(across(all_of(col_residuos))) else 0,
+      total_hidrografia = Hidrografia,
+      total_veg_nativa = veg_nativa
+    ) %>%
+    # Organiza: totais no começo, colunas individuais mantidas depois
+    select(
+      code_muni, 
+      nome, 
+      total_residuos, 
+      total_hidrografia, 
+      total_veg_nativa, 
+      everything()
+    )
+  
+  # Salva o arquivo final
   write_csv(resultado_largo, file.path(caminho_dados, "contagem_pixels_prodes_mt.csv"))
-  print("✅ Concluído!")
+  print("✅ Concluído! Totais e resíduos salvos com sucesso.")
+} else {
+  print("⚠️ Nenhum dado foi extraído. Verifique o processamento.")
 }
