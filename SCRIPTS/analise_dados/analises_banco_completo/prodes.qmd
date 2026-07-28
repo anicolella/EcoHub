@@ -27,6 +27,9 @@ library(reactable)
 library(spdep)
 library(sp)
 library(here)
+library(ggcorrplot)
+library(reshape2)
+
 
 caminho_dados <- here("data")
 ramt <- st_read("/home/jodomingues/EcoHub/data/ramt_infra.gpkg")
@@ -67,6 +70,12 @@ No presente estudo, empregaram-se histogramas, boxplots e gráficos de dispersã
 Inicialmente, é interessante analisar a tendência temporal do desmatamento. Nesse sentido, observa-se a evolução da taxa de área desmatada ao longo dos anos:
 
 ```{r}
+
+#| echo: false
+#| message: false
+#| warning: false
+
+
 temporal_anual <- desmatamento %>%
   group_by(ano) %>%
   summarise(
@@ -94,6 +103,10 @@ Pelo gráfico, é possível observar que houve um aumento entre os anos de 2015 
 
 Assim, é válido avaliar onde está o maior  desmatamento em valores absolutos na amostra:
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
 #### 4. Análise por UF ####
 
 desmat_uf <- desmatamento %>%
@@ -126,6 +139,11 @@ ggplot(desmat_uf %>% slice_head(n = 28),
 Assim, também é interressante ver em quais regiões houve o maior desmatamento em termos de taxa:
 
 ```{r}
+
+#| echo: false
+#| message: false
+#| warning: false
+
 # Top 10 UFs em desmatamento total
 ggplot(desmat_uf %>% slice_head(n = 28), 
        aes(x = reorder(sigla_uf, media_ha), y = media_ha)) +
@@ -204,7 +222,7 @@ tabela_gt_uf
 ```
 
 
-
+A tabela acima descreve a média anual do desmatamento e a porcentagem média de desmatamento dentro dos diferentes estados. É possível observar que a maior área desmatada por ano se concentra em estados majoritariamente da Região Norte e em alguns outros estados da fronteira agrícola. A mediana geralmente está muito abaixo da média, o que sugere que o desmatamento está muito concentrado em poucos municípios. Além disso, é possível observar que alguns estados, apesar de uma alta taxa média de hectares perdidos,ainda apresentam um alto percentual de área não desmatada, o que corrobora a ideia de que a expansão da fronteira agrícola age como uma importante força motriz no deflorestamento.
 
 
 ```{r}
@@ -219,30 +237,107 @@ ggplot(desmatamento, aes(x = factor(ano), y = prodes_ha_desmatamento)) +
 ```
 
 
-
-
-
-
+Aqui, é possível observar o desmatamento anual, seguindo a mesma tendência descrita no gráfico de linhas. Entretanto, nota-se que existe pouca presença de outliers dentro da amostra. Além disso, é possível verificar que, durante alguns anos, existe um aumento na distância interquartil, como nos anos de 2018 e 2023.
 
 ```{r}
-#### 5. Relação entre desmatamento anual e acumulado ####
+#| echo: false
+#| message: false
+#| warning: false
 
-# Matriz de correlação
-cor_desmat <- desmatamento %>%
-  select(prodes_ha_desmatamento, prodes_ha_desmatamento_acumulado, 
-         prodes_porcentagem_desmat) %>%
-  cor(use = "complete.obs")
 
-print("Matriz de Correlação:")
-print(round(cor_desmat, 3))
+# 5. ANÁLISE DE CORRELAÇÃO ENTRE MÉTRICAS DE DESMATAMENTO                    #
+# ============================================================================ #
+
+# ---------------------------------------------------------------------------- #
+# 5.1. Carregar bibliotecas necessárias                                       #
+# ---------------------------------------------------------------------------- #
+
+library(ggplot2)
+library(reshape2)  # Para transformar a matriz
+
+# ---------------------------------------------------------------------------- #
+# 5.2. Preparar os dados                                                      #
+# ---------------------------------------------------------------------------- #
+
+# Seleciona as variáveis de interesse com nomes bonitos
+dados_cor <- desmatamento %>%
+  select(
+    `Desmatamento\nAnual` = prodes_ha_desmatamento,
+    `Desmatamento\nAcumulado` = prodes_ha_desmatamento_acumulado,
+    `% Desmatado` = prodes_porcentagem_desmat
+  )
+
+# Calcula a matriz de correlação
+matriz_cor <- cor(dados_cor, use = "complete.obs")
+
+# Transforma em formato longo para o ggplot
+matriz_long <- melt(matriz_cor, 
+                    varnames = c("Var1", "Var2"), 
+                    value.name = "Correlacao")
+
+# ---------------------------------------------------------------------------- #
+# 5.3. GRÁFICO TABELINHA QUADRICULADA (Correlograma em grid)                 #
+# ---------------------------------------------------------------------------- #
+
+ggplot(matriz_long, aes(x = Var1, y = Var2)) +
+  # Quadradinhos coloridos
+  geom_tile(aes(fill = Correlacao), color = "white", linewidth = 1.5) +
+  
+  # Valores numéricos dentro dos quadradinhos
+  geom_text(aes(label = sprintf("%.2f", Correlacao)), 
+            size = 6, 
+            color = "black",
+            fontface = "bold") +
+  
+  # Escala de cores: vermelho → branco → azul
+  scale_fill_gradient2(
+    low = "#D55E00",      # Vermelho para correlações negativas
+    mid = "white",        # Branco para correlação zero
+    high = "#0072B2",     # Azul para correlações positivas
+    midpoint = 0,
+    limits = c(-1, 1),
+    name = "Correlação"
+  ) +
+  
+  # Títulos e labels
+  labs(
+    title = "Matriz de Correlação - Métricas de Desmatamento",
+    subtitle = "Correlação de Pearson entre indicadores",
+    x = "",
+    y = ""
+  ) +
+  
+  # Tema minimalista e ajustes
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 13, hjust = 0.5, color = "gray40"),
+    axis.text = element_text(size = 13, face = "bold"),
+    axis.text.x = element_text(angle = 0, hjust = 0.5),  # Sem rotação
+    axis.text.y = element_text(angle = 0, hjust = 1),
+    legend.position = "right",
+    legend.title = element_text(size = 12, face = "bold"),
+    legend.text = element_text(size = 10),
+    panel.grid = element_blank(),  # Remove as grades
+    plot.margin = margin(20, 20, 20, 20)
+  ) +
+  
+  # Coordenadas fixas para manter o quadrado perfeito
+  coord_fixed()
+
 
 
 ```
 
-
+O gráfico de correlações evidencia uma relação positiva entre o desmatamento acumulado e o desmatamento anual. No entanto, nota-se uma relação negativa entre o percentual de área desmatada e o desmatamento anual, indicando que áreas já bastante desmatadas tendem a apresentar um menor índice de novos desmatamentos — um cenário, provavelmente, válido para áreas mais consolidadas. Consequentemente, em uma análise que incorpore áreas urbanas no cálculo, pode haver uma relação negativa entre o desmatamento e o valor da terra.
 
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
 # Scatter plot
 ggplot(desmatamento, aes(x = prodes_ha_desmatamento_acumulado, 
                           y = prodes_ha_desmatamento)) +
@@ -255,55 +350,34 @@ ggplot(desmatamento, aes(x = prodes_ha_desmatamento_acumulado,
   theme_minimal()
 ```
 
-
-
-```{r}
-#### 6. Percentual de desmatamento - Quantis ####
-# Tabela formatada para relatório
-tabela_final <- data.frame(
-  Estatística = c("observações", "Média", "Desvio Padrão", "Mínimo", 
-                  "P5", "P10", "P25 (Q1)", "P50 (Mediana)", "P75 (Q3)", 
-                  "P90", "P95", "P99", "Máximo"),
-  `% Desmatado` = c(
-    sum(!is.na(desmatamento$prodes_porcentagem_desmat)),
-    mean(desmatamento$prodes_porcentagem_desmat, na.rm = TRUE),
-    sd(desmatamento$prodes_porcentagem_desmat, na.rm = TRUE),
-    quantile(desmatamento$prodes_porcentagem_desmat, 
-             probs = c(0, 0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95, 0.99, 1),
-             na.rm = TRUE)
-  ) %>% round(2)
-)
-
-print(tabela_final)
-
-# Se quiser exportar
-# write.csv(tabela_final, "quantis_desmatamento.csv", row.names = FALSE)
-```
-
-
+Pelo gráfico de dispersão, é possível notar a relação linear entre o desmatamento acumulado e o desmatamento anual. Também se observa uma série de municípios com um alto índice de desmatamento acumulado, porém com baixo desmatamento anual, o que corrobora a tendência de terras mais consolidadas.
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
 desmatamento %>%
   select(prodes_ha_desmatamento) %>%
   tbl_summary(
     label = list(prodes_ha_desmatamento ~ "Desmatamento Anual (ha)"),
     type = all_continuous() ~ "continuous2",
     statistic = all_continuous() ~ c(
-      "N válido = {N_nonmiss}",
-      "Média = {mean}",
-      "DP = {sd}",
-      "Mín = {min}",
-      "P5 = {p5}",
-      "P10 = {p10}",
-      "Q1 = {p25}",
-      "Mediana = {median}",
-      "Q3 = {p75}",
-      "P90 = {p90}",
-      "P95 = {p95}",
-      "P99 = {p99}",
-      "Máx = {max}"
+      "N válido" = "{N_nonmiss}",
+      "Média"    = "{mean}",
+      "DP"       = "{sd}",
+      "Mín"      = "{min}",
+      "P5"       = "{p5}",
+      "P10"      = "{p10}",
+      "Q1"       = "{p25}",
+      "Mediana"  = "{median}",
+      "Q3"       = "{p75}",
+      "P90"      = "{p90}",
+      "P95"      = "{p95}",
+      "P99"      = "{p99}",
+      "Máx"      = "{max}"
     ),
-    # Atenção: O vetor 'digits' agora tem 13 elementos para corresponder exatamente às 13 linhas acima.
+    # Atenção: O vetor 'digits' agora tem 13 elementos para corresponder exatamente às 13 linhas.
     # O primeiro (N) com 0 casas decimais, e os demais com 1.
     digits = all_continuous() ~ c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
     missing = "ifany",
@@ -318,10 +392,14 @@ desmatamento %>%
   modify_caption("**Tabela 1. Estatísticas Descritivas do Desmatamento Anual (PRODES)**")
 ```
 
+O painel é composto por 17.851 observações válidas, referentes a diversos municípios ao longo dos anos. Nesse conjunto, a média de desmatamento é de 401,5 hectares por ano, com um desvio padrão de 1.679 hectares. Além disso, nota-se a presença de valores muito baixos de desmatamento anual nos percentis inferiores. Isso ocorre, muito provavelmente, porque muitos municípios possuem pouca ou nenhuma área florestal disponível para ser desmatada.
 
+```{r, warning=FALSE, message=FALSE}
 
+#| echo: false
+#| message: false
+#| warning: false
 
-```{r histograms-uf, results='asis', echo=FALSE, fig.height=4, fig.width=8}
 library(dplyr)
 library(ggplot2)
 
@@ -359,7 +437,7 @@ for (uf_atual in ordem_ufs) {
                linetype = "dashed", 
                color = "black", 
                linewidth = 0.8) +
-    scale_x_log10(labels = scales::comma) +
+    scale_x_continuous(trans = scales::pseudo_log_trans(base = 10)) +
     labs(title = paste0(uf_atual),
          subtitle = paste0("N = ", n_mun, " | Mediana = ", 
                           round(mediana, 1), " ha | Média = ", 
@@ -374,7 +452,7 @@ for (uf_atual in ordem_ufs) {
 }
 ```
 
-
+É possível observar uma grande variedade de comportamentos e distribuições distintas nos histogramas de desmatamento, refletindo as desigualdades e tendências regionais. Destaca-se a expressiva diferença entre as medianas de cada estado: enquanto alguns apresentam um volume de desmatamento muito elevado, outros têm um índice bastante reduzido, o que corrobora o que foi observado na tabela de estatística descritiva. Além disso, alguns estados apresentaram distribuições multimodais, o que sugere uma diversidade de dinâmicas de desmatamento dentro dessas mesmas regiões.
 
 ```{r}
 library(ggplot2)
