@@ -40,11 +40,12 @@ df_organizado <- ramt_tagged %>%
     vtn_media, vtn_minimo, vtn_maximo,
     
     # Área
-    area_m2, area_ha_calculada,
+    area_ha_geometria, area_m2_geometria,
     
     # PRODES - Desmatamento
     prodes_pixels_desmatamento, prodes_ha_desmatamento,
-    prodes_ha_desmatamento_acumulado, prodes_porcentagem_desmat,
+    prodes_ha_desmatamento_acumulado, prodes_porc_desmat_pixels, 
+    prodes_porc_desmat_geometria,
     
     # Cobertura MapBiomas v10
     starts_with("cob_mapbiomas_v10"),

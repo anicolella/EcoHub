@@ -214,7 +214,7 @@ df_ramt <- st_read(
 
 
 df_ramt <- left_join(df_ramt, dados_largos, by = c("code_muni", "ano")) %>%
-  mutate(across(starts_with("cob_mapbiomas_v10_"), ~replace_na(., 0)))
+  mutate(across(starts_with("cob_mapbiomas_v10_"), ~replace_na(., 0))) %>% clean_names()
  
 print("Join realizado com sucesso!")
 print(paste("Dimensões finais:", nrow(df_ramt), "linhas x", ncol(df_ramt), "colunas"))
