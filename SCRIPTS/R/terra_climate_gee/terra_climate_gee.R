@@ -12,10 +12,10 @@ ee_Initialize(drive = TRUE)
 asset_id <- "projects/polished-enigma-497723-a6/assets/municipios_2024"
 municipios <- ee$FeatureCollection(asset_id)
 
-# Define a série histórica de anos que você deseja (ex: 2010 a 2023)
+# Define a série histórica de anos que você deseja (ex: 2015 a 2024)
 anos <- ee$List$sequence(2015, 2024)
 
-# Função para anualizar e tratar todas as variáveis primárias do TerraClimate
+# Função para anualizar e tratar todas as variáveis (Primárias e Derivadas) do TerraClimate
 anualizar_clima <- ee_utils_pyfunc(function(ano) {
   ano_num <- ee$Number(ano)
   data_inicial <- ee$Date$fromYMD(ano_num, 1, 1)
@@ -28,32 +28,30 @@ anualizar_clima <- ee_utils_pyfunc(function(ano) {
   # Sufixo com o ano para renomear as bandas (ex: "_2017")
   sufixo <- ano_num$format('%04d')
   
-  # 1. TEMPERATURA MÁXIMA (Média, Escala: 0.1)
-  tmmx <- col_ano$select('tmmx')$mean()$multiply(0.1)$
-    rename(ee$String('tmmx_')$cat(sufixo))
+  # --- 1. VARIÁVEIS PRIMÁRIAS ---
+  tmmx <- col_ano$select('tmmx')$mean()$multiply(0.1)$rename(ee$String('tmmx_')$cat(sufixo))
+  tmmn <- col_ano$select('tmmn')$mean()$multiply(0.1)$rename(ee$String('tmmn_')$cat(sufixo))
+  vap <- col_ano$select('vap')$mean()$multiply(0.001)$rename(ee$String('vap_')$cat(sufixo))
+  srad <- col_ano$select('srad')$mean()$multiply(0.1)$rename(ee$String('srad_')$cat(sufixo))
+  vs <- col_ano$select('vs')$mean()$multiply(0.01)$rename(ee$String('vs_')$cat(sufixo))
+  pr <- col_ano$select('pr')$sum()$rename(ee$String('pr_')$cat(sufixo))
   
-  # 2. TEMPERATURA MÍNIMA (Média, Escala: 0.1)
-  tmmn <- col_ano$select('tmmn')$mean()$multiply(0.1)$
-    rename(ee$String('tmmn_')$cat(sufixo))
+  # --- 2. VARIÁVEIS DERIVADAS ---
   
-  # 3. PRESSÃO DE VAPOR (Média, Escala: 0.001)
-  vap <- col_ano$select('vap')$mean()$multiply(0.001)$
-    rename(ee$String('vap_')$cat(sufixo))
+  # Variáveis de fluxo/acúmulo (Soma anual)
+  pet <- col_ano$select('pet')$sum()$multiply(0.1)$rename(ee$String('pet_')$cat(sufixo))
+  aet <- col_ano$select('aet')$sum()$multiply(0.1)$rename(ee$String('aet_')$cat(sufixo))
+  def <- col_ano$select('def')$sum()$multiply(0.1)$rename(ee$String('def_')$cat(sufixo))
+  ro <- col_ano$select('ro')$sum()$rename(ee$String('ro_')$cat(sufixo)) # Runoff não tem fator de escala (escala 1)
   
-  # 4. RADIAÇÃO SOLAR DE ONDA CURTA (Média, Escala: 0.1)
-  srad <- col_ano$select('srad')$mean()$multiply(0.1)$
-    rename(ee$String('srad_')$cat(sufixo))
+  # Variáveis de estado/condição (Média anual)
+  soil <- col_ano$select('soil')$mean()$multiply(0.1)$rename(ee$String('soil_')$cat(sufixo))
+  swe <- col_ano$select('swe')$mean()$rename(ee$String('swe_')$cat(sufixo)) # SWE também escala 1
+  pdsi <- col_ano$select('pdsi')$mean()$multiply(0.01)$rename(ee$String('pdsi_')$cat(sufixo))
+  vpd <- col_ano$select('vpd')$mean()$multiply(0.01)$rename(ee$String('vpd_')$cat(sufixo))
   
-  # 5. VELOCIDADE DO VENTO (Média, Escala: 0.01)
-  vs <- col_ano$select('vs')$mean()$multiply(0.01)$
-    rename(ee$String('vs_')$cat(sufixo))
-  
-  # 6. PRECIPITAÇÃO ACUMULADA (Soma, Escala: 1)
-  pr <- col_ano$select('pr')$sum()$
-    rename(ee$String('pr_')$cat(sufixo))
-  
-  # Junta todas as bandas processadas em uma única imagem para o ano
-  imagem_anual <- ee$Image$cat(list(tmmx, tmmn, vap, srad, vs, pr))$
+  # Junta TODAS as bandas processadas em uma única imagem para o ano
+  imagem_anual <- ee$Image$cat(list(tmmx, tmmn, vap, srad, vs, pr, pet, aet, def, ro, soil, swe, pdsi, vpd))$
     set('ano', ano_num)$
     set('system:time_start', data_inicial$millis())
   
@@ -84,7 +82,7 @@ estatisticas <- imagem_final$reduceRegions(
 # Configura a exportação para o seu Google Drive
 tarefa_exportacao <- ee$batch$Export$table$toDrive(
   collection = estatisticas,
-  description = "Serie_Climatica_Municipios_Brasil",
+  description = "Serie_Climatica_Municipios_Brasil_Completa",
   folder = "GEE_Exports",
   fileFormat = "CSV"
 )
@@ -93,22 +91,21 @@ tarefa_exportacao <- ee$batch$Export$table$toDrive(
 tarefa_exportacao$start()
 ee_monitoring(tarefa_exportacao)
 
-
-# --- NOVA ETAPA: DOWNLOAD PARA O R ---
+# --- ETAPA R: TRATAMENTO DOS DADOS ---
 
 caminho_arquivo <- ee_drive_to_local(
   task = tarefa_exportacao,
-  dsn = "Serie_Climatica_Municipios_Brasil.csv" 
+  dsn = "Serie_Climatica_Municipios_Brasil_Completa.csv" 
 )
 
-# Carrega o CSV baixado para a memória do R
+# Carrega o CSV baixado
 dados_clima <- read.csv(caminho_arquivo)
 
 dados_finais <- dados_clima %>%
-  # 1. Remove as colunas de sistema do GEE
+  # 1. Remove as colunas de sistema
   select(-system.index, -.geo) %>%
   
-  # 2. Faz o pivot para o formato longo
+  # 2. Faz o pivot para o formato longo (agora vai pegar todas as novas bandas automaticamente)
   pivot_longer(
     cols = -c(abbrev_sta, code_muni, code_regio, code_state, 
               name_muni, name_regio, name_state),
@@ -119,21 +116,32 @@ dados_finais <- dados_clima %>%
   # 3. Converte o ano para número
   mutate(ano = as.integer(ano)) %>%
   
-  # 4. Renomeia as colunas por extenso usando o padrão terraclimate_variavel_anual
+  # 4. Renomeia TODAS as colunas por extenso
   rename(
     terraclimate_precipitacao_anual = pr,
     terraclimate_radiacao_solar_anual = srad,
     terraclimate_temperatura_minima_anual = tmmn,
     terraclimate_temperatura_maxima_anual = tmmx,
     terraclimate_pressao_vapor_anual = vap,
-    terraclimate_velocidade_vento_anual = vs
-  ) %>% select(-c("abbrev_sta", "name_state", "name_muni", "name_regio")) |> mutate(code_muni = as.character(code_muni))
+    terraclimate_velocidade_vento_anual = vs,
+    terraclimate_evapotranspiracao_referencia_anual = pet,
+    terraclimate_evapotranspiracao_real_anual = aet,
+    terraclimate_deficit_hidrico_anual = def,
+    terraclimate_escoamento_superficial_anual = ro,
+    terraclimate_umidade_solo_anual = soil,
+    terraclimate_equivalente_agua_neve_anual = swe,
+    terraclimate_pdsi_anual = pdsi,
+    terraclimate_deficit_pressao_vapor_anual = vpd
+  ) %>% 
+  select(-c("abbrev_sta", "name_state", "name_muni", "name_regio")) %>% 
+  mutate(code_muni = as.character(code_muni))
 
+# Join com o sf
 ramt <- st_read(file.path(caminho_dados, "ramt_credito.gpkg"))
 
 ramt_terra_climate <- left_join(ramt, dados_finais, by = c("code_muni" = "code_muni", "ano" = "ano"))
 
-
+# Salva o arquivo final
 st_write(
   obj = ramt_terra_climate,
   dsn = arquivo_saida,

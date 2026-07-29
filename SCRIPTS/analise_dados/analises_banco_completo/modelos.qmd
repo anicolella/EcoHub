@@ -1,0 +1,57 @@
+---
+title: "modelos"
+format: html
+---
+
+Rascunho para a organização dos modelos de regressão linear e autoregressão espacial.
+
+```{r}
+library(readr)
+library(sandwich)
+library(car)
+library(tidyverse)
+library(terra)
+library(data.table)
+library(sf)
+library(ipeadatar)
+library(stringr)
+library(gtsummary)
+library(gt)
+library(tidyverse)
+library(reactable)
+library(spdep)
+library(sp)
+library(here)
+library(ggcorrplot)
+library(reshape2)
+library(fixest)
+
+caminho_dados <- here("data")
+ramt <- st_read("/home/jodomingues/EcoHub/data/ramt_car.gpkg")
+
+
+
+
+```
+
+
+Inicialmente, convem ver o efeito do valor da terra
+
+
+```{r}
+library(fixest)
+
+m1 <- feols(
+  prodes_ha_desmatamento ~
+     +
+    total_credito +
+    ipeadata_cotacao_soja_ano_real +
+    terraclimate_precipitacao_anual +
+    terraclimate_temperatura_maxima_anual +
+    ibama_qtd_total_autos +
+    uc_geobr_protecao_ha |
+    code_muni + ano,
+  data = base,
+  cluster = ~code_muni
+)
+```

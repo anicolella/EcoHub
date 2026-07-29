@@ -24,7 +24,7 @@ df_organizado <- ramt_tagged %>%
   
     
     # Localização Geográfica e Política
-    UF, sigla_uf, id_uf, amazonia_legal,
+    sigla_uf, id_uf, amazonia_legal,
     id_regiao_saude, nome_regiao_saude,
     id_regiao_imediata, nome_regiao_imediata,
     id_regiao_intermediaria, nome_regiao_intermediaria,
@@ -55,7 +55,7 @@ df_organizado <- ramt_tagged %>%
     
     # Geometria
     centroide, geom
-  )
+  ) |> select(-ends_with("_y"))
 
 
 st_write(
